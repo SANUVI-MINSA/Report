@@ -32,9 +32,11 @@
 | Ramirez Carrasco, Ariana Lizeth      | u202312932 |
 | López Roman, Franco Mauricio         | u202315890 |
 
----
+
 
 **Mes y Año**: Marzo 2026
+
+---
 
 </div>
 
@@ -44,7 +46,9 @@
 
 # Project Report Collaboration Insights
 
-# Tabla de contenidos
+# Student Outcome
+
+# Objetivos SMART 
 
 ## [Capítulo I: Presentación](02-chap1-introduction.md)
 
