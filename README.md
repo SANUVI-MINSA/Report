@@ -27,7 +27,6 @@
 | ------------------------------------ | ---------- |
 | Baca Camargo, Vitaly Arturo          | U20231C426 |
 | Huapaya Galindo, Dyron               | U202322855 |
-| Huarcaya Matias, Gilbert Alonso      | u202322187 |
 | Pariachi Limahuaya, Sebastian Ubaldo | u202314115 |
 | Ramirez Carrasco, Ariana Lizeth      | u202312932 |
 | López Roman, Franco Mauricio         | u202315890 |
