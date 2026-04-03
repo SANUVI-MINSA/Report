@@ -17,9 +17,9 @@
 
 ### Informe de Trabajo Final
 
-**Startup:** SANUVI
+**Nombre del startup :** SANUVI
 
-**Producto:** Ferova
+**Nombre del producto :** Ferova
 
 #### Relación de integrantes
 
