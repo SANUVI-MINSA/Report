@@ -23,8 +23,9 @@ El problema de la anemia se presenta en el Perú, a nivel nacional, en gestantes
 
 De acuerdo con **McCarthy et al. (2022)**, el problema de la anemia por deficiencia de hierro se presenta principalmente durante los primeros 1000 días de vida, los cuales comprenden desde el embarazo hasta los primeros años de vida del niño, etapa considerada crítica debido al rápido crecimiento y desarrollo, especialmente a nivel cerebral. Según los autores, durante este periodo los requerimientos de hierro aumentan significativamente; por ejemplo, en el embarazo pueden alcanzar hasta 7.5 mg/día en el tercer trimestre, lo que incrementa el riesgo de desarrollar anemia si no se cubren adecuadamente dichas necesidades . Asimismo, en la infancia temprana, particularmente entre los 6 y 24 meses, la demanda de hierro es una de las más altas del ciclo de vida, lo que convierte a esta etapa en un momento crítico para la aparición de la enfermedad. Por otro lado, según **Ambreen et al. (2025)**, la anemia también se manifiesta durante el periodo de tratamiento clínico, el cual se desarrolla a lo largo del tiempo y requiere seguimiento continuo. En su estudio, el análisis se llevó a cabo en diferentes fases comprendidas entre enero y junio de 2023 y octubre de 2023 a marzo de 2024, lo que evidencia que la adherencia al tratamiento es un proceso prolongado y no inmedia.
 
-
 ##### Why (¿Por qué es un problema?)
+
+De acuerdo con Martinez-Torres et al. (2023), la anemia en niños se origina por una combinación de múltiples factores de riesgo, lo que la convierte en un problema complejo de salud pública. Entre las principales causas se encuentran las deficiencias nutricionales, especialmente la falta de hierro, así como la carencia de vitamina B12 y ácido fólico, las cuales afectan directamente la producción de glóbulos rojos. Asimismo, según los autores, existen factores ambientales y sociales que incrementan el riesgo de anemia, como la pobreza, la mala alimentación, el acceso limitado a servicios de salud y la exposición a contaminantes como el plomo, los cuales influyen negativamente en el estado nutricional y la salud infantil. 
 
 ##### How (¿Cómo se manifiesta?)
 
