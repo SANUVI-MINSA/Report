@@ -44,7 +44,7 @@ En esta sección, aplicaremos la herramienta Lean UX para presentar la visión d
 
 Nuestra aplicación móvil de prevención y seguimiento de la anemia busca controlar el tratamiento de la anemia en niños de hasta 5 años, conectando a los familiares o cuidadores del niño con personal médico, como enfermeros(as) y nutricionistas. A través de nuestro servicio, buscamos que los usuarios puedan seguir el tratamiento sin tener ningún problema con las recetas, la alimentación y las citas programadas.
 
-
+No obstante, hemos observado un factor crítico que afecta el seguimiento del tratamiento para la anemia: Actualmente, el padre de familia de un niño con anemia no siguen el tratamiento otorgado correctamente, llegando al punto de abandonar las recetas médicas y dejar de asistir a las citas programadas. Según un estudio de Vilca y Samudio (2023), el 80% de las madres de familia abandonan el tratamiento de la anemia debido a los efectos adversos del sulfato ferroso, un 51,4% debido a la escasez de servicios médicos y un 45,7% por la falta de consejería de enfermeros(as). Esto nos muestra que, sin la muestra de información adecuada respecto al tratamiento de la anemia, existe la alta probabilidad que el familiar deje el tratamiento.
 
 ##### 1.2.2.2 Lean UX Assumptions
 ##### 1.2.2.3 Lean UX Hypothesis Statements
