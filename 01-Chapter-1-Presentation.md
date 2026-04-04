@@ -97,12 +97,16 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### 1.2.2.3 Lean UX Hypothesis Statements
 
+1. Registro de dosis diarias de hierro
 >**Creemos que** al implementar un registro de dosis diarias de hierro **reduciremos la probabilidad de abandono durante el tratamiento de anemia en un 10 %**. **Sabremos que hemos tenido éxito cuando veamos los siguientes resultados:** El 90 % de las dosis programadas de hierro fueron consumidas correctamente y registradas en la aplicación.
 
+2. Interfaz interactiva y fácil de usar
 >**Creemos que** al implementar una interfaz que sea interactiva y de alta usabilidad **permitirá alcanzar los 100 usuarios que completaron su tratamiento en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos los siguiente:** El 80 % de los usuarios mencionaron que la interfaz fue muy sencilla de utilizar y que facilito la comprensión de terminologías médicas.
 
+3. Teleconsultas con personal médico.
 >**Creemos que** incorporar las teleconsultas con personal médico especializado **permitirá alcanzar los 50 usuarios que siguieron su tratamiento sin abandonar ningún día en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos los siguientes indicadores:** El 95 % de las teleconsultas realizadas fueron resueltas en 24 horas.
 
+4. Registro de control de hemoglobina
 >**Creemos que** implementar un registro de control de hemoglobina **aumentará la probabilidad de realizar el tratamiento contra la anemia en un 15% en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos las siguientes estadísticas:** El 75% de los usuarios registrados se ha realizado al menos tres controles de hemoglobina en un mes.
 
 ##### 1.2.2.4 Lean UX Canvas
