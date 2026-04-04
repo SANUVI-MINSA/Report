@@ -56,14 +56,14 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 1. Creemos que los posibles usuarios (padres de familia o cuidadores de niños con anemia) necesitan una guía para tratar la anemia del menor.
 2. Creemos que estas necesidades pueden ser resueltas con una plataforma de seguimiento de la anemia que permita el seguimiento en tiempo real del tratamiento.
-3. Creemos que las dos prioridades número 1 de los usuarios son: Sanar la anemia del menor y establecer hábitos alimenticios para que la anemia no suceda de nuevo.
+3. Creemos que las dos primeras prioridades de los usuarios son: Sanar la anemia del menor y establecer hábitos alimenticios para que la anemia no suceda de nuevo.
 4. Creemos que el personal médico especializado tendrá conocimientos sobre la anemia en menores de edad, el tratamiento de la anemia y su cuidado a largo plazo.
-5. Creemos que el personal médico que estará presente en nuestra aplicación móvil serán enfermeros(as) y nutricionistas.
-6. Creemos que 
-7. Creemos que
-8. Creemos que
-9. Creemos que
-10. Creemos que
+5. Creemos que el personal médico que estará presente en nuestra aplicación móvil serán (en su mayoría) enfermeros(as) y nutricionistas.
+6. Creemos que podremos llamar nuevos clientes mediante la publicidad en zonas especializadas, como: Postas médicas, hospitales y clínicas.
+7. Creemos que el mayor riesgo del producto es la baja adopción del producto por la dificultad de instrucciones en el tratamiento de anemia.
+8. Creemos que podemos mitigar este riesgo mediante la creación de guías visuales claras de entender en todo el tratamiento.
+9. Creemos que nuestra ventaja competitiva es la capacidad de influir positivamente en el tratamiento de anemia mediante datos médicos y el personal de salud para evitar el abandono durante el tratamiento.
+10. Creemos que existen otros supuestos críticos en nuestra aplicación como: La falta de seguimiento del tratamiento en zonas rurales con bajo o nula conexión a internet o la traducción del tratamiento a otros idiomas nativos (quechua, aymara, etc.).
 
 ##### B. Business Assumptions
 
