@@ -48,7 +48,7 @@ No obstante, hemos observado un factor crítico que afecta el seguimiento del tr
 
 De igual manera, varios programas de salud contra la anemia se han implementado en Lima, como la administracion de micronutrientes en edades tempranas o suplementos con vitaminas en las gestantes, pero no consiguieron los resultados esperados (Ministerio del Salud del Perú, 2017, citado en Solis & Ayala, 2024).
 
-
+¿Cómo podemos mejorar la información sobre el tratamiento contra la anemia para disminuir en un 10% el abandono al tratamiento de la anemia por parte de los padres de familia?
 
 ##### 1.2.2.2 Lean UX Assumptions
 ##### 1.2.2.3 Lean UX Hypothesis Statements
