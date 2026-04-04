@@ -83,7 +83,10 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### D. Business Outcome Assumptions
 
-
+- Creemos que podremos disminuir el abandono durante el tratamiento contra la anemia en un 10% en un año.
+- Creemos que podremos alcanzar los 100 usuarios que completaron su tratamiento contra la anemia en 6 meses.
+- Creemos que podremos alcanzar los 50 medicos registrados en la aplicación en 3 meses.
+- Creemos que podremos alcanzar los 200 usuarios registrados en 6 meses.
 
 ##### E. Feature Assumptions
 
