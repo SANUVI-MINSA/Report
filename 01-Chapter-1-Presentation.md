@@ -9,6 +9,8 @@
 
 ##### Who (¿Quiénes se ven afectados?)
 
+El problema de la anemia en el Perú afecta principalmente a poblaciones vulnerables, en especial a niñas y niños menores de cinco años, gestantes y adolescentes, quienes presentan mayor riesgo debido a factores biológicos, nutricionales y sociales (UNICEF, 2025).
+
 ##### What (¿Qué ocurre?)
 
 ##### Where (¿Dónde sucede?)
