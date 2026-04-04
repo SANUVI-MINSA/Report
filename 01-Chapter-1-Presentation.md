@@ -76,7 +76,10 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### C. User Outcome & Benefit Assumptions 
 
-
+- Creemos que los padres de familia podrán registrarse correctamente en la aplicación.
+- Creemos que los padres de familia seguirán el tratamiento contra la anemia dado por la aplicación.
+- Creemos que el personal médico estará pendiente de la aplicación durante su horario acordado.
+- Creemos que el personal médico responderá las teleconsultas de los padres de familia.
 
 ##### D. Business Outcome Assumptions
 
