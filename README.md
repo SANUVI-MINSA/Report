@@ -115,7 +115,7 @@
     * [2.6.X.6.1. Bounded Context Domain Layer Class Diagrams](03-chap2-requirements-elicitation-and-analysis.md#26161-bounded-context-domain-layer-class-diagrams)
     * [2.6.X.6.2. Bounded Context Database Design Diagram](03-chap2-requirements-elicitation-and-analysis.md#26162-bounded-context-database-design-diagram)
 
-## [Capítulo III: Solution UI/UX Design](04-chap3-solution-ui-ux-design.md)
+## [Capítulo III: Solution UI/UX Design](03-Chapter-3-Solution-UI-UX-Design.md)
 
 * [3.1 Product Design](04-chap3-solution-ui-ux-design.md#31-product-design)
 
