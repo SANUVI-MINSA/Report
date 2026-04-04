@@ -85,7 +85,7 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 - Creemos que podremos disminuir el abandono durante el tratamiento contra la anemia en un 10% en un año.
 - Creemos que podremos alcanzar los 100 usuarios que completaron su tratamiento contra la anemia en 6 meses.
-- Creemos que podremos alcanzar los 50 medicos registrados en la aplicación en 3 meses.
+- Creemos que podremos alcanzar los 50 usuarios que siguieron su tratamiento sin abandonar ningún día en 6 meses.
 - Creemos que podremos alcanzar los 200 usuarios registrados en 6 meses.
 
 ##### E. Feature Assumptions
@@ -96,6 +96,15 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 - Creemos que el registro de controles de hemoglobina permitirá verificar si el tratamiento contra la anemia esta progresando positivamente.
 
 ##### 1.2.2.3 Lean UX Hypothesis Statements
+
+>**Creemos que** al implementar un registro de dosis diarias de hierro **reduciremos la probabilidad de abandono durante el tratamiento de anemia en un 10 %**. **Sabremos que hemos tenido éxito cuando veamos los siguientes resultados:** El 90 % de las dosis programadas de hierro fueron consumidas correctamente y registradas en la aplicación.
+
+>**Creemos que**. **Sabremos que hemos tenido éxito cuando**
+
+>**Creemos que**. **Sabremos que hemos tenido éxito cuando**
+
+>**Creemos que**. **Sabremos que hemos tenido éxito cuando**
+
 ##### 1.2.2.4 Lean UX Canvas
 
 ### 1.3 Segmentos objetivo
