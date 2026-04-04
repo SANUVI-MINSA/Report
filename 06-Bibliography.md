@@ -56,10 +56,29 @@ Ministerio de Salud del Perú.
 
 ---
 
+Instituto Nacional de Estadística e Informática. (2023). *Perú: Encuesta 
+Demográfica y de Salud Familiar — ENDES 2023*. INEI.
+🔗 [Ver fuente](https://www.gob.pe/institucion/inei/informes-publicaciones/5601739-peru-encuesta-demografica-y-de-salud-familiar-endes-2023)
+
+---
+
 **Martinez-Torres, V., Torres, N., Davis, J. A., & Corrales-Medina, F. F.** (2023).
 Anemia and associated risk factors in pediatric patients.
 *Pediatric Health, Medicine and Therapeutics*, *14*, 267–280.
 🔗 [Ver fuente](https://pmc.ncbi.nlm.nih.gov/articles/PMC10488827/)
+
+---
+
+Ministerio de Desarrollo e Inclusión Social. (2018). *Plan Multisectorial 
+de Lucha contra la Anemia* (Decreto Supremo N° 068-2018-PCM). MIDIS. 
+🔗 [Ver fuente](https://www.gob.pe/institucion/midis/informes-publicaciones/272499-plan-multisectorial-de-lucha-contra-la-anemia)
+
+---
+
+Ministerio de Salud del Perú. (2024). *Plan Multisectorial para la 
+Prevención y Reducción de la Anemia Materno Infantil en el Perú. 
+Periodo 2024-2030* (Decreto Supremo N° 002-2024-SA). El Peruano. 
+🔗 [Ver fuente](https://busquedas.elperuano.pe/dispositivo/NL/2255412-3)
 
 ---
 
@@ -88,6 +107,12 @@ Factores asociados a la continuidad de la anemia en niños atendidos en primer n
 *Factores de riesgo para fracaso del tratamiento de anemia en niños menores de 5 años atendidos en el Centro de Salud San Juan de Salinas, 2019–2020* [Proyecto de investigación].
 Universidad Peruana Cayetano Heredia.
 🔗 [Ver fuente](https://repositorio.upch.edu.pe/entities/publication/b6edb675-bda1-4459-959f-735547ba4717)
+
+---
+
+Superintendencia Nacional de Salud. (2024). *Registro Nacional de 
+Instituciones Prestadoras de Servicios de Salud — RENIPRESS*. SUSALUD. 
+🔗 [Ver fuente](https://www.datosabiertos.gob.pe/dataset/registro-nacional-de-ipress-renipress-superintendencia-nacional-de-salud-susalud)
 
 ---
 
