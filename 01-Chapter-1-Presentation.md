@@ -65,7 +65,7 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 9. Creemos que nuestra ventaja competitiva es la capacidad de influir positivamente en el tratamiento de anemia mediante datos médicos y el personal de salud para evitar el abandono durante el tratamiento.
 10. Creemos que existen otros supuestos críticos en nuestra aplicación como: La falta de seguimiento del tratamiento en zonas rurales con bajo o nula conexión a internet o la traducción del tratamiento a otros idiomas nativos (quechua, aymara, etc.).
 
-##### B. Business Assumptions
+##### B. User Assumptions
 
 - **¿Quién es el usuario?** 
 - **¿Dónde encaja el producto?** 
@@ -74,15 +74,15 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 - **Características importantes:** 
 - **Look & Feel:** 
 
-##### C. Business Assumptions
+##### C. User Outcome & Benefit Assumptions 
 
 
 
-##### D. Business Assumptions
+##### D. Business Outcome Assumptions
 
 
 
-##### E. Business Assumptions
+##### E. Feature Assumptions
 
 
 
