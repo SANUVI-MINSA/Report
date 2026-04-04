@@ -27,3 +27,7 @@ https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE766176
 - Ambreen, A., Habib, A., Sajjad, A. H., Malik, A. J., & Javed, Q. (2025). Assessment of adherence to oral iron supplementation guidelines in patients with iron deficiency anemia: A cross-sectional study. Cureus, 17(7), e87681.
 
 https://www.cureus.com/articles/385945-assessment-of-adherence-to-oral-iron-supplementation-guidelines-in-patients-with-iron-deficiency-anemia-a-cross-sectional-study#!/
+
+- Martinez-Torres, V., Torres, N., Davis, J. A., & Corrales-Medina, F. F. (2023). Anemia and associated risk factors in pediatric patients. Pediatric Health, Medicine and Therapeutics, 14, 267–280.
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10488827/
