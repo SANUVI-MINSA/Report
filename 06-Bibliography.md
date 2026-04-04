@@ -48,6 +48,10 @@ https://revista.uniandes.edu.ec/ojs/index.php/mikarimin/article/view/2717
 
 https://www.gob.pe/institucion/ins/informes-publicaciones/5474586-indicadores-ninos-2023-final-base-de-datos-his-minsa-anemia-oms-2024
 
+-  Solis-Díaz, R. K., & Ayala-Mendívil, R. E. (2024). Factores asociados a la continuidad de la anemia en niños atendidos en primer nivel de atención: Factors associated with the continuity of anemia in children attended at the first level of care. Peruvian Journal of Health Care and Global Health, 8(2), 89–94.
+
+https://doi.org/10.22258/hgh.2024.82.181
+
 - Vilca, B. Y. y Zamudio, S. A. (2023). Determinantes sociales y abandono de tratamiento anemia ferropénica primera infancia centro de salud Mariscal Castilla Arequipa 2022 (Tesis de licenciatura, Universidad Nacional de San Agustín de Are quipa). Repositorio Institucional UNSA.
 
 https://repositorio.unsa.edu.pe/items/bd968c7e-5f37-4768-a439-442444c245a9
