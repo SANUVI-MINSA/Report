@@ -67,7 +67,12 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### B. Business Assumptions
 
-
+- **¿Quién es el usuario?** 
+- **¿Dónde encaja el producto?** 
+- **Problema a resolver:** 
+- **Uso típico:** 
+- **Características importantes:** 
+- **Look & Feel:** 
 
 ##### C. Business Assumptions
 
