@@ -194,6 +194,6 @@
 * [Video About the product](06-conclusions.md#video-about-the-product)
 * [Video About the team](06-conclusions.md#video-about-the-team)
 
-## Glosoario
+## [Glosoario](08-Glosoario.md)
 ## [Bibliografía](07-bibliography.md)
 ## [Anexos](07-Annexes.md)
