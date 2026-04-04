@@ -67,12 +67,12 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### B. User Assumptions
 
-- **¿Quién es el usuario?** 
-- **¿Dónde encaja el producto?** 
-- **Problema a resolver:** 
-- **Uso típico:** 
-- **Características importantes:** 
-- **Look & Feel:** 
+- **¿Quién es el usuario?** Padres de familia o cuidadores de niños con anemia menores de 5 años
+- **¿Dónde encaja el producto?** Rutina diaria de los padres de familia o cuidadores. 
+- **Problema a resolver:** Falta de seguimiento y abandono del tratamiento contra la anemia.
+- **Uso típico:** Control de dieta y control de anemia a largo plazo.
+- **Características importantes:** Historial de hemoglobina con gráfica de progreso, registro de dosis de suplementos, diario de alimentación, teleconsultas con personal médico.
+- **Look & Feel:** UI fácil de entender, sencilla para las personas que no dominan la tecnología.
 
 ##### C. User Outcome & Benefit Assumptions 
 
