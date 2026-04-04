@@ -49,7 +49,7 @@
 
 # Objetivos SMART 
 
-## [Capítulo I: Presentación](02-chap1-introduction.md)
+## [Capítulo I: Presentación](01-Chapter-1-Presentation.md)
 
 * [1.1 Startup Profile](02-chap1-introduction.md#11-startup-profile)
 
