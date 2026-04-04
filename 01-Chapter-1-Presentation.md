@@ -86,12 +86,12 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 - Creemos que podremos disminuir el abandono durante el tratamiento contra la anemia en un 10 % en un año.
 - Creemos que podremos alcanzar los 100 usuarios que completaron su tratamiento en 6 meses.
 - Creemos que podremos alcanzar los 50 usuarios que siguieron su tratamiento sin abandonar ningún día en 6 meses.
-- Creemos que podremos alcanzar los 200 usuarios registrados en 6 meses.
+- Creemos que podremos aumentar la cantidad de personas que desean realizar el tratamiento en un 15% en 6 meses.
 
 ##### E. Feature Assumptions
 
 - Creemos que un registro de dosis diarias de hierro aumentará el consumo correcto de la medicina durante el tratamiento contra la anemia.
-- Creemos que un una interfaz sencilla y fácil de utilizar aumentará las posibilidades de seguir con el tratamiento dado.
+- Creemos que una interfaz sencilla y fácil de utilizar aumentará las posibilidades de seguir con el tratamiento dado.
 - Creemos que las teleconsultas con el personal médico disminuirá el abandono durante el tratamiento.
 - Creemos que el registro de controles de hemoglobina permitirá verificar si el tratamiento contra la anemia esta progresando positivamente.
 
@@ -103,7 +103,7 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 >**Creemos que** incorporar las teleconsultas con personal médico especializado **permitirá alcanzar los 50 usuarios que siguieron su tratamiento sin abandonar ningún día en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos los siguientes indicadores:** El 95 % de las teleconsultas realizadas fueron resueltas en 24 horas.
 
->**Creemos que**. **Sabremos que hemos tenido éxito cuando**
+>**Creemos que** implementar un registro de control de hemoglobina **aumentará la probabilidad de realizar el tratamiento contra la anemia en un 15% en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos las siguientes estadísticas:** El 75% de los usuarios registrados se ha realizado al menos tres controles de hemoglobina en un mes.
 
 ##### 1.2.2.4 Lean UX Canvas
 
