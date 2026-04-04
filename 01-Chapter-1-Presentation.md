@@ -41,6 +41,11 @@ De acuerdo con **Merino Loor et al. (2022)**, la anemia constituye un problema d
 En esta sección, aplicaremos la herramienta Lean UX para presentar la visión del modelo de negocio que nuestro producto de software utilizará durante todo el desarrollo de la aplicación. Esta herramienta está dividida en cuatro partes: El desarrollo del problema (*Problem Statement*), los supuestos del problema (*Assumptions*), las hipótesis (*Hypothesis Statements*) y el gráfico que resuma el desarrollo del *Lean UX* (*Lean UX Canvas*).
 
 ##### 1.2.2.1 Lean UX Problem Statements
+
+Nuestra aplicación móvil de prevención y seguimiento de la anemia busca controlar el tratamiento de la anemia en niños de hasta 5 años, conectando a los familiares o cuidadores del niño con personal médico, como enfermeros(as) y nutricionistas. A través de nuestro servicio, buscamos que los usuarios puedan seguir el tratamiento sin tener ningún problema con las recetas, la alimentación y las citas programadas.
+
+
+
 ##### 1.2.2.2 Lean UX Assumptions
 ##### 1.2.2.3 Lean UX Hypothesis Statements
 ##### 1.2.2.4 Lean UX Canvas
