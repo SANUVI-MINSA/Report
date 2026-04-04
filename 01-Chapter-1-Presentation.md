@@ -17,6 +17,8 @@ La persistencia de la anemia infantil en niños menores de cinco años, a pesar 
 
 ##### Where (¿Dónde sucede?)
 
+El problema de la anemia se presenta en el Perú, a nivel nacional, en gestantes que acceden a los establecimientos de salud registrados en el Sistema de Información del Estado Nutricional (HIS). Durante el periodo de enero a marzo de 2025, se evaluaron 144,577 gestantes, de las cuales 26,306 presentaron anemia, lo que representa una prevalencia del 18.20% a nivel nacional **(Instituto Nacional de Salud [INS], 2025)**. A nivel departamental, se observan diferencias significativas en la distribución de la anemia. Por ejemplo, regiones como Apurímac (34.02%), Huancavelica (31.53%) y Ayacucho (23.59%) presentan mayores porcentajes de anemia en gestantes, evidenciando una mayor vulnerabilidad en zonas andinas.
+
 ##### When (¿Desde cuándo y con qué frecuencia?)
 
 ##### Why (¿Por qué es un problema?)
