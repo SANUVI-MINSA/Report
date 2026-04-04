@@ -39,3 +39,15 @@ https://www.sap.org.ar/storage/app/media/pdf/consensos_deficiencia-de-hierro-y-a
 - Bustamante, E., Vásquez-Velásquez, C., Tapia, V., & Gonzales, G. F. (2025). La anemia en el Perú: ¿hay necesidad de suplementación y fortificación universal de alimentos con hierro? Anales de la Facultad de Medicina, 86(2), 212–221.
 
 http://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S1025-55832025000200016
+
+- Merino Loor, M. J., Toro Merino, D. A., & Méndez Rengel, M. A. (2022). Impacto de la anemia y deficiencia de hierro en el desarrollo cognitivo en la primera infancia en el Ecuador: una revisión bibliográfica. Revista Mikarimin, 8(3), 71–84.
+
+https://revista.uniandes.edu.ec/ojs/index.php/mikarimin/article/view/2717
+
+- Instituto Nacional de Salud. (2023). Perú: Indicadores nutricionales en niños menores de 3 y 5 años. Sistema de Información del Estado Nutricional (SIEN-HIS), periodo enero a diciembre 2023. Centro Nacional de Alimentación, Nutrición y Vida Saludable.
+
+https://www.gob.pe/institucion/ins/informes-publicaciones/5474586-indicadores-ninos-2023-final-base-de-datos-his-minsa-anemia-oms-2024
+
+- RPP Noticias. (2023, noviembre 21). Anemia infantil en el Perú: ¿Cuáles son las consecuencias en el desarrollo de los niños y niñas?
+
+https://rpp.pe/campanas/valor-compartido/anemia-infantil-en-el-peru-cuales-son-las-consecuencias-en-el-desarrollo-de-los-ninos-y-ninas-noticia-1518254?ref=rpp
