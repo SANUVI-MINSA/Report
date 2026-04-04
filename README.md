@@ -141,7 +141,7 @@
     * [3.1.4.4 Mobile Applications User Flow Diagrams](04-chap3-solution-ui-ux-design.md#3144-mobile-applications-user-flow-diagrams)
     * [3.1.4.5 Mobile Applications Prototyping](04-chap3-solution-ui-ux-design.md#3145-mobile-applications-prototyping)
 
-## [Capítulo IV: Product Implementation & Validation](05-chap4-product-implementation-&-validation.md)
+## [Capítulo IV: Product Implementation & Validation](04-Chapter-4-Product-Implementation-%26-Validation.md)
 
 * [4.1 Software Configuration Management](05-chap4-product-implementation-&-validation.md#41-software-configuration-management)
 
