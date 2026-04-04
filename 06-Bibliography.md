@@ -48,6 +48,6 @@ https://revista.uniandes.edu.ec/ojs/index.php/mikarimin/article/view/2717
 
 https://www.gob.pe/institucion/ins/informes-publicaciones/5474586-indicadores-ninos-2023-final-base-de-datos-his-minsa-anemia-oms-2024
 
-- RPP Noticias. (2023, noviembre 21). Anemia infantil en el Perú: ¿Cuáles son las consecuencias en el desarrollo de los niños y niñas?
+- Zavaleta, N., & Astete-Robilliard, L. (2017). Efecto de la anemia en el desarrollo infantil: consecuencias a largo plazo. Revista Peruana de Medicina
 
-https://rpp.pe/campanas/valor-compartido/anemia-infantil-en-el-peru-cuales-son-las-consecuencias-en-el-desarrollo-de-los-ninos-y-ninas-noticia-1518254?ref=rpp
+https://www.redalyc.org/pdf/363/36353911020.pdf
