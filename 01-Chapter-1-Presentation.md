@@ -90,7 +90,10 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### E. Feature Assumptions
 
-
+- Creemos que un registro de dosis diarias de hierro aumentará el consumo correcto de la medicina durante el tratamiento contra la anemia.
+- Creemos que un mapa que muestre las postas médicas mas cercanas permitirá al usuario atender a las citas médicas con mayor facilidad.
+- Creemos que las teleconsultas con el personal médico disminuirá el abandono durante el tratamiento de la anemia.
+- Creemos que el registro de controles de hemoglobina permitirá verificar si el tratamiento contra la anemia esta progresando positivamente.
 
 ##### 1.2.2.3 Lean UX Hypothesis Statements
 ##### 1.2.2.4 Lean UX Canvas
