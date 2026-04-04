@@ -6,6 +6,21 @@
 
 ### 1.2 Solution Profile
 #### 1.2.1 Antecedentes y problemática
+
+##### Who (¿Quiénes se ven afectados?)
+
+##### What (¿Qué ocurre?)
+
+##### Where (¿Dónde sucede?)
+
+##### When (¿Desde cuándo y con qué frecuencia?)
+
+##### Why (¿Por qué es un problema?)
+
+##### How (¿Cómo se manifiesta?)
+
+##### How Much (¿Cuál es el impacto cuantitativo?)
+
 #### 1.2.2 Lean UX Process
 ##### 1.2.2.1 Lean UX Problem Statements
 ##### 1.2.2.2 Lean UX Assumptions
