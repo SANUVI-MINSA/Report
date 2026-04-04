@@ -66,7 +66,7 @@
     * [1.2.2.4 Lean UX Canvas](02-chap1-introduction.md#1224-lean-ux-canvas)
 * [1.3 Segmentos objetivo](02-chap1-introduction.md#13-segmentos-objetivo)
 
-## [Capítulo II: Requirements Development and Software Solution Design](cap2-requirements-elicitation-and-analysis.md)
+## [Capítulo II: Requirements Development and Software Solution Design](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md)
 
 * [2.1 Competidores](03-chap2-requirements-elicitation-and-analysis.md#21-competidores)
 
