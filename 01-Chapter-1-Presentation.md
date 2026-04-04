@@ -83,23 +83,23 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### D. Business Outcome Assumptions
 
-- Creemos que podremos disminuir el abandono durante el tratamiento contra la anemia en un 10% en un año.
-- Creemos que podremos alcanzar los 100 usuarios que completaron su tratamiento contra la anemia en 6 meses.
+- Creemos que podremos disminuir el abandono durante el tratamiento contra la anemia en un 10 % en un año.
+- Creemos que podremos alcanzar los 100 usuarios que completaron su tratamiento en 6 meses.
 - Creemos que podremos alcanzar los 50 usuarios que siguieron su tratamiento sin abandonar ningún día en 6 meses.
 - Creemos que podremos alcanzar los 200 usuarios registrados en 6 meses.
 
 ##### E. Feature Assumptions
 
 - Creemos que un registro de dosis diarias de hierro aumentará el consumo correcto de la medicina durante el tratamiento contra la anemia.
-- Creemos que un mapa que muestre las postas médicas mas cercanas permitirá al usuario atender a las citas médicas con mayor facilidad.
-- Creemos que las teleconsultas con el personal médico disminuirá el abandono durante el tratamiento de la anemia.
+- Creemos que un una interfaz sencilla y fácil de utilizar aumentará las posibilidades de seguir con el tratamiento dado.
+- Creemos que las teleconsultas con el personal médico disminuirá el abandono durante el tratamiento.
 - Creemos que el registro de controles de hemoglobina permitirá verificar si el tratamiento contra la anemia esta progresando positivamente.
 
 ##### 1.2.2.3 Lean UX Hypothesis Statements
 
 >**Creemos que** al implementar un registro de dosis diarias de hierro **reduciremos la probabilidad de abandono durante el tratamiento de anemia en un 10 %**. **Sabremos que hemos tenido éxito cuando veamos los siguientes resultados:** El 90 % de las dosis programadas de hierro fueron consumidas correctamente y registradas en la aplicación.
 
->**Creemos que**. **Sabremos que hemos tenido éxito cuando**
+>**Creemos que** al implementar una interfaz que sea interactiva y de alta usabilidad **permitirá alcanzar los 100 usuarios que completaron su tratamiento en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos los siguiente:** El 80 % de los usuarios mencionaron que la interfaz fue muy sencilla de utilizar y que facilito la comprensión de terminologías médicas.
 
 >**Creemos que**. **Sabremos que hemos tenido éxito cuando**
 
