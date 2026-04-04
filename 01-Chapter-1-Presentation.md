@@ -54,7 +54,16 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### A. Business Assumptions
 
-
+1. Creemos que los posibles usuarios (padres de familia o cuidadores de niños con anemia) necesitan una guía para tratar la anemia del menor.
+2. Creemos que estas necesidades pueden ser resueltas con una plataforma de seguimiento de la anemia que permita el seguimiento en tiempo real del tratamiento.
+3. Creemos que las dos prioridades número 1 de los usuarios son: Sanar la anemia del menor y establecer hábitos alimenticios para que la anemia no suceda de nuevo.
+4. Creemos que el personal médico especializado tendrá conocimientos sobre la anemia en menores de edad, el tratamiento de la anemia y su cuidado a largo plazo.
+5. Creemos que el personal médico que estará presente en nuestra aplicación móvil serán enfermeros(as) y nutricionistas.
+6. Creemos que 
+7. Creemos que
+8. Creemos que
+9. Creemos que
+10. Creemos que
 
 ##### B. Business Assumptions
 
