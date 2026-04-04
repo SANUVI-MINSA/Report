@@ -1,0 +1,8 @@
+event_storming_1.jpg
+event_storming_2.jpg
+event_storming_3.jpg
+event_storming_4.jpg
+event_storming_bc_monitoring.png
+event_storming_bc_paso1.jpg
+event_storming_general.jpg
+ETC

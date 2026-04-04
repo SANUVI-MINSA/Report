@@ -1,0 +1,2 @@
+bc_comp_monitoring.png
+bc_comp_planning.png
