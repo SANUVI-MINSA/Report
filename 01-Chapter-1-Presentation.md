@@ -51,6 +51,27 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 ¿Cómo podemos mejorar la información sobre el tratamiento contra la anemia para disminuir en un 10% el abandono al tratamiento de la anemia por parte de los padres de familia?
 
 ##### 1.2.2.2 Lean UX Assumptions
+
+##### A. Business Assumptions
+
+
+
+##### B. Business Assumptions
+
+
+
+##### C. Business Assumptions
+
+
+
+##### D. Business Assumptions
+
+
+
+##### E. Business Assumptions
+
+
+
 ##### 1.2.2.3 Lean UX Hypothesis Statements
 ##### 1.2.2.4 Lean UX Canvas
 
