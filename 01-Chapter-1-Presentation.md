@@ -9,9 +9,11 @@
 
 ##### Who (¿Quiénes se ven afectados?)
 
-El problema de la anemia en el Perú afecta principalmente a poblaciones vulnerables, en especial a niñas y niños menores de cinco años, gestantes y adolescentes, quienes presentan mayor riesgo debido a factores biológicos, nutricionales y sociales (UNICEF, 2025).
+La anemia en el Perú afecta principalmente a niños menores de cinco años, especialmente menores de tres años, gestantes y adolescentes, considerados grupos vulnerables **(UNICEF, 2025)** . Asimismo, la prevalencia en la población infantil atendida en servicios de salud varía según factores como edad, altitud y criterios diagnósticos **(Hernández-Vásquez et al., 2025)**
 
 ##### What (¿Qué ocurre?)
+
+La persistencia de la anemia infantil en niños menores de cinco años, a pesar de la disponibilidad de tratamientos con hierro, lo cual evidencia deficiencias tanto en la adherencia al tratamiento como en su efectividad clínica. En este contexto, una gran proporción de pacientes no sigue adecuadamente las indicaciones médicas, lo que limita la recuperación y contribuye a la continuidad del problema **(Choque-Medrano & Gutarra-Vilchez, 2025)**. Diversos estudios muestran que la adherencia al tratamiento es baja, alcanzando solo el 26,8 % de cumplimiento, mientras que la mayoría de los niños no sigue correctamente la terapia indicada, lo que constituye una barrera crítica para el control de la anemia. Asimismo, el problema se agrava debido al fracaso del tratamiento, definido como la persistencia de niveles bajos de hemoglobina (<11 g/dL) incluso después de seis meses de suplementación con hierro, lo que indica que las intervenciones no están logrando los resultados esperados en todos los pacientes **(Sulca Orellana, 2021)**
 
 ##### Where (¿Dónde sucede?)
 
