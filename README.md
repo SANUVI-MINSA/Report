@@ -187,7 +187,7 @@
   * [4.3.2 Registro de Entrevistas](05-chap4-product-implementation-&-validation.md#432-registro-de-entrevistas)
   * [4.3.3 Evaluaciones según heurísticas](05-chap4-product-implementation-&-validation.md#433-evaluaciones-según-heurísticas)
 
-## [Conclusiones](06-conclusions.md)
+## [Conclusiones](05-Conclusions.md)
 
 * [Conclusiones y recomendaciones](06-conclusions.md#conclusiones-y-recomendaciones)
 * [Video App Validation](06-conclusions.md#video-app-validation)
