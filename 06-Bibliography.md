@@ -31,3 +31,11 @@ https://www.cureus.com/articles/385945-assessment-of-adherence-to-oral-iron-supp
 - Martinez-Torres, V., Torres, N., Davis, J. A., & Corrales-Medina, F. F. (2023). Anemia and associated risk factors in pediatric patients. Pediatric Health, Medicine and Therapeutics, 14, 267–280.
 
 https://pmc.ncbi.nlm.nih.gov/articles/PMC10488827/
+
+- Comité Nacional de Hematología, Oncología y Medicina Transfusional, & Comité Nacional de Nutrición. (2017). Deficiencia de hierro y anemia ferropénica: Guía para su prevención, diagnóstico y tratamiento. Archivos Argentinos de Pediatría, 115(Supl. 4), S68–S82.
+
+https://www.sap.org.ar/storage/app/media/pdf/consensos_deficiencia-de-hierro-y-anemia-ferropenica-guia-para-su-prevencion-diagnostico-y-tratamiento--71.pdf
+
+- Bustamante, E., Vásquez-Velásquez, C., Tapia, V., & Gonzales, G. F. (2025). La anemia en el Perú: ¿hay necesidad de suplementación y fortificación universal de alimentos con hierro? Anales de la Facultad de Medicina, 86(2), 212–221.
+
+http://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S1025-55832025000200016
