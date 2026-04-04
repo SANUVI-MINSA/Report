@@ -19,3 +19,11 @@ http://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S1727-558X20250002000
 - Sulca Orellana, R. (2021). Factores de riesgo para fracaso del tratamiento de anemia en niños menores de 5 años atendidos en el Centro de Salud San Juan de Salinas, 2019–2020 [Proyecto de investigación].
 
 https://repositorio.upch.edu.pe/entities/publication/b6edb675-bda1-4459-959f-735547ba4717
+
+- McCarthy, E. K., Murray, D. M., & Kiely, M. E. (2022). Iron deficiency during the first 1000 days of life: Are we doing enough to protect the developing brain? Proceedings of the Nutrition Society, 81, 108–118.
+
+https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE766176048B398D618D01898BB2E5A4/S0029665121002858a.pdf/iron-deficiency-during-the-first-1000-days-of-life-are-we-doing-enough-to-protect-the-developing-brain.pdf
+
+- Ambreen, A., Habib, A., Sajjad, A. H., Malik, A. J., & Javed, Q. (2025). Assessment of adherence to oral iron supplementation guidelines in patients with iron deficiency anemia: A cross-sectional study. Cureus, 17(7), e87681.
+
+https://www.cureus.com/articles/385945-assessment-of-adherence-to-oral-iron-supplementation-guidelines-in-patients-with-iron-deficiency-anemia-a-cross-sectional-study#!/
