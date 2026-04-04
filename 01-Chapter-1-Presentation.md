@@ -13,6 +13,14 @@ En Sanuvi, buscamos contribuir a la transformación digital del sector salud med
 
 #### 1.1.2 Perfiles de integrantes del equipo
 
+| Foto | Información |
+|------|------------|
+| ![Vitaly](resources/images/chapter-I/Vitaly.png) | **Vitaly Arturo Baca Camargo**  <br> **Código:** U20231C426  <br> **Carrera:** Ingeniería de Software – UPC  <br><br> **Perfil:**  <br> Estudiante de Ingeniería de Software con interés en la resolución de problemas en diversos sectores mediante el uso de tecnología. Apasionado por el diseño de interfaces de usuario (UI) y enfocado en el desarrollo de soluciones arquitectónicas eficientes y escalables, orientadas a mejorar la experiencia del usuario y el rendimiento de los sistemas.<br> <br> **Habilidades Técnicas:**  <br> - C# <br> - MySQL, MongoDB <br> - DDD  <br> - Git, Git Flow <br> - Raliway <br><br>**Habilidades Sociales** <br> -  Trabajo en equipo y colaboración en entornos ágile <br> - Comunicación efectiva para coordinación técnica y funcional<br> - Pensamiento analítico y resolución de problemas<br> - Adaptabilidad y aprendizaje continuo <br> |
+| ![Integrante2](ruta/de/la/imagen.jpg) | **Nombre Completo**  <br> **Código:** XXXXXXXX  <br> **Carrera:** Ingeniería de Software – UPC  <br><br> **Perfil:**  <br> [Descripción breve del perfil]  <br><br> **Habilidades Técnicas:**  <br> - Lenguajes  <br> - Frameworks  <br> - Herramientas  <br><br> **Habilidades Sociales:**  <br> [Qué aportará al proyecto] |
+| ![Integrante3](ruta/de/la/imagen.jpg) | **Nombre Completo**  <br> **Código:** XXXXXXXX  <br> **Carrera:** Ingeniería de Software – UPC  <br><br> **Perfil:**  <br> [Descripción breve del perfil]  <br><br> **Habilidades Técnicas:**  <br> - Lenguajes  <br> - Frameworks  <br> - Herramientas  <br><br> **Habilidades Sociales:**  <br> [Qué aportará al proyecto] |
+| ![Integrante4](ruta/de/la/imagen.jpg) | **Nombre Completo**  <br> **Código:** XXXXXXXX  <br> **Carrera:** Ingeniería de Software – UPC  <br><br> **Perfil:**  <br> [Descripción breve del perfil]  <br><br> **Habilidades Técnicas:**  <br> - Lenguajes  <br> - Frameworks  <br> - Herramientas  <br><br> **Habilidades Sociales:**  <br> [Qué aportará al proyecto] |
+| ![Integrante5](ruta/de/la/imagen.jpg) | **Nombre Completo**  <br> **Código:** XXXXXXXX  <br> **Carrera:** Ingeniería de Software – UPC  <br><br> **Perfil:**  <br> [Descripción breve del perfil]  <br><br> **Habilidades Técnicas:**  <br> - Lenguajes  <br> - Frameworks  <br> - Herramientas  <br><br> **Habilidades Sociales:**  <br> [Qué aportará al proyecto] |
+
 ### 1.2 Solution Profile
 #### 1.2.1 Antecedentes y problemática
 #### 1.2.2 Lean UX Process
