@@ -101,7 +101,7 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 >**Creemos que** al implementar una interfaz que sea interactiva y de alta usabilidad **permitirá alcanzar los 100 usuarios que completaron su tratamiento en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos los siguiente:** El 80 % de los usuarios mencionaron que la interfaz fue muy sencilla de utilizar y que facilito la comprensión de terminologías médicas.
 
->**Creemos que**. **Sabremos que hemos tenido éxito cuando**
+>**Creemos que** incorporar las teleconsultas con personal médico especializado **permitirá alcanzar los 50 usuarios que siguieron su tratamiento sin abandonar ningún día en 6 meses**. **Sabremos que hemos tenido éxito cuando veamos los siguientes indicadores:** El 95 % de las teleconsultas realizadas fueron resueltas en 24 horas.
 
 >**Creemos que**. **Sabremos que hemos tenido éxito cuando**
 
