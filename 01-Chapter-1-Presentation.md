@@ -113,7 +113,7 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 |**1. Problema de Negocio**|**5. Ideas de las soluciones**|**2. Resultados comerciales**|
 |-|-|-|
-||||
+|El estado actual de los tratamientos de la anemia dependen de asistir cada cierto tiempo a tu cita médica, donde te entregan una receta y con ello, comprar los suplementos de hierro necesarios para el niño enfermo. Para el control de las dietas recetadas, se utilizan papeles engorrosos sin imagenes, lo que dificulta su entendimiento. Estos procedimientos, si no se siguen correctamente, puede ocasionar que el padre de familia abandone el tratamiento. Además, hay programas sociales creados por el gobierno que tienen la intención de disminuir el abandono durante el tratamiento, pero no consiguieron las cifras esperadas. Lo que el tratamiento y programas actuales no solucionan es la descontinuidad durante el tratamiento de la anemia ferropénica. Nuestra aplicación abordará este problema mediante una plataforma que digitaliza el tratamiento de la anemia de una manera sencilla de entender.||- Disminuir el abandono durante el tratamiento contra la anemia en un 10 % en un año.<br> - Incrementar en un 20% los registros de análisis de hemoglobina en la aplicación.<br> - Incrementar en un 20% el uso de las teleconsultas médicas en la app.<br> - Aumentar la cantidad de personas que desean realizar el tratamiento en un 15% en 6 meses.|
 |**3. Usuarios y Clientes**||**4. Beneficios del Usuario**|
 ||||
 |**6. Hipótesis**|**7. ¿Qué es lo más importante que necesitamos aprender primero?**|**8. ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para resolver las dudas y para hacer siguiente más importante?**|
