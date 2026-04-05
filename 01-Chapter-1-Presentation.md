@@ -111,4 +111,12 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### 1.2.2.4 Lean UX Canvas
 
+|**1. Problema de Negocio**|**5. Ideas de las soluciones**|**2. Resultados comerciales**|
+|-|-|-|
+||||
+|**3. Usuarios y Clientes**||**4. Beneficios del Usuario**|
+||||
+|**6. Hipótesis**|**7. ¿Qué es lo más importante que necesitamos aprender primero?**|**8. ¿Cuál es la menor cantidad de trabajo que necesitamos hacer para resolver las dudas y para hacer siguiente más importante?**|
+||||
+
 ### 1.3 Segmentos objetivo
