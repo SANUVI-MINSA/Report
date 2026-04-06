@@ -128,6 +128,9 @@ De igual manera, varios programas de salud contra la anemia se han implementado 
 
 ##### 1.2.2.4 Lean UX Canvas
 
+<img src="resources/images/chapter-I/Lean-Ux-Canvas/Lean UX Canvas.png" 
+     alt="Lean UX Canvas" 
+     style="display: block; margin: 0 auto;" />
 
 ### 1.3 Segmentos objetivo
 
