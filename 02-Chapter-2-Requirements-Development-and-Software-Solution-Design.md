@@ -6,6 +6,74 @@
 
 ### 2.2 Entrevistas
 #### 2.2.1 Diseño de entrevistas
+<h4>Segmento Objetivo 1: Madres y Cuidadores de niños con anemia</h4> 
+
+<h4>Preguntas Personales:</h4> 
+
+- ¿Cuál es su nombre?<br>
+- ¿Qué edad tiene?<br>
+- ¿Cuál es su estado civil?<br>
+- ¿Cuál es su ocupación?<br>
+- ¿En qué distrito vive?<br>
+- ¿Cuál es su relación con el niño (madre, padre, cuidador)?<br>
+
+<h4>Contexto y antecedentes:</h4> 
+
+- ¿Su hijo(a) ha sido diagnosticado con anemia? ¿Hace cuánto tiempo?<br>
+- ¿Cómo fue su experiencia al recibir el diagnóstico?<br>
+
+<h4>Comportamiento y uso actual:</h4> 
+
+- ¿Cómo realiza actualmente el seguimiento del tratamiento?<br>
+- ¿Con qué frecuencia administra el suplemento de hierro?<br>
+- ¿Ha olvidado alguna vez una dosis? ¿Por qué?<br>
+- ¿Cómo controla las citas médicas?<br>
+
+<h4>Frustraciones:</h4> 
+
+- ¿Qué es lo más difícil de seguir el tratamiento contra la anemia?<br>
+- ¿Qué problemas ha tenido con las indicaciones médicas?<br>
+
+<h4>Objetivos:</h4> 
+
+- ¿Qué le gustaría lograr con el tratamiento de su hijo?<br>
+
+<h4>Tecnología y canales digitales:</h4> 
+
+- ¿Qué tipo de celular utiliza?<br>
+- ¿Qué aplicaciones usa con frecuencia?<br>
+- ¿Qué tan cómoda/o se siente usando aplicaciones móviles?<br>
+
+<h4>Preferencias y comportamiento digital:</h4> 
+
+- ¿Qué tipo de contenido le resulta más fácil de entender? (texto, imágenes, videos)<br>
+
+<h4>Necesidades:</h4> 
+
+- ¿Qué tipo de ayuda le gustaría recibir para mejorar el tratamiento?<br>
+- ¿Qué funcionalidades le gustaría en una app? (recordatorios, dietas, seguimiento, contacto con médicos)<br>
+
+<h4>Confianza y percepción:</h4> 
+
+- ¿Qué le generaría confianza al usar una aplicación de salud y qué le haría dejar de usarla?<br>
+
+<h4>Personalidad e influencias:</h4> 
+
+- ¿Se considera una persona organizada o más improvisada?<br>
+- ¿Suele seguir indicaciones médicas al pie de la letra?<br>
+
+
+<h4>Segmento Objetivo 2: Personal de salud (enfermeros/as y nutricionistas)</h4> 
+
+<h4>Preguntas Personales:</h4> 
+
+- ¿Cuál es su nombre?<br>
+- ¿Qué edad tiene?<br>
+- ¿Cuál es su profesión o especialidad?<br>
+- ¿Dónde trabaja actualmente?<br>
+- ¿Cuántos años de experiencia tiene?<br>
+
+
 #### 2.2.2 Registro de entrevistas
 #### 2.2.3 Análisis de entrevistas
 
