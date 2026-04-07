@@ -73,6 +73,46 @@
 - ¿Dónde trabaja actualmente?<br>
 - ¿Cuántos años de experiencia tiene?<br>
 
+<h4>Nutrición y manejo alimenticio:</h4> 
+
+- ¿Qué recomendaciones nutricionales suele brindar a pacientes con anemia?<br>
+- ¿Qué tan importante considera la alimentación en el tratamiento de la anemia?<br>
+- ¿Qué problemas ha identificado en la alimentación de los pacientes (costumbres, acceso a alimentos, desconocimiento, etc.)?<br>
+
+<h4>Comportamiento actual:</h4> 
+
+- ¿Cómo realiza el seguimiento de pacientes con anemia?<br>
+- ¿Qué herramientas utiliza actualmente? (Papel, Excel, etc.)<br>
+- ¿Cómo organiza la información de sus pacientes?<br>
+
+<h4>Frustraciones:</h4> 
+
+- ¿Qué tan frecuente es el abandono del tratamiento?<br>
+
+<h4>Objetivos:</h4> 
+
+- ¿Qué le gustaría mejorar en el seguimiento de pacientes?<br>
+- ¿Qué resultados considera ideales en un tratamiento exitoso?<br>
+
+<h4>Tecnología y herramientas:</h4> 
+
+- ¿Qué herramientas tecnológicas usa con mayor frecuencia?<br>
+- ¿Qué tan cómodo se siente usando nuevas tecnologías?<br>
+
+<h4>Necesidades:</h4> 
+
+- ¿Qué información necesita para hacer un mejor seguimiento?<br>
+- ¿Qué funcionalidades considera esenciales en una app? (alertas, reportes, historial, teleconsultas, etc.)<br>
+
+<h4>Confianza y adopción:</h4> 
+
+- ¿Qué le generaría confianza para usar una aplicación médica?<br>
+- ¿Qué barreras ve en la implementación de una solución digital?<br>
+
+<h4>Personalidad y trabajo:</h4> 
+
+- ¿Se considera una persona organizada en el manejo de pacientes?<br>
+- ¿Qué tan importante es la eficiencia en su trabajo diario?<br>
 
 #### 2.2.2 Registro de entrevistas
 #### 2.2.3 Análisis de entrevistas
