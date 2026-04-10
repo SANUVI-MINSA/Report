@@ -61,6 +61,9 @@ para ello se siguio el proceso de 8 etapas.
 
 
 ##### 2.5.1.1 Candidate Context Discovery
+
+A partir del modelo de Event Storming, se llevo a cabo la seccion Candidate Context Discovery para identificar los bounded context para resolver el subdominio del problema.
+
 ##### 2.5.1.2 Domain Message Flows Modeling
 ##### 2.5.1.3 Bounded Context Canvases
 #### 2.5.2 Context Mapping
