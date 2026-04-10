@@ -23,6 +23,43 @@
 
 ### 2.5 Strategic-Level Domain-Driven Design
 #### 2.5.1 EventStorming
+
+Para la construcion del Event Storming, se cordino obtener una primera version del modelo del dominio
+para ello se siguio el proceso de 8 etapas.
+
+**Paso 1:** lluvia de ideas de los eventos del dominio relacionado al dominio problematico que se esta solucionando.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/1-step.png" alt="Paso-1">
+
+**Paso 2:** Ordenar los eventos del dominio definiendo los timelines.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/2-step.png" alt ="Paso-2">
+
+**Paso 3:**  Identificar puntos problemáticos (paint points) en el proceso.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/3-step.png" alt ="Paso-3">
+
+**Paso 4:**  Identificar eventos comerciales importantes (pivotal points) que indiquen un cambio en el contexto o fase del negocio.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/4-step.png" alt ="Paso-4">
+
+**Paso 5:**  Definir comandos que desencadenan eventos. Tambien definir las politicas que desencadenan la ejecución de comandos.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/5-step.png" alt ="Paso-5">
+
+**Paso 6:** Identificar read models, los cuales son modelos de lectura o vistas que los usuarios necesitan para tomar.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/6-step.png" alt="Paso-6">
+
+**Paso 7:**  Identificar sistemas externos que se conectan con el dominio.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/7-step.png" alt="Paso-7">
+
+**Paso 8:**  Definir aggregates agrupando comandos y eventos relacionados en unidades lógicas.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/8-step.png" alt="Paso-8">
+
+
 ##### 2.5.1.1 Candidate Context Discovery
 ##### 2.5.1.2 Domain Message Flows Modeling
 ##### 2.5.1.3 Bounded Context Canvases
