@@ -157,12 +157,12 @@
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="" alt="Entrevista a Edith Garcia"></div></td>
+    <td><div align="center"><img src="https://github.com/SANUVI-MINSA/Report/blob/chapter-2/entrevistas/resources/images/chapter-II/Interviews/Edith%20Garcia%20evidencia.png" alt="Entrevista a Edith Garcia"></div></td>
   </tr>
   <tr>
     <td>Link</td>
     <td>
-		<p><a target="_blank"  href="" title="Title">Microsoft Stream</p>
+		<p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQC2en2mEdRTQ7FL_Eqr7FZMAUohYySLUDOehBv9Hwu0BU4?e=bzfZsy&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" title="Title">Microsoft Stream</p>
 	</td>
   </tr>
   <tr>
