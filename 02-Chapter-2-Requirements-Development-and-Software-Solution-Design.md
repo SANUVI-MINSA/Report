@@ -115,7 +115,184 @@
 - ¿Qué tan importante es la eficiencia en su trabajo diario?<br>
 
 #### 2.2.2 Registro de entrevistas
+En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
+**Segmento 1:** 
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #1<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>0000 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>infoinfoinfo</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td><p><a target="_blank"  href="https" title="Title">Microsoft Stream</p></td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>0:00 min - 0:00 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		infoinfoinfoinfoinfoinfoinfo
+</td>
+  </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #2<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>0000 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>infoinfoinfo</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td><p><a target="_blank"  href="https" title="Title">Microsoft Stream</p></td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>0:00 min - 0:00 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		infoinfoinfoinfoinfoinfoinfo
+</td>
+  </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>0000 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>infoinfoinfo</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td><p><a target="_blank"  href="https" title="Title">Microsoft Stream</p></td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>0:00 min - 0:00 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		infoinfoinfoinfoinfoinfoinfo
+</td>
+  </tr>
+</tbody>
+</table>
+			
 **Segmento 2:**
 
 <table>
@@ -175,6 +352,122 @@
     <td>Resumen</td>
     <td>
 		La entrevistada, enfermera con 20 años de experiencia en el Hospital Rebagliati, considera que la alimentación es clave en el tratamiento de la anemia y que el seguimiento debe empezar desde los primeros signos de riesgo, no cuando la enfermedad ya es severa. Señala que actualmente se apoya en Excel y en sistemas internos del hospital, pero cree que una app sería útil si fuera simple, visual, amigable y con alertas o recordatorios. Además, menciona que para hacer un buen seguimiento se debe considerar también el contexto social y los hábitos del paciente, y que la confianza en una herramienta digital dependerá de su utilidad real y de opiniones de otros usuarios.
+</table>
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #2<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>0000 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>infoinfoinfo</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td><p><a target="_blank"  href="https" title="Title">Microsoft Stream</p></td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>0:00 min - 0:00 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		infoinfoinfoinfoinfoinfoinfo
+</td>
+  </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+</colgroup>
+<thead>
+  <tr>
+    <th colspan="2">Entrevista #3<br></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Nombre</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Apellidos</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Edad</td>
+    <td>0000 años</td>
+  </tr>
+  <tr>
+    <td>Distrito</td>
+    <td>info</td>
+  </tr>
+  <tr>
+    <td>Aplicaciones Usadas</td>
+    <td>infoinfoinfo</td>
+  </tr>
+  <tr>
+    <td>Motivacion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Frustracion</td>
+    <td>info.</td>
+  </tr>
+  <tr>
+    <td>Evidencia</td>
+    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+  </tr>
+  <tr>
+    <td>Link</td>
+    <td><p><a target="_blank"  href="https" title="Title">Microsoft Stream</p></td>
+  </tr>
+  <tr>
+    <td>Duracion<br></td>
+    <td>0:00 min - 0:00 min</td>
+  </tr>
+  <tr>
+    <td>Resumen</td>
+    <td>
+		infoinfoinfoinfoinfoinfoinfo
+</td>
+  </tr>
+</tbody>
 </table>
 
 #### 2.2.3 Análisis de entrevistas
