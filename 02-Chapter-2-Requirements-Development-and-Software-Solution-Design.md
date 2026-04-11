@@ -166,12 +166,12 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>0:00 min - 0:00 min</td>
+    <td>0:15 min - 5:23 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
     <td>
-		infoinfoinfoinfoinfoinfoinfo
+		Sonia es una enfermera de Chorrillos que, aunque sepa administrar correctamente las medicinas de su hijo, se complica un poco con la cocina y sus horarios rotativos. Está muy pendiente de su hijo y busca una app sencilla, que no sea dificil de utilizar y que le mande videos con ideas de dietas, porque siente que se aprende mejor viendo videos.
 </td>
   </tr>
 </tbody>
