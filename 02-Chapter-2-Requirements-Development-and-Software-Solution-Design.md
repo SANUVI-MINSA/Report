@@ -11,6 +11,10 @@
 
 ### 2.3 Needfinding
 #### 2.3.1 User Personas
+
+**Segmento 2**
+
+<img src="resources/images/chapter-II/User-Person/User Persona Leslie Rodriguez.png">
 #### 2.3.2 User Task Matrix
 #### 2.3.3 User Journey Mapping
 #### 2.3.4 Empathy Mapping
