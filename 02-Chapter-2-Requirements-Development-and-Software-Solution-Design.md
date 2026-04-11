@@ -345,7 +345,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   <tr>
     <td>Duracion<br></td>
     <td>
-		0:00 min - 12:02 min
+		22:44 min - 35:20 min
 	</td>
   </tr>
   <tr>
@@ -365,31 +365,31 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 <tbody>
   <tr>
     <td>Nombre</td>
-    <td>info</td>
+    <td>Carmen Lucero</td>
   </tr>
   <tr>
     <td>Apellidos</td>
-    <td>info</td>
+    <td>Rivas Sanguilera</td>
   </tr>
   <tr>
     <td>Edad</td>
-    <td>0000 años</td>
+    <td>36 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
-    <td>info</td>
+    <td>Jesus María</td>
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td>infoinfoinfo</td>
+    <td>Excel, word, SO del hospital</td>
   </tr>
   <tr>
     <td>Motivacion</td>
-    <td>info.</td>
+    <td>Mejorar la recuperación del paciente mediante una buena alimentación.</td>
   </tr>
   <tr>
     <td>Frustracion</td>
-    <td>info.</td>
+    <td>Baja frecuencia de controles y poca continuidad en el seguimiento.</td>
   </tr>
   <tr>
     <td>Evidencia</td>
@@ -401,12 +401,12 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>0:00 min - 0:00 min</td>
+    <td>35:22 min - 46:07 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
     <td>
-		infoinfoinfoinfoinfoinfoinfo
+		La entrevistada, nutricionista con cerca de 10 años de experiencia, señala que la alimentación es clave en el tratamiento de la anemia junto con la suplementación de hierro. Identifica problemas como la falta de adherencia, el desconocimiento y hábitos alimenticios inadecuados, lo que contribuye al abandono frecuente del tratamiento. Considera fundamental mejorar la comunicación y el seguimiento del paciente, y valora aplicaciones simples que incluyan recordatorios y mensajes claros para reforzar la adherencia.
 </td>
   </tr>
 </tbody>
@@ -423,31 +423,31 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 <tbody>
   <tr>
     <td>Nombre</td>
-    <td>info</td>
+    <td>Paolo</td>
   </tr>
   <tr>
     <td>Apellidos</td>
-    <td>info</td>
+    <td>Salas</td>
   </tr>
   <tr>
     <td>Edad</td>
-    <td>0000 años</td>
+    <td>39 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
-    <td>info</td>
+    <td>Jesus Maria</td>
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td>infoinfoinfo</td>
+    <td>Excel, word, chat gpt</td>
   </tr>
   <tr>
     <td>Motivacion</td>
-    <td>info.</td>
+    <td>Brindar una atención de calidad y eficiente pese a limitaciones de tiempo.</td>
   </tr>
   <tr>
     <td>Frustracion</td>
-    <td>info.</td>
+    <td>Alto abandono del tratamiento por parte de los pacientes.</td>
   </tr>
   <tr>
     <td>Evidencia</td>
@@ -459,12 +459,12 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>0:00 min - 0:00 min</td>
+    <td>0:00 min - 22:40 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
     <td>
-		infoinfoinfoinfoinfoinfoinfo
+		El entrevistado, nutricionista con varios años de experiencia en un centro de salud, destaca que la alimentación es esencial en el tratamiento de la anemia, complementando el tratamiento farmacológico y previniendo recaídas. Identifica como principales problemas la desinformación, los hábitos alimenticios inadecuados y factores sociales como el acceso limitado a servicios básicos. Señala que el abandono del tratamiento es muy frecuente, especialmente en niños, debido a la pérdida de interés de los padres y dificultades en el seguimiento. Considera que se debe mejorar el acceso a información, la actualización de datos de los pacientes y el uso de herramientas digitales simples, seguras y accesibles que permitan un seguimiento más eficiente.
 </td>
   </tr>
 </tbody>
