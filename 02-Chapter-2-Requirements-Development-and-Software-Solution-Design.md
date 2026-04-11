@@ -62,7 +62,26 @@ para ello se siguio el proceso de 8 etapas.
 
 ##### 2.5.1.1 Candidate Context Discovery
 
-A partir del modelo de Event Storming, se llevo a cabo la seccion Candidate Context Discovery para identificar los bounded context para resolver el subdominio del problema.
+A partir del modelo de Event Storming, se llevo a cabo la seccion Candidate Context Discovery para identificar los bounded context para resolver el subdominio del problema. 
+
+Se utilizó principalmente la técnica look-for-pivotal-events durante la sesión.
+
+
+Primero, se buscaron eventos clave que indiquen cambios de estado entre diferentes partes del proceso del negocio:
+
+<img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/1.png" alt="1">
+
+Luego, se agruparon los eventos de acuerdo a los principales cambios de contexto.
+
+<img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/2.png" alt="2">
+
+Se trazaron circulos alrededor de los grupos identificados, estableciendo los límites iniciales de los bounded contexts.
+
+<img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/3.png" alt="3">
+
+Finalmente, se seleccionaron nombres para los bounded context. Dando como resultado la definición de 9 bounded contexts y la versión final del Event Storming:
+
+<img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/4.png" alt="4">
 
 ##### 2.5.1.2 Domain Message Flows Modeling
 ##### 2.5.1.3 Bounded Context Canvases
