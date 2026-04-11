@@ -130,31 +130,31 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 <tbody>
   <tr>
     <td>Nombre</td>
-    <td>info</td>
+    <td>Sonia</td>
   </tr>
   <tr>
     <td>Apellidos</td>
-    <td>info</td>
+    <td>Ludeña</td>
   </tr>
   <tr>
     <td>Edad</td>
-    <td>0000 años</td>
+    <td>50 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
-    <td>info</td>
+    <td>Chorrillos</td>
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td>infoinfoinfo</td>
+    <td>Facebook, Tiktok, WhatsApp</td>
   </tr>
   <tr>
     <td>Motivacion</td>
-    <td>info.</td>
+    <td>Sanar la enfermedad de su hijo</td>
   </tr>
   <tr>
     <td>Frustracion</td>
-    <td>info.</td>
+    <td>Falta de información adicional sobre dietas de anemia</td>
   </tr>
   <tr>
     <td>Evidencia</td>
@@ -162,7 +162,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Link</td>
-    <td><p><a target="_blank"  href="https" title="Title">Microsoft Stream</p></td>
+    <td><p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCBVjTBSu1RTZw3C4oyVdOuATc7fGbsjxIc8Xr_s_T1fs4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=YTJxFf" title="Title">Microsoft Stream</p></td>
   </tr>
   <tr>
     <td>Duracion<br></td>
