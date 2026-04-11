@@ -138,7 +138,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Edad</td>
-    <td>50 años</td>
+    <td>40 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
