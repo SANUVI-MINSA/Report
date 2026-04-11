@@ -158,7 +158,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Sonia Ludeña.jpg" alt="Entrevista"></td>
   </tr>
   <tr>
     <td>Link</td>
@@ -334,7 +334,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="https://github.com/SANUVI-MINSA/Report/blob/chapter-2/entrevistas/resources/images/chapter-II/Interviews/Edith%20Garcia%20evidencia.png" alt="Entrevista a Edith Garcia"></div></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Edith Garcia evidencia.png" alt="Entrevista a Edith Garcia"></div></td>
   </tr>
   <tr>
     <td>Link</td>
