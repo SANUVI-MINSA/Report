@@ -188,35 +188,35 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 <tbody>
   <tr>
     <td>Nombre</td>
-    <td>info</td>
+    <td>Jonathan</td>
   </tr>
   <tr>
     <td>Apellidos</td>
-    <td>info</td>
+    <td>Ramírez</td>
   </tr>
   <tr>
     <td>Edad</td>
-    <td>0000 años</td>
+    <td>40 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
-    <td>info</td>
+    <td>Villa Maria del Triunfo</td>
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td>infoinfoinfo</td>
+    <td>WhatsApp, YouTube, Facebook</td>
   </tr>
   <tr>
     <td>Motivacion</td>
-    <td>info.</td>
+    <td>Que su hijo se recupere completamente y mantenerlo saludable</td>
   </tr>
   <tr>
     <td>Frustracion</td>
-    <td>info.</td>
+    <td>Olvido de dosis y dificultad para entender o seguir correctamente las indicaciones médicas</td>
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Jonathan.png" alt="Entrevista"></td>
   </tr>
   <tr>
     <td>Link</td>
@@ -229,7 +229,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   <tr>
     <td>Resumen</td>
     <td>
-		infoinfoinfoinfoinfoinfoinfo
+		Jonathan es un padre de familia de Villa Maria del Triunfo que trabaja en el área de panaderia. Aunque está comprometido con el tratamiento de su hijo con anemia, su rutina laboral y el cansancio hacen que a veces olvide administrar las dosis o seguir correctamente las indicaciones médicas. Busca una solución simple que le ayude con recordatorios, le brinde información clara y le facilite el seguimiento del tratamiento sin complicaciones.
 </td>
   </tr>
 </tbody>
