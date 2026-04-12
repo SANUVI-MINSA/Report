@@ -40,6 +40,9 @@
 <img src="resources/images/chapter-II/User-Journey/User Journey Leslie Rodriguez.png">
 
 #### 2.3.4 Empathy Mapping
+
+<img src="resources/images/chapter-II/Empathy_Map_User/Empathy map Leslie Rodriguez.png">
+
 #### 2.3.5 Ubiquitous Language
 
 ### 2.4 Requirements Specification
