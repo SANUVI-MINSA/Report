@@ -15,8 +15,30 @@
 **Segmento 2**
 
 <img src="resources/images/chapter-II/User-Person/User Persona Leslie Rodriguez.png">
+
 #### 2.3.2 User Task Matrix
+
+**Usuario colaborador Leslie Rodriguez**
+
+| USER TASK | Frecuencia | Importancia |
+|----------|------------|-------------|
+| Registrar consumo diario de hierro / medicación | Alta | Crítica |
+| Consultar recordatorios de tratamiento (dosis, citas) | Alta | Crítica |
+| Revisar recomendaciones de alimentación (hierro) | Alta | Crítica |
+| Registrar hábitos alimenticios del paciente | Media | Alta |
+| Monitorear evolución (niveles de hemoglobina) | Media | Alta |
+| Recibir alertas sobre incumplimiento del tratamiento | Alta | Importante |
+| Comunicarse con personal de salud (mensajes / teleconsulta) | Media | Alta |
+| Consultar historial clínico y seguimiento | Media | Alta |
+| Actualizar datos del paciente (contacto, dirección) | Baja | Importante |
+| Recibir educación sobre anemia (contenido simple y claro) | Alta | Crítica |
+| Coordinar citas médicas y controles | Media | Alta |
+| Confirmar cumplimiento de tareas (checklist diario) | Alta | Crítica |
+
 #### 2.3.3 User Journey Mapping
+
+
+
 #### 2.3.4 Empathy Mapping
 #### 2.3.5 Ubiquitous Language
 
