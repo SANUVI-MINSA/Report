@@ -37,7 +37,7 @@
 
 #### 2.3.3 User Journey Mapping
 
-
+<img src="resources/images/chapter-II/User-Journey/User Journey Leslie Rodriguez.png">
 
 #### 2.3.4 Empathy Mapping
 #### 2.3.5 Ubiquitous Language
