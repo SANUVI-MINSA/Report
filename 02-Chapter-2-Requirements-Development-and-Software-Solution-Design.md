@@ -472,6 +472,49 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 #### 2.2.3 Análisis de entrevistas
 
+**Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+
+**Contexto actual del seguimiento**
+Las entrevistas realizadas a profesionales de salud evidencian que el seguimiento del tratamiento de la anemia se desarrolla de manera fragmentada y poco digitalizada. Aproximadamente el **100% de los entrevistados** utiliza herramientas básicas como Excel, papel o sistemas internos no integrados, lo que genera duplicidad de información y pérdida de tiempo en la gestión. Además, el seguimiento suele depender de consultas presenciales, visitas domiciliarias o comunicación informal, lo que limita la continuidad del tratamiento. Esta situación provoca que la información esté dispersa entre diferentes áreas (enfermería, nutrición, medicina), dificultando una visión integral del paciente.
+
+**Motivaciones de los profesionales**
+En cuanto a sus motivaciones, el **100% de los entrevistados** coincide en que su principal objetivo es **mejorar la salud del paciente y prevenir recaídas**, especialmente en poblaciones vulnerables como niños y gestantes. Asimismo, alrededor del **80% destaca la importancia de optimizar el seguimiento y la comunicación**, buscando herramientas que les permitan ahorrar tiempo y ser más eficientes en su trabajo diario. También se evidencia una disposición positiva hacia la adopción de tecnología, siempre que esta sea **simple, intuitiva y accesible**, sin aumentar la carga operativa.
+
+**Principales problemáticas identificadas**
+Las principales dificultades detectadas giran en torno a la **baja adherencia al tratamiento**. Según los entrevistados, el **abandono del tratamiento es frecuente**, especialmente en etapas intermedias cuando el paciente empieza a mostrar mejoría. Este problema está asociado a varios factores:
+
+- **Desinformación** sobre alimentación y tratamiento.  
+- **Falta de interés o compromiso** por parte de pacientes o cuidadores.  
+- **Hábitos alimenticios inadecuados**, incluyendo rechazo a alimentos ricos en hierro.  
+- **Limitaciones logísticas**, como distancia, trabajo o falta de tiempo.  
+- **Datos desactualizados**, lo que dificulta el contacto y seguimiento.  
+
+Además, el **100% de los entrevistados** coincide en que los procesos actuales son ineficientes y requieren demasiado esfuerzo manual, lo que reduce la capacidad de cubrir a todos los pacientes.
+
+**Brechas en el sistema actual**
+Se identifican tres brechas principales:
+
+**1. Brecha de información**
+La información del paciente no está centralizada ni actualizada, lo que genera pérdida de seguimiento.
+**2. Brecha de comunicación**
+Existe poca interacción continua entre profesional y paciente, limitándose a citas esporádicas.
+**3. Brecha de adherencia**
+Los pacientes no mantienen el tratamiento por falta de recordatorios, educación clara y acompañamiento.
+
+Estas brechas reflejan que el problema no es únicamente médico, sino también **comportamental y sistémico**.
+
+**Oportunidades de solución**
+A partir de los hallazgos, se identifica una clara oportunidad para desarrollar una solución digital que:
+
+- Centralice la información del paciente (**100% necesidad detectada**).  
+- Incorpore recordatorios y seguimiento continuo (**≈90% relevancia**).  
+- Brinde educación clara y práctica sobre anemia (**≈80% necesidad**).  
+- Mejore la comunicación entre paciente y profesional (**≈80% necesidad**).  
+- Sea simple, intuitiva y accesible para todo tipo de usuario (**100% requisito crítico**).  
+
+En conjunto, las entrevistas demuestran que existe una necesidad urgente de herramientas que no solo optimicen procesos, sino que también **incrementen la adherencia al tratamiento**, atacando directamente una de las principales causas del fracaso en la recuperación de la anemia.
+
+
 ### 2.3 Needfinding
 #### 2.3.1 User Personas
 #### 2.3.2 User Task Matrix
