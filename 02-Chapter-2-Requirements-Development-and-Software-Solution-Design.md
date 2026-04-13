@@ -18,7 +18,26 @@
 
 #### 2.3.2 User Task Matrix
 
-**Usuario colaborador Leslie Rodriguez**
+##### **Usuario Madre / Cuidadora (Carla Briceño)**
+
+| USER TASK                                                | Frecuencia | Importancia |
+| -------------------------------------------------------- | ---------- | ----------- |
+| Administrar suplemento de hierro al niño                 | Alta       | Crítica     |
+| Consultar recordatorios de dosis y horarios              | Alta       | Crítica     |
+| Registrar cumplimiento de dosis diaria                   | Alta       | Crítica     |
+| Revisar recomendaciones de alimentación (hierro)         | Alta       | Crítica     |
+| Preparar alimentos ricos en hierro                       | Alta       | Alta        |
+| Registrar alimentos consumidos por el niño               | Media      | Alta        |
+| Monitorear evolución del tratamiento (síntomas/mejoras)  | Media      | Alta        |
+| Controlar citas médicas                                  | Media      | Alta        |
+| Recibir alertas por olvido de dosis                      | Alta       | Importante  |
+| Consultar información sobre anemia (contenido educativo) | Alta       | Crítica     |
+| Comunicarse con personal de salud                        | Media      | Alta        |
+| Revisar historial de tratamiento del niño                | Media      | Alta        |
+| Actualizar datos del paciente                            | Baja       | Importante  |
+
+
+##### **Usuario Enfermera (Leslie Rodriguez)**
 
 | USER TASK | Frecuencia | Importancia |
 |----------|------------|-------------|
