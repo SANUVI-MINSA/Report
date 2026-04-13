@@ -472,6 +472,9 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 #### 2.2.3 Análisis de entrevistas
 
+**Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia**
+
+
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
 **Contexto actual del seguimiento**
