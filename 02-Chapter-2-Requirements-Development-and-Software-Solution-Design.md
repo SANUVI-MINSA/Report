@@ -246,35 +246,35 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 <tbody>
   <tr>
     <td>Nombre</td>
-    <td>info</td>
+    <td>Milagros</td>
   </tr>
   <tr>
     <td>Apellidos</td>
-    <td>info</td>
+    <td>Vera</td>
   </tr>
   <tr>
     <td>Edad</td>
-    <td>0000 años</td>
+    <td>45 años</td>
   </tr>
   <tr>
     <td>Distrito</td>
-    <td>info</td>
+    <td>San Clemente, Pisco</td>
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td>infoinfoinfo</td>
+    <td>WhatsApp, Facebook, TikTok</td>
   </tr>
   <tr>
     <td>Motivacion</td>
-    <td>info.</td>
+    <td>Recuperar la salud de su hijo y asegurarse de que no tenga problemas en su crecimiento o desarrollo.</td>
   </tr>
   <tr>
     <td>Frustracion</td>
-    <td>info.</td>
+    <td>Falta de claridad en las indicaciones médicas y poca información sobre qué alimentos ayudan en el tratamiento. Además, dificultad para recordar las dosis diariamente.</td>
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="info.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Milagros Vera.png" alt="Entrevista"></td>
   </tr>
   <tr>
     <td>Link</td>
@@ -287,7 +287,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   <tr>
     <td>Resumen</td>
     <td>
-		infoinfoinfoinfoinfoinfoinfo
+		Milagros es una madre de 45 años que vive en Pisco y se preocupa mucho por la salud de su hijo diagnosticado con anemia. Aunque intenta seguir el tratamiento, tiene dificultades para ser constante debido a olvidos y falta de herramientas de apoyo. Además, siente que la información médica no siempre es clara, especialmente en temas de alimentación. Usa aplicaciones como WhatsApp, Facebook y TikTok, y prefiere contenido visual como videos. Busca una solución simple que le ayude con recordatorios, seguimiento del tratamiento y orientación práctica para mejorar la alimentación de su hijo.
 </td>
   </tr>
 </tbody>
