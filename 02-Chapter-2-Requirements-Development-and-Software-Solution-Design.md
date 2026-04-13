@@ -62,7 +62,6 @@
 - ¿Se considera una persona organizada o más improvisada?<br>
 - ¿Suele seguir indicaciones médicas al pie de la letra?<br>
 
-
 <h4>Segmento Objetivo 2: Personal de salud (enfermeros/as y nutricionistas)</h4> 
 
 <h4>Preguntas Personales:</h4> 
@@ -113,6 +112,7 @@
 
 - ¿Se considera una persona organizada en el manejo de pacientes?<br>
 - ¿Qué tan importante es la eficiencia en su trabajo diario?<br>
+
 
 #### 2.2.2 Registro de entrevistas
 En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
@@ -292,8 +292,12 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+
+
 			
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+
+
 
 <table>
 <colgroup>
@@ -474,6 +478,47 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 **Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia**
 
+**Contexto actual del seguimiento**
+Las entrevistas realizadas a madres y cuidadores evidencian que el seguimiento del tratamiento de la anemia se realiza de manera manual, informal y poco estructurada. El 100% de los entrevistados menciona que utiliza métodos básicos como la memoria, cuadernos o indicaciones verbales del médico para llevar el control. Además, el tratamiento depende en gran medida de la rutina diaria del hogar y del trabajo, lo que genera inconsistencias en los horarios y olvidos ocasionales. Aunque todos intentan cumplir con las indicaciones médicas, no cuentan con herramientas que les permitan un seguimiento continuo y confiable. También se observa que el control de citas médicas se realiza de forma básica (anotaciones o indicaciones del centro de salud), lo que puede generar desorganización o dependencia de recordatorios externos.
+
+**Motivaciones de los profesionales**
+En cuanto a motivaciones, el 100% de los entrevistados coincide en que su principal objetivo es recuperar la salud del niño y evitar complicaciones futuras. Asimismo, aproximadamente el 80% muestra interés en aprender más sobre cómo mejorar la alimentación y complementar el tratamiento, especialmente en relación con dietas ricas en hierro. También se evidencia que todos los entrevistados están abiertos al uso de tecnología, siempre que esta sea simple, clara y fácil de usar, destacando una preferencia marcada por contenido visual como videos.
+
+**Principales problemáticas identificadas**
+Las principales dificultades están relacionadas con la adherencia al tratamiento, aunque no por falta de intención, sino por limitaciones prácticas:
+
+- **Olvido de dosis** (≈70%): debido al trabajo, responsabilidades del hogar o falta de recordatorios
+- **Falta de claridad en indicaciones médicas** (≈70%): especialmente en temas de alimentación y tratamiento
+- **Dificultad en la alimentación adecuada** (≈80%): no saben exactamente qué comidas ayudan a mejorar la anemia
+- **Dependencia de métodos manuales** (100%): cuadernos, memoria o indicaciones verbales
+- **Carga laboral o rutinas variables** (≈60%): afecta la organización diaria del tratamiento
+  
+A pesar de esto, se identifica que los cuidadores sí están comprometidos, pero no cuentan con herramientas adecuadas.
+
+**Brechas en el sistema actual**
+
+A partir del análisis, se identifican tres brechas principales:
+
+- **Brecha de seguimiento**
+No existe un sistema que permita llevar un control diario estructurado del tratamiento.
+- **Brecha de información**
+Las indicaciones médicas no siempre son claras ni prácticas, especialmente en nutrición.
+- **Brecha de adherencia**
+Los olvidos y la falta de acompañamiento afectan la continuidad del tratamiento.
+
+Estas brechas evidencian que el problema no es solo médico, sino también **organizacional**, **educativo** y **conductual.**
+
+**Oportunidades de solución**
+A partir de los hallazgos, se identifican oportunidades claras:
+
+- Recordatorios automáticos de dosis **(≈90% necesidad)**
+- Seguimiento diario del tratamiento **(100% necesidad)**
+- Contenido educativo en videos sobre anemia y dietas **(≈90% preferencia)**
+- Guías prácticas de alimentación **(≈80% necesidad)**
+- Contacto o asesoría con profesionales de salud **(≈70% interés)**
+- Aplicación simple, intuitiva y fácil de usar **(100% requisito crítico)**
+
+Las entrevistas muestran que los cuidadores están altamente comprometidos con la salud de los niños, pero enfrentan dificultades prácticas que afectan la continuidad del tratamiento. La falta de herramientas de apoyo, información clara y seguimiento estructurado impacta directamente en la adherencia. Existe una oportunidad clara para desarrollar una solución digital que no solo informe, sino que acompañe activamente el proceso del tratamiento, facilitando la organización, el aprendizaje y el cumplimiento diario.
 
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
@@ -495,13 +540,14 @@ Las principales dificultades detectadas giran en torno a la **baja adherencia al
 Además, el **100% de los entrevistados** coincide en que los procesos actuales son ineficientes y requieren demasiado esfuerzo manual, lo que reduce la capacidad de cubrir a todos los pacientes.
 
 **Brechas en el sistema actual**
+
 Se identifican tres brechas principales:
 
-**1. Brecha de información**
+- **1. Brecha de información**
 La información del paciente no está centralizada ni actualizada, lo que genera pérdida de seguimiento.
-**2. Brecha de comunicación**
+- **2. Brecha de comunicación**
 Existe poca interacción continua entre profesional y paciente, limitándose a citas esporádicas.
-**3. Brecha de adherencia**
+- **3. Brecha de adherencia**
 Los pacientes no mantienen el tratamiento por falta de recordatorios, educación clara y acompañamiento.
 
 Estas brechas reflejan que el problema no es únicamente médico, sino también **comportamental y sistémico**.
