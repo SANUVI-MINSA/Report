@@ -272,7 +272,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>0:15 min - 5:23 min</td>
+    <td>0:00 min - 5:23 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
@@ -330,7 +330,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>0:00 min - 0:00 min</td>
+    <td>5:23 min - 9:33 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
@@ -388,7 +388,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>0:00 min - 0:00 min</td>
+    <td> 9:33  min - 14:47 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
