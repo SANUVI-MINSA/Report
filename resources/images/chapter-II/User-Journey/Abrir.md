@@ -1,1 +1,0 @@
-user-journey-map-1.png

@@ -670,11 +670,120 @@ En conjunto, las entrevistas demuestran que existe una necesidad urgente de herr
 
 
 ### 2.3 Needfinding
+
+Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps y Empathy Mapping.
+
 #### 2.3.1 User Personas
+
+Después de analizar las entrevistas de nuestro segmento objetivo, nuestra tarea es definir el perfil del usuario ideal con el que estamos tratando. Hemos elaborado los perfiles de usuario teniendo en cuenta las personalidades y cualidades identificadas en cada entrevista. A continuación, se presentan las user personas resultantes de la investigación:
+
+##### **Usuario Madre / Cuidadora (Carla Briceño)**
+
+<img src="resources/images/chapter-II/User-Person/User Persona Carla Briceño.png">
+
+##### **Usuario Enfermera (Leslie Rodriguez)**
+
+<img src="resources/images/chapter-II/User-Person/User Persona Leslie Rodriguez.png">
+
 #### 2.3.2 User Task Matrix
+
+La seccion User Task Matrix permite identificar y comparar las tareas más relevantes que realizan los usuarios representados en nuestras User Personas. En esta matriz se organiza cada tarea según su frecuencia y su importancia.
+
+##### **Usuario Madre / Cuidadora (Carla Briceño)**
+
+| USER TASK                                                | Frecuencia | Importancia |
+| -------------------------------------------------------- | ---------- | ----------- |
+| Administrar suplemento de hierro al niño                 | Alta       | Crítica     |
+| Consultar recordatorios de dosis y horarios              | Alta       | Crítica     |
+| Registrar cumplimiento de dosis diaria                   | Alta       | Crítica     |
+| Revisar recomendaciones de alimentación (hierro)         | Alta       | Crítica     |
+| Preparar alimentos ricos en hierro                       | Alta       | Alta        |
+| Registrar alimentos consumidos por el niño               | Media      | Alta        |
+| Monitorear evolución del tratamiento (síntomas/mejoras)  | Media      | Alta        |
+| Controlar citas médicas                                  | Media      | Alta        |
+| Recibir alertas por olvido de dosis                      | Alta       | Importante  |
+| Consultar información sobre anemia (contenido educativo) | Alta       | Crítica     |
+| Comunicarse con personal de salud                        | Media      | Alta        |
+| Revisar historial de tratamiento del niño                | Media      | Alta        |
+| Actualizar datos del paciente                            | Baja       | Importante  |
+
+
+##### **Usuario Enfermera (Leslie Rodriguez)**
+
+| USER TASK | Frecuencia | Importancia |
+|----------|------------|-------------|
+| Registrar consumo diario de hierro / medicación | Alta | Crítica |
+| Consultar recordatorios de tratamiento (dosis, citas) | Alta | Crítica |
+| Revisar recomendaciones de alimentación (hierro) | Alta | Crítica |
+| Registrar hábitos alimenticios del paciente | Media | Alta |
+| Monitorear evolución (niveles de hemoglobina) | Media | Alta |
+| Recibir alertas sobre incumplimiento del tratamiento | Alta | Importante |
+| Comunicarse con personal de salud (mensajes / teleconsulta) | Media | Alta |
+| Consultar historial clínico y seguimiento | Media | Alta |
+| Actualizar datos del paciente (contacto, dirección) | Baja | Importante |
+| Recibir educación sobre anemia (contenido simple y claro) | Alta | Crítica |
+| Coordinar citas médicas y controles | Media | Alta |
+| Confirmar cumplimiento de tareas (checklist diario) | Alta | Crítica |
+
 #### 2.3.3 User Journey Mapping
+
+En esta sección, se desarrollan los User Journey Maps para cada User Persona, proporcionando una visión completa del recorrido del usuario desde el inicio hasta el final. Estos mapas representan la situación actual (As-Is) de cada segmento, sin ofrecer soluciones.
+
+##### **Usuario Madre / Cuidadora (Carla Briceño)**
+
+Mediante este artefacto se explicará y comprenderá como los usuarios del segmento cuidador realizan sus actividades para alcanzar sus objetivos desde su perspectiva.
+
+<img src="resources/images/chapter-II/User-Journey/User Journey Mapping Carla Briceño.png">
+
+##### **Usuario Enfermera (Leslie Rodriguez)**
+
+Mediante este artefacto se explicará y comprenderá como los usuarios del segmento nutricionista/enfermera realizan sus actividades para alcanzar sus objetivos desde su perspectiva.
+
+<img src="resources/images/chapter-II/User-Journey/User Journey Leslie Rodriguez.png">
+
 #### 2.3.4 Empathy Mapping
+
+Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objetivos a través de empathy maps, con el objetivo de conocer mejor a nuestros segmentos objetivos e identificar sus necesidades profundas.
+
+##### **Usuario Madre / Cuidadora (Carla Briceño)**
+
+<img src="resources/images/chapter-II/Empathy_Map_User/Empathy map - Carla Briceño.png">
+
+
+##### **Usuario Enfermera (Leslie Rodriguez)**
+
+<img src="resources/images/chapter-II/Empathy_Map_User/Empathy map Leslie Rodriguez.png">
+
 #### 2.3.5 Ubiquitous Language
+
+En esta sección se presentan los términos clave del proyecto UI-Topic. Estos términos han sido acordados en el equipo del proyecto y serán usados de manera consistente en la comunicación, documentación y desarrollo del sistema.
+
+
+| Term (EN)                                               | Definición (ES)                                                                                    |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Patient (Paciente)**                                  | Niño o persona diagnosticada con anemia que recibe tratamiento y seguimiento en el sistema.        |
+| **Caregiver (Cuidador)**                                | Madre, padre o responsable encargado de administrar el tratamiento y cuidado del paciente.         |
+| **Treatment (Tratamiento)**                             | Conjunto de indicaciones médicas que incluyen suplementación de hierro, alimentación y controles.  |
+| **Dose (Dosis)**                                        | Cantidad de suplemento de hierro que debe administrarse al paciente en un horario específico.      |
+| **Dose reminder (Recordatorio de dosis)**               | Notificación automática que indica al cuidador cuándo administrar el suplemento de hierro.         |
+| **Adherence (Adherencia)**                              | Nivel de cumplimiento del tratamiento por parte del cuidador o paciente.                           |
+| **Missed dose (Dosis omitida)**                         | Dosis que no fue administrada en el tiempo programado.                                             |
+| **Treatment tracking (Seguimiento del tratamiento)**    | Registro continuo del cumplimiento de dosis, citas médicas y evolución del paciente.               |
+| **Medical appointment (Cita médica)**                   | Consulta programada con el personal de salud para evaluar el estado del paciente.                  |
+| **Appointment reminder (Recordatorio de cita)**         | Notificación que alerta al usuario sobre una próxima cita médica.                                  |
+| **Hemoglobin level (Nivel de hemoglobina)**             | Medición clínica que indica el estado de anemia del paciente.                                      |
+| **Nutrition plan (Plan nutricional)**                   | Conjunto de recomendaciones alimenticias orientadas a mejorar los niveles de hierro.               |
+| **Iron-rich food (Alimento rico en hierro)**            | Alimento recomendado para mejorar la hemoglobina del paciente.                                     |
+| **Food inhibitor (Inhibidor de hierro)**                | Alimento que reduce la absorción de hierro (ej. leche, café).                                      |
+| **Daily log (Registro diario)**                         | Registro donde el cuidador confirma la dosis administrada y alimentación del día.                  |
+| **Alert (Alerta)**                                      | Notificación generada por el sistema ante eventos importantes (dosis omitida, riesgo de abandono). |
+| **Risk level (Nivel de riesgo)**                        | Indicador del sistema que muestra la probabilidad de abandono del tratamiento.                     |
+| **Treatment completion (Finalización del tratamiento)** | Estado en el que el paciente alcanza niveles normales de hemoglobina.                              |
+| **Treatment abandonment (Abandono del tratamiento)**    | Situación en la que el paciente deja de seguir el tratamiento antes de completarlo.                |
+| **Health education (Educación en salud)**               | Contenido informativo (videos, guías) para ayudar al cuidador a entender el tratamiento.           |
+| **Teleconsultation (Teleconsulta)**                     | Comunicación digital entre cuidador y personal de salud para resolver dudas.                       |
+| **Notification (Notificación)**                         | Mensaje enviado al usuario para informar, recordar o alertar sobre eventos del sistema.            |
+| **User (Usuario)**                                      | Persona que interactúa con la aplicación (cuidador, enfermera o administrador).                    |
 
 ### 2.4 Requirements Specification
 #### 2.4.1 User Stories
