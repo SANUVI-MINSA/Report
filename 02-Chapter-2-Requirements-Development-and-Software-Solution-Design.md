@@ -10,7 +10,12 @@
 #### 2.2.3 Análisis de entrevistas
 
 ### 2.3 Needfinding
+
+Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps y Empathy Mapping.
+
 #### 2.3.1 User Personas
+
+Después de analizar las entrevistas de nuestro segmento objetivo, nuestra tarea es definir el perfil del usuario ideal con el que estamos tratando. Hemos elaborado los perfiles de usuario teniendo en cuenta las personalidades y cualidades identificadas en cada entrevista. A continuación, se presentan las user personas resultantes de la investigación:
 
 ##### **Usuario Madre / Cuidadora (Carla Briceño)**
 
@@ -21,6 +26,8 @@
 <img src="resources/images/chapter-II/User-Person/User Persona Leslie Rodriguez.png">
 
 #### 2.3.2 User Task Matrix
+
+La seccion User Task Matrix permite identificar y comparar las tareas más relevantes que realizan los usuarios representados en nuestras User Personas. En esta matriz se organiza cada tarea según su frecuencia y su importancia.
 
 ##### **Usuario Madre / Cuidadora (Carla Briceño)**
 
@@ -60,15 +67,23 @@
 
 #### 2.3.3 User Journey Mapping
 
+En esta sección, se desarrollan los User Journey Maps para cada User Persona, proporcionando una visión completa del recorrido del usuario desde el inicio hasta el final. Estos mapas representan la situación actual (As-Is) de cada segmento, sin ofrecer soluciones.
+
 ##### **Usuario Madre / Cuidadora (Carla Briceño)**
+
+Mediante este artefacto se explicará y comprenderá como los usuarios del segmento cuidador realizan sus actividades para alcanzar sus objetivos desde su perspectiva.
 
 <img src="resources/images/chapter-II/User-Journey/User Journey Mapping Carla Briceño.png">
 
 ##### **Usuario Enfermera (Leslie Rodriguez)**
 
+Mediante este artefacto se explicará y comprenderá como los usuarios del segmento nutricionista/enfermera realizan sus actividades para alcanzar sus objetivos desde su perspectiva.
+
 <img src="resources/images/chapter-II/User-Journey/User Journey Leslie Rodriguez.png">
 
 #### 2.3.4 Empathy Mapping
+
+Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objetivos a través de empathy maps, con el objetivo de conocer mejor a nuestros segmentos objetivos e identificar sus necesidades profundas.
 
 ##### **Usuario Madre / Cuidadora (Carla Briceño)**
 
