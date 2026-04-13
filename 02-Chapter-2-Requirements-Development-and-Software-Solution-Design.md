@@ -145,6 +145,13 @@ Este bounded context se encarga del dashboard analítico del coordinador MINSA y
 ##### 2.5.1.2 Domain Message Flows Modeling
 ##### 2.5.1.3 Bounded Context Canvases
 #### 2.5.2 Context Mapping
+
+En esta sección se explica el proceso de elaboración de los contexts maps. Asimismo, se permite la
+visualizacón de las relaciones estructurales entre bounded contexts, junto a los patrones de relaciones
+entre Bounded contexts establecidos en Domain Driven Design, como Anti-corruption Layer,
+Conformist, Customer/Supplier ó Shared Kernel
+
+
 #### 2.5.3 Software Architecture
 ##### 2.5.3.1 Software Architecture Context Level Diagrams
 ##### 2.5.3.2 Software Architecture Container Level Diagrams
