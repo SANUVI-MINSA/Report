@@ -12,7 +12,7 @@
 ### 2.3 Needfinding
 #### 2.3.1 User Personas
 
-**Segmento 2**
+##### **Usuario Enfermera (Leslie Rodriguez)**
 
 <img src="resources/images/chapter-II/User-Person/User Persona Leslie Rodriguez.png">
 
@@ -56,9 +56,13 @@
 
 #### 2.3.3 User Journey Mapping
 
+##### **Usuario Enfermera (Leslie Rodriguez)**
+
 <img src="resources/images/chapter-II/User-Journey/User Journey Leslie Rodriguez.png">
 
 #### 2.3.4 Empathy Mapping
+
+##### **Usuario Enfermera (Leslie Rodriguez)**
 
 <img src="resources/images/chapter-II/Empathy_Map_User/Empathy map Leslie Rodriguez.png">
 
