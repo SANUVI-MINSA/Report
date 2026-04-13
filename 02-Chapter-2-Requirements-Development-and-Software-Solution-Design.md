@@ -117,7 +117,7 @@
 #### 2.2.2 Registro de entrevistas
 En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
-**Segmento 1:** 
+**Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia** 
 
 <table>
 <colgroup>
@@ -293,7 +293,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 </tbody>
 </table>
 			
-**Segmento 2:**
+**Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
 <table>
 <colgroup>
