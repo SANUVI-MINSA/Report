@@ -6,7 +6,9 @@
 
 ### 2.2 Entrevistas
 #### 2.2.1 Diseño de entrevistas
-<h4>Segmento Objetivo 1: Madres y Cuidadores de niños con anemia</h4> 
+
+##### <h4>Segmento Objetivo 1: Madres y Cuidadores de niños con anemia</h4> 
+---
 
 <h4>Preguntas Personales:</h4> 
 
@@ -62,7 +64,8 @@
 - ¿Se considera una persona organizada o más improvisada?<br>
 - ¿Suele seguir indicaciones médicas al pie de la letra?<br>
 
-<h4>Segmento Objetivo 2: Personal de salud (enfermeros/as y nutricionistas)</h4> 
+##### <h4>Segmento Objetivo 2: Personal de salud (enfermeros/as y nutricionistas)</h4> 
+---
 
 <h4>Preguntas Personales:</h4> 
 
@@ -117,7 +120,8 @@
 #### 2.2.2 Registro de entrevistas
 En esta sección presentamos los registros de las entrevistas que hicimos para cada segmento objetivo de nuestra aplicación.
 
-**Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia** 
+##### **Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia** 
+---
 
 <table>
 <colgroup>
@@ -292,12 +296,9 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
-
-
 			
-**Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
-
-
+##### **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+---
 
 <table>
 <colgroup>
@@ -476,7 +477,8 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 #### 2.2.3 Análisis de entrevistas
 
-**Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia**
+##### **Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia**
+---
 
 **Contexto actual del seguimiento**
 Las entrevistas realizadas a madres y cuidadores evidencian que el seguimiento del tratamiento de la anemia se realiza de manera manual, informal y poco estructurada. El 100% de los entrevistados menciona que utiliza métodos básicos como la memoria, cuadernos o indicaciones verbales del médico para llevar el control. Además, el tratamiento depende en gran medida de la rutina diaria del hogar y del trabajo, lo que genera inconsistencias en los horarios y olvidos ocasionales. Aunque todos intentan cumplir con las indicaciones médicas, no cuentan con herramientas que les permitan un seguimiento continuo y confiable. También se observa que el control de citas médicas se realiza de forma básica (anotaciones o indicaciones del centro de salud), lo que puede generar desorganización o dependencia de recordatorios externos.
@@ -520,7 +522,8 @@ A partir de los hallazgos, se identifican oportunidades claras:
 
 Las entrevistas muestran que los cuidadores están altamente comprometidos con la salud de los niños, pero enfrentan dificultades prácticas que afectan la continuidad del tratamiento. La falta de herramientas de apoyo, información clara y seguimiento estructurado impacta directamente en la adherencia. Existe una oportunidad clara para desarrollar una solución digital que no solo informe, sino que acompañe activamente el proceso del tratamiento, facilitando la organización, el aprendizaje y el cumplimiento diario.
 
-**Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+##### **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+---
 
 **Contexto actual del seguimiento**
 Las entrevistas realizadas a profesionales de salud evidencian que el seguimiento del tratamiento de la anemia se desarrolla de manera fragmentada y poco digitalizada. Aproximadamente el **100% de los entrevistados** utiliza herramientas básicas como Excel, papel o sistemas internos no integrados, lo que genera duplicidad de información y pérdida de tiempo en la gestión. Además, el seguimiento suele depender de consultas presenciales, visitas domiciliarias o comunicación informal, lo que limita la continuidad del tratamiento. Esta situación provoca que la información esté dispersa entre diferentes áreas (enfermería, nutrición, medicina), dificultando una visión integral del paciente.
