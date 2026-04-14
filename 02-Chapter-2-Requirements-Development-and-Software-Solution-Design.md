@@ -18,6 +18,34 @@
 
 ### 2.4 Requirements Specification
 #### 2.4.1 User Stories
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+    <tr>
+      <td>Texto</td>
+      <td>Texto</td>
+      <td>Texto</td>
+      <td>EP-01</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Title</strong></td>
+      <td colspan="3">Texto</td>
+    </tr>
+    <tr>
+      <td colspan="4" align="left"><strong>Description</strong><br/>
+      Texto</td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
