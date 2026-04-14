@@ -346,6 +346,194 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-02</td>
+      <td>Usuario</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Inicio de sesión</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero poder iniciar sesión con mi número de DNI y contraseña, para poder acceder a mi cuenta y los servicios de Ferova.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Inicio de sesión exitoso<br>
+        Dado que el usuario posee una cuenta registrada,<br>
+        cuando ingresa su número de DNI y contraseña correctamente y presiona 'Iniciar sesión',<br>
+        entonces el sistema debe validar sus credenciales y permitirle el acceso a la plataforma según su rol asignado.<br>
+        <br>
+        Escenario 2: Credenciales incorrectas<br>
+        Dado que el usuario ingresa credenciales incorrectas,<br>
+        cuando presiona 'Iniciar sesión',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando que el DNI o contraseña son incorrectos.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-03</td>
+      <td>Usuario</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Bloqueo de cuenta por intentos fallidos</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero que mi cuenta sea protegida ante multiples intentos fallidos de inicio de sesion, para garantizar la seguridad de mi informacion personal.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Bloqueo de cuenta<br>
+        Dado que el usuario ha ingresado credenciales incorrectas 3 veces consecutivas,<br>
+        cuando intenta iniciar sesion por tercera vez de forma incorrecta,<br>
+        entonces el sistema debe bloquear temporalmente el acceso a la cuenta por 30 minutos y mostrar un mensaje informando al usuario del bloqueo.<br>
+        <br>
+        Escenario 2: Acceso restaurado tras el bloqueo<br>
+        Dado que la cuenta del usuario fue bloqueada por 30 minutos,<br>
+        cuando transcurre el tiempo de bloqueo,<br>
+        entonces el sistema debe restaurar el acceso y permitirle intentar iniciar sesion nuevamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-04</td>
+      <td>Usuario</td>
+      <td>Medium</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cambio de contraseña</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero poder cambiar mi contraseña desde la app, para mantener la seguridad de mi cuenta en todo momento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Cambio de contraseña exitoso<br>
+        Dado que el usuario desea cambiar su contraseña,<br>
+        cuando ingresa su contraseña actual y la nueva contraseña correctamente y presiona 'Guardar',<br>
+        entonces el sistema debe actualizar la contraseña y mostrar un mensaje de confirmación exitosa.<br>
+        <br>
+        Escenario 2: Contraseña actual incorrecta<br>
+        Dado que el usuario ingresa una contraseña actual incorrecta,<br>
+        cuando presiona 'Guardar',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando que la contraseña actual no es correcta.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-05</td>
+      <td>Usuario</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cierre de sesión</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero poder cerrar sesión desde la app, para proteger mi cuenta cuando deje de usar la plataforma.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Cierre de sesión exitoso<br>
+        Dado que el usuario se encuentra dentro de la plataforma,<br>
+        cuando presiona la opción 'Cerrar sesión',<br>
+        entonces el sistema debe cerrar su sesión activa y redirigirlo a la pantalla de inicio de sesión.<br>
+        <br>
+        Escenario 2: Cierre de sesión accidental<br>
+        Dado que el usuario presiona la opción 'Cerrar sesión',<br>
+        cuando el sistema solicita confirmación,<br>
+        entonces debe mostrar un mensaje de confirmación preguntando si está seguro de cerrar sesión antes de proceder.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
