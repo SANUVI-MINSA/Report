@@ -300,6 +300,52 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-01</td>
+      <td>Usuario</td>
+      <td>High</font></td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de nuevo usuario</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero poder registrarme en la plataforma ingresando mis datos personales, para poder acceder a los servicios de Ferova.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Aceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro exitoso<br>
+        Dado que el usuario no posee una cuenta registrada,<br>
+        cuando ingresa sus datos personales y presiona 'Registrarse',<br>
+        entonces el sistema debe crear su cuenta y asignarle un rol automaticamente.<br><br>
+        Escenario 2: Registro con correo ya existente<br>
+        Dado que el usuario intenta registrarse con un correo ya registrado,<br>
+        cuando presiona 'Registrarse',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando que el correo ya existe.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
