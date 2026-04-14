@@ -153,6 +153,9 @@ Conformist, Customer/Supplier ó Shared Kernel
 
 ##### IAM → Patient Management
 
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/IAM → Patient Management.png">
+
+
 **Patron: Customer / Supplier**
 
 En esta relacion Identity and Access Management (IAM) actua como el upstream (U) y Patient Management actua como el downstream (D).
@@ -160,6 +163,8 @@ IAM es el proveedor porque es el bounded context que gestiona todos los usuarios
 Patient Management es el cliente porque depende completamente de IAM para poder operar. Si IAM no valida la existencia del usuario, Patient Management no puede devolver ningun dato del paciente a la enfermera en FerovaClinic.
 
 ##### IAM → Treatment Tracking
+
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/IAM → Treatment Tracking.png">
 
 **Patron: Customer / Supplier**
 
@@ -169,6 +174,9 @@ Treatment Tracking es el cliente porque no puede ejecutar ninguna operacion de t
 
 ##### Treatment Tracking → Achievements & Rewards
 
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Achievements & Rewards.png">
+
+
 **Patron: Customer / Supplier**
 
 En esta relacion Treatment Tracking actua como el upstream (U) y Achievements & Rewards actua como el downstream (D).
@@ -176,6 +184,9 @@ Treatment Tracking es el proveedor porque es el bounded context que genera los e
 Achievements & Rewards es el cliente porque depende completamente de los eventos que genera Treatment Tracking para poder funcionar. No decide por si solo cuando actualizar la racha, sumar puntos o desbloquear una insignia. Espera pasivamente el evento del upstream y reacciona en consecuencia. Si Treatment Tracking dejara de enviar eventos, Achievements & Rewards quedaria completamente inactivo sin importar lo que la madre haga en la app.
 
 #####  Treatment Tracking → Notifications
+
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Notifications.png">
+
 
 **Patron: Customer / Supplier**
 
@@ -186,6 +197,9 @@ Notifications es el cliente porque no tiene logica propia para detectar cuando e
 
 #####  Nutritional Diary → Notifications
 
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Nutritional Diary → Notifications.png">
+
+
 **Patron: Customer / Supplier**
 
 En esta relacion Nutritional Diary actua como el upstream (U) y Notifications actua como el downstream (D).
@@ -193,6 +207,9 @@ Nutritional Diary es el proveedor porque es el bounded context que tiene la logi
 Notifications es el cliente porque depende completamente del evento que genera Nutritional Diary para saber cuando y a quien enviar la alerta de inhibidor. No tiene acceso a la lista de alimentos ni puede detectar inhibidores por si mismo. Simplemente recibe el evento del upstream y lo convierte en una alerta visible inmediatamente en FerovaFamilia para educar a la madre en tiempo real sobre el impacto del alimento en el tratamiento de su hijo
 
 #####  Communication → Notifications
+
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Communication → Notifications.png">
+
 
 **Patron: Customer / Supplier**
 
@@ -202,6 +219,9 @@ Notifications es el cliente porque no tiene visibilidad sobre lo que ocurre dent
 
 #####   Health Facility → Notifications
 
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Health Facility → Notifications.png">
+
+
 **Patron: Customer / Supplier**
 
 En esta relacion Health Facility actua como el upstream (U) y Notifications actua como el downstream (D).
@@ -210,6 +230,8 @@ Notifications es el cliente porque no tiene acceso a la informacion de las posta
 
 #####   Treatment Tracking → Analytics & Reporting
 
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Analytics & Reporting.png">
+
 **Patron: Customer / Supplier**
 
 En esta relacion Treatment Tracking actua como el upstream (U) y Analytics & Reporting actua como el downstream (D).
@@ -217,6 +239,9 @@ Treatment Tracking es el proveedor porque es el bounded context que genera los d
 Analytics & Reporting es el cliente porque no puede generar por si mismo las estadisticas de abandono sin los datos que provee Treatment Tracking. No tiene acceso directo al estado de los tratamientos ni puede detectar cuando un paciente abandono. Depende completamente del evento del upstream para actualizar las metricas del distrito. Sin ese evento el dashboard analitico del admin MINSA en FerovaClinic mostraria datos incompletos y el mapa de calor no reflejaria correctamente las zonas con mayor tasa de abandono del tratamiento de anemia.
 
 #####   Health Facility → Analytics & Reporting
+
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Health Facility → Analytics & Reporting.png">
+
 
 **Patron: Customer / Supplier**
 
