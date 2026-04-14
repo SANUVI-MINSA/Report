@@ -534,6 +534,241 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-06</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro de paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder registrar a mi hijo en la plataforma ingresando sus datos personales, para comenzar el seguimiento de su tratamiento de anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro de paciente exitoso<br>
+        Dado que la madre desea registrar a su hijo,<br>
+        cuando ingresa los datos personales del niño como nombre, apellido, fecha de nacimiento y peso y presiona 'Registrar paciente',<br>
+        entonces el sistema debe crear el perfil del paciente y guardarlo en el sistema.<br>
+        <br>
+        Escenario 2: Registro con datos incompletos<br>
+        Dado que la madre intenta registrar a su hijo sin completar todos los campos requeridos,<br>
+        cuando presiona 'Registrar paciente',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando los campos que faltan por completar.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-07</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro del diagnóstico del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder registrar el diagnostico oficial de anemia del paciente en la plataforma, para tener un expediente digital completo y comenzar su tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro de diagnóstico exitoso<br>
+        Dado que la enfermera atiende a un paciente registrado en el sistema,<br>
+        cuando ingresa el tipo de anemia y nivel de severidad del paciente y presiona 'Guardar diagnostico',<br>
+        entonces el sistema debe registrar el diagnostico en el historial médico del paciente.<br>
+        <br>
+        Escenario 2: Registro de diagnóstico con datos incompletos<br>
+        Dado que la enfermera intenta registrar el diagnostico sin completar todos los campos requeridos,<br>
+        cuando presiona 'Guardar diagnostico',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando los campos que faltan por completar.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-08</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registro del nivel de hemoglobina del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder registrar el nivel de hemoglobina del paciente despues de cada control presencial, para hacer seguimiento de la evolucion del tratamiento de anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro de hemoglobina exitoso<br>
+        Dado que la enfermera atiende a un paciente en la posta,<br>
+        cuando ingresa el nivel de hemoglobina del paciente en g/dL y presiona 'Guardar',<br>
+        entonces el sistema debe registrar el nuevo nivel en el historial medico del paciente y actualizar su grafica de progreso.<br>
+        <br>
+        Escenario 2: Registro de hemoglobina con valor invalido<br>
+        Dado que la enfermera ingresa un valor de hemoglobina fuera del rango permitido,<br>
+        cuando presiona 'Guardar',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando que el valor ingresado no es valido.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-09</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Asignacion de paciente a enfermera</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder buscar a una madre por su numero de DNI para ver los datos de su hijo registrado en el sistema y asignarmelo como paciente, para hacerle seguimiento personalizado de su tratamiento de anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Busqueda y asignacion exitosa<br>
+        Dado que la enfermera desea asignarse un paciente,<br>
+        cuando ingresa el numero de DNI de la madre en el buscador de FerovaClinic,<br>
+        entonces el sistema debe mostrar los datos del menor registrado por esa madre y permitirle presionar 'Asignar paciente' para vincularlo a su cargo.<br>
+        <br>
+        Escenario 2: DNI de madre no encontrado<br>
+        Dado que la enfermera ingresa un numero de DNI que no existe en el sistema,<br>
+        cuando realiza la busqueda,<br>
+        entonces el sistema debe mostrar un mensaje indicando que no se encontro ningun paciente registrado con ese DNI.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-10</td>
+      <td>Enfermera</td>
+      <td>Medium</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Actualización del historial medico del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder actualizar los datos del control del paciente en cada visita presencial, para registrar su evolución durante el tratamiento de anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Actualización del historial exitosa<br>
+        Dado que la enfermera atiende a un paciente en la posta,<br>
+        cuando ingresa los datos del control: nivel de hemoglobina en g/dL, peso actualizado del niño y observaciones de la visita, y presiona 'Guardar',<br>
+        entonces el sistema debe actualizar el historial médico del paciente con los nuevos datos y registrar la fecha y hora de la actualización.<br>
+        <br>
+        Escenario 2: Actualización con datos incompletos<br>
+        Dado que la enfermera intenta guardar el control sin completar todos los campos requeridos,<br>
+        cuando presiona 'Guardar',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando los campos que faltan por completar como nivel de hemoglobina y peso del niño.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
