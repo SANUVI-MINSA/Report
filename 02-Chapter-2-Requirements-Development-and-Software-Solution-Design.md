@@ -21,7 +21,7 @@
 
 En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron identificados durante el análisis del proyecto.
 
-<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Epic ID</th>
@@ -29,21 +29,87 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
       <th>Priority</th>
       <th>Epic</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
-      <td>Texto</td>
-      <td>Texto</td>
-      <td>Texto</td>
       <td>EP-01</td>
+      <td>Usuario</td>
+      <td>High</font></td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Autenticacion y Acceso</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como usuario, quiero poder registrarme, iniciar sesion y gestionar mi cuenta en la plataforma, para acceder de forma segura a los servicios de Ferova     segun mi rol asignado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Title</strong></td>
-      <td colspan="3">Texto</td>
+      <td>EP-02</td>
+      <td>Madre / Enfermera</td>
+      <td>High</font></td>
+      <td>EP-02</td>
     </tr>
     <tr>
-      <td colspan="4" align="left"><strong>Description</strong><br/>
-      Texto</td>
+      <td><b>Title</b></td>
+      <td colspan="3">Gestion de Pacientes</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre o enfermera, quiero poder registrar y gestionar la informacion clinica y personal de los pacientes con anemia, para contar con un expediente digital completo que sirva de base para el seguimiento del tratamiento.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-03</td>
+      <td>Madre / Enfermera</td>
+      <td>High</font></td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Seguimiento del Tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre o enfermera, quiero poder hacer seguimiento diario del tratamiento de anemia de cada paciente, para garantizar el cumplimiento de las dosis programadas y detectar a tiempo los casos en riesgo de abandono.
+      </td>
     </tr>
   </tbody>
 </table>
