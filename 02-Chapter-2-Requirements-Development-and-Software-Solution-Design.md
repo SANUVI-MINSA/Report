@@ -210,6 +210,8 @@ En este flujo se muestra la interaccion entre el bounded context Treatment Track
 
 ##### 2.5.1.3 Bounded Context Canvases
 
+Para mejorar la organización del dominio y facilitar una comunicación consistente, se elaboraron Bounded Context Canvases para cada subdominio. Estos canvases delimitan claramente las responsabilidades, establecen el lenguaje ubicuo y los modelos clave, y describen los puntos de integración y los flujos de mensajes entre contextos. Los diagramas que siguen consolidan estas decisiones y sirvieron como guía para alinear la arquitectura, las interfaces y la evolución del sistema.
+
 - **Identity and Access Management**
 
 <div align="center">
