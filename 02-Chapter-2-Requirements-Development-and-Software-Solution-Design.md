@@ -210,6 +210,25 @@ En este flujo se muestra la interaccion entre el bounded context Treatment Track
 
 ##### 2.5.1.3 Bounded Context Canvases
 
+- **Identity and Access Management**
+
+- **Patient Management**
+
+- **Treatment Tracking**
+
+- **Nutritional Diary**
+
+- **Notification**
+
+- **Comunication**
+
+- **Health Facility**
+
+- **Achievements & Rewards**
+
+- **Analytics & Reporting**
+
+
 #### 2.5.2 Context Mapping
 
 En esta sección se explica el proceso de elaboración de los contexts maps. Asimismo, se permite la
