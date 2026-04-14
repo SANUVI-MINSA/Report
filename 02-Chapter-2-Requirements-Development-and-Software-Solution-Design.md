@@ -19,6 +19,8 @@
 ### 2.4 Requirements Specification
 #### 2.4.1 User Stories
 
+En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron identificados durante el análisis del proyecto.
+
 <table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px;">
   <thead>
     <tr>
