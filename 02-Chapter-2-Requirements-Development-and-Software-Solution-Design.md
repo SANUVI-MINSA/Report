@@ -334,8 +334,30 @@ Analytics & Reporting es el cliente porque no puede generar el mapa de calor del
 </div>
 
 #### 2.5.3 Software Architecture
+
+Para representar la arquitectura de software de Ferova se aplica el C4 Model,
+utilizando Structurizr como herramienta de modelado. Este modelo permite
+describir la arquitectura en niveles progresivos de detalle, desde una vista
+general de contexto hasta la descomposición interna de cada contenedor.
+
 ##### 2.5.3.1 Software Architecture Context Level Diagrams
+ > El siguiente diagrama muestra a Ferova como sistema central, rodeado por
+los tres actores que interactúan con él y los sistemas externos con los que
+se integra.
+
+<div align = "center">
+<img src="resources/images/chapter-II/Software_Architecture/SoftwareArchitectureContextLevelDiagrams.png">
+</div>
+
 ##### 2.5.3.2 Software Architecture Container Level Diagrams
+> El siguiente diagrama presenta la descomposición interna de Ferova en sus
+contenedores principales, mostrando las responsabilidades de cada uno y
+cómo se comunican entre sí.
+
+<div align  = "center">
+<img src="resources/images/chapter-II/Software_Architecture/SoftwareArchitectureContainerLevelDiagrams.png">
+</div>
+
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
 ### 2.6 Tactical-Level Domain-Driven Design
