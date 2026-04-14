@@ -212,22 +212,57 @@ En este flujo se muestra la interaccion entre el bounded context Treatment Track
 
 - **Identity and Access Management**
 
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - IAM.jpg">
+</div>
+
 - **Patient Management**
+
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Patient Management.jpg">
+</div>
 
 - **Treatment Tracking**
 
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Treatment Tracking.jpg">
+</div>
+
 - **Nutritional Diary**
+
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Nutritional Diary.jpg">
+</div>
 
 - **Notification**
 
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Notifications.jpg">
+</div>
+
 - **Comunication**
+
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Comunication.jpg">
+</div>
 
 - **Health Facility**
 
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Health Facility.jpg">
+</div>
+
 - **Achievements & Rewards**
+
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas - Achievements & Rewards.jpg">
+</div>
 
 - **Analytics & Reporting**
 
+<div align="center">
+<img src="resources/images/chapter-II/Bounded-Canvases/Bounde Contex Canvas -  Analytics & Reporting.jpg">
+</div>
 
 #### 2.5.2 Context Mapping
 
