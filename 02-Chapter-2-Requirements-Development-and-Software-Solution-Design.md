@@ -153,8 +153,9 @@ Conformist, Customer/Supplier ó Shared Kernel
 
 ##### IAM → Patient Management
 
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/IAM → Patient Management.png">
-
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -164,7 +165,9 @@ Patient Management es el cliente porque depende completamente de IAM para poder 
 
 ##### IAM → Treatment Tracking
 
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/IAM → Treatment Tracking.png">
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -174,8 +177,9 @@ Treatment Tracking es el cliente porque no puede ejecutar ninguna operacion de t
 
 ##### Treatment Tracking → Achievements & Rewards
 
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Achievements & Rewards.png">
-
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -185,8 +189,9 @@ Achievements & Rewards es el cliente porque depende completamente de los eventos
 
 #####  Treatment Tracking → Notifications
 
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Notifications.png">
-
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -197,8 +202,9 @@ Notifications es el cliente porque no tiene logica propia para detectar cuando e
 
 #####  Nutritional Diary → Notifications
 
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Nutritional Diary → Notifications.png">
-
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -208,8 +214,10 @@ Notifications es el cliente porque depende completamente del evento que genera N
 
 #####  Communication → Notifications
 
-<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Communication → Notifications.png">
 
+<div align="center">
+<img src="resources/images/chapter-II/Context_Mapping/Relatioship/Communication → Notifications.png">
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -219,8 +227,9 @@ Notifications es el cliente porque no tiene visibilidad sobre lo que ocurre dent
 
 #####   Health Facility → Notifications
 
+<div align  = "center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Health Facility → Notifications.png">
-
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -230,7 +239,9 @@ Notifications es el cliente porque no tiene acceso a la informacion de las posta
 
 #####   Treatment Tracking → Analytics & Reporting
 
+<div align  = "center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Analytics & Reporting.png">
+</div>
 
 **Patron: Customer / Supplier**
 
@@ -240,14 +251,21 @@ Analytics & Reporting es el cliente porque no puede generar por si mismo las est
 
 #####   Health Facility → Analytics & Reporting
 
+<div align  = "center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Health Facility → Analytics & Reporting.png">
-
+</div>
 
 **Patron: Customer / Supplier**
 
 En esta relacion Health Facility actua como el upstream (U) y Analytics & Reporting actua como el downstream (D).
 Health Facility es el proveedor porque es el bounded context que gestiona la informacion geografica y organizacional de todas las postas medicas del distrito. Cuando el admin registra una posta desde FerovaClinic, Health Facility almacena sus coordenadas exactas en Google Maps API, su nombre, su direccion y su horario de atencion. Esta informacion geografica es fundamental para que Analytics & Reporting pueda generar el mapa de calor del distrito correctamente, ya que necesita las coordenadas de cada posta para colorearla segun su porcentaje de adherencia y mostrarla en la posicion correcta del mapa.
 Analytics & Reporting es el cliente porque no puede generar el mapa de calor del distrito sin la informacion de ubicacion de las postas que provee Health Facility. No tiene acceso directo a las coordenadas geograficas ni a la lista de postas del distrito. Depende completamente de los datos del upstream para poder colorear cada posta en el mapa segun su nivel de adherencia. Sin esa informacion el admin MINSA veria un dashboard analitico con estadisticas pero sin la visualizacion geografica del mapa de calor que le permite identificar rapidamente las zonas criticas del distrito.
+
+##### Final Context Map
+
+<div align  = "center">
+<img src="resources/images/chapter-II/Context_Mapping/View General/Context Mapping.jpg">
+</div>
 
 #### 2.5.3 Software Architecture
 ##### 2.5.3.1 Software Architecture Context Level Diagrams
