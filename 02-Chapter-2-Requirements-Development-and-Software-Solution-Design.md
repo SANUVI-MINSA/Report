@@ -769,6 +769,241 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-11</td>
+      <td>Enfermera</td>
+      <td>Medium</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Actualizacion del estado del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder actualizar el estado del paciente segun como va su tratamiento, para mantener un control claro de que pacientes siguen activos y cuales han completado o abandonado el tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Actualizacion de estado exitosa<br>
+        Dado que la enfermera desea actualizar el estado de un paciente,<br>
+        cuando selecciona al paciente en FerovaClinic y cambia su estado entre activo, completado o abandonado y presiona 'Guardar',<br>
+        entonces el sistema debe actualizar el estado del paciente y reflejarlo inmediatamente en la lista de pacientes de la enfermera.<br>
+        <br>
+        Escenario 2: Intento de cambio de estado sin justificacion<br>
+        Dado que la enfermera intenta cambiar el estado del paciente a abandonado o completado,<br>
+        cuando presiona 'Guardar' sin ingresar una observacion que justifique el cambio,<br>
+        entonces el sistema debe mostrar un mensaje de error solicitando que ingrese una observacion antes de proceder.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-12</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Inicio del tratamiento del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder iniciar el tratamiento de anemia de un paciente y programar sus dosis diarias de hierro, para que el sistema comience automáticamente el seguimiento del tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Inicio de tratamiento exitoso<br>
+        Dado que la enfermera desea iniciar el tratamiento de un paciente asignado,<br>
+        cuando selecciona al paciente en FerovaClinic, define el suplemento de hierro, la cantidad y la hora de la dosis diaria, la duración de dicho tratamiento y presiona 'Iniciar tratamiento',<br>
+        entonces el sistema debe activar el tratamiento y programar automáticamente los recordatorios diarios de dosis en FerovaFamilia para la madre.<br>
+        <br>
+        Escenario 2: Inicio de tratamiento con datos incompletos<br>
+        Dado que la enfermera intenta iniciar el tratamiento sin completar todos los parámetros de la dosis,<br>
+        cuando presiona 'Iniciar tratamiento',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando los campos que faltan por completar.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-13</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Confirmación de dosis diarias</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder confirmar diariamente que le di el suplemento de hierro a mi hijo, para que el sistema registre el cumplimiento del tratamiento y mantenga actualizado su seguimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Confirmación de dosis exitosa<br>
+        Dado que la madre ya le dio el suplemento de hierro a su hijo,<br>
+        cuando abre FerovaFamilia y presiona el botón 'Confirmar dosis de hoy',<br>
+        entonces el sistema debe registrar la confirmación de la dosis del día, actualizar la racha de días consecutivos cumplidos y actualizar el score de adherencia del paciente.<br>
+        <br>
+        Escenario 2: Intento de confirmar la dosis dos veces en el mismo día<br>
+        Dado que la madre ya confirmo la dosis del día,<br>
+        cuando intenta confirmarla nuevamente,<br>
+        entonces el sistema debe mostrar un mensaje indicando que la dosis del día ya fue confirmada anteriormente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-14</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización del progreso del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder ver el progreso del tratamiento de mi hijo con una gráfica de evolución de hemoglobina, para conocer cómo va mejorando su condición de anemia a lo largo del tiempo.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización del progreso exitosa<br>
+        Dado que la madre desea ver el progreso del tratamiento de su hijo,<br>
+        cuando accede a la sección 'Progreso del tratamiento' en FerovaFamilia,<br>
+        entonces el sistema debe mostrar una gráfica con la evolución de los niveles de hemoglobina del niño registrados en cada control presencial junto con el porcentaje de dosis cumplidas.<br>
+        <br>
+        Escenario 2: Sin datos suficientes para mostrar la grafica<br>
+        Dado que el paciente recién inicio su tratamiento y no tiene controles de hemoglobina registrados,<br>
+        cuando la madre accede a la sección 'Progreso del tratamiento',<br>
+        entonces el sistema debe mostrar un mensaje indicando que aún no hay suficientes datos para mostrar la grafica.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-15</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización del semáforo de riesgo de pacientes</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero poder ver el semáforo de riesgo de todos mis pacientes asignados en FerovaClinic, para identificar rápidamente cuales están cumpliendo el tratamiento y cuales están en riesgo de abandonarlo.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización del semáforo exitosa<br>
+        Dado que la enfermera accede a su panel de pacientes en FerovaClinic,<br>
+        cuando revisa la lista de sus pacientes asignados,<br>
+        entonces el sistema debe mostrar a cada paciente con su semáforo de riesgo correspondiente: verde para bajo riesgo, amarillo para riesgo medio y rojo para alto riesgo, basado en su score de adherencia calculado automáticamente.<br>
+        <br>
+        Escenario 2: Paciente sin actividad registrada<br>
+        Dado que un paciente no ha confirmado ninguna dosis desde que inició su tratamiento,<br>
+        cuando la enfermera revisa su lista de pacientes,<br>
+        entonces el sistema debe mostrar al paciente automáticamente en rojo indicando que no hay actividad registrada.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
