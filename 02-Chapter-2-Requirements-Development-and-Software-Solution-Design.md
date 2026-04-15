@@ -846,7 +846,7 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 
 | Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
 | :--- | :--- | :--- | :--- |
-| **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(DNI)`<br>• `existsByUsername(DNI)`<br>• **`findRoleByUsername(DNI)`** | • `save(user)`<br>• `deleteByUsername(DNI)` |
+| **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(dni: String)`<br>• `existsByUsername(dni: String)`<br>• `findRoleByUsername(dni: String)` | • `save(user)`<br>• `deleteByUsername(dni: String)` |
 | **RoleRepository** | Administrar el catálogo de roles y sus permisos asociados. | • `findByName(name)`<br>• `getDefault()` | • `save(role)` |
 
 ##### 2.6.1.2. Interface Layer
