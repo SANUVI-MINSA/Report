@@ -2893,6 +2893,266 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-11</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Confirmar dosis diaria mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de confirmación de dosis diaria mediante una API REST, para que la madre pueda registrar el cumplimiento de la dosis del día y el sistema actualice automáticamente la racha y el score de adherencia del paciente en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Confirmación de dosis exitosa</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/confirm-dose está disponible,<br>
+        cuando se envía una solicitud POST con el token JWT válido y la fecha de confirmación,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene la confirmación registrada con la racha actualizada y el nuevo score de adherencia del paciente.<br>
+        <br>
+        <b>Escenario 2: Dosis ya confirmada en el día</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/confirm-dose está disponible,<br>
+        cuando se envía una solicitud POST para un tratamiento cuya dosis ya fue confirmada en el día,<br>
+        entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'La dosis del día ya fue confirmada anteriormente.'<br>
+        <br>
+        <b>Escenario 3: Tratamiento no encontrado</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/confirm-dose está disponible,<br>
+        cuando se envía una solicitud POST con un ID de tratamiento que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Tratamiento no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-12</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener score de riesgo de abandono del paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención del score de riesgo de abandono del paciente mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera el semáforo de riesgo de cada paciente calculado automáticamente por el sistema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención del score exitosa</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/risk-score está disponible,<br>
+        cuando se envía una solicitud GET con el token JWT válido,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el score de riesgo del paciente, su clasificación en semáforo como bajo, medio o alto y la justificación del score basada en días sin dosis e historial de omisiones.<br>
+        <br>
+        <b>Escenario 2: Paciente sin actividad registrada</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/risk-score está disponible,<br>
+        cuando se envía una solicitud GET para un paciente que no ha confirmado ninguna dosis desde que inició su tratamiento,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el score máximo de riesgo con clasificación roja y el mensaje: 'El paciente no tiene actividad registrada.'<br>
+        <br>
+        <b>Escenario 3: Tratamiento no encontrado</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/risk-score está disponible,<br>
+        cuando se envía una solicitud GET con un ID de tratamiento que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Tratamiento no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-13</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener lista de pacientes críticos mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de la lista de pacientes críticos mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera los pacientes que llevan 72 horas o más sin confirmar su dosis diaria.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de lista crítica exitosa</b><br>
+        Dado que el endpoint /api/v1/treatments/critical-patients está disponible,<br>
+        cuando se envía una solicitud GET con el token JWT válido y el ID de la enfermera,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de pacientes que llevan 72 horas o más sin confirmar su dosis, indicando el nombre del paciente, las horas sin confirmación y su score de riesgo de abandono.<br>
+        <br>
+        <b>Escenario 2: Sin pacientes críticos</b><br>
+        Dado que el endpoint /api/v1/treatments/critical-patients está disponible,<br>
+        cuando se envía una solicitud GET y todos los pacientes de la enfermera están cumpliendo su tratamiento correctamente,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay pacientes en estado crítico en este momento.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/treatments/critical-patients está disponible,<br>
+        cuando se envía una solicitud GET con un token JWT inválido o expirado,<br>
+        entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-14</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Completar tratamiento del paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de cierre exitoso del tratamiento del paciente mediante una API REST, para que la enfermera pueda marcar el tratamiento como completado y el sistema notifique automáticamente a la madre en FerovaFamilia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Completar tratamiento exitosamente</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/complete está disponible,<br>
+        cuando se envía una solicitud PUT con el token JWT válido y una observación final,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el tratamiento actualizado con estado completado, la fecha de cierre y la observación final registrada.<br>
+        <br>
+        <b>Escenario 2: Observación final no proporcionada</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/complete está disponible,<br>
+        cuando se envía una solicitud PUT sin incluir una observación final,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene el mensaje: 'Se requiere una observación final para completar el tratamiento.'<br>
+        <br>
+        <b>Escenario 3: Tratamiento no encontrado</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/complete está disponible,<br>
+        cuando se envía una solicitud PUT con un ID de tratamiento que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Tratamiento no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-15</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar abandono del tratamiento mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro de abandono del tratamiento mediante una API REST, para que la enfermera pueda marcar el tratamiento como abandonado y el sistema actualice las estadísticas del distrito en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de abandono exitoso</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/abandon está disponible,<br>
+        cuando se envía una solicitud PUT con el token JWT válido y una observación que justifique el abandono,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el tratamiento actualizado con estado abandonado, la fecha de abandono y la observación registrada.<br>
+        <br>
+        <b>Escenario 2: Observación no proporcionada</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/abandon está disponible,<br>
+        cuando se envía una solicitud PUT sin incluir una observación que justifique el abandono,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene el mensaje: 'Se requiere una observación para registrar el abandono del tratamiento.'<br>
+        <br>
+        <b>Escenario 3: Tratamiento no encontrado</b><br>
+        Dado que el endpoint /api/v1/treatments/{treatmentId}/abandon está disponible,<br>
+        cuando se envía una solicitud PUT con un ID de tratamiento que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Tratamiento no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
