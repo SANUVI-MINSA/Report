@@ -2183,6 +2183,194 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-41</td>
+      <td>Admin</td>
+      <td>Medium</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización de historial de notificaciones enviadas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como admin, quiero poder ver un historial de todas las notificaciones push enviadas por el sistema desde FerovaClinic, para llevar un control de las comunicaciones realizadas a madres y enfermeras.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de historial de notificaciones exitosa<br>
+        Dado que el admin desea revisar las notificaciones enviadas,<br>
+        cuando accede a la sección 'Historial de notificaciones' en FerovaClinic,<br>
+        entonces el sistema debe mostrar una lista de todas las notificaciones enviadas, incluyendo el tipo de notificación, destinatario, fecha, hora y el estado de entrega (enviado/fallido).<br>
+        <br>
+        Escenario 2: Filtrado de historial por tipo de notificación<br>
+        Dado que el admin se encuentra en la sección 'Historial de notificaciones',<br>
+        cuando aplica un filtro por tipo (ej. recordatorio de dosis, alerta de riesgo, reserva de cita),<br>
+        entonces el sistema debe mostrar únicamente las notificaciones que correspondan al tipo seleccionado.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-42</td>
+      <td>Admin</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización del dashboard analítico del distrito</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como admin, quiero poder ver el dashboard analítico completo de mi distrito en FerovaClinic, para monitorear el estado del tratamiento de anemia en todas las postas y tomar decisiones informadas.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización del dashboard exitosa<br>
+        Dado que el admin accede al dashboard analítico en FerovaClinic,<br>
+        cuando revisa el panel principal,<br>
+        entonces el sistema debe mostrar el porcentaje de adherencia de cada posta del distrito, la cantidad de pacientes activos, completados y abandonados, y una tabla comparativa del rendimiento entre todas las postas.<br>
+        <br>
+        Escenario 2: Sin reportes enviados por las enfermeras<br>
+        Dado que ninguna enfermera ha enviado su reporte de adherencia aun,<br>
+        cuando el admin accede al dashboard analítico,<br>
+        entonces el sistema debe mostrar un mensaje indicando que aún no hay reportes disponibles para mostrar en el dashboard.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-43</td>
+      <td>Admin</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización del mapa de calor del distrito</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como admin, quiero poder ver el mapa de calor de mi distrito en FerovaClinic, para identificar visualmente que zonas tienen mayor tasa de abandono del tratamiento y priorizar las intervenciones necesarias.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización del mapa de calor exitosa<br>
+        Dado que el admin accede a la sección del mapa de calor en FerovaClinic,<br>
+        cuando revisa el mapa del distrito,<br>
+        entonces el sistema debe mostrar cada posta coloreada según su porcentaje de adherencia: rojo intenso para las postas con bajo porcentaje de adherencia, amarillo para las de riesgo medio y verde para las que van bien.<br>
+        <br>
+        Escenario 2: Zona crítica identificada en el mapa<br>
+        Dado que una posta tiene un porcentaje de adherencia críticamente bajo,<br>
+        cuando el admin revisa el mapa de calor,<br>
+        entonces el sistema debe marcar automáticamente esa zona como crítica en rojo intenso y destacarla para que el admin tome acción inmediata.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-44</td>
+      <td>Admin</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Exportación de reporte del distrito en PDF</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como admin, quiero poder exportar el reporte completo del distrito en formato PDF desde FerovaClinic, para enviarlo al MINSA central con las estadísticas actualizadas del tratamiento de anemia en mi distrito.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Exportación de reporte exitosa<br>
+        Dado que el admin desea exportar el reporte del distrito,<br>
+        cuando presiona 'Exportar reporte en PDF' en FerovaClinic,<br>
+        entonces el sistema debe generar automáticamente un documento PDF con el porcentaje de adherencia por posta, la comparativa de rendimiento entre postas y las zonas críticas identificadas en el mapa de calor, y permitirle descargarlo en su dispositivo.<br>
+        <br>
+        Escenario 2: Exportación sin datos suficientes<br>
+        Dado que el admin intenta exportar el reporte sin que ninguna enfermera haya enviado su reporte de adherencia,<br>
+        cuando presiona 'Exportar reporte en PDF',<br>
+        entonces el sistema debe mostrar un mensaje indicando que no hay suficientes datos para generar el reporte y solicitando que las enfermeras envíen sus reportes primero.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
