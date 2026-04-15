@@ -2633,6 +2633,266 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-06</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Asignar paciente a enfermera mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de asignación de paciente a enfermera mediante una API REST, para que el sistema pueda vincular a un paciente con una enfermera específica y almacenar la relación en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Asignación exitosa</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/assign está disponible,<br>
+        cuando se envía una solicitud PUT con el token JWT válido y el ID de la enfermera,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el paciente actualizado con la enfermera asignada.<br>
+        <br>
+        <b>Escenario 2: Paciente ya asignado a otra enfermera</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/assign está disponible,<br>
+        cuando se envía una solicitud PUT con el ID de un paciente que ya tiene una enfermera asignada,<br>
+        entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'El paciente ya cuenta con una enfermera asignada.'<br>
+        <br>
+        <b>Escenario 3: Paciente o enfermera no encontrado</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/assign está disponible,<br>
+        cuando se envía una solicitud PUT con un ID de paciente o enfermera que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente o enfermera no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-07</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar diagnóstico del paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro del diagnóstico de anemia del paciente mediante una API REST, para que la enfermera pueda registrar el tipo y severidad de la anemia y almacenarlo en el historial médico del paciente en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de diagnóstico exitoso</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/diagnosis está disponible,<br>
+        cuando se envía una solicitud POST con el token JWT válido, el tipo de anemia y el nivel de severidad,<br>
+        entonces se recibe una respuesta con estado 201 y el cuerpo contiene el diagnóstico registrado con su fecha de registro y el ID del paciente asociado.<br>
+        <br>
+        <b>Escenario 2: Datos del diagnóstico incompletos</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/diagnosis está disponible,<br>
+        cuando se envía una solicitud POST con campos obligatorios vacíos o con formato incorrecto,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/diagnosis está disponible,<br>
+        cuando se envía una solicitud POST con un ID de paciente que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-08</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar nivel de hemoglobina del paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro del nivel de hemoglobina del paciente mediante una API REST, para que la enfermera pueda registrar los resultados de cada control presencial y actualizar automáticamente el historial médico del paciente en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de hemoglobina exitoso</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/hemoglobin está disponible,<br>
+        cuando se envía una solicitud POST con el token JWT válido y el nivel de hemoglobina en g/dL,<br>
+        entonces se recibe una respuesta con estado 201 y el cuerpo contiene el nivel de hemoglobina registrado con su fecha de registro y el ID del paciente asociado.<br>
+        <br>
+        <b>Escenario 2: Valor de hemoglobina inválido</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/hemoglobin está disponible,<br>
+        cuando se envía una solicitud POST con un valor de hemoglobina fuera del rango permitido,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene el mensaje: 'El valor de hemoglobina ingresado no es válido.'<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/hemoglobin está disponible,<br>
+        cuando se envía una solicitud POST con un ID de paciente que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-09</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Actualizar historial médico del paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de actualización del historial médico del paciente mediante una API REST, para que la enfermera pueda registrar los datos de cada control presencial como peso, hemoglobina y observaciones en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Actualización del historial exitosa</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/medical-history está disponible,<br>
+        cuando se envía una solicitud PUT con el token JWT válido, el nivel de hemoglobina en g/dL, el peso actualizado del niño y las observaciones de la visita,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el historial médico actualizado con la fecha y hora de la actualización.<br>
+        <br>
+        <b>Escenario 2: Datos incompletos</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/medical-history está disponible,<br>
+        cuando se envía una solicitud PUT con campos obligatorios vacíos o con formato incorrecto,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos como nivel de hemoglobina y peso del niño.<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/patients/{patientId}/medical-history está disponible,<br>
+        cuando se envía una solicitud PUT con un ID de paciente que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-10</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Iniciar tratamiento del paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de inicio de tratamiento mediante una API REST, para que la enfermera pueda activar el tratamiento de anemia de un paciente y programar automáticamente los recordatorios diarios de dosis en el sistema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Inicio de tratamiento exitoso</b><br>
+        Dado que el endpoint /api/v1/treatments está disponible,<br>
+        cuando se envía una solicitud POST con el token JWT válido, el ID del paciente, el suplemento de hierro, la cantidad, la hora de la dosis diaria y la duración de dicho tratamiento,<br>
+        entonces se recibe una respuesta con estado 201 y el cuerpo contiene el tratamiento creado con su ID asignado, los parámetros de la dosis y la fecha de inicio.<br>
+        <br>
+        <b>Escenario 2: Datos del tratamiento incompletos</b><br>
+        Dado que el endpoint /api/v1/treatments está disponible,<br>
+        cuando se envía una solicitud POST con campos obligatorios vacíos o con formato incorrecto,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/treatments está disponible,<br>
+        cuando se envía una solicitud POST con un ID de paciente que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
