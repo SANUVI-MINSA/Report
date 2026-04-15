@@ -818,9 +818,11 @@ En esta capa se definen las entidades y reglas de negocio relacionadas con la ge
 
 ###### Aggregate
 
+### Aggregates
+
 | Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
 | :--- | :--- | :--- | :--- | :--- |
-| **Patient** | Representa a un paciente (niño) con anemia dentro del sistema, incluyendo su información personal, estado clínico y relación con su madre y enfermera asignada. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **birthDate**: `Date`<br>• **weight**: `Float`<br>• **height**: `Float`<br>• **hemoglobinLevel**: `Float`<br>• **motherId**: `String`<br>• **nurseId**: `String` | • `registerPatient()`<br>• `updatePatientData()`<br>• `assignNurse(nurseId)`<br>• `updateHemoglobinLevel(value)`<br>• `updateWeight(value)`<br>• `updateHeight(value)`<br>• `displayPatientData()` | • El paciente debe estar asociado a una madre (**motherId** obligatorio).<br>• Un paciente solo puede tener una enfermera asignada a la vez.<br>• La fecha de nacimiento no puede ser futura.<br>• El nivel de hemoglobina debe ser mayor a **0**.<br>• El peso y la altura deben ser mayores a **0**. |
+| **Patient** | Representa a un niño dentro del sistema, gestionando su información personal, estado clínico actual y su historial de registros médicos junto a sus responsables. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **birthDate**: `Date`<br>• **currentWeight**: `Float`<br>• **currentHeight**: `Float`<br>• **currentHemoglobinLevel**: `Float`<br>• **motherId**: `String`<br>• **nurseId**: `String` | • `registerPatient()`<br>• `updatePatientData()`<br>• `assignNurse(nurseId)`<br>• `updateWeight(value)`<br>• `updateHeight(value)`<br>• `updateHemoglobinLevel(value)`<br>• `addMedicalRecord(record)`<br>• `getMedicalHistory()` | • El paciente debe estar asociado a una madre (**motherId** obligatorio).<br>• Solo puede tener una enfermera asignada a la vez.<br>• La fecha de nacimiento no puede ser futura.<br>• El peso, la altura y el nivel de hemoglobina deben ser mayores a **0**. |
 
 ###### Value Objects
 
@@ -831,6 +833,12 @@ En esta capa se definen las entidades y reglas de negocio relacionadas con la ge
 | **Height** | Almacena la estatura/talla del niño. | • Debe ser mayor a **0**.<br>• Valor expresado en centímetros/metros. | • `isValid()`<br>• Validación de rango. |
 | **BirthDate** | Gestiona la fecha de nacimiento del paciente. | • No puede ser una fecha futura.<br>• Debe ser una fecha válida. | • `isValid()`<br>• Cálculo de edad actual. |
 
+###### Domain Services
+
+| Servicio | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **PatientAssignmentService** | Gestionar la asignación de pacientes a enfermeras. | • Validar la disponibilidad de la enfermera.<br>• Asegurar que se cumpla la regla de una sola enfermera por paciente. |
+| **HemoglobinAnalysisService** | Evaluar el estado clínico según la hemoglobina. | • Comparar el nivel de hemoglobina con los rangos de edad.<br>• Determinar el grado de anemia (leve, moderada, severa).|
 ##### 2.6.2.2. Interface Layer
 ##### 2.6.2.3. Application Layer
 ##### 2.6.2.4. Infrastructure Layer
