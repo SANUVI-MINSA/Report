@@ -890,6 +890,110 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 | | `/api/v1/patients/{id}/controls` | **POST** | Agregar un nuevo control clínico en consultas posteriores. |
 | | `/api/v1/patients/{id}/discharge` | **POST** | Dar de alta médica al paciente (finalizar ciclo). |
 
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. CreatePatientRequest**
+**Propósito:** Envía los datos necesarios para registrar a una paciente (niño) por primera vez.
+
+```json
+{
+  "name": "Juan",
+  "lastName": "Perez",
+  "birthDate": "2020-01-01",
+  "sexo": "MASCULINO",
+  "weight": 12.5,
+  "height": 85.0,
+  "motherId": "user-123"
+}
+```
+
+#### **2. PatientResource**
+**Propósito:** Devuelve la información resumida y el estado actual del paciente.
+
+```json
+{
+  "id": "patient-1",
+  "name": "Juan",
+  "lastName": "Perez",
+  "sexo": "MASCULINO",
+  "currentWeight": 12.5,
+  "currentHeight": 85.0,
+  "currentHemoglobinLevel": 10.5,
+  "status": "IN_TREATMENT"
+}
+```
+
+#### **3. MedicalRecordRequest**
+**Propósito:** Registra un historial clínico detallado, con antecedentes y el primer control.
+
+```json
+{
+  "date": "2026-01-01T10:00:00",
+  "hemoglobinLevel": 10.2,
+  "weight": 12.8,
+  "height": 86.0,
+  "sexo": "MASCULINO",
+  "motivoConsulta": "Primera evaluación",
+  "observaciones": "Paciente estable",
+  "antecedentes": [
+    {
+      "type": "ALERGIA",
+      "content": "Alergia a penicilina"
+    }
+  ],
+  "controls": [
+    {
+      "fecha": "2026-01-01T10:00:00",
+      "hemoglobinaGdl": 10.2,
+      "hematocrito": 32.5,
+      "ferritina": 15.0,
+      "sintomas": ["cansancio"],
+      "tratamiento": {
+        "medicamento": "Hierro",
+        "dosis": "10mg",
+        "duracionDias": 30,
+        "indicaciones": "Después de comidas"
+      }
+    }
+  ]
+}
+```
+#### **4. AddControlRequest**
+**Propósito:** Registra un nuevo control de seguimiento y tratamiento para una consulta posterior.
+
+```json
+{
+ "fecha": "2026-02-01T10:00:00",
+  "hemoglobinaGdl": 10.5,
+  "hematocrito": 32.0,
+  "ferritina": 15.0,
+  "sintomas": ["cansancio"],
+  "tratamiento": {
+    "medicamento": "Hierro",
+    "dosis": "10mg",
+    "duracionDias": 30,
+    "indicaciones": "Después de comidas"
+  }
+}
+```
+
+#### **5. AssignNurseRequest**
+**Propósito:** Envía el identificador de la enfermera que tratara al paciente.
+
+```json
+{
+   "nurseId": "nurse-456"
+}
+```
+
+#### **5. DischargePatientRequest**
+**Propósito:** Registra el alta médica del paciente, validado por la enfermera.
+
+```json
+{
+"nurseId": "nurse-456"
+}
+```
 
 ##### 2.6.2.3. Application Layer
 ##### 2.6.2.4. Infrastructure Layer
