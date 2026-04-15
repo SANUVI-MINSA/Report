@@ -414,6 +414,31 @@ cómo se comunican entre sí.
 <img src="resources/images/chapter-II/Software_Architecture/SoftwareArchitectureContainerLevelDiagrams.png">
 </div>
 
+El Container Diagram descompone Ferova en: un Landing Page estático,
+dos apps móviles (FerovaFamilia en Android nativo para madres y
+FerovaClinic en Flutter para enfermeras y coordinadores), un backend
+Spring Boot API que centraliza toda la lógica de negocio distribuida
+en los nueve bounded contexts (IAM, Patient Management, Treatment
+Tracking, Nutritional Diary, Achievements & Rewards, Communication,
+Notifications, Health Facility y Analytics & Reporting), la persistencia
+en MongoDB y las integraciones con servicios externos.
+
+**Decisiones tecnológicas principales**
+
+- **Mobile first:** Android nativo (Kotlin + Jetpack Compose) para
+madres en FerovaFamilia; Flutter (Dart) para enfermeras y coordinadores
+en FerovaClinic con acceso diferenciado por rol.
+- **Backend:** Java + Spring Boot como API REST centralizada que agrupa
+la lógica de los nueve bounded contexts.
+- **Persistencia:** MongoDB — esquema flexible para el registro de
+pacientes, tratamientos, dosis y diario nutricional.
+- **Integraciones:** Google Maps SDK (geolocalización de postas),
+Firebase FCM (notificaciones push multicapa), Firebase Firestore
+(chat en tiempo real madre-enfermera).
+- **Autenticación:** IAM emite tokens JWT; los servicios los validan
+localmente para evitar consultas síncronas constantes entre
+bounded contexts.
+
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
 ### 2.6 Tactical-Level Domain-Driven Design
