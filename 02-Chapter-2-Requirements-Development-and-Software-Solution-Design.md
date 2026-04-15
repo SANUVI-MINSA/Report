@@ -811,6 +811,17 @@ Este contexto se organiza siguiendo una arquitectura por capas basada en Domain-
 Además, se presentan diagramas a nivel de componentes y de código para describir la estructura y el diseño del sistema.
 
 ##### 2.6.1.1. Domain Layer
+
+En esta sección se definen las clases que representan el núcleo del Bounded Context Identity and Access Management (IAM), encargadas de gestionar la identidad de los usuarios, su autenticación y la asignación de roles dentro del sistema.
+
+###### Aggregates
+
+| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **username**: `String`<br>• **password**: `Hash`<br>• **roleName**: `String` | • `registerUser()`<br>• `login()`<br>• `changePassword()`<br> • `assignRole(roleName)`<br>• `displayUserData()` | • El `username` debe ser único y no puede estar vacío.<br>• La `password` siempre va cifrada.<br>• Todo usuario debe tener un `rol` asignado (mother, nurse, admin). <br>• No se permite autenticación sin credenciales válidas. |
+
+
+
 ##### 2.6.1.2. Interface Layer
 ##### 2.6.1.3. Application Layer
 ##### 2.6.1.4. Infrastructure Layer
