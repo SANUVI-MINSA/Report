@@ -443,18 +443,7 @@ bounded contexts.
 
 ### 2.6 Tactical-Level Domain-Driven Design
 #### 2.6.X. Bounded Context: `<bounded context Name>`
-
-En esta capa se definen las entidades y reglas de negocio relacionadas con la gestión de pacientes con anemia dentro de la plataforma Ferova. Este bounded context es responsable del registro, almacenamiento y seguimiento de la información clínica básica del paciente, así como su asignación a una enfermera.
-
 ##### 2.6.X.1. Domain Layer
-
-###### Aggregate
-
-| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
-| :--- | :--- | :--- | :--- | :--- |
-| **Patient** | Representa a un paciente (niño) con anemia dentro del sistema, incluyendo su información personal, estado clínico y relación con su madre y enfermera asignada. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **birthDate**: `Date`<br>• **weight**: `Float`<br>• **height**: `Float`<br>• **hemoglobinLevel**: `Float`<br>• **motherId**: `String`<br>• **nurseId**: `String` | • `registerPatient()`<br>• `updatePatientData()`<br>• `assignNurse(nurseId)`<br>• `updateHemoglobinLevel(value)`<br>• `updateWeight(value)`<br>• `updateHeight(value)`<br>• `displayPatientData()` | • El paciente debe estar asociado a una madre (**motherId** obligatorio).<br>• Un paciente solo puede tener una enfermera asignada a la vez.<br>• La fecha de nacimiento no puede ser futura.<br>• El nivel de hemoglobina debe ser mayor a **0**.<br>• El peso y la altura deben ser mayores a **0**. |
-
-
 ##### 2.6.X.2. Interface Layer
 ##### 2.6.X.3. Application Layer
 ##### 2.6.X.4. Infrastructure Layer
