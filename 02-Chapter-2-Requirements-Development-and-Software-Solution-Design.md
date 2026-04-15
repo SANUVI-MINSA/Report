@@ -950,6 +950,31 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
 | **AssignRoleCommandFromResourceAssembler** | `Entrada de datos` → `AssignRoleCommand` | Mapea la solicitud de asignación de nivel en un comando de cambio de rol. |
 
 ##### 2.6.1.3. Application Layer
+
+###### Command Handlers
+
+| Handler | Propósito | Responsabilidades (Flujo de Trabajo) |
+| :--- | :--- | :--- |
+| **CreateUserCommandHandler** | Gestionar el registro de nuevos usuarios. | • Validar unicidad del DNI (`existsByDni`).<br>• Aplicar políticas de seguridad de contraseña.<br>• Cifrar la contraseña.<br>• Asignar el rol por defecto (**Mother**).<br>• Persistir al usuario en el repositorio. |
+| **LoginUserCommandHandler** | Autenticar a los usuarios en el sistema. | • Buscar al usuario por su DNI.<br>• Validar que la contraseña coincida con el Hash guardado.<br>• Generar y retornar el token de acceso (JWT). |
+| **ResetPasswordCommandHandler** | Restablecer claves mediante correo electrónico. | • Verificar la existencia del usuario por su **Email**.<br>• Validar la identidad (comparar código de verificación).<br>• Aplicar políticas de robustez a la nueva clave.<br>• Encriptar y guardar los cambios. |
+
+###### Query Handlers
+
+| Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **GetUserByDniQueryHandler** | Obtener la información de un usuario específico. | • Buscar al usuario en el repositorio usando su **DNI**.<br>• Retornar los datos encontrados para ser transformados en recurso. |
+| **ListRolesQueryHandler** | Listar todos los roles disponibles en el panal. | • Consultar al repositorio de roles.<br>• Retornar la colección completa de roles (Mother, Nurse, Admin). |
+
+###### Event Handlers.
+
+| Event Handler | Evento al que Reacciona | Responsabilidades (Acciones) |
+| :--- | :--- | :--- |
+| **OnUserRegistered** | `UserRegisteredEvent` | • Registrar una auditoría (anotar que alguien nuevo llegó).<br>• Enviar una notificación de bienvenida (opcional). |
+| **OnUserLoggedIn** | `UserLoggedInEvent` | • Registrar el acceso al sistema (saber quién entró y a qué hora).<br>• Monitorear la seguridad de la cuenta. |
+| **OnPasswordReset** | `PasswordResetEvent` | • Registrar el cambio de contraseña en el historial. |
+
+
 ##### 2.6.1.4. Infrastructure Layer
 ##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
