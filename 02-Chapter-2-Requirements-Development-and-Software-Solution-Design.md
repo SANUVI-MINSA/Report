@@ -995,6 +995,16 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 }
 ```
 
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **CreatePatientCommandFromResourceAssembler** | `CreatePatientRequest` → `CreatePatientCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
+| **MedicalRecordCommandAssembler** | `MedicalRecordRequest` → `MedicalRecord` | Traduce el JSON complejo del historial médico en un objeto estructurado, validando y convirtiendo tipos. |
+| **ControlCommandAssembler** | `AddControlRequest` → `Control` | Transforma los datos de seguimiento en un objeto de control, permitiendo cálculos lógicos como el estado de anemia. |
+| **PatientResourceFromEntityAssembler** | `Patient (Entity)` → `PatientResource` | Transforma la entidad del dominio en un recurso seguro y resumido para ser enviado al cliente. |
+| **DischargePatientCommandAssembler** | `DischargePatientRequest` → `DischargePatientCommand` | Traduce la petición de alta médica en una instrucción ejecutable por el negocio. |
+
 ##### 2.6.2.3. Application Layer
 ##### 2.6.2.4. Infrastructure Layer
 ##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
