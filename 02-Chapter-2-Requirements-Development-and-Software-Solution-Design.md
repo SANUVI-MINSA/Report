@@ -951,6 +951,8 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
 
 ##### 2.6.1.3. Application Layer
 
+En esta capa se coordinan los casos de uso del sistema relacionados con la gestión de usuarios. Su responsabilidad es orquestar las operaciones entre el Interface Layer y el Domain Layer, ejecutando comandos y consultas sin contener lógica de negocio.
+
 ###### Command Handlers
 
 | Handler | Propósito | Responsabilidades (Flujo de Trabajo) |
