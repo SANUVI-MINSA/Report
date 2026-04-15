@@ -868,15 +868,75 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
 | :--- | :--- | :--- | :--- |
 | **AuthController** | `POST` | `/api/v1/auth/login` | Autentica al usuario con DNI y contraseña; entrega un token. |
 | | `POST` | `/api/v1/auth/logout` | Cierra la sesión e invalida el token actual. |
+| | `POST` | `/api/v1/auth/reset-password` | Restablece la contraseña olvidada usando un código de verificación. |
 | **UserController** | `POST` | `/api/v1/users` | Registra un nuevo usuario con el rol por defecto. |
 | | `GET` | `/api/v1/users/{dni}` | Obtiene la información detallada de un usuario por su DNI. |
 | | `PUT` | `/api/v1/users/{dni}` | Actualiza datos (nombre, teléfono). |
-| | `PUT` | `/api/v1/users/{dni}/password` | Permite realizar el cambio de contraseña de forma segura. |
 | **RoleController** | `GET` | `/api/v1/roles` | Muestra la lista de todos los roles (Madre, Enfermera, Admin). |
 | | `GET` | `/api/v1/roles/{name}` | Obtiene los detalles de un rol específico por su nombre. |
 
+###### Resources (DTOs / Request & Response Models)
 
+#### **1. LoginRequest**
+**Propósito:** Envía las credenciales (DNI y contraseña) para iniciar sesión.
 
+```json
+{
+  "dni": "12345678",
+  "password": "string"
+}
+```
+
+#### **2. TokenResponse**
+**Propósito:** Devuelve las llaves de acceso (tokens) tras una autenticación válida.
+```json
+{
+  "accessToken": "string",
+  "refreshToken": "string"
+}
+```
+
+#### **3. CreateUserRequest**
+**Propósito:** Formulario con los datos necesarios para registrar a un nuevo usuario.
+```json
+{
+  "dni": "12345678",
+  "name": "Juan",
+  "lastName": "Perez",
+  "phone": "987654321",
+  "password": "string"
+}
+```
+
+#### **4. UserResource**
+**Propósito:** Información del perfil del usuario que el sistema muestra públicamente.
+```json
+{
+  "dni": "12345678",
+  "name": "Juan",
+  "lastName": "Perez",
+  "phone": "987654321",
+  "roleName": "Mother"
+}
+```
+
+#### **5. ResetPasswordRequest**
+**Propósito:** Permite restablecer la contraseña de un usuario mediante un código de verificación enviado previamente.
+```json
+{
+  "dni": "12345678",
+  "newPassword": "string",
+  "verificationCode": "123456"
+}
+```
+
+#### **6. RoleResource**
+**Propósito:** Muestra el nombre del rol asignado al usuario.
+```json
+{
+  "name": "Mother"
+}
+```
 
 ##### 2.6.1.3. Application Layer
 ##### 2.6.1.4. Infrastructure Layer
