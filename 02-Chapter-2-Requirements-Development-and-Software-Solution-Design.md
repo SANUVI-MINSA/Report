@@ -818,7 +818,7 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 
 | Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
 | :--- | :--- | :--- | :--- | :--- |
-| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String` <br>• **password**: `Hash`<br>• **roleName**: `Role` <br>• **dni**: `DNI` <br>• **phone**: `Phone`| • `registerUser()`<br>• `login()`<br>• `changePassword()`<br> • `assignRole(roleName)`<br>• `displayUserData()` | • El `DNI` debe ser único y no puede estar vacío.<br>• La `password` siempre va cifrada.<br>• Todo usuario debe tener un `rol` asignado (mother, nurse, admin). <br>• No se permite autenticación sin credenciales válidas. |
+| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **password**: `Hash`<br>• **roleName**: `Role`<br>• **dni**: `DNI`<br>• **phone**: `Phone`<br>• **email**: `Email` | • `registerUser()`<br>• `login()`<br>• `changePassword()`<br>• `assignRole(roleName)`<br>• `displayUserData()` | • El **DNI** debe ser único y no puede estar vacío.<br>• La **password** siempre va cifrada.<br>• Todo usuario debe tener un **rol** asignado.<br>• No se permite autenticación sin credenciales válidas. |
 
 ###### Entities
 
@@ -833,6 +833,7 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 | **Password** | Encapsula la seguridad de acceso del usuario. | • No puede ser texto plano.<br>• Debe cumplir políticas de complejidad. | • Generación de Hash.<br>• Verificación de coincidencia. |
 | **DNI** | Identificación oficial del usuario. | • Debe tener exactamente **8 dígitos**.<br>• Solo caracteres numéricos. | • Validación de formato.<br>• Comparación por valor. |
 | **Phone** | Medio de contacto y comunicación. | • Formato telefónico válido.<br>• No puede estar vacío si es requerido. | • Normalización de número.<br>• Validación de país/prefijo. |
+| **Email** | Dirección de correo para notificaciones y recuperación. | • Debe tener un formato válido (`ejemplo@correo.com`).<br>• No puede estar vacío. | • Validación de sintaxis.<br>• Conversión a minúsculas (normalización). |
 
 ###### Domain Services
 
@@ -904,6 +905,7 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
   "name": "Juan",
   "lastName": "Perez",
   "phone": "987654321",
+  "email": "user@ejemplo.com",
   "password": "string"
 }
 ```
@@ -916,6 +918,7 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
   "name": "Juan",
   "lastName": "Perez",
   "phone": "987654321",
+  "email": "user@ejemplo.com",
   "roleName": "Mother"
 }
 ```
