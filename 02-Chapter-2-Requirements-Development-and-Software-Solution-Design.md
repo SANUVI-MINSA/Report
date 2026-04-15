@@ -1035,6 +1035,79 @@ En esta capa se coordinan los casos de uso del sistema relacionados con la gesti
 
 
 ##### 2.6.2.4. Infrastructure Layer
+
+En esta capa se implementan los detalles técnicos necesarios para la persistencia de datos, integración con servicios externos y soporte a las operaciones del dominio. Se encarga de materializar las interfaces definidas en el Domain Layer.
+
+###### Persistence
+
+| Repositorio | Implementación | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **MongoPatientRepository** | `PatientRepository` | Guardar, buscar por ID, filtrar por madre/enfermera y eliminar pacientes. | `save`, `findById`, `findByMotherDni`, `findByNurseDni`, `deleteById` |
+| **MongoMedicalRecordRepository** | Técnico (Infra) | Guardar registros médicos y buscar historiales completos por paciente. | `save`, `findByPatientId` |
+
+###### Mappers
+
+| Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **PatientDocumentMapper** | Patient ↔ PatientDocument | Convierte el agregado completo de paciente a documento Mongo y viceversa. |
+| **MedicalRecordDocumentMapper** | MedicalRecord ↔ MedicalRecordDocument | Convierte el historial completo. Usa internamente otros mappers. |
+| **ControlMapper** | Control ↔ Embedded Document | Convierte cada control individual. Es utilizado dentro de MedicalRecordDocumentMapper. |
+
+###### Modelo de Datos (MongoDB)
+
+<h4>Colección: patients </h4>
+
+```json
+{
+  "_id": "patient-1",
+  "name": "Juan",
+  "lastName": "Perez",
+  "birthDate": "2020-01-01",
+  "sexo": "MASCULINO",
+  "currentWeight": 12.5,
+  "currentHeight": 85.0,
+  "currentHemoglobinLevel": 10.5,
+  "motherId": "user-123",
+  "nurseId": "nurse-456",
+  "status": "IN_TREATMENT"
+}
+```
+<h4>Colección: medical_records </h4>
+
+```json
+{
+  "_id": "mr-1",
+  "patientId": "patient-1",
+  "motherId": "user-123",
+  "nurseId": "nurse-456",
+  "date": "2026-01-01",
+  "hemoglobinLevel": 10.2,
+  "weight": 12.8,
+  "height": 86.0,
+  "sexo": "MASCULINO",
+  "motivoConsulta": "Primera evaluación",
+  "observaciones": "Paciente estable",
+  "antecedentes": [],
+  "controls": [
+    {
+      "fecha": "2026-02-01",
+      "hemoglobinaGdl": 10.5,
+      "hematocrito": 32.0,
+      "ferritina": 15.0,
+      "estado": "LEVE",
+      "sintomas": ["cansancio"],
+      "tratamiento": {
+        "medicamento": "Hierro",
+        "dosis": "10mg",
+        "duracionDias": 30,
+        "indicaciones": "Después de comidas"
+      }
+    }
+  ]
+}
+```
+
+
 ##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
