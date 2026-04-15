@@ -859,6 +859,25 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 | **UserRoleAssigned** | Cuando se otorga o cambia un nivel de acceso. | El administrador o el sistema asigna un rol (Madre, Enfermera, Admin). |
 
 ##### 2.6.1.2. Interface Layer
+
+En esta capa se definen los puntos de entrada y salida del sistema, permitiendo la interacción entre los usuarios y la aplicación mediante endpoints REST. Su función principal es recibir las solicitudes externas, transformarlas en comandos o consultas hacia el Application Layer, y devolver respuestas en formato adecuado.
+
+###### Controllers (REST)
+
+| Controlador (REST) | Método HTTP | Ruta (Endpoint) | Propósito / Acción |
+| :--- | :--- | :--- | :--- |
+| **AuthController** | `POST` | `/api/v1/auth/login` | Autentica al usuario con DNI y contraseña; entrega un token. |
+| | `POST` | `/api/v1/auth/logout` | Cierra la sesión e invalida el token actual. |
+| **UserController** | `POST` | `/api/v1/users` | Registra un nuevo usuario con el rol por defecto. |
+| | `GET` | `/api/v1/users/{dni}` | Obtiene la información detallada de un usuario por su DNI. |
+| | `PUT` | `/api/v1/users/{dni}` | Actualiza datos (nombre, teléfono). |
+| | `PUT` | `/api/v1/users/{dni}/password` | Permite realizar el cambio de contraseña de forma segura. |
+| **RoleController** | `GET` | `/api/v1/roles` | Muestra la lista de todos los roles (Madre, Enfermera, Admin). |
+| | `GET` | `/api/v1/roles/{name}` | Obtiene los detalles de un rol específico por su nombre. |
+
+
+
+
 ##### 2.6.1.3. Application Layer
 ##### 2.6.1.4. Infrastructure Layer
 ##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
