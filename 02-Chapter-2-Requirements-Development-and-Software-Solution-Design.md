@@ -1111,6 +1111,27 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
   ]
 }
 ```
+###### Servicios Externos (Bounded Contexts Integrations)
+
+| Servicio | Propósito | Integración |
+| :--- | :--- | :--- |
+| **NotificationService** | Envío de notificaciones a la madre del paciente. | Activado por eventos de dominio (ej. PatientDischarged). |
+| **AnalyticsService** | Registro y procesamiento de métricas del sistema. | Suscrito a eventos para actualizar estadísticas de salud global. |
+
+> Importante: Estos servicios representan Bounded Contexts independientes, ya que pertenecen a dominios distintos al de Patient Management. La comunicación se realiza mediante eventos, permitiendo una arquitectura desacoplada y escalable.
+
+######  Exportación de Documentos (Infrastructure Layer)
+
+| Servicio | Implementa | Responsabilidades |
+| :--- | :--- | :--- |
+| **PdfDocumentExportService** | DocumentExportService | Generar PDF del historial médico completo, reporte de controles y reportes individuales. |
+
+###### Configurations (Infrastructure Layer)
+
+| Configuración | ¿Qué hace? | Responsabilidades |
+| :--- | :--- | :--- |
+| **MongoConfig** | Conecta el sistema con MongoDB. | Gestiona URL de conexión, base de datos y colecciones de pacientes y registros. |
+| **EventConfig** | Conecta eventos con sus manejadores (Handlers). | Asegura que al ocurrir un evento (ej. PatientDischarged) se ejecuten las acciones correspondientes. |
 
 
 ##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
