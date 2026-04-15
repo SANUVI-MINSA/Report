@@ -940,6 +940,14 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
   "name": "Mother"
 }
 ```
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **CreateUserCommandFromResourceAssembler** | `CreateUserRequest` → `CreateUserCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
+| **UserResourceFromEntityAssembler** | `User (Entity)` → `UserResource` | Transforma la entidad del dominio en un recurso seguro para ser enviado al cliente. |
+| **ChangePasswordCommandFromResourceAssembler** | `ChangePasswordRequest` → `ChangePasswordCommand` | Traduce la petición de cambio de clave en una instrucción ejecutable por el negocio. |
+| **AssignRoleCommandFromResourceAssembler** | `Entrada de datos` → `AssignRoleCommand` | Mapea la solicitud de asignación de nivel en un comando de cambio de rol. |
 
 ##### 2.6.1.3. Application Layer
 ##### 2.6.1.4. Infrastructure Layer
