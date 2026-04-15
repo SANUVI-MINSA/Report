@@ -849,6 +849,15 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 | **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(dni: String)`<br>• `existsByUsername(dni: String)`<br>• `findRoleByUsername(dni: String)` | • `save(user)`<br>• `deleteByUsername(dni: String)` |
 | **RoleRepository** | Administrar el catálogo de roles y sus permisos asociados. | • `findByName(name)`<br>• `getDefault()` | • `save(role)` |
 
+###### Domain Events
+
+| Evento de Dominio | ¿Cuándo ocurre? | Acción que lo dispara |
+| :--- | :--- | :--- |
+| **UserRegistered** | Cuando un nuevo usuario se crea exitosamente. | El proceso de registro ha terminado. |
+| **UserLoggedIn** | Cuando un usuario entra al sistema con éxito. | El servicio de autenticación valida las credenciales. |
+| **UserPasswordChanged** | Cuando se actualiza la clave de seguridad. | El usuario confirma su nueva contraseña. |
+| **UserRoleAssigned** | Cuando se otorga o cambia un nivel de acceso. | El administrador o el sistema asigna un rol (Madre, Enfermera, Admin). |
+
 ##### 2.6.1.2. Interface Layer
 ##### 2.6.1.3. Application Layer
 ##### 2.6.1.4. Infrastructure Layer
