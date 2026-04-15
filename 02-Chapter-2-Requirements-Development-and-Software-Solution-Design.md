@@ -842,7 +842,12 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 | **PasswordPolicyService** | Garantizar la robustez de la seguridad. | • Definir longitud mínima y caracteres especiales.<br>• Validar que la contraseña no sea débil.<br>• Verificar políticas de renovación. |
 | **RoleAssignmentService** | Controlar la jerarquía y permisos del sistema. | • Asignar roles automáticos al registrarse.<br>• Validar permisos para cambiar de rol.<br>• Asegurar que cada usuario tenga un rol válido. |
 
+###### Repositories (Interfaces en Domain)
 
+| Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
+| :--- | :--- | :--- | :--- |
+| **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(DNI)`<br>• `existsByUsername(DNI)`<br>• **`findRoleByUsername(DNI)`** | • `save(user)`<br>• `deleteByUsername(DNI)` |
+| **RoleRepository** | Administrar el catálogo de roles y sus permisos asociados. | • `findByName(name)`<br>• `getDefault()` | • `save(role)` |
 
 ##### 2.6.1.2. Interface Layer
 ##### 2.6.1.3. Application Layer
