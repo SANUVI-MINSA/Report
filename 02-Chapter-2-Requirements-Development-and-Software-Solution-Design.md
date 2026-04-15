@@ -1059,6 +1059,20 @@ Seed inicial:
 - Auditoría básica (createdAt, updatedAt)
 
 ##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align ="center">
+<img src="resources/images/chapter-II/Software_Architecture/IAM/components-structuriz-iam.png">
+</div>
+
 ##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align ="center">
+<img src="resources/images/chapter-II/Class_Diagram/IAM/IAM-DIAGRAMA-CLASS.png">
+</div>
+
 ###### 2.6.1.6.2. Bounded Context Database Design Diagram
+
+<div align ="center">
+<img src="resources/images/chapter-II/DB_Diagram/IAM/IAM-DATA-BASE-NOT-RELATIONAL.png">
+</div>
