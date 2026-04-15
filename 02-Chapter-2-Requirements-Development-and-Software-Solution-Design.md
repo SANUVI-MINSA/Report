@@ -976,6 +976,34 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
 
 
 ##### 2.6.1.4. Infrastructure Layer
+
+En esta capa se implementan los detalles técnicos del sistema, incluyendo la persistencia de datos, la seguridad, la gestión de autenticación y la integración con servicios externos. Aquí se concretan las interfaces definidas en el Domain Layer.
+
+###### Persistence Layer (Infraestructura - MongoDB)
+
+| Componente | Tipo | Responsabilidades |
+| :--- | :--- | :--- |
+| **MongoUserRepository** | Repositorio | • Implementa `UserRepository`.<br>• Mapeo entre Entity y Documento de Mongo.<br>• Operaciones CRUD (Buscar por DNI/Email, Guardar, Eliminar). |
+| **MongoRoleRepository** | Repositorio | • Implementa `RoleRepository`.<br>• Obtener roles por nombre y rol por defecto.<br>• Inicializar el catálogo de roles (Mother, Nurse, Admin). |
+| **Persistence Mapper** | Mapper | • **Document ↔ Entity**: Encargado de transformar los datos del formato de base de datos al formato del dominio. |
+
+###### Seguridad y Comunicación (Infraestructura)
+
+| Componente | Tipo | Funciones / Responsabilidades |
+| :--- | :--- | :--- |
+| **PasswordHasher** | Seguridad | • **BCryptPasswordHasher**: Encripta las contraseñas para que nunca se guarden como texto plano.<br>• Compara claves ingresadas con sus versiones cifradas. |
+| **JwtTokenProvider** | Seguridad | • **Generar accessToken**: Crea la "llave mágica" para el usuario.<br>• **Validar token**: Revisa que la llave no haya caducado o sea falsa.<br>• **Extraer datos**: Lee quién es el dueño del token. |
+| **EmailService** | Comunicación | • **Enviar código**: Manda la clave secreta de verificación al correo.<br>• **Enviar enlace**: Crea y manda el link seguro para recuperar la cuenta. |
+
+###### Configuración (Infraestructura)
+
+| Componente | Tipo | Responsabilidades / Ajustes |
+| :--- | :--- | :--- |
+| **MongoConfig** | Base de Datos | • Configurar la conexión al servidor de MongoDB.<br>• Definir **Índices** obligatorios (DNI único, Email único) para evitar duplicados. |
+| **SecurityConfig** | Seguridad | • Configurar el soporte para **JWT**.<br>• Definir filtros de autenticación (quién puede entrar a qué ruta).<br>• Configurar **CORS** y reglas generales de seguridad web. |
+
+
+
 ##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
