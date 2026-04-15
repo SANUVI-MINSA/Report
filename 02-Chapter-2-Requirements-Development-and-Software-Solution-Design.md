@@ -1243,6 +1243,243 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-21</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización del resumen nutricional diario</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder ver el resumen nutricional del día de mi hijo en FerovaFamilia, para conocer cuanto hierro absorbió y si alcanzo la meta diaria establecida.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización del resumen nutricional exitosa<br>
+        Dado que la madre ha registrado los alimentos del día de su hijo,<br>
+        cuando accede a la sección 'Resumen nutricional' en FerovaFamilia,<br>
+        entonces el sistema debe mostrar el total de hierro absorbido durante el día, los alimentos registrados, si se alcanzó la meta diaria de hierro y si hubo alimentos inhibidores detectados.<br>
+        <br>
+        Escenario 2: Sin alimentos registrados en el día<br>
+        Dado que la madre no ha registrado ningún alimento durante el día,<br>
+        cuando accede a la sección 'Resumen nutricional',<br>
+        entonces el sistema debe mostrar un mensaje indicando que aún no hay alimentos registrados para el día de hoy.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-22</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización de racha de tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder ver mi racha de días consecutivos cumplidos en FerovaFamilia, para motivarme a mantener la constancia en el tratamiento de mi hijo.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de racha exitosa<br>
+        Dado que la madre ha confirmado la dosis de su hijo al menos un día consecutivo,<br>
+        cuando accede a la sección de gamificación en FerovaFamilia,<br>
+        entonces el sistema debe mostrar un contador visible con el número de días consecutivos cumplidos y un mensaje motivador como 'Llevas 7 días consecutivos sin fallar una dosis.'<br>
+        <br>
+        Escenario 2: Racha perdida por omisión de dosis<br>
+        Dado que la madre no confirmo la dosis de su hijo en un día,<br>
+        cuando accede a la sección de gamificación en FerovaFamilia,<br>
+        entonces el sistema debe mostrar que la racha se perdió, reiniciar el contador a cero y mostrar un mensaje motivador invitándola a comenzar de nuevo.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-23</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Desbloqueo de insignias por hitos del tratamiento</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder desbloquear insignias al alcanzar hitos importantes del tratamiento de mi hijo, para sentirme recompensada por mi constancia y motivarme a continuar.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Desbloqueo de insignia exitoso<br>
+        Dado que la madre alcanza un hito importante del tratamiento como completar la primera semana, un mes sin fallar o la mitad del tratamiento,<br>
+        cuando el sistema detecta que se alcanzó el hito,<br>
+        entonces debe mostrar automáticamente una animación celebratoria en FerovaFamilia y desbloquear la insignia correspondiente al hito alcanzado.<br>
+        <br>
+        Escenario 2: Visualización de insignias bloqueadas<br>
+        Dado que la madre accede a la sección de insignias en FerovaFamilia,<br>
+        cuando revisa las insignias disponibles,<br>
+        entonces el sistema debe mostrar tanto las insignias desbloqueadas como las que aún puede obtener, indicando que hito debe alcanzar para desbloquear cada una.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-24</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Acumulación de puntos por confirmación de dosis</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder acumular puntos cada vez que confirmo la dosis diaria de mi hijo en FerovaFamilia, para ver mi progreso y sentirme motivada a mantener la constancia en el tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Acumulación de puntos exitosa<br>
+        Dado que la madre confirma la dosis diaria de su hijo,<br>
+        cuando el sistema registra la confirmación,<br>
+        entonces debe sumar automáticamente los puntos correspondientes al saldo de puntos de la madre y mostrar el nuevo saldo actualizado en FerovaFamilia.<br>
+        <br>
+        Escenario 2: Visualización del saldo de puntos<br>
+        Dado que la madre desea ver sus puntos acumulados,<br>
+        cuando accede a la sección de puntos en FerovaFamilia,<br>
+        entonces el sistema debe mostrar el saldo total de puntos acumulados hasta el momento y el historial de puntos ganados por cada confirmación de dosis realizada.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-25</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Creación de consulta a la enfermera</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder crear una consulta dirigida a mi enfermera asignada desde FerovaFamilia, para resolver mis dudas sobre el tratamiento de anemia de mi hijo sin necesidad de ir físicamente a la posta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Creación de consulta exitosa<br>
+        Dado que la madre tiene una duda sobre el tratamiento de su hijo,<br>
+        cuando accede a la sección de teleconsulta en FerovaFamilia, presiona 'Nueva consulta' y escribe su mensaje,<br>
+        entonces el sistema debe enviar la consulta a la enfermera asignada vía Firebase Firestore y notificarle que tiene una nueva consulta pendiente de responder.<br>
+        <br>
+        Escenario 2: Intento de enviar consulta vacía<br>
+        Dado que la madre accede a la sección de teleconsulta y presiona 'Nueva consulta',<br>
+        cuando intenta enviar el mensaje sin escribir nada,<br>
+        entonces el sistema debe mostrar un mensaje de error indicando que debe escribir su consulta antes de enviarla.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
