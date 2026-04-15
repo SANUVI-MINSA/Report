@@ -818,7 +818,7 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 
 | Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
 | :--- | :--- | :--- | :--- | :--- |
-| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **username**: `String`<br>• **password**: `Hash`<br>• **roleName**: `String` | • `registerUser()`<br>• `login()`<br>• `changePassword()`<br> • `assignRole(roleName)`<br>• `displayUserData()` | • El `username` debe ser único y no puede estar vacío.<br>• La `password` siempre va cifrada.<br>• Todo usuario debe tener un `rol` asignado (mother, nurse, admin). <br>• No se permite autenticación sin credenciales válidas. |
+| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String` <br>• **password**: `Hash`<br>• **roleName**: `Role` <br>• **dni**: `DNI` <br>• **phone**: `Phone`| • `registerUser()`<br>• `login()`<br>• `changePassword()`<br> • `assignRole(roleName)`<br>• `displayUserData()` | • El `username` debe ser único y no puede estar vacío.<br>• La `password` siempre va cifrada.<br>• Todo usuario debe tener un `rol` asignado (mother, nurse, admin). <br>• No se permite autenticación sin credenciales válidas. |
 
 ###### Entities
 
