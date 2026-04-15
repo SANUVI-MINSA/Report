@@ -986,7 +986,7 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 }
 ```
 
-#### **5. DischargePatientRequest**
+#### **6. DischargePatientRequest**
 **Propósito:** Registra el alta médica del paciente, validado por la enfermera.
 
 ```json
