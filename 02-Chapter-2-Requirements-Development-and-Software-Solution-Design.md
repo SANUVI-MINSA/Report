@@ -927,7 +927,7 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
 **Propósito:** Permite restablecer la contraseña de un usuario mediante un código de verificación enviado previamente.
 ```json
 {
-  "dni": "12345678",
+  "email": "user@gmail.com",
   "newPassword": "string",
   "verificationCode": "123456"
 }
