@@ -802,12 +802,19 @@ En esta sección se presentan los términos clave del proyecto UI-Topic. Estos t
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
 ### 2.6 Tactical-Level Domain-Driven Design
-#### 2.6.X. Bounded Context: `<bounded context Name>`
-##### 2.6.X.1. Domain Layer
-##### 2.6.X.2. Interface Layer
-##### 2.6.X.3. Application Layer
-##### 2.6.X.4. Infrastructure Layer
-##### 2.6.X.5. Bounded Context Software Architecture Component Level Diagrams
-##### 2.6.X.6. Bounded Context Software Architecture Code Level Diagrams
-###### 2.6.X.6.1. Bounded Context Domain Layer Class Diagrams
-###### 2.6.X.6.2. Bounded Context Database Design Diagram
+#### 2.6.1. Bounded Context: `Identify and Access Management`
+
+El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
+
+Este contexto se organiza siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD). El Domain Layer contiene las reglas de negocio, el Interface Layer gestiona la interacción con el usuario, el Application Layer coordina los procesos y el Infrastructure Layer maneja la parte técnica y las integraciones externas.
+
+Además, se presentan diagramas a nivel de componentes y de código para describir la estructura y el diseño del sistema.
+
+##### 2.6.1.1. Domain Layer
+##### 2.6.1.2. Interface Layer
+##### 2.6.1.3. Application Layer
+##### 2.6.1.4. Infrastructure Layer
+##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.1.6.2. Bounded Context Database Design Diagram
