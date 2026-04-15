@@ -441,6 +441,15 @@ bounded contexts.
 
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
+> El siguiente diagrama muestra cómo los componentes de Ferova se distribuyen
+en la infraestructura de despliegue real. Se visualizan los entornos de
+ejecución de cada producto, las dependencias entre servicios y las
+integraciones con plataformas externas.
+
+<div align  = "center">
+<img src="resources/uml/SoftwareArchitectureDeploymentDiagram.svg">
+</div>
+
 ### 2.6 Tactical-Level Domain-Driven Design
 #### 2.6.X. Bounded Context: `<bounded context Name>`
 ##### 2.6.X.1. Domain Layer
