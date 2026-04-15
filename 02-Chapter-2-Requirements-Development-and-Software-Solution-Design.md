@@ -2373,7 +2373,265 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
 
 **Technical Stories**
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-01</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar usuario mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro de usuarios mediante una API REST, para que la aplicación pueda crear nuevas cuentas con rol asignado automáticamente y almacenarlas en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro exitoso</b><br>
+        Dado que el endpoint /api/v1/auth/register está disponible,<br>
+        cuando se envía una solicitud POST con nombre, DNI, correo, contraseña y tipo de usuario,<br>
+        entonces se recibe una respuesta con estado 201 y el cuerpo contiene el usuario registrado con su rol asignado automáticamente.<br>
+        <br>
+        <b>Escenario 2: DNI o correo ya registrado</b><br>
+        Dado que el endpoint /api/v1/auth/register está disponible,<br>
+        cuando se envía una solicitud POST con un DNI o correo ya existente en el sistema,<br>
+        entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'El usuario ya se encuentra registrado.'<br>
+        <br>
+        <b>Escenario 3: Datos inválidos</b><br>
+        Dado que el endpoint /api/v1/auth/register está disponible,<br>
+        cuando se envía una solicitud POST con campos vacíos o con formato incorrecto,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-02</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Autenticar usuario mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de inicio de sesión mediante una API REST, para que la aplicación pueda autenticar usuarios con su DNI y contraseña y retornar un token JWT para el acceso seguro a la plataforma.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Inicio de sesión exitoso</b><br>
+        Dado que el endpoint /api/v1/auth/login está disponible,<br>
+        cuando se envía una solicitud POST con un DNI y contraseña válidos,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el token JWT y los datos del usuario autenticado con su rol asignado.<br>
+        <br>
+        <b>Escenario 2: Credenciales incorrectas</b><br>
+        Dado que el endpoint /api/v1/auth/login está disponible,<br>
+        cuando se envía una solicitud POST con un DNI o contraseña incorrectos,<br>
+        entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Credenciales incorrectas.'<br>
+        <br>
+        <b>Escenario 3: Cuenta bloqueada por intentos fallidos</b><br>
+        Dado que el endpoint /api/v1/auth/login está disponible,<br>
+        cuando se envía una solicitud POST con credenciales incorrectas por tercera vez consecutiva,<br>
+        entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'Cuenta bloqueada temporalmente por 30 minutos.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-03</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-01</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cambiar contraseña de usuario mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de cambio de contraseña mediante una API REST, para que la aplicación pueda actualizar la contraseña del usuario autenticado de forma segura en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Cambio de contraseña exitoso</b><br>
+        Dado que el endpoint /api/v1/auth/change-password está disponible,<br>
+        cuando se envía una solicitud PUT con el token JWT válido, la contraseña actual y la nueva contraseña,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene el mensaje: 'Contraseña actualizada exitosamente.'<br>
+        <br>
+        <b>Escenario 2: Contraseña actual incorrecta</b><br>
+        Dado que el endpoint /api/v1/auth/change-password está disponible,<br>
+        cuando se envía una solicitud PUT con una contraseña actual incorrecta,<br>
+        entonces se recibe una respuesta con estado 400 y el cuerpo contiene el mensaje: 'La contraseña actual no es correcta.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/auth/change-password está disponible,<br>
+        cuando se envía una solicitud PUT con un token JWT inválido o expirado,<br>
+        entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-04</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar paciente mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro de pacientes mediante una API REST, para que la aplicación pueda crear el perfil del paciente con anemia y almacenarlo en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de paciente exitoso</b><br>
+        Dado que el endpoint /api/v1/patients está disponible,<br>
+        cuando se envía una solicitud POST con el token JWT válido y los datos del paciente como nombre, apellido, fecha de nacimiento y peso,<br>
+        entonces se recibe una respuesta con estado 201 y el cuerpo contiene el perfil del paciente creado con su ID asignado.<br>
+        <br>
+        <b>Escenario 2: Datos del paciente incompletos</b><br>
+        Dado que el endpoint /api/v1/patients está disponible,<br>
+        cuando se envía una solicitud POST con campos obligatorios vacíos o con formato incorrecto,<br>
+        entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/patients está disponible,<br>
+        cuando se envía una solicitud POST con un token JWT inválido o expirado,<br>
+        entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-05</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener paciente por DNI de la madre mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de búsqueda de paciente por DNI de la madre mediante una API REST, para que la enfermera pueda encontrar al paciente registrado y asignárselo desde FerovaClinic.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Búsqueda exitosa</b><br>
+        Dado que el endpoint /api/v1/patients/search está disponible,<br>
+        cuando se envía una solicitud GET con el token JWT válido y el DNI de la madre como parámetro de búsqueda,<br>
+        entonces se recibe una respuesta con estado 200 y el cuerpo contiene los datos del paciente registrado por esa madre.<br>
+        <br>
+        <b>Escenario 2: DNI de madre no encontrado</b><br>
+        Dado que el endpoint /api/v1/patients/search está disponible,<br>
+        cuando se envía una solicitud GET con un DNI que no existe en el sistema,<br>
+        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'No se encontró ningún paciente registrado con ese DNI.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/patients/search está disponible,<br>
+        cuando se envía una solicitud GET con un token JWT inválido o expirado,<br>
+        entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
