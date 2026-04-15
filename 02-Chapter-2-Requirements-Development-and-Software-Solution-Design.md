@@ -1002,7 +1002,61 @@ En esta capa se implementan los detalles técnicos del sistema, incluyendo la pe
 | **MongoConfig** | Base de Datos | • Configurar la conexión al servidor de MongoDB.<br>• Definir **Índices** obligatorios (DNI único, Email único) para evitar duplicados. |
 | **SecurityConfig** | Seguridad | • Configurar el soporte para **JWT**.<br>• Definir filtros de autenticación (quién puede entrar a qué ruta).<br>• Configurar **CORS** y reglas generales de seguridad web. |
 
+###### Modelo de datos (MongoDB) y mapeos
 
+<h4> Colección: users </h4> 
+
+```json
+{
+  "_id": "u:12345678",
+  "dni": "12345678",
+  "name": "Maria",
+  "lastName": "Perez",
+  "email": "Maria@gmail.com",
+  "phone": "987654321",
+  "password": "hash:$2b$...",
+  "roleName": "Mother",
+  "audit": {
+    "createdAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-01-01T00:05:00Z"
+  }
+}
+```
+Índices:
+- único en `dni`
+- único en `email`
+
+<h4> Colección: roles</h4> 
+
+```json
+{
+  "_id": "r:Mother",
+  "name": "Mother"
+}
+```
+Seed inicial:
+
+- Mother
+- Nurse
+- Admin
+
+<h4> Colección: password_resets</h4> 
+
+```json
+{
+  "_id": "pr:uuid",
+  "email": "user@gmail.com",
+  "code": "123456",
+  "expiresAt": "2026-01-01T01:00:00Z"
+}
+```
+###### Seguridad y buenas prácticas
+
+- Nunca almacenar contraseñas en texto plano
+- Uso de hashing con salt (BCrypt)
+- Tokens JWT con expiración
+- Verificación por email para reset password
+- Auditoría básica (createdAt, updatedAt)
 
 ##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
