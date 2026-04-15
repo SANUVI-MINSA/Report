@@ -872,6 +872,24 @@ En esta capa se definen las entidades y reglas de negocio relacionadas con la ge
 | **PatientDischarged** | Cuando el paciente completa su tratamiento y es dado de alta médica. | El médico o enfermera confirma que el paciente superó la condición. |
 
 ##### 2.6.2.2. Interface Layer
+
+En esta capa se definen los puntos de interacción entre el sistema y los usuarios, permitiendo gestionar las operaciones relacionadas con los pacientes mediante endpoints REST. Su función es recibir solicitudes, transformarlas en comandos o consultas hacia el Application Layer y devolver respuestas estructuradas.
+
+###### Controller(REST)
+
+| Controlador | Endpoint | Método | Propósito |
+| :--- | :--- | :--- | :--- |
+| **PatientController** | `/api/v1/patients` | **POST** | Registrar un nuevo paciente en el sistema. |
+| | `/api/v1/patients/{id}` | **GET** | Obtener información detallada del niño (incluye estado e historial). |
+| | `/api/v1/patients/mother/{dni}` | **GET** | Listar todos los pacientes asociados a una madre. |
+| | `/api/v1/patients/nurse/{dni}` | **GET** | Listar todos los pacientes asignados a una enfermera. |
+| | `/api/v1/patients/{id}` | **PUT** | Actualizar datos básicos (nombre, peso, altura). |
+| | `/api/v1/patients/{id}/assign-nurse` | **PUT** | Realizar la asignación de enfermera. |
+| | `/api/v1/patients/{id}/medical-records` | **POST** | Registrar una nueva entrada en el historial médico. |
+| | `/api/v1/patients/{id}/medical-history` | **GET** | Recuperar toda la línea de tiempo clínica del paciente. |
+| | `/api/v1/patients/{id}/discharge` | **POST** | Dar de alta médica al paciente (finalizar ciclo). |
+
+
 ##### 2.6.2.3. Application Layer
 ##### 2.6.2.4. Infrastructure Layer
 ##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
