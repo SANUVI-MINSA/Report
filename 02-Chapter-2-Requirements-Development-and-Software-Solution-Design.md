@@ -802,8 +802,35 @@ En esta sección se presentan los términos clave del proyecto UI-Topic. Estos t
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
 ### 2.6 Tactical-Level Domain-Driven Design
+
 #### 2.6.2. Bounded Context: `Patient Management`
+
+El Bounded Context de Patient Management se encarga de gestionar la información personal y clínica de los pacientes dentro de la plataforma Ferova. Incluye el registro de pacientes, la actualización de sus datos y el seguimiento de indicadores clave como el nivel de hemoglobina, peso y altura.
+
+Asimismo, permite la asociación del paciente con su madre y la asignación de una enfermera responsable, facilitando el monitoreo continuo y organizado del estado de salud del niño.
+
+Este contexto se estructura siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD), permitiendo una clara separación de responsabilidades entre la lógica de negocio, la interacción con el usuario, la orquestación de procesos y la implementación técnica.
+
 ##### 2.6.2.1. Domain Layer
+
+En esta capa se definen las entidades y reglas de negocio relacionadas con la gestión de pacientes con anemia dentro de la plataforma Ferova. Este bounded context es responsable del registro, almacenamiento y seguimiento de la información clínica básica del paciente, así como su asignación a una enfermera.
+
+
+###### Aggregate
+
+| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **Patient** | Representa a un paciente (niño) con anemia dentro del sistema, incluyendo su información personal, estado clínico y relación con su madre y enfermera asignada. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **birthDate**: `Date`<br>• **weight**: `Float`<br>• **height**: `Float`<br>• **hemoglobinLevel**: `Float`<br>• **motherId**: `String`<br>• **nurseId**: `String` | • `registerPatient()`<br>• `updatePatientData()`<br>• `assignNurse(nurseId)`<br>• `updateHemoglobinLevel(value)`<br>• `updateWeight(value)`<br>• `updateHeight(value)`<br>• `displayPatientData()` | • El paciente debe estar asociado a una madre (**motherId** obligatorio).<br>• Un paciente solo puede tener una enfermera asignada a la vez.<br>• La fecha de nacimiento no puede ser futura.<br>• El nivel de hemoglobina debe ser mayor a **0**.<br>• El peso y la altura deben ser mayores a **0**. |
+
+###### Value Objects
+
+| Value Object | Propósito | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- |
+| **HemoglobinLevel** | Representa el nivel de hemoglobina en la sangre. | • Debe ser mayor a **0**.<br>• Debe estar dentro de un rango clínico lógico. | • `isValid()`<br>• Comparación por valor. |
+| **Weight** | Almacena el peso actual del paciente. | • Debe ser mayor a **0**.<br>• Valor expresado en kilogramos. | • `isValid()`<br>• Formateo de unidad. |
+| **Height** | Almacena la estatura/talla del niño. | • Debe ser mayor a **0**.<br>• Valor expresado en centímetros/metros. | • `isValid()`<br>• Validación de rango. |
+| **BirthDate** | Gestiona la fecha de nacimiento del paciente. | • No puede ser una fecha futura.<br>• Debe ser una fecha válida. | • `isValid()`<br>• Cálculo de edad actual. |
+
 ##### 2.6.2.2. Interface Layer
 ##### 2.6.2.3. Application Layer
 ##### 2.6.2.4. Infrastructure Layer
