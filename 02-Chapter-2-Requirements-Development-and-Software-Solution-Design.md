@@ -1,4 +1,4 @@
-## Capítulo II: Requirements Development and Software Solution Design
+<img width="612" height="507" alt="{A60B97A2-9701-4412-B483-B7E2DCCAC539}" src="https://github.com/user-attachments/assets/09baa144-f805-4f85-84b4-5ca0c606b059" />## Capítulo II: Requirements Development and Software Solution Design
 
 ### 2.1 Competidores
 #### 2.1.1 Análisis competitivo
@@ -1943,6 +1943,241 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
         Dado que la madre intenta cancelar una cita que ya fue cancelada anteriormente,<br>
         cuando accede a la sección 'Mis citas' y selecciona dicha cita,<br>
         entonces el sistema debe mostrar un mensaje indicando que la cita ya fue cancelada anteriormente y no puede cancelarse nuevamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-36</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recepción de recordatorio diario de dosis</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero recibir una notificación push diaria recordándome que debo dar el suplemento de hierro a mi hijo, para no olvidar ninguna dosis durante el tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Recepción de recordatorio exitosa<br>
+        Dado que la madre tiene un tratamiento activo para su hijo,<br>
+        cuando llega la hora programada de la dosis diaria y la madre aún no ha confirmado,<br>
+        entonces el sistema debe enviar automáticamente una notificación push vía Firebase FCM a FerovaFamilia recordándole que debe dar el suplemento de hierro a su hijo.<br>
+        <br>
+        Escenario 2: Recordatorio no recibido por falta de conexión<br>
+        Dado que la madre no tiene conexión a internet en el momento del recordatorio,<br>
+        cuando recupera la conexión,<br>
+        entonces el sistema debe enviar la notificación pendiente informándole que tiene una dosis del día que aún no ha sido confirmada.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-37</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recepción de segundo recordatorio de dosis</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero recibir un segundo recordatorio más urgente si no confirme la dosis de mi hijo después de 2 horas del primer recordatorio, para asegurarme de no olvidar el tratamiento durante el día.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Recepción de segundo recordatorio exitosa<br>
+        Dado que la madre no confirmo la dosis de su hijo después de 2 horas del primer recordatorio,<br>
+        cuando el sistema detecta que la dosis sigue sin confirmarse,<br>
+        entonces debe enviar automáticamente un segundo recordatorio más urgente vía Firebase FCM a FerovaFamilia indicándole que la dosis del día aún no ha sido confirmada.<br>
+        <br>
+        Escenario 2: Segundo recordatorio no necesario<br>
+        Dado que la madre confirmo la dosis de su hijo antes de que pasen 2 horas del primer recordatorio,<br>
+        cuando el sistema detecta la confirmación,<br>
+        entonces no debe enviar el segundo recordatorio ya que la dosis del día fue confirmada exitosamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-38</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recepción de alerta de riesgo de abandono</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero recibir una notificación push cuando uno de mis pacientes este en riesgo de abandonar el tratamiento, para tomar acción inmediata y evitar que lo abandone.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Recepción de alerta de riesgo exitosa<br>
+        Dado que un paciente lleva 72 horas o más sin confirmar su dosis diaria,<br>
+        cuando el sistema detecta que el paciente está en riesgo de abandono,<br>
+        entonces debe enviar automáticamente una notificación push vía Firebase FCM a FerovaClinic indicando el nombre del paciente, las horas sin confirmación y su score de riesgo de abandono.<br>
+        <br>
+        Escenario 2: Paciente retoma el tratamiento tras la alerta<br>
+        Dado que la enfermera recibió una alerta de riesgo de abandono de un paciente,<br>
+        cuando la madre del paciente confirma la dosis posteriormente,<br>
+        entonces el sistema debe actualizar automáticamente el estado del paciente y notificar a la enfermera que el paciente retomo el tratamiento.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-39</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recepción de notificación de recordatorio de cita</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero recibir una notificación push recordándome mi cita programada en la posta medica un día antes, para no olvidar llevar a mi hijo a su control presencial.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Recepción de recordatorio de cita exitosa<br>
+        Dado que la madre tiene una cita programada en una posta médica,<br>
+        cuando falta un día para la cita,<br>
+        entonces el sistema debe enviar automáticamente una notificación push vía Firebase FCM a FerovaFamilia recordándole la fecha, hora y nombre de la posta donde tiene programada su cita.<br>
+        <br>
+        Escenario 2: Cita cancelada antes del recordatorio<br>
+        Dado que la madre cancelo su cita antes de que se envié el recordatorio,<br>
+        cuando llega el momento de enviar el recordatorio,<br>
+        entonces el sistema no debe enviar ninguna notificación ya que la cita fue cancelada previamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-40</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Recepción de notificación de logro desbloqueado</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero recibir una notificación push cuando desbloquee una insignia o logro en FerovaFamilia, para sentirme motivada y reconocida por mi constancia en el tratamiento de mi hijo.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Recepción de notificación de logro exitosa<br>
+        Dado que la madre alcanza un hito importante del tratamiento y desbloquea una insignia,<br>
+        cuando el sistema registra el logro desbloqueado,<br>
+        entonces debe enviar automáticamente una notificación push vía Firebase FCM a FerovaFamilia felicitándola e indicando el nombre de la insignia que acaba de desbloquear.<br>
+        <br>
+        Escenario 2: Notificación de logro con app cerrada<br>
+        Dado que la madre tiene FerovaFamilia cerrada en el momento en que desbloquea un logro,<br>
+        cuando el sistema registra el logro,<br>
+        entonces debe enviar igualmente la notificación push vía Firebase FCM que aparecerá en la barra de notificaciones de su dispositivo Android.
       </td>
     </tr>
   </tbody>
