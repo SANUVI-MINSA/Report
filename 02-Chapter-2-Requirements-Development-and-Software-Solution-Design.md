@@ -3153,6 +3153,236 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-16</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar entrada del diario nutricional mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro de alimentos en el diario nutricional mediante una API REST, para que la madre pueda registrar los alimentos consumidos por su hijo y el sistema calcule automáticamente el hierro absorbido y detecte alimentos inhibidores en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de alimentos exitoso</b><br>
+        Dado que el endpoint /api/v1/nutritional-diary está disponible, cuando se envía una solicitud POST con el token JWT válido, el ID del paciente y la lista de alimentos consumidos durante el día, entonces se recibe una respuesta con estado 201 y el cuerpo contiene la entrada del diario registrada con el contenido de hierro calculado por alimento y el total de hierro absorbido del día.<br>
+        <br>
+        <b>Escenario 2: Alimento inhibidor detectado</b><br>
+        Dado que el endpoint /api/v1/nutritional-diary está disponible, cuando se envía una solicitud POST con alimentos que incluyen inhibidores de la absorción de hierro como leche, té o café, entonces se recibe una respuesta con estado 201 y el cuerpo contiene la entrada registrada junto con una alerta indicando los alimentos inhibidores detectados y su impacto en la absorción del hierro.<br>
+        <br>
+        <b>Escenario 3: Lista de alimentos vacía</b><br>
+        Dado que el endpoint /api/v1/nutritional-diary está disponible, cuando se envía una solicitud POST sin incluir ningún alimento en la lista, entonces se recibe una respuesta con estado 422 y el cuerpo contiene el mensaje: 'Debe incluir al menos un alimento para registrar la entrada del diario.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-17</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-04</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener resumen nutricional diario mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención del resumen nutricional diario mediante una API REST, para que FerovaFamilia pueda mostrar a la madre el total de hierro absorbido por su hijo durante el día y si alcanzó la meta diaria establecida.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención del resumen exitosa</b><br>
+        Dado que el endpoint /api/v1/nutritional-diary/{patientId}/summary está disponible, cuando se envía una solicitud GET con el token JWT válido y la fecha del día, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el total de hierro absorbido durante el día, los alimentos registrados, si se alcanzó la meta diaria de hierro y si hubo alimentos inhibidores detectados.<br>
+        <br>
+        <b>Escenario 2: Sin alimentos registrados en el día</b><br>
+        Dado que el endpoint /api/v1/nutritional-diary/{patientId}/summary está disponible, cuando se envía una solicitud GET para un día en el que no se registró ningún alimento, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el mensaje: 'No hay alimentos registrados para el día solicitado.'.<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/nutritional-diary/{patientId}/summary está disponible, cuando se envía una solicitud GET con un ID de paciente que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-18</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener racha y puntos del tratamiento mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de la racha de días consecutivos cumplidos y el saldo de puntos acumulados mediante una API REST, para que FerovaFamilia pueda mostrar a la madre su progreso de gamificación actualizado.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de racha y puntos exitosa</b><br>
+        Dado que el endpoint /api/v1/achievements/{patientId}/streak está disponible, cuando se envía una solicitud GET con el token JWT válido, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el número de días consecutivos cumplidos, el saldo total de puntos acumulados y la fecha de inicio de la racha actual.<br>
+        <br>
+        <b>Escenario 2: Racha perdida por omisión de dosis</b><br>
+        Dado que el endpoint /api/v1/achievements/{patientId}/streak está disponible, cuando se envía una solicitud GET para un paciente que omitió su dosis en el día anterior, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el contador de racha en cero y el mensaje: 'La racha se perdió por omisión de dosis.'<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/achievements/{patientId}/streak está disponible, cuando se envía una solicitud GET con un ID de paciente que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-19</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-05</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener insignias del tratamiento mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de insignias desbloqueadas y bloqueadas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre todas las insignias disponibles del tratamiento y su estado actual.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de insignias exitosa</b><br>
+        Dado que el endpoint /api/v1/achievements/{patientId}/badges está disponible, cuando se envía una solicitud GET con el token JWT válido, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista completa de insignias con su estado como desbloqueada o bloqueada, el nombre de cada insignia y el hito requerido para desbloquear las que aún están bloqueadas.<br>
+        <br>
+        <b>Escenario 2: Insignia desbloqueada por hito alcanzado</b><br>
+        Dado que el endpoint /api/v1/achievements/{patientId}/badges está disponible, cuando se envía una solicitud GET para un paciente que acaba de alcanzar un hito importante del tratamiento, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la insignia recién desbloqueada marcada como nueva junto con las demás insignias del tratamiento.<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/achievements/{patientId}/badges está disponible, cuando se envía una solicitud GET con un ID de paciente que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-20</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Crear consulta de teleconsulta mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de creación de consulta de teleconsulta mediante una API REST, para que la madre pueda enviar su mensaje a la enfermera asignada y el sistema lo almacene en Firebase Firestore en tiempo real.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Creación de consulta exitosa</b><br>
+        Dado que el endpoint /api/v1/consultations está disponible, cuando se envía una solicitud POST con el token JWT válido, el ID del paciente y el mensaje de la consulta, entonces se recibe una respuesta con estado 201 y el cuerpo contiene la consulta creada con su ID asignado, el ID de la madre, el ID de la enfermera asignada y la fecha de creación.<br>
+        <br>
+        <b>Escenario 2: Mensaje de consulta vacío</b><br>
+        Dado que el endpoint /api/v1/consultations está disponible, cuando se envía una solicitud POST con el campo de mensaje vacío, entonces se recibe una respuesta con estado 422 y el cuerpo contiene el mensaje: 'El mensaje de la consulta no puede estar vacío.'<br>
+        <br>
+        <b>Escenario 3: Paciente sin enfermera asignada</b><br>
+        Dado que el endpoint /api/v1/consultations está disponible, cuando se envía una solicitud POST para un paciente que no tiene una enfermera asignada, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'El paciente no tiene una enfermera asignada para recibir la consulta.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
