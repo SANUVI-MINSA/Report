@@ -1713,6 +1713,241 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-31</td>
+      <td>Admin</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Asignación de enfermera a posta medica</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como admin, quiero poder asignar enfermeras a cada posta medica registrada en FerovaClinic, para que las madres sepan que enfermera las atenderá en cada posta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Asignación de enfermera exitosa<br>
+        Dado que el admin desea asignar una enfermera a una posta médica,<br>
+        cuando selecciona la posta en FerovaClinic, busca a la enfermera por su nombre y presiona 'Asignar enfermera',<br>
+        entonces el sistema debe vincular a la enfermera con la posta y mostrarla disponible en los detalles de la posta en FerovaFamilia.<br>
+        <br>
+        Escenario 2: Enfermera ya asignada a otra posta<br>
+        Dado que el admin intenta asignar una enfermera que ya está asignada a otra posta,<br>
+        cuando presiona 'Asignar enfermera',<br>
+        entonces el sistema debe mostrar un mensaje indicando que la enfermera ya esta asignada a otra posta y preguntando si desea transferirla.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-32</td>
+      <td>Admin</td>
+      <td>Medium</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Transferencia de enfermera entre postas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como admin, quiero poder transferir una enfermera de una posta a otra desde FerovaClinic, para rebalancear el personal de salud entre las postas del distrito cuando sea necesario.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Transferencia de enfermera exitosa<br>
+        Dado que el admin desea transferir una enfermera a otra posta,<br>
+        cuando selecciona a la enfermera en FerovaClinic, elige la nueva posta de destino y presiona 'Transferir enfermera',<br>
+        entonces el sistema debe desvincular a la enfermera de su posta actual, vincularla a la nueva posta y actualizar automáticamente la lista de enfermeras disponibles en ambas postas.<br>
+        <br>
+        Escenario 2: Transferencia a la misma posta<br>
+        Dado que el admin intenta transferir a una enfermera a la misma posta donde ya está asignada,<br>
+        cuando presiona 'Transferir enfermera',<br>
+        entonces el sistema debe mostrar un mensaje de error indicando que la enfermera ya se encuentra asignada a esa posta.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-33</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización de postas medicas en el mapa</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder ver en un mapa todas las postas medicas disponibles cerca de mi ubicación actual desde FerovaFamilia, para encontrar fácilmente la posta más conveniente para llevar a mi hijo a sus controles.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de postas en el mapa exitosa<br>
+        Dado que la madre desea encontrar una posta medica cercana,<br>
+        cuando accede a la sección 'Postas medicas' en FerovaFamilia,<br>
+        entonces el sistema debe usar Google Maps API y el GPS de su dispositivo para mostrarle todas las postas medicas disponibles en el mapa con sus ubicaciones exactas.<br>
+        <br>
+        Escenario 2: GPS desactivado en el dispositivo<br>
+        Dado que la madre accede a la sección 'Postas medicas' con el GPS de su dispositivo desactivado,<br>
+        cuando el sistema intenta obtener su ubicación actual,<br>
+        entonces debe mostrar un mensaje solicitándole que active el GPS de su dispositivo para poder mostrarle las postas más cercanas a su ubicación.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-34</td>
+      <td>Madre</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Reserva de cita en posta medica</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder reservar una cita en la posta medica de mi preferencia desde FerovaFamilia, para programar el control presencial de mi hijo sin necesidad de ir físicamente a la posta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Reserva de cita exitosa<br>
+        Dado que la madre desea reservar una cita en una posta médica,<br>
+        cuando selecciona la posta en el mapa, elige un horario disponible y presiona 'Reservar cita',<br>
+        entonces el sistema debe confirmar la cita, guardarla en MongoDB, notificar a la madre con los detalles de la cita y enviar una notificación a la enfermera asignada de la nueva cita reservada.<br>
+        <br>
+        Escenario 2: Horario no disponible<br>
+        Dado que la madre intenta reservar una cita en un horario que ya está ocupado,<br>
+        cuando presiona 'Reservar cita',<br>
+        entonces el sistema debe mostrar un mensaje indicando que el horario seleccionado no está disponible y sugerirle otros horarios disponibles en la misma posta.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-35</td>
+      <td>Madre</td>
+      <td>Medium</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cancelación de cita en posta medica</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como madre, quiero poder cancelar una cita reservada en la posta medica desde FerovaFamilia, para liberar el horario en caso de que no pueda asistir y avisar a la enfermera con anticipación.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Cancelación de cita exitosa<br>
+        Dado que la madre desea cancelar una cita reservada,<br>
+        cuando accede a la sección 'Mis citas' en FerovaFamilia, selecciona la cita y presiona 'Cancelar cita',<br>
+        entonces el sistema debe cancelar la cita, liberar el horario en MongoDB y enviar una notificación a la enfermera informándole de la cancelación.<br>
+        <br>
+        Escenario 2: Intento de cancelar una cita ya cancelada<br>
+        Dado que la madre intenta cancelar una cita que ya fue cancelada anteriormente,<br>
+        cuando accede a la sección 'Mis citas' y selecciona dicha cita,<br>
+        entonces el sistema debe mostrar un mensaje indicando que la cita ya fue cancelada anteriormente y no puede cancelarse nuevamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
