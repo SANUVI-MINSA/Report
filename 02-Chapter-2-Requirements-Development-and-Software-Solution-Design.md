@@ -839,6 +839,13 @@ En esta capa se definen las entidades y reglas de negocio relacionadas con la ge
 | :--- | :--- | :--- |
 | **PatientAssignmentService** | Gestionar la asignación de pacientes a enfermeras. | • Validar la disponibilidad de la enfermera.<br>• Asegurar que se cumpla la regla de una sola enfermera por paciente. |
 | **HemoglobinAnalysisService** | Evaluar el estado clínico según la hemoglobina. | • Comparar el nivel de hemoglobina con los rangos de edad.<br>• Determinar el grado de anemia (leve, moderada, severa).|
+
+###### Repositories (Interfaces en Domain)
+
+| Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
+| :--- | :--- | :--- | :--- |
+| **PatientRepository** | Gestionar el acceso a los datos de los pacientes y su historial clínico, permitiendo búsquedas por responsables o identidad única. | • `findById(id: String): Patient?`<br>• `findByMotherDni(dni: String): List<Patient>`<br>• `findByNurseDni(dni: String): List<Patient>` | • `save(patient: Patient): void`<br>• `deleteById(id: String): void` |
+
 ##### 2.6.2.2. Interface Layer
 ##### 2.6.2.3. Application Layer
 ##### 2.6.2.4. Infrastructure Layer
