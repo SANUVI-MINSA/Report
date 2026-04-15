@@ -2371,6 +2371,10 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+**Technical Stories**
+
+
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
