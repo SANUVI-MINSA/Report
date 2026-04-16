@@ -802,12 +802,60 @@ En esta sección se presentan los términos clave del proyecto UI-Topic. Estos t
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
 ### 2.6 Tactical-Level Domain-Driven Design
-#### 2.6.X. Bounded Context: `<bounded context Name>`
-##### 2.6.X.1. Domain Layer
-##### 2.6.X.2. Interface Layer
-##### 2.6.X.3. Application Layer
-##### 2.6.X.4. Infrastructure Layer
-##### 2.6.X.5. Bounded Context Software Architecture Component Level Diagrams
-##### 2.6.X.6. Bounded Context Software Architecture Code Level Diagrams
-###### 2.6.X.6.1. Bounded Context Domain Layer Class Diagrams
-###### 2.6.X.6.2. Bounded Context Database Design Diagram
+#### 2.6.3. Bounded Context: `Notifications`
+
+El bounded context Notifications es el sistema nervioso de la plataforma Ferova. Su proposito es gestionar el envio de todas las notificaciones push del sistema via Firebase Cloud Messaging (FCM), actuando como intermediario entre los eventos generados por los demas bounded contexts y los usuarios finales. Funciona en dos capas: primero notifica a la madre con recordatorios de dosis y si ella no responde escala la alerta automaticamente a la enfermera asignada.
+
+##### 2.6.3.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Notifications. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de una notificacion, desde su creacion hasta su entrega exitosa via Firebase FCM. Se incluyen el Aggregate Root Notification, la entidad FcmToken, los Value Objects NotificationType y NotificationStatus, el Domain Service NotificationDispatcherService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregates
+
+| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **Notification** | Representa una notificación push enviada a un usuario de la plataforma Ferova vía Firebase FCM. Gestiona el ciclo de vida completo desde su creación hasta su entrega. | • **id:** String <br> • **recipientId:** String <br> • **recipientRole:** String <br> • **type:** NotificationType <br> • **message:** String <br> • **status:** Status <br> • **fcmToken:** String <br> • **createdAt:** Date | • send() <br> • markAsSent() <br> • markAsFailed() <br> • retry() | • El recipientId no puede ser nulo y el mensaje no puede estar vacío. <br> • El fcmToken debe estar presente antes de enviar. <br> • Se permite un máximo de 3 reintentos en caso de falla. |
+
+###### Entities
+
+| Entidad | Propósito | Atributos | Métodos |
+| :--- | :--- | :--- | :--- |
+| **FcmToken** | Representa el token de Firebase FCM asociado al dispositivo de un usuario específico. | • id: String <br> • userId: String <br> • token: String <br> • deviceType: String <br> • isActive: Boolean <br> • updatedAt: DateTime | • activate() <br> • deactivate() <br> • updateToken(newToken) |
+
+###### Value Object
+
+
+| Value Object | Propósito | Valores / Definiciones | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **NotificationType** | Define el tipo de notificación enviada. | DOSE_REMINDER, SECOND_DOSE_REMINDER, ABANDONMENT_ALERT, BADGE_UNLOCKED, CONSULTATION_CREATED, REPLY_SENT, APPOINTMENT_CONFIRMED, APPOINTMENT_CANCELLED, IRON_INHIBITOR_ALERT, PATIENT_DISCHARGED. | Define el tipo de notificación. | Debe ser un tipo válido y no nulo. | Selección de plantilla y prioridad. |
+| **NotificationStatus** | Define el estado técnico del envío. | PENDING, SENT, FAILED, RETRYING. | Debe seguir el flujo de estados permitido. | Control de flujo y reintentos. |
+
+###### Domain Services
+
+| Servicio | Propósito | Métodos |
+| :--- | :--- | :--- |
+| **NotificationDispatcherService** | Gestiona la lógica de envío de notificaciones y el escalamiento automático de alertas. Es el cerebro que decide cuándo una simple notificación debe convertirse en una alerta urgente. | • `dispatch(notification)` : Envía la notificación al sistema de mensajería.<br><br>• `scheduleReminder(patientId, type)` : Programa recordatorios automáticos.<br><br>• `escalateAlert(patientId, nurseId)` : Eleva el nivel de alerta si no hay respuesta. |
+
+###### Repositories
+
+| Repositorio | Propósito | Métodos |
+| :--- | :--- | :--- |
+| **NotificationRepository** | Interfaz para gestionar la persistencia de las notificaciones enviadas y pendientes. | • `save(notification)` : Guarda una nueva notificación o actualiza una existente en MongoDB.<br><br>• `findById(id)` : Busca y retorna una notificación específica por su ID. Retorna null si no existe.<br><br>• `findByRecipientId(recipientId)` : Retorna todas las notificaciones enviadas a un usuario específico. Útil para ver el historial de una madre o enfermera.<br><br>• `findByStatus(status)` : Retorna todas las notificaciones con un estado específico. Útil para encontrar las **FAILED** que necesitan reintentarse. |
+| **FcmTokenRepository** | Interfaz para administrar los tokens de Firebase asociados a los dispositivos de los usuarios. | • `save(token)` : Guarda o actualiza el token FCM en MongoDB. Se ejecuta cada vez que el usuario abre la app y el token se renueva.<br><br>• `findByUserId(userId)` : Busca y retorna el token FCM activo. Es el **método más importante** porque sin él no se pueden enviar notificaciones push.<br><br>• `deleteByUserId(userId)` : Elimina el token cuando el usuario cierra sesión o desinstala la app para evitar envíos a dispositivos inactivos. |
+
+###### Domain Events 
+
+| Evento de Dominio | Propósito y Descripción | Resultado / Acción |
+| :--- | :--- | :--- |
+| **NotificationSent** | Se dispara tras la confirmación de entrega exitosa por Firebase FCM. | Ciclo completado. Estado actualizado a SENT en MongoDB. |
+| **NotificationFailed** | Se dispara cuando Firebase FCM falla en la entrega del mensaje. | Error detectado. Estado actualizado a FAILED para reintentos. |
+| **DoseReminderScheduled** | Se dispara al programar un recordatorio automático de dosis. | Recordatorio agendado para envío automático a la madre. |
+| **AbandonmentAlertTriggered** | Se dispara tras 72h de inactividad en la confirmación de dosis. | Alerta de riesgo enviada a la enfermera para acción inmediata. |
+
+##### 2.6.3.2. Interface Layer
+##### 2.6.3.3. Application Layer
+##### 2.6.3.4. Infrastructure Layer
+##### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
+##### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.3.6.2. Bounded Context Database Design Diagram
