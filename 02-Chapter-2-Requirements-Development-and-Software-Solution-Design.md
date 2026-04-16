@@ -802,6 +802,56 @@ En esta sección se presentan los términos clave del proyecto UI-Topic. Estos t
 ##### 2.5.3.3 Software Architecture Deployment Diagrams
 
 ### 2.6 Tactical-Level Domain-Driven Design
+
+#### 2.6.2. Bounded Context: `Patient Management`
+
+El Bounded Context de Patient Management se encarga de gestionar la información personal y clínica de los pacientes dentro de la plataforma Ferova. Incluye el registro de pacientes, la actualización de sus datos y el seguimiento de indicadores clave como el nivel de hemoglobina, peso y altura.
+
+Asimismo, permite la asociación del paciente con su madre y la asignación de una enfermera responsable, facilitando el monitoreo continuo y organizado del estado de salud del niño.
+
+Este contexto se estructura siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD), permitiendo una clara separación de responsabilidades entre la lógica de negocio, la interacción con el usuario, la orquestación de procesos y la implementación técnica.
+
+##### 2.6.2.1. Domain Layer
+
+En esta capa se definen las entidades y reglas de negocio relacionadas con la gestión de pacientes con anemia dentro de la plataforma Ferova. Este bounded context es responsable del registro, almacenamiento y seguimiento de la información clínica básica del paciente, así como su asignación a una enfermera.
+
+
+###### Aggregate
+
+| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **Patient** | Representa a un niño dentro del sistema, gestionando su información personal, estado clínico actual y su historial de registros médicos junto a sus responsables. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **birthDate**: `Date`<br>• **currentWeight**: `Float`<br>• **currentHeight**: `Float`<br>• **currentHemoglobinLevel**: `Float`<br>• **motherId**: `String`<br>• **nurseId**: `String` <br> • **sexo**: `SexoGenero` <br> • **status:** PatientStatus  | • `registerPatient()`<br>• `updatePatientData()`<br>• `assignNurse(nurseId)`<br>• `updateWeight(value)`<br>• `updateHeight(value)`<br>• `updateHemoglobinLevel(value)`<br>• `addMedicalRecord(record)`<br>• `getMedicalHistory()` <br>• `displayPatientData()` <br> `dischargePatient()`  | • El paciente debe estar asociado a una madre (**motherId** obligatorio).<br>• Solo puede tener una enfermera asignada a la vez.<br>• La fecha de nacimiento no puede ser futura.<br>• El peso, la altura y el nivel de hemoglobina deben ser mayores a **0**. <br> • El sexo del paciente es obligatorio. <br>•El paciente puede ser dado de alta únicamente por una enfermera, quien evalúa su historial médico y estado clínico antes de tomar la decisión.|
+
+###### Entities
+
+| Entidad | Propósito | Atributos | Métodos | Reglas y Relaciones |
+| :--- | :--- | :--- | :--- | :--- |
+| **MedicalRecord** | Representa un registro clínico detallado para la trazabilidad de la evolución médica y física del paciente. | • **id**: `String`<br>• **date**: `LocalDateTime`<br>• **hemoglobinLevel**: `HemoglobinLevel`<br>• **weight**: `Weight`<br>• **height**: `Height`<br>• **sexo**: `SexoGenero`<br>• **antecedentes**: `List<Antecedente>`<br>• **motivoConsulta**: `MotivoConsulta`<br>• **observaciones**: `Observaciones`<br>• **controls**: `List<Control>`<br>• **nurseId**: `String`<br>• **patientId**: `String`<br>• **motherId**: `String` | • `registerRecord()` : `void`<br>• `addControl(control: Control)` : `void`<br>• `addAntecedente(antecedente: Antecedente)` : `void` | • **Relación**: Patient (1) --- (0..*) MedicalRecord.<br>• **Regla**: Un paciente centraliza múltiples registros que forman su historial clínico histórico.<br>• **Regla**: La hemoglobina, peso y talla deben ser valores clínicos válidos y mayores a cero. |
+
+###### Value Objects
+
+| Value Object | Propósito | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- |
+| **HemoglobinLevel** | Representa el nivel de hemoglobina en la sangre. | • Debe ser mayor a **0**.<br>• Debe estar dentro de un rango clínico lógico. | • `isValid()`<br>• Comparación por valor. |
+| **Weight** | Almacena el peso actual del paciente. | • Debe ser mayor a **0**.<br>• Valor expresado en kilogramos. | • `isValid()`<br>• Formateo de unidad. |
+| **Height** | Almacena la estatura/talla del niño. | • Debe ser mayor a **0**.<br>• Valor expresado en centímetros/metros. | • `isValid()`<br>• Validación de rango. |
+| **BirthDate** | Gestiona la fecha de nacimiento del paciente. | • No puede ser una fecha futura.<br>• Debe ser una fecha válida. | • `isValid()`<br>• Cálculo de edad actual. |
+| **SexoGenero** | Define el sexo biológico del paciente. | • Debe ser `MASCULINO` o `FEMENINO`.<br>• Compartido entre Patient y MedicalRecord. | • Comparación por valor. |
+| **Antecedente** | Registra información médica o familiar previa relevante. | • El tipo y el contenido son obligatorios.<br>• No se permiten campos vacíos. | • `isValid()` |
+| **MotivoConsulta** | Describe la razón principal de la visita médica. | • Texto descriptivo obligatorio.<br>• Longitud mínima requerida. | • Formateo de texto. |
+| **Observaciones** | Notas adicionales y detalles del profesional. | • Campo de texto para hallazgos clínicos.<br>• Puede ser opcional pero debe ser válido. | • `isEmpty()` |
+| **Control** | Almacena resultados específicos de laboratorio. | • Valores de Hb, Hematocrito y Ferritina deben ser `> 0`.<br>• La fecha no puede ser futura. | • `isValid()`<br>• Determinar `EstadoAnemia`. |
+| **TratamientoRecetado**| Detalla la prescripción médica para el paciente. | • Medicamento, dosis y duración son obligatorios.<br>• Días de duración debe ser mayor a 0. | • `generarInstrucciones()` |
+| **EstadoAnemia** | Clasifica la severidad de la condición. | • Valores: `LEVE`, `MODERADA`, `GRAVE`, `CONTROLADA`.<br>• Basado en niveles de hemoglobina. | • Lógica de cálculo automática. |
+| **PatientStatus** | Representa el estado actual del ciclo de vida del paciente en el sistema. | • Valores permitidos: `ACTIVE`, `IN_TREATMENT`, `DISCHARGED`. | • `isDischarged()`|
+
+###### Domain Services
+
+| Servicio | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **PatientAssignmentService** | Gestionar la asignación de pacientes a enfermeras. | • Validar la disponibilidad de la enfermera.<br>• Asegurar que se cumpla la regla de una sola enfermera por paciente. |
+| **HemoglobinAnalysisService** | Evaluar el estado clínico según la hemoglobina. | • Comparar el nivel de hemoglobina con los rangos de edad.<br>• Determinar el grado de anemia (leve, moderada, severa).|
+=======
 #### 2.6.1. Bounded Context: `Identify and Access Management`
 
 El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
@@ -847,6 +897,8 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 
 | Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
 | :--- | :--- | :--- | :--- |
+| **PatientRepository** | Gestionar el acceso a los datos de los pacientes y su historial clínico, permitiendo búsquedas por responsables o identidad única. | • `findById(id: String): Patient?`<br>• `findByMotherDni(dni: String): List<Patient>`<br>• `findByNurseDni(dni: String): List<Patient>` | • `save(patient: Patient): void`<br>• `deleteById(id: String): void` |
+=======
 | **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(dni: String)`<br>• `existsByUsername(dni: String)`<br>• `findRoleByUsername(dni: String)` | • `save(user)`<br>• `deleteByUsername(dni: String)` |
 | **RoleRepository** | Administrar el catálogo de roles y sus permisos asociados. | • `findByName(name)`<br>• `getDefault()` | • `save(role)` |
 
@@ -854,6 +906,140 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 
 | Evento de Dominio | ¿Cuándo ocurre? | Acción que lo dispara |
 | :--- | :--- | :--- |
+| **PatientRegistered** | Cuando un nuevo niño es registrado en el sistema exitosamente. | El proceso de registro de paciente ha terminado. |
+| **PatientUpdated** | Cuando se modifican datos personales o el estado clínico del niño. | El usuario confirma los cambios en el perfil del paciente. |
+| **PatientAssignedToNurse** | Cuando se vincula a un paciente con una enfermera responsable. | El sistema o administrador realiza la asignación de seguimiento. |
+| **MedicalRecordAdded** | Cuando se genera un nuevo registro clínico en la línea de tiempo. | El profesional de salud guarda una nueva consulta médica. |
+| **ControlAdded** | Cuando se registran nuevos valores de laboratorio (Hb, Ferritina y Hematocrito). | Se añaden resultados de análisis al historial clínico. |
+| **PatientDischarged** | Cuando el paciente completa su tratamiento y es dado de alta médica. | El médico o enfermera confirma que el paciente superó la condición. |
+
+##### 2.6.2.2. Interface Layer
+
+En esta capa se definen los puntos de interacción entre el sistema y los usuarios, permitiendo gestionar las operaciones relacionadas con los pacientes mediante endpoints REST. Su función es recibir solicitudes, transformarlas en comandos o consultas hacia el Application Layer y devolver respuestas estructuradas.
+
+###### Controller(REST)
+
+| Controlador | Endpoint | Método | Propósito |
+| :--- | :--- | :--- | :--- |
+| **PatientController** | `/api/v1/patients` | **POST** | Registrar un nuevo paciente en el sistema. |
+| | `/api/v1/patients/{id}` | **GET** | Obtener información detallada del niño (incluye estado e historial). |
+| | `/api/v1/patients/mother/{dni}` | **GET** | Listar todos los pacientes asociados a una madre. |
+| | `/api/v1/patients/nurse/{dni}` | **GET** | Listar todos los pacientes asignados a una enfermera. |
+| | `/api/v1/patients/{id}` | **PUT** | Actualizar datos básicos (nombre, peso, altura). |
+| | `/api/v1/patients/{id}/assign-nurse` | **PUT** | Realizar el cambio o asignación de enfermera. |
+| | `/api/v1/patients/{id}/medical-records` | **POST** | Registrar una nueva entrada en el historial médico. |
+| | `/api/v1/patients/{id}/medical-history` | **GET** | Recuperar toda la línea de tiempo clínica del paciente. |
+| | `/api/v1/patients/{id}/controls` | **POST** | Agregar un nuevo control clínico en consultas posteriores. |
+| | `/api/v1/patients/{id}/discharge` | **POST** | Dar de alta médica al paciente (finalizar ciclo). |
+| |`/api/v1/patients/{id}/medical-history/pdf` | **GET** | Descargar historial médico completo (PDF). |
+| |`/api/v1/patients/{id}/controls/pdf` | **GET** | Descargar SOLO los controles médicos (PDF). |
+| |`/api/v1/patients/{id}/controls/{date}/pdf` | **GET** | Descargar un reporte de control específico por fecha (PDF). |
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. CreatePatientRequest**
+**Propósito:** Envía los datos necesarios para registrar a una paciente (niño) por primera vez.
+
+```json
+{
+  "name": "Juan",
+  "lastName": "Perez",
+  "birthDate": "2020-01-01",
+  "sexo": "MASCULINO",
+  "weight": 12.5,
+  "height": 85.0,
+  "motherId": "user-123"
+}
+```
+
+#### **2. PatientResource**
+**Propósito:** Devuelve la información resumida y el estado actual del paciente.
+
+```json
+{
+  "id": "patient-1",
+  "name": "Juan",
+  "lastName": "Perez",
+  "sexo": "MASCULINO",
+  "currentWeight": 12.5,
+  "currentHeight": 85.0,
+  "currentHemoglobinLevel": 10.5,
+  "status": "IN_TREATMENT"
+}
+```
+
+#### **3. MedicalRecordRequest**
+**Propósito:** Registra un historial clínico detallado, con antecedentes y el primer control.
+
+```json
+{
+  "date": "2026-01-01T10:00:00",
+  "hemoglobinLevel": 10.2,
+  "weight": 12.8,
+  "height": 86.0,
+  "sexo": "MASCULINO",
+  "motivoConsulta": "Primera evaluación",
+  "observaciones": "Paciente estable",
+  "antecedentes": [
+    {
+      "type": "ALERGIA",
+      "content": "Alergia a penicilina"
+    }
+  ],
+  "controls": [
+    {
+      "fecha": "2026-01-01T10:00:00",
+      "hemoglobinaGdl": 10.2,
+      "hematocrito": 32.5,
+      "ferritina": 15.0,
+      "sintomas": ["cansancio"],
+      "tratamiento": {
+        "medicamento": "Hierro",
+        "dosis": "10mg",
+        "duracionDias": 30,
+        "indicaciones": "Después de comidas"
+      }
+    }
+  ]
+}
+```
+#### **4. AddControlRequest**
+**Propósito:** Registra un nuevo control de seguimiento y tratamiento para una consulta posterior.
+
+```json
+{
+ "fecha": "2026-02-01T10:00:00",
+  "hemoglobinaGdl": 10.5,
+  "hematocrito": 32.0,
+  "ferritina": 15.0,
+  "sintomas": ["cansancio"],
+  "tratamiento": {
+    "medicamento": "Hierro",
+    "dosis": "10mg",
+    "duracionDias": 30,
+    "indicaciones": "Después de comidas"
+  }
+}
+```
+
+#### **5. AssignNurseRequest**
+**Propósito:** Envía el identificador de la enfermera que tratara al paciente.
+
+```json
+{
+   "nurseId": "nurse-456"
+}
+```
+
+#### **6. DischargePatientRequest**
+**Propósito:** Registra el alta médica del paciente, validado por la enfermera.
+
+```json
+{
+"nurseId": "nurse-456"
+}
+```
+
+=======
 | **UserRegistered** | Cuando un nuevo usuario se crea exitosamente. | El proceso de registro ha terminado. |
 | **UserLoggedIn** | Cuando un usuario entra al sistema con éxito. | El servicio de autenticación valida las credenciales. |
 | **UserPasswordChanged** | Cuando se actualiza la clave de seguridad. | El usuario confirma su nueva contraseña. |
@@ -944,6 +1130,159 @@ En esta capa se definen los puntos de entrada y salida del sistema, permitiendo 
 
 | Assembler / Mapper | Dirección de la Traducción | Propósito |
 | :--- | :--- | :--- |
+| **CreatePatientCommandFromResourceAssembler** | `CreatePatientRequest` → `CreatePatientCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
+| **MedicalRecordCommandAssembler** | `MedicalRecordRequest` → `MedicalRecord` | Traduce el JSON complejo del historial médico en un objeto estructurado, validando y convirtiendo tipos. |
+| **ControlCommandAssembler** | `AddControlRequest` → `Control` | Transforma los datos de seguimiento en un objeto de control, permitiendo cálculos lógicos como el estado de anemia. |
+| **PatientResourceFromEntityAssembler** | `Patient (Entity)` → `PatientResource` | Transforma la entidad del dominio en un recurso seguro y resumido para ser enviado al cliente. |
+| **DischargePatientCommandAssembler** | `DischargePatientRequest` → `DischargePatientCommand` | Traduce la petición de alta médica en una instrucción ejecutable por el negocio. |
+
+##### 2.6.2.3. Application Layer
+
+En esta capa se coordinan los casos de uso del sistema relacionados con la gestión de pacientes. Su responsabilidad es orquestar las operaciones entre el Interface Layer y el Domain Layer, ejecutando comandos y consultas sin contener lógica de negocio compleja.
+
+###### Command Handlers (Application Layer)
+
+| Command Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **CreatePatientCommandHandler** | Registrar un nuevo paciente. | Validar entrada, crear entidad, asignar estado ACTIVE/IN_TREATMENT y guardar. |
+| **AssignNurseCommandHandler** | Asignar enfermera a un paciente. | Buscar paciente, actualizar nurseId y persistir cambios. |
+| **CreateMedicalRecordCommandHandler** | Registrar historial médico inicial. | Buscar paciente, crear MedicalRecord, asociarlo y guardar cambios. |
+| **AddControlCommandHandler** | Agregar control en consulta posterior. | Buscar paciente/registro, crear Control, calcular estado y guardar. |
+| **DischargePatientCommandHandler** | Dar de alta médica al paciente. | Validar enfermera, cambiar estado a DISCHARGED, generar evento y guardar. |
+
+###### Query Handlers (Application Layer)
+
+| Query Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **GetPatientByIdQueryHandler** | Obtener información completa del paciente. | Buscar paciente por ID y retornar sus datos. |
+| **GetPatientsByMotherDniQueryHandler** | Obtener pacientes asociados a una madre. | Filtrar en el repositorio por DNI de la madre y retornar lista. |
+| **GetPatientsByNurseDniQueryHandler** | Obtener pacientes asignados a una enfermera. | Filtrar en el repositorio por DNI de la enfermera y retornar lista. |
+| **GetMedicalHistoryQueryHandler** | Obtener historial médico del paciente. | Obtener el paciente y retornar su colección de MedicalRecords. |
+| **GetMedicalHistoryPdfQueryHandler** | Generar el PDF con el historial médico completo del paciente. | Obtener registros médicos, validar su existencia y enviar los datos al PDFService para generar el historial completo. |
+| **GetControlsPdfQueryHandler** | Generar un PDF con todos los controles del paciente. | Obtener el historial médico, extraer únicamente la lista de todos los controles y enviarlos al PDFService. |
+| **GetControlByDatePdfQueryHandler** | Generar un PDF de un control específico según su fecha. | Obtener el historial, buscar el control que coincida con la fecha solicitada, validar que exista y enviarlo al PDFService. |
+
+###### Event Handlers
+
+| Event Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **OnPatientDischargedNotify** | Notificar a la madre del paciente. | Enviar notificación (push/email/app) sobre el alta médica. |
+| **OnPatientDischargedAnalytics** | Actualizar métricas del sistema. | Registrar paciente recuperado y actualizar estadísticas de anemia. |
+
+
+##### 2.6.2.4. Infrastructure Layer
+
+En esta capa se implementan los detalles técnicos necesarios para la persistencia de datos, integración con servicios externos y soporte a las operaciones del dominio. Se encarga de materializar las interfaces definidas en el Domain Layer. Tambien permite la descarga del historial médico completo, los controles del paciente y controles específicos por fecha.
+
+###### Persistence
+
+| Repositorio | Implementación | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **MongoPatientRepository** | `PatientRepository` | Guardar, buscar por ID, filtrar por madre/enfermera y eliminar pacientes. | `save`, `findById`, `findByMotherDni`, `findByNurseDni`, `deleteById` |
+| **MongoMedicalRecordRepository** | Técnico (Infra) | Guardar registros médicos y buscar historiales completos por paciente. | `save`, `findByPatientId` |
+
+###### Mappers
+
+| Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **PatientDocumentMapper** | Patient ↔ PatientDocument | Convierte el agregado completo de paciente a documento Mongo y viceversa. |
+| **MedicalRecordDocumentMapper** | MedicalRecord ↔ MedicalRecordDocument | Convierte el historial completo. Usa internamente otros mappers. |
+| **ControlMapper** | Control ↔ Embedded Document | Convierte cada control individual. Es utilizado dentro de MedicalRecordDocumentMapper. |
+
+###### Modelo de Datos (MongoDB)
+
+<h4>Colección: patients </h4>
+
+```json
+{
+  "_id": "patient-1",
+  "name": "Juan",
+  "lastName": "Perez",
+  "birthDate": "2020-01-01",
+  "sexo": "MASCULINO",
+  "currentWeight": 12.5,
+  "currentHeight": 85.0,
+  "currentHemoglobinLevel": 10.5,
+  "motherId": "user-123",
+  "nurseId": "nurse-456",
+  "status": "IN_TREATMENT"
+}
+```
+<h4>Colección: medical_records </h4>
+
+```json
+{
+  "_id": "mr-1",
+  "patientId": "patient-1",
+  "motherId": "user-123",
+  "nurseId": "nurse-456",
+  "date": "2026-01-01",
+  "hemoglobinLevel": 10.2,
+  "weight": 12.8,
+  "height": 86.0,
+  "sexo": "MASCULINO",
+  "motivoConsulta": "Primera evaluación",
+  "observaciones": "Paciente estable",
+  "antecedentes": [],
+  "controls": [
+    {
+      "fecha": "2026-02-01",
+      "hemoglobinaGdl": 10.5,
+      "hematocrito": 32.0,
+      "ferritina": 15.0,
+      "estado": "LEVE",
+      "sintomas": ["cansancio"],
+      "tratamiento": {
+        "medicamento": "Hierro",
+        "dosis": "10mg",
+        "duracionDias": 30,
+        "indicaciones": "Después de comidas"
+      }
+    }
+  ]
+}
+```
+###### Servicios Externos (Bounded Contexts Integrations)
+
+| Servicio | Propósito | Integración |
+| :--- | :--- | :--- |
+| **NotificationService** | Envío de notificaciones a la madre del paciente. | Activado por eventos de dominio (ej. PatientDischarged). |
+| **AnalyticsService** | Registro y procesamiento de métricas del sistema. | Suscrito a eventos para actualizar estadísticas de salud global. |
+
+> Importante: Estos servicios representan Bounded Contexts independientes, ya que pertenecen a dominios distintos al de Patient Management. La comunicación se realiza mediante eventos, permitiendo una arquitectura desacoplada y escalable.
+
+######  Exportación de Documentos (Infrastructure Layer)
+
+| Servicio | Implementa | Responsabilidades |
+| :--- | :--- | :--- |
+| **PdfDocumentExportService** | DocumentExportService | Generar PDF del historial médico completo, reporte de controles y reportes individuales. |
+
+###### Configurations (Infrastructure Layer)
+
+| Configuración | ¿Qué hace? | Responsabilidades |
+| :--- | :--- | :--- |
+| **MongoConfig** | Conecta el sistema con MongoDB. | Gestiona URL de conexión, base de datos y colecciones de pacientes y registros. |
+| **EventConfig** | Conecta eventos con sus manejadores (Handlers). | Asegura que al ocurrir un evento (ej. PatientDischarged) se ejecuten las acciones correspondientes. |
+
+
+##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align="center">
+<img src="resources/images/chapter-II/Software_Architecture/Patient/components-structuriz-patient.png">
+</div>
+
+##### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align="center">
+<img src="resources/images/chapter-II/Class_Diagram/Patient/PATIENT DIAGRMA CLASS.png">
+</div>
+
+###### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+<div align="center">
+<img src="resources/images/chapter-II/DB_Diagram/Patient/DIAGRMA DE BASE DE DATOS NO RELACIONAL PATIENT.png/">
+=======
 | **CreateUserCommandFromResourceAssembler** | `CreateUserRequest` → `CreateUserCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
 | **UserResourceFromEntityAssembler** | `User (Entity)` → `UserResource` | Transforma la entidad del dominio en un recurso seguro para ser enviado al cliente. |
 | **ChangePasswordCommandFromResourceAssembler** | `ChangePasswordRequest` → `ChangePasswordCommand` | Traduce la petición de cambio de clave en una instrucción ejecutable por el negocio. |
