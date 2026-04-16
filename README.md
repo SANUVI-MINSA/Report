@@ -127,6 +127,17 @@
     * [2.6.2.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2626-bounded-context-software-architecture-code-level-diagrams)
     * [2.6.2.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26261-bounded-context-domain-layer-class-diagrams)
     * [2.6.2.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26262-bounded-context-database-design-diagram)
+
+  * [2.6.3. Bounded Context: `Notification Management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#263-bounded-context-notifications)
+
+    * [2.6.3.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2631-domain-layer)
+    * [2.6.3.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2632-interface-layer)
+    * [2.6.3.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2633-application-layer)
+    * [2.6.3.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2634-infrastructure-layer)
+    * [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2635-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2636-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26231-bounded-context-domain-layer-class-diagrams)
+    * [2.6.3.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26232-bounded-context-database-design-diagram)
       
 ## [Capítulo III: Solution UI/UX Design](03-Chapter-3-Solution-UI-UX-Design.md)
 
