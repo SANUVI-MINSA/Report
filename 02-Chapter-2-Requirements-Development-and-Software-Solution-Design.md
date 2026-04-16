@@ -3843,6 +3843,236 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-31</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener lista de citas programadas mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de la lista de citas programadas mediante una API REST, para que la enfermera pueda visualizar las citas de control presencial de sus pacientes asignados desde FerovaClinic.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de lista de citas exitosa</b><br>
+        Dado que el endpoint /api/v1/appointments está disponible, cuando se envía una solicitud GET con el token JWT valido y el ID de la enfermera, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de citas programadas para el día, incluyendo el nombre del paciente, la hora de la cita y el motivo del control.<br>
+        <br>
+        <b>Escenario 2: Sin citas programadas para el día</b><br>
+        Dado que el endpoint /api/v1/appointments está disponible, cuando se envía una solicitud GET y la enfermera no tiene ninguna cita agendada para la fecha consultada, entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay citas programadas para el día de hoy.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/appointments está disponible, cuando se envía una solicitud GET con un token JWT inválido o expirado, entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-32</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Enviar segundo recordatorio de dosis mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de envío del segundo recordatorio de dosis mediante una API REST, para que el sistema pueda enviar automáticamente una segunda notificación push más urgente vía Firebase FCM si la madre no confirmó la dosis después de 2 horas del primer recordatorio.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Envío de segundo recordatorio exitoso</b><br>
+        Dado que el endpoint /api/v1/notifications/second-dose-reminder está disponible, cuando el sistema detecta que han pasado 2 horas desde el primer recordatorio y la madre aún no ha confirmado la dosis, entonces se envía automáticamente una segunda notificación push más urgente vía Firebase FCM al dispositivo de la madre y se recibe una respuesta con estado 200 confirmando el envío exitoso.<br>
+        <br>
+        <b>Escenario 2: Dosis confirmada antes del segundo recordatorio</b><br>
+        Dado que el endpoint /api/v1/notifications/second-dose-reminder está disponible, cuando el sistema detecta que la madre confirmó la dosis antes de que pasen 2 horas del primer recordatorio, entonces no se envía el segundo recordatorio y se recibe una respuesta con estado 200 y el mensaje: 'La dosis fue confirmada. No se requiere enviar segundo recordatorio.'<br>
+        <br>
+        <b>Escenario 3: Error en el envío de la notificación</b><br>
+        Dado que el endpoint /api/v1/notifications/second-dose-reminder está disponible, cuando Firebase FCM falla al intentar entregar la segunda notificación al dispositivo de la madre, entonces se recibe una respuesta con estado 500 y el cuerpo contiene el mensaje: 'Error al enviar el segundo recordatorio. Se reintentará el envío automáticamente.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-33</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener historial de notificaciones mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención del historial de notificaciones enviadas mediante una API REST, para que la madre pueda consultar en FerovaFamilia los recordatorios previos y estados de confirmación de dosis almacenados en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de historial exitosa</b><br>
+        Dado que el endpoint /api/v1/notifications/{patientId}/history está disponible, cuando se envía una solicitud GET con el token JWT válido, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de notificaciones enviadas, incluyendo tipo (recordatorio 1 o 2), fecha, hora y si fue confirmada por el usuario.<br>
+        <br>
+        <b>Escenario 2: Sin notificaciones previas</b><br>
+        Dado que el endpoint /api/v1/notifications/{patientId}/history está disponible, cuando se envía una solicitud GET para un paciente que aún no ha recibido alertas, entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay historial de notificaciones para este paciente.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/notifications/{patientId}/history está disponible, cuando se envía una solicitud GET con un token JWT inválido, entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-34</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Enviar notificación de recordatorio de cita mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de envío de notificación de recordatorio de cita mediante una API REST, para que el sistema pueda notificar automáticamente a la madre vía Firebase FCM un día antes de su cita programada en la posta médica.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Envió de recordatorio de cita exitoso</b><br>
+        Dado que el endpoint /api/v1/notifications/appointment-reminder está disponible, cuando el sistema detecta que falta un día para la cita programada de la madre, entonces se envía automáticamente una notificación push vía Firebase FCM al dispositivo de la madre indicando la fecha, hora y nombre de la posta donde tiene programada su cita, y se recibe una respuesta con estado 200 confirmando el envío exitoso.<br>
+        <br>
+        <b>Escenario 2: Cita cancelada antes del recordatorio</b><br>
+        Dado que el endpoint /api/v1/notifications/appointment-reminder está disponible, cuando el sistema detecta que la madre canceló su cita antes de que se envíe el recordatorio, entonces no se envía ninguna notificación y se recibe una respuesta con estado 200 y el mensaje: 'La cita fue cancelada. No se requiere enviar recordatorio.'<br>
+        <br>
+        <b>Escenario 3: Error en el envío de la notificación</b><br>
+        Dado que el endpoint /api/v1/notifications/appointment-reminder está disponible, cuando Firebase FCM falla al intentar entregar la notificación al dispositivo de la madre, entonces se recibe una respuesta con estado 500 y el cuerpo contiene el mensaje: 'Error al enviar el recordatorio de cita. Se reintentará el envío automáticamente.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-35</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-08</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Enviar notificación de logro desbloqueado mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de envío de notificación de logro desbloqueado mediante una API REST, para que el sistema pueda enviar automáticamente a la madre vía Firebase FCM cuando desbloquee una insignia o logro importante del tratamiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Envío de notificación de logro exitoso</b><br>
+        Dado que el endpoint /api/v1/notifications/achievement-unlocked está disponible, cuando el sistema detecta que la madre ha alcanzado un hito importante del tratamiento y desbloquea una insignia, entonces se envía automáticamente una notificación push vía Firebase FCM al dispositivo de la madre felicitándola e indicando el nombre de la insignia desbloqueada, y se recibe una respuesta con estado 200 confirmando el envío exitoso.<br>
+        <br>
+        <b>Escenario 2: Notificación enviada con app cerrada</b><br>
+        Dado que el endpoint /api/v1/notifications/achievement-unlocked está disponible, cuando el sistema detecta que la madre tiene FerovaFamilia cerrada en el momento en que desbloquea un logro, entonces se envía igualmente la notificación push vía Firebase FCM que aparecerá en la barra de notificaciones del dispositivo Android de la madre, y se recibe una respuesta con estado 200 confirmando el envío exitoso.<br>
+        <br>
+        <b>Escenario 3: Error en el envío de la notificación</b><br>
+        Dado que el endpoint /api/v1/notifications/achievement-unlocked está disponible, cuando Firebase FCM falla al intentar entregar la notificación al dispositivo de la madre, entonces se recibe una respuesta con estado 500 y el cuerpo contiene el mensaje: 'Error al enviar la notificación de logro. Se reintentará el envío automáticamente.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
