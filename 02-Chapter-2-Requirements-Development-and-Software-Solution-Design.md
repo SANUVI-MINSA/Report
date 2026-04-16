@@ -3613,6 +3613,236 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-26</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener postas médicas cercanas mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de postas médicas cercanas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre las postas de su distrito con su horario de atención y ubicación en Google Maps.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de postas exitosa</b><br>
+        Dado que el endpoint /api/v1/health-facilities está disponible, cuando se envía una solicitud GET con el token JWT válido y el distrito del paciente, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de postas médicas del distrito, incluyendo su nombre, dirección, horario de atención actual y link de ubicación en Google Maps.<br>
+        <br>
+        <b>Escenario 2: No hay postas registradas en el distrito</b><br>
+        Dado que el endpoint /api/v1/health-facilities está disponible, cuando se envía una solicitud GET para un distrito que aún no tiene postas registradas en el sistema, entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay postas médicas registradas en este distrito.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/health-facilities está disponible, cuando se envía una solicitud GET con un token JWT inválido o expirado, entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-27</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Transferir enfermera entre postas mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de transferencia de enfermera entre postas mediante una API REST, para que el admin pueda reasignar a una enfermera de una posta a otra y el sistema actualice automáticamente la lista de personal en ambas postas en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Transferencia de enfermera exitosa</b><br>
+        Dado que el endpoint /api/v1/health-facilities/{facilityId}/transfer-nurse está disponible, cuando se envía una solicitud PUT con el token JWT válido, el ID de la enfermera y el ID de la nueva posta de destino, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la enfermera actualizada con su nueva posta asignada y la fecha de transferencia.<br>
+        <br>
+        <b>Escenario 2: Transferencia a la misma posta</b><br>
+        Dado que el endpoint /api/v1/health-facilities/{facilityId}/transfer-nurse está disponible, cuando se envía una solicitud PUT con el ID de una posta de destino igual a la posta actual de la enfermera, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'La enfermera ya se encuentra asignada a esa posta médica.'<br>
+        <br>
+        <b>Escenario 3: Enfermera o posta no encontrada</b><br>
+        Dado que el endpoint /api/v1/health-facilities/{facilityId}/transfer-nurse está disponible, cuando se envía una solicitud PUT con un ID de enfermera o posta que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Enfermera o posta médica no encontrada.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-28</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener postas medicas cercanas mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de postas medicas cercanas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre las postas disponibles en el mapa usando las coordenadas GPS de su dispositivo y Google Maps API.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de postas cercanas exitosa</b><br>
+        Dado que el endpoint /api/v1/health-facilities/nearby está disponible, cuando se envía una solicitud GET con el token JWT valido y las coordenadas de latitud y longitud del dispositivo de la madre, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de postas medicas disponibles ordenadas por distancia, con su nombre, dirección, coordenadas de ubicación y horarios de atención.<br>
+        <br>
+        <b>Escenario 2: Sin postas registradas en el distrito</b><br>
+        Dado que el endpoint /api/v1/health-facilities/nearby está disponible, cuando se envía una solicitud GET y no existen postas registradas en el sistema, entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay postas medicas disponibles en su zona.'<br>
+        <br>
+        <b>Escenario 3: Coordenadas GPS no proporcionadas</b><br>
+        Dado que el endpoint /api/v1/health-facilities/nearby está disponible, cuando se envía una solicitud GET sin incluir las coordenadas de latitud y longitud, entonces se recibe una respuesta con estado 422 y el cuerpo contiene el mensaje: 'Se requieren las coordenadas de ubicación para buscar postas cercanas.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-29</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Reservar cita en posta medica mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de reserva de cita en posta medica mediante una API REST, para que la madre pueda programar su cita de control presencial y el sistema notifique automáticamente a la enfermera asignada en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Reserva de cita exitosa</b><br>
+        Dado que el endpoint /api/v1/appointments está disponible, cuando se envía una solicitud POST con el token JWT valido, el ID de la posta, el ID del paciente y el horario seleccionado, entonces se recibe una respuesta con estado 201 y el cuerpo contiene la cita registrada con su ID asignado, la fecha, hora, posta y enfermera asignada.<br>
+        <br>
+        <b>Escenario 2: Horario no disponible</b><br>
+        Dado que el endpoint /api/v1/appointments está disponible, cuando se envía una solicitud POST con un horario que ya está ocupado en la posta seleccionada, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'El horario seleccionado no está disponible. Por favor seleccione otro horario.'<br>
+        <br>
+        <b>Escenario 3: Posta o paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/appointments está disponible, cuando se envía una solicitud POST con un ID de posta o paciente que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Posta medica o paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-30</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cancelar cita en posta medica mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de cancelación de cita en posta medica mediante una API REST, para que la madre pueda cancelar su cita reservada y el sistema libere automáticamente el horario y notifique a la enfermera en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Cancelación de cita exitosa</b><br>
+        Dado que el endpoint /api/v1/appointments/{appointmentId}/cancel está disponible, cuando se envía una solicitud PUT con el token JWT valido, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la cita actualizada con estado cancelada, la fecha y hora de cancelación y el horario liberado para nuevas reservas.<br>
+        <br>
+        <b>Escenario 2: Cita ya cancelada anteriormente</b><br>
+        Dado que el endpoint /api/v1/appointments/{appointmentId}/cancel está disponible, cuando se envía una solicitud PUT para una cita que ya fue cancelada anteriormente, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'La cita ya fue cancelada anteriormente y no puede cancelarse nuevamente.'<br>
+        <br>
+        <b>Escenario 3: Cita no encontrada</b><br>
+        Dado que el endpoint /api/v1/appointments/{appointmentId}/cancel está disponible, cuando se envía una solicitud PUT con un ID de cita que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Cita no encontrada.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
