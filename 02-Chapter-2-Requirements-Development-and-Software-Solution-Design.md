@@ -851,12 +851,56 @@ En esta capa se definen las entidades y reglas de negocio relacionadas con la ge
 | :--- | :--- | :--- |
 | **PatientAssignmentService** | Gestionar la asignación de pacientes a enfermeras. | • Validar la disponibilidad de la enfermera.<br>• Asegurar que se cumpla la regla de una sola enfermera por paciente. |
 | **HemoglobinAnalysisService** | Evaluar el estado clínico según la hemoglobina. | • Comparar el nivel de hemoglobina con los rangos de edad.<br>• Determinar el grado de anemia (leve, moderada, severa).|
+=======
+#### 2.6.1. Bounded Context: `Identify and Access Management`
+
+El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
+
+Este contexto se organiza siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD). El Domain Layer contiene las reglas de negocio, el Interface Layer gestiona la interacción con el usuario, el Application Layer coordina los procesos y el Infrastructure Layer maneja la parte técnica y las integraciones externas.
+
+Además, se presentan diagramas a nivel de componentes y de código para describir la estructura y el diseño del sistema.
+
+##### 2.6.1.1. Domain Layer
+
+En esta sección se definen las clases que representan el núcleo del Bounded Context Identity and Access Management (IAM), encargadas de gestionar la identidad de los usuarios, su autenticación y la asignación de roles dentro del sistema.
+
+###### Aggregates
+
+| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **password**: `Hash`<br>• **roleName**: `Role`<br>• **dni**: `DNI`<br>• **phone**: `Phone`<br>• **email**: `Email` | • `registerUser()`<br>• `login()`<br>• `changePassword()`<br>• `assignRole(roleName)`<br>• `displayUserData()` | • El **DNI** debe ser único y no puede estar vacío.<br>• La **password** siempre va cifrada.<br>• Todo usuario debe tener un **rol** asignado.<br>• No se permite autenticación sin credenciales válidas. |
+
+###### Entities
+
+| Entidad     | Propósito | Atributos | Métodos | Reglas y Relaciones |
+| :--- | :--- | :--- | :--- | :--- |
+| **Role** | Define los niveles de acceso permitidos en el sistema (Madre, Enfermera, Admin). | • **name**: `String`<br>*(Mother, Nurse, Admin)* | • `getRoleName()`: **String** <br>• `getDefaultRole()`:**Role**<br>• `toRoleFromName(String name)`:**Role** | • **Relación**: 1 Role → N Usuarios.<br>• **Regla**: Un usuario solo puede tener un rol asignado a la vez. |
+
+###### Value Object
+
+| Value Object | Propósito | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- |
+| **Password** | Encapsula la seguridad de acceso del usuario. | • No puede ser texto plano.<br>• Debe cumplir políticas de complejidad. | • Generación de Hash.<br>• Verificación de coincidencia. |
+| **DNI** | Identificación oficial del usuario. | • Debe tener exactamente **8 dígitos**.<br>• Solo caracteres numéricos. | • Validación de formato.<br>• Comparación por valor. |
+| **Phone** | Medio de contacto y comunicación. | • Formato telefónico válido.<br>• No puede estar vacío si es requerido. | • Normalización de número.<br>• Validación de país/prefijo. |
+| **Email** | Dirección de correo para notificaciones y recuperación. | • Debe tener un formato válido (`ejemplo@correo.com`).<br>• No puede estar vacío. | • Validación de sintaxis.<br>• Conversión a minúsculas (normalización). |
+
+###### Domain Services
+
+| Domain Service | Propósito Principal | Responsabilidades Clave |
+| :--- | :--- | :--- |
+| **AuthenticationService** | Gestionar la identidad y el acceso seguro. | • Validar credenciales de inicio de sesión.<br>• Comparar el hash de la contraseña.<br>• Generar tokens de acceso. |
+| **PasswordPolicyService** | Garantizar la robustez de la seguridad. | • Definir longitud mínima y caracteres especiales.<br>• Validar que la contraseña no sea débil.<br>• Verificar políticas de renovación. |
+| **RoleAssignmentService** | Controlar la jerarquía y permisos del sistema. | • Asignar roles automáticos al registrarse.<br>• Validar permisos para cambiar de rol.<br>• Asegurar que cada usuario tenga un rol válido. |
 
 ###### Repositories (Interfaces en Domain)
 
 | Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
 | :--- | :--- | :--- | :--- |
 | **PatientRepository** | Gestionar el acceso a los datos de los pacientes y su historial clínico, permitiendo búsquedas por responsables o identidad única. | • `findById(id: String): Patient?`<br>• `findByMotherDni(dni: String): List<Patient>`<br>• `findByNurseDni(dni: String): List<Patient>` | • `save(patient: Patient): void`<br>• `deleteById(id: String): void` |
+=======
+| **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(dni: String)`<br>• `existsByUsername(dni: String)`<br>• `findRoleByUsername(dni: String)` | • `save(user)`<br>• `deleteByUsername(dni: String)` |
+| **RoleRepository** | Administrar el catálogo de roles y sus permisos asociados. | • `findByName(name)`<br>• `getDefault()` | • `save(role)` |
 
 ###### Domain Events
 
@@ -995,6 +1039,93 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 }
 ```
 
+=======
+| **UserRegistered** | Cuando un nuevo usuario se crea exitosamente. | El proceso de registro ha terminado. |
+| **UserLoggedIn** | Cuando un usuario entra al sistema con éxito. | El servicio de autenticación valida las credenciales. |
+| **UserPasswordChanged** | Cuando se actualiza la clave de seguridad. | El usuario confirma su nueva contraseña. |
+| **UserRoleAssigned** | Cuando se otorga o cambia un nivel de acceso. | El administrador o el sistema asigna un rol (Madre, Enfermera, Admin). |
+
+##### 2.6.1.2. Interface Layer
+
+En esta capa se definen los puntos de entrada y salida del sistema, permitiendo la interacción entre los usuarios y la aplicación mediante endpoints REST. Su función principal es recibir las solicitudes externas, transformarlas en comandos o consultas hacia el Application Layer, y devolver respuestas en formato adecuado.
+
+###### Controllers (REST)
+
+| Controlador (REST) | Método HTTP | Ruta (Endpoint) | Propósito / Acción |
+| :--- | :--- | :--- | :--- |
+| **AuthController** | `POST` | `/api/v1/auth/login` | Autentica al usuario con DNI y contraseña; entrega un token. |
+| | `POST` | `/api/v1/auth/logout` | Cierra la sesión e invalida el token actual. |
+| | `POST` | `/api/v1/auth/reset-password` | Restablece la contraseña olvidada usando un código de verificación. |
+| **UserController** | `POST` | `/api/v1/users` | Registra un nuevo usuario con el rol por defecto. |
+| | `GET` | `/api/v1/users/{dni}` | Obtiene la información detallada de un usuario por su DNI. |
+| | `PUT` | `/api/v1/users/{dni}` | Actualiza datos (nombre, teléfono). |
+| **RoleController** | `GET` | `/api/v1/roles` | Muestra la lista de todos los roles (Madre, Enfermera, Admin). |
+| | `GET` | `/api/v1/roles/{name}` | Obtiene los detalles de un rol específico por su nombre. |
+
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. LoginRequest**
+**Propósito:** Envía las credenciales (DNI y contraseña) para iniciar sesión.
+
+```json
+{
+  "dni": "12345678",
+  "password": "string"
+}
+```
+
+#### **2. TokenResponse**
+**Propósito:** Devuelve las llaves de acceso (tokens) tras una autenticación válida.
+```json
+{
+  "accessToken": "string",
+  "refreshToken": "string"
+}
+```
+
+#### **3. CreateUserRequest**
+**Propósito:** Formulario con los datos necesarios para registrar a un nuevo usuario.
+```json
+{
+  "dni": "12345678",
+  "name": "Juan",
+  "lastName": "Perez",
+  "phone": "987654321",
+  "email": "user@ejemplo.com",
+  "password": "string"
+}
+```
+
+#### **4. UserResource**
+**Propósito:** Información del perfil del usuario que el sistema muestra públicamente.
+```json
+{
+  "dni": "12345678",
+  "name": "Juan",
+  "lastName": "Perez",
+  "phone": "987654321",
+  "email": "user@ejemplo.com",
+  "roleName": "Mother"
+}
+```
+
+#### **5. ResetPasswordRequest**
+**Propósito:** Permite restablecer la contraseña de un usuario mediante un código de verificación enviado previamente.
+```json
+{
+  "email": "user@gmail.com",
+  "newPassword": "string",
+  "verificationCode": "123456"
+}
+```
+
+#### **6. RoleResource**
+**Propósito:** Muestra el nombre del rol asignado al usuario.
+```json
+{
+  "name": "Mother"
+}
+```
 ###### Assemblers / Mappers
 
 | Assembler / Mapper | Dirección de la Traducción | Propósito |
@@ -1151,4 +1282,138 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
 
 <div align="center">
 <img src="resources/images/chapter-II/DB_Diagram/Patient/DIAGRMA DE BASE DE DATOS NO RELACIONAL PATIENT.png/">
+=======
+| **CreateUserCommandFromResourceAssembler** | `CreateUserRequest` → `CreateUserCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
+| **UserResourceFromEntityAssembler** | `User (Entity)` → `UserResource` | Transforma la entidad del dominio en un recurso seguro para ser enviado al cliente. |
+| **ChangePasswordCommandFromResourceAssembler** | `ChangePasswordRequest` → `ChangePasswordCommand` | Traduce la petición de cambio de clave en una instrucción ejecutable por el negocio. |
+| **AssignRoleCommandFromResourceAssembler** | `Entrada de datos` → `AssignRoleCommand` | Mapea la solicitud de asignación de nivel en un comando de cambio de rol. |
+
+##### 2.6.1.3. Application Layer
+
+En esta capa se coordinan los casos de uso del sistema relacionados con la gestión de usuarios. Su responsabilidad es orquestar las operaciones entre el Interface Layer y el Domain Layer, ejecutando comandos y consultas sin contener lógica de negocio.
+
+###### Command Handlers
+
+| Handler | Propósito | Responsabilidades (Flujo de Trabajo) |
+| :--- | :--- | :--- |
+| **CreateUserCommandHandler** | Gestionar el registro de nuevos usuarios. | • Validar unicidad del DNI (`existsByDni`).<br>• Aplicar políticas de seguridad de contraseña.<br>• Cifrar la contraseña.<br>• Asignar el rol por defecto (**Mother**).<br>• Persistir al usuario en el repositorio. |
+| **LoginUserCommandHandler** | Autenticar a los usuarios en el sistema. | • Buscar al usuario por su DNI.<br>• Validar que la contraseña coincida con el Hash guardado.<br>• Generar y retornar el token de acceso (JWT). |
+| **ResetPasswordCommandHandler** | Restablecer claves mediante correo electrónico. | • Verificar la existencia del usuario por su **Email**.<br>• Validar la identidad (comparar código de verificación).<br>• Aplicar políticas de robustez a la nueva clave.<br>• Encriptar y guardar los cambios. |
+
+###### Query Handlers
+
+| Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **GetUserByDniQueryHandler** | Obtener la información de un usuario específico. | • Buscar al usuario en el repositorio usando su **DNI**.<br>• Retornar los datos encontrados para ser transformados en recurso. |
+| **ListRolesQueryHandler** | Listar todos los roles disponibles en el panal. | • Consultar al repositorio de roles.<br>• Retornar la colección completa de roles (Mother, Nurse, Admin). |
+
+###### Event Handlers.
+
+| Event Handler | Evento al que Reacciona | Responsabilidades (Acciones) |
+| :--- | :--- | :--- |
+| **OnUserRegistered** | `UserRegisteredEvent` | • Registrar una auditoría (anotar que alguien nuevo llegó).<br>• Enviar una notificación de bienvenida (opcional). |
+| **OnUserLoggedIn** | `UserLoggedInEvent` | • Registrar el acceso al sistema (saber quién entró y a qué hora).<br>• Monitorear la seguridad de la cuenta. |
+| **OnPasswordReset** | `PasswordResetEvent` | • Registrar el cambio de contraseña en el historial. |
+
+
+##### 2.6.1.4. Infrastructure Layer
+
+En esta capa se implementan los detalles técnicos del sistema, incluyendo la persistencia de datos, la seguridad, la gestión de autenticación y la integración con servicios externos. Aquí se concretan las interfaces definidas en el Domain Layer.
+
+###### Persistence Layer (Infraestructura - MongoDB)
+
+| Componente | Tipo | Responsabilidades |
+| :--- | :--- | :--- |
+| **MongoUserRepository** | Repositorio | • Implementa `UserRepository`.<br>• Mapeo entre Entity y Documento de Mongo.<br>• Operaciones CRUD (Buscar por DNI/Email, Guardar, Eliminar). |
+| **MongoRoleRepository** | Repositorio | • Implementa `RoleRepository`.<br>• Obtener roles por nombre y rol por defecto.<br>• Inicializar el catálogo de roles (Mother, Nurse, Admin). |
+| **Persistence Mapper** | Mapper | • **Document ↔ Entity**: Encargado de transformar los datos del formato de base de datos al formato del dominio. |
+
+###### Seguridad y Comunicación (Infraestructura)
+
+| Componente | Tipo | Funciones / Responsabilidades |
+| :--- | :--- | :--- |
+| **PasswordHasher** | Seguridad | • **BCryptPasswordHasher**: Encripta las contraseñas para que nunca se guarden como texto plano.<br>• Compara claves ingresadas con sus versiones cifradas. |
+| **JwtTokenProvider** | Seguridad | • **Generar accessToken**: Crea la "llave mágica" para el usuario.<br>• **Validar token**: Revisa que la llave no haya caducado o sea falsa.<br>• **Extraer datos**: Lee quién es el dueño del token. |
+| **EmailService** | Comunicación | • **Enviar código**: Manda la clave secreta de verificación al correo.<br>• **Enviar enlace**: Crea y manda el link seguro para recuperar la cuenta. |
+
+###### Configuración (Infraestructura)
+
+| Componente | Tipo | Responsabilidades / Ajustes |
+| :--- | :--- | :--- |
+| **MongoConfig** | Base de Datos | • Configurar la conexión al servidor de MongoDB.<br>• Definir **Índices** obligatorios (DNI único, Email único) para evitar duplicados. |
+| **SecurityConfig** | Seguridad | • Configurar el soporte para **JWT**.<br>• Definir filtros de autenticación (quién puede entrar a qué ruta).<br>• Configurar **CORS** y reglas generales de seguridad web. |
+
+###### Modelo de datos (MongoDB) y mapeos
+
+<h4> Colección: users </h4> 
+
+```json
+{
+  "_id": "u:12345678",
+  "dni": "12345678",
+  "name": "Maria",
+  "lastName": "Perez",
+  "email": "Maria@gmail.com",
+  "phone": "987654321",
+  "password": "hash:$2b$...",
+  "roleName": "Mother",
+  "audit": {
+    "createdAt": "2026-01-01T00:00:00Z",
+    "updatedAt": "2026-01-01T00:05:00Z"
+  }
+}
+```
+Índices:
+- único en `dni`
+- único en `email`
+
+<h4> Colección: roles</h4> 
+
+```json
+{
+  "_id": "r:Mother",
+  "name": "Mother"
+}
+```
+Seed inicial:
+
+- Mother
+- Nurse
+- Admin
+
+<h4> Colección: password_resets</h4> 
+
+```json
+{
+  "_id": "pr:uuid",
+  "email": "user@gmail.com",
+  "code": "123456",
+  "expiresAt": "2026-01-01T01:00:00Z"
+}
+```
+###### Seguridad y buenas prácticas
+
+- Nunca almacenar contraseñas en texto plano
+- Uso de hashing con salt (BCrypt)
+- Tokens JWT con expiración
+- Verificación por email para reset password
+- Auditoría básica (createdAt, updatedAt)
+
+##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align ="center">
+<img src="resources/images/chapter-II/Software_Architecture/IAM/components-structuriz-iam.png">
+</div>
+
+##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align ="center">
+<img src="resources/images/chapter-II/Class_Diagram/IAM/IAM-DIAGRAMA-CLASS.png">
+</div>
+
+###### 2.6.1.6.2. Bounded Context Database Design Diagram
+
+<div align ="center">
+<img src="resources/images/chapter-II/DB_Diagram/IAM/IAM-DATA-BASE-NOT-RELATIONAL.png">
 </div>
