@@ -1220,6 +1220,14 @@ integraciones con plataformas externas.
 </div>
 
 ### 2.6 Tactical-Level Domain-Driven Design
+#### 2.6.3. Bounded Context: `Notifications`
+
+El bounded context Notifications es el sistema nervioso de la plataforma Ferova. Su proposito es gestionar el envio de todas las notificaciones push del sistema via Firebase Cloud Messaging (FCM), actuando como intermediario entre los eventos generados por los demas bounded contexts y los usuarios finales. Funciona en dos capas: primero notifica a la madre con recordatorios de dosis y si ella no responde escala la alerta automaticamente a la enfermera asignada.
+
+##### 2.6.3.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Notifications. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de una notificacion, desde su creacion hasta su entrega exitosa via Firebase FCM. Se incluyen el Aggregate Root Notification, la entidad FcmToken, los Value Objects NotificationType y NotificationStatus, el Domain Service NotificationDispatcherService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+=======
 #### 2.6.1. Bounded Context: `Identify and Access Management`
 
 El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
@@ -1236,456 +1244,118 @@ En esta sección se definen las clases que representan el núcleo del Bounded Co
 
 | Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
 | :--- | :--- | :--- | :--- | :--- |
-| **User** | Gestiona la identidad, autenticación y acceso de los distintos perfiles (Madre, Enfermera, Admin) en la plataforma Ferova. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **password**: `Hash`<br>• **roleName**: `Role`<br>• **dni**: `DNI`<br>• **phone**: `Phone`<br>• **email**: `Email` | • `registerUser()`<br>• `login()`<br>• `changePassword()`<br>• `assignRole(roleName)`<br>• `displayUserData()` | • El **DNI** debe ser único y no puede estar vacío.<br>• La **password** siempre va cifrada.<br>• Todo usuario debe tener un **rol** asignado.<br>• No se permite autenticación sin credenciales válidas. |
+| **Notification** | Representa una notificación push enviada a un usuario de la plataforma Ferova vía Firebase FCM. Gestiona el ciclo de vida completo desde su creación hasta su entrega. | • **id:** String <br> • **recipientId:** String <br> • **recipientRole:** String <br> • **type:** NotificationType <br> • **message:** String <br> • **status:** Status <br> • **fcmToken:** String <br> • **createdAt:** Date | • send() <br> • markAsSent() <br> • markAsFailed() <br> • retry() | • El recipientId no puede ser nulo y el mensaje no puede estar vacío. <br> • El fcmToken debe estar presente antes de enviar. <br> • Se permite un máximo de 3 reintentos en caso de falla. |
 
 ###### Entities
 
-| Entidad     | Propósito | Atributos | Métodos | Reglas y Relaciones |
-| :--- | :--- | :--- | :--- | :--- |
-| **Role** | Define los niveles de acceso permitidos en el sistema (Madre, Enfermera, Admin). | • **name**: `String`<br>*(Mother, Nurse, Admin)* | • `getRoleName()`: **String** <br>• `getDefaultRole()`:**Role**<br>• `toRoleFromName(String name)`:**Role** | • **Relación**: 1 Role → N Usuarios.<br>• **Regla**: Un usuario solo puede tener un rol asignado a la vez. |
+| Entidad | Propósito | Atributos | Métodos |
+| :--- | :--- | :--- | :--- |
+| **FcmToken** | Representa el token de Firebase FCM asociado al dispositivo de un usuario específico. | • id: String <br> • userId: String <br> • token: String <br> • deviceType: String <br> • isActive: Boolean <br> • updatedAt: DateTime | • activate() <br> • deactivate() <br> • updateToken(newToken) |
 
 ###### Value Object
 
-| Value Object | Propósito | Reglas de Validación (Invariantes) | Comportamiento |
-| :--- | :--- | :--- | :--- |
-| **Password** | Encapsula la seguridad de acceso del usuario. | • No puede ser texto plano.<br>• Debe cumplir políticas de complejidad. | • Generación de Hash.<br>• Verificación de coincidencia. |
-| **DNI** | Identificación oficial del usuario. | • Debe tener exactamente **8 dígitos**.<br>• Solo caracteres numéricos. | • Validación de formato.<br>• Comparación por valor. |
-| **Phone** | Medio de contacto y comunicación. | • Formato telefónico válido.<br>• No puede estar vacío si es requerido. | • Normalización de número.<br>• Validación de país/prefijo. |
-| **Email** | Dirección de correo para notificaciones y recuperación. | • Debe tener un formato válido (`ejemplo@correo.com`).<br>• No puede estar vacío. | • Validación de sintaxis.<br>• Conversión a minúsculas (normalización). |
+
+| Value Object | Propósito | Valores / Definiciones | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **NotificationType** | Define el tipo de notificación enviada. | DOSE_REMINDER, SECOND_DOSE_REMINDER, ABANDONMENT_ALERT, BADGE_UNLOCKED, CONSULTATION_CREATED, REPLY_SENT, APPOINTMENT_CONFIRMED, APPOINTMENT_CANCELLED, IRON_INHIBITOR_ALERT, PATIENT_DISCHARGED. | Define el tipo de notificación. | Debe ser un tipo válido y no nulo. | Selección de plantilla y prioridad. |
+| **NotificationStatus** | Define el estado técnico del envío. | PENDING, SENT, FAILED, RETRYING. | Debe seguir el flujo de estados permitido. | Control de flujo y reintentos. |
 
 ###### Domain Services
 
-| Domain Service | Propósito Principal | Responsabilidades Clave |
+| Servicio | Propósito | Métodos |
 | :--- | :--- | :--- |
-| **AuthenticationService** | Gestionar la identidad y el acceso seguro. | • Validar credenciales de inicio de sesión.<br>• Comparar el hash de la contraseña.<br>• Generar tokens de acceso. |
-| **PasswordPolicyService** | Garantizar la robustez de la seguridad. | • Definir longitud mínima y caracteres especiales.<br>• Validar que la contraseña no sea débil.<br>• Verificar políticas de renovación. |
-| **RoleAssignmentService** | Controlar la jerarquía y permisos del sistema. | • Asignar roles automáticos al registrarse.<br>• Validar permisos para cambiar de rol.<br>• Asegurar que cada usuario tenga un rol válido. |
+| **NotificationDispatcherService** | Gestiona la lógica de envío de notificaciones y el escalamiento automático de alertas. Es el cerebro que decide cuándo una simple notificación debe convertirse en una alerta urgente. | • `dispatch(notification)` : Envía la notificación al sistema de mensajería.<br><br>• `scheduleReminder(patientId, type)` : Programa recordatorios automáticos.<br><br>• `escalateAlert(patientId, nurseId)` : Eleva el nivel de alerta si no hay respuesta. |
 
-###### Repositories (Interfaces en Domain)
+###### Repositories
 
-| Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
-| :--- | :--- | :--- | :--- |
-| **UserRepository** | Gestionar el acceso a los datos de los usuarios en el sistema. | • `findByUsername(dni: String)`<br>• `existsByUsername(dni: String)`<br>• `findRoleByUsername(dni: String)` | • `save(user)`<br>• `deleteByUsername(dni: String)` |
-| **RoleRepository** | Administrar el catálogo de roles y sus permisos asociados. | • `findByName(name)`<br>• `getDefault()` | • `save(role)` |
-
-###### Domain Events
-
-| Evento de Dominio | ¿Cuándo ocurre? | Acción que lo dispara |
+| Repositorio | Propósito | Métodos |
 | :--- | :--- | :--- |
-| **UserRegistered** | Cuando un nuevo usuario se crea exitosamente. | El proceso de registro ha terminado. |
-| **UserLoggedIn** | Cuando un usuario entra al sistema con éxito. | El servicio de autenticación valida las credenciales. |
-| **UserPasswordChanged** | Cuando se actualiza la clave de seguridad. | El usuario confirma su nueva contraseña. |
-| **UserRoleAssigned** | Cuando se otorga o cambia un nivel de acceso. | El administrador o el sistema asigna un rol (Madre, Enfermera, Admin). |
+| **NotificationRepository** | Interfaz para gestionar la persistencia de las notificaciones enviadas y pendientes. | • `save(notification)` : Guarda una nueva notificación o actualiza una existente en MongoDB.<br><br>• `findById(id)` : Busca y retorna una notificación específica por su ID. Retorna null si no existe.<br><br>• `findByRecipientId(recipientId)` : Retorna todas las notificaciones enviadas a un usuario específico. Útil para ver el historial de una madre o enfermera.<br><br>• `findByStatus(status)` : Retorna todas las notificaciones con un estado específico. Útil para encontrar las **FAILED** que necesitan reintentarse. |
+| **FcmTokenRepository** | Interfaz para administrar los tokens de Firebase asociados a los dispositivos de los usuarios. | • `save(token)` : Guarda o actualiza el token FCM en MongoDB. Se ejecuta cada vez que el usuario abre la app y el token se renueva.<br><br>• `findByUserId(userId)` : Busca y retorna el token FCM activo. Es el **método más importante** porque sin él no se pueden enviar notificaciones push.<br><br>• `deleteByUserId(userId)` : Elimina el token cuando el usuario cierra sesión o desinstala la app para evitar envíos a dispositivos inactivos. |
 
-##### 2.6.1.2. Interface Layer
+###### Domain Events 
 
-En esta capa se definen los puntos de entrada y salida del sistema, permitiendo la interacción entre los usuarios y la aplicación mediante endpoints REST. Su función principal es recibir las solicitudes externas, transformarlas en comandos o consultas hacia el Application Layer, y devolver respuestas en formato adecuado.
+| Evento de Dominio | Propósito y Descripción | Resultado / Acción |
+| :--- | :--- | :--- |
+| **NotificationSent** | Se dispara tras la confirmación de entrega exitosa por Firebase FCM. | Ciclo completado. Estado actualizado a SENT en MongoDB. |
+| **NotificationFailed** | Se dispara cuando Firebase FCM falla en la entrega del mensaje. | Error detectado. Estado actualizado a FAILED para reintentos. |
+| **DoseReminderScheduled** | Se dispara al programar un recordatorio automático de dosis. | Recordatorio agendado para envío automático a la madre. |
+| **AbandonmentAlertTriggered** | Se dispara tras 72h de inactividad en la confirmación de dosis. | Alerta de riesgo enviada a la enfermera para acción inmediata. |
 
-###### Controllers (REST)
+##### 2.6.3.2. Interface Layer
 
-| Controlador (REST) | Método HTTP | Ruta (Endpoint) | Propósito / Acción |
-| :--- | :--- | :--- | :--- |
-| **AuthController** | `POST` | `/api/v1/auth/login` | Autentica al usuario con DNI y contraseña; entrega un token. |
-| | `POST` | `/api/v1/auth/logout` | Cierra la sesión e invalida el token actual. |
-| | `POST` | `/api/v1/auth/reset-password` | Restablece la contraseña olvidada usando un código de verificación. |
-| **UserController** | `POST` | `/api/v1/users` | Registra un nuevo usuario con el rol por defecto. |
-| | `GET` | `/api/v1/users/{dni}` | Obtiene la información detallada de un usuario por su DNI. |
-| | `PUT` | `/api/v1/users/{dni}` | Actualiza datos (nombre, teléfono). |
-| **RoleController** | `GET` | `/api/v1/roles` | Muestra la lista de todos los roles (Madre, Enfermera, Admin). |
-| | `GET` | `/api/v1/roles/{name}` | Obtiene los detalles de un rol específico por su nombre. |
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Notifications. Esta capa actua como la puerta de entrada al sistema, recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Tambien se encarga de transformar las respuestas del dominio en DTOs que el cliente puede consumir. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta, y los Assemblers o Mappers que realizan la traduccion entre ambos mundos.
+
+###### Controllers
+
+| Controlador | Propósito | Endpoints |
+| :--- | :--- | :--- |
+| **NotificationController** | Expone los endpoints REST para gestionar el envío y consulta de notificaciones push desde el sistema hacia los usuarios de **FerovaFamilia** y **FerovaClinic**. | • `POST /api/v1/notifications/send` : Envía una notificación push vía Firebase FCM.<br><br>• `GET /api/v1/notifications/{recipientId}` : Retorna el historial de notificaciones de un usuario específico.<br><br>• `PUT /api/v1/notifications/{id}/retry` : Reintenta el envío de una notificación que falló anteriormente. |
+| **FcmTokenController** | Expone los endpoints REST para administrar el registro, actualización y eliminación de los tokens FCM de los dispositivos. | • `POST /api/v1/fcm-tokens` : Registra o actualiza el token FCM del dispositivo cuando el usuario abre la app.<br><br>• `DELETE /api/v1/fcm-tokens/{userId}` : Elimina el token del usuario cuando cierra sesión o desinstala la aplicación. |
 
 ###### Resources (DTOs / Request & Response Models)
 
-#### **1. LoginRequest**
-**Propósito:** Envía las credenciales (DNI y contraseña) para iniciar sesión.
+#### **1. SendNotificationRequest**
+
+**Propósito:** Envía los datos necesarios para solicitar el envío de una nueva notificación push a un usuario.
 
 ```json
 {
-  "dni": "12345678",
-  "password": "string"
+  "recipientId": "user-456",
+  "recipientRole": "MOTHER",
+  "type": "DOSE_REMINDER",
+  "message": "Es hora de la dosis de hierro de Juanito."
 }
 ```
+#### **2. NotificationResponse**
 
-#### **2. TokenResponse**
-**Propósito:** Devuelve las llaves de acceso (tokens) tras una autenticación válida.
+**Propósito:** Retorna el detalle completo y el estado técnico de una notificación registrada en el sistema.
+
 ```json
 {
-  "accessToken": "string",
-  "refreshToken": "string"
+  "id": "notif-987",
+  "recipientId": "user-456",
+  "recipientRole": "MOTHER",
+  "type": "DOSE_REMINDER",
+  "message": "Es hora de la dosis de hierro de Juanito.",
+  "status": "SENT",
+  "createdAt": "2026-04-16T10:00:00Z",
+  "sentAt": "2026-04-16T10:00:05Z"
 }
 ```
+#### **3. RetryNotificationResponse**
 
-#### **3. CreateUserRequest**
-**Propósito:** Formulario con los datos necesarios para registrar a un nuevo usuario.
+**Propósito:** Confirma que se ha solicitado un reintento de envío para una notificación que falló.
+
 ```json
 {
-  "dni": "12345678",
-  "name": "Juan",
-  "lastName": "Perez",
-  "phone": "987654321",
-  "email": "user@ejemplo.com",
-  "password": "string"
+  "id": "notif-987",
+  "status": "RETRYING",
+  "retryCount": 1
 }
 ```
+#### **4. RegisterFcmTokenRequest**
 
-#### **4. UserResource**
-**Propósito:** Información del perfil del usuario que el sistema muestra públicamente.
+**Propósito:** : Envía el token generado por Firebase desde el dispositivo móvil para vincularlo al usuario.
+
 ```json
 {
-  "dni": "12345678",
-  "name": "Juan",
-  "lastName": "Perez",
-  "phone": "987654321",
-  "email": "user@ejemplo.com",
-  "roleName": "Mother"
+  "userId": "user-456",
+  "token": "fcm-token-abc-123-xyz",
+  "deviceType": "ANDROID"
 }
 ```
+#### **5. FcmTokenResponse**
 
-#### **5. ResetPasswordRequest**
-**Propósito:** Permite restablecer la contraseña de un usuario mediante un código de verificación enviado previamente.
-```json
-{
-  "email": "user@gmail.com",
-  "newPassword": "string",
-  "verificationCode": "123456"
-}
-```
-
-#### **6. RoleResource**
-**Propósito:** Muestra el nombre del rol asignado al usuario.
-```json
-{
-  "name": "Mother"
-}
-```
-###### Assemblers / Mappers
-
-| Assembler / Mapper | Dirección de la Traducción | Propósito |
-| :--- | :--- | :--- |
-| **CreateUserCommandFromResourceAssembler** | `CreateUserRequest` → `CreateUserCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
-| **UserResourceFromEntityAssembler** | `User (Entity)` → `UserResource` | Transforma la entidad del dominio en un recurso seguro para ser enviado al cliente. |
-| **ChangePasswordCommandFromResourceAssembler** | `ChangePasswordRequest` → `ChangePasswordCommand` | Traduce la petición de cambio de clave en una instrucción ejecutable por el negocio. |
-| **AssignRoleCommandFromResourceAssembler** | `Entrada de datos` → `AssignRoleCommand` | Mapea la solicitud de asignación de nivel en un comando de cambio de rol. |
-
-##### 2.6.1.3. Application Layer
-
-En esta capa se coordinan los casos de uso del sistema relacionados con la gestión de usuarios. Su responsabilidad es orquestar las operaciones entre el Interface Layer y el Domain Layer, ejecutando comandos y consultas sin contener lógica de negocio.
-
-###### Command Handlers
-
-| Handler | Propósito | Responsabilidades (Flujo de Trabajo) |
-| :--- | :--- | :--- |
-| **CreateUserCommandHandler** | Gestionar el registro de nuevos usuarios. | • Validar unicidad del DNI (`existsByDni`).<br>• Aplicar políticas de seguridad de contraseña.<br>• Cifrar la contraseña.<br>• Asignar el rol por defecto (**Mother**).<br>• Persistir al usuario en el repositorio. |
-| **LoginUserCommandHandler** | Autenticar a los usuarios en el sistema. | • Buscar al usuario por su DNI.<br>• Validar que la contraseña coincida con el Hash guardado.<br>• Generar y retornar el token de acceso (JWT). |
-| **ResetPasswordCommandHandler** | Restablecer claves mediante correo electrónico. | • Verificar la existencia del usuario por su **Email**.<br>• Validar la identidad (comparar código de verificación).<br>• Aplicar políticas de robustez a la nueva clave.<br>• Encriptar y guardar los cambios. |
-
-###### Query Handlers
-
-| Handler | Propósito | Responsabilidades |
-| :--- | :--- | :--- |
-| **GetUserByDniQueryHandler** | Obtener la información de un usuario específico. | • Buscar al usuario en el repositorio usando su **DNI**.<br>• Retornar los datos encontrados para ser transformados en recurso. |
-| **ListRolesQueryHandler** | Listar todos los roles disponibles en el panal. | • Consultar al repositorio de roles.<br>• Retornar la colección completa de roles (Mother, Nurse, Admin). |
-
-###### Event Handlers.
-
-| Event Handler | Evento al que Reacciona | Responsabilidades (Acciones) |
-| :--- | :--- | :--- |
-| **OnUserRegistered** | `UserRegisteredEvent` | • Registrar una auditoría (anotar que alguien nuevo llegó).<br>• Enviar una notificación de bienvenida (opcional). |
-| **OnUserLoggedIn** | `UserLoggedInEvent` | • Registrar el acceso al sistema (saber quién entró y a qué hora).<br>• Monitorear la seguridad de la cuenta. |
-| **OnPasswordReset** | `PasswordResetEvent` | • Registrar el cambio de contraseña en el historial. |
-
-
-##### 2.6.1.4. Infrastructure Layer
-
-En esta capa se implementan los detalles técnicos del sistema, incluyendo la persistencia de datos, la seguridad, la gestión de autenticación y la integración con servicios externos. Aquí se concretan las interfaces definidas en el Domain Layer.
-
-###### Persistence Layer (Infraestructura - MongoDB)
-
-| Componente | Tipo | Responsabilidades |
-| :--- | :--- | :--- |
-| **MongoUserRepository** | Repositorio | • Implementa `UserRepository`.<br>• Mapeo entre Entity y Documento de Mongo.<br>• Operaciones CRUD (Buscar por DNI/Email, Guardar, Eliminar). |
-| **MongoRoleRepository** | Repositorio | • Implementa `RoleRepository`.<br>• Obtener roles por nombre y rol por defecto.<br>• Inicializar el catálogo de roles (Mother, Nurse, Admin). |
-| **Persistence Mapper** | Mapper | • **Document ↔ Entity**: Encargado de transformar los datos del formato de base de datos al formato del dominio. |
-
-###### Seguridad y Comunicación (Infraestructura)
-
-| Componente | Tipo | Funciones / Responsabilidades |
-| :--- | :--- | :--- |
-| **PasswordHasher** | Seguridad | • **BCryptPasswordHasher**: Encripta las contraseñas para que nunca se guarden como texto plano.<br>• Compara claves ingresadas con sus versiones cifradas. |
-| **JwtTokenProvider** | Seguridad | • **Generar accessToken**: Crea la "llave mágica" para el usuario.<br>• **Validar token**: Revisa que la llave no haya caducado o sea falsa.<br>• **Extraer datos**: Lee quién es el dueño del token. |
-| **EmailService** | Comunicación | • **Enviar código**: Manda la clave secreta de verificación al correo.<br>• **Enviar enlace**: Crea y manda el link seguro para recuperar la cuenta. |
-
-###### Configuración (Infraestructura)
-
-| Componente | Tipo | Responsabilidades / Ajustes |
-| :--- | :--- | :--- |
-| **MongoConfig** | Base de Datos | • Configurar la conexión al servidor de MongoDB.<br>• Definir **Índices** obligatorios (DNI único, Email único) para evitar duplicados. |
-| **SecurityConfig** | Seguridad | • Configurar el soporte para **JWT**.<br>• Definir filtros de autenticación (quién puede entrar a qué ruta).<br>• Configurar **CORS** y reglas generales de seguridad web. |
-
-###### Modelo de datos (MongoDB) y mapeos
-
-<h4> Colección: users </h4> 
+**Propósito:** Retorna la información del token registrado y su estado de actividad en el sistema.
 
 ```json
 {
-  "_id": "u:12345678",
-  "dni": "12345678",
-  "name": "Maria",
-  "lastName": "Perez",
-  "email": "Maria@gmail.com",
-  "phone": "987654321",
-  "password": "hash:$2b$...",
-  "roleName": "Mother",
-  "audit": {
-    "createdAt": "2026-01-01T00:00:00Z",
-    "updatedAt": "2026-01-01T00:05:00Z"
-  }
-}
-```
-Índices:
-- único en `dni`
-- único en `email`
-
-<h4> Colección: roles</h4> 
-
-```json
-{
-  "_id": "r:Mother",
-  "name": "Mother"
-}
-```
-Seed inicial:
-
-- Mother
-- Nurse
-- Admin
-
-<h4> Colección: password_resets</h4> 
-
-```json
-{
-  "_id": "pr:uuid",
-  "email": "user@gmail.com",
-  "code": "123456",
-  "expiresAt": "2026-01-01T01:00:00Z"
-}
-```
-###### Seguridad y buenas prácticas
-
-- Nunca almacenar contraseñas en texto plano
-- Uso de hashing con salt (BCrypt)
-- Tokens JWT con expiración
-- Verificación por email para reset password
-- Auditoría básica (createdAt, updatedAt)
-
-##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
-
-<div align ="center">
-<img src="resources/images/chapter-II/Software_Architecture/IAM/components-structuriz-iam.png">
-</div>
-
-##### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
-###### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
-
-<div align ="center">
-<img src="resources/images/chapter-II/Class_Diagram/IAM/IAM-DIAGRAMA-CLASS.png">
-</div>
-
-###### 2.6.1.6.2. Bounded Context Database Design Diagram
-
-<div align ="center">
-<img src="resources/images/chapter-II/DB_Diagram/IAM/IAM-DATA-BASE-NOT-RELATIONAL.png">
-</div>
-
-#### 2.6.2. Bounded Context: `Patient Management`
-
-El Bounded Context de Patient Management se encarga de gestionar la información personal y clínica de los pacientes dentro de la plataforma Ferova. Incluye el registro de pacientes, la actualización de sus datos y el seguimiento de indicadores clave como el nivel de hemoglobina, peso y altura.
-
-Asimismo, permite la asociación del paciente con su madre y la asignación de una enfermera responsable, facilitando el monitoreo continuo y organizado del estado de salud del niño.
-
-Este contexto se estructura siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD), permitiendo una clara separación de responsabilidades entre la lógica de negocio, la interacción con el usuario, la orquestación de procesos y la implementación técnica.
-
-##### 2.6.2.1. Domain Layer
-
-En esta capa se definen las entidades y reglas de negocio relacionadas con la gestión de pacientes con anemia dentro de la plataforma Ferova. Este bounded context es responsable del registro, almacenamiento y seguimiento de la información clínica básica del paciente, así como su asignación a una enfermera.
-
-
-###### Aggregate
-
-| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
-| :--- | :--- | :--- | :--- | :--- |
-| **Patient** | Representa a un niño dentro del sistema, gestionando su información personal, estado clínico actual y su historial de registros médicos junto a sus responsables. | • **id**: `String (UUID)`<br>• **name**: `String`<br>• **lastName**: `String`<br>• **birthDate**: `Date`<br>• **currentWeight**: `Float`<br>• **currentHeight**: `Float`<br>• **currentHemoglobinLevel**: `Float`<br>• **motherId**: `String`<br>• **nurseId**: `String` <br> • **sexo**: `SexoGenero` <br> • **status:** PatientStatus  | • `registerPatient()`<br>• `updatePatientData()`<br>• `assignNurse(nurseId)`<br>• `updateWeight(value)`<br>• `updateHeight(value)`<br>• `updateHemoglobinLevel(value)`<br>• `addMedicalRecord(record)`<br>• `getMedicalHistory()` <br>• `displayPatientData()` <br> `dischargePatient()`  | • El paciente debe estar asociado a una madre (**motherId** obligatorio).<br>• Solo puede tener una enfermera asignada a la vez.<br>• La fecha de nacimiento no puede ser futura.<br>• El peso, la altura y el nivel de hemoglobina deben ser mayores a **0**. <br> • El sexo del paciente es obligatorio. <br>•El paciente puede ser dado de alta únicamente por una enfermera, quien evalúa su historial médico y estado clínico antes de tomar la decisión.|
-
-###### Entities
-
-| Entidad | Propósito | Atributos | Métodos | Reglas y Relaciones |
-| :--- | :--- | :--- | :--- | :--- |
-| **MedicalRecord** | Representa un registro clínico detallado para la trazabilidad de la evolución médica y física del paciente. | • **id**: `String`<br>• **date**: `LocalDateTime`<br>• **hemoglobinLevel**: `HemoglobinLevel`<br>• **weight**: `Weight`<br>• **height**: `Height`<br>• **sexo**: `SexoGenero`<br>• **antecedentes**: `List<Antecedente>`<br>• **motivoConsulta**: `MotivoConsulta`<br>• **observaciones**: `Observaciones`<br>• **controls**: `List<Control>`<br>• **nurseId**: `String`<br>• **patientId**: `String`<br>• **motherId**: `String` | • `registerRecord()` : `void`<br>• `addControl(control: Control)` : `void`<br>• `addAntecedente(antecedente: Antecedente)` : `void` | • **Relación**: Patient (1) --- (0..*) MedicalRecord.<br>• **Regla**: Un paciente centraliza múltiples registros que forman su historial clínico histórico.<br>• **Regla**: La hemoglobina, peso y talla deben ser valores clínicos válidos y mayores a cero. |
-
-###### Value Objects
-
-| Value Object | Propósito | Reglas de Validación (Invariantes) | Comportamiento |
-| :--- | :--- | :--- | :--- |
-| **HemoglobinLevel** | Representa el nivel de hemoglobina en la sangre. | • Debe ser mayor a **0**.<br>• Debe estar dentro de un rango clínico lógico. | • `isValid()`<br>• Comparación por valor. |
-| **Weight** | Almacena el peso actual del paciente. | • Debe ser mayor a **0**.<br>• Valor expresado en kilogramos. | • `isValid()`<br>• Formateo de unidad. |
-| **Height** | Almacena la estatura/talla del niño. | • Debe ser mayor a **0**.<br>• Valor expresado en centímetros/metros. | • `isValid()`<br>• Validación de rango. |
-| **BirthDate** | Gestiona la fecha de nacimiento del paciente. | • No puede ser una fecha futura.<br>• Debe ser una fecha válida. | • `isValid()`<br>• Cálculo de edad actual. |
-| **SexoGenero** | Define el sexo biológico del paciente. | • Debe ser `MASCULINO` o `FEMENINO`.<br>• Compartido entre Patient y MedicalRecord. | • Comparación por valor. |
-| **Antecedente** | Registra información médica o familiar previa relevante. | • El tipo y el contenido son obligatorios.<br>• No se permiten campos vacíos. | • `isValid()` |
-| **MotivoConsulta** | Describe la razón principal de la visita médica. | • Texto descriptivo obligatorio.<br>• Longitud mínima requerida. | • Formateo de texto. |
-| **Observaciones** | Notas adicionales y detalles del profesional. | • Campo de texto para hallazgos clínicos.<br>• Puede ser opcional pero debe ser válido. | • `isEmpty()` |
-| **Control** | Almacena resultados específicos de laboratorio. | • Valores de Hb, Hematocrito y Ferritina deben ser `> 0`.<br>• La fecha no puede ser futura. | • `isValid()`<br>• Determinar `EstadoAnemia`. |
-| **TratamientoRecetado**| Detalla la prescripción médica para el paciente. | • Medicamento, dosis y duración son obligatorios.<br>• Días de duración debe ser mayor a 0. | • `generarInstrucciones()` |
-| **EstadoAnemia** | Clasifica la severidad de la condición. | • Valores: `LEVE`, `MODERADA`, `GRAVE`, `CONTROLADA`.<br>• Basado en niveles de hemoglobina. | • Lógica de cálculo automática. |
-| **PatientStatus** | Representa el estado actual del ciclo de vida del paciente en el sistema. | • Valores permitidos: `ACTIVE`, `IN_TREATMENT`, `DISCHARGED`. | • `isDischarged()`|
-
-###### Domain Services
-
-| Servicio | Propósito | Responsabilidades |
-| :--- | :--- | :--- |
-| **PatientAssignmentService** | Gestionar la asignación de pacientes a enfermeras. | • Validar la disponibilidad de la enfermera.<br>• Asegurar que se cumpla la regla de una sola enfermera por paciente. |
-| **HemoglobinAnalysisService** | Evaluar el estado clínico según la hemoglobina. | • Comparar el nivel de hemoglobina con los rangos de edad.<br>• Determinar el grado de anemia (leve, moderada, severa).|
-
-###### Repositories (Interfaces en Domain)
-
-| Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
-| :--- | :--- | :--- | :--- |
-| **PatientRepository** | Gestionar el acceso a los datos de los pacientes y su historial clínico, permitiendo búsquedas por responsables o identidad única. | • `findById(id: String): Patient?`<br>• `findByMotherDni(dni: String): List<Patient>`<br>• `findByNurseDni(dni: String): List<Patient>` | • `save(patient: Patient): void`<br>• `deleteById(id: String): void` |
-
-###### Domain Events
-
-| Evento de Dominio | ¿Cuándo ocurre? | Acción que lo dispara |
-| :--- | :--- | :--- |
-| **PatientRegistered** | Cuando un nuevo niño es registrado en el sistema exitosamente. | El proceso de registro de paciente ha terminado. |
-| **PatientUpdated** | Cuando se modifican datos personales o el estado clínico del niño. | El usuario confirma los cambios en el perfil del paciente. |
-| **PatientAssignedToNurse** | Cuando se vincula a un paciente con una enfermera responsable. | El sistema o administrador realiza la asignación de seguimiento. |
-| **MedicalRecordAdded** | Cuando se genera un nuevo registro clínico en la línea de tiempo. | El profesional de salud guarda una nueva consulta médica. |
-| **ControlAdded** | Cuando se registran nuevos valores de laboratorio (Hb, Ferritina y Hematocrito). | Se añaden resultados de análisis al historial clínico. |
-| **PatientDischarged** | Cuando el paciente completa su tratamiento y es dado de alta médica. | El médico o enfermera confirma que el paciente superó la condición. |
-
-##### 2.6.2.2. Interface Layer
-
-En esta capa se definen los puntos de interacción entre el sistema y los usuarios, permitiendo gestionar las operaciones relacionadas con los pacientes mediante endpoints REST. Su función es recibir solicitudes, transformarlas en comandos o consultas hacia el Application Layer y devolver respuestas estructuradas.
-
-###### Controller(REST)
-
-| Controlador | Endpoint | Método | Propósito |
-| :--- | :--- | :--- | :--- |
-| **PatientController** | `/api/v1/patients` | **POST** | Registrar un nuevo paciente en el sistema. |
-| | `/api/v1/patients/{id}` | **GET** | Obtener información detallada del niño (incluye estado e historial). |
-| | `/api/v1/patients/mother/{dni}` | **GET** | Listar todos los pacientes asociados a una madre. |
-| | `/api/v1/patients/nurse/{dni}` | **GET** | Listar todos los pacientes asignados a una enfermera. |
-| | `/api/v1/patients/{id}` | **PUT** | Actualizar datos básicos (nombre, peso, altura). |
-| | `/api/v1/patients/{id}/assign-nurse` | **PUT** | Realizar el cambio o asignación de enfermera. |
-| | `/api/v1/patients/{id}/medical-records` | **POST** | Registrar una nueva entrada en el historial médico. |
-| | `/api/v1/patients/{id}/medical-history` | **GET** | Recuperar toda la línea de tiempo clínica del paciente. |
-| | `/api/v1/patients/{id}/controls` | **POST** | Agregar un nuevo control clínico en consultas posteriores. |
-| | `/api/v1/patients/{id}/discharge` | **POST** | Dar de alta médica al paciente (finalizar ciclo). |
-| |`/api/v1/patients/{id}/medical-history/pdf` | **GET** | Descargar historial médico completo (PDF). |
-| |`/api/v1/patients/{id}/controls/pdf` | **GET** | Descargar SOLO los controles médicos (PDF). |
-| |`/api/v1/patients/{id}/controls/{date}/pdf` | **GET** | Descargar un reporte de control específico por fecha (PDF). |
-###### Resources (DTOs / Request & Response Models)
-
-#### **1. CreatePatientRequest**
-**Propósito:** Envía los datos necesarios para registrar a una paciente (niño) por primera vez.
-
-```json
-{
-  "name": "Juan",
-  "lastName": "Perez",
-  "birthDate": "2020-01-01",
-  "sexo": "MASCULINO",
-  "weight": 12.5,
-  "height": 85.0,
-  "motherId": "user-123"
-}
-```
-
-#### **2. PatientResource**
-**Propósito:** Devuelve la información resumida y el estado actual del paciente.
-
-```json
-{
-  "id": "patient-1",
-  "name": "Juan",
-  "lastName": "Perez",
-  "sexo": "MASCULINO",
-  "currentWeight": 12.5,
-  "currentHeight": 85.0,
-  "currentHemoglobinLevel": 10.5,
-  "status": "IN_TREATMENT"
-}
-```
-
-#### **3. MedicalRecordRequest**
-**Propósito:** Registra un historial clínico detallado, con antecedentes y el primer control.
-
-```json
-{
-  "date": "2026-01-01T10:00:00",
-  "hemoglobinLevel": 10.2,
-  "weight": 12.8,
-  "height": 86.0,
-  "sexo": "MASCULINO",
-  "motivoConsulta": "Primera evaluación",
-  "observaciones": "Paciente estable",
-  "antecedentes": [
-    {
-      "type": "ALERGIA",
-      "content": "Alergia a penicilina"
-    }
-  ],
-  "controls": [
-    {
-      "fecha": "2026-01-01T10:00:00",
-      "hemoglobinaGdl": 10.2,
-      "hematocrito": 32.5,
-      "ferritina": 15.0,
-      "sintomas": ["cansancio"],
-      "tratamiento": {
-        "medicamento": "Hierro",
-        "dosis": "10mg",
-        "duracionDias": 30,
-        "indicaciones": "Después de comidas"
-      }
-    }
-  ]
-}
-```
-#### **4. AddControlRequest**
-**Propósito:** Registra un nuevo control de seguimiento y tratamiento para una consulta posterior.
-
-```json
-{
- "fecha": "2026-02-01T10:00:00",
-  "hemoglobinaGdl": 10.5,
-  "hematocrito": 32.0,
-  "ferritina": 15.0,
-  "sintomas": ["cansancio"],
-  "tratamiento": {
-    "medicamento": "Hierro",
-    "dosis": "10mg",
-    "duracionDias": 30,
-    "indicaciones": "Después de comidas"
-  }
-}
-```
-
-#### **5. AssignNurseRequest**
-**Propósito:** Envía el identificador de la enfermera que tratara al paciente.
-
-```json
-{
-   "nurseId": "nurse-456"
-}
-```
-
-#### **6. DischargePatientRequest**
-**Propósito:** Registra el alta médica del paciente, validado por la enfermera.
-
-```json
-{
-"nurseId": "nurse-456"
+  "userId": "user-456",
+  "token": "fcm-token-abc-123-xyz",
+  "deviceType": "ANDROID",
+  "isActive": true,
+  "updatedAt": "2026-04-16T08:30:00Z"
 }
 ```
 
@@ -1693,156 +1363,121 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 
 | Assembler / Mapper | Dirección de la Traducción | Propósito |
 | :--- | :--- | :--- |
-| **CreatePatientCommandFromResourceAssembler** | `CreatePatientRequest` → `CreatePatientCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
-| **MedicalRecordCommandAssembler** | `MedicalRecordRequest` → `MedicalRecord` | Traduce el JSON complejo del historial médico en un objeto estructurado, validando y convirtiendo tipos. |
-| **ControlCommandAssembler** | `AddControlRequest` → `Control` | Transforma los datos de seguimiento en un objeto de control, permitiendo cálculos lógicos como el estado de anemia. |
-| **PatientResourceFromEntityAssembler** | `Patient (Entity)` → `PatientResource` | Transforma la entidad del dominio en un recurso seguro y resumido para ser enviado al cliente. |
-| **DischargePatientCommandAssembler** | `DischargePatientRequest` → `DischargePatientCommand` | Traduce la petición de alta médica en una instrucción ejecutable por el negocio. |
+| **SendNotificationCommandFromResourceAssembler** | `SendNotificationRequest` → `SendNotificationCommand` | Convierte la solicitud externa en un comando formal de aplicación. |
+| **NotificationResourceFromEntityAssembler** | `Notification (Entity)` → `NotificationResponse` | Transforma la entidad de dominio en un recurso para el cliente. |
+| **RegisterFcmTokenCommandFromResourceAssembler** | `RegisterFcmTokenRequest` → `RegisterFcmTokenCommand` | Traduce el registro del token en una instrucción para el negocio. |
 
-##### 2.6.2.3. Application Layer
+##### 2.6.3.3. Application Layer
 
-En esta capa se coordinan los casos de uso del sistema relacionados con la gestión de pacientes. Su responsabilidad es orquestar las operaciones entre el Interface Layer y el Domain Layer, ejecutando comandos y consultas sin contener lógica de negocio compleja.
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Notifications. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones de envio y reintento de notificaciones, los Query Handlers que gestionan las consultas del historial de notificaciones y los Event Handlers que reaccionan automaticamente a los eventos generados por los demas bounded contexts del sistema.
 
 ###### Command Handlers (Application Layer)
 
 | Command Handler | Propósito | Responsabilidades |
 | :--- | :--- | :--- |
-| **CreatePatientCommandHandler** | Registrar un nuevo paciente. | Validar entrada, crear entidad, asignar estado ACTIVE/IN_TREATMENT y guardar. |
-| **AssignNurseCommandHandler** | Asignar enfermera a un paciente. | Buscar paciente, actualizar nurseId y persistir cambios. |
-| **CreateMedicalRecordCommandHandler** | Registrar historial médico inicial. | Buscar paciente, crear MedicalRecord, asociarlo y guardar cambios. |
-| **AddControlCommandHandler** | Agregar control en consulta posterior. | Buscar paciente/registro, crear Control, calcular estado y guardar. |
-| **DischargePatientCommandHandler** | Dar de alta médica al paciente. | Validar enfermera, cambiar estado a DISCHARGED, generar evento y guardar. |
+| **SendNotificationCommandHandler** | Enviar una nueva notificación. | Buscar token, crear entidad PENDING, enviar vía FCM y actualizar a SENT/FAILED. |
+| **RetryNotificationCommandHandler** | Reintentar envíos fallidos. | Validar estado FAILED y límite de 3 reintentos antes de delegar nuevo envío. |
+| **RegisterFcmTokenCommandHandler** | Actualizar token del dispositivo. | Asegurar que el sistema guarde el token FCM más reciente vinculado al usuario. |
+| **DeleteFcmTokenCommandHandler** | Limpiar tokens inactivos. | Eliminar el token del repositorio al cerrar sesión o desinstalar la app. |
 
 ###### Query Handlers (Application Layer)
 
 | Query Handler | Propósito | Responsabilidades |
 | :--- | :--- | :--- |
-| **GetPatientByIdQueryHandler** | Obtener información completa del paciente. | Buscar paciente por ID y retornar sus datos. |
-| **GetPatientsByMotherDniQueryHandler** | Obtener pacientes asociados a una madre. | Filtrar en el repositorio por DNI de la madre y retornar lista. |
-| **GetPatientsByNurseDniQueryHandler** | Obtener pacientes asignados a una enfermera. | Filtrar en el repositorio por DNI de la enfermera y retornar lista. |
-| **GetMedicalHistoryQueryHandler** | Obtener historial médico del paciente. | Obtener el paciente y retornar su colección de MedicalRecords. |
-| **GetMedicalHistoryPdfQueryHandler** | Generar el PDF con el historial médico completo del paciente. | Obtener registros médicos, validar su existencia y enviar los datos al PDFService para generar el historial completo. |
-| **GetControlsPdfQueryHandler** | Generar un PDF con todos los controles del paciente. | Obtener el historial médico, extraer únicamente la lista de todos los controles y enviarlos al PDFService. |
-| **GetControlByDatePdfQueryHandler** | Generar un PDF de un control específico según su fecha. | Obtener el historial, buscar el control que coincida con la fecha solicitada, validar que exista y enviarlo al PDFService. |
+| **GetNotificationHistoryQueryHandler** | Obtener historial de usuario. | Recuperar lista de notificaciones por recipientId ordenadas por fecha. |
+| **GetFailedNotificationsQueryHandler** | Listar errores de envío. | Filtrar y retornar notificaciones en estado FAILED para su revisión. |
 
 ###### Event Handlers
 
 | Event Handler | Propósito | Responsabilidades |
 | :--- | :--- | :--- |
-| **OnPatientDischargedNotify** | Notificar a la madre del paciente. | Enviar notificación (push/email/app) sobre el alta médica. |
-| **OnPatientDischargedAnalytics** | Actualizar métricas del sistema. | Registrar paciente recuperado y actualizar estadísticas de anemia. |
+| **OnDoseReminderTriggeredEventHandler** | Reaccionar a la programación de dosis. | Crear notificación DOSE_REMINDER y enviarla a la madre vía FCM. |
+| **OnAbandonmentAlertTriggeredEventHandler** | Reaccionar a pacientes en lista crítica. | Crear alerta de abandono y enviarla a la enfermera para acción inmediata. |
+| **OnBadgeUnlockedEventHandler** | Notificar el desbloqueo de insignias. | Enviar mensaje celebratorio de logro a la madre vía FCM. |
+| **OnConsultationCreatedEventHandler** | Avisar sobre nuevas consultas médicas. | Notificar a la enfermera asignada sobre una nueva inquietud de la madre. |
+| **OnReplySentEventHandler** | Notificar respuestas a consultas. | Avisar a la madre que su enfermera ha respondido a su mensaje. |
+| **OnAppointmentConfirmedEventHandler** | Notificar confirmación de citas. | Enviar detalles de la cita confirmada tanto a la madre como a la enfermera. |
+| **OnIronInhibitorDetectedEventHandler** | Alertar sobre ingesta de inhibidores. | Enviar alerta nutricional (messageAlertInhibitor) a la madre vía FCM. |
+| **OnPatientDischargedEventHandler** | Reaccionar a la finalización del tratamiento. | Crear notificación celebratoria y enviarla a la madre tras el alta médica del niño. |
 
+##### 2.6.3.4. Infrastructure Layer
 
-##### 2.6.2.4. Infrastructure Layer
-
-En esta capa se implementan los detalles técnicos necesarios para la persistencia de datos, integración con servicios externos y soporte a las operaciones del dominio. Se encarga de materializar las interfaces definidas en el Domain Layer. Tambien permite la descarga del historial médico completo, los controles del paciente y controles específicos por fecha.
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Notifications. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase FCM y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB y la comunicacion con Firebase Cloud Messaging para el envio de notificaciones push.
 
 ###### Persistence
 
 | Repositorio | Implementación | Responsabilidades | Métodos |
 | :--- | :--- | :--- | :--- |
-| **MongoPatientRepository** | `PatientRepository` | Guardar, buscar por ID, filtrar por madre/enfermera y eliminar pacientes. | `save`, `findById`, `findByMotherDni`, `findByNurseDni`, `deleteById` |
-| **MongoMedicalRecordRepository** | Técnico (Infra) | Guardar registros médicos y buscar historiales completos por paciente. | `save`, `findByPatientId` |
+| **MongoNotificationRepository** | `NotificationRepository` | Gestiona la persistencia en la colección `notifications`. Mapea la entidad al documento MongoDB y permite filtrado por estado. | `save`, `findById`, `findByRecipientId`, `findByStatus` |
+| **MongoFcmTokenRepository** | `FcmTokenRepository` | Gestiona tokens FCM en la colección `fcm_tokens`. Garantiza el registro del token más reciente del dispositivo. | `save`, `findByUserId`, `deleteByUserId` |
 
 ###### Mappers
 
 | Mapper | Dirección de la Traducción | Propósito |
 | :--- | :--- | :--- |
-| **PatientDocumentMapper** | Patient ↔ PatientDocument | Convierte el agregado completo de paciente a documento Mongo y viceversa. |
-| **MedicalRecordDocumentMapper** | MedicalRecord ↔ MedicalRecordDocument | Convierte el historial completo. Usa internamente otros mappers. |
-| **ControlMapper** | Control ↔ Embedded Document | Convierte cada control individual. Es utilizado dentro de MedicalRecordDocumentMapper. |
+| **NotificationDocumentMapper** | `Notification (Entity)` ↔ `NotificationDocument` | Traduce entre la entidad de dominio y el documento de MongoDB. |
+| **FcmTokenDocumentMapper** | `FcmToken (Entity)` ↔ `FcmTokenDocument` | Traduce entre la entidad de dominio y el documento de MongoDB. |
 
-###### Modelo de Datos (MongoDB)
+###### External Services (Infrastructure Layer)
 
-<h4>Colección: patients </h4>
+| Servicio / Adaptador | Propósito | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **FirebaseFCMAdapter** | Integración con Firebase Cloud Messaging. | Envío de notificaciones push individuales o masivas y gestión de respuestas de la API de Firebase. | • `sendPushNotification`<br>• `sendBatchNotifications` |
+
+###### Configuration (Infrastructure Layer)
+
+| Componente | Propósito | Responsabilidades / Índices |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configurar la conexión a MongoDB para el contexto de Notificaciones. | Define la conexión y los índices de rendimiento: <br><br> • notifications: Índice en recipientId (búsquedas), status (filtros FAILED) y TTL en createdAt (limpieza automática). <br><br> • fcm_tokens: Índice único en userId para asegurar un solo token por usuario.|
+| **FirebaseConfig** | Configurar la integración con Firebase Cloud Messaging.| Inicializa el SDK de Firebase con las credenciales de Ferova. Define el timeout de envío y el número máximo de reintentos automáticos ante fallos de red. |
+
+###### Modelo de datos MongoDB
+
+<h4>Coleccion: notifications </h4>
 
 ```json
 {
-  "_id": "patient-1",
-  "name": "Juan",
-  "lastName": "Perez",
-  "birthDate": "2020-01-01",
-  "sexo": "MASCULINO",
-  "currentWeight": 12.5,
-  "currentHeight": 85.0,
-  "currentHemoglobinLevel": 10.5,
-  "motherId": "user-123",
-  "nurseId": "nurse-456",
-  "status": "IN_TREATMENT"
+   "_id": "notif:uuid",
+  "recipientId": "user:uuid",
+  "recipientRole": "madre",
+  "type": "DOSE_REMINDER",
+  "message": "Hora de la dosis de Juan.",
+  "status": "SENT",
+  "createdAt": "2026-04-16T08:00:00Z",
+  "sentAt": "2026-04-16T08:00:02Z",
+  "fcmToken": "fcm:token:abc123"
 }
 ```
-<h4>Colección: medical_records </h4>
+
+<h4>Coleccion: fcm_tokens</h4>
 
 ```json
 {
-  "_id": "mr-1",
-  "patientId": "patient-1",
-  "motherId": "user-123",
-  "nurseId": "nurse-456",
-  "date": "2026-01-01",
-  "hemoglobinLevel": 10.2,
-  "weight": 12.8,
-  "height": 86.0,
-  "sexo": "MASCULINO",
-  "motivoConsulta": "Primera evaluación",
-  "observaciones": "Paciente estable",
-  "antecedentes": [],
-  "controls": [
-    {
-      "fecha": "2026-02-01",
-      "hemoglobinaGdl": 10.5,
-      "hematocrito": 32.0,
-      "ferritina": 15.0,
-      "estado": "LEVE",
-      "sintomas": ["cansancio"],
-      "tratamiento": {
-        "medicamento": "Hierro",
-        "dosis": "10mg",
-        "duracionDias": 30,
-        "indicaciones": "Después de comidas"
-      }
-    }
-  ]
+  "_id": "fcm:uuid",
+  "userId": "user:uuid",
+  "token": "fcm:token:abc123",
+  "deviceType": "Android",
+  "isActive": true,
+  "updatedAt": "2026-04-16T07:00:00Z"
 }
 ```
-###### Servicios Externos (Bounded Contexts Integrations)
 
-| Servicio | Propósito | Integración |
-| :--- | :--- | :--- |
-| **NotificationService** | Envío de notificaciones a la madre del paciente. | Activado por eventos de dominio (ej. PatientDischarged). |
-| **AnalyticsService** | Registro y procesamiento de métricas del sistema. | Suscrito a eventos para actualizar estadísticas de salud global. |
+##### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-> Importante: Estos servicios representan Bounded Contexts independientes, ya que pertenecen a dominios distintos al de Patient Management. La comunicación se realiza mediante eventos, permitiendo una arquitectura desacoplada y escalable.
-
-######  Exportación de Documentos (Infrastructure Layer)
-
-| Servicio | Implementa | Responsabilidades |
-| :--- | :--- | :--- |
-| **PdfDocumentExportService** | DocumentExportService | Generar PDF del historial médico completo, reporte de controles y reportes individuales. |
-
-###### Configurations (Infrastructure Layer)
-
-| Configuración | ¿Qué hace? | Responsabilidades |
-| :--- | :--- | :--- |
-| **MongoConfig** | Conecta el sistema con MongoDB. | Gestiona URL de conexión, base de datos y colecciones de pacientes y registros. |
-| **EventConfig** | Conecta eventos con sus manejadores (Handlers). | Asegura que al ocurrir un evento (ej. PatientDischarged) se ejecuten las acciones correspondientes. |
-
-
-##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
-
-<div align="center">
-<img src="resources/images/chapter-II/Software_Architecture/Patient/components-structuriz-patient.png">
+<div align = "center">
+  <img src="/resources/images/chapter-II/Software_Architecture/Notifications/c4-notifications.png">
 </div>
 
-##### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
-###### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+##### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-<div align="center">
-<img src="resources/images/chapter-II/Class_Diagram/Patient/PATIENT DIAGRMA CLASS.png">
+<div align = "center">
+  <img src="/resources/images/chapter-II/Class_Diagram/Notification/diagrama class notifications.png">
 </div>
 
-###### 2.6.2.6.2. Bounded Context Database Design Diagram
+###### 2.6.3.6.2. Bounded Context Database Design Diagram
 
-<div align="center">
-<img src="resources/images/chapter-II/DB_Diagram/Patient/DIAGRMA DE BASE DE DATOS NO RELACIONAL PATIENT.png/">
+
+<div align = "center">
+  <img src="/resources/images/chapter-II/DB_Diagram/Notification/diagram data base not realtional.png">
 </div>
