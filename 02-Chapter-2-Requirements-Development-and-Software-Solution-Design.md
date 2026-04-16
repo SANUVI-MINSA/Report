@@ -1,4 +1,4 @@
-<img width="610" height="696" alt="image" src="https://github.com/user-attachments/assets/3945aa80-025e-4203-a8c8-4668b437f1f5" />Capítulo II: Requirements Development and Software Solution Design
+Capítulo II: Requirements Development and Software Solution Design
 
 ### 2.1 Competidores
 #### 2.1.1 Análisis competitivo
