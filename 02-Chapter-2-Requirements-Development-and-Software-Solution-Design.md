@@ -971,6 +971,67 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **OnPatientDischargedEventHandler** | Reaccionar a la finalización del tratamiento. | Crear notificación celebratoria y enviarla a la madre tras el alta médica del niño. |
 
 ##### 2.6.3.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Notifications. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase FCM y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB y la comunicacion con Firebase Cloud Messaging para el envio de notificaciones push.
+
+###### Persistence
+
+| Repositorio | Implementación | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **MongoNotificationRepository** | `NotificationRepository` | Gestiona la persistencia en la colección `notifications`. Mapea la entidad al documento MongoDB y permite filtrado por estado. | `save`, `findById`, `findByRecipientId`, `findByStatus` |
+| **MongoFcmTokenRepository** | `FcmTokenRepository` | Gestiona tokens FCM en la colección `fcm_tokens`. Garantiza el registro del token más reciente del dispositivo. | `save`, `findByUserId`, `deleteByUserId` |
+
+###### Mappers
+
+| Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **NotificationDocumentMapper** | `Notification (Entity)` ↔ `NotificationDocument` | Traduce entre la entidad de dominio y el documento de MongoDB. |
+| **FcmTokenDocumentMapper** | `FcmToken (Entity)` ↔ `FcmTokenDocument` | Traduce entre la entidad de dominio y el documento de MongoDB. |
+
+###### External Services (Infrastructure Layer)
+
+| Servicio / Adaptador | Propósito | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **FirebaseFCMAdapter** | Integración con Firebase Cloud Messaging. | Envío de notificaciones push individuales o masivas y gestión de respuestas de la API de Firebase. | • `sendPushNotification`<br>• `sendBatchNotifications` |
+
+###### Configuration (Infrastructure Layer)
+
+| Componente | Propósito | Responsabilidades / Índices |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configurar la conexión a MongoDB para el contexto de Notificaciones. | Define la conexión y los índices de rendimiento: <br><br> • notifications: Índice en recipientId (búsquedas), status (filtros FAILED) y TTL en createdAt (limpieza automática). <br><br> • fcm_tokens: Índice único en userId para asegurar un solo token por usuario.|
+| **FirebaseConfig** | Configurar la integración con Firebase Cloud Messaging.| Inicializa el SDK de Firebase con las credenciales de Ferova. Define el timeout de envío y el número máximo de reintentos automáticos ante fallos de red. |
+
+###### Modelo de datos MongoDB
+
+<h4>Coleccion: notifications </h4>
+
+```json
+{
+   "_id": "notif:uuid",
+  "recipientId": "user:uuid",
+  "recipientRole": "madre",
+  "type": "DOSE_REMINDER",
+  "message": "Hora de la dosis de Juan.",
+  "status": "SENT",
+  "createdAt": "2026-04-16T08:00:00Z",
+  "sentAt": "2026-04-16T08:00:02Z",
+  "fcmToken": "fcm:token:abc123"
+}
+```
+
+<h4>Coleccion: fcm_tokens</h4>
+
+```json
+{
+  "_id": "fcm:uuid",
+  "userId": "user:uuid",
+  "token": "fcm:token:abc123",
+  "deviceType": "Android",
+  "isActive": true,
+  "updatedAt": "2026-04-16T07:00:00Z"
+}
+```
+
 ##### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
