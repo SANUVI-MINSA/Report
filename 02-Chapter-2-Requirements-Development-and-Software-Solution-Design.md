@@ -1220,8 +1220,6 @@ integraciones con plataformas externas.
 </div>
 
 ### 2.6 Tactical-Level Domain-Driven Design
-
-### 2.6 Tactical-Level Domain-Driven Design
 #### 2.6.1. Bounded Context: `Identify and Access Management`
 
 El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
