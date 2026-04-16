@@ -3383,6 +3383,236 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-21</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener lista de consultas de teleconsulta mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención de la lista de consultas de teleconsulta mediante una API REST, para que la enfermera pueda visualizar y responder a las consultas enviadas por las madres en tiempo real desde FerovaClinic.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención de lista de consultas exitosa</b><br>
+        Dado que el endpoint /api/v1/consultations está disponible, cuando se envía una solicitud GET con el token JWT válido y el ID de la enfermera, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de todas las consultas recibidas, incluyendo el nombre de la madre, el último mensaje enviado y la fecha de la última actualización.<br>
+        <br>
+        <b>Escenario 2: Sin consultas recibidas</b><br>
+        Dado que el endpoint /api/v1/consultations está disponible, cuando se envía una solicitud GET y la enfermera no tiene ninguna consulta pendiente ni historial de mensajes, entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay consultas registradas para esta enfermera.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/consultations está disponible, cuando se envía una solicitud GET con un token JWT inválido o expirado, entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-22</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Obtener historial de consultas mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de obtención del historial de consultas mediante una API REST, para que FerovaFamilia y FerovaClinic puedan mostrar el historial completo de consultas entre la madre y la enfermera ordenadas por fecha.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Obtención del historial exitosa</b><br>
+        Dado que el endpoint /api/v1/consultations/{patientId}/history está disponible, cuando se envía una solicitud GET con el token JWT válido, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista completa de consultas ordenadas por fecha, indicando el estado de cada una como abierta o cerrada y los mensajes completos de cada consulta.<br>
+        <br>
+        <b>Escenario 2: Sin consultas registradas</b><br>
+        Dado que el endpoint /api/v1/consultations/{patientId}/history está disponible, cuando se envía una solicitud GET para un paciente que no tiene consultas registradas, entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay consultas registradas para este paciente.'<br>
+        <br>
+        <b>Escenario 3: Paciente no encontrado</b><br>
+        Dado que el endpoint /api/v1/consultations/{patientId}/history está disponible, cuando se envía una solicitud GET con un ID de paciente que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-23</td>
+      <td>Desarrollador</td>
+      <td>Medium</td>
+      <td>EP-06</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Cerrar consulta de teleconsulta mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de cierre de consulta de teleconsulta mediante una API REST, para que la enfermera pueda marcar una consulta como cerrada y el sistema actualice su estado en Firebase Firestore y registre la fecha y hora del cierre.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Cierre de consulta exitoso</b><br>
+        Dado que el endpoint /api/v1/consultations/{consultationId}/close está disponible, cuando se envía una solicitud PUT con el token JWT válido, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la consulta actualizada con estado cerrada y la fecha y hora del cierre registrada.<br>
+        <br>
+        <b>Escenario 2: Intento de cerrar consulta sin respuesta</b><br>
+        Dado que el endpoint /api/v1/consultations/{consultationId}/close está disponible, cuando se envía una solicitud PUT para una consulta que aún no ha sido respondida por la enfermera, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'No se puede cerrar una consulta que aún no ha sido respondida.'<br>
+        <br>
+        <b>Escenario 3: Consulta no encontrada</b><br>
+        Dado que el endpoint /api/v1/consultations/{consultationId}/close está disponible, cuando se envía una solicitud PUT con un ID de consulta que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Consulta no encontrada.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-24</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar posta médica mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro de postas médicas mediante una API REST, para que el admin pueda registrar las postas de su distrito con su ubicación en Google Maps y almacenarlas en MongoDB.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de posta exitoso</b><br>
+        Dado que el endpoint /api/v1/health-facilities está disponible, cuando se envía una solicitud POST con el token JWT válido, el nombre de la posta, la dirección y las coordenadas de ubicación en Google Maps, entonces se recibe una respuesta con estado 201 y el cuerpo contiene la posta registrada con su ID asignado, nombre, dirección y coordenadas de ubicación.<br>
+        <br>
+        <b>Escenario 2: Datos de la posta incompletos</b><br>
+        Dado que el endpoint /api/v1/health-facilities está disponible, cuando se envía una solicitud POST con campos obligatorios vacíos o con formato incorrecto, entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o expirado</b><br>
+        Dado que el endpoint /api/v1/health-facilities está disponible, cuando se envía una solicitud POST con un token JWT inválido o expirado, entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-25</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-07</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar horario de atención de la posta mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de registro y actualización del horario de atención de la posta mediante una API REST, para que el admin pueda definir los días y horas de atención de cada posta y el sistema los refleje automáticamente en FerovaFamilia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Registro de horario exitoso</b><br>
+        Dado que el endpoint /api/v1/health-facilities/{facilityId}/schedule está disponible, cuando se envía una solicitud POST con el token JWT válido, los días de atención y las horas de inicio y fin, entonces se recibe una respuesta con estado 201 y el cuerpo contiene el horario de atención registrado con su ID asignado y la posta asociada.<br>
+        <br>
+        <b>Escenario 2: Actualización de horario exitosa</b><br>
+        Dado que el endpoint /api/v1/health-facilities/{facilityId}/schedule está disponible, cuando se envía una solicitud PUT con el token JWT válido y los nuevos días y horas de atención, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el horario de atención actualizado reflejando los cambios realizados.<br>
+        <br>
+        <b>Escenario 3: Posta no encontrada</b><br>
+        Dado que el endpoint /api/v1/health-facilities/{facilityId}/schedule está disponible, cuando se envía una solicitud POST o PUT con un ID de posta que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Posta médica no encontrada.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 #### 2.4.3 Product Backlog
 
