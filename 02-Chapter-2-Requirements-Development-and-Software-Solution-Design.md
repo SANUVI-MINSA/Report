@@ -4258,6 +4258,11 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
 </table>
 
 #### 2.4.2 Impact Mapping
+
+En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
+
+![Foto de Impact Mapping](/resources/images/chapter-II/Impact-Map/Impact.png)
+
 #### 2.4.3 Product Backlog
 
 ### 2.5 Strategic-Level Domain-Driven Design
