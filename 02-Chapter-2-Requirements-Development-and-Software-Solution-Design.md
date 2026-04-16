@@ -1135,6 +1135,20 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
 
 
 ##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align="center">
+<img src="resources/images/chapter-II/Software_Architecture/Patient/components-structuriz-patient.png">
+</div>
+
 ##### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align="center">
+<img src="resources/images/chapter-II/Class_Diagram/Patient/PATIENT DIAGRMA CLASS.png">
+</div>
+
 ###### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+<div align="center">
+<img src="resources/images/chapter-II/DB_Diagram/Patient/DIAGRMA DE BASE DE DATOS NO RELACIONAL PATIENT.png/">
+</div>
