@@ -853,6 +853,90 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **AbandonmentAlertTriggered** | Se dispara tras 72h de inactividad en la confirmación de dosis. | Alerta de riesgo enviada a la enfermera para acción inmediata. |
 
 ##### 2.6.3.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Notifications. Esta capa actua como la puerta de entrada al sistema, recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Tambien se encarga de transformar las respuestas del dominio en DTOs que el cliente puede consumir. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta, y los Assemblers o Mappers que realizan la traduccion entre ambos mundos.
+
+###### Controllers
+
+| Controlador | Propósito | Endpoints |
+| :--- | :--- | :--- |
+| **NotificationController** | Expone los endpoints REST para gestionar el envío y consulta de notificaciones push desde el sistema hacia los usuarios de **FerovaFamilia** y **FerovaClinic**. | • `POST /api/v1/notifications/send` : Envía una notificación push vía Firebase FCM.<br><br>• `GET /api/v1/notifications/{recipientId}` : Retorna el historial de notificaciones de un usuario específico.<br><br>• `PUT /api/v1/notifications/{id}/retry` : Reintenta el envío de una notificación que falló anteriormente. |
+| **FcmTokenController** | Expone los endpoints REST para administrar el registro, actualización y eliminación de los tokens FCM de los dispositivos. | • `POST /api/v1/fcm-tokens` : Registra o actualiza el token FCM del dispositivo cuando el usuario abre la app.<br><br>• `DELETE /api/v1/fcm-tokens/{userId}` : Elimina el token del usuario cuando cierra sesión o desinstala la aplicación. |
+
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. SendNotificationRequest**
+
+**Propósito:** Envía los datos necesarios para solicitar el envío de una nueva notificación push a un usuario.
+
+```json
+{
+  "recipientId": "user-456",
+  "recipientRole": "MOTHER",
+  "type": "DOSE_REMINDER",
+  "message": "Es hora de la dosis de hierro de Juanito."
+}
+```
+#### **2. NotificationResponse**
+
+**Propósito:** Retorna el detalle completo y el estado técnico de una notificación registrada en el sistema.
+
+```json
+{
+  "id": "notif-987",
+  "recipientId": "user-456",
+  "recipientRole": "MOTHER",
+  "type": "DOSE_REMINDER",
+  "message": "Es hora de la dosis de hierro de Juanito.",
+  "status": "SENT",
+  "createdAt": "2026-04-16T10:00:00Z",
+  "sentAt": "2026-04-16T10:00:05Z"
+}
+```
+#### **3. RetryNotificationResponse**
+
+**Propósito:** Confirma que se ha solicitado un reintento de envío para una notificación que falló.
+
+```json
+{
+  "id": "notif-987",
+  "status": "RETRYING",
+  "retryCount": 1
+}
+```
+#### **4. RegisterFcmTokenRequest**
+
+**Propósito:** : Envía el token generado por Firebase desde el dispositivo móvil para vincularlo al usuario.
+
+```json
+{
+  "userId": "user-456",
+  "token": "fcm-token-abc-123-xyz",
+  "deviceType": "ANDROID"
+}
+```
+#### **5. FcmTokenResponse**
+
+**Propósito:** Retorna la información del token registrado y su estado de actividad en el sistema.
+
+```json
+{
+  "userId": "user-456",
+  "token": "fcm-token-abc-123-xyz",
+  "deviceType": "ANDROID",
+  "isActive": true,
+  "updatedAt": "2026-04-16T08:30:00Z"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **SendNotificationCommandFromResourceAssembler** | `SendNotificationRequest` → `SendNotificationCommand` | Convierte la solicitud externa en un comando formal de aplicación. |
+| **NotificationResourceFromEntityAssembler** | `Notification (Entity)` → `NotificationResponse` | Transforma la entidad de dominio en un recurso para el cliente. |
+| **RegisterFcmTokenCommandFromResourceAssembler** | `RegisterFcmTokenRequest` → `RegisterFcmTokenCommand` | Traduce el registro del token en una instrucción para el negocio. |
+
 ##### 2.6.3.3. Application Layer
 ##### 2.6.3.4. Infrastructure Layer
 ##### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
