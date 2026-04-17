@@ -138,6 +138,20 @@
     * [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2636-bounded-context-software-architecture-code-level-diagrams)
     * [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26231-bounded-context-domain-layer-class-diagrams)
     * [2.6.3.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26232-bounded-context-database-design-diagram)
+
+
+  * [2.6.3. Bounded Context: `Comunication Management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md264-bounded-context-comunication-management)
+
+    * [2.6.3.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2641-domain-layer)
+    * [2.6.3.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2642-interface-layer)
+    * [2.6.3.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2643-application-layer)
+    * [2.6.3.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2644-infrastructure-layer)
+    * [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2645-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2646-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26431-bounded-context-domain-layer-class-diagrams)
+    * [2.6.3.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26432-bounded-context-database-design-diagram)
+
+      
       
 ## [Capítulo III: Solution UI/UX Design](03-Chapter-3-Solution-UI-UX-Design.md)
 
