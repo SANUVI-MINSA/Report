@@ -4257,6 +4257,144 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-40</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Descargar historial médico completo en PDF mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de descarga del historial médico en formato PDF mediante una API REST, para que el personal autorizado pueda obtener un documento oficial con todos los antecedentes, dosis confirmadas y observaciones del paciente para su archivo o derivación.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Descarga de historial médico exitoso</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/medical-history/pdf está disponible, cuando se envía una solicitud GET con el token JWT válido y el ID de un paciente existente, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el archivo PDF generado automáticamente con el historial completo de consultas, registro de adherencia y datos personales del paciente.<br>
+        <br>
+        <b>Escenario 2: Sin datos suficientes para generar el historial médico</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/medical-history/pdf está disponible, cuando se envía una solicitud GET para un paciente recién registrado que aún no cuenta con consultas ni registros de dosis, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'No hay suficientes datos para generar el historial médico. El paciente debe contar con al menos una atención registrada.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o sin permiso de admin</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/medical-history/pdf está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene permisos de administrador o personal médico autorizado, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para descargar el historial médico del paciente.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-41</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Descarga de control médico del paciente en PDF mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en formato PDF mediante una API REST, para que el personal de salud pueda obtener un documento consolidado que detalle exclusivamente las citas de control, asistencias y observaciones clínicas presenciales del paciente.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Descarga de controles médicos exitoso</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/controls/pdf está disponible, cuando se envía una solicitud GET con el token JWT válido y el ID de un paciente, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el archivo PDF que incluye únicamente la relación cronológica de controles médicos, fechas de atención y el estado de cumplimiento de cada cita.<br>
+        <br>
+        <b>Escenario 2: Sin datos suficientes para generar el archivo de controles médicos</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/controls/pdf está disponible, cuando se envía una solicitud GET para un paciente que no tiene ninguna cita de control registrada o programada en el sistema, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'No existen registros de controles médicos para este paciente.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o sin permiso de admin</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/controls/pdf está disponible, cuando se envía una solicitud GET con un token JWT inválido, expirado o de un usuario sin el rol autorizado (Admin/Personal Médico), entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para descargar el registro de controles médicos.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TS-42</td>
+      <td>Desarrollador</td>
+      <td>High</td>
+      <td>EP-09</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Descarga de reporte de control médico específico por fecha mediante API RESTful</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como desarrollador, quiero implementar el endpoint de descarga de un control médico individual por fecha en formato PDF mediante una API REST, para que el personal de salud pueda obtener el comprobante detallado de una atención específica realizada en un día determinado.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <b>Escenario 1: Descarga de control específico exitoso</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/controls/{date}/pdf está disponible, cuando se envía una solicitud GET con el token JWT válido, el ID del paciente y una fecha con registros, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el archivo PDF con el detalle de la atención, signos vitales y observaciones clínicas de ese día específico.<br>
+        <br>
+        <b>Escenario 2: Sin datos suficientes de control médico en la fecha ingresada o fecha incorrecta</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/controls/{date}/pdf está disponible, cuando se envía una solicitud GET con una fecha en la que no se realizó ninguna atención o el formato de fecha es inválido, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'No se encontró ningún registro de control médico para la fecha proporcionada.'<br>
+        <br>
+        <b>Escenario 3: Token JWT inválido o sin permiso de admin</b><br>
+        Dado que el endpoint /api/v1/patients/{id}/controls/{date}/pdf está disponible, cuando se envía una solicitud GET con un token JWT inválido o de un usuario sin los privilegios necesarios, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder a este reporte médico específico.'
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 #### 2.4.2 Impact Mapping
 
 En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
