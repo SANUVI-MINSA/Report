@@ -6829,3 +6829,51 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 <div align ="center">
 	<img src="resources/images/chapter-II/DB_Diagram/diagram data base comunication.png">	
 </div>
+
+#### 2.6.5. Bounded Context: `Treatment Tracking`
+
+El bounded context Treatment Tracking es el corazon de la plataforma Ferova. Su proposito es gestionar el seguimiento diario del tratamiento de anemia de cada paciente, garantizando que la madre confirme cada dosis programada por la enfermera, calculando automaticamente el score de riesgo de abandono y clasificando a los pacientes en un semaforo verde, amarillo o rojo. Si un paciente lleva 72 horas sin confirmar su dosis el sistema escala la alerta automaticamente a la enfermera asignada.
+
+##### 2.6.5.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Treatment Tracking. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida completo de un tratamiento de anemia, desde su inicio hasta su completado o abandono. Se incluyen el Aggregate Root Treatment, las entidades DailyDose y RiskScore, los Value Objects TreatmentStatus y RiskLevel, los Domain Services, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+
+###### Aggregate Root: Treatment
+
+**Propósito:** Representa el tratamiento de anemia completo de un paciente incluyendo sus dosis diarias, su score de adherencia y su clasificación de riesgo de abandono.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | String | Identificador único del tratamiento en MongoDB. Permite rastrear, buscar y referenciar un tratamiento específico desde cualquier parte del sistema. |
+| **Atributo** | `patientId` | String | Identifica a qué paciente pertenece el tratamiento. Es la referencia lógica hacia el BC Patient Management. Sin este atributo el sistema no sabría a quién aplicar el seguimiento de dosis. |
+| **Atributo** | `nurseId` | String | Identifica qué enfermera inició y es responsable del tratamiento. Es fundamental porque solo la enfermera asignada puede iniciar, completar o registrar el abandono del tratamiento según las invarianzas del dominio. |
+| **Atributo** | `supplement` | String | Nombre del suplemento de hierro que debe tomar el paciente (ej. sulfato ferroso). La madre necesita saber exactamente qué suplemento darle a su hijo cada día. |
+| **Atributo** | `quantity` | String | Cantidad del suplemento a administrar por dosis (ej. 2ml o 1 tableta). Sin este dato la madre no sabría cuánto darle a su hijo en cada toma diaria. |
+| **Atributo** | `dosingHours` | String | Hora programada en que la madre debe dar la dosis diaria (ej. 08:00 AM). Es el dato que usa el BC Notifications para programar el recordatorio automático a la hora exacta cada día. |
+| **Atributo** | `durationDays` | Integer | Número de días que dura el tratamiento definido por la enfermera al iniciarlo. Es la invarianza más importante del aggregate porque sin duración no hay fecha de fin y el sistema no sabría cuándo el tratamiento debe completarse. |
+| **Atributo** | `startDate` | DateTime | Fecha en que la enfermera inició el tratamiento. Sirve como punto de referencia para calcular cuántos días lleva el paciente en tratamiento y cuánto falta para completarlo. |
+| **Atributo** | `endDate` | DateTime | Fecha calculada automáticamente sumando durationDays a startDate. Es la fecha en que el tratamiento debería completarse si el paciente cumple todas sus dosis sin fallar ninguna. |
+| **Atributo** | `status` | Enum | Estado actual del tratamiento (ACTIVE, COMPLETED o ABANDONED). Es el atributo que determina si el paciente sigue en tratamiento, lo completó exitosamente o lo abandonó antes de terminar. |
+| **Atributo** | `adherenceScore` | Double | Puntaje calculado automáticamente que refleja el nivel de cumplimiento del tratamiento. Se recalcula con cada confirmación u omisión de dosis. Es el dato central que alimenta el semáforo de riesgo en FerovaClinic. |
+| **Atributo** | `currentStreak` | Integer | Número de días consecutivos en que la madre ha confirmado la dosis sin fallar ninguna. Es el dato que usa el BC Achievements & Rewards para actualizar la racha y desbloquear insignias en FerovaFamilia. |
+| **Atributo** | `totalConfirmed` | Integer | Contador acumulado de todas las dosis confirmadas por la madre desde el inicio del tratamiento. Es uno de los inputs principales del AdherenceCalculatorService para calcular el score de adherencia. |
+| **Atributo** | `totalOmitted` | Integer | Contador acumulado de todas las dosis omitidas por la madre desde el inicio del tratamiento. Junto con totalConfirmed permite calcular el porcentaje de adherencia y determinar el nivel de riesgo de abandono del paciente. |
+| **Método** | `start()` | Logic | Inicia el tratamiento y define el periodo de vigencia. |
+| **Método** | `confirmDose()` | Logic | Registra toma, incrementa racha y actualiza score de adherencia. |
+| **Método** | `omitDose()` | Logic | Registra falta, reinicia racha y actualiza score de adherencia. |
+| **Método** | `complete()` | Logic | Cierra el tratamiento exitosamente con observaciones. |
+| **Método** | `abandon()` | Logic | Registra el abandono prematuro del proceso. |
+| **Invarianza** | **Duración** | Regla | `durationDays` debe ser estrictamente mayor a 0. |
+| **Invarianza** | **Autoría** | Regla | Solo la enfermera asignada puede iniciar, completar o abandonar. |
+| **Invarianza** | **Frecuencia** | Regla | Una dosis solo puede confirmarse una vez por día. |
+| **Invarianza** | **Unicidad** | Regla | Un paciente solo puede tener un tratamiento activo a la vez. |
+
+
+##### 2.6.5.2. Interface Layer
+##### 2.6.5.3. Application Layer
+##### 2.6.5.4. Infrastructure Layer
+##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
+##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.X.6.2. Bounded Context Database Design Diagram
