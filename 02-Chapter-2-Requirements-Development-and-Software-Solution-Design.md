@@ -5692,147 +5692,6 @@ integraciones con plataformas externas.
 </div>
 
 ### 2.6 Tactical-Level Domain-Driven Design
-#### 2.6.4. Bounded Context: `Comunication Management`
-
-El bounded context Communication gestiona la teleconsulta asincrona entre la madre y su enfermera asignada dentro de Ferova. Funciona como un canal de comunicacion privado dentro de la app donde la madre escribe sus dudas desde FerovaFamilia y la enfermera responde desde FerovaClinic. Los mensajes se almacenan y sincronizan en tiempo real mediante Firebase Firestore, y la enfermera cuenta con plantillas de respuesta rapida para agilizar su tiempo de atencion.
-
-##### 2.6.4.1. Domain Layer
-
-En esta seccion se documentan las clases que forman el core del bounded context Communication. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de una consulta de teleconsulta, desde su creacion hasta su cierre. Se incluyen el Aggregate Root Consultation, la entidad Message, los Value Objects ConsultationStatus y MessageSender, el Domain Service ConsultationService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
-
-###### Aggregate Root: Consultation
-
-| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
-| :--- | :--- | :--- | :--- | :--- |
-| **Consultation** | Representa una conversación asíncrona completa entre una madre y su enfermera asignada dentro de la plataforma Ferova. | • **id:** String<br>• **patientId**: String<br>• **motherId**: String<br>• **nurseId**: String<br>• **status**: Status<br>• **messages**: List<br>• **createdAt**: Date<br>• **closedAt**: Date | • addMessage()<br>• close()<br>• isOpen()<br>• hasBeenReplied() | • motherId y nurseId no pueden ser nulos.<br>• No se puede cerrar sin haber sido respondida.<br>• Solo la enfermera puede cerrar una consulta. |
-
-###### Entities
-
-| Entity | Propósito | Atributos | Métodos | Reglas de Negocio |
-| :--- | :--- | :--- | :--- | :--- |
-| **Message** | Representa un mensaje individual enviado dentro de una consulta de teleconsulta. | • **id**: String<br>• **consultationId**: String<br>• **senderId**: String<br>• **senderRole**: Role<br>• **content**: String<br>• **sentAt**: Date | • getSender()<br>• getContent() | • El contenido no puede estar vacío.<br>• Debe pertenecer a una consulta válida.<br>• La fecha de envío es obligatoria. |
-
-###### Value Objects
-
-| Value Object | Propósito | Valores / Definiciones | Reglas de Validación (Invariantes) | Comportamiento |
-| :--- | :--- | :--- | :--- | :--- |
-| **ConsultationStatus** | Define el estado de la teleconsulta. | OPEN, CLOSED. | Debe iniciar en OPEN y solo pasar a CLOSED tras respuesta. | •  Termina la consulta 'CLOSED'. <br><br>• La consulta sigue activa 'OPEN'|
-| **MessageSender** | Identifica al autor del mensaje. | MOTHER, NURSE. | Debe ser un tipo válido y no nulo. | Determina el origen de la comunicación. |
-| **QuickReplyTemplate** | Representa una plantilla de respuesta rápida predefinida para la enfermera. | title (String), content (String). | El título y el contenido no pueden estar vacíos. | Proporciona textos preestablecidos para agilizar la atención. |
-
-###### Domain Services
-
-| Servicio | Propósito | Métodos |
-| :--- | :--- | :--- |
-| **ConsultationService** | Gestiona la lógica de negocio de la teleconsulta y valida el flujo correcto de la comunicación. | • `validateNurseAssignment(nurseId, patientId)` : Valida la asignación oficial de la enfermera.<br>• `canClose(consultation)` : Verifica requisitos previos antes del cierre de consulta. |
-
-###### Repositories
-
-| Repositorio | Propósito | Métodos |
-| :--- | :--- | :--- |
-| **ConsultationRepository** | Interfaz para gestionar la persistencia y recuperación de las teleconsultas entre madres y enfermeras. | • `save(consultation)` : Guarda una nueva consulta o actualiza una existente.<br><br>• `findById(id)` : Busca una consulta específica por su identificador único.<br><br>• `findByPatientId(patientId)` : Recupera todas las consultas asociadas a un paciente.<br><br>• `findByNurseId(nurseId)` : Lista las consultas gestionadas por una enfermera.<br><br>• `findByStatus(status)` : Filtra las consultas según su estado (OPEN/CLOSED). |
-| **MessageRepository** | Interfaz encargada del almacenamiento y flujo de mensajes individuales dentro de las consultas. | • `save(message)` : Registra un nuevo mensaje en la base de datos.<br><br>• `findByConsultationId(consultationId)` : Recupera toda la secuencia de mensajes de una consulta específica para mostrar el chat completo. |
-
-###### Domain Events
-
-| Evento de Dominio | Propósito y Descripción | Resultado / Acción |
-| :--- | :--- | :--- |
-| **ConsultationCreated** | Se dispara cuando una madre inicia una nueva consulta en la plataforma. | Nueva conversación registrada en MongoDB y notificación enviada a la enfermera asignada. |
-| **MessageSent** | Se dispara cada vez que un nuevo mensaje es agregado a la conversación. | Actualización del historial del chat y envío de notificación push al destinatario. |
-| **ConsultationClosed** | Se dispara cuando la enfermera da por finalizada la atención. | Estado actualizado a CLOSED; se bloquea el envío de nuevos mensajes en esa consulta. |
-| **QuickReplySelected** | Se dispara al utilizar una respuesta predefinida para agilizar la atención. | El contenido de la respuesta rápida se convierte en un mensaje enviado automáticamente. |
-
-##### 2.6.4.2. Interface Layer
-
-En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Communication. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Tambien se encarga de transformar las respuestas del dominio en DTOs que el cliente puede consumir. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
-
-##### Controllers
-
-| Controlador (REST) | Método HTTP | Ruta (Endpoint) | Propósito / Acción |
-| :--- | :--- | :--- | :--- |
-| **ConsultationController** | `POST` | `/api/v1/consultations` | Crea una nueva consulta enviada por la madre hacia su enfermera asignada. |
-| | `GET` | `/api/v1/consultations/{patientId}/history` | Retorna el historial completo de consultas de un paciente ordenadas por fecha. |
-| | `PUT` | `/api/v1/consultations/{id}/close` | Cierra una consulta una vez que la duda de la madre fue resuelta por la enfermera. |
-| **MessageController** | `POST` | `/api/v1/consultations/{id}/messages` | Envía un nuevo mensaje normal dentro de una consulta activa. |
-| | `POST` | `/api/v1/consultations/{id}/messages/quick-reply` | Envía una respuesta rápida seleccionada por la enfermera usando una plantilla. |
-| | `GET` | `/api/v1/consultations/{id}/messages` | Retorna todos los mensajes de una consulta específica ordenados por fecha. |
-
-###### Resources (DTOs / Request & Response Models)
-
-#### **1. CreateConsultationRequest**
-**Propósito:** Envía los datos iniciales para abrir una nueva teleconsulta.
-
-```json
-{
-  "patientId": "string",
-  "motherId": "string",
-  "nurseId": "string",
-  "message": "string"
-}
-```
-
-#### **2. ConsultationResponse**
-**Propósito:** Retorna la información detallada de una consulta creada o consultada.
-
-```json
-{
-  "id": "string",
-  "patientId": "string",
-  "motherId": "string",
-  "nurseId": "string",
-  "status": "OPEN/CLOSED",
-  "createdAt": "datetime",
-  "closedAt": "datetime"
-}
-```
-
-#### **3. SendMessageRequest**
-**Propósito:** Envía un mensaje estándar dentro de una consulta activa.
-
-```json
-{
-  "consultationId": "string",
-  "senderId": "string",
-  "senderRole": "MOTHER/NURSE",
-  "content": "string"
-}
-```
-
-#### **4. MessageResponse**
-**Propósito:** Devuelve los datos de un mensaje enviado o recuperado del historial.
-
-```json
-{
-  "id": "string",
-  "consultationId": "string",
-  "senderId": "string",
-  "senderRole": "MOTHER/NURSE",
-  "content": "string",
-  "sentAt": "datetime"
-}
-```
-
-#### **5. CloseConsultationResponse**
-**Propósito:** Confirma el cierre de una consulta y muestra la fecha de finalización.
-
-```json
-{
-  "id": "string",
-  "status": "CLOSED",
-  "closedAt": "datetime"
-}
-```
-
-#### **6. SendQuickReplyMessageRequest**
-**Propósito:** Envía un mensaje basado en una plantilla predefinida por la enfermera.
-
-```json
-{
-  "consultationId": "string",
-  "nurseId": "string",
-  "templateTitle": "string",
-  "templateContent": "string"
-=======
 #### 2.6.1. Bounded Context: `Identify and Access Management`
 
 El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
@@ -6306,119 +6165,6 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 
 | Assembler / Mapper | Dirección de la Traducción | Propósito |
 | :--- | :--- | :--- |
-| **CreateConsultationCommand-**<br>**FromResourceAssembler** | `CreateConsultationRequest` → `CreateConsultationCommand` | Convierte la solicitud externa de nueva consulta en un comando formal de aplicación. |
-| **ConsultationResponse-**<br>**FromEntityAssembler** | `Consultation (Entity)` → `ConsultationResponse` | Transforma la entidad de dominio de la consulta en un recurso para el cliente. |
-| **SendMessageCommand-**<br>**FromResourceAssembler** | `SendMessageRequest` → `SendMessageCommand` | Traduce el pedido de nuevo mensaje en una instrucción para el negocio. |
-| **MessageResponse-**<br>**FromEntityAssembler** | `Message (Entity)` → `MessageResponse` | Convierte la entidad del mensaje en un recurso legible para la interfaz. |
-| **SendQuickReplyMessageCommand-**<br>**FromResourceAssembler** | `SendQuickReplyMessageRequest` → `SendQuickReplyMessageCommand` | Convierte la solicitud de respuesta rápida en un comando formal de aplicación. |
-
-##### 2.6.4.3. Application Layer
-
-En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Communication. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones de creacion, mensajeria y cierre de consultas, los Query Handlers que gestionan las consultas del historial y los Event Handlers que notifican a los demas bounded contexts cuando ocurre algo relevante en la teleconsulta.
-
-###### Command Handlers
-
-| Command Handler | Propósito | Responsabilidades |
-| :--- | :--- | :--- |
-| **CreateConsultation-**<br>**CommandHandler** | Iniciar una nueva teleconsulta entre madre y enfermera. | • Verifica la asignación de la enfermera mediante `ConsultationService`. <br> • Crea la entidad `Consultation` (OPEN) con el mensaje inicial. <br> • Persiste en `ConsultationRepository` y dispara el evento `ConsultationCreated`. |
-| **SendMessage-**<br>**CommandHandler** | Registrar y enviar un mensaje estándar dentro del chat. | • Valida que la consulta exista y esté en estado `OPEN` en el `ConsultationRepository`. <br> • Crea la entidad `Message` y la persiste en Firebase Firestore vía el `MessageRepository`. <br> • Dispara el evento `MessageSent` para notificar al destinatario. |
-| **SendQuickReply-**<br>**MessageCommandHandler** | Enviar una respuesta basada en una plantilla predefinida. | • Valida la existencia y estado `OPEN` de la consulta. <br> • Crea el Value Object `QuickReplyTemplate`, lo encapsula en un `Message` (NURSE) y lo persiste en Firestore. <br> • Dispara el evento `MessageSent` para notificar a la madre. |
-| **CloseConsultation-**<br>**CommandHandler** | Finalizar formalmente el ciclo de la teleconsulta. | • Verifica mediante `ConsultationService` que la consulta fue respondida y el cierre es solicitado por la enfermera asignada. <br> • Actualiza el estado a `CLOSED`, registra `closedAt` y dispara `ConsultationClosed`. |
-
-##### Query Handlers
-
-| Query Handler | Propósito | Responsabilidades |
-| :--- | :--- | :--- |
-| **GetConsultationHistory-**<br>**QueryHandler** | Recuperar el historial de teleconsultas de un paciente. | • Consulta al `ConsultationRepository` usando el `patientId`. <br> • Retorna la lista de consultas ordenadas por fecha (de más reciente a más antigua) con sus respectivos estados. |
-| **GetConsultationMessages-**<br>**QueryHandler** | Obtener todos los mensajes de una conversación específica. | • Consulta al `MessageRepository` usando el `consultationId`. <br> • Retorna la secuencia completa de mensajes ordenados cronológicamente para las interfaces de **FerovaFamilia** y **FerovaClinic**. |
-
-##### Event Handlers
-
-| Event Handler | Propósito | Responsabilidades |
-| :--- | :--- | :--- |
-| **OnConsultationCreated-**<br>**EventHandler** | Notificar a la enfermera sobre una nueva consulta. | • Reacciona a `ConsultationCreated`. <br> • Envía el `nurseId` y `consultationId` al **BC Notifications** para disparar una notificación push en **FerovaClinic**. |
-| **OnMessageSent-**<br>**EventHandler** | Informar a los usuarios sobre nuevos mensajes recibidos. | • Reacciona a `MessageSent`. <br> • Identifica al destinatario según el `senderRole`. <br> • Delega al **BC Notifications** el envío de la alerta a la madre o a la enfermera según corresponda. |
-| **OnConsultationClosed-**<br>**EventHandler** | Sincronizar el cierre de la consulta en el almacenamiento de mensajería. | • Reacciona a `ConsultationClosed`. <br> • Actualiza el estado y la fecha de cierre en el documento de **Firebase Firestore** para asegurar la integridad del historial. |
-
-##### 2.6.4.4. Infrastructure Layer
-
-En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Communication. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase Firestore y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la sincronizacion de mensajes en tiempo real mediante Firebase Firestore y la persistencia de consultas en MongoDB.
-
-##### Persistence 
-
-| Repositorio | Implementación | Responsabilidades | Métodos |
-| :--- | :--- | :--- | :--- |
-| **MongoConsultationRepository** | `ConsultationRepository` | Gestiona la persistencia en la colección `consultations`. Mapea la entidad al documento MongoDB y permite filtrado por paciente, enfermera y estado. | `save`, `findById`, `findByPatientId`, `findByNurseId`, `findByStatus` |
-| **FirestoreMessageRepository** | `MessageRepository` | Gestiona la persistencia y sincronización en tiempo real de mensajes en **Firebase Firestore**. Permite comunicación inmediata entre apps sin polling. | `save`, `findByConsultationId` |
-
-##### Mappers
-
-| Mapper | Propósito | Responsabilidades |
-| :--- | :--- | :--- |
-| **ConsultationDocumentMapper** | Conversión de datos para MongoDB. | Traduce la entidad de dominio `Consultation` al formato de documento de **MongoDB** y viceversa para su persistencia. |
-| **MessageDocumentMapper** | Conversión de datos para Firestore. | Traduce la entidad de dominio `Message` al formato de documento de **Firebase Firestore**, asegurando la compatibilidad con el tiempo real. |
-
-##### External Services
-
-| Servicio Externo | Propósito | Responsabilidades | Métodos |
-| :--- | :--- | :--- | :--- |
-| **FirebaseFirestoreAdapter** | Gestionar la comunicación con **Firebase Firestore** para mensajería en tiempo real. | • Construye el documento Firestore a partir del mensaje y ejecuta la escritura. <br> • Permite que los cambios se propaguen automáticamente a todos los dispositivos suscritos sin necesidad de refrescar la pantalla. | • `saveMessage(message: Message)` <br> • `getMessagesByConsultationId(consultationId: String)` <br> • `listenToConsultation(consultationId: String)` |
-
-##### Configuration
-
-| Configuración | Propósito | Responsabilidades / Detalles |
-| :--- | :--- | :--- |
-| **MongoConfig** | Configurar la conexión y el rendimiento de **MongoDB**. | • Establece la conexión para el BC Communication.<br>• Define índices en `patientId`, `nurseId` y `status` para optimizar las búsquedas y filtrados. |
-| **FirebaseConfig** | Inicializar la integración con **Firebase Firestore**. | • Inicializa el SDK de Firebase con las credenciales del proyecto **Ferova**.<br>• Configura los parámetros para garantizar la sincronización en tiempo real de los mensajes. |
-
-##### Modelo de datos MongoDB
-
-<h4>Coleccion consultations:</h4>
-
-```json
-{
-  "_id": "cons:uuid",
-  "patientId": "pat:uuid",
-  "motherId": "user:uuid",
-  "nurseId": "user:uuid",
-  "status": "OPEN",
-  "createdAt": "2026-04-16T08:00:00Z",
-  "closedAt": null
-}
-```
-
-##### Modelo de datos Firebase Firestore
-<h4>Coleccion messages</h4>
-
-```json
-{
-   "_id": "msg:uuid",
-  "consultationId": "cons:uuid",
-  "senderId": "user:uuid",
-  "senderRole": "MOTHER",
-  "content": "Juan vomito despues de tomar el hierro.",
-  "sentAt": "2026-04-16T08:05:00Z"
-}
-```
-
-##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
-
-<div align ="center">
-	<img src="resources/images/chapter-II/Software_Architecture/diagrma-component-comunication.png">	
-</div>
-
-##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
-###### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
-
-<div align ="center">
-	<img src="resources/images/chapter-II/Class_Diagram/diagram-class-comunication.png">	
-</div>
-
-###### 2.6.4.6.2. Bounded Context Database Design Diagram
-
-<div align ="center">
-	<img src="resources/images/chapter-II/DB_Diagram/diagram data base comunication.png">	
-=======
 | **CreatePatientCommandFromResourceAssembler** | `CreatePatientRequest` → `CreatePatientCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
 | **MedicalRecordCommandAssembler** | `MedicalRecordRequest` → `MedicalRecord` | Traduce el JSON complejo del historial médico en un objeto estructurado, validando y convirtiendo tipos. |
 | **ControlCommandAssembler** | `AddControlRequest` → `Control` | Transforma los datos de seguimiento en un objeto de control, permitiendo cálculos lógicos como el estado de anemia. |
@@ -6821,4 +6567,265 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 <div align = "center">
   <img src="/resources/images/chapter-II/DB_Diagram/Notification/diagram data base not realtional.png">
+</div>
+
+#### 2.6.4. Bounded Context: `Comunication Management`
+
+El bounded context Communication gestiona la teleconsulta asincrona entre la madre y su enfermera asignada dentro de Ferova. Funciona como un canal de comunicacion privado dentro de la app donde la madre escribe sus dudas desde FerovaFamilia y la enfermera responde desde FerovaClinic. Los mensajes se almacenan y sincronizan en tiempo real mediante Firebase Firestore, y la enfermera cuenta con plantillas de respuesta rapida para agilizar su tiempo de atencion.
+
+##### 2.6.4.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Communication. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de una consulta de teleconsulta, desde su creacion hasta su cierre. Se incluyen el Aggregate Root Consultation, la entidad Message, los Value Objects ConsultationStatus y MessageSender, el Domain Service ConsultationService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregate Root: Consultation
+
+| Aggregate Root | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **Consultation** | Representa una conversación asíncrona completa entre una madre y su enfermera asignada dentro de la plataforma Ferova. | • **id:** String<br>• **patientId**: String<br>• **motherId**: String<br>• **nurseId**: String<br>• **status**: Status<br>• **messages**: List<br>• **createdAt**: Date<br>• **closedAt**: Date | • addMessage()<br>• close()<br>• isOpen()<br>• hasBeenReplied() | • motherId y nurseId no pueden ser nulos.<br>• No se puede cerrar sin haber sido respondida.<br>• Solo la enfermera puede cerrar una consulta. |
+
+###### Entities
+
+| Entity | Propósito | Atributos | Métodos | Reglas de Negocio |
+| :--- | :--- | :--- | :--- | :--- |
+| **Message** | Representa un mensaje individual enviado dentro de una consulta de teleconsulta. | • **id**: String<br>• **consultationId**: String<br>• **senderId**: String<br>• **senderRole**: Role<br>• **content**: String<br>• **sentAt**: Date | • getSender()<br>• getContent() | • El contenido no puede estar vacío.<br>• Debe pertenecer a una consulta válida.<br>• La fecha de envío es obligatoria. |
+
+###### Value Objects
+
+| Value Object | Propósito | Valores / Definiciones | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **ConsultationStatus** | Define el estado de la teleconsulta. | OPEN, CLOSED. | Debe iniciar en OPEN y solo pasar a CLOSED tras respuesta. | •  Termina la consulta 'CLOSED'. <br><br>• La consulta sigue activa 'OPEN'|
+| **MessageSender** | Identifica al autor del mensaje. | MOTHER, NURSE. | Debe ser un tipo válido y no nulo. | Determina el origen de la comunicación. |
+| **QuickReplyTemplate** | Representa una plantilla de respuesta rápida predefinida para la enfermera. | title (String), content (String). | El título y el contenido no pueden estar vacíos. | Proporciona textos preestablecidos para agilizar la atención. |
+
+###### Domain Services
+
+| Servicio | Propósito | Métodos |
+| :--- | :--- | :--- |
+| **ConsultationService** | Gestiona la lógica de negocio de la teleconsulta y valida el flujo correcto de la comunicación. | • `validateNurseAssignment(nurseId, patientId)` : Valida la asignación oficial de la enfermera.<br>• `canClose(consultation)` : Verifica requisitos previos antes del cierre de consulta. |
+
+###### Repositories
+
+| Repositorio | Propósito | Métodos |
+| :--- | :--- | :--- |
+| **ConsultationRepository** | Interfaz para gestionar la persistencia y recuperación de las teleconsultas entre madres y enfermeras. | • `save(consultation)` : Guarda una nueva consulta o actualiza una existente.<br><br>• `findById(id)` : Busca una consulta específica por su identificador único.<br><br>• `findByPatientId(patientId)` : Recupera todas las consultas asociadas a un paciente.<br><br>• `findByNurseId(nurseId)` : Lista las consultas gestionadas por una enfermera.<br><br>• `findByStatus(status)` : Filtra las consultas según su estado (OPEN/CLOSED). |
+| **MessageRepository** | Interfaz encargada del almacenamiento y flujo de mensajes individuales dentro de las consultas. | • `save(message)` : Registra un nuevo mensaje en la base de datos.<br><br>• `findByConsultationId(consultationId)` : Recupera toda la secuencia de mensajes de una consulta específica para mostrar el chat completo. |
+
+###### Domain Events
+
+| Evento de Dominio | Propósito y Descripción | Resultado / Acción |
+| :--- | :--- | :--- |
+| **ConsultationCreated** | Se dispara cuando una madre inicia una nueva consulta en la plataforma. | Nueva conversación registrada en MongoDB y notificación enviada a la enfermera asignada. |
+| **MessageSent** | Se dispara cada vez que un nuevo mensaje es agregado a la conversación. | Actualización del historial del chat y envío de notificación push al destinatario. |
+| **ConsultationClosed** | Se dispara cuando la enfermera da por finalizada la atención. | Estado actualizado a CLOSED; se bloquea el envío de nuevos mensajes en esa consulta. |
+| **QuickReplySelected** | Se dispara al utilizar una respuesta predefinida para agilizar la atención. | El contenido de la respuesta rápida se convierte en un mensaje enviado automáticamente. |
+
+##### 2.6.4.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Communication. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Tambien se encarga de transformar las respuestas del dominio en DTOs que el cliente puede consumir. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+##### Controllers
+
+| Controlador (REST) | Método HTTP | Ruta (Endpoint) | Propósito / Acción |
+| :--- | :--- | :--- | :--- |
+| **ConsultationController** | `POST` | `/api/v1/consultations` | Crea una nueva consulta enviada por la madre hacia su enfermera asignada. |
+| | `GET` | `/api/v1/consultations/{patientId}/history` | Retorna el historial completo de consultas de un paciente ordenadas por fecha. |
+| | `PUT` | `/api/v1/consultations/{id}/close` | Cierra una consulta una vez que la duda de la madre fue resuelta por la enfermera. |
+| **MessageController** | `POST` | `/api/v1/consultations/{id}/messages` | Envía un nuevo mensaje normal dentro de una consulta activa. |
+| | `POST` | `/api/v1/consultations/{id}/messages/quick-reply` | Envía una respuesta rápida seleccionada por la enfermera usando una plantilla. |
+| | `GET` | `/api/v1/consultations/{id}/messages` | Retorna todos los mensajes de una consulta específica ordenados por fecha. |
+
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. CreateConsultationRequest**
+**Propósito:** Envía los datos iniciales para abrir una nueva teleconsulta.
+
+```json
+{
+  "patientId": "string",
+  "motherId": "string",
+  "nurseId": "string",
+  "message": "string"
+}
+```
+
+#### **2. ConsultationResponse**
+**Propósito:** Retorna la información detallada de una consulta creada o consultada.
+
+```json
+{
+  "id": "string",
+  "patientId": "string",
+  "motherId": "string",
+  "nurseId": "string",
+  "status": "OPEN/CLOSED",
+  "createdAt": "datetime",
+  "closedAt": "datetime"
+}
+```
+
+#### **3. SendMessageRequest**
+**Propósito:** Envía un mensaje estándar dentro de una consulta activa.
+
+```json
+{
+  "consultationId": "string",
+  "senderId": "string",
+  "senderRole": "MOTHER/NURSE",
+  "content": "string"
+}
+```
+
+#### **4. MessageResponse**
+**Propósito:** Devuelve los datos de un mensaje enviado o recuperado del historial.
+
+```json
+{
+  "id": "string",
+  "consultationId": "string",
+  "senderId": "string",
+  "senderRole": "MOTHER/NURSE",
+  "content": "string",
+  "sentAt": "datetime"
+}
+```
+
+#### **5. CloseConsultationResponse**
+**Propósito:** Confirma el cierre de una consulta y muestra la fecha de finalización.
+
+```json
+{
+  "id": "string",
+  "status": "CLOSED",
+  "closedAt": "datetime"
+}
+```
+
+#### **6. SendQuickReplyMessageRequest**
+**Propósito:** Envía un mensaje basado en una plantilla predefinida por la enfermera.
+
+```json
+{
+  "consultationId": "string",
+  "nurseId": "string",
+  "templateTitle": "string",
+  "templateContent": "string"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **CreateConsultationCommand-**<br>**FromResourceAssembler** | `CreateConsultationRequest` → `CreateConsultationCommand` | Convierte la solicitud externa de nueva consulta en un comando formal de aplicación. |
+| **ConsultationResponse-**<br>**FromEntityAssembler** | `Consultation (Entity)` → `ConsultationResponse` | Transforma la entidad de dominio de la consulta en un recurso para el cliente. |
+| **SendMessageCommand-**<br>**FromResourceAssembler** | `SendMessageRequest` → `SendMessageCommand` | Traduce el pedido de nuevo mensaje en una instrucción para el negocio. |
+| **MessageResponse-**<br>**FromEntityAssembler** | `Message (Entity)` → `MessageResponse` | Convierte la entidad del mensaje en un recurso legible para la interfaz. |
+| **SendQuickReplyMessageCommand-**<br>**FromResourceAssembler** | `SendQuickReplyMessageRequest` → `SendQuickReplyMessageCommand` | Convierte la solicitud de respuesta rápida en un comando formal de aplicación. |
+
+##### 2.6.4.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Communication. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones de creacion, mensajeria y cierre de consultas, los Query Handlers que gestionan las consultas del historial y los Event Handlers que notifican a los demas bounded contexts cuando ocurre algo relevante en la teleconsulta.
+
+###### Command Handlers
+
+| Command Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **CreateConsultation-**<br>**CommandHandler** | Iniciar una nueva teleconsulta entre madre y enfermera. | • Verifica la asignación de la enfermera mediante `ConsultationService`. <br> • Crea la entidad `Consultation` (OPEN) con el mensaje inicial. <br> • Persiste en `ConsultationRepository` y dispara el evento `ConsultationCreated`. |
+| **SendMessage-**<br>**CommandHandler** | Registrar y enviar un mensaje estándar dentro del chat. | • Valida que la consulta exista y esté en estado `OPEN` en el `ConsultationRepository`. <br> • Crea la entidad `Message` y la persiste en Firebase Firestore vía el `MessageRepository`. <br> • Dispara el evento `MessageSent` para notificar al destinatario. |
+| **SendQuickReply-**<br>**MessageCommandHandler** | Enviar una respuesta basada en una plantilla predefinida. | • Valida la existencia y estado `OPEN` de la consulta. <br> • Crea el Value Object `QuickReplyTemplate`, lo encapsula en un `Message` (NURSE) y lo persiste en Firestore. <br> • Dispara el evento `MessageSent` para notificar a la madre. |
+| **CloseConsultation-**<br>**CommandHandler** | Finalizar formalmente el ciclo de la teleconsulta. | • Verifica mediante `ConsultationService` que la consulta fue respondida y el cierre es solicitado por la enfermera asignada. <br> • Actualiza el estado a `CLOSED`, registra `closedAt` y dispara `ConsultationClosed`. |
+
+##### Query Handlers
+
+| Query Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **GetConsultationHistory-**<br>**QueryHandler** | Recuperar el historial de teleconsultas de un paciente. | • Consulta al `ConsultationRepository` usando el `patientId`. <br> • Retorna la lista de consultas ordenadas por fecha (de más reciente a más antigua) con sus respectivos estados. |
+| **GetConsultationMessages-**<br>**QueryHandler** | Obtener todos los mensajes de una conversación específica. | • Consulta al `MessageRepository` usando el `consultationId`. <br> • Retorna la secuencia completa de mensajes ordenados cronológicamente para las interfaces de **FerovaFamilia** y **FerovaClinic**. |
+
+##### Event Handlers
+
+| Event Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **OnConsultationCreated-**<br>**EventHandler** | Notificar a la enfermera sobre una nueva consulta. | • Reacciona a `ConsultationCreated`. <br> • Envía el `nurseId` y `consultationId` al **BC Notifications** para disparar una notificación push en **FerovaClinic**. |
+| **OnMessageSent-**<br>**EventHandler** | Informar a los usuarios sobre nuevos mensajes recibidos. | • Reacciona a `MessageSent`. <br> • Identifica al destinatario según el `senderRole`. <br> • Delega al **BC Notifications** el envío de la alerta a la madre o a la enfermera según corresponda. |
+| **OnConsultationClosed-**<br>**EventHandler** | Sincronizar el cierre de la consulta en el almacenamiento de mensajería. | • Reacciona a `ConsultationClosed`. <br> • Actualiza el estado y la fecha de cierre en el documento de **Firebase Firestore** para asegurar la integridad del historial. |
+
+##### 2.6.4.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Communication. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase Firestore y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la sincronizacion de mensajes en tiempo real mediante Firebase Firestore y la persistencia de consultas en MongoDB.
+
+##### Persistence 
+
+| Repositorio | Implementación | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **MongoConsultationRepository** | `ConsultationRepository` | Gestiona la persistencia en la colección `consultations`. Mapea la entidad al documento MongoDB y permite filtrado por paciente, enfermera y estado. | `save`, `findById`, `findByPatientId`, `findByNurseId`, `findByStatus` |
+| **FirestoreMessageRepository** | `MessageRepository` | Gestiona la persistencia y sincronización en tiempo real de mensajes en **Firebase Firestore**. Permite comunicación inmediata entre apps sin polling. | `save`, `findByConsultationId` |
+
+##### Mappers
+
+| Mapper | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **ConsultationDocumentMapper** | Conversión de datos para MongoDB. | Traduce la entidad de dominio `Consultation` al formato de documento de **MongoDB** y viceversa para su persistencia. |
+| **MessageDocumentMapper** | Conversión de datos para Firestore. | Traduce la entidad de dominio `Message` al formato de documento de **Firebase Firestore**, asegurando la compatibilidad con el tiempo real. |
+
+##### External Services
+
+| Servicio Externo | Propósito | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **FirebaseFirestoreAdapter** | Gestionar la comunicación con **Firebase Firestore** para mensajería en tiempo real. | • Construye el documento Firestore a partir del mensaje y ejecuta la escritura. <br> • Permite que los cambios se propaguen automáticamente a todos los dispositivos suscritos sin necesidad de refrescar la pantalla. | • `saveMessage(message: Message)` <br> • `getMessagesByConsultationId(consultationId: String)` <br> • `listenToConsultation(consultationId: String)` |
+
+##### Configuration
+
+| Configuración | Propósito | Responsabilidades / Detalles |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configurar la conexión y el rendimiento de **MongoDB**. | • Establece la conexión para el BC Communication.<br>• Define índices en `patientId`, `nurseId` y `status` para optimizar las búsquedas y filtrados. |
+| **FirebaseConfig** | Inicializar la integración con **Firebase Firestore**. | • Inicializa el SDK de Firebase con las credenciales del proyecto **Ferova**.<br>• Configura los parámetros para garantizar la sincronización en tiempo real de los mensajes. |
+
+##### Modelo de datos MongoDB
+
+<h4>Coleccion consultations:</h4>
+
+```json
+{
+  "_id": "cons:uuid",
+  "patientId": "pat:uuid",
+  "motherId": "user:uuid",
+  "nurseId": "user:uuid",
+  "status": "OPEN",
+  "createdAt": "2026-04-16T08:00:00Z",
+  "closedAt": null
+}
+```
+
+##### Modelo de datos Firebase Firestore
+<h4>Coleccion messages</h4>
+
+```json
+{
+   "_id": "msg:uuid",
+  "consultationId": "cons:uuid",
+  "senderId": "user:uuid",
+  "senderRole": "MOTHER",
+  "content": "Juan vomito despues de tomar el hierro.",
+  "sentAt": "2026-04-16T08:05:00Z"
+}
+```
+
+##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align ="center">
+	<img src="resources/images/chapter-II/Software_Architecture/diagrma-component-comunication.png">	
+</div>
+
+##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align ="center">
+	<img src="resources/images/chapter-II/Class_Diagram/diagram-class-comunication.png">	
+</div>
+
+###### 2.6.4.6.2. Bounded Context Database Design Diagram
+
+<div align ="center">
+	<img src="resources/images/chapter-II/DB_Diagram/diagram data base comunication.png">	
 </div>
