@@ -828,6 +828,7 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | :--- | :--- | :--- | :--- | :--- |
 | **ConsultationStatus** | Define el estado de la teleconsulta. | OPEN, CLOSED. | Debe iniciar en OPEN y solo pasar a CLOSED tras respuesta. | •  Termina la consulta 'CLOSED'. <br><br>• La consulta sigue activa 'OPEN'|
 | **MessageSender** | Identifica al autor del mensaje. | MOTHER, NURSE. | Debe ser un tipo válido y no nulo. | Determina el origen de la comunicación. |
+| **QuickReplyTemplate** | Representa una plantilla de respuesta rápida predefinida para la enfermera. | title (String), content (String). | El título y el contenido no pueden estar vacíos. | Proporciona textos preestablecidos para agilizar la atención. |
 
 ###### Domain Services
 
@@ -852,6 +853,22 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **QuickReplySelected** | Se dispara al utilizar una respuesta predefinida para agilizar la atención. | El contenido de la respuesta rápida se convierte en un mensaje enviado automáticamente. |
 
 ##### 2.6.4.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Communication. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Tambien se encarga de transformar las respuestas del dominio en DTOs que el cliente puede consumir. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+##### Controllers
+
+| Controlador (REST) | Método HTTP | Ruta (Endpoint) | Propósito / Acción |
+| :--- | :--- | :--- | :--- |
+| **ConsultationController** | `POST` | `/api/v1/consultations` | Crea una nueva consulta enviada por la madre hacia su enfermera asignada. |
+| | `GET` | `/api/v1/consultations/{patientId}/history` | Retorna el historial completo de consultas de un paciente ordenadas por fecha. |
+| | `PUT` | `/api/v1/consultations/{id}/close` | Cierra una consulta una vez que la duda de la madre fue resuelta por la enfermera. |
+| **MessageController** | `POST` | `/api/v1/consultations/{id}/messages` | Envía un nuevo mensaje normal dentro de una consulta activa. |
+| | `POST` | `/api/v1/consultations/{id}/messages/quick-reply` | Envía una respuesta rápida seleccionada por la enfermera usando una plantilla. |
+| | `GET` | `/api/v1/consultations/{id}/messages` | Retorna todos los mensajes de una consulta específica ordenados por fecha. |
+
+
+
 ##### 2.6.4.3. Application Layer
 ##### 2.6.4.4. Infrastructure Layer
 ##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
