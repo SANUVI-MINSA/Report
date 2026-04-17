@@ -1045,6 +1045,20 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 ```
 
 ##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align ="center">
+	<img src="resources/images/chapter-II/Software_Architecture/diagrma-component-comunication.png">	
+</div>
+
 ##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align ="center">
+	<img src="resources/images/chapter-II/Class_Diagram/diagram-class-comunication.png">	
+</div>
+
 ###### 2.6.4.6.2. Bounded Context Database Design Diagram
+
+<div align ="center">
+	<img src="resources/images/chapter-II/DB_Diagram/diagram data base comunication.png">	
+</div>
