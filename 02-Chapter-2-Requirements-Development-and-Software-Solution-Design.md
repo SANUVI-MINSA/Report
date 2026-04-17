@@ -956,6 +956,33 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **SendQuickReplyMessageCommand-**<br>**FromResourceAssembler** | `SendQuickReplyMessageRequest` → `SendQuickReplyMessageCommand` | Convierte la solicitud de respuesta rápida en un comando formal de aplicación. |
 
 ##### 2.6.4.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Communication. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones de creacion, mensajeria y cierre de consultas, los Query Handlers que gestionan las consultas del historial y los Event Handlers que notifican a los demas bounded contexts cuando ocurre algo relevante en la teleconsulta.
+
+###### Command Handlers
+
+| Command Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **CreateConsultation-**<br>**CommandHandler** | Iniciar una nueva teleconsulta entre madre y enfermera. | • Verifica la asignación de la enfermera mediante `ConsultationService`. <br> • Crea la entidad `Consultation` (OPEN) con el mensaje inicial. <br> • Persiste en `ConsultationRepository` y dispara el evento `ConsultationCreated`. |
+| **SendMessage-**<br>**CommandHandler** | Registrar y enviar un mensaje estándar dentro del chat. | • Valida que la consulta exista y esté en estado `OPEN` en el `ConsultationRepository`. <br> • Crea la entidad `Message` y la persiste en Firebase Firestore vía el `MessageRepository`. <br> • Dispara el evento `MessageSent` para notificar al destinatario. |
+| **SendQuickReply-**<br>**MessageCommandHandler** | Enviar una respuesta basada en una plantilla predefinida. | • Valida la existencia y estado `OPEN` de la consulta. <br> • Crea el Value Object `QuickReplyTemplate`, lo encapsula en un `Message` (NURSE) y lo persiste en Firestore. <br> • Dispara el evento `MessageSent` para notificar a la madre. |
+| **CloseConsultation-**<br>**CommandHandler** | Finalizar formalmente el ciclo de la teleconsulta. | • Verifica mediante `ConsultationService` que la consulta fue respondida y el cierre es solicitado por la enfermera asignada. <br> • Actualiza el estado a `CLOSED`, registra `closedAt` y dispara `ConsultationClosed`. |
+
+##### Query Handlers
+
+| Query Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **GetConsultationHistory-**<br>**QueryHandler** | Recuperar el historial de teleconsultas de un paciente. | • Consulta al `ConsultationRepository` usando el `patientId`. <br> • Retorna la lista de consultas ordenadas por fecha (de más reciente a más antigua) con sus respectivos estados. |
+| **GetConsultationMessages-**<br>**QueryHandler** | Obtener todos los mensajes de una conversación específica. | • Consulta al `MessageRepository` usando el `consultationId`. <br> • Retorna la secuencia completa de mensajes ordenados cronológicamente para las interfaces de **FerovaFamilia** y **FerovaClinic**. |
+
+##### Event Handlers
+
+| Event Handler | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **OnConsultationCreated-**<br>**EventHandler** | Notificar a la enfermera sobre una nueva consulta. | • Reacciona a `ConsultationCreated`. <br> • Envía el `nurseId` y `consultationId` al **BC Notifications** para disparar una notificación push en **FerovaClinic**. |
+| **OnMessageSent-**<br>**EventHandler** | Informar a los usuarios sobre nuevos mensajes recibidos. | • Reacciona a `MessageSent`. <br> • Identifica al destinatario según el `senderRole`. <br> • Delega al **BC Notifications** el envío de la alerta a la madre o a la enfermera según corresponda. |
+| **OnConsultationClosed-**<br>**EventHandler** | Sincronizar el cierre de la consulta en el almacenamiento de mensajería. | • Reacciona a `ConsultationClosed`. <br> • Actualiza el estado y la fecha de cierre en el documento de **Firebase Firestore** para asegurar la integridad del historial. |
+
 ##### 2.6.4.4. Infrastructure Layer
 ##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
