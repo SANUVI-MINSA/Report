@@ -867,7 +867,93 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | | `POST` | `/api/v1/consultations/{id}/messages/quick-reply` | Envía una respuesta rápida seleccionada por la enfermera usando una plantilla. |
 | | `GET` | `/api/v1/consultations/{id}/messages` | Retorna todos los mensajes de una consulta específica ordenados por fecha. |
 
+###### Resources (DTOs / Request & Response Models)
 
+#### **1. CreateConsultationRequest**
+**Propósito:** Envía los datos iniciales para abrir una nueva teleconsulta.
+
+```json
+{
+  "patientId": "string",
+  "motherId": "string",
+  "nurseId": "string",
+  "message": "string"
+}
+```
+
+#### **2. ConsultationResponse**
+**Propósito:** Retorna la información detallada de una consulta creada o consultada.
+
+```json
+{
+  "id": "string",
+  "patientId": "string",
+  "motherId": "string",
+  "nurseId": "string",
+  "status": "OPEN/CLOSED",
+  "createdAt": "datetime",
+  "closedAt": "datetime"
+}
+```
+
+#### **3. SendMessageRequest**
+**Propósito:** Envía un mensaje estándar dentro de una consulta activa.
+
+```json
+{
+  "consultationId": "string",
+  "senderId": "string",
+  "senderRole": "MOTHER/NURSE",
+  "content": "string"
+}
+```
+
+#### **4. MessageResponse**
+**Propósito:** Devuelve los datos de un mensaje enviado o recuperado del historial.
+
+```json
+{
+  "id": "string",
+  "consultationId": "string",
+  "senderId": "string",
+  "senderRole": "MOTHER/NURSE",
+  "content": "string",
+  "sentAt": "datetime"
+}
+```
+
+#### **5. CloseConsultationResponse**
+**Propósito:** Confirma el cierre de una consulta y muestra la fecha de finalización.
+
+```json
+{
+  "id": "string",
+  "status": "CLOSED",
+  "closedAt": "datetime"
+}
+```
+
+#### **6. SendQuickReplyMessageRequest**
+**Propósito:** Envía un mensaje basado en una plantilla predefinida por la enfermera.
+
+```json
+{
+  "consultationId": "string",
+  "nurseId": "string",
+  "templateTitle": "string",
+  "templateContent": "string"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **CreateConsultationCommand-**<br>**FromResourceAssembler** | `CreateConsultationRequest` → `CreateConsultationCommand` | Convierte la solicitud externa de nueva consulta en un comando formal de aplicación. |
+| **ConsultationResponse-**<br>**FromEntityAssembler** | `Consultation (Entity)` → `ConsultationResponse` | Transforma la entidad de dominio de la consulta en un recurso para el cliente. |
+| **SendMessageCommand-**<br>**FromResourceAssembler** | `SendMessageRequest` → `SendMessageCommand` | Traduce el pedido de nuevo mensaje en una instrucción para el negocio. |
+| **MessageResponse-**<br>**FromEntityAssembler** | `Message (Entity)` → `MessageResponse` | Convierte la entidad del mensaje en un recurso legible para la interfaz. |
+| **SendQuickReplyMessageCommand-**<br>**FromResourceAssembler** | `SendQuickReplyMessageRequest` → `SendQuickReplyMessageCommand` | Convierte la solicitud de respuesta rápida en un comando formal de aplicación. |
 
 ##### 2.6.4.3. Application Layer
 ##### 2.6.4.4. Infrastructure Layer
