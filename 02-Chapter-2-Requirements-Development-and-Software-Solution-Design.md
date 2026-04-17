@@ -984,6 +984,66 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **OnConsultationClosed-**<br>**EventHandler** | Sincronizar el cierre de la consulta en el almacenamiento de mensajería. | • Reacciona a `ConsultationClosed`. <br> • Actualiza el estado y la fecha de cierre en el documento de **Firebase Firestore** para asegurar la integridad del historial. |
 
 ##### 2.6.4.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Communication. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase Firestore y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la sincronizacion de mensajes en tiempo real mediante Firebase Firestore y la persistencia de consultas en MongoDB.
+
+##### Persistence 
+
+| Repositorio | Implementación | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **MongoConsultationRepository** | `ConsultationRepository` | Gestiona la persistencia en la colección `consultations`. Mapea la entidad al documento MongoDB y permite filtrado por paciente, enfermera y estado. | `save`, `findById`, `findByPatientId`, `findByNurseId`, `findByStatus` |
+| **FirestoreMessageRepository** | `MessageRepository` | Gestiona la persistencia y sincronización en tiempo real de mensajes en **Firebase Firestore**. Permite comunicación inmediata entre apps sin polling. | `save`, `findByConsultationId` |
+
+##### Mappers
+
+| Mapper | Propósito | Responsabilidades |
+| :--- | :--- | :--- |
+| **ConsultationDocumentMapper** | Conversión de datos para MongoDB. | Traduce la entidad de dominio `Consultation` al formato de documento de **MongoDB** y viceversa para su persistencia. |
+| **MessageDocumentMapper** | Conversión de datos para Firestore. | Traduce la entidad de dominio `Message` al formato de documento de **Firebase Firestore**, asegurando la compatibilidad con el tiempo real. |
+
+##### External Services
+
+| Servicio Externo | Propósito | Responsabilidades | Métodos |
+| :--- | :--- | :--- | :--- |
+| **FirebaseFirestoreAdapter** | Gestionar la comunicación con **Firebase Firestore** para mensajería en tiempo real. | • Construye el documento Firestore a partir del mensaje y ejecuta la escritura. <br> • Permite que los cambios se propaguen automáticamente a todos los dispositivos suscritos sin necesidad de refrescar la pantalla. | • `saveMessage(message: Message)` <br> • `getMessagesByConsultationId(consultationId: String)` <br> • `listenToConsultation(consultationId: String)` |
+
+##### Configuration
+
+| Configuración | Propósito | Responsabilidades / Detalles |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configurar la conexión y el rendimiento de **MongoDB**. | • Establece la conexión para el BC Communication.<br>• Define índices en `patientId`, `nurseId` y `status` para optimizar las búsquedas y filtrados. |
+| **FirebaseConfig** | Inicializar la integración con **Firebase Firestore**. | • Inicializa el SDK de Firebase con las credenciales del proyecto **Ferova**.<br>• Configura los parámetros para garantizar la sincronización en tiempo real de los mensajes. |
+
+##### Modelo de datos MongoDB
+
+<h4>Coleccion consultations:</h4>
+
+```json
+{
+  "_id": "cons:uuid",
+  "patientId": "pat:uuid",
+  "motherId": "user:uuid",
+  "nurseId": "user:uuid",
+  "status": "OPEN",
+  "createdAt": "2026-04-16T08:00:00Z",
+  "closedAt": null
+}
+```
+
+##### Modelo de datos Firebase Firestore
+<h4>Coleccion messages</h4>
+
+```json
+{
+   "_id": "msg:uuid",
+  "consultationId": "cons:uuid",
+  "senderId": "user:uuid",
+  "senderRole": "MOTHER",
+  "content": "Juan vomito despues de tomar el hierro.",
+  "sentAt": "2026-04-16T08:05:00Z"
+}
+```
+
 ##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
