@@ -6859,6 +6859,8 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **Atributo** | `currentStreak` | Integer | Número de días consecutivos en que la madre ha confirmado la dosis sin fallar ninguna. Es el dato que usa el BC Achievements & Rewards para actualizar la racha y desbloquear insignias en FerovaFamilia. |
 | **Atributo** | `totalConfirmed` | Integer | Contador acumulado de todas las dosis confirmadas por la madre desde el inicio del tratamiento. Es uno de los inputs principales del AdherenceCalculatorService para calcular el score de adherencia. |
 | **Atributo** | `totalOmitted` | Integer | Contador acumulado de todas las dosis omitidas por la madre desde el inicio del tratamiento. Junto con totalConfirmed permite calcular el porcentaje de adherencia y determinar el nivel de riesgo de abandono del paciente. |
+| **Atributo** | `completionObservation` | String | Texto que escribe la enfermera al completar el tratamiento exitosamente. Por ejemplo: "El paciente alcanzo niveles normales de hemoglobina de 11.5 g/dL." |
+| **Atributo** | `abandonmentObservation` | String | Texto que escribe la enfermera al registrar el abandono del tratamiento. Por ejemplo: "La madre dejo de confirmar dosis por mas de 2 semanas sin responder a las alertas." |
 | **Método** | `start()` | Logic | Inicia el tratamiento y define el periodo de vigencia. |
 | **Método** | `confirmDose()` | Logic | Registra toma, incrementa racha y actualiza score de adherencia. |
 | **Método** | `omitDose()` | Logic | Registra falta, reinicia racha y actualiza score de adherencia. |
@@ -6944,6 +6946,25 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **TreatmentAbandoned** | Se dispara cuando la enfermera registra formalmente el abandono del tratamiento en FerovaClinic. Notifica al BC Analytics & Reporting para que actualice las estadisticas de abandono del distrito y refleje el caso en el mapa de calor de la posta medica correspondiente. Es el evento que alimenta los datos que el admin MINSA usa para identificar zonas criticas del distrito. |
 
 ##### 2.6.5.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Treatment Tracking. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+###### Controllers (REST)
+
+| Controller | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **TreatmentController** | **Propósito** | Gestión del Ciclo de Vida | Expone los endpoints REST para gestionar el ciclo de vida completo del tratamiento de anemia de un paciente. Es el controller principal del bounded context porque concentra las operaciones mas criticas del sistema como iniciar, completar y registrar el abandono de un tratamiento. |
+| | **Endpoint** | `POST /api/v1/treatments` | inicia un nuevo tratamiento para un paciente. Solo la enfermera asignada puede ejecutar esta operacion porque ella es quien define el suplemento, cantidad, hora de dosis y duracion del tratamiento. |
+| | **Endpoint** | `PUT /api/v1/treatments/{id}/complete` | marca el tratamiento como completado exitosamente. Requiere una observacion final de la enfermera que justifique el cierre del tratamiento. |
+| | **Endpoint** | `PUT /api/v1/treatments/{id}/abandon` | registra formalmente el abandono del tratamiento. Requiere una observacion de la enfermera que justifique el abandono para alimentar las estadisticas del BC Analytics & Reporting. |
+| | **Endpoint** | `GET /api/v1/treatments/{patientId}` | retorna el tratamiento activo de un paciente especifico. Lo usa FerovaFamilia para mostrar a la madre el estado actual del tratamiento de su hijo. |
+| **DailyDoseController** | **Propósito** | Registro de Dosis | Expone los endpoints REST para gestionar la confirmacion de dosis diaria. Es el controller mas frecuentemente usado del bounded context porque la madre lo invoca potencialmente todos los dias para registrar que le dio el suplemento a su hijo. |
+| | **Endpoint** | `POST /api/v1/treatments/{id}/confirm-dose` | registra la confirmacion de la dosis del dia por parte de la madre. El sistema verifica que no haya sido confirmada anteriormente en ese dia respetando la invarianza de una sola confirmacion por dia. |
+| | **Endpoint** | `GET /api/v1/treatments/{id}/doses` | retorna el historial completo de dosis del tratamiento ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de sus confirmaciones y omisiones a lo largo del tratamiento. |
+| **RiskScoreController** | **Propósito** | Monitoreo de Riesgo | Expone los endpoints REST para consultar el score de riesgo de abandono de los pacientes. Es el controller que alimenta el semaforo de FerovaClinic permitiendo a la enfermera ver el nivel de riesgo de cada uno de sus pacientes en tiempo real. |
+| | **Endpoint** | `GET /api/v1/treatments/{id}/risk-score` | retorna el score de riesgo actual del paciente con su clasificacion en semaforo y la justificacion del score. Lo usa FerovaClinic para mostrar el color del semaforo de cada paciente en el panel de la enfermera. |
+| | **Endpoint** | `GET /api/v1/treatments/critical-patients` | retorna la lista de pacientes criticos de la enfermera autenticada, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el endpoint mas urgente del bounded context porque le permite a la enfermera identificar rapidamente quien necesita atencion inmediata. |
+
 ##### 2.6.5.3. Application Layer
 ##### 2.6.5.4. Infrastructure Layer
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
