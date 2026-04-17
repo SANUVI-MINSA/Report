@@ -140,7 +140,7 @@
     * [2.6.3.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26232-bounded-context-database-design-diagram)
 
 
-  * [2.6.4. Bounded Context: `Comunication Management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md264-bounded-context-comunication-management)
+  * [2.6.4. Bounded Context: `Comunication Management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#264-bounded-context-comunication-management)
 
     * [2.6.4.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2641-domain-layer)
     * [2.6.4.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2642-interface-layer)
