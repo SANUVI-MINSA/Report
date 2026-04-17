@@ -106,17 +106,39 @@
     * [2.5.3.3 Software Architecture Deployment Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2533-software-architecture-deployment-diagrams)
 * [2.6 Tactical-Level Domain-Driven Design](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26-tactical-level-domain-driven-design)
 
-  * [2.6.X. Bounded Context: `<bounded context Name>`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#261-bounded-context)
+  * [2.6.1. Bounded Context: `identify-and-access-management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#261-bounded-context-identify-and-access-management)
 
-    * [2.6.X.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2611-domain-layer)
-    * [2.6.X.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2612-interface-layer)
-    * [2.6.X.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2613-application-layer)
-    * [2.6.X.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2614-infrastructure-layer)
-    * [2.6.X.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2615-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.X.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2616-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.X.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26161-bounded-context-domain-layer-class-diagrams)
-    * [2.6.X.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26162-bounded-context-database-design-diagram)
+    * [2.6.1.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2611-domain-layer)
+    * [2.6.1.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2612-interface-layer)
+    * [2.6.1.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2613-application-layer)
+    * [2.6.1.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2614-infrastructure-layer)
+    * [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2615-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.1.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2616-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26161-bounded-context-domain-layer-class-diagrams)
+    * [2.6.1.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26162-bounded-context-database-design-diagram)
 
+  * [2.6.2. Bounded Context: `Patient Management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#262-bounded-context-patient-management)
+
+    * [2.6.2.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2621-domain-layer)
+    * [2.6.2.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2622-interface-layer)
+    * [2.6.2.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2623-application-layer)
+    * [2.6.2.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2624-infrastructure-layer)
+    * [2.6.2.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2625-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.2.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2626-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.2.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26261-bounded-context-domain-layer-class-diagrams)
+    * [2.6.2.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26262-bounded-context-database-design-diagram)
+
+  * [2.6.3. Bounded Context: `Notification Management`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#263-bounded-context-notifications)
+
+    * [2.6.3.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2631-domain-layer)
+    * [2.6.3.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2632-interface-layer)
+    * [2.6.3.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2633-application-layer)
+    * [2.6.3.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2634-infrastructure-layer)
+    * [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2635-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2636-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26231-bounded-context-domain-layer-class-diagrams)
+    * [2.6.3.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26232-bounded-context-database-design-diagram)
+      
 ## [Capítulo III: Solution UI/UX Design](03-Chapter-3-Solution-UI-UX-Design.md)
 
 * [3.1 Product Design](03-Chapter-3-Solution-UI-UX-Design.md#31-product-design)
