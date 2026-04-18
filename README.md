@@ -152,6 +152,18 @@
     * [2.6.4.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26462-bounded-context-database-design-diagram)
 
       
+  * [2.6.5. Bounded Context: `Treatment Tracking`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#265-bounded-context-treatment-tracking)
+
+    * [2.6.5.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2651-domain-layer)
+    * [2.6.5.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2652-interface-layer)
+    * [2.6.5.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2653-application-layer)
+    * [2.6.5.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2654-infrastructure-layer)
+    * [2.6.5.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2655-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.5.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2656-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.5.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26561-bounded-context-domain-layer-class-diagrams)
+    * [2.6.5.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26562-bounded-context-database-design-diagram)
+
+      
       
 ## [Capítulo III: Solution UI/UX Design](03-Chapter-3-Solution-UI-UX-Design.md)
 

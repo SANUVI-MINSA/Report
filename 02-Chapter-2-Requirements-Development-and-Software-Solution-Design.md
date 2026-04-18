@@ -1,4 +1,4 @@
-Capítulo II: Requirements Development and Software Solution Design
+## Capítulo II: Requirements Development and Software Solution Design
 
 ### 2.1 Competidores
 Ferova presenta tres competidores relevantes en el mercado de salud 
@@ -6814,18 +6814,424 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 ##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 <div align ="center">
-	<img src="resources/images/chapter-II/Software_Architecture/diagrma-component-comunication.png">	
+	<img src="resources/images/chapter-II/Software_Architecture/Comunication/diagrma-component-comunication.png">	
 </div>
 
 ##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
 
 <div align ="center">
-	<img src="resources/images/chapter-II/Class_Diagram/diagram-class-comunication.png">	
+	<img src="resources/images/chapter-II/Class_Diagram/comunication/diagram-class-comunication.png">	
 </div>
 
 ###### 2.6.4.6.2. Bounded Context Database Design Diagram
 
 <div align ="center">
-	<img src="resources/images/chapter-II/DB_Diagram/diagram data base comunication.png">	
+	<img src="resources/images/chapter-II/DB_Diagram/Comunication/diagram data base comunication.png">	
 </div>
+
+#### 2.6.5. Bounded Context: `Treatment Tracking`
+
+El bounded context Treatment Tracking es el corazon de la plataforma Ferova. Su proposito es gestionar el seguimiento diario del tratamiento de anemia de cada paciente, garantizando que la madre confirme cada dosis programada por la enfermera, calculando automaticamente el score de riesgo de abandono y clasificando a los pacientes en un semaforo verde, amarillo o rojo. Si un paciente lleva 72 horas sin confirmar su dosis el sistema escala la alerta automaticamente a la enfermera asignada.
+
+##### 2.6.5.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Treatment Tracking. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida completo de un tratamiento de anemia, desde su inicio hasta su completado o abandono. Se incluyen el Aggregate Root Treatment, las entidades DailyDose y RiskScore, los Value Objects TreatmentStatus y RiskLevel, los Domain Services, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+
+###### Aggregate Root: Treatment
+
+**Propósito:** Representa el tratamiento de anemia completo de un paciente incluyendo sus dosis diarias, su score de adherencia y su clasificación de riesgo de abandono.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | String | Identificador único del tratamiento en MongoDB. Permite rastrear, buscar y referenciar un tratamiento específico desde cualquier parte del sistema. |
+| **Atributo** | `patientId` | String | Identifica a qué paciente pertenece el tratamiento. Es la referencia lógica hacia el BC Patient Management. Sin este atributo el sistema no sabría a quién aplicar el seguimiento de dosis. |
+| **Atributo** | `nurseId` | String | Identifica qué enfermera inició y es responsable del tratamiento. Es fundamental porque solo la enfermera asignada puede iniciar, completar o registrar el abandono del tratamiento según las invarianzas del dominio. |
+| **Atributo** | `supplement` | String | Nombre del suplemento de hierro que debe tomar el paciente (ej. sulfato ferroso). La madre necesita saber exactamente qué suplemento darle a su hijo cada día. |
+| **Atributo** | `quantity` | String | Cantidad del suplemento a administrar por dosis (ej. 2ml o 1 tableta). Sin este dato la madre no sabría cuánto darle a su hijo en cada toma diaria. |
+| **Atributo** | `dosingHours` | String | Hora programada en que la madre debe dar la dosis diaria (ej. 08:00 AM). Es el dato que usa el BC Notifications para programar el recordatorio automático a la hora exacta cada día. |
+| **Atributo** | `durationDays` | Integer | Número de días que dura el tratamiento definido por la enfermera al iniciarlo. Es la invarianza más importante del aggregate porque sin duración no hay fecha de fin y el sistema no sabría cuándo el tratamiento debe completarse. |
+| **Atributo** | `startDate` | DateTime | Fecha en que la enfermera inició el tratamiento. Sirve como punto de referencia para calcular cuántos días lleva el paciente en tratamiento y cuánto falta para completarlo. |
+| **Atributo** | `endDate` | DateTime | Fecha calculada automáticamente sumando durationDays a startDate. Es la fecha en que el tratamiento debería completarse si el paciente cumple todas sus dosis sin fallar ninguna. |
+| **Atributo** | `status` | Enum | Estado actual del tratamiento (ACTIVE, COMPLETED o ABANDONED). Es el atributo que determina si el paciente sigue en tratamiento, lo completó exitosamente o lo abandonó antes de terminar. |
+| **Atributo** | `adherenceScore` | Double | Puntaje calculado automáticamente que refleja el nivel de cumplimiento del tratamiento. Se recalcula con cada confirmación u omisión de dosis. Es el dato central que alimenta el semáforo de riesgo en FerovaClinic. |
+| **Atributo** | `currentStreak` | Integer | Número de días consecutivos en que la madre ha confirmado la dosis sin fallar ninguna. Es el dato que usa el BC Achievements & Rewards para actualizar la racha y desbloquear insignias en FerovaFamilia. |
+| **Atributo** | `totalConfirmed` | Integer | Contador acumulado de todas las dosis confirmadas por la madre desde el inicio del tratamiento. Es uno de los inputs principales del AdherenceCalculatorService para calcular el score de adherencia. |
+| **Atributo** | `totalOmitted` | Integer | Contador acumulado de todas las dosis omitidas por la madre desde el inicio del tratamiento. Junto con totalConfirmed permite calcular el porcentaje de adherencia y determinar el nivel de riesgo de abandono del paciente. |
+| **Atributo** | `completionObservation` | String | Texto que escribe la enfermera al completar el tratamiento exitosamente. Por ejemplo: "El paciente alcanzo niveles normales de hemoglobina de 11.5 g/dL." |
+| **Atributo** | `abandonmentObservation` | String | Texto que escribe la enfermera al registrar el abandono del tratamiento. Por ejemplo: "La madre dejo de confirmar dosis por mas de 2 semanas sin responder a las alertas." |
+| **Método** | `start()` | Logic | Inicia el tratamiento y define el periodo de vigencia. |
+| **Método** | `confirmDose()` | Logic | Registra toma, incrementa racha y actualiza score de adherencia. |
+| **Método** | `omitDose()` | Logic | Registra falta, reinicia racha y actualiza score de adherencia. |
+| **Método** | `complete()` | Logic | Cierra el tratamiento exitosamente con observaciones. |
+| **Método** | `abandon()` | Logic | Registra el abandono prematuro del proceso. |
+| **Invarianza** | **Duración** | Regla | `durationDays` debe ser estrictamente mayor a 0. |
+| **Invarianza** | **Autoría** | Regla | Solo la enfermera asignada puede iniciar, completar o abandonar. |
+| **Invarianza** | **Frecuencia** | Regla | Una dosis solo puede confirmarse una vez por día. |
+| **Invarianza** | **Unicidad** | Regla | Un paciente solo puede tener un tratamiento activo a la vez. |
+
+###### Entidades del Dominio
+
+
+| Entidad | Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **DailyDose** | **Atributo** | `id` | String | Identificador unico de cada registro de dosis diaria en MongoDB. Permite rastrear individualmente cada dosis del tratamiento para auditar el historial completo de confirmaciones y omisiones del paciente. |
+| | **Atributo** | `treatmentId` | String | Referencia logica al tratamiento al que pertenece esta dosis diaria. Sin este atributo el sistema no sabria a que tratamiento asociar el registro de la dosis confirmada o omitida por la madre. |
+| | **Atributo** | `scheduledDate` | DateTime | Fecha y hora programada en que la madre debia dar la dosis a su hijo. Es el dato de referencia que el sistema usa para calcular cuanto tiempo lleva el paciente sin confirmar y determinar si ya supero el umbral critico de 72 horas. |
+| | **Atributo** | `confirmedAt` | DateTime | Fecha y hora exacta en que la madre confirmo la dosis en FerovaFamilia. Permite saber con precision cuando se realizo la confirmacion y calcular el tiempo transcurrido entre la dosis programada y la confirmacion real. |
+| | **Atributo** | `status` | DoseStatus | Estado actual de la dosis que puede ser PENDING cuando aun no llega la hora, CONFIRMED cuando la madre la registro exitosamente u OMITTED cuando paso el tiempo y la madre no confirmo. Es el atributo mas importante de la entidad porque determina si esa dosis cuenta como cumplida o perdida en el calculo del score de adherencia. |
+| | **Atributo** | `hoursWithoutConfirmation` | Integer | Numero de horas transcurridas desde la hora programada de la dosis sin que la madre haya confirmado. Es el atributo que dispara el escalamiento automatico de alertas. Cuando llega a 2 horas se envia el segundo recordatorio y cuando llega a 72 horas el paciente se agrega a la lista critica. |
+| | **Método** | `confirm()` | void | Cambia el estado de la dosis a CONFIRMED y registra el confirmedAt con la fecha y hora actual. Se ejecuta cuando la madre presiona el boton de confirmacion en FerovaFamilia. Dispara el evento DailyDoseConfirmed hacia el BC Achievements & Rewards. |
+| | **Método** | `omit()` | void | Cambia el estado de la dosis a OMITTED cuando el sistema detecta que paso el tiempo establecido sin confirmacion. Incrementa el contador totalOmitted del tratamiento y recalcula el adherenceScore automaticamente. |
+| | **Método** | `getHoursWithoutConfirmation()` | Integer | Calcula y retorna el numero de horas transcurridas desde la hora programada de la dosis hasta el momento actual. Es el metodo que consulta el DoseReminderService para decidir si debe enviar el segundo recordatorio o escalar la alerta a la enfermera. |
+| | **Método** | `isCritical()` | Boolean | Retorna true si las hoursWithoutConfirmation superan las 72 horas establecidas como umbral critico. Es el metodo que determina si el paciente debe agregarse a la lista critica y si la enfermera debe recibir la alerta de riesgo de abandono en FerovaClinic. |
+| **RiskScore** | **Atributo** | `id` | String | Identificador unico del score de riesgo en MongoDB. Permite rastrear el historial de scores calculados para un paciente y ver como evoluciono su nivel de riesgo a lo largo del tratamiento. |
+| | **Atributo** | `treatmentId` | String | Referencia logica al tratamiento para el que se calculo este score de riesgo. Sin este atributo el sistema no sabria a que tratamiento y paciente asociar el resultado del calculo de riesgo. |
+| | **Atributo** | `score` | Double | Valor numerico del score de riesgo de abandono calculado automaticamente por el AdherenceCalculatorService. Va de 0 a 100 donde 0 significa adherencia perfecta y 100 significa riesgo maximo de abandono. Es el dato que determina el color del semaforo en FerovaClinic. |
+| | **Atributo** | `riskLevel` | RiskLevel | Clasificacion del nivel de riesgo en LOW, MEDIUM o HIGH segun el score calculado. Es la representacion visual del semaforo que ve la enfermera en FerovaClinic. Verde para LOW, amarillo para MEDIUM y rojo para HIGH. |
+| | **Atributo** | `calculatedAt` | DateTime | Fecha y hora en que se calculo este score de riesgo. Permite auditar cuando cambio el nivel de riesgo del paciente y dar contexto de gravedad. Por ejemplo, si el lunes Juan tenia score 20 (verde), el miercoles olvido 2 dosis y subio a 75 (rojo), y el viernes retomo bajando a 40 (amarillo); cuando la enfermera Rosa vea "Calculado el miercoles a las 10:00 AM" en rojo, entendera que Juan lleva desde ese dia en riesgo alto sin necesidad de revisar todo el historial manualmente. |
+| | **Atributo** | `justification` | String | Texto explicativo que describe por que el sistema asigno ese score al paciente. Por ejemplo: "El paciente lleva 3 dias sin confirmar su dosis y tiene un historial de 5 omisiones en los ultimos 7 dias." Es el dato que le permite a la enfermera entender rapidamente por que un paciente aparece en rojo sin tener que revisar todo el historial manualmente. |
+| | **Método** | `calculate()` | Double | Ejecuta el algoritmo de calculo del score de riesgo usando los tres inputs: dosis confirmadas, dosis omitidas y horas sin confirmacion. Retorna un valor entre 0 y 100 que representa el nivel de riesgo actual del paciente. Es el metodo mas importante de la entidad porque produce el dato central del semaforo de FerovaClinic. |
+| | **Método** | `classify()` | RiskLevel | Toma el score calculado y lo convierte en un nivel de riesgo concreto. Si el score es menor a 30 retorna LOW, si esta entre 30 y 70 retorna MEDIUM y si supera 70 retorna HIGH. Es el metodo que determina el color del semaforo que ve la enfermera en su panel de FerovaClinic. |
+
+###### Value Objects
+
+| Value Object | Propósito | Valores / Definiciones | Reglas de Validación (Invariantes) | Comportamiento |
+| :--- | :--- | :--- | :--- | :--- |
+| **TreatmentStatus** | Define el estado actual del ciclo de vida del tratamiento de anemia. | ACTIVE, COMPLETED, ABANDONED. | Debe iniciar en ACTIVE y no puede ser nulo. | Determina si el paciente sigue en seguimiento o ha finalizado. |
+| **DoseStatus** | Representa el estado de una dosis diaria individual para el control de adherencia. | PENDING, CONFIRMED, OMITTED. | El estado inicial es siempre PENDING antes de la acción de la madre. | Afecta directamente al cálculo del score de adherencia y racha. |
+| **RiskLevel** | Clasificación del riesgo de abandono basada en el score calculado automáticamente. | LOW, MEDIUM, HIGH. | Depende de los umbrales del score (0-100). | Define el color del semáforo (Verde, Amarillo, Rojo) en FerovaClinic. |
+
+###### Domain Services
+
+| Servicio | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **AdherenceCalculatorService** | **Propósito** | Gestión de Riesgo | Gestiona la logica de calculo del score de adherencia y la clasificacion del nivel de riesgo de abandono de un paciente. |
+| | **Método** | `calculateScore()` | Es el metodo central del bounded context. Recibe el total de dosis confirmadas y omitidas del paciente y calcula matematicamente el porcentaje de adherencia al tratamiento. Por ejemplo si Juan tiene 20 dosis confirmadas y 5 omitidas el sistema calcula su nivel de cumplimiento y retorna un valor entre 0 y 100. Sin este metodo el semaforo de riesgo de FerovaClinic no tendria ningun dato que mostrar a la enfermera. |
+| | **Método** | `classifyRisk()` | Recibe el score calculado por calculateScore y lo convierte en una clasificacion concreta de LOW, MEDIUM o HIGH. Es el metodo que traduce un numero abstracto como 75.3 en algo que la enfermera puede entender de un vistazo en su panel: el semaforo rojo. Sin este metodo el score seria solo un numero sin significado practico para la enfermera. |
+| | **Método** | `isCritical()` | Recibe las horas que lleva el paciente sin confirmar su dosis y retorna true si supera el umbral critico de 72 horas. Es el metodo que activa el proceso de escalamiento automatico. Cuando retorna true el sistema agrega al paciente a la lista critica y dispara el evento PatientAddedToCriticalList para que el BC Notifications envie la alerta de abandono a la enfermera en FerovaClinic. |
+| **DoseReminderService** | **Propósito** | Gestión de Alertas | Gestiona la logica de programacion y escalamiento de recordatorios de dosis diaria. |
+| | **Método** | `scheduleReminder()` | Recibe el ID del tratamiento y la hora programada de la dosis definida por la enfermera al iniciar el tratamiento. Programa automaticamente el recordatorio diario en el sistema para que el BC Notifications envie la notificacion push a la madre via Firebase FCM exactamente a la hora establecida. Sin este metodo los recordatorios no existirian y la madre nunca sabria cuando dar la dosis a su hijo. |
+| | **Método** | `shouldEscalate()` | Recibe las horas que lleva el paciente sin confirmar su dosis y determina si ya es necesario escalar la situacion enviando un segundo recordatorio o una alerta a la enfermera. Retorna true cuando las horas superan 2 horas para el segundo recordatorio o 72 horas para la alerta de abandono. Es el metodo que implementa la logica de escalamiento multicapa del sistema sin que nadie tenga que intervenir manualmente. |
+
+###### Repositories
+
+| Repositorio | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **TreatmentRepository** | **Propósito** | Gestión de Persistencia | Interfaz para gestionar la persistencia y recuperación de los tratamientos de anemia en el sistema. |
+| | **Método** | `save()` | Guarda un nuevo tratamiento o actualiza uno existente en MongoDB. Se ejecuta cuando la enfermera inicia un tratamiento, cuando la madre confirma una dosis y el adherenceScore cambia, o cuando la enfermera completa o registra el abandono del tratamiento. |
+| | **Método** | `findById()` | Busca y retorna un tratamiento especifico por su ID. Se usa cuando el sistema necesita obtener los datos completos de un tratamiento para procesarlo, por ejemplo cuando la madre confirma una dosis y el sistema necesita actualizar el adherenceScore y el currentStreak del tratamiento correspondiente. |
+| | **Método** | `findByPatientId()` | Busca y retorna el tratamiento activo de un paciente especifico. Se usa cuando FerovaFamilia necesita mostrar a la madre el estado actual del tratamiento de su hijo incluyendo la racha actual y el proximo recordatorio programado. |
+| | **Método** | `findActiveByNurseId()` | Retorna todos los tratamientos activos asignados a una enfermera especifica. Es el metodo que alimenta el panel principal de FerovaClinic donde la enfermera ve el semaforo de todos sus pacientes activos con su nivel de riesgo actual. |
+| | **Método** | `findCriticalPatients()` | Retorna la lista de pacientes criticos de una enfermera, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el metodo mas urgente del repositorio porque alimenta la lista roja de FerovaClinic que le indica a la enfermera quienes necesitan atencion inmediata. |
+| **DailyDoseRepository** | **Propósito** | Registro de Dosis | Interfaz para gestionar el almacenamiento y la consulta de los registros de dosis diarias. |
+| | **Método** | `save()` | Guarda un nuevo registro de dosis diaria o actualiza uno existente en MongoDB. Se ejecuta cada vez que la madre confirma una dosis cambiando su estado a CONFIRMED o cuando el sistema detecta una omision cambiando su estado a OMITTED. |
+| | **Método** | `findByTreatmentId()` | Retorna todas las dosis registradas de un tratamiento especifico. Se usa cuando FerovaFamilia necesita mostrar a la madre el historial completo de dosis del tratamiento de su hijo incluyendo cuales confirmo y cuales olvido a lo largo del tiempo. |
+| | **Método** | `findByDate()` | Busca y retorna la dosis programada para un dia especifico dentro de un tratamiento. Es el metodo mas importante del repositorio porque el sistema lo usa cada vez que la madre intenta confirmar la dosis del dia para verificar que no haya sido confirmada anteriormente y respetar la invarianza de una sola confirmacion por dia. |
+| **RiskScoreRepository** | **Propósito** | Historial de Riesgo | Interfaz para gestionar la persistencia de los cálculos de riesgo y niveles de adherencia. |
+| | **Método** | `save()` | Guarda un nuevo score de riesgo o actualiza el existente en MongoDB. Se ejecuta cada vez que el AdherenceCalculatorService recalcula el score despues de una confirmacion u omision de dosis actualizando el nivel de riesgo del paciente en tiempo real para la enfermera en FerovaClinic. |
+| | **Método** | `findByTreatmentId()` | Busca y retorna el score de riesgo actual de un tratamiento especifico. Es el metodo que usa FerovaClinic para mostrar el semaforo de cada paciente en el panel de la enfermera. Sin este metodo la enfermera no podria ver en tiempo real el nivel de riesgo de abandono de sus pacientes. |
+
+###### Domain Events
+
+| Evento | Descripción / Razón |
+| :--- | :--- |
+| **TreatmentStarted** | Se dispara cuando la enfermera inicia el tratamiento de un paciente desde FerovaClinic. Notifica al BC Notifications para que programe automaticamente los recordatorios diarios de dosis en FerovaFamilia a la hora definida por la enfermera. Sin este evento la madre nunca recibiria los recordatorios push de la dosis de su hijo. |
+| **DailyDoseConfirmed** | Se dispara cuando la madre presiona el boton de confirmacion de dosis en FerovaFamilia. Notifica al BC Achievements & Rewards para que actualice la racha de dias consecutivos, sume los puntos correspondientes y verifique si la madre desbloqueo alguna insignia. Es el evento mas frecuente del bounded context porque ocurre potencialmente todos los dias por cada paciente activo. |
+| **DailyDoseOmitted** | Se dispara automaticamente cuando el sistema detecta que la madre no confirmo la dosis en el tiempo establecido. Activa el proceso de escalamiento en el BC Notifications para enviar el segundo recordatorio a las 2 horas y la alerta de abandono a la enfermera a las 72 horas. Sin este evento el sistema no podria reaccionar automaticamente ante una omision de dosis. |
+| **PatientAddedToCriticalList** | Se dispara cuando el sistema detecta que un paciente lleva 72 horas o mas sin confirmar su dosis y lo agrega automaticamente a la lista critica. Notifica al BC Notifications para que envie inmediatamente la alerta de riesgo de abandono a la enfermera asignada en FerovaClinic con el nombre del paciente, las horas sin confirmacion y el score de riesgo actual. |
+| **RiskScoreUpdated** | Se dispara cada vez que el AdherenceCalculatorService recalcula el score de riesgo del paciente despues de una confirmacion u omision de dosis. Actualiza en tiempo real el color del semaforo del paciente en el panel de FerovaClinic para que la enfermera siempre vea el nivel de riesgo mas actualizado sin necesidad de recargar la pantalla manualmente. |
+| **TreatmentCompleted** | Se dispara cuando la enfermera marca el tratamiento como completado exitosamente en FerovaClinic. Notifica al BC Notifications para que envie a la madre un mensaje celebratorio en FerovaFamilia informandole que su hijo supero el tratamiento de anemia. Tambien notifica al BC Achievements & Rewards para desbloquear la insignia de tratamiento completado que es la recompensa maxima de la gamificacion. |
+| **TreatmentAbandoned** | Se dispara cuando la enfermera registra formalmente el abandono del tratamiento en FerovaClinic. Notifica al BC Analytics & Reporting para que actualice las estadisticas de abandono del distrito y refleje el caso en el mapa de calor de la posta medica correspondiente. Es el evento que alimenta los datos que el admin MINSA usa para identificar zonas criticas del distrito. |
+
+##### 2.6.5.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Treatment Tracking. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y FerovaClinic y transformandolas en comandos y consultas que entiende la Application Layer. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+###### Controllers (REST)
+
+| Controller | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **TreatmentController** | **Propósito** | Gestión del Ciclo de Vida | Expone los endpoints REST para gestionar el ciclo de vida completo del tratamiento de anemia de un paciente. Es el controller principal del bounded context porque concentra las operaciones mas criticas del sistema como iniciar, completar y registrar el abandono de un tratamiento. |
+| | **Endpoint** | `POST /api/v1/treatments` | inicia un nuevo tratamiento para un paciente. Solo la enfermera asignada puede ejecutar esta operacion porque ella es quien define el suplemento, cantidad, hora de dosis y duracion del tratamiento. |
+| | **Endpoint** | `PUT /api/v1/treatments/{id}/complete` | marca el tratamiento como completado exitosamente. Requiere una observacion final de la enfermera que justifique el cierre del tratamiento. |
+| | **Endpoint** | `PUT /api/v1/treatments/{id}/abandon` | registra formalmente el abandono del tratamiento. Requiere una observacion de la enfermera que justifique el abandono para alimentar las estadisticas del BC Analytics & Reporting. |
+| | **Endpoint** | `GET /api/v1/treatments/{patientId}` | retorna el tratamiento activo de un paciente especifico. Lo usa FerovaFamilia para mostrar a la madre el estado actual del tratamiento de su hijo. |
+| **DailyDoseController** | **Propósito** | Registro de Dosis | Expone los endpoints REST para gestionar la confirmacion de dosis diaria. Es el controller mas frecuentemente usado del bounded context porque la madre lo invoca potencialmente todos los dias para registrar que le dio el suplemento a su hijo. |
+| | **Endpoint** | `POST /api/v1/treatments/{id}/confirm-dose` | registra la confirmacion de la dosis del dia por parte de la madre. El sistema verifica que no haya sido confirmada anteriormente en ese dia respetando la invarianza de una sola confirmacion por dia. |
+| | **Endpoint** | `GET /api/v1/treatments/{id}/doses` | retorna el historial completo de dosis del tratamiento ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de sus confirmaciones y omisiones a lo largo del tratamiento. |
+| **RiskScoreController** | **Propósito** | Monitoreo de Riesgo | Expone los endpoints REST para consultar el score de riesgo de abandono de los pacientes. Es el controller que alimenta el semaforo de FerovaClinic permitiendo a la enfermera ver el nivel de riesgo de cada uno de sus pacientes en tiempo real. |
+| | **Endpoint** | `GET /api/v1/treatments/{id}/risk-score` | retorna el score de riesgo actual del paciente con su clasificacion en semaforo y la justificacion del score. Lo usa FerovaClinic para mostrar el color del semaforo de cada paciente en el panel de la enfermera. |
+| | **Endpoint** | `GET /api/v1/treatments/critical-patients` | retorna la lista de pacientes criticos de la enfermera autenticada, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el endpoint mas urgente del bounded context porque le permite a la enfermera identificar rapidamente quien necesita atencion inmediata. |
+
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. StartTreatmentRequest**
+
+**Propósito:** Contiene todos los datos necesarios para que la enfermera configure el tratamiento del paciente desde FerovaClinic.
+
+```json
+{
+ "patientId": "string",
+  "nurseId": "string",
+  "supplement": "string",
+  "quantity": "number",
+  "dosingHours": "string",
+  "durationDays": "number"
+}
+```
+
+#### **2. TreatmentResponse**
+
+**Propósito:** Retorna el estado completo del tratamiento para que FerovaFamilia y FerovaClinic puedan mostrar la informacion actualizada al usuario.
+
+```json
+{
+  "id": "string",
+  "patientId": "string",
+  "nurseId": "string",
+  "supplement": "string",
+  "quantity": "number",
+  "dosingHours": "string",
+  "durationDays": "number",
+  "startDate": "datetime",
+  "endDate": "datetime",
+  "status": "ACTIVE / COMPLETED / ABANDONED",
+  "adherenceScore": "double",
+  "currentStreak": "number"
+  "completionObservation": "null",
+  "abandonmentObservation": "null"
+}
+```
+
+#### **3. CompleteTreatmentRequest**
+
+**Propósito:** Requiere una observacion de la enfermera para justificar el cierre exitoso del tratamiento antes de marcarlo como completado.
+
+```json
+{
+ "observation": "string"
+}
+```
+
+
+#### **4. AbandonTreatmentRequest**
+
+**Propósito:** Requiere una observacion de la enfermera para justificar el abandono del tratamiento y alimentar las estadisticas del BC Analytics & Reporting.
+
+```json
+{
+	"observation": "string"
+}
+```
+#### **5. ConfirmDoseRequest**
+
+**Propósito:** Contiene el ID del tratamiento y la fecha de confirmacion para registrar que la madre dio la dosis del dia a su hijo.
+
+```json
+{
+  "treatmentId": "string",
+  "confirmedAt": "datetime"
+}
+```
+
+#### **6. DailyDoseResponse**
+
+**Propósito:** Retorna el estado de cada dosis diaria para mostrar el historial de confirmaciones y omisiones en FerovaFamilia.
+
+```json
+{
+  "id": "string",
+  "treatmentId": "string",
+  "scheduledDate": "datetime",
+  "confirmedAt": "datetime",
+  "status": "PENDING / CONFIRMED / OMITTED",
+  "hoursWithoutConfirmation": "number"
+}
+```
+#### **7. RiskScoreResponse**
+
+**Propósito:** Retorna el score de riesgo con su clasificacion en semaforo y la justificacion del score.
+
+```json
+{
+  "treatmentId": "string",
+  "score": "double",
+  "riskLevel": "LOW / MEDIUM / HIGH",
+  "calculatedAt": "datetime",
+  "justification": "string"
+}
+```
+
+#### **8. CriticalPatientResponse**
+
+**Propósito:** Retorna los datos de cada paciente critico para que la enfermera pueda identificar rapidamente quien necesita atencion inmediata en FerovaClinic.
+
+```json
+{
+  "patientId": "string",
+  "treatmentId": "string",
+  "hoursWithoutConfirmation": "number",
+  "riskLevel": "string",
+  "riskScore": "double"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **StartTreatmentCommandFromResourceAssembler** | `StartTreatmentRequest` → `StartTreatmentCommand` | convierte el StartTreatmentRequest en un StartTreatmentCommand para la Application Layer. Es necesario porque separa la representacion HTTP del comando de dominio evitando que los detalles del protocolo HTTP contaminen la logica de negocio. |
+| **TreatmentResponseFromEntityAssembler** | `Treatment (Entity)` → `TreatmentResponse` | convierte la entidad Treatment en un TreatmentResponse para enviarlo al cliente. Garantiza que solo se exponga la informacion necesaria al frontend sin exponer los internos del aggregate. |
+| **ConfirmDoseCommandFromResourceAssembler** | `ConfirmDoseRequest` → `ConfirmDoseCommand` | convierte el ConfirmDoseRequest en un ConfirmDoseCommand para la Application Layer. Separa la capa HTTP de la logica de confirmacion de dosis del dominio. |
+| **DailyDoseResponseFromEntityAssembler** | `DailyDose (Entity)` → `DailyDoseResponse` | convierte la entidad DailyDose en un DailyDoseResponse para enviarlo al cliente. Permite mostrar el historial de dosis en FerovaFamilia sin exponer los internos de la entidad. |
+| **RiskScoreResponseFromEntityAssembler** | `RiskScore (Entity)` → `RiskScoreResponse` | convierte la entidad RiskScore en un RiskScoreResponse para enviarlo al cliente. Transforma el dato tecnico del dominio en una respuesta legible que FerovaClinic puede mostrar directamente en el semaforo de la enfermera. |
+ > ¿Que es un Assembler / Mapper?
+ > Es un traductor entre dos mundos. El mundo HTTP que habla en JSON y el mundo del dominio que habla en objetos y comandos. Su unica funcion es convertir de un formato a otro sin agregar logica de negocio.
+
+<div align ="center">
+	<img src="resources/images/chapter-II/assemblers_flow_ferova.svg">
+</div>
+
+##### 2.6.5.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Treatment Tracking. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones criticas del tratamiento, los Query Handlers que gestionan las consultas de informacion y los Event Handlers que notifican a los demas bounded contexts cuando ocurre algo relevante en el tratamiento.
+
+
+###### Command Handlers
+
+| Command Handler | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **StartTreatment-CommandHandler** | Iniciar un nuevo tratamiento activo. | Recibe el StartTreatmentCommand con el patientId, nurseId, supplement, quantity, dosingHours y durationDays. Verifica que el paciente no tenga un tratamiento activo consultando el TreatmentRepository para respetar la invarianza de un solo tratamiento activo por paciente. Calcula la endDate sumando durationDays a la fecha actual. Crea el Aggregate Root Treatment con estado ACTIVE y lo persiste en MongoDB via TreatmentRepository. Delega al DoseReminderService la programacion automatica de los recordatorios diarios a la hora definida por la enfermera. Finalmente dispara el evento TreatmentStarted para que el BC Notifications active los recordatorios en FerovaFamilia. |
+| **ConfirmDose-CommandHandler** | Registrar la confirmación de dosis diaria. | Recibe el ConfirmDoseCommand con el treatmentId y el confirmedAt. Busca el tratamiento en el TreatmentRepository y verifica que este activo. Consulta el DailyDoseRepository con findByDate para verificar que la dosis del dia no haya sido confirmada anteriormente respetando la invarianza de una sola confirmacion por dia. Llama al metodo confirmDose del Aggregate Root que actualiza el currentStreak, incrementa el totalConfirmed y recalcula el adherenceScore. Persiste los cambios en MongoDB. Delega al AdherenceCalculatorService el recalculo del score de riesgo y actualiza el RiskScore en el RiskScoreRepository. Finalmente dispara el evento DailyDoseConfirmed hacia el BC Achievements & Rewards para actualizar la racha y los puntos de la madre. |
+| **CompleteTreatment-CommandHandler** | Finalizar exitosamente el tratamiento. | Recibe el CompleteTreatmentCommand con el treatmentId, nurseId y la completionObservation. Verifica que quien completa el tratamiento sea la enfermera asignada. Llama al metodo complete del Aggregate Root que cambia el status a COMPLETED y registra la completionObservation y la fecha de cierre. Persiste los cambios en MongoDB via TreatmentRepository. Dispara el evento TreatmentCompleted hacia el BC Notifications para que envie el mensaje celebratorio a la madre en FerovaFamilia y hacia el BC Achievements & Rewards para desbloquear la insignia de tratamiento completado. |
+| **AbandonTreatment-CommandHandler** | Registrar el abandono del tratamiento. | Recibe el AbandonTreatmentCommand con el treatmentId, nurseId y la abandonmentObservation. Verifica que quien registra el abandono sea la enfermera asignada. Llama al metodo abandon del Aggregate Root que cambia el status a ABANDONED y registra la abandonmentObservation y la fecha de abandono. Persiste los cambios en MongoDB via TreatmentRepository. Dispara el evento TreatmentAbandoned hacia el BC Analytics & Reporting para que actualice las estadisticas de abandono del distrito y refleje el caso en el mapa de calor de la posta medica correspondiente. |
+
+###### Query Handlers
+
+| Query Handler | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **GetTreatment-QueryHandler** | Consultar el estado del tratamiento activo. | Recibe el GetTreatmentQuery con el patientId. Consulta el TreatmentRepository con findByPatientId y retorna el tratamiento activo del paciente. Lo usa FerovaFamilia para mostrar a la madre el estado actual del tratamiento de su hijo incluyendo la racha actual, el adherenceScore y la hora de la proxima dosis programada. |
+| **GetDoseHistory-QueryHandler** | Obtener el historial de dosis del paciente. | Recibe el GetDoseHistoryQuery con el treatmentId. Consulta el DailyDoseRepository con findByTreatmentId y retorna el historial completo de dosis ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de todas sus confirmaciones y omisiones a lo largo del tratamiento permitiendole ver su progreso de adherencia dia a dia. |
+| **GetRiskScore-QueryHandler** | Obtener el score de riesgo y semáforo. | Recibe el GetRiskScoreQuery con el treatmentId. Consulta el RiskScoreRepository con findByTreatmentId y retorna el score de riesgo actual del paciente con su clasificacion y justificacion. Lo usa FerovaClinic para mostrar el semaforo de color correcto para cada paciente en el panel de la enfermera en tiempo real. |
+| **GetCriticalPatients-QueryHandler** | Listar pacientes en riesgo crítico (>72h). | Recibe el GetCriticalPatientsQuery con el nurseId. Consulta el TreatmentRepository con findCriticalPatients y retorna la lista de pacientes que llevan 72 horas o mas sin confirmar su dosis. Es el query handler mas urgente del bounded context porque alimenta la lista roja de FerovaClinic que le indica a la enfermera quienes necesitan atencion inmediata para evitar el abandono del tratamiento. |
+
+###### Event Handlers
+
+| Event Handler | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **OnDoseOmitted-EventHandler** | Gestionar la omisión automática de dosis. | Reacciona al evento DailyDoseOmitted generado automaticamente por el sistema cuando detecta que la madre no confirmo la dosis en el tiempo establecido. Incrementa el totalOmitted del tratamiento, recalcula el adherenceScore via AdherenceCalculatorService y actualiza el RiskScore en MongoDB. Consulta al DoseReminderService con shouldEscalate para determinar si debe enviar el segundo recordatorio a las 2 horas o la alerta de abandono a la enfermera a las 72 horas. Dispara el evento RiskScoreUpdated para actualizar el semaforo de FerovaClinic en tiempo real. |
+| **OnPatientAddedTo-CriticalList-EH** | Notificar alertas de abandono inminente. | Reacciona al evento PatientAddedToCriticalList generado cuando un paciente supera las 72 horas sin confirmar su dosis. Notifica al BC Notifications con el patientId, nurseId, horas sin confirmacion y score de riesgo para que envie inmediatamente la alerta de abandono a la enfermera asignada en FerovaClinic via Firebase FCM. |
+
+##### 2.6.5.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Treatment Tracking. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase FCM y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB y la comunicacion con el BC Notifications para el escalamiento automatico de alertas de abandono.
+
+###### Persistence Layer
+
+| Repositorio | Implementación | Responsabilidades | Métodos y Descripciones |
+| :--- | :--- | :--- | :--- |
+| **MongoTreatmentRepository** | `TreatmentRepository` | Es el componente central del Bounded Context. Gestiona el ciclo de vida del Aggregate Root **Treatment** en MongoDB, persistiendo datos críticos como el `adherenceScore`, rachas actuales (`currentStreak`) y estados de finalización o abandono. | **save**: Guarda o actualiza el estado completo del tratamiento.<br>**findById**: Recupera un tratamiento por su ID único.<br>**findByPatientId**: Obtiene el tratamiento asociado a un paciente específico.<br>**findActiveByNurseId**: Lista los tratamientos vigentes asignados a una enfermera.<br>**findCriticalPatients**: obtener la lista de pacientes criticos. |
+| **MongoDailyDoseRepository** | `DailyDoseRepository` | Gestiona la persistencia de los registros de dosis diarias en la colección `daily_doses`. Permite rastrear individualmente cada dosis para auditar el historial completo de confirmaciones y omisiones del paciente. | **save**: Registra una nueva toma o actualización de dosis.<br>**findAllByTreatmentId**: buscar todas las dosis de un tratamiento .<br>**findBySpecificDay**:  buscar la dosis de un dia especifico para verificar que no haya sido confirmada anteriormente. |
+| **MongoRiskScoreRepository** | `RiskScoreRepository` | Gestiona la persistencia del score de riesgo de abandono en la colección `risk_scores`. Almacena el score calculado, nivel de riesgo y justificación para su visualización en el panel de enfermería de FerovaClinic. | **save(riskScore: RiskScore): void**: Guarda o actualiza el score mediante un **upsert**; si ya existe un score para el `treatmentId`, lo sobrescribe con los nuevos valores del `AdherenceCalculatorService`.<br>**findByTreatmentId(treatmentId: String): RiskScore?**: Busca el score actual para el "semáforo" de FerovaClinic. Retorna `null` si el tratamiento es nuevo y no tiene cálculos aún.<br>**findByRiskLevel(riskLevel: RiskLevel): List**: Retorna todos los scores de un nivel (HIGH, MEDIUM, LOW) para que el `GetCriticalPatientsQueryHandler` identifique todos los pacientes con nivel HIGH que necesitan atencion inmediata de la enfermera en FerovaClinic sin tener que revisar el score de cada paciente individualmente. |
+
+###### Mapper
+
+| Mapper | Responsabilidades | Descripción Técnica |
+| :--- | :--- | :--- |
+| **TreatmentDocumentMapper** | Transformación de `Treatment` ↔ `MongoDB Document` |  convierte entre el Aggregate Root Treatment del dominio y el documento MongoDB. Es necesario porque el Aggregate Root tiene metodos y comportamiento que no deben persistirse directamente en la base de datos, solo sus atributos de estado. |
+| **DailyDoseDocumentMapper** | Transformación de `DailyDose` ↔ `MongoDB Document` | convierte entre la entidad DailyDose del dominio y el documento MongoDB. Garantiza que el estado de cada dosis diaria se mapee correctamente incluyendo el status y las horas sin confirmacion. |
+| **RiskScoreDocumentMapper** | Transformación de `RiskScore` ↔ `MongoDB Document` | convierte entre la entidad RiskScore del dominio y el documento MongoDB. Asegura que el score, el nivel de riesgo y la justificacion se persistan correctamente para alimentar el semaforo de FerovaClinic. |
+
+###### External Services
+
+| Servicio | Responsabilidades | Métodos |
+| :--- | :--- | :--- |
+| **DoseReminderScheduler** | Es el componente que gestiona la programacion automatica de los recordatorios de dosis diaria. Cuando la enfermera inicia un tratamiento este componente registra la hora de dosis definida y programa un job diario recurrente que se ejecuta automaticamente a esa hora. Cuando llega la hora verifica si la madre ya confirmo la dosis y si no lo hizo dispara el evento DailyDoseOmitted para iniciar el proceso de escalamiento. Es el componente que garantiza que el sistema funcione de manera completamente automatica sin necesidad de intervencion manual.| **scheduleDailyReminder(treatmentId, dosingHours)**: Programa el job diario recurrente para el tratamiento recién iniciado.<br><br>**cancelReminder(treatmentId)**: Cancela el job recurrente de forma definitiva cuando el tratamiento se marca como completado o abandonado.<br><br>**checkPendingDoses()**: Verifica periódicamente qué dosis programadas carecen de confirmación y dispara los eventos de omisión correspondientes. |
+
+###### External Services: DoseReminderScheduler
+
+| Método | Escenario de Uso (UX/Flujo) | Comportamiento Interno (Lógica Técnica) |
+| :--- | :--- | :--- |
+| **scheduleDailyReminder**<br>`(treatmentId, dosingHours)` | La enfermera Rosa abre **FerovaClinic** e inicia el tratamiento de Juan definiendo la hora de dosis a las 8:00 AM. En ese momento, el `StartTreatmentCommandHandler` llama a este método pasando el `treatmentId` y "08:00". | Registra un **job** en el sistema que se ejecutará todos los días a las 8:00 AM automáticamente. Es como una alarma programada que suena cada día a la misma hora sin activación manual. Desde ese momento, el sistema verifica diariamente si María confirmó la dosis. |
+| **cancelReminder**<br>`(treatmentId)` | Juan completa su tratamiento (o lo abandona) y Rosa lo marca en **FerovaClinic**. El `CompleteTreatmentCommandHandler` (o `Abandon`) llama a este método pasando el `treatmentId`. | Busca el job diario registrado para ese tratamiento y lo **cancela permanentemente**. Es como apagar la alarma diaria; el sistema deja de verificar la dosis porque el tratamiento terminó y no tiene sentido seguir enviando recordatorios. |
+| **checkPendingDoses**<br>`()` | Este método no es llamado por ningún handler; el sistema lo ejecuta automáticamente cada pocos minutos como un **proceso en segundo plano** (background process). | Monitorea omisiones: Si a las 8:00 AM María no confirmó, registra 0 horas de retraso. A las 10:00 AM (2h después), si sigue sin confirmar, consulta a `DoseReminderService` y, al recibir un `shouldEscalate` true, dispara `DailyDoseOmitted`. Si pasan 24h o más, detecta el riesgo crítico y dispara `PatientAddedToCriticalList` para alertar a Rosa. |
+| **Resumen del Flujo** | **Sincronización de Componentes** | **scheduleDailyReminder** enciende la alarma al iniciar el tratamiento, **checkPendingDoses** revisa continuamente si la alarma fue atendida o ignorada, y **cancelReminder** apaga la alarma cuando el tratamiento termina. |
+
+###### Configuration: MongoConfig
+
+| Componente | Responsabilidad | Detalles de Índices por Colección |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexión a MongoDB para el bounded context Treatment Tracking. Define los índices necesarios para las colecciones `treatments`, `daily_doses` y `risk_scores` garantizando el rendimiento óptimo de las consultas más frecuentes del sistema. | **Colección treatments:**<br>• Índice en `patientId` para búsquedas rápidas por paciente.<br>• Índice en `nurseId` para obtener rápidamente todos los tratamientos activos de una enfermera.<br>• Índice en `status` para filtrar tratamientos ACTIVE rápidamente.<br><br>**Colección daily_doses:**<br>• Índice compuesto en `treatmentId` y `scheduledDate` para verificar rápidamente si la dosis del día ya fue confirmada.<br>• Índice en `status` para filtrar dosis OMITTED y detectar pacientes en riesgo.<br><br>**Colección risk_scores:**<br>• Índice único en `treatmentId` para garantizar un solo score de riesgo por tratamiento. |
+
+##### Modelo de datos MongoDB
+
+
+<h4>Coleccion treatments:</h4>
+
+```json
+{
+  "_id": "treat:uuid",
+  "patientId": "pat:uuid",
+  "nurseId": "nurse:uuid",
+  "supplement": "Sulfato ferroso",
+  "quantity": "2ml",
+  "dosingHours": "08:00",
+  "durationDays": 90,
+  "startDate": "2026-04-01T00:00:00Z",
+  "endDate": "2026-06-30T00:00:00Z",
+  "status": "ACTIVE",
+  "adherenceScore": 85.5,
+  "currentStreak": 14,
+  "totalConfirmed": 15,
+  "totalOmitted": 1,
+  "completionObservation": null,
+  "abandonmentObservation": null
+}
+```
+
+<h4>Coleccion daily_doses:</h4>
+
+```json
+{
+  "_id": "dose:uuid",
+  "treatmentId": "treat:uuid",
+  "scheduledDate": "2026-04-17T08:00:00Z",
+  "confirmedAt": "2026-04-17T08:15:00Z",
+  "status": "CONFIRMED",
+  "hoursWithoutConfirmation": 0
+}
+```
+
+<h4>Coleccion risk_scores:</h4>
+
+
+```json
+{
+  "_id": "risk:uuid",
+  "treatmentId": "treat:uuid",
+  "score": 75.3,
+  "riskLevel": "HIGH",
+  "calculatedAt": "2026-04-17T10:00:00Z",
+  "justification": "El paciente lleva 3 dias sin confirmar su dosis."
+}
+```
+
+##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align ="center">
+<img src="resources/images/chapter-II/Software_Architecture/Treatment Tracking/Diagram-componet-Treatment Tracking.png">
+</div>
+
+##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align ="center">
+<img src="resources/images/chapter-II/Class_Diagram/Treatment Tracking/diagrama de clases tratament tracking.png">
+</div>
+
+###### 2.6.X.6.2. Bounded Context Database Design Diagram
+
+<div align ="center">
+<img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
