@@ -7128,6 +7128,36 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 
 En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Treatment Tracking. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase FCM y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB y la comunicacion con el BC Notifications para el escalamiento automatico de alertas de abandono.
 
+###### Persistence Layer
+
+| Repositorio | Implementación | Responsabilidades | Métodos y Descripciones |
+| :--- | :--- | :--- | :--- |
+| **MongoTreatmentRepository** | `TreatmentRepository` | Es el componente central del Bounded Context. Gestiona el ciclo de vida del Aggregate Root **Treatment** en MongoDB, persistiendo datos críticos como el `adherenceScore`, rachas actuales (`currentStreak`) y estados de finalización o abandono. | **save**: Guarda o actualiza el estado completo del tratamiento.<br>**findById**: Recupera un tratamiento por su ID único.<br>**findByPatientId**: Obtiene el tratamiento asociado a un paciente específico.<br>**findActiveByNurseId**: Lista los tratamientos vigentes asignados a una enfermera.<br>**findCriticalPatients**: obtener la lista de pacientes criticos. |
+| **MongoDailyDoseRepository** | `DailyDoseRepository` | Gestiona la persistencia de los registros de dosis diarias en la colección `daily_doses`. Permite rastrear individualmente cada dosis para auditar el historial completo de confirmaciones y omisiones del paciente. | **save**: Registra una nueva toma o actualización de dosis.<br>**findAllByTreatmentId**: buscar todas las dosis de un tratamiento .<br>**findBySpecificDay**:  buscar la dosis de un dia especifico para verificar que no haya sido confirmada anteriormente. |
+| **MongoRiskScoreRepository** | `RiskScoreRepository` | Gestiona la persistencia del score de riesgo de abandono en la colección `risk_scores`. Almacena el score calculado, nivel de riesgo y justificación para su visualización en el panel de enfermería de FerovaClinic. | **save(riskScore: RiskScore): void**: Guarda o actualiza el score mediante un **upsert**; si ya existe un score para el `treatmentId`, lo sobrescribe con los nuevos valores del `AdherenceCalculatorService`.<br>**findByTreatmentId(treatmentId: String): RiskScore?**: Busca el score actual para el "semáforo" de FerovaClinic. Retorna `null` si el tratamiento es nuevo y no tiene cálculos aún.<br>**findByRiskLevel(riskLevel: RiskLevel): List**: Retorna todos los scores de un nivel (HIGH, MEDIUM, LOW) para que el `GetCriticalPatientsQueryHandler` identifique todos los pacientes con nivel HIGH que necesitan atencion inmediata de la enfermera en FerovaClinic sin tener que revisar el score de cada paciente individualmente. |
+
+###### Mapper
+
+| Mapper | Responsabilidades | Descripción Técnica |
+| :--- | :--- | :--- |
+| **TreatmentDocumentMapper** | Transformación de `Treatment` ↔ `MongoDB Document` |  convierte entre el Aggregate Root Treatment del dominio y el documento MongoDB. Es necesario porque el Aggregate Root tiene metodos y comportamiento que no deben persistirse directamente en la base de datos, solo sus atributos de estado. |
+| **DailyDoseDocumentMapper** | Transformación de `DailyDose` ↔ `MongoDB Document` | convierte entre la entidad DailyDose del dominio y el documento MongoDB. Garantiza que el estado de cada dosis diaria se mapee correctamente incluyendo el status y las horas sin confirmacion. |
+| **RiskScoreDocumentMapper** | Transformación de `RiskScore` ↔ `MongoDB Document` | convierte entre la entidad RiskScore del dominio y el documento MongoDB. Asegura que el score, el nivel de riesgo y la justificacion se persistan correctamente para alimentar el semaforo de FerovaClinic. |
+
+###### External Services
+
+| Servicio | Responsabilidades | Métodos |
+| :--- | :--- | :--- |
+| **DoseReminderScheduler** | Es el componente que gestiona la programacion automatica de los recordatorios de dosis diaria. Cuando la enfermera inicia un tratamiento este componente registra la hora de dosis definida y programa un job diario recurrente que se ejecuta automaticamente a esa hora. Cuando llega la hora verifica si la madre ya confirmo la dosis y si no lo hizo dispara el evento DailyDoseOmitted para iniciar el proceso de escalamiento. Es el componente que garantiza que el sistema funcione de manera completamente automatica sin necesidad de intervencion manual.| **scheduleDailyReminder(treatmentId, dosingHours)**: Programa el job diario recurrente para el tratamiento recién iniciado.<br><br>**cancelReminder(treatmentId)**: Cancela el job recurrente de forma definitiva cuando el tratamiento se marca como completado o abandonado.<br><br>**checkPendingDoses()**: Verifica periódicamente qué dosis programadas carecen de confirmación y dispara los eventos de omisión correspondientes. |
+
+###### External Services: DoseReminderScheduler
+
+| Método | Escenario de Uso (UX/Flujo) | Comportamiento Interno (Lógica Técnica) |
+| :--- | :--- | :--- |
+| **scheduleDailyReminder**<br>`(treatmentId, dosingHours)` | La enfermera Rosa abre **FerovaClinic** e inicia el tratamiento de Juan definiendo la hora de dosis a las 8:00 AM. En ese momento, el `StartTreatmentCommandHandler` llama a este método pasando el `treatmentId` y "08:00". | Registra un **job** en el sistema que se ejecutará todos los días a las 8:00 AM automáticamente. Es como una alarma programada que suena cada día a la misma hora sin activación manual. Desde ese momento, el sistema verifica diariamente si María confirmó la dosis. |
+| **cancelReminder**<br>`(treatmentId)` | Juan completa su tratamiento (o lo abandona) y Rosa lo marca en **FerovaClinic**. El `CompleteTreatmentCommandHandler` (o `Abandon`) llama a este método pasando el `treatmentId`. | Busca el job diario registrado para ese tratamiento y lo **cancela permanentemente**. Es como apagar la alarma diaria; el sistema deja de verificar la dosis porque el tratamiento terminó y no tiene sentido seguir enviando recordatorios. |
+| **checkPendingDoses**<br>`()` | Este método no es llamado por ningún handler; el sistema lo ejecuta automáticamente cada pocos minutos como un **proceso en segundo plano** (background process). | Monitorea omisiones: Si a las 8:00 AM María no confirmó, registra 0 horas de retraso. A las 10:00 AM (2h después), si sigue sin confirmar, consulta a `DoseReminderService` y, al recibir un `shouldEscalate` true, dispara `DailyDoseOmitted`. Si pasan 24h o más, detecta el riesgo crítico y dispara `PatientAddedToCriticalList` para alertar a Rosa. |
+| **Resumen del Flujo** | **Sincronización de Componentes** | **scheduleDailyReminder** enciende la alarma al iniciar el tratamiento, **checkPendingDoses** revisa continuamente si la alarma fue atendida o ignorada, y **cancelReminder** apaga la alarma cuando el tratamiento termina. |
 
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
