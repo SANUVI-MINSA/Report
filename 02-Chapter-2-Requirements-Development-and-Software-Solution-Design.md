@@ -7090,21 +7090,40 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
  > ¿Que es un Assembler / Mapper?
  > Es un traductor entre dos mundos. El mundo HTTP que habla en JSON y el mundo del dominio que habla en objetos y comandos. Su unica funcion es convertir de un formato a otro sin agregar logica de negocio.
 
-###### Assemblers / Mappers
-
-| Assembler / Mapper | Dirección de la Traducción | Propósito |
-| :--- | :--- | :--- |
-| **StartTreatmentCommandFromResourceAssembler** | `StartTreatmentRequest` → `StartTreatmentCommand` | convierte el StartTreatmentRequest en un StartTreatmentCommand para la Application Layer. Es necesario porque separa la representacion HTTP del comando de dominio evitando que los detalles del protocolo HTTP contaminen la logica de negocio. |
-| **TreatmentResponseFromEntityAssembler** | `Treatment (Entity)` → `TreatmentResponse` | convierte la entidad Treatment en un TreatmentResponse para enviarlo al cliente. Garantiza que solo se exponga la informacion necesaria al frontend sin exponer los internos del aggregate. |
-| **ConfirmDoseCommandFromResourceAssembler** | `ConfirmDoseRequest` → `ConfirmDoseCommand` | convierte el ConfirmDoseRequest en un ConfirmDoseCommand para la Application Layer. Separa la capa HTTP de la logica de confirmacion de dosis del dominio. |
-| **DailyDoseResponseFromEntityAssembler** | `DailyDose (Entity)` → `DailyDoseResponse` | convierte la entidad DailyDose en un DailyDoseResponse para enviarlo al cliente. Permite mostrar el historial de dosis en FerovaFamilia sin exponer los internos de la entidad. |
-| **RiskScoreResponseFromEntityAssembler** | `RiskScore (Entity)` → `RiskScoreResponse` | convierte la entidad RiskScore en un RiskScoreResponse para enviarlo al cliente. Transforma el dato tecnico del dominio en una respuesta legible que FerovaClinic puede mostrar directamente en el semaforo de la enfermera. |
-
 <div align ="center">
 	<img src="resources/images/chapter-II/assemblers_flow_ferova.svg">
 </div>
 
 ##### 2.6.5.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Treatment Tracking. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones criticas del tratamiento, los Query Handlers que gestionan las consultas de informacion y los Event Handlers que notifican a los demas bounded contexts cuando ocurre algo relevante en el tratamiento.
+
+
+###### Command Handlers
+
+| Command Handler | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **StartTreatment-CommandHandler** | Iniciar un nuevo tratamiento activo. | Recibe el StartTreatmentCommand con el patientId, nurseId, supplement, quantity, dosingHours y durationDays. Verifica que el paciente no tenga un tratamiento activo consultando el TreatmentRepository para respetar la invarianza de un solo tratamiento activo por paciente. Calcula la endDate sumando durationDays a la fecha actual. Crea el Aggregate Root Treatment con estado ACTIVE y lo persiste en MongoDB via TreatmentRepository. Delega al DoseReminderService la programacion automatica de los recordatorios diarios a la hora definida por la enfermera. Finalmente dispara el evento TreatmentStarted para que el BC Notifications active los recordatorios en FerovaFamilia. |
+| **ConfirmDose-CommandHandler** | Registrar la confirmación de dosis diaria. | Recibe el ConfirmDoseCommand con el treatmentId y el confirmedAt. Busca el tratamiento en el TreatmentRepository y verifica que este activo. Consulta el DailyDoseRepository con findByDate para verificar que la dosis del dia no haya sido confirmada anteriormente respetando la invarianza de una sola confirmacion por dia. Llama al metodo confirmDose del Aggregate Root que actualiza el currentStreak, incrementa el totalConfirmed y recalcula el adherenceScore. Persiste los cambios en MongoDB. Delega al AdherenceCalculatorService el recalculo del score de riesgo y actualiza el RiskScore en el RiskScoreRepository. Finalmente dispara el evento DailyDoseConfirmed hacia el BC Achievements & Rewards para actualizar la racha y los puntos de la madre. |
+| **CompleteTreatment-CommandHandler** | Finalizar exitosamente el tratamiento. | Recibe el CompleteTreatmentCommand con el treatmentId, nurseId y la completionObservation. Verifica que quien completa el tratamiento sea la enfermera asignada. Llama al metodo complete del Aggregate Root que cambia el status a COMPLETED y registra la completionObservation y la fecha de cierre. Persiste los cambios en MongoDB via TreatmentRepository. Dispara el evento TreatmentCompleted hacia el BC Notifications para que envie el mensaje celebratorio a la madre en FerovaFamilia y hacia el BC Achievements & Rewards para desbloquear la insignia de tratamiento completado. |
+| **AbandonTreatment-CommandHandler** | Registrar el abandono del tratamiento. | Recibe el AbandonTreatmentCommand con el treatmentId, nurseId y la abandonmentObservation. Verifica que quien registra el abandono sea la enfermera asignada. Llama al metodo abandon del Aggregate Root que cambia el status a ABANDONED y registra la abandonmentObservation y la fecha de abandono. Persiste los cambios en MongoDB via TreatmentRepository. Dispara el evento TreatmentAbandoned hacia el BC Analytics & Reporting para que actualice las estadisticas de abandono del distrito y refleje el caso en el mapa de calor de la posta medica correspondiente. |
+
+###### Query Handlers
+
+| Query Handler | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **GetTreatment-QueryHandler** | Consultar el estado del tratamiento activo. | Recibe el GetTreatmentQuery con el patientId. Consulta el TreatmentRepository con findByPatientId y retorna el tratamiento activo del paciente. Lo usa FerovaFamilia para mostrar a la madre el estado actual del tratamiento de su hijo incluyendo la racha actual, el adherenceScore y la hora de la proxima dosis programada. |
+| **GetDoseHistory-QueryHandler** | Obtener el historial de dosis del paciente. | Recibe el GetDoseHistoryQuery con el treatmentId. Consulta el DailyDoseRepository con findByTreatmentId y retorna el historial completo de dosis ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de todas sus confirmaciones y omisiones a lo largo del tratamiento permitiendole ver su progreso de adherencia dia a dia. |
+| **GetRiskScore-QueryHandler** | Obtener el score de riesgo y semáforo. | Recibe el GetRiskScoreQuery con el treatmentId. Consulta el RiskScoreRepository con findByTreatmentId y retorna el score de riesgo actual del paciente con su clasificacion y justificacion. Lo usa FerovaClinic para mostrar el semaforo de color correcto para cada paciente en el panel de la enfermera en tiempo real. |
+| **GetCriticalPatients-QueryHandler** | Listar pacientes en riesgo crítico (>72h). | Recibe el GetCriticalPatientsQuery con el nurseId. Consulta el TreatmentRepository con findCriticalPatients y retorna la lista de pacientes que llevan 72 horas o mas sin confirmar su dosis. Es el query handler mas urgente del bounded context porque alimenta la lista roja de FerovaClinic que le indica a la enfermera quienes necesitan atencion inmediata para evitar el abandono del tratamiento. |
+
+###### Event Handlers
+
+| Event Handler | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **OnDoseOmitted-EventHandler** | Gestionar la omisión automática de dosis. | Reacciona al evento DailyDoseOmitted generado automaticamente por el sistema cuando detecta que la madre no confirmo la dosis en el tiempo establecido. Incrementa el totalOmitted del tratamiento, recalcula el adherenceScore via AdherenceCalculatorService y actualiza el RiskScore en MongoDB. Consulta al DoseReminderService con shouldEscalate para determinar si debe enviar el segundo recordatorio a las 2 horas o la alerta de abandono a la enfermera a las 72 horas. Dispara el evento RiskScoreUpdated para actualizar el semaforo de FerovaClinic en tiempo real. |
+| **OnPatientAddedTo-CriticalList-EH** | Notificar alertas de abandono inminente. | Reacciona al evento PatientAddedToCriticalList generado cuando un paciente supera las 72 horas sin confirmar su dosis. Notifica al BC Notifications con el patientId, nurseId, horas sin confirmacion y score de riesgo para que envie inmediatamente la alerta de abandono a la enfermera asignada en FerovaClinic via Firebase FCM. |
+
 ##### 2.6.5.4. Infrastructure Layer
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
