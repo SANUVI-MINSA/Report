@@ -7235,12 +7235,43 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 <div align ="center">
 <img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
+</div>
 
 ### 2.6 Tactical-Level Domain-Driven Design
 #### 2.6.6. Bounded Context: `Achievements & Rewards`
+
+El bounded context Achievements & Rewards gestiona la gamificacion del tratamiento de anemia dentro de FerovaFamilia. Su proposito es motivar a la madre a mantener la constancia en el tratamiento mediante recompensas digitales como rachas de dias consecutivos, puntos acumulados e insignias desbloqueables. Reacciona a los eventos generados por el BC Treatment Tracking y actualiza automaticamente el progreso de gamificacion de la madre sin necesidad de intervencion manual.
+
+> ¿Que es la Gamificacion? <br>
+> La gamificacion es aplicar elementos de juegos como puntos, rachas e insignias a una actividad que no es un juego, en este caso el tratamiento de anemia. El objetivo es motivar a la madre a cumplir con la dosis diaria de su hijo haciendolo mas entretenido y gratificante. Por ejemplo en lugar de decirle simplemente "dale el hierro a tu hijo", el sistema le dice "llevas 14 dias seguidos sin fallar, ganas 10 puntos hoy y desbloqueaste una insignia". Eso motiva mucho mas que un simple recordatorio.
+
+
+
 ##### 2.6.6.1. Domain Layer
 
 En esta seccion se documentan las clases que forman el core del bounded context Achievements & Rewards. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de los logros y recompensas de la madre durante el tratamiento de anemia de su hijo. Se incluyen el Aggregate Root Achievement, la entidad Badge, los Value Objects AchievementStatus y BadgeType, el Domain Service AchievementEvaluatorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregate Root: Achievement (Domain Layer)
+
+**Propósito:** Representa el registro completo de gamificación de una madre durante el tratamiento de anemia de su hijo. Gestiona la racha de días consecutivos, los puntos acumulados y el estado de las insignias desbloqueables.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | String | Identificador unico del registro de gamificacion en MongoDB. Permite al sistema encontrar y actualizar el progreso de gamificacion de una madre especifica cada vez que confirma una dosis. Por ejemplo cuando Maria confirma su dosis el sistema busca su Achievement por id y actualiza su racha y puntos. |
+| **Atributo** | `patientId` | String | Referencia logica al paciente cuyo tratamiento esta siendo gamificado. Sin este atributo el sistema no sabria a que paciente asociar el progreso de gamificacion de la madre. Por ejemplo cuando el BC Treatment Tracking dispara el evento DailyDoseConfirmed con el patientId, este BC usa ese dato para encontrar el Achievement correspondiente y actualizarlo. |
+| **Atributo** | `motherId` | String | Referencia logica a la madre que esta participando en la gamificacion. Es necesario porque es la madre quien recibe las recompensas y notificaciones de logros en FerovaFamilia. Por ejemplo cuando se desbloquea una insignia el sistema usa el motherId para notificar a la madre correcta via Firebase FCM. |
+| **Atributo** | `currentStreak` | Integer | Cuenta cuantos dias consecutivos lleva la madre confirmando la dosis sin fallar ninguna. Por ejemplo si Maria confirmo la dosis 7 dias seguidos su currentStreak es 7. Si falla un dia se reinicia a 0. En FerovaFamilia la madre ve el mensaje: "Llevas 7 dias consecutivos sin fallar una dosis." |
+| **Atributo** | `longestStreak` | Integer | Guarda la racha mas larga que la madre ha logrado en todo el tratamiento. Aunque pierda su racha actual este dato nunca baja. Por ejemplo si Maria llego a 30 dias consecutivos pero luego fallo, su longestStreak se mantiene en 30. En FerovaFamilia la madre ve: "Tu mejor racha: 30 dias."|
+| **Atributo** | `streakStartDate`| DateTime | Fecha en que inicio la racha actual de la madre. Sirve para mostrarle a la madre desde cuando viene cumpliendo sin fallar. Por ejemplo FerovaFamilia muestra: "Llevas una racha desde el 1 de abril." |
+| **Atributo** | `totalPoints` | Integer | Saldo acumulado de todos los puntos que ha ganado la madre durante el tratamiento. Los puntos nunca se pierden aunque se pierda la racha. En FerovaFamilia la madre ve: "Tienes 140 puntos acumulados." Cada dosis confirmada suma 10 puntos automaticamente. |
+| **Atributo** | `status` | Enum | Estado actual del proceso de gamificacion de la madre. Va de la mano con el estado del tratamiento del paciente. Si el tratamiento esta activo el status es ACTIVE. Si se completo es COMPLETED y si se abandono es ABANDONED. Sirve para que el sistema sepa si debe seguir actualizando la racha y los puntos o si el proceso de gamificacion ya termino. |
+| **Método** | `updateStreak()` | void | Se ejecuta cada vez que la madre confirma la dosis del dia. Incrementa el currentStreak en 1 y verifica si supera el longestStreak actualizandolo de ser necesario. Por ejemplo cuando Maria confirma su septima dosis consecutiva este metodo cambia currentStreak de 6 a 7 y FerovaFamilia muestra: "Llevas 7 dias consecutivos sin fallar una dosis." |
+| **Método** | `resetStreak()` | void | Se ejecuta automaticamente cuando la madre omite la dosis de un dia. Guarda el currentStreak en longestStreak si es mayor y reinicia el currentStreak a 0. El totalPoints no se toca porque los puntos acumulados se mantienen aunque se pierda la racha. FerovaFamilia muestra: "Perdiste tu racha de 14 dias. Vuelve a empezar hoy." |
+| **Método** | `addPoints()` | void | Suma los puntos ganados al totalPoints de la madre. Se ejecuta despues de cada confirmacion de dosis. Por ejemplo cada dosis confirmada vale 10 puntos por lo que este metodo suma 10 al saldo actual. FerovaFamilia actualiza el contador: "Tienes 70 puntos acumulados." |
+| **Método** | `unlockBadge()` | void | Desbloquea una insignia especifica cuando la madre alcanza el hito correspondiente. Verifica primero que la insignia no haya sido desbloqueada anteriormente para respetar la invarianza. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo desbloquea la insignia FIRST_WEEK_COMPLETED y FerovaFamilia muestra una animacion celebratoria. |
+| **Invarianza** | `Non-Negative` | Regla | Tanto el `currentStreak` como el `totalPoints` nunca pueden tener valores negativos. |
+| **Invarianza** | `Uniqueness` | Regla | Una insignia no puede desbloquearse dos veces para el mismo paciente; el logro es permanente. |
+| **Invarianza** | `Persistence` | Regla | Los puntos acumulados son independientes de la racha; no se pierden al fallar una dosis diaria. |
 
 ##### 2.6.6.2. Interface Layer
 ##### 2.6.6.3. Application Layer
