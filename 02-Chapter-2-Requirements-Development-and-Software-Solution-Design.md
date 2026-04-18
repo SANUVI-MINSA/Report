@@ -7231,7 +7231,7 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 <img src="resources/images/chapter-II/Class_Diagram/Treatment Tracking/diagrama de clases tratament tracking.png">
 </div>
 
-###### 2.6.X.6.2. Bounded Context Database Design Diagram
+###### 2.6.5.6.2. Bounded Context Database Design Diagram
 
 <div align ="center">
 <img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
