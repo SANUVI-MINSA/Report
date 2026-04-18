@@ -6965,6 +6965,142 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | | **Endpoint** | `GET /api/v1/treatments/{id}/risk-score` | retorna el score de riesgo actual del paciente con su clasificacion en semaforo y la justificacion del score. Lo usa FerovaClinic para mostrar el color del semaforo de cada paciente en el panel de la enfermera. |
 | | **Endpoint** | `GET /api/v1/treatments/critical-patients` | retorna la lista de pacientes criticos de la enfermera autenticada, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el endpoint mas urgente del bounded context porque le permite a la enfermera identificar rapidamente quien necesita atencion inmediata. |
 
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. StartTreatmentRequest**
+
+**Propósito:** Contiene todos los datos necesarios para que la enfermera configure el tratamiento del paciente desde FerovaClinic.
+
+```json
+{
+ "patientId": "string",
+  "nurseId": "string",
+  "supplement": "string",
+  "quantity": "number",
+  "dosingHours": "string",
+  "durationDays": "number"
+}
+```
+
+#### **2. TreatmentResponse**
+
+**Propósito:** Retorna el estado completo del tratamiento para que FerovaFamilia y FerovaClinic puedan mostrar la informacion actualizada al usuario.
+
+```json
+{
+  "id": "string",
+  "patientId": "string",
+  "nurseId": "string",
+  "supplement": "string",
+  "quantity": "number",
+  "dosingHours": "string",
+  "durationDays": "number",
+  "startDate": "datetime",
+  "endDate": "datetime",
+  "status": "ACTIVE / COMPLETED / ABANDONED",
+  "adherenceScore": "double",
+  "currentStreak": "number"
+  "completionObservation": "null",
+  "abandonmentObservation": "null"
+}
+```
+
+#### **3. CompleteTreatmentRequest**
+
+**Propósito:** Requiere una observacion de la enfermera para justificar el cierre exitoso del tratamiento antes de marcarlo como completado.
+
+```json
+{
+ "observation": "string"
+}
+```
+
+
+#### **4. AbandonTreatmentRequest**
+
+**Propósito:** Requiere una observacion de la enfermera para justificar el abandono del tratamiento y alimentar las estadisticas del BC Analytics & Reporting.
+
+```json
+{
+	"observation": "string"
+}
+```
+#### **5. ConfirmDoseRequest**
+
+**Propósito:** Contiene el ID del tratamiento y la fecha de confirmacion para registrar que la madre dio la dosis del dia a su hijo.
+
+```json
+{
+  "treatmentId": "string",
+  "confirmedAt": "datetime"
+}
+```
+
+#### **6. DailyDoseResponse**
+
+**Propósito:** Retorna el estado de cada dosis diaria para mostrar el historial de confirmaciones y omisiones en FerovaFamilia.
+
+```json
+{
+  "id": "string",
+  "treatmentId": "string",
+  "scheduledDate": "datetime",
+  "confirmedAt": "datetime",
+  "status": "PENDING / CONFIRMED / OMITTED",
+  "hoursWithoutConfirmation": "number"
+}
+```
+#### **7. RiskScoreResponse**
+
+**Propósito:** Retorna el score de riesgo con su clasificacion en semaforo y la justificacion del score.
+
+```json
+{
+  "treatmentId": "string",
+  "score": "double",
+  "riskLevel": "LOW / MEDIUM / HIGH",
+  "calculatedAt": "datetime",
+  "justification": "string"
+}
+```
+
+#### **8. CriticalPatientResponse**
+
+**Propósito:** Retorna los datos de cada paciente critico para que la enfermera pueda identificar rapidamente quien necesita atencion inmediata en FerovaClinic.
+
+```json
+{
+  "patientId": "string",
+  "treatmentId": "string",
+  "hoursWithoutConfirmation": "number",
+  "riskLevel": "string",
+  "riskScore": "double"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **StartTreatmentCommandFromResourceAssembler** | `StartTreatmentRequest` → `StartTreatmentCommand` | convierte el StartTreatmentRequest en un StartTreatmentCommand para la Application Layer. Es necesario porque separa la representacion HTTP del comando de dominio evitando que los detalles del protocolo HTTP contaminen la logica de negocio. |
+| **TreatmentResponseFromEntityAssembler** | `Treatment (Entity)` → `TreatmentResponse` | convierte la entidad Treatment en un TreatmentResponse para enviarlo al cliente. Garantiza que solo se exponga la informacion necesaria al frontend sin exponer los internos del aggregate. |
+| **ConfirmDoseCommandFromResourceAssembler** | `ConfirmDoseRequest` → `ConfirmDoseCommand` | convierte el ConfirmDoseRequest en un ConfirmDoseCommand para la Application Layer. Separa la capa HTTP de la logica de confirmacion de dosis del dominio. |
+| **DailyDoseResponseFromEntityAssembler** | `DailyDose (Entity)` → `DailyDoseResponse` | convierte la entidad DailyDose en un DailyDoseResponse para enviarlo al cliente. Permite mostrar el historial de dosis en FerovaFamilia sin exponer los internos de la entidad. |
+| **RiskScoreResponseFromEntityAssembler** | `RiskScore (Entity)` → `RiskScoreResponse` | convierte la entidad RiskScore en un RiskScoreResponse para enviarlo al cliente. Transforma el dato tecnico del dominio en una respuesta legible que FerovaClinic puede mostrar directamente en el semaforo de la enfermera. |
+ > ¿Que es un Assembler / Mapper?
+ > Es un traductor entre dos mundos. El mundo HTTP que habla en JSON y el mundo del dominio que habla en objetos y comandos. Su unica funcion es convertir de un formato a otro sin agregar logica de negocio.
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Propósito |
+| :--- | :--- | :--- |
+| **StartTreatmentCommandFromResourceAssembler** | `StartTreatmentRequest` → `StartTreatmentCommand` | convierte el StartTreatmentRequest en un StartTreatmentCommand para la Application Layer. Es necesario porque separa la representacion HTTP del comando de dominio evitando que los detalles del protocolo HTTP contaminen la logica de negocio. |
+| **TreatmentResponseFromEntityAssembler** | `Treatment (Entity)` → `TreatmentResponse` | convierte la entidad Treatment en un TreatmentResponse para enviarlo al cliente. Garantiza que solo se exponga la informacion necesaria al frontend sin exponer los internos del aggregate. |
+| **ConfirmDoseCommandFromResourceAssembler** | `ConfirmDoseRequest` → `ConfirmDoseCommand` | convierte el ConfirmDoseRequest en un ConfirmDoseCommand para la Application Layer. Separa la capa HTTP de la logica de confirmacion de dosis del dominio. |
+| **DailyDoseResponseFromEntityAssembler** | `DailyDose (Entity)` → `DailyDoseResponse` | convierte la entidad DailyDose en un DailyDoseResponse para enviarlo al cliente. Permite mostrar el historial de dosis en FerovaFamilia sin exponer los internos de la entidad. |
+| **RiskScoreResponseFromEntityAssembler** | `RiskScore (Entity)` → `RiskScoreResponse` | convierte la entidad RiskScore en un RiskScoreResponse para enviarlo al cliente. Transforma el dato tecnico del dominio en una respuesta legible que FerovaClinic puede mostrar directamente en el semaforo de la enfermera. |
+
+
 ##### 2.6.5.3. Application Layer
 ##### 2.6.5.4. Infrastructure Layer
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
