@@ -7100,6 +7100,9 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **DailyDoseResponseFromEntityAssembler** | `DailyDose (Entity)` → `DailyDoseResponse` | convierte la entidad DailyDose en un DailyDoseResponse para enviarlo al cliente. Permite mostrar el historial de dosis en FerovaFamilia sin exponer los internos de la entidad. |
 | **RiskScoreResponseFromEntityAssembler** | `RiskScore (Entity)` → `RiskScoreResponse` | convierte la entidad RiskScore en un RiskScoreResponse para enviarlo al cliente. Transforma el dato tecnico del dominio en una respuesta legible que FerovaClinic puede mostrar directamente en el semaforo de la enfermera. |
 
+<div align ="center">
+	<img src="resources/images/chapter-II/assemblers_flow_ferova.svg">
+</div>
 
 ##### 2.6.5.3. Application Layer
 ##### 2.6.5.4. Infrastructure Layer
