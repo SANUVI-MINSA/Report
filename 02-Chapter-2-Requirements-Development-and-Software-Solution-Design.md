@@ -7159,6 +7159,65 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 | **checkPendingDoses**<br>`()` | Este método no es llamado por ningún handler; el sistema lo ejecuta automáticamente cada pocos minutos como un **proceso en segundo plano** (background process). | Monitorea omisiones: Si a las 8:00 AM María no confirmó, registra 0 horas de retraso. A las 10:00 AM (2h después), si sigue sin confirmar, consulta a `DoseReminderService` y, al recibir un `shouldEscalate` true, dispara `DailyDoseOmitted`. Si pasan 24h o más, detecta el riesgo crítico y dispara `PatientAddedToCriticalList` para alertar a Rosa. |
 | **Resumen del Flujo** | **Sincronización de Componentes** | **scheduleDailyReminder** enciende la alarma al iniciar el tratamiento, **checkPendingDoses** revisa continuamente si la alarma fue atendida o ignorada, y **cancelReminder** apaga la alarma cuando el tratamiento termina. |
 
+###### Configuration: MongoConfig
+
+| Componente | Responsabilidad | Detalles de Índices por Colección |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexión a MongoDB para el bounded context Treatment Tracking. Define los índices necesarios para las colecciones `treatments`, `daily_doses` y `risk_scores` garantizando el rendimiento óptimo de las consultas más frecuentes del sistema. | **Colección treatments:**<br>• Índice en `patientId` para búsquedas rápidas por paciente.<br>• Índice en `nurseId` para obtener rápidamente todos los tratamientos activos de una enfermera.<br>• Índice en `status` para filtrar tratamientos ACTIVE rápidamente.<br><br>**Colección daily_doses:**<br>• Índice compuesto en `treatmentId` y `scheduledDate` para verificar rápidamente si la dosis del día ya fue confirmada.<br>• Índice en `status` para filtrar dosis OMITTED y detectar pacientes en riesgo.<br><br>**Colección risk_scores:**<br>• Índice único en `treatmentId` para garantizar un solo score de riesgo por tratamiento. |
+
+##### Modelo de datos MongoDB
+
+
+<h4>Coleccion treatments:</h4>
+
+```json
+{
+  "_id": "treat:uuid",
+  "patientId": "pat:uuid",
+  "nurseId": "nurse:uuid",
+  "supplement": "Sulfato ferroso",
+  "quantity": "2ml",
+  "dosingHours": "08:00",
+  "durationDays": 90,
+  "startDate": "2026-04-01T00:00:00Z",
+  "endDate": "2026-06-30T00:00:00Z",
+  "status": "ACTIVE",
+  "adherenceScore": 85.5,
+  "currentStreak": 14,
+  "totalConfirmed": 15,
+  "totalOmitted": 1,
+  "completionObservation": null,
+  "abandonmentObservation": null
+}
+```
+
+<h4>Coleccion daily_doses:</h4>
+
+```json
+{
+  "_id": "dose:uuid",
+  "treatmentId": "treat:uuid",
+  "scheduledDate": "2026-04-17T08:00:00Z",
+  "confirmedAt": "2026-04-17T08:15:00Z",
+  "status": "CONFIRMED",
+  "hoursWithoutConfirmation": 0
+}
+```
+
+<h4>Coleccion risk_scores:</h4>
+
+
+```json
+{
+  "_id": "risk:uuid",
+  "treatmentId": "treat:uuid",
+  "score": 75.3,
+  "riskLevel": "HIGH",
+  "calculatedAt": "2026-04-17T10:00:00Z",
+  "justification": "El paciente lleva 3 dias sin confirmar su dosis."
+}
+```
+
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
