@@ -7125,6 +7125,10 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **OnPatientAddedTo-CriticalList-EH** | Notificar alertas de abandono inminente. | Reacciona al evento PatientAddedToCriticalList generado cuando un paciente supera las 72 horas sin confirmar su dosis. Notifica al BC Notifications con el patientId, nurseId, horas sin confirmacion y score de riesgo para que envie inmediatamente la alerta de abandono a la enfermera asignada en FerovaClinic via Firebase FCM. |
 
 ##### 2.6.5.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Treatment Tracking. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Firebase FCM y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB y la comunicacion con el BC Notifications para el escalamiento automatico de alertas de abandono.
+
+
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
