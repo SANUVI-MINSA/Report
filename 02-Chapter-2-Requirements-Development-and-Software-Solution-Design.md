@@ -7235,3 +7235,17 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 <div align ="center">
 <img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
+
+### 2.6 Tactical-Level Domain-Driven Design
+#### 2.6.6. Bounded Context: `Achievements & Rewards`
+##### 2.6.6.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Achievements & Rewards. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de los logros y recompensas de la madre durante el tratamiento de anemia de su hijo. Se incluyen el Aggregate Root Achievement, la entidad Badge, los Value Objects AchievementStatus y BadgeType, el Domain Service AchievementEvaluatorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+##### 2.6.6.2. Interface Layer
+##### 2.6.6.3. Application Layer
+##### 2.6.6.4. Infrastructure Layer
+##### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
+##### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.6.6.2. Bounded Context Database Design Diagram
