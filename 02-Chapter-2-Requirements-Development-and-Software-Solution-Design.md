@@ -7291,6 +7291,19 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **Método** | `unlock()` | void | Cambia isUnlocked a true y registra el unlockedAt con la fecha y hora actual. Se ejecuta cuando el Aggregate Root confirma que la madre alcanzo el milestone de esa insignia. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo marca la insignia FIRST_WEEK_COMPLETED como desbloqueada y FerovaFamilia muestra la animacion celebratoria. |
 | **Método** | `isEligible()` | Boolean | Compara el currentStreak de la madre con el milestone de la insignia y verifica que no haya sido desbloqueada anteriormente. Retorna true si ambas condiciones se cumplen. Por ejemplo si la insignia tiene milestone 7, el currentStreak de Maria es 7 y la insignia aun esta bloqueada retorna true y el sistema procede a desbloquearla. |
 
+### Value Objects (Domain Layer)
+
+| Value Object | Elemento | Descripción |
+| :--- | :--- | :--- |
+| **AchievementStatus** | **ACTIVE** | la madre esta participando activamente en la gamificacion porque el tratamiento de su hijo sigue en curso. El sistema sigue actualizando la racha y sumando puntos con cada confirmacion de dosis. En FerovaFamilia la madre ve su racha y puntos actualizandose en tiempo real. |
+| | **COMPLETED** | el tratamiento del paciente se completo exitosamente. La madre recibio la insignia final TREATMENT_COMPLETED y su proceso de gamificacion queda cerrado. En FerovaFamilia se muestra un resumen final con todos los logros obtenidos durante el tratamiento. |
+| | **ABANDONED** | el tratamiento fue abandonado formalmente. El sistema deja de actualizar la racha y los puntos. Los logros obtenidos hasta ese momento se mantienen en el historial pero no se generan nuevos. |
+| **BadgeType** | **FIRST_WEEK_COMPLETED** | se desbloquea cuando la madre lleva 7 dias consecutivos confirmando la dosis sin fallar. Es la primera insignia que puede obtener la madre y sirve para engancharla en el sistema de gamificacion desde el inicio del tratamiento. |
+| | **FIRST_MONTH_COMPLETED** | se desbloquea cuando la madre lleva 30 dias consecutivos confirmando la dosis. Representa un hito importante de constancia en el tratamiento de anemia. |
+| | **HALF_TREATMENT_COMPLETED** | se desbloquea cuando el paciente llega a la mitad de su tratamiento con buena adherencia. Motiva a la madre a continuar hasta el final del tratamiento. |
+| | **TREATMENT_COMPLETED** | es la insignia mas importante. Se desbloquea cuando el paciente completa todo el tratamiento exitosamente. Incluye la mayor celebracion en FerovaFamilia. |
+| | **STREAK_RECOVERED** | se desbloquea cuando la madre pierde su racha y la recupera alcanzando nuevamente los 7 dias consecutivos. Premia la perseverancia de la madre que no se rindio despues de perder su racha. |
+
 ##### 2.6.6.2. Interface Layer
 ##### 2.6.6.3. Application Layer
 ##### 2.6.6.4. Infrastructure Layer
