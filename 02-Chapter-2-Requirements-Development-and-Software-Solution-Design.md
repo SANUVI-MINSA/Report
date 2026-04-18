@@ -7224,4 +7224,9 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+<img src="resources/images/chapter-II/Class_Diagram/Treatment Tracking/diagrama de clases tratament tracking.png">
+
 ###### 2.6.X.6.2. Bounded Context Database Design Diagram
+
+<img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
