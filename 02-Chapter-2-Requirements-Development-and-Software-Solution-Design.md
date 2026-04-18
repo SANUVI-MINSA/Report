@@ -7289,7 +7289,7 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **Atributo** | `isUnlocked` | Boolean | Indica si la insignia ya fue desbloqueada por la madre. Empieza en false y cambia a true cuando la madre alcanza el milestone. Es la invarianza que impide que la misma insignia se desbloquee dos veces. En FerovaFamilia las insignias bloqueadas aparecen en gris y las desbloqueadas en color. |
 | **Atributo** | `unlockedAt` | DateTime | Fecha y hora exacta en que la madre desbloqueo la insignia. En FerovaFamilia la madre puede ver: "Desbloqueaste esta insignia el 7 de abril a las 8:15 AM." |
 | **Método** | `unlock()` | void | Cambia isUnlocked a true y registra el unlockedAt con la fecha y hora actual. Se ejecuta cuando el Aggregate Root confirma que la madre alcanzo el milestone de esa insignia. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo marca la insignia FIRST_WEEK_COMPLETED como desbloqueada y FerovaFamilia muestra la animacion celebratoria. |
-| **Método** | `isEligible()` | Boolean | Compara el currentStreak de la madre con el milestone de la insignia y verifica que no haya sido desbloqueada anteriormente. Retorna true si ambas condiciones se cumplen. Por ejemplo si la insignia tiene milestone 7, el currentStreak de Maria es 7 y la insignia aun esta bloqueada retorna true y el sistema procede a desbloquearla. |
+| **Método** | `isEligible(currentStreak: Integer)` | Boolean | Compara el currentStreak de la madre con el milestone de la insignia y verifica que no haya sido desbloqueada anteriormente. Retorna true si ambas condiciones se cumplen. Por ejemplo si la insignia tiene milestone 7, el currentStreak de Maria es 7 y la insignia aun esta bloqueada retorna true y el sistema procede a desbloquearla. |
 
 ###### Value Objects (Domain Layer)
 
@@ -7303,6 +7303,37 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | | **HALF_TREATMENT_COMPLETED** | se desbloquea cuando el paciente llega a la mitad de su tratamiento con buena adherencia. Motiva a la madre a continuar hasta el final del tratamiento. |
 | | **TREATMENT_COMPLETED** | es la insignia mas importante. Se desbloquea cuando el paciente completa todo el tratamiento exitosamente. Incluye la mayor celebracion en FerovaFamilia. |
 | | **STREAK_RECOVERED** | se desbloquea cuando la madre pierde su racha y la recupera alcanzando nuevamente los 7 dias consecutivos. Premia la perseverancia de la madre que no se rindio despues de perder su racha. |
+
+###### Domain Service: AchievementEvaluatorService (Domain Layer)
+
+**Propósito:** Gestiona la logica de evaluacion de hitos y desbloqueo automatico de insignias cuando la madre alcanza un punto importante del tratamiento.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Método** | `evaluateMilestone(currentStreak, badges)` | Badge? | Recibe el currentStreak actual de la madre y la lista de todas sus insignias. Evalua si el currentStreak coincide con el milestone de alguna insignia que aun este bloqueada. Si encuentra una retorna la insignia a desbloquear, si no retorna null. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo recorre sus insignias, encuentra que FIRST_WEEK_COMPLETED tiene milestone 7 y aun esta bloqueada, y la retorna para que el Aggregate la desbloquee. |
+| **Método** | `calculatePointsForDose()`| Integer | Calcula cuantos puntos debe recibir la madre por confirmar la dosis del dia. Actualmente retorna un valor fijo de 10 puntos por dosis pero esta separado como metodo del Domain Service para que en el futuro pueda implementarse logica mas compleja como puntos bonus por racha larga sin modificar el Aggregate Root. |
+| **Método** | `shouldNotifyBadgeUnlock(badge: Badge)`| Boolean | Determina si el sistema debe notificar al BC Notifications sobre el desbloqueo de una insignia. Retorna true si la insignia es de tipo FIRST_WEEK_COMPLETED, FIRST_MONTH_COMPLETED, HALF_TREATMENT_COMPLETED, TREATMENT_COMPLETED o STREAK_RECOVERED. Siempre retorna true porque todas las insignias merecen una notificacion celebratoria para la madre. |
+
+###### Repositories
+
+| Repositorio | Método | Descripción |
+| :--- | :--- | :--- |
+| **AchievementRepository** | `save(achievement: Achievement): void` | guarda o actualiza el registro de gamificacion de una madre en MongoDB. Se ejecuta con cada confirmacion de dosis para actualizar la racha y los puntos en tiempo real. |
+| | `findByPatientId(patientId: String): Achievement?` | busca el registro de gamificacion asociado a un paciente especifico. Lo usa el Event Handler cuando recibe el evento DailyDoseConfirmed del BC Treatment Tracking para encontrar el Achievement correcto y actualizarlo. |
+| | `findByMotherId(motherId: String): Achievement?` | busca el registro de gamificacion de una madre especifica. Lo usa FerovaFamilia para mostrar el perfil de gamificacion de la madre con su racha, puntos e insignias. |
+| **BadgeRepository** | `save(badge: Badge): void` | guarda o actualiza el estado de una insignia en MongoDB. Se ejecuta cuando se desbloquea una insignia para cambiar su isUnlocked a true y registrar el unlockedAt. |
+| | `findByAchievementId(achievementId: String): List<Badge>` | retorna todas las insignias de un registro de gamificacion. Lo usa FerovaFamilia para mostrar todas las insignias del tratamiento incluyendo las bloqueadas en gris y las desbloqueadas en color. |
+| | `findUnlockedByAchievementId(achievementId: String): List<Badge>` | retorna solo las insignias desbloqueadas. Lo usa FerovaFamilia para mostrar el historial de logros obtenidos por la madre durante el tratamiento. |
+
+###### Domain Events
+
+| Evento | Descripción |
+| :--- | :--- |
+| **StreakUpdated** | Se dispara cuando la madre confirma una dosis y su racha aumenta. FerovaFamilia actualiza el contador de racha en tiempo real mostrando el nuevo numero de dias consecutivos. |
+| **StreakReset** | Se dispara cuando la madre omite una dosis y su racha se reinicia a cero. FerovaFamilia muestra el mensaje motivador: "Perdiste tu racha. Vuelve a empezar hoy." |
+| **PointsEarned** | Se dispara cuando la madre gana puntos por confirmar una dosis. FerovaFamilia actualiza el saldo de puntos mostrando el nuevo total acumulado. |
+| **BadgeUnlocked** | Se dispara cuando la madre desbloquea una insignia. Notifica al BC Notifications para que envie la notificacion celebratoria a la madre via Firebase FCM con el nombre de la insignia desbloqueada. |
+| **AchievementCompleted** | Se dispara cuando el tratamiento del paciente se completa exitosamente y la madre recibe la insignia final TREATMENT_COMPLETED. Notifica al BC Notifications para enviar el mensaje de celebracion maxima a la madre en FerovaFamilia. |
 
 ##### 2.6.6.2. Interface Layer
 ##### 2.6.6.3. Application Layer
