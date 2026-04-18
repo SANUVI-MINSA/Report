@@ -6814,20 +6814,20 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 ##### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 <div align ="center">
-	<img src="resources/images/chapter-II/Software_Architecture/diagrma-component-comunication.png">	
+	<img src="resources/images/chapter-II/Software_Architecture/Comunication/diagrma-component-comunication.png">	
 </div>
 
 ##### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
 
 <div align ="center">
-	<img src="resources/images/chapter-II/Class_Diagram/diagram-class-comunication.png">	
+	<img src="resources/images/chapter-II/Class_Diagram/comunication/diagram-class-comunication.png">	
 </div>
 
 ###### 2.6.4.6.2. Bounded Context Database Design Diagram
 
 <div align ="center">
-	<img src="resources/images/chapter-II/DB_Diagram/diagram data base comunication.png">	
+	<img src="resources/images/chapter-II/DB_Diagram/Comunication/diagram data base comunication.png">	
 </div>
 
 #### 2.6.5. Bounded Context: `Treatment Tracking`
@@ -7219,6 +7219,9 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 ```
 
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+<img src="resources/images/chapter-II/Software_Architecture/Treatment Tracking/Diagram-componet-Treatment Tracking.png">
+
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
 ###### 2.6.X.6.2. Bounded Context Database Design Diagram
