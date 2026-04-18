@@ -1,4 +1,4 @@
-Capítulo II: Requirements Development and Software Solution Design
+## Capítulo II: Requirements Development and Software Solution Design
 
 ### 2.1 Competidores
 Ferova presenta tres competidores relevantes en el mercado de salud 
@@ -7220,13 +7220,18 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 ##### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
 
+<div align ="center">
 <img src="resources/images/chapter-II/Software_Architecture/Treatment Tracking/Diagram-componet-Treatment Tracking.png">
+</div>
 
 ##### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
 
+<div align ="center">
 <img src="resources/images/chapter-II/Class_Diagram/Treatment Tracking/diagrama de clases tratament tracking.png">
+</div>
 
 ###### 2.6.X.6.2. Bounded Context Database Design Diagram
 
+<div align ="center">
 <img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
