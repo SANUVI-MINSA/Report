@@ -7336,6 +7336,62 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **AchievementCompleted** | Se dispara cuando el tratamiento del paciente se completa exitosamente y la madre recibe la insignia final TREATMENT_COMPLETED. Notifica al BC Notifications para enviar el mensaje de celebracion maxima a la madre en FerovaFamilia. |
 
 ##### 2.6.6.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Achievements & Rewards. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y transformandolas en comandos y consultas que entiende la Application Layer. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+##### Controllers (REST - Infrastructure Layer)
+
+**Propósito:** Expone los endpoints REST para que FerovaFamilia pueda consultar el progreso de gamificacion de la madre incluyendo su racha actual, sus puntos acumulados y el estado de sus insignias. Es el unico controller del bounded context porque Achievements & Rewards no recibe comandos directos del usuario sino que reacciona automaticamente a eventos del BC Treatment Tracking.
+
+**Razon:** Se necesita un controller porque FerovaFamilia necesita una forma de consultar el estado actual de la gamificacion de la madre cuando abre la pantalla de logros o cuando quiere ver su progreso. Sin este controller la app no tendria como obtener esa informacion del backend.
+
+| Endpoint | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **GET** `/api/v1/achievements/{patientId}` | Consultar progreso general. | Retorna el progreso completo de gamificacion de la madre incluyendo la racha actual, la racha mas larga, los puntos acumulados y el estado general. Lo usa FerovaFamilia cuando la madre abre su perfil de gamificacion para ver su progreso en tiempo real. Por ejemplo Maria abre FerovaFamilia y ve: "Racha actual: 14 dias. Mejor racha: 30 dias. Puntos: 140." |
+| **GET** `/api/v1/achievements/{patientId}/badges` | Consultar galería de insignias. | Retorna la lista completa de insignias del tratamiento incluyendo las desbloqueadas en color y las bloqueadas en gris con el hito necesario para obtenerlas. Lo usa FerovaFamilia para mostrar la galeria de insignias de la madre. Por ejemplo Maria ve 5 insignias donde 2 estan en color porque ya las desbloqueo y 3 estan en gris porque aun no alcanzo su hito. |
+| **GET** `/api/v1/achievements/{patientId}/badges/unlocked` | Consultar historial de logros. | Retorna solo las insignias que la madre ya desbloqueo con su fecha de obtencion. Lo usa FerovaFamilia para mostrar el historial de logros de la madre. Por ejemplo Maria ve: "Primera semana completada - desbloqueada el 7 de abril a las 8:15 AM." |
+
+##### Resources (DTOs / Request & Response Models)
+
+#### 1. AchievementResponse 
+
+**Razon:** Contiene toda la informacion de gamificacion que necesita FerovaFamilia para mostrar el perfil de progreso de la madre. Sin este DTO el frontend no tendria un formato estandar para recibir los datos del backend. En el aplicativo este DTO alimenta la pantalla principal de gamificacion donde la madre ve su racha y puntos actualizados.
+
+```json
+{
+  "id": "string",
+  "patientId": "string",
+  "motherId": "string",
+  "currentStreak": "integer",
+  "longestStreak": "integer",
+  "streakStartDate": "datetime",
+  "totalPoints": "integer",
+  "status": "ACTIVE / COMPLETED / ABANDONED"
+}
+```
+
+#### 2. BadgeResponse
+
+**Razon:** Contiene la informacion de cada insignia que necesita FerovaFamilia para mostrarla correctamente en la galeria. El campo isUnlocked permite a la app decidir si mostrar la insignia en color o en gris. En el aplicativo este DTO alimenta cada tarjeta de insignia en la pantalla de logros de la madre.
+
+```json
+{
+  "id": "string",
+  "type": "string",
+  "name": "string",
+  "description": "string",
+  "milestone": "integer",
+  "isUnlocked": "boolean",
+  "unlockedAt": "datetime"
+}
+```
+##### Assemblers / Mappers
+
+| Assembler / Mapper | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- |
+| **AchievementResponseFromEntityAssembler** | Convierte la entidad Achievement del dominio en un AchievementResponse que puede viajar via HTTP hacia FerovaFamilia. Es necesario porque el Aggregate Root tiene metodos y logica interna que no deben exponerse al frontend. Solo expone los atributos de estado que la madre necesita ver. | El GetAchievementQueryHandler obtiene el Aggregate Achievement de MongoDB con todos sus atributos y metodos internos. El Assembler toma solo id, patientId, motherId, currentStreak, longestStreak, streakStartDate, totalPoints y status y los convierte en un JSON limpio que FerovaFamilia puede mostrar directamente en la pantalla de gamificacion de la madre. |
+| **BadgeResponseFromEntityAssembler** | Convierte la entidad Badge del dominio en un BadgeResponse que puede viajar via HTTP hacia FerovaFamilia. Garantiza que solo se exponga la informacion necesaria de cada insignia sin exponer los internos de la entidad. | El GetBadgesQueryHandler obtiene la lista de Badge de MongoDB. El Assembler convierte cada Badge en un BadgeResponse con su type, name, description, milestone, isUnlocked y unlockedAt. FerovaFamilia recibe la lista y muestra cada insignia con su estado correcto en la galeria de logros de la madre. |
+
 ##### 2.6.6.3. Application Layer
 ##### 2.6.6.4. Infrastructure Layer
 ##### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
