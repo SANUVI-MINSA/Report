@@ -7235,3 +7235,252 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 <div align ="center">
 <img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
+</div>
+
+#### 2.6.6. Bounded Context: `Achievements & Rewards`
+
+El bounded context Achievements & Rewards gestiona la gamificacion del tratamiento de anemia dentro de FerovaFamilia. Su proposito es motivar a la madre a mantener la constancia en el tratamiento mediante recompensas digitales como rachas de dias consecutivos, puntos acumulados e insignias desbloqueables. Reacciona a los eventos generados por el BC Treatment Tracking y actualiza automaticamente el progreso de gamificacion de la madre sin necesidad de intervencion manual.
+
+> ¿Que es la Gamificacion? <br>
+> La gamificacion es aplicar elementos de juegos como puntos, rachas e insignias a una actividad que no es un juego, en este caso el tratamiento de anemia. El objetivo es motivar a la madre a cumplir con la dosis diaria de su hijo haciendolo mas entretenido y gratificante. Por ejemplo en lugar de decirle simplemente "dale el hierro a tu hijo", el sistema le dice "llevas 14 dias seguidos sin fallar, ganas 10 puntos hoy y desbloqueaste una insignia". Eso motiva mucho mas que un simple recordatorio.
+
+
+
+##### 2.6.6.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Achievements & Rewards. Aqui se definen las reglas de negocio relacionadas con el ciclo de vida de los logros y recompensas de la madre durante el tratamiento de anemia de su hijo. Se incluyen el Aggregate Root Achievement, la entidad Badge, los Value Objects AchievementStatus y BadgeType, el Domain Service AchievementEvaluatorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregate Root: Achievement (Domain Layer)
+
+**Propósito:** Representa el registro completo de gamificación de una madre durante el tratamiento de anemia de su hijo. Gestiona la racha de días consecutivos, los puntos acumulados y el estado de las insignias desbloqueables.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | String | Identificador unico del registro de gamificacion en MongoDB. Permite al sistema encontrar y actualizar el progreso de gamificacion de una madre especifica cada vez que confirma una dosis. Por ejemplo cuando Maria confirma su dosis el sistema busca su Achievement por id y actualiza su racha y puntos. |
+| **Atributo** | `patientId` | String | Referencia logica al paciente cuyo tratamiento esta siendo gamificado. Sin este atributo el sistema no sabria a que paciente asociar el progreso de gamificacion de la madre. Por ejemplo cuando el BC Treatment Tracking dispara el evento DailyDoseConfirmed con el patientId, este BC usa ese dato para encontrar el Achievement correspondiente y actualizarlo. |
+| **Atributo** | `motherId` | String | Referencia logica a la madre que esta participando en la gamificacion. Es necesario porque es la madre quien recibe las recompensas y notificaciones de logros en FerovaFamilia. Por ejemplo cuando se desbloquea una insignia el sistema usa el motherId para notificar a la madre correcta via Firebase FCM. |
+| **Atributo** | `currentStreak` | Integer | Cuenta cuantos dias consecutivos lleva la madre confirmando la dosis sin fallar ninguna. Por ejemplo si Maria confirmo la dosis 7 dias seguidos su currentStreak es 7. Si falla un dia se reinicia a 0. En FerovaFamilia la madre ve el mensaje: "Llevas 7 dias consecutivos sin fallar una dosis." |
+| **Atributo** | `longestStreak` | Integer | Guarda la racha mas larga que la madre ha logrado en todo el tratamiento. Aunque pierda su racha actual este dato nunca baja. Por ejemplo si Maria llego a 30 dias consecutivos pero luego fallo, su longestStreak se mantiene en 30. En FerovaFamilia la madre ve: "Tu mejor racha: 30 dias."|
+| **Atributo** | `streakStartDate`| DateTime | Fecha en que inicio la racha actual de la madre. Sirve para mostrarle a la madre desde cuando viene cumpliendo sin fallar. Por ejemplo FerovaFamilia muestra: "Llevas una racha desde el 1 de abril." |
+| **Atributo** | `totalPoints` | Integer | Saldo acumulado de todos los puntos que ha ganado la madre durante el tratamiento. Los puntos nunca se pierden aunque se pierda la racha. En FerovaFamilia la madre ve: "Tienes 140 puntos acumulados." Cada dosis confirmada suma 10 puntos automaticamente. |
+| **Atributo** | `status` | Enum | Estado actual del proceso de gamificacion de la madre. Va de la mano con el estado del tratamiento del paciente. Si el tratamiento esta activo el status es ACTIVE. Si se completo es COMPLETED y si se abandono es ABANDONED. Sirve para que el sistema sepa si debe seguir actualizando la racha y los puntos o si el proceso de gamificacion ya termino. |
+| **Método** | `updateStreak()` | void | Se ejecuta cada vez que la madre confirma la dosis del dia. Incrementa el currentStreak en 1 y verifica si supera el longestStreak actualizandolo de ser necesario. Por ejemplo cuando Maria confirma su septima dosis consecutiva este metodo cambia currentStreak de 6 a 7 y FerovaFamilia muestra: "Llevas 7 dias consecutivos sin fallar una dosis." |
+| **Método** | `resetStreak()` | void | Se ejecuta automaticamente cuando la madre omite la dosis de un dia. Guarda el currentStreak en longestStreak si es mayor y reinicia el currentStreak a 0. El totalPoints no se toca porque los puntos acumulados se mantienen aunque se pierda la racha. FerovaFamilia muestra: "Perdiste tu racha de 14 dias. Vuelve a empezar hoy." |
+| **Método** | `addPoints(points: Integer)` | void | Suma los puntos ganados al totalPoints de la madre. Se ejecuta despues de cada confirmacion de dosis. Por ejemplo cada dosis confirmada vale 10 puntos por lo que este metodo suma 10 al saldo actual. FerovaFamilia actualiza el contador: "Tienes 70 puntos acumulados." |
+| **Método** | `unlockBadge(badge: Badge)` | void | Desbloquea una insignia especifica cuando la madre alcanza el hito correspondiente. Verifica primero que la insignia no haya sido desbloqueada anteriormente para respetar la invarianza. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo desbloquea la insignia FIRST_WEEK_COMPLETED y FerovaFamilia muestra una animacion celebratoria. |
+| **Método** | `hasReachedMilestone(milestone: Integer):` | Boolean | Verifica si el currentStreak de la madre ha llegado a un hito especifico. Retorna true cuando el AchievementEvaluatorService debe evaluar si hay alguna insignia para desbloquear. Por ejemplo si la insignia tiene milestone 7 y el currentStreak de Maria es 7 retorna true y el sistema procede a desbloquearla. |
+| **Invarianza** | `Non-Negative` | Regla | Tanto el `currentStreak` como el `totalPoints` nunca pueden tener valores negativos. |
+| **Invarianza** | `Uniqueness` | Regla | Una insignia no puede desbloquearse dos veces para el mismo paciente; el logro es permanente. |
+| **Invarianza** | `Persistence` | Regla | Los puntos acumulados son independientes de la racha; no se pierden al fallar una dosis diaria. |
+
+###### Entity: Badge (Domain Layer)
+
+**Propósito:** Representa una insignia desbloqueada o bloqueada dentro del sistema de gamificacion de Ferova. Cada insignia tiene un hito especifico que la madre debe alcanzar para desbloquearla.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | String | Identificador unico de la insignia en MongoDB. Permite al sistema encontrar y actualizar el estado de una insignia especifica cuando la madre alcanza su hito correspondiente. |
+| **Atributo** | `achievementId` | String | Referencia logica al Achievement al que pertenece esta insignia. Sin este atributo el sistema no sabria a que madre asociar la insignia desbloqueada. Por ejemplo cuando Maria desbloquea la insignia de primera semana el sistema usa el achievementId para vincular la insignia con el registro de gamificacion de Maria. |
+| **Atributo** | `type` | BadgeType | Define que tipo de insignia es usando el enumerador BadgeType. Por ejemplo FIRST_WEEK_COMPLETED para la insignia de primera semana. Permite al sistema identificar rapidamente que insignia evaluar sin comparar textos. En FerovaFamilia cada tipo de insignia tiene un icono visual diferente. |
+| **Atributo** | `name` | String | Nombre legible de la insignia que ve la madre en FerovaFamilia. Por ejemplo "Primera semana completada". Es el texto que aparece en la animacion celebratoria cuando se desbloquea y en la seccion de logros del perfil de la madre. |
+| **Atributo** | `description` | String | Descripcion corta de lo que significa la insignia. Por ejemplo "Confirmaste la dosis 7 dias seguidos sin fallar". Ayuda a la madre a entender que logro alcanzo y por que merece la recompensa cuando revisa su historial de insignias en FerovaFamilia. |
+| **Atributo** | `milestone` | Integer | Numero de dias consecutivos necesarios para desbloquear esta insignia. Por ejemplo la insignia FIRST_WEEK_COMPLETED tiene milestone 7 y la FIRST_MONTH_COMPLETED tiene milestone 30. Es el dato que usa el metodo isEligible para determinar si la madre ya merece la insignia. |
+| **Atributo** | `isUnlocked` | Boolean | Indica si la insignia ya fue desbloqueada por la madre. Empieza en false y cambia a true cuando la madre alcanza el milestone. Es la invarianza que impide que la misma insignia se desbloquee dos veces. En FerovaFamilia las insignias bloqueadas aparecen en gris y las desbloqueadas en color. |
+| **Atributo** | `unlockedAt` | DateTime | Fecha y hora exacta en que la madre desbloqueo la insignia. En FerovaFamilia la madre puede ver: "Desbloqueaste esta insignia el 7 de abril a las 8:15 AM." |
+| **Método** | `unlock()` | void | Cambia isUnlocked a true y registra el unlockedAt con la fecha y hora actual. Se ejecuta cuando el Aggregate Root confirma que la madre alcanzo el milestone de esa insignia. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo marca la insignia FIRST_WEEK_COMPLETED como desbloqueada y FerovaFamilia muestra la animacion celebratoria. |
+| **Método** | `isEligible(currentStreak: Integer)` | Boolean | Compara el currentStreak de la madre con el milestone de la insignia y verifica que no haya sido desbloqueada anteriormente. Retorna true si ambas condiciones se cumplen. Por ejemplo si la insignia tiene milestone 7, el currentStreak de Maria es 7 y la insignia aun esta bloqueada retorna true y el sistema procede a desbloquearla. |
+
+###### Value Objects (Domain Layer)
+
+| Value Object | Elemento | Descripción |
+| :--- | :--- | :--- |
+| **AchievementStatus** | **ACTIVE** | la madre esta participando activamente en la gamificacion porque el tratamiento de su hijo sigue en curso. El sistema sigue actualizando la racha y sumando puntos con cada confirmacion de dosis. En FerovaFamilia la madre ve su racha y puntos actualizandose en tiempo real. |
+| | **COMPLETED** | el tratamiento del paciente se completo exitosamente. La madre recibio la insignia final TREATMENT_COMPLETED y su proceso de gamificacion queda cerrado. En FerovaFamilia se muestra un resumen final con todos los logros obtenidos durante el tratamiento. |
+| | **ABANDONED** | el tratamiento fue abandonado formalmente. El sistema deja de actualizar la racha y los puntos. Los logros obtenidos hasta ese momento se mantienen en el historial pero no se generan nuevos. |
+| **BadgeType** | **FIRST_WEEK_COMPLETED** | se desbloquea cuando la madre lleva 7 dias consecutivos confirmando la dosis sin fallar. Es la primera insignia que puede obtener la madre y sirve para engancharla en el sistema de gamificacion desde el inicio del tratamiento. |
+| | **FIRST_MONTH_COMPLETED** | se desbloquea cuando la madre lleva 30 dias consecutivos confirmando la dosis. Representa un hito importante de constancia en el tratamiento de anemia. |
+| | **HALF_TREATMENT_COMPLETED** | se desbloquea cuando el paciente llega a la mitad de su tratamiento con buena adherencia. Motiva a la madre a continuar hasta el final del tratamiento. |
+| | **TREATMENT_COMPLETED** | es la insignia mas importante. Se desbloquea cuando el paciente completa todo el tratamiento exitosamente. Incluye la mayor celebracion en FerovaFamilia. |
+| | **STREAK_RECOVERED** | se desbloquea cuando la madre pierde su racha y la recupera alcanzando nuevamente los 7 dias consecutivos. Premia la perseverancia de la madre que no se rindio despues de perder su racha. |
+
+###### Domain Service: AchievementEvaluatorService (Domain Layer)
+
+**Propósito:** Gestiona la logica de evaluacion de hitos y desbloqueo automatico de insignias cuando la madre alcanza un punto importante del tratamiento.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Método** | `evaluateMilestone(currentStreak, badges)` | Badge? | Recibe el currentStreak actual de la madre y la lista de todas sus insignias. Evalua si el currentStreak coincide con el milestone de alguna insignia que aun este bloqueada. Si encuentra una retorna la insignia a desbloquear, si no retorna null. Por ejemplo cuando Maria cumple 7 dias consecutivos este metodo recorre sus insignias, encuentra que FIRST_WEEK_COMPLETED tiene milestone 7 y aun esta bloqueada, y la retorna para que el Aggregate la desbloquee. |
+| **Método** | `calculatePointsForDose()`| Integer | Calcula cuantos puntos debe recibir la madre por confirmar la dosis del dia. Actualmente retorna un valor fijo de 10 puntos por dosis pero esta separado como metodo del Domain Service para que en el futuro pueda implementarse logica mas compleja como puntos bonus por racha larga sin modificar el Aggregate Root. |
+| **Método** | `shouldNotifyBadgeUnlock(badge: Badge)`| Boolean | Determina si el sistema debe notificar al BC Notifications sobre el desbloqueo de una insignia. Retorna true si la insignia es de tipo FIRST_WEEK_COMPLETED, FIRST_MONTH_COMPLETED, HALF_TREATMENT_COMPLETED, TREATMENT_COMPLETED o STREAK_RECOVERED. Siempre retorna true porque todas las insignias merecen una notificacion celebratoria para la madre. |
+
+###### Repositories
+
+| Repositorio | Método | Descripción |
+| :--- | :--- | :--- |
+| **AchievementRepository** | `save(achievement: Achievement): void` | guarda o actualiza el registro de gamificacion de una madre en MongoDB. Se ejecuta con cada confirmacion de dosis para actualizar la racha y los puntos en tiempo real. |
+| | `findByPatientId(patientId: String): Achievement?` | busca el registro de gamificacion asociado a un paciente especifico. Lo usa el Event Handler cuando recibe el evento DailyDoseConfirmed del BC Treatment Tracking para encontrar el Achievement correcto y actualizarlo. |
+| | `findByMotherId(motherId: String): Achievement?` | busca el registro de gamificacion de una madre especifica. Lo usa FerovaFamilia para mostrar el perfil de gamificacion de la madre con su racha, puntos e insignias. |
+| **BadgeRepository** | `save(badge: Badge): void` | guarda o actualiza el estado de una insignia en MongoDB. Se ejecuta cuando se desbloquea una insignia para cambiar su isUnlocked a true y registrar el unlockedAt. |
+| | `findByAchievementId(achievementId: String): List<Badge>` | retorna todas las insignias de un registro de gamificacion. Lo usa FerovaFamilia para mostrar todas las insignias del tratamiento incluyendo las bloqueadas en gris y las desbloqueadas en color. |
+| | `findUnlockedByAchievementId(achievementId: String): List<Badge>` | retorna solo las insignias desbloqueadas. Lo usa FerovaFamilia para mostrar el historial de logros obtenidos por la madre durante el tratamiento. |
+
+###### Domain Events
+
+| Evento | Descripción |
+| :--- | :--- |
+| **StreakUpdated** | Se dispara cuando la madre confirma una dosis y su racha aumenta. FerovaFamilia actualiza el contador de racha en tiempo real mostrando el nuevo numero de dias consecutivos. |
+| **StreakReset** | Se dispara cuando la madre omite una dosis y su racha se reinicia a cero. FerovaFamilia muestra el mensaje motivador: "Perdiste tu racha. Vuelve a empezar hoy." |
+| **PointsEarned** | Se dispara cuando la madre gana puntos por confirmar una dosis. FerovaFamilia actualiza el saldo de puntos mostrando el nuevo total acumulado. |
+| **BadgeUnlocked** | Se dispara cuando la madre desbloquea una insignia. Notifica al BC Notifications para que envie la notificacion celebratoria a la madre via Firebase FCM con el nombre de la insignia desbloqueada. |
+| **AchievementCompleted** | Se dispara cuando el tratamiento del paciente se completa exitosamente y la madre recibe la insignia final TREATMENT_COMPLETED. Notifica al BC Notifications para enviar el mensaje de celebracion maxima a la madre en FerovaFamilia. |
+
+##### 2.6.6.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Achievements & Rewards. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y transformandolas en comandos y consultas que entiende la Application Layer. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+##### Controllers (REST - Infrastructure Layer)
+
+**Propósito:** Expone los endpoints REST para que FerovaFamilia pueda consultar el progreso de gamificacion de la madre incluyendo su racha actual, sus puntos acumulados y el estado de sus insignias. Es el unico controller del bounded context porque Achievements & Rewards no recibe comandos directos del usuario sino que reacciona automaticamente a eventos del BC Treatment Tracking.
+
+**Razon:** Se necesita un controller porque FerovaFamilia necesita una forma de consultar el estado actual de la gamificacion de la madre cuando abre la pantalla de logros o cuando quiere ver su progreso. Sin este controller la app no tendria como obtener esa informacion del backend.
+
+| Endpoint | Propósito | Descripción |
+| :--- | :--- | :--- |
+| **GET** `/api/v1/achievements/{patientId}` | Consultar progreso general. | Retorna el progreso completo de gamificacion de la madre incluyendo la racha actual, la racha mas larga, los puntos acumulados y el estado general. Lo usa FerovaFamilia cuando la madre abre su perfil de gamificacion para ver su progreso en tiempo real. Por ejemplo Maria abre FerovaFamilia y ve: "Racha actual: 14 dias. Mejor racha: 30 dias. Puntos: 140." |
+| **GET** `/api/v1/achievements/{patientId}/badges` | Consultar galería de insignias. | Retorna la lista completa de insignias del tratamiento incluyendo las desbloqueadas en color y las bloqueadas en gris con el hito necesario para obtenerlas. Lo usa FerovaFamilia para mostrar la galeria de insignias de la madre. Por ejemplo Maria ve 5 insignias donde 2 estan en color porque ya las desbloqueo y 3 estan en gris porque aun no alcanzo su hito. |
+| **GET** `/api/v1/achievements/{patientId}/badges/unlocked` | Consultar historial de logros. | Retorna solo las insignias que la madre ya desbloqueo con su fecha de obtencion. Lo usa FerovaFamilia para mostrar el historial de logros de la madre. Por ejemplo Maria ve: "Primera semana completada - desbloqueada el 7 de abril a las 8:15 AM." |
+
+##### Resources (DTOs / Request & Response Models)
+
+#### 1. AchievementResponse 
+
+**Razon:** Contiene toda la informacion de gamificacion que necesita FerovaFamilia para mostrar el perfil de progreso de la madre. Sin este DTO el frontend no tendria un formato estandar para recibir los datos del backend. En el aplicativo este DTO alimenta la pantalla principal de gamificacion donde la madre ve su racha y puntos actualizados.
+
+```json
+{
+  "id": "string",
+  "patientId": "string",
+  "motherId": "string",
+  "currentStreak": "integer",
+  "longestStreak": "integer",
+  "streakStartDate": "datetime",
+  "totalPoints": "integer",
+  "status": "ACTIVE / COMPLETED / ABANDONED"
+}
+```
+
+#### 2. BadgeResponse
+
+**Razon:** Contiene la informacion de cada insignia que necesita FerovaFamilia para mostrarla correctamente en la galeria. El campo isUnlocked permite a la app decidir si mostrar la insignia en color o en gris. En el aplicativo este DTO alimenta cada tarjeta de insignia en la pantalla de logros de la madre.
+
+```json
+{
+  "id": "string",
+  "type": "string",
+  "name": "string",
+  "description": "string",
+  "milestone": "integer",
+  "isUnlocked": "boolean",
+  "unlockedAt": "datetime"
+}
+```
+##### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **AchievementResponseFromEntityAssembler** | `Achievement` <br> → <br> `AchievementResponse` | Convierte la entidad Achievement del dominio en un AchievementResponse que puede viajar via HTTP hacia FerovaFamilia. Es necesario porque el Aggregate Root tiene metodos y logica interna que no deben exponerse al frontend. Solo expone los atributos de estado que la madre necesita ver. | El GetAchievementQueryHandler obtiene el Aggregate Achievement de MongoDB con todos sus atributos y metodos internos. El Assembler toma solo id, patientId, motherId, currentStreak, longestStreak, streakStartDate, totalPoints y status y los convierte en un JSON limpio que FerovaFamilia puede mostrar directamente en la pantalla de gamificacion de la madre. |
+| **BadgeResponseFromEntityAssembler** | `Badge` <br> → <br> `BadgeResponse` | Convierte la entidad Badge del dominio en un BadgeResponse que puede viajar via HTTP hacia FerovaFamilia. Garantiza que solo se exponga la informacion necesaria de cada insignia sin exponer los internos de la entidad. | El GetBadgesQueryHandler obtiene la lista de Badge de MongoDB. El Assembler convierte cada Badge en un BadgeResponse con su type, name, description, milestone, isUnlocked y unlockedAt. FerovaFamilia recibe la lista y muestra cada insignia con su estado correcto en la galeria de logros de la madre. |
+
+##### 2.6.6.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Achievements & Rewards. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Query Handlers que gestionan las consultas de gamificacion desde FerovaFamilia y los Event Handlers que reaccionan automaticamente a los eventos generados por el BC Treatment Tracking para actualizar el progreso de gamificacion de la madre.
+
+##### Query Handlers
+
+| Query Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GetAchievement-**<br>**QueryHandler** | Es el query handler principal del bounded context. FerovaFamilia necesita una forma de obtener el progreso completo de gamificacion de la madre cada vez que ella abre la pantalla de logros. Sin este handler la app no tendria como obtener los datos actualizados del backend. | Recibe el GetAchievementQuery con el patientId. Consulta el AchievementRepository con findByPatientId y retorna el Aggregate Achievement completo con la racha actual, la racha mas larga, los puntos acumulados y el estado de gamificacion. | Maria abre FerovaFamilia y va a la seccion de logros. La app envia una peticion GET al AchievementController. El controller crea el GetAchievementQuery con el patientId de Juan y lo pasa a este handler. El handler consulta MongoDB, obtiene el Achievement de Maria y lo retorna. La app muestra: "Racha actual: 14 dias. Mejor racha: 30 dias. Puntos: 140." |
+| **GetBadges-**<br>**QueryHandler** | FerovaFamilia necesita obtener la lista completa de insignias del tratamiento para mostrar la galeria de logros de la madre. Sin este handler la app no sabria cuales insignias mostrar en color y cuales en gris. | Recibe el GetBadgesQuery con el patientId. Busca primero el Achievement con findByPatientId para obtener el achievementId. Luego consulta el BadgeRepository con findByAchievementId y retorna la lista completa de insignias ordenadas por milestone de menor a mayor. | Maria va a la seccion de insignias en FerovaFamilia. La app envia una peticion GET al AchievementController. El handler obtiene las 5 insignias de Maria: 2 desbloqueadas en color y 3 bloqueadas en gris con el hito necesario para obtenerlas. FerovaFamilia muestra la galeria completa de logros. |
+
+##### Event Handlers
+
+| Event Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **OnDailyDose-**<br>**Confirmed-**<br>**EventHandler** | Este es el event handler mas importante del bounded context. Cada vez que la madre confirma una dosis el BC Treatment Tracking dispara el evento DailyDoseConfirmed. Este handler reacciona automaticamente para actualizar toda la gamificacion de la madre sin que nadie tenga que hacer nada manualmente. | Recibe el evento DailyDoseConfirmed con el patientId. Busca el Achievement de la madre con findByPatientId. Llama al metodo updateStreak del Aggregate para incrementar la racha. Llama al metodo addPoints con los puntos calculados por el AchievementEvaluatorService. Llama al AchievementEvaluatorService con evaluateMilestone para verificar si la madre alcanzo algun hito. Si hay una insignia elegible llama al metodo unlockBadge del Aggregate y dispara el evento BadgeUnlocked. Finalmente persiste los cambios en MongoDB via AchievementRepository y dispara los eventos StreakUpdated y PointsEarned. | Maria confirma la dosis del dia 7 en FerovaFamilia. El BC Treatment Tracking dispara DailyDoseConfirmed. Este handler incrementa la racha de Maria a 7, suma 10 puntos a su saldo llegando a 70, detecta que alcanzo el milestone de la insignia FIRST_WEEK_COMPLETED y la desbloquea automaticamente. FerovaFamilia muestra la animacion celebratoria y Maria recibe una notificacion push: "Felicitaciones! Desbloqueaste la insignia Primera semana completada." |
+| **OnDailyDose-**<br>**Omitted-**<br>**EventHandler** | Cuando la madre falla una dosis el sistema debe reiniciar su racha automaticamente. Este handler reacciona al evento DailyDoseOmitted del BC Treatment Tracking para actualizar el estado de gamificacion de la madre sin intervencion manual. | Recibe el evento DailyDoseOmitted con el patientId. Busca el Achievement de la madre con findByPatientId. Llama al metodo resetStreak del Aggregate que guarda el currentStreak en longestStreak si es mayor y reinicia el currentStreak a 0. Persiste los cambios en MongoDB y dispara el evento StreakReset. | Maria olvida confirmar la dosis del dia 15. El BC Treatment Tracking dispara DailyDoseOmitted. Este handler reinicia la racha de Maria a 0 pero mantiene sus 140 puntos acumulados intactos. FerovaFamilia muestra: "Perdiste tu racha de 14 dias. Vuelve a empezar hoy." |
+| **OnTreatment-**<br>**Completed-**<br>**EventHandler** | Cuando el tratamiento del paciente se completa exitosamente el proceso de gamificacion debe cerrarse con la recompensa maxima. Este handler reacciona al evento TreatmentCompleted del BC Treatment Tracking para desbloquear la insignia final y cerrar el proceso de gamificacion. | Recibe el evento TreatmentCompleted con el patientId. Busca el Achievement de la madre con findByPatientId. Llama al metodo unlockBadge del Aggregate con la insignia TREATMENT_COMPLETED. Cambia el status del Achievement a COMPLETED. Persiste los cambios en MongoDB y dispara el evento AchievementCompleted para notificar al BC Notifications. | La enfermera Rosa marca el tratamiento de Juan como completado en FerovaClinic. El BC Treatment Tracking dispara TreatmentCompleted. Este handler desbloquea la insignia TREATMENT_COMPLETED de Maria, cambia su status a COMPLETED y notifica al BC Notifications. Maria recibe la notificacion push mas importante de todo el tratamiento: "Felicitaciones! Juan completo su tratamiento de anemia exitosamente. Desbloqueaste la insignia Tratamiento completado." |
+| **OnTreatment-**<br>**Abandoned-**<br>**EventHandler** | Cuando el tratamiento es abandonado el proceso de gamificacion debe detenerse para que el sistema no siga actualizando la racha y los puntos de una madre cuyo hijo ya no esta en tratamiento activo. | Recibe el evento TreatmentAbandoned con el patientId. Busca el Achievement de la madre con findByPatientId. Cambia el status del Achievement a ABANDONED. Persiste los cambios en MongoDB via AchievementRepository. A partir de este momento el sistema deja de reaccionar a eventos de gamificacion para este paciente. | La enfermera Rosa registra el abandono del tratamiento de Juan en FerovaClinic. El BC Treatment Tracking dispara TreatmentAbandoned. Este handler cambia el status del Achievement de Maria a ABANDONED. Todos los logros obtenidos hasta ese momento como las insignias desbloqueadas y los puntos acumulados se mantienen en el historial de Maria pero el sistema deja de generar nuevas recompensas. |
+
+##### 2.6.6.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Achievements & Rewards. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB de los registros de gamificacion, insignias y la comunicacion con el BC Notifications para las alertas de logros desbloqueados.
+
+##### Persistence
+
+| Repositorio | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **MongoAchievement-**<br>**Repository** | Es la implementacion concreta de la interfaz AchievementRepository definida en el Domain Layer. El Domain Layer solo define que operaciones necesita pero no sabe como ejecutarlas en MongoDB. Esta clase es la que sabe exactamente como guardar y recuperar un documento Achievement en la base de datos. | Implementa la interfaz AchievementRepository del Domain Layer. Gestiona la persistencia del registro de gamificacion de la madre en la coleccion achievements de MongoDB. Realiza el mapeo entre el Aggregate Root Achievement del dominio y el documento MongoDB correspondiente. Provee las siguientes operaciones:<br><br>• **save(achievement)**: guarda o actualiza el documento en la coleccion achievements. Se ejecuta con cada confirmacion de dosis para actualizar la racha y los puntos en tiempo real.<br>• **findByPatientId(patientId)**: busca el documento Achievement por patientId. Lo usa el Event Handler cuando recibe el evento DailyDoseConfirmed para encontrar el Achievement correcto y actualizarlo.<br>• **findByMotherId(motherId)**: busca el documento Achievement por motherId. Lo usa FerovaFamilia para mostrar el perfil de gamificacion de la madre cuando abre la pantalla de logros. | Maria confirma la dosis del dia 7. El OnDailyDoseConfirmedEventHandler actualiza el Aggregate Achievement de Maria incrementando su racha a 7 y sumando 10 puntos. Luego llama a save(achievement) y este repositorio convierte el Aggregate en un documento MongoDB y lo guarda en la coleccion achievements actualizando los campos currentStreak y totalPoints en tiempo real. |
+| **MongoBadge-**<br>**Repository** | Es la implementacion concreta de la interfaz BadgeRepository definida en el Domain Layer. Sabe exactamente como guardar y recuperar documentos Badge en MongoDB incluyendo como filtrar solo las insignias desbloqueadas para mostrarlas en FerovaFamilia. | Implementa la interfaz BadgeRepository del Domain Layer. Gestiona la persistencia de las insignias en la coleccion badges de MongoDB. Provee las siguientes operaciones:<br><br>• **save(badge)**: guarda o actualiza el documento Badge en la coleccion badges. Se ejecuta cuando se desbloquea una insignia para cambiar su isUnlocked a true y registrar el unlockedAt con la fecha y hora del desbloqueo.<br>• **findByAchievementId(achievementId)**: retorna todas las insignias del tratamiento incluyendo las bloqueadas y desbloqueadas. Lo usa FerovaFamilia para mostrar la galeria completa de insignias con las desbloqueadas en color y las bloqueadas en gris.<br>• **findUnlockedByAchievementId(achievementId)**: retorna solo las insignias desbloqueadas. Lo usa FerovaFamilia para mostrar el historial de logros obtenidos por la madre durante el tratamiento con su fecha de obtencion. | Maria alcanza 7 dias consecutivos y desbloquea la insignia FIRST_WEEK_COMPLETED. El OnDailyDoseConfirmedEventHandler llama al metodo unlock de la insignia y luego llama a save(badge). Este repositorio actualiza el documento Badge en MongoDB cambiando isUnlocked a true y registrando el unlockedAt. FerovaFamilia muestra la insignia en color con la fecha de desbloqueo. |
+
+##### Mappers
+
+| Mapper | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- |
+| **Achievement-**<br>**DocumentMapper** | Convierte entre el Aggregate Root Achievement del dominio y el documento MongoDB. Es necesario porque el Aggregate tiene metodos y comportamiento que no deben persistirse directamente en la base de datos. Solo sus atributos de estado son los que se guardan en MongoDB. | El Aggregate Achievement de Maria tiene atributos como currentStreak, totalPoints y status pero tambien tiene metodos como updateStreak y addPoints. El mapper extrae solo los atributos de estado y los convierte en un documento MongoDB plano sin los metodos. Al leer de MongoDB hace el proceso inverso convirtiendo el documento en un Aggregate con todos sus metodos disponibles. |
+| **Badge-**<br>**DocumentMapper** | Convierte entre la entidad Badge del dominio y el documento MongoDB. Garantiza que todos los atributos de la insignia incluyendo isUnlocked y unlockedAt se mapeen correctamente tanto al guardar como al leer de MongoDB. | Cuando se desbloquea la insignia FIRST_WEEK_COMPLETED de Maria el mapper convierte la entidad Badge con isUnlocked=true y unlockedAt="2026-04-07T08:15:00Z" en un documento MongoDB y lo guarda en la coleccion badges. Cuando FerovaFamilia consulta las insignias el mapper lee el documento y lo convierte de vuelta en una entidad Badge que el Assembler puede transformar en un BadgeResponse para enviarlo al frontend. |
+
+##### Configuration
+
+| Componente | Razon | Configuración de Índices |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexion a MongoDB para el bounded context Achievements & Rewards. Define los indices necesarios para las colecciones achievements y badges garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. Sin estos indices las consultas por patientId o achievementId serian lentas porque MongoDB tendria que recorrer todos los documentos de la coleccion. | **Colección achievements:**<br>• **Indice unico en patientId**: garantiza que cada paciente tenga un solo registro de gamificacion y permite buscar el Achievement de un paciente rapidamente con findByPatientId.<br>• **Indice en motherId**: permite buscar el Achievement de una madre especifica rapidamente con findByMotherId cuando FerovaFamilia carga la pantalla de logros.<br><br>**Colección badges:**<br>• **Indice en achievementId**: permite obtener todas las insignias de un Achievement rapidamente con findByAchievementId cuando FerovaFamilia carga la galeria de insignias.<br>• **Indice compuesto en achievementId e isUnlocked**: permite filtrar solo las insignias desbloqueadas rapidamente con findUnlockedByAchievementId sin recorrer toda la coleccion. |
+
+##### Modelo de datos MongoDB
+
+<h4>Coleccion achievements:</h4>
+
+```json
+{
+  "_id": "ach:uuid",
+  "patientId": "pat:uuid",
+  "motherId": "user:uuid",
+  "currentStreak": 14,
+  "longestStreak": 30,
+  "streakStartDate": "2026-04-04T00:00:00Z",
+  "totalPoints": 140,
+  "status": "ACTIVE"
+}
+```
+<h4>Coleccion badges:</h4>
+
+```json
+{
+  "_id": "badge:uuid",
+  "achievementId": "ach:uuid",
+  "type": "FIRST_WEEK_COMPLETED",
+  "name": "Primera semana completada",
+  "description": "Confirmaste la dosis 7 dias seguidos sin fallar",
+  "milestone": 7,
+  "isUnlocked": true,
+  "unlockedAt": "2026-04-07T08:15:00Z"
+}
+```
+
+##### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align="center">
+	<img src="resources/images/chapter-II/Software_Architecture/Achievements & Rewards/Achievements & Rewards-Diagram component.png">
+</div>
+
+##### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align="center">
+	<img src="resources/images/chapter-II/Class_Diagram/Achievements & Rewards/diagrama-achievements-rewards.png">
+</div>
+
+###### 2.6.6.6.2. Bounded Context Database Design Diagram
+
+<div align="center">
+	<img src="resources/images/chapter-II/DB_Diagram/Achievements & Rewards/database-diagrama-achievements-rewards.png">
+</div>
