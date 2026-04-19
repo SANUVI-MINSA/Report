@@ -7468,6 +7468,20 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 ```
 
 ##### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align="center">
+	<img src="resources/images/chapter-II/Software_Architecture/Achievements & Rewards/Achievements & Rewards-Diagram component.png">
+</div>
+
 ##### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align="center">
+	<img src="resources/images/chapter-II/Class_Diagram/Achievements & Rewards/diagrama-achievements-rewards.png">
+</div>
+
 ###### 2.6.6.6.2. Bounded Context Database Design Diagram
+
+<div align="center">
+	<img src="resources/images/chapter-II/DB_Diagram/Achievements & Rewards/database-diagrama-achievements-rewards.png">
+</div>
