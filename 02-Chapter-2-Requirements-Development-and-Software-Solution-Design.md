@@ -7413,6 +7413,60 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **OnTreatment-**<br>**Abandoned-**<br>**EventHandler** | Cuando el tratamiento es abandonado el proceso de gamificacion debe detenerse para que el sistema no siga actualizando la racha y los puntos de una madre cuyo hijo ya no esta en tratamiento activo. | Recibe el evento TreatmentAbandoned con el patientId. Busca el Achievement de la madre con findByPatientId. Cambia el status del Achievement a ABANDONED. Persiste los cambios en MongoDB via AchievementRepository. A partir de este momento el sistema deja de reaccionar a eventos de gamificacion para este paciente. | La enfermera Rosa registra el abandono del tratamiento de Juan en FerovaClinic. El BC Treatment Tracking dispara TreatmentAbandoned. Este handler cambia el status del Achievement de Maria a ABANDONED. Todos los logros obtenidos hasta ese momento como las insignias desbloqueadas y los puntos acumulados se mantienen en el historial de Maria pero el sistema deja de generar nuevas recompensas. |
 
 ##### 2.6.6.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Achievements & Rewards. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB de los registros de gamificacion, insignias y la comunicacion con el BC Notifications para las alertas de logros desbloqueados.
+
+##### Persistence
+
+| Repositorio | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **MongoAchievement-**<br>**Repository** | Es la implementacion concreta de la interfaz AchievementRepository definida en el Domain Layer. El Domain Layer solo define que operaciones necesita pero no sabe como ejecutarlas en MongoDB. Esta clase es la que sabe exactamente como guardar y recuperar un documento Achievement en la base de datos. | Implementa la interfaz AchievementRepository del Domain Layer. Gestiona la persistencia del registro de gamificacion de la madre en la coleccion achievements de MongoDB. Realiza el mapeo entre el Aggregate Root Achievement del dominio y el documento MongoDB correspondiente. Provee las siguientes operaciones:<br><br>• **save(achievement)**: guarda o actualiza el documento en la coleccion achievements. Se ejecuta con cada confirmacion de dosis para actualizar la racha y los puntos en tiempo real.<br>• **findByPatientId(patientId)**: busca el documento Achievement por patientId. Lo usa el Event Handler cuando recibe el evento DailyDoseConfirmed para encontrar el Achievement correcto y actualizarlo.<br>• **findByMotherId(motherId)**: busca el documento Achievement por motherId. Lo usa FerovaFamilia para mostrar el perfil de gamificacion de la madre cuando abre la pantalla de logros. | Maria confirma la dosis del dia 7. El OnDailyDoseConfirmedEventHandler actualiza el Aggregate Achievement de Maria incrementando su racha a 7 y sumando 10 puntos. Luego llama a save(achievement) y este repositorio convierte el Aggregate en un documento MongoDB y lo guarda en la coleccion achievements actualizando los campos currentStreak y totalPoints en tiempo real. |
+| **MongoBadge-**<br>**Repository** | Es la implementacion concreta de la interfaz BadgeRepository definida en el Domain Layer. Sabe exactamente como guardar y recuperar documentos Badge en MongoDB incluyendo como filtrar solo las insignias desbloqueadas para mostrarlas en FerovaFamilia. | Implementa la interfaz BadgeRepository del Domain Layer. Gestiona la persistencia de las insignias en la coleccion badges de MongoDB. Provee las siguientes operaciones:<br><br>• **save(badge)**: guarda o actualiza el documento Badge en la coleccion badges. Se ejecuta cuando se desbloquea una insignia para cambiar su isUnlocked a true y registrar el unlockedAt con la fecha y hora del desbloqueo.<br>• **findByAchievementId(achievementId)**: retorna todas las insignias del tratamiento incluyendo las bloqueadas y desbloqueadas. Lo usa FerovaFamilia para mostrar la galeria completa de insignias con las desbloqueadas en color y las bloqueadas en gris.<br>• **findUnlockedByAchievementId(achievementId)**: retorna solo las insignias desbloqueadas. Lo usa FerovaFamilia para mostrar el historial de logros obtenidos por la madre durante el tratamiento con su fecha de obtencion. | Maria alcanza 7 dias consecutivos y desbloquea la insignia FIRST_WEEK_COMPLETED. El OnDailyDoseConfirmedEventHandler llama al metodo unlock de la insignia y luego llama a save(badge). Este repositorio actualiza el documento Badge en MongoDB cambiando isUnlocked a true y registrando el unlockedAt. FerovaFamilia muestra la insignia en color con la fecha de desbloqueo. |
+
+##### Mappers
+
+| Mapper | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- |
+| **Achievement-**<br>**DocumentMapper** | Convierte entre el Aggregate Root Achievement del dominio y el documento MongoDB. Es necesario porque el Aggregate tiene metodos y comportamiento que no deben persistirse directamente en la base de datos. Solo sus atributos de estado son los que se guardan en MongoDB. | El Aggregate Achievement de Maria tiene atributos como currentStreak, totalPoints y status pero tambien tiene metodos como updateStreak y addPoints. El mapper extrae solo los atributos de estado y los convierte en un documento MongoDB plano sin los metodos. Al leer de MongoDB hace el proceso inverso convirtiendo el documento en un Aggregate con todos sus metodos disponibles. |
+| **Badge-**<br>**DocumentMapper** | Convierte entre la entidad Badge del dominio y el documento MongoDB. Garantiza que todos los atributos de la insignia incluyendo isUnlocked y unlockedAt se mapeen correctamente tanto al guardar como al leer de MongoDB. | Cuando se desbloquea la insignia FIRST_WEEK_COMPLETED de Maria el mapper convierte la entidad Badge con isUnlocked=true y unlockedAt="2026-04-07T08:15:00Z" en un documento MongoDB y lo guarda en la coleccion badges. Cuando FerovaFamilia consulta las insignias el mapper lee el documento y lo convierte de vuelta en una entidad Badge que el Assembler puede transformar en un BadgeResponse para enviarlo al frontend. |
+
+##### Configuration
+
+| Componente | Razon | Configuración de Índices |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexion a MongoDB para el bounded context Achievements & Rewards. Define los indices necesarios para las colecciones achievements y badges garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. Sin estos indices las consultas por patientId o achievementId serian lentas porque MongoDB tendria que recorrer todos los documentos de la coleccion. | **Colección achievements:**<br>• **Indice unico en patientId**: garantiza que cada paciente tenga un solo registro de gamificacion y permite buscar el Achievement de un paciente rapidamente con findByPatientId.<br>• **Indice en motherId**: permite buscar el Achievement de una madre especifica rapidamente con findByMotherId cuando FerovaFamilia carga la pantalla de logros.<br><br>**Colección badges:**<br>• **Indice en achievementId**: permite obtener todas las insignias de un Achievement rapidamente con findByAchievementId cuando FerovaFamilia carga la galeria de insignias.<br>• **Indice compuesto en achievementId e isUnlocked**: permite filtrar solo las insignias desbloqueadas rapidamente con findUnlockedByAchievementId sin recorrer toda la coleccion. |
+
+##### Modelo de datos MongoDB
+
+<h4>Coleccion achievements:</h4>
+
+```json
+{
+  "_id": "ach:uuid",
+  "patientId": "pat:uuid",
+  "motherId": "user:uuid",
+  "currentStreak": 14,
+  "longestStreak": 30,
+  "streakStartDate": "2026-04-04T00:00:00Z",
+  "totalPoints": 140,
+  "status": "ACTIVE"
+}
+```
+<h4>Coleccion badges:</h4>
+
+```json
+{
+  "_id": "badge:uuid",
+  "achievementId": "ach:uuid",
+  "type": "FIRST_WEEK_COMPLETED",
+  "name": "Primera semana completada",
+  "description": "Confirmaste la dosis 7 dias seguidos sin fallar",
+  "milestone": 7,
+  "isUnlocked": true,
+  "unlockedAt": "2026-04-07T08:15:00Z"
+}
+```
+
 ##### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
