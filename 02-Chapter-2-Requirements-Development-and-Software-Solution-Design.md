@@ -7809,6 +7809,91 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **OnAdherence-**<br>**ReportSubmitted-**<br>**EventHandler** | Cuando la enfermera submite su reporte de adherencia semanal desde FerovaClinic los datos de su posta deben actualizarse automaticamente en el sistema analitico para que el dashboard del admin siempre refleje los datos mas recientes de todas las postas del distrito. | Recibe el evento AdherenceReportSubmitted con el facilityId, el adherencePercentage calculado y el criticalPatients. Consulta al BC Health Facility para obtener el districtId correspondiente a esa posta. Busca la FacilityMetric de esa posta en el FacilityMetricRepository. Si no existe crea una nueva FacilityMetric para esa posta. Llama al metodo updateMetrics con los nuevos datos. Persiste los cambios en MongoDB. Recalcula el RiskZone de la posta con el ReportGeneratorService. Actualiza el DistrictHeatMap con el nuevo nivel de riesgo. Persiste el mapa de calor actualizado y dispara el evento HeatMapUpdated. | La enfermera Rosa submite su reporte de adherencia semanal de la Posta Medica Zarate en FerovaClinic con 65% de adherencia y 3 pacientes criticos. Este handler actualiza automaticamente las metricas de la posta en el sistema analitico y cambia su color en el mapa de calor a amarillo. El admin ve el cambio en tiempo real en su dashboard sin necesidad de solicitar un nuevo reporte. |
 
 ##### 2.6.7.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Analytics & Reporting. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Google Maps API y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB de los reportes, metricas de postas y mapas de calor, y la comunicacion con Google Maps API para renderizar el mapa de calor del distrito en FerovaClinic.
+
+###### Persistence
+
+| Implementación | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **MongoReport-**<br>**Repository** | Es la implementacion concreta de la interfaz ReportRepository definida en el Domain Layer. El Domain Layer solo define que operaciones necesita pero no sabe como ejecutarlas en MongoDB. Esta clase es la que sabe exactamente como guardar y recuperar un documento Report en la base de datos incluyendo como ordenarlos por fecha y como filtrar por distrito. | Implementa la interfaz ReportRepository del Domain Layer. Gestiona la persistencia de los reportes analiticos del distrito en la coleccion reports de MongoDB. Realiza el mapeo entre el Aggregate Root Report del dominio y el documento MongoDB correspondiente. Provee las siguientes operaciones:<br><br>**save(report)** → guarda o actualiza el documento Report en la coleccion reports. Se ejecuta cuando el admin genera un nuevo reporte o cuando exporta uno existente cambiando su status a EXPORTED.<br>**findAll()** → retorna todos los reportes de todos los distritos ordenados por fecha de generacion de mas reciente a mas antiguo. Lo usa el GetAllReportsQueryHandler para mostrar el historial global de reportes al admin.<br>**findByDistrictId(districtId)** → retorna todos los reportes de un distrito especifico ordenados por fecha. Lo usa el GetReportsByDistrictQueryHandler cuando el admin filtra por un distrito especifico para ver su historial.<br>**findLatestByDistrictId(districtId)** → retorna solo el reporte mas reciente de un distrito especifico. Lo usa el GetLatestReportQueryHandler para mostrar los datos mas actualizados de cada distrito en el dashboard principal del admin. | El admin genera el reporte de San Juan de Lurigancho en Abril 2026. El GenerateReportCommandHandler crea el Aggregate Report con adherencePercentage 60% y criticalFacilitiesCount 3. Luego llama a save(report) y este repositorio convierte el Aggregate en un documento MongoDB y lo guarda en la coleccion reports. Cuando el admin abre el dashboard este repositorio ejecuta findLatestByDistrictId y retorna el reporte mas reciente para mostrarlo en FerovaClinic. |
+| **MongoFacility-**<br>**MetricRepository** | Es la implementacion concreta de la interfaz FacilityMetricRepository definida en el Domain Layer. Sabe exactamente como guardar y recuperar documentos FacilityMetric en MongoDB incluyendo como filtrar las postas criticas de un distrito especifico sin recorrer toda la coleccion gracias a los indices definidos en MongoConfig. | Implementa la interfaz FacilityMetricRepository del Domain Layer. Gestiona la persistencia de las metricas de adherencia de cada posta en la coleccion facility_metrics de MongoDB. Provee las siguientes operaciones:<br><br>**save(metric)** → guarda o actualiza el documento FacilityMetric en la coleccion facility_metrics. Se ejecuta cada vez que llega un nuevo reporte de adherencia de una enfermera via el OnAdherenceReportSubmittedEventHandler.<br>**findByReportId(reportId)** → retorna todas las metricas de las postas de un reporte especifico. Lo usa el GetFacilityMetricsQueryHandler para mostrar la tabla comparativa de postas cuando el admin selecciona un reporte del historial.<br>**findCriticalByDistrictId(districtId)** → retorna solo las postas con adherencia menor al 50% de un distrito especifico. Lo usa el GetCriticalFacilitiesQueryHandler para mostrar la seccion de alertas criticas en el dashboard del admin. | La enfermera Rosa submite su reporte de adherencia con 65% para la Posta Medica Zarate. El OnAdherenceReportSubmittedEventHandler llama a save(metric) y este repositorio actualiza el documento FacilityMetric en MongoDB con el nuevo adherencePercentage y criticalPatients. Cuando el admin consulta las postas criticas este repositorio ejecuta findCriticalByDistrictId y retorna solo las postas con adherencia menor al 50%. |
+| **MongoDistrict-**<br>**HeatMapRepository** | Es la implementacion concreta de la interfaz DistrictHeatMapRepository definida en el Domain Layer. Sabe exactamente como guardar y recuperar los mapas de calor de todos los distritos en MongoDB incluyendo como devolver todos los mapas para el mapa nacional o solo el de un distrito especifico cuando el admin hace click en uno. | Implementa la interfaz DistrictHeatMapRepository del Domain Layer. Gestiona la persistencia de los mapas de calor en la coleccion district_heat_maps de MongoDB. Provee las siguientes operaciones:<br><br>**save(heatMap)** → guarda o actualiza el documento DistrictHeatMap en la coleccion district_heat_maps. Se ejecuta cada vez que cambia el nivel de riesgo de alguna posta del distrito y el mapa necesita actualizarse.<br>**findAll()** → retorna los mapas de calor de todos los distritos. Lo usa el GetHeatMapQueryHandler para renderizar el mapa nacional con todos los distritos coloreados usando Google Maps API.<br>**findByDistrictId(districtId)** → retorna el mapa de calor de un distrito especifico. Lo usa el GetDistrictHeatMapQueryHandler cuando el admin hace click en un distrito del mapa nacional para ver el detalle de sus postas coloreadas. | Un paciente de la Posta Medica Huascar abandona su tratamiento. El OnTreatmentAbandonedEventHandler actualiza el DistrictHeatMap de San Juan de Lurigancho cambiando el RiskZone de la Posta Medica Huascar de YELLOW a RED. Luego llama a save(heatMap) y este repositorio actualiza el documento en MongoDB. El admin ve el cambio en tiempo real en el mapa de calor de FerovaClinic. |
+
+###### External Services
+
+| Implementación | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GoogleMaps-**<br>**Adapter** | Es el adaptador que gestiona la comunicacion con Google Maps API para renderizar el mapa de calor del distrito en FerovaClinic. Sin este adaptador el sistema no podria mostrar las postas coloreadas en el mapa interactivo del distrito ni calcular las distancias entre postas. | Recibe la lista de zones del DistrictHeatMap con sus coordenadas GPS y sus niveles de riesgo RiskZone. Construye el payload requerido por la API de Google Maps y ejecuta la llamada para renderizar cada posta en el mapa con el color correspondiente. Retorna el mapa renderizado con todas las postas coloreadas segun su nivel de adherencia. Provee las siguientes operaciones:<br><br>**renderHeatMap(zones: List)** → recibe la lista de zonas con coordenadas y niveles de riesgo y retorna el mapa de calor renderizado con cada posta coloreada en verde, amarillo o rojo segun su RiskZone. Lo usa FerovaClinic para mostrar el mapa interactivo del distrito al admin.<br>**getCoordinates(facilityId: String)** → consulta a Google Maps API las coordenadas GPS de una posta especifica usando su facilityId. Lo usa el OnAdherenceReportSubmittedEventHandler cuando necesita agregar una nueva posta al mapa de calor del distrito. | El admin abre el mapa de calor de San Juan de Lurigancho en FerovaClinic. El GetDistrictHeatMapQueryHandler obtiene el DistrictHeatMap de MongoDB con sus zones. El GoogleMapsAdapter recibe la lista de zones con las coordenadas GPS y los RiskZone de cada posta y llama a Google Maps API para renderizar el mapa con la Posta Medica Huascar en rojo, la Posta Medica Zarate en amarillo y la Posta Medica Canto Grande en verde. FerovaClinic muestra el mapa interactivo al admin. |
+
+###### Configuration
+
+| Configuración | Razon | Funcionamiento |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexion a MongoDB para el bounded context Analytics & Reporting. Define los indices necesarios para las colecciones reports, facility_metrics y district_heat_maps garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. Sin estos indices las consultas serian lentas porque MongoDB tendria que recorrer todos los documentos de cada coleccion. | Inicializa la base de datos y crea los siguientes índices:<br><br>**Coleccion reports:**<br>* Indice en `districtId` para busquedas rapidas por distrito con `findByDistrictId`.<br>* Indice compuesto en `districtId` y `generatedAt` para obtener rapidamente el reporte mas reciente con `findLatestByDistrictId`.<br>* Indice en `status` para filtrar reportes `GENERATED` o `EXPORTED` rapidamente.<br><br>**Coleccion facility_metrics:**<br>* Indice en `reportId` para obtener rapidamente todas las metricas de un reporte con `findByReportId`.<br>* Indice compuesto en `districtId` y `adherencePercentage` para filtrar rapidamente las postas criticas con `findCriticalByDistrictId`.<br><br>**Coleccion district_heat_maps:**<br>* Indice unico en `districtId` para garantizar un solo mapa de calor por distrito y permitir busquedas rapidas con `findByDistrictId`. |
+| **GoogleMapsConfig** | Configura la conexion con Google Maps API. Inicializa el cliente de Google Maps con las credenciales del proyecto Ferova y define los parametros de conexion como el timeout de las llamadas a la API y el numero maximo de reintentos ante fallos de conexion. Sin esta configuracion el GoogleMapsAdapter no podria autenticarse correctamente con la API de Google Maps para renderizar el mapa de calor. | Gestiona las credenciales y parámetros de infraestructura para la integración externa:<br><br>* **Autenticación:** Carga la API Key oficial del proyecto Ferova.<br>* **Timeout:** Define el tiempo máximo de espera para las respuestas de Google Maps para evitar bloqueos en el hilo principal.<br>* **Retries:** Establece la lógica de reintentos automáticos ante errores de red intermitentes.<br>* **Cliente:** Expone el cliente de Google Maps inicializado para ser usado por el `GoogleMapsAdapter`. |
+
+###### Modelo de datos MongoDB
+
+<h4>Coleccion reports:</h4>
+
+```json
+{
+  "_id": "rep:uuid",
+  "districtId": "dist:uuid",
+  "districtName": "San Juan de Lurigancho",
+  "generatedBy": "admin:uuid",
+  "period": "Abril 2026",
+  "adherencePercentage": 60.0,
+  "criticalFacilitiesCount": 3,
+  "status": "GENERATED",
+  "generatedAt": "2026-04-19T10:00:00Z"
+}
+
+```
+
+<h4>Coleccion facility_metrics:</h4>
+
+```json
+{
+  "_id": "metric:uuid",
+  "reportId": "rep:uuid",
+  "facilityId": "facility:uuid",
+  "facilityName": "Posta Medica Huascar",
+  "adherencePercentage": 30.0,
+  "totalPatients": 45,
+  "criticalPatients": 15,
+  "updatedAt": "2026-04-19T09:00:00Z"
+}
+
+```
+
+<h4>Coleccion district_heat_maps:</h4>
+
+```json
+{
+  "_id": "heatmap:uuid",
+  "districtId": "dist:uuid",
+  "districtName": "San Juan de Lurigancho",
+  "zones": [
+    {
+      "facilityId": "facility:uuid",
+      "facilityName": "Posta Medica Huascar",
+      "coordinates": { "lat": -12.0031, "lng": -77.0082 },
+      "riskZone": "RED"
+    },
+    {
+      "facilityId": "facility:uuid2",
+      "facilityName": "Posta Medica Zarate",
+      "coordinates": { "lat": -12.0155, "lng": -77.0021 },
+      "riskZone": "YELLOW"
+    }
+  ],
+  "updatedAt": "2026-04-19T09:30:00Z"
+}
+
+```
+
 ##### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
 ##### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
