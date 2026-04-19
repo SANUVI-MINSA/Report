@@ -7486,7 +7486,7 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 </div>
 
 ### 2.6 Tactical-Level Domain-Driven Design
-#### 2.6.7. Bounded Context: `<Analytics & Reporting>`
+#### 2.6.7. Bounded Context: `Analytics & Reporting`
 
 El bounded context Analytics & Reporting es el centro de inteligencia de la plataforma Ferova. Su proposito es recopilar, procesar y visualizar los datos de adherencia al tratamiento de anemia de todo el distrito para que el coordinador admin MINSA pueda tomar decisiones informadas. Genera el dashboard analitico con el porcentaje de adherencia por posta, el mapa de calor de zonas criticas y los reportes exportables en PDF para el MINSA central. No genera datos propios sino que los recibe de los demas bounded contexts especialmente de Treatment Tracking y Health Facility.
 
