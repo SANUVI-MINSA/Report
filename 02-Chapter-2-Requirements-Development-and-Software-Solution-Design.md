@@ -7237,7 +7237,6 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 <img src="resources/images/chapter-II/DB_Diagram/Treatment Tracking/database-Treatment Tracking.png">
 </div>
 
-### 2.6 Tactical-Level Domain-Driven Design
 #### 2.6.6. Bounded Context: `Achievements & Rewards`
 
 El bounded context Achievements & Rewards gestiona la gamificacion del tratamiento de anemia dentro de FerovaFamilia. Su proposito es motivar a la madre a mantener la constancia en el tratamiento mediante recompensas digitales como rachas de dias consecutivos, puntos acumulados e insignias desbloqueables. Reacciona a los eventos generados por el BC Treatment Tracking y actualiza automaticamente el progreso de gamificacion de la madre sin necesidad de intervencion manual.
