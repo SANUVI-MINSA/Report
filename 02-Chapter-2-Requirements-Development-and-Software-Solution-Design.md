@@ -7484,3 +7484,22 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 <div align="center">
 	<img src="resources/images/chapter-II/DB_Diagram/Achievements & Rewards/database-diagrama-achievements-rewards.png">
 </div>
+
+### 2.6 Tactical-Level Domain-Driven Design
+#### 2.6.7. Bounded Context: `<Analytics & Reporting>`
+
+El bounded context Analytics & Reporting es el centro de inteligencia de la plataforma Ferova. Su proposito es recopilar, procesar y visualizar los datos de adherencia al tratamiento de anemia de todo el distrito para que el coordinador admin MINSA pueda tomar decisiones informadas. Genera el dashboard analitico con el porcentaje de adherencia por posta, el mapa de calor de zonas criticas y los reportes exportables en PDF para el MINSA central. No genera datos propios sino que los recibe de los demas bounded contexts especialmente de Treatment Tracking y Health Facility.
+
+##### 2.6.7.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Analytics & Reporting. Aqui se definen las reglas de negocio relacionadas con la generacion de reportes del distrito, el calculo de metricas de adherencia y la actualizacion del mapa de calor. Se incluyen el Aggregate Root Report, las entidades FacilityMetric y DistrictHeatMap, los Value Objects ReportStatus y RiskZone, el Domain Service ReportGeneratorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+##### 
+
+##### 2.6.7.2. Interface Layer
+##### 2.6.7.3. Application Layer
+##### 2.6.7.4. Infrastructure Layer
+##### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
+##### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.7.6.2. Bounded Context Database Design Diagram
