@@ -7340,6 +7340,8 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 
 ##### Controllers (REST - Infrastructure Layer)
 
+###### AchievementController
+
 **Propósito:** Expone los endpoints REST para que FerovaFamilia pueda consultar el progreso de gamificacion de la madre incluyendo su racha actual, sus puntos acumulados y el estado de sus insignias. Es el unico controller del bounded context porque Achievements & Rewards no recibe comandos directos del usuario sino que reacciona automaticamente a eventos del BC Treatment Tracking.
 
 **Razon:** Se necesita un controller porque FerovaFamilia necesita una forma de consultar el estado actual de la gamificacion de la madre cuando abre la pantalla de logros o cuando quiere ver su progreso. Sin este controller la app no tendria como obtener esa informacion del backend.
