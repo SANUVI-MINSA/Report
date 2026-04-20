@@ -7484,3 +7484,439 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 <div align="center">
 	<img src="resources/images/chapter-II/DB_Diagram/Achievements & Rewards/database-diagrama-achievements-rewards.png">
 </div>
+
+#### 2.6.7. Bounded Context: `Analytics & Reporting`
+
+El bounded context Analytics & Reporting es el centro de inteligencia de la plataforma Ferova. Su proposito es recopilar, procesar y visualizar los datos de adherencia al tratamiento de anemia de todo el distrito para que el coordinador admin MINSA pueda tomar decisiones informadas. Genera el dashboard analitico con el porcentaje de adherencia por posta, el mapa de calor de zonas criticas y los reportes exportables en PDF para el MINSA central. No genera datos propios sino que los recibe de los demas bounded contexts especialmente de Treatment Tracking y Health Facility.
+
+##### 2.6.7.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Analytics & Reporting. Aqui se definen las reglas de negocio relacionadas con la generacion de reportes del distrito, el calculo de metricas de adherencia y la actualizacion del mapa de calor. Se incluyen el Aggregate Root Report, las entidades FacilityMetric y DistrictHeatMap, los Value Objects ReportStatus y RiskZone, el Domain Service ReportGeneratorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregate Root: Report (Domain Layer)
+
+**Propósito:** Representa el reporte analitico completo de un distrito generado para el coordinador admin MINSA. Consolida las metricas de adherencia de todas las postas del distrito y permite su exportacion en PDF para el MINSA central.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | String | Identificador unico del reporte en MongoDB. Permite al sistema encontrar y actualizar un reporte especifico cuando llegan nuevos datos de adherencia de las postas del distrito. |
+| **Atributo** | `districtId` | String | Identificador del distrito incluido en el reporte. No limita la vision del admin a un solo distrito sino que permite organizar y agrupar los datos por distrito. El admin puede ver todos los distritos en el dashboard general o filtrar por un distrito especifico para ver sus postas en detalle. Por ejemplo el admin ve el mapa de calor nacional con todos los distritos y hace click en San Juan de Lurigancho para ver el detalle de sus postas. |
+| **Atributo** | `districtName` | String | Nombre legible del distrito que representa el reporte. Por ejemplo "San Juan de Lurigancho" o "Ate Vitarte". Lo usa FerovaClinic para mostrar el nombre del distrito en el dashboard del admin en lugar de un ID tecnico. |
+| **Atributo** | `generatedBy` | String | ID del admin MINSA que solicito la generacion del reporte. Permite auditar quien genero cada reporte y cuando para garantizar la trazabilidad de las decisiones tomadas con base en los datos del sistema. |
+| **Atributo** | `period` | String | Periodo de tiempo que cubre el reporte. Por ejemplo "Abril 2026" o "Semana 15 - 2026". Permite al admin filtrar y comparar reportes de diferentes periodos para identificar tendencias de abandono a lo largo del tiempo en cada distrito. |
+| **Atributo** | `adherencePercentage` | Double | Porcentaje global de adherencia al tratamiento en todo el distrito calculado automaticamente por el ReportGeneratorService. Es el dato mas importante del dashboard porque permite al admin ver de un solo vistazo si el distrito esta mejorando o empeorando su tasa de cumplimiento comparado con otros distritos. |
+| **Atributo** | `criticalFacilitiesCount` | Integer | Numero de postas del distrito que tienen una tasa de adherencia por debajo del umbral critico del 50%. Permite al admin identificar rapidamente cuantas postas de ese distrito necesitan atencion inmediata sin tener que revisar cada una individualmente. |
+| **Atributo** | `status` | ReportStatus | Estado actual del reporte que puede ser GENERATED cuando fue creado exitosamente o EXPORTED cuando el admin ya lo descargo en PDF para enviarlo al MINSA central. |
+| **Atributo** | `generatedAt` | DateTime | Fecha y hora en que se genero el reporte. Permite al admin saber que tan recientes son los datos que esta viendo y decidir si necesita generar un nuevo reporte con datos mas actualizados. |
+| **Método** | `generate()` | void | Ejecuta el proceso de generacion del reporte consolidando todas las metricas de adherencia de las postas del distrito. Calcula el adherencePercentage global y el criticalFacilitiesCount y cambia el status a GENERATED. Por ejemplo cuando el admin solicita el reporte de San Juan de Lurigancho este metodo consolida los datos de todas sus postas y genera el reporte completo. |
+| **Método** | `export()` | void | Marca el reporte como exportado cambiando el status a EXPORTED y registra la fecha de exportacion. Se ejecuta cuando el admin descarga el reporte en PDF para enviarlo al MINSA central como evidencia del estado del programa de anemia en ese distrito. |
+| **Método** | `addFacilityMetric(metric: FacilityMetric)` | void | Agrega la metrica de adherencia de una posta especifica al reporte. Se ejecuta cuando llega un nuevo reporte de adherencia de una enfermera y el sistema actualiza automaticamente las metricas del distrito correspondiente. |
+
+###### Entities (Domain Layer)
+
+#### 1. Entity: FacilityMetric
+**Propósito:** Representa las metricas de adherencia de una posta medica especifica dentro del reporte del distrito. Permite comparar el rendimiento de cada posta individualmente e identificar cuales tienen mayor tasa de abandono dentro de cada distrito.
+
+#### 2. Entity: DistrictHeatMap
+**Propósito:** Representa el mapa de calor de un distrito especifico que muestra visualmente el nivel de adherencia de cada posta usando colores. El admin puede navegar entre distritos en el dashboard y ver el mapa de calor de cada uno individualmente o ver un mapa nacional con todos los distritos coloreados.
+
+| Entidad | Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **FacilityMetric** | **Atributo** | `id` | String | Identificador unico de la metrica en MongoDB. Permite al sistema encontrar y actualizar las metricas de una posta especifica cuando llegan nuevos datos de adherencia. |
+| | **Atributo** | `reportId` | String | Referencia logica al reporte al que pertenece esta metrica. Sin este atributo el sistema no sabria a que reporte del distrito asociar los datos de adherencia de una posta especifica. |
+| | **Atributo** | `facilityId` | String | Identificador de la posta medica cuyas metricas se estan registrando. Permite al sistema identificar exactamente a que posta pertenecen los datos para mostrarlos correctamente en el mapa de calor del distrito. |
+| | **Atributo** | `facilityName` | String | Nombre legible de la posta medica. Por ejemplo "Posta Medica San Juan". Lo usa FerovaClinic para mostrar el nombre de la posta en la comparativa de postas del dashboard del admin. |
+| | **Atributo** | `adherencePercentage` | Double | Porcentaje de adherencia de los pacientes de esta posta especifica. Es el dato que determina el color de la posta en el mapa de calor. Por debajo de 50% es rojo, entre 50% y 75% es amarillo y por encima de 75% es verde. |
+| | **Atributo** | `totalPatients` | Integer | Numero total de pacientes activos en tratamiento en esta posta. Permite al admin contextualizar el porcentaje de adherencia. Una posta con 5% de adherencia con 100 pacientes es mas critica que una con 5% de adherencia con 5 pacientes. |
+| | **Atributo** | `criticalPatients` | Integer | Numero de pacientes de esta posta que llevan 72 horas o mas sin confirmar su dosis. Es el dato mas urgente de la metrica porque le indica al admin cuantos pacientes en esa posta estan en riesgo inminente de abandonar el tratamiento. |
+| | **Atributo** | `updatedAt` | DateTime | Fecha y hora de la ultima actualizacion de las metricas de esta posta. Permite al admin saber que tan recientes son los datos de cada posta en el dashboard. |
+| | **Método** | `updateMetrics(adherence: Double, critical: Integer)` | void | Actualiza el porcentaje de adherencia y el numero de pacientes criticos de la posta cuando llegan nuevos datos del BC Treatment Tracking. Recalcula automaticamente si la posta sigue siendo critica o si mejoro su situacion. |
+| | **Método** | `isCritical()` | Boolean | Retorna true si el adherencePercentage de la posta esta por debajo del umbral critico del 50%. Es el metodo que usa el ReportGeneratorService para calcular el criticalFacilitiesCount del reporte del distrito. |
+| **DistrictHeatMap** | **Atributo** | `id` | String | Identificador unico del mapa de calor en MongoDB. |
+| | **Atributo** | `districtId` | String | Identificador del distrito que representa este mapa de calor. Permite al sistema devolver el mapa de calor correcto cuando el admin selecciona un distrito especifico en el dashboard de FerovaClinic. |
+| | **Atributo** | `districtName` | String | Nombre legible del distrito. Por ejemplo "San Juan de Lurigancho". Lo usa FerovaClinic para mostrar el nombre del distrito sobre el mapa de calor cuando el admin lo selecciona. |
+| | **Atributo** | `zones` | List\<RiskZone\> | Lista de zonas del mapa de calor cada una representando una posta con su nivel de riesgo RiskZone. Es el dato principal que Google Maps API usa para colorear cada posta en el mapa del distrito con verde, amarillo o rojo segun su nivel de adherencia. |
+| | **Atributo** | `updatedAt` | DateTime | Fecha y hora de la ultima actualizacion del mapa de calor. Permite al admin saber si los colores del mapa reflejan los datos mas recientes o si necesita actualizar la vista. |
+| | **Método** | `updateZone(facilityId: String, riskZone: RiskZone)` | void | Actualiza el nivel de riesgo de una posta especifica en el mapa de calor cuando llegan nuevos datos de adherencia. Cambia el color de la posta en el mapa de verde a amarillo o rojo segun el nuevo nivel de riesgo calculado por el ReportGeneratorService. |
+| | **Método** | `getCriticalZones()` | List\<RiskZone\> | Retorna la lista de postas que estan en zona roja critica dentro de este distrito. Lo usa el dashboard del admin para mostrar rapidamente cuales postas necesitan atencion inmediata cuando selecciona un distrito especifico. |
+
+###### Value Objects (Domain Layer)
+
+
+#### 1. ReportStatus
+
+Representa los estados por los que pasa un reporte analítico del distrito, permitiendo al admin saber si el reporte es nuevo o ya fue exportado al MINSA central. 
+
+#### 2. RiskZone
+
+Define los niveles de riesgo de cada posta médica basándose en su tasa de adherencia para colorear visualmente el mapa de calor en FerovaClinic.
+
+
+| Entidad | Categoría | Elemento | Descripción |
+| :--- | :--- | :--- | :--- |
+| **ReportStatus** | **Estado** | `GENERATED` | el reporte fue generado exitosamente con los datos actuales del distrito y esta disponible para que el admin lo revise en FerovaClinic. El admin puede ver el porcentaje de adherencia global y la comparativa entre postas del distrito. |
+| | **Estado** | `EXPORTED` | el admin ya descargo el reporte en PDF y lo envio al MINSA central. Indica que el reporte fue utilizado para tomar decisiones institucionales y queda registrado como evidencia del estado del programa de anemia en ese distrito. |
+| **RiskZone** | **Nivel** | `GREEN` | la posta tiene una tasa de adherencia mayor al 75%. Sus pacientes estan cumpliendo bien el tratamiento y aparece en color verde en el mapa de calor de FerovaClinic. No requiere atencion inmediata del admin. |
+| | **Nivel** | `YELLOW` | la posta tiene una tasa de adherencia entre 50% y 75%. Aparece en color amarillo en el mapa de calor. Requiere monitoreo mas frecuente para evitar que caiga a zona roja critica. |
+| | **Nivel** | `RED` | la posta tiene una tasa de adherencia menor al 50%. Aparece en color rojo en el mapa de calor. Es una zona critica que requiere intervencion inmediata del admin y refuerzo de las enfermeras asignadas a esa posta. |
+
+###### Domain Services (Domain Layer)
+
+#### 1. ReportGeneratorService
+
+**Proposito:** Gestiona la logica de generacion del reporte del distrito consolidando las metricas de todas las postas y calculando los indicadores globales de adherencia para el dashboard del admin MINSA.
+
+| Servicio | Categoría | Elemento | Descripción |
+| :--- | :--- | :--- | :--- |
+| **ReportGeneratorService** | **Método** | `generateDistrictReport(districtId: String)` | Consolida todas las metricas de adherencia de las postas de un distrito especifico y genera el reporte completo. Calcula el adherencePercentage global promediando los porcentajes de todas las postas y cuenta las postas criticas. Es el metodo principal del servicio que el admin invoca desde FerovaClinic cuando solicita ver el reporte actualizado de un distrito especifico. |
+| | **Método** | `calculateAdherencePercentage(metrics: List)` | Calcula el porcentaje global de adherencia de un distrito promediando los porcentajes de todas sus postas. Por ejemplo si el distrito tiene 3 postas con 80%, 60% y 40% de adherencia este metodo retorna 60% como promedio global del distrito que aparece en el dashboard del admin. |
+| | **Método** | `classifyZone(adherencePercentage: Double)` | Clasifica una posta en GREEN, YELLOW o RED segun su porcentaje de adherencia. Por ejemplo una posta con 45% de adherencia retorna RED y el mapa de calor la muestra en color rojo en FerovaClinic indicando al admin que esa posta necesita atencion inmediata. |
+
+###### Repositories 
+
+| Repositorio | Categoría | Elemento | Descripción |
+| :--- | :--- | :--- | :--- |
+| **ReportRepository** | **Método** | `save(report: Report)` | guarda o actualiza el reporte del distrito en MongoDB. Se ejecuta cuando el admin solicita la generacion de un nuevo reporte o cuando se actualiza con nuevos datos de adherencia de las postas. |
+| | **Método** | `findAll()` | retorna todos los reportes de todos los distritos ordenados por fecha. Lo usa el dashboard general del admin para mostrar una vision global del estado de todos los distritos del sistema. |
+| | **Método** | `findByDistrictId(districtId: String)` | retorna todos los reportes de un distrito especifico ordenados por fecha. Lo usa FerovaClinic cuando el admin filtra por un distrito especifico para ver su historial de reportes. |
+| | **Método** | `findLatestByDistrictId(districtId: String)` | retorna el reporte mas reciente de un distrito especifico. Lo usa el dashboard del admin para mostrar siempre los datos mas actualizados de cada distrito cuando lo selecciona. |
+| **FacilityMetricRepository** | **Método** | `save(metric: FacilityMetric)` | guarda o actualiza las metricas de adherencia de una posta especifica en MongoDB. Se ejecuta cada vez que llega un nuevo reporte de adherencia de una enfermera del BC Treatment Tracking. |
+| | **Método** | `findByReportId(reportId: String)` | retorna todas las metricas de adherencia de un reporte especifico. Lo usa FerovaClinic para mostrar la comparativa de adherencia entre todas las postas del distrito cuando el admin selecciona un reporte. |
+| | **Método** | `findCriticalByDistrictId(districtId: String)` | retorna las postas criticas de un distrito especifico con adherencia menor al 50%. Lo usa el dashboard del admin para destacar las postas que necesitan atencion inmediata dentro de cada distrito. |
+| **DistrictHeatMapRepository** | **Método** | `save(heatMap: DistrictHeatMap)` | guarda o actualiza el mapa de calor de un distrito en MongoDB. Se ejecuta cada vez que cambia el nivel de riesgo de alguna posta del distrito y el mapa necesita actualizarse. |
+| | **Método** | `findAll()` | retorna los mapas de calor de todos los distritos. Lo usa FerovaClinic para renderizar el mapa de calor nacional con todos los distritos coloreados segun su nivel de adherencia usando Google Maps API. |
+| | **Método** | `findByDistrictId(districtId: String)` | retorna el mapa de calor de un distrito especifico. Lo usa FerovaClinic cuando el admin hace click en un distrito del mapa nacional para ver el detalle de sus postas coloreadas segun su nivel de riesgo. |
+
+##### Relaciones y dependencias en BC Analytics & Reporting
+
+#### Pregunta 1: ¿Qué tiene que ver Treatment Tracking con `save(metric)` y `updateMetrics`?
+
+La relación es la siguiente:
+
+1. La enfermera submite su reporte de adherencia semanal desde **FerovaClinic**.
+2. El BC **Treatment Tracking** genera el evento `TreatmentAbandoned` o calcula las métricas de adherencia de sus pacientes.
+3. Ese evento llega al BC **Analytics & Reporting** vía un **Event Handler**.
+4. El flujo concreto es:
+   - La enfermera submite su reporte desde FerovaClinic con sus dosis confirmadas y omitidas.
+   - El BC Treatment Tracking calcula el porcentaje de adherencia de esa posta.
+   - Dispara el evento con `facilityId`, `adherencePercentage` y `criticalPatients`.
+   - El BC Analytics & Reporting recibe ese evento y llama a `updateMetrics` en la entidad `FacilityMetric` con los nuevos datos.
+   - Luego llama a `save(metric)` para persistir los cambios en MongoDB.
+
+> **Nota:** `updateMetrics` y `save` no los invoca directamente el administrador. Los invoca automáticamente el **Event Handler** cuando llega información nueva del BC Treatment Tracking.
+
+---
+
+#### Pregunta 2: ¿De dónde proviene el `districtId` del Aggregate Root `Report`?
+
+El `districtId` **no** viene del BC Treatment Tracking directamente. Viene del BC **Health Facility**.
+
+El flujo es el siguiente:
+
+1. Cuando la enfermera se registra en FerovaClinic queda asociada a una posta específica vía el BC Health Facility. Esa posta tiene un `facilityId` y un `districtId` registrados en el sistema.
+2. Cuando el BC Treatment Tracking genera eventos de adherencia, incluye el `facilityId` de la posta de la enfermera.
+3. El BC Analytics & Reporting usa ese `facilityId` para **consultar al BC Health Facility** y obtener el `districtId` correspondiente.
+4. Health Facility retorna los datos de la posta incluyendo su `districtId` y `districtName`.
+5. Analytics & Reporting usa ese `districtId` para asociar el reporte al distrito correcto.
+
+**Resumen del flujo del districtId:**
+
+- Evento llega con `facilityId` → Analytics & Reporting consulta a Health Facility → Obtiene `districtId` y `districtName` → Asigna al Report.
+
+---
+
+#### Conclusión y corrección
+
+Esto significa que el BC **Analytics & Reporting** tiene una dependencia con **dos bounded contexts upstream**:
+
+| Upstream BC | Rol |
+|-------------|------|
+| **Treatment Tracking** | Provee los datos de adherencia de los pacientes |
+| **Health Facility** | Provee la información geográfica de las postas (incluyendo `districtId`) |
+
+> Esto ya lo teníamos definido en el **Context Mapping**, donde establecimos que tanto Treatment Tracking como Health Facility son **upstream** de Analytics & Reporting con el patrón **Customer/Supplier**.
+
+###### Domain Events (Domain Layer)
+
+| Evento | Descripción |
+| :--- | :--- |
+| **DistrictReportGenerated** | Se dispara cuando el admin solicita la generacion del reporte de un distrito y el ReportGeneratorService lo completa exitosamente. Indica que el reporte esta disponible para su revision en FerovaClinic con el porcentaje de adherencia global y la comparativa entre postas del distrito seleccionado. |
+| **HeatMapUpdated** | Se dispara cuando el nivel de riesgo de alguna posta de cualquier distrito cambia y el mapa de calor se actualiza automaticamente. Indica que Google Maps API debe actualizar el color de la posta en el mapa del distrito en FerovaClinic para que el admin siempre vea los datos mas recientes. |
+| **ReportExported** | Se dispara cuando el admin descarga el reporte de un distrito en PDF para enviarlo al MINSA central. Indica que el reporte fue utilizado oficialmente para tomar decisiones institucionales y cambia el status del reporte a EXPORTED. |
+
+##### 2.6.7.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Analytics & Reporting. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaClinic cuando el admin MINSA interactua con el dashboard analitico. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+###### Controllers 
+
+#### ReportController
+
+**Propósito:** Expone los endpoints REST para que el admin MINSA pueda generar, consultar y exportar los reportes analiticos de los distritos desde FerovaClinic. Es el controller principal del bounded context porque concentra las operaciones mas importantes del dashboard analitico.
+
+**Razón:** Se necesita este controller porque el admin necesita una forma de solicitar la generacion de reportes, ver el historial de reportes anteriores y exportarlos en PDF para enviarlos al MINSA central. Sin este controller el admin no tendria como interactuar con el sistema analitico desde FerovaClinic.
+
+| Endpoint | Descripción | Razón | Ejemplo en el Aplicativo |
+| :--- | :--- | :--- | :--- |
+| **POST** `/api/v1/reports/generate` | Solicita la generacion de un nuevo reporte analitico para un distrito especifico. Lo invoca el admin desde FerovaClinic cuando quiere ver los datos actualizados de adherencia de un distrito. El ReportGeneratorService consolida las metricas de todas las postas del distrito y genera el reporte completo. | Se necesita un endpoint POST porque generar un reporte es una operacion que modifica el estado del sistema creando un nuevo documento en MongoDB. No es una simple consulta sino una accion que produce un resultado nuevo. | El admin abre FerovaClinic, selecciona el distrito San Juan de Lurigancho y presiona el boton "Generar reporte". FerovaClinic envia POST /api/v1/reports/generate con el districtId y el periodo. El sistema genera el reporte con 60% de adherencia global y 3 postas criticas y lo muestra en el dashboard del admin. |
+| **GET** `/api/v1/reports` | Retorna todos los reportes de todos los distritos ordenados por fecha. Lo usa FerovaClinic para mostrar al admin una vision global del historial de reportes de todo el sistema. | El admin necesita ver todos los reportes de todos los distritos para poder comparar el rendimiento entre distritos y identificar cuales tienen tendencias de mejora o deterioro a lo largo del tiempo. | El admin abre la seccion de historial de reportes en FerovaClinic y ve una lista con todos los reportes generados ordenados por fecha incluyendo el distrito, el periodo, el porcentaje de adherencia global y el numero de postas criticas. |
+| **GET** `/api/v1/reports/{districtId}` | Retorna todos los reportes de un distrito especifico ordenados por fecha. Lo usa FerovaClinic cuando el admin filtra por un distrito especifico para ver su historial de reportes y analizar tendencias. | Ademas de la vision global el admin necesita poder profundizar en un distrito especifico para ver como ha evolucionado su tasa de adherencia a lo largo del tiempo y tomar decisiones focalizadas. | El admin hace click en San Juan de Lurigancho en el dashboard y FerovaClinic muestra el historial de reportes de ese distrito con su evolucion de adherencia mes a mes. |
+| **GET** `/api/v1/reports/{districtId}/latest` | Retorna el reporte mas reciente de un distrito especifico. Lo usa el dashboard principal del admin para mostrar siempre los datos mas actualizados de cada distrito sin tener que buscar en el historial. | Cuando el admin abre el dashboard necesita ver los datos mas recientes de cada distrito inmediatamente sin tener que navegar por el historial. Este endpoint es el mas frecuentemente usado del controller porque se invoca cada vez que el admin abre el dashboard. | El admin abre FerovaClinic y el dashboard muestra automaticamente el ultimo reporte de cada distrito con su porcentaje de adherencia y numero de postas criticas actualizado. |
+| **PUT** `/api/v1/reports/{id}/export` | Marca el reporte como exportado y genera el archivo PDF para descargarlo. Lo invoca el admin desde FerovaClinic cuando quiere enviar el reporte al MINSA central como evidencia oficial del estado del programa de anemia en ese distrito. | Se necesita un endpoint PUT porque exportar un reporte modifica su estado de GENERATED a EXPORTED. No es solo una descarga sino una accion que cambia el estado del reporte en el sistema para auditar que fue utilizado oficialmente. | El admin revisa el reporte de San Juan de Lurigancho en FerovaClinic y presiona el boton "Exportar PDF". El sistema cambia el status del reporte a EXPORTED, genera el PDF y lo descarga automaticamente para que el admin lo adjunte al informe que enviara al MINSA central. |
+
+#### HeatMapController
+
+**Propósito:** Expone los endpoints REST para que el admin MINSA pueda visualizar el mapa de calor de todos los distritos o de un distrito especifico desde FerovaClinic usando Google Maps API.
+
+**Razón:** El mapa de calor es la visualizacion mas impactante del bounded context porque permite al admin identificar de un vistazo las zonas criticas del pais sin tener que leer tablas de datos. Se necesita un controller separado porque el mapa de calor tiene su propia logica de consulta independiente de los reportes textuales.
+
+| Endpoint | Descripción | Razón | Ejemplo en el Aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GET** `/api/v1/heatmap` | Retorna los mapas de calor de todos los distritos para renderizar el mapa nacional en FerovaClinic. Cada distrito aparece coloreado segun su nivel de adherencia usando Google Maps API. | El admin necesita una vision nacional del mapa de calor para identificar rapidamente que distritos estan en zona roja a nivel de todo el pais sin tener que revisar cada distrito individualmente. | El admin abre FerovaClinic y ve el mapa del Peru con todos los distritos coloreados. San Juan de Lurigancho aparece en rojo con 45% de adherencia, Miraflores en verde con 85% y Villa El Salvador en amarillo con 62%. |
+| **GET** `/api/v1/heatmap/{districtId}` | Retorna el mapa de calor de un distrito especifico con todas sus postas coloreadas segun su nivel de adherencia. Lo usa FerovaClinic cuando el admin hace click en un distrito del mapa nacional para ver el detalle de sus postas. | Ademas de la vision nacional el admin necesita poder profundizar en un distrito especifico para ver exactamente cuales postas dentro de ese distrito estan en zona critica y cuales tienen buena adherencia. | El admin hace click en San Juan de Lurigancho en el mapa nacional. FerovaClinic muestra el mapa del distrito con sus postas coloreadas. La Posta Medica Huascar aparece en rojo con 30% de adherencia, la Posta Medica Zarate en amarillo con 65% y la Posta Medica Canto Grande en verde con 80%. |
+
+#### FacilityMetricController
+
+**Propósito:** Expone los endpoints REST para que el admin MINSA pueda ver la comparativa de adherencia entre todas las postas de un distrito especifico desde FerovaClinic.
+
+**Razón:** Ademas del mapa visual el admin necesita una tabla comparativa con los datos exactos de adherencia de cada posta incluyendo el numero de pacientes totales y criticos para poder priorizar sus intervenciones correctamente.
+
+| Endpoint | Descripción | Razón | Ejemplo en el Aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GET** `/api/v1/metrics/{reportId}` | Retorna todas las metricas de adherencia de las postas incluidas en un reporte especifico. Lo usa FerovaClinic para mostrar la tabla comparativa de postas cuando el admin selecciona un reporte del historial. | El admin necesita ver los datos exactos de cada posta en formato tabla para poder comparar sus porcentajes de adherencia y tomar decisiones informadas sobre donde enfocar sus intervenciones. | El admin selecciona el reporte de Abril 2026 de San Juan de Lurigancho en FerovaClinic y ve una tabla con todas las postas del distrito mostrando su nombre, porcentaje de adherencia, total de pacientes y pacientes criticos ordenadas de menor a mayor adherencia. |
+| **GET** `/api/v1/metrics/{districtId}/critical` | Retorna las postas criticas de un distrito especifico con adherencia menor al 50%. Lo usa FerovaClinic para destacar las postas que necesitan atencion inmediata en el dashboard del admin. | El admin necesita identificar rapidamente cuales postas de un distrito estan en situacion critica sin tener que revisar toda la tabla de postas. Este endpoint le da directamente la lista de postas que requieren su intervencion inmediata. | El admin abre el dashboard de San Juan de Lurigancho y FerovaClinic muestra automaticamente una seccion de alertas criticas con las postas que tienen menos del 50% de adherencia destacadas en rojo con su numero de pacientes criticos. |
+
+###### Resources (DTOs / Request & Response Models)
+
+
+#### 1. GenerateReportRequest 
+
+**Razon:** Contiene los datos necesarios para que el ReportGeneratorService genere el reporte del distrito correcto en el periodo solicitado por el admin. Sin este DTO el sistema no sabria de que distrito generar el reporte ni para que periodo.
+
+**Ejemplo en el aplicativo:** El admin selecciona San Juan de Lurigancho y el periodo Abril 2026 en FerovaClinic. La app envia este DTO al ReportController con districtId, districtName, generatedBy con el ID del admin autenticado y period con "Abril 2026".
+
+```json
+{
+  "districtId": "string",
+  "districtName": "string",
+  "generatedBy": "string",
+  "period": "string"
+}
+
+```
+
+
+#### 2. ReportResponse  
+
+**Razon:** Contiene toda la informacion del reporte que necesita FerovaClinic para mostrar el dashboard analitico del admin. Sin este DTO el frontend no tendria un formato estandar para recibir y mostrar los datos del reporte.
+
+**Ejemplo en el aplicativo:**  FerovaClinic recibe este DTO y muestra en el dashboard: "San Juan de Lurigancho - Abril 2026 - Adherencia global: 60% - Postas criticas: 3 - Generado: 19 de abril 2026."
+
+```json
+{
+  "id": "string",
+  "districtId": "string",
+  "districtName": "string",
+  "generatedBy": "string",
+  "period": "string",
+  "adherencePercentage": "double",
+  "criticalFacilitiesCount": "integer",
+  "status": "GENERATED / EXPORTED",
+  "generatedAt": "datetime"
+}
+
+```
+
+#### 3. HeatMapResponse   
+
+**Razon:** Contiene los datos del mapa de calor que Google Maps API necesita para colorear cada posta del distrito. Cada zone incluye el facilityId, las coordenadas GPS y el nivel de riesgo RiskZone.
+
+**Ejemplo en el aplicativo:**  FerovaClinic recibe este DTO y usa las coordenadas y el RiskZone de cada zone para colorear las postas en el mapa del distrito con rojo, amarillo o verde segun su nivel de adherencia.
+
+```json
+{
+  "districtId": "string",
+  "districtName": "string",
+  "zones": [
+    {
+      "facilityId": "string",
+      "location": "gps_coordinates",
+      "riskZone": "GREEN / YELLOW / RED"
+    }
+  ],
+  "updatedAt": "datetime"
+}
+
+```
+#### 4. FacilityMetricResponse    
+
+**Razon:** Contiene las metricas de adherencia de una posta especifica que necesita FerovaClinic para mostrar la tabla comparativa de postas en el dashboard del admin.
+
+**Ejemplo en el aplicativo:**  FerovaClinic recibe una lista de estos DTOs y los muestra en una tabla ordenada de menor a mayor adherencia para que el admin identifique rapidamente cuales postas necesitan su atencion.
+
+
+```json
+{
+  "id": "string",
+  "facilityId": "string",
+  "facilityName": "string",
+  "adherencePercentage": "double",
+  "totalPatients": "integer",
+  "criticalPatients": "integer",
+  "updatedAt": "datetime"
+}
+```
+
+###### Assembler / Mapper
+
+
+| Assembler / Mapper | Dirección de la Traducción | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GenerateReport-**<br>**CommandFrom-**<br>**ResourceAssembler** | `GenerateReportRequest` → `GenerateReportCommand` | Convierte el GenerateReportRequest en un GenerateReportCommand para la Application Layer. Separa la representacion HTTP del comando de dominio evitando que los detalles del protocolo HTTP contaminen la logica de negocio. | El ReportController recibe el JSON con districtId, districtName, generatedBy y period. El Assembler lo convierte en un GenerateReportCommand limpio que el GenerateReportCommandHandler puede procesar sin saber nada sobre HTTP. |
+| **ReportResponse-**<br>**FromEntityAssembler** | `Report` → `ReportResponse` | Convierte el Aggregate Root Report del dominio en un ReportResponse que puede viajar via HTTP hacia FerovaClinic. Garantiza que solo se exponga la informacion necesaria al frontend sin exponer los internos del aggregate. | El GenerateReportCommandHandler obtiene el Aggregate Report con todos sus atributos y metodos internos. El Assembler extrae solo los atributos de estado necesarios y los convierte en un JSON limpio que FerovaClinic puede mostrar directamente en el dashboard del admin. |
+| **HeatMapResponse-**<br>**FromEntityAssembler** | `DistrictHeatMap` → `HeatMapResponse` | Convierte la entidad DistrictHeatMap del dominio en un HeatMapResponse que puede viajar via HTTP hacia FerovaClinic con el formato que Google Maps API necesita para renderizar el mapa de calor correctamente. | El GetHeatMapQueryHandler obtiene el DistrictHeatMap de MongoDB con su lista de zones. El Assembler convierte cada zone en el formato correcto con las coordenadas GPS y el RiskZone que Google Maps API necesita para colorear cada posta en el mapa del distrito. |
+| **FacilityMetric-**<br>**ResponseFrom-**<br>**EntityAssembler** | `FacilityMetric` → `FacilityMetricResponse` | Convierte la entidad FacilityMetric del dominio en un FacilityMetricResponse que puede viajar via HTTP hacia FerovaClinic. Permite mostrar la tabla comparativa de postas en el dashboard del admin sin exponer los internos de la entidad. | El GetFacilityMetricsQueryHandler obtiene la lista de FacilityMetric de MongoDB. El Assembler convierte cada entidad en un FacilityMetricResponse con su nombre de posta, porcentaje de adherencia, total de pacientes y pacientes criticos para mostrar la tabla comparativa en FerovaClinic. |
+
+##### 2.6.7.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Analytics & Reporting. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan las acciones de generacion y exportacion de reportes, los Query Handlers que gestionan las consultas del dashboard analitico y los Event Handlers que reaccionan automaticamente a los eventos generados por los BC Treatment Tracking y Health Facility.
+
+###### Commands
+
+| Command Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GenerateReport-**<br>**CommandHandler** | Es el command handler mas importante del bounded context. El admin necesita una forma de solicitar la generacion de un reporte actualizado de un distrito especifico. Sin este handler el sistema no podria consolidar las metricas de todas las postas y generar el reporte del distrito. | Recibe el GenerateReportCommand con el districtId, districtName, generatedBy y period. Consulta el FacilityMetricRepository con findCriticalByDistrictId para obtener las metricas actuales de todas las postas del distrito. Delega al ReportGeneratorService el calculo del adherencePercentage global y el conteo de postas criticas. Crea el Aggregate Report con los datos calculados y lo persiste en MongoDB via ReportRepository. Dispara el evento DistrictReportGenerated. | El admin presiona "Generar reporte" para San Juan de Lurigancho en FerovaClinic. Este handler consolida las metricas de las 5 postas del distrito, calcula el 60% de adherencia global y detecta 3 postas criticas. Guarda el reporte en MongoDB y FerovaClinic muestra el dashboard actualizado con los nuevos datos. |
+| **ExportReport-**<br>**CommandHandler** | El admin necesita poder exportar el reporte en PDF para enviarlo oficialmente al MINSA central. Sin este handler el sistema no podria cambiar el status del reporte a EXPORTED ni generar el archivo PDF descargable. | Recibe el ExportReportCommand con el reportId. Busca el reporte en el ReportRepository con findById. Llama al metodo export() del Aggregate Report que cambia el status de GENERATED a EXPORTED y registra la fecha de exportacion. Persiste los cambios en MongoDB via ReportRepository. Genera el archivo PDF con todos los datos del reporte y lo retorna al ReportController para que FerovaClinic lo descargue automaticamente. Dispara el evento ReportExported. | El admin revisa el reporte de Abril 2026 de San Juan de Lurigancho en FerovaClinic y presiona "Exportar PDF". Este handler cambia el status del reporte a EXPORTED, genera el PDF con las metricas del distrito y FerovaClinic lo descarga automaticamente para que el admin lo adjunte al informe del MINSA central. |
+
+###### Querys
+
+| Query Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GetAllReports-**<br>**QueryHandler** | El admin necesita una vision global de todos los reportes de todos los distritos para comparar el rendimiento entre distritos y detectar tendencias de mejora o deterioro a nivel nacional. | Recibe el GetAllReportsQuery. Consulta el ReportRepository con findAll y retorna todos los reportes de todos los distritos ordenados por fecha de generacion de mas reciente a mas antiguo. El ReportResponseFromEntityAssembler convierte cada Report en un ReportResponse para enviarlo a FerovaClinic. | El admin abre la seccion de historial de reportes en FerovaClinic y ve la lista completa de todos los reportes generados de todos los distritos con su porcentaje de adherencia y numero de postas criticas ordenados por fecha. |
+| **GetReportsBy-**<br>**DistrictQueryHandler** | El admin necesita poder profundizar en un distrito especifico para ver la evolucion historica de su tasa de adherencia a lo largo del tiempo y tomar decisiones focalizadas. | Recibe el GetReportsByDistrictQuery con el districtId. Consulta el ReportRepository con findByDistrictId y retorna todos los reportes del distrito ordenados por fecha. El ReportResponseFromEntityAssembler convierte cada Report en un ReportResponse para enviarlo a FerovaClinic. | El admin hace click en San Juan de Lurigancho en FerovaClinic y ve el historial de reportes del distrito mostrando como su adherencia fue de 48% en febrero a 55% en marzo y 60% en abril indicando una tendencia de mejora. |
+| **GetLatestReport-**<br>**QueryHandler** | El dashboard principal del admin necesita mostrar automaticamente los datos mas recientes de cada distrito cada vez que abre FerovaClinic sin que tenga que buscar manualmente en el historial. | Recibe el GetLatestReportQuery con el districtId. Consulta el ReportRepository con findLatestByDistrictId y retorna el reporte mas reciente del distrito. El ReportResponseFromEntityAssembler convierte el Report en un ReportResponse para enviarlo a FerovaClinic. | El admin abre FerovaClinic y el dashboard muestra automaticamente el ultimo reporte de cada distrito con su porcentaje de adherencia global y numero de postas criticas actualizado sin necesidad de navegar por el historial. |
+| **GetHeatMap-**<br>**QueryHandler** | El admin necesita ver el mapa de calor nacional con todos los distritos coloreados segun su nivel de adherencia para identificar rapidamente las zonas criticas del pais sin tener que revisar cada distrito individualmente. | Recibe el GetHeatMapQuery sin parametros. Consulta el DistrictHeatMapRepository con findAll y retorna los mapas de calor de todos los distritos. El HeatMapResponseFromEntityAssembler convierte cada DistrictHeatMap en un HeatMapResponse con el formato que Google Maps API necesita para colorear cada distrito en el mapa nacional. | El admin abre la seccion de mapa de calor en FerovaClinic y ve el mapa del Peru con todos los distritos coloreados. San Juan de Lurigancho aparece en rojo con 45% de adherencia, Miraflores en verde con 85% y Villa El Salvador en amarillo con 62%. |
+| **GetDistrict-**<br>**HeatMapQueryHandler** | El admin necesita poder profundizar en un distrito especifico para ver exactamente cuales postas dentro de ese distrito estan en zona critica y cuales tienen buena adherencia para priorizar sus intervenciones. | Recibe el GetDistrictHeatMapQuery con el districtId. Consulta el DistrictHeatMapRepository con findByDistrictId y retorna el mapa de calor del distrito con todas sus postas coloreadas. El HeatMapResponseFromEntityAssembler convierte el DistrictHeatMap en un HeatMapResponse para enviarlo a FerovaClinic. | El admin hace click en San Juan de Lurigancho en el mapa nacional de FerovaClinic y ve el mapa del distrito con sus postas coloreadas individualmente. La Posta Medica Huascar en rojo con 30%, la Posta Medica Zarate en amarillo con 65% y la Posta Medica Canto Grande en verde con 80%. |
+| **GetFacilityMetrics-**<br>**QueryHandler** | El admin necesita ver los datos exactos de adherencia de cada posta en formato tabla para poder comparar su rendimiento y tomar decisiones informadas sobre donde enfocar sus intervenciones dentro de cada distrito. | Recibe el GetFacilityMetricsQuery con el reportId. Consulta el FacilityMetricRepository con findByReportId y retorna todas las metricas de las postas del reporte ordenadas de menor a mayor adherencia. El FacilityMetricResponseFromEntityAssembler convierte cada FacilityMetric en un FacilityMetricResponse para enviarlo a FerovaClinic. | El admin selecciona el reporte de Abril 2026 de San Juan de Lurigancho en FerovaClinic y ve una tabla con todas las postas del distrito ordenadas de menor a mayor adherencia mostrando nombre, porcentaje de adherencia, total de pacientes y pacientes criticos. |
+| **GetCritical-**<br>**FacilitiesQueryHandler** | El admin necesita identificar rapidamente cuales postas de un distrito estan en situacion critica sin tener que revisar toda la tabla de postas para poder actuar de manera inmediata. | Recibe el GetCriticalFacilitiesQuery con el districtId. Consulta el FacilityMetricRepository con findCriticalByDistrictId y retorna solo las postas con adherencia menor al 50%. El FacilityMetricResponseFromEntityAssembler convierte cada FacilityMetric en un FacilityMetricResponse para enviarlo a FerovaClinic. | El admin abre el dashboard de San Juan de Lurigancho en FerovaClinic y la seccion de alertas criticas muestra automaticamente solo las postas con adherencia critica: "Posta Medica Huascar - 30% adherencia - 15 pacientes criticos" y "Posta Medica San Hilarion - 42% adherencia - 8 pacientes criticos." |
+
+###### Events
+
+| Event Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **OnTreatment-**<br>**Abandoned-**<br>**EventHandler** | Cuando el BC Treatment Tracking registra el abandono de un tratamiento los datos de adherencia de la posta correspondiente deben actualizarse automaticamente en el sistema analitico para que el mapa de calor y el dashboard reflejen siempre los datos mas recientes. | Recibe el evento TreatmentAbandoned con el facilityId y los datos de adherencia actualizados. Consulta al BC Health Facility para obtener el districtId correspondiente a esa posta. Busca la FacilityMetric de esa posta en el FacilityMetricRepository. Llama al metodo updateMetrics con el nuevo adherencePercentage y criticalPatients. Persiste los cambios en MongoDB. Llama al metodo updateZone del DistrictHeatMap con el nuevo RiskZone calculado por el ReportGeneratorService. Persiste el mapa de calor actualizado. Dispara el evento HeatMapUpdated. | Un paciente de la Posta Medica Huascar abandona su tratamiento. El BC Treatment Tracking dispara TreatmentAbandoned. Este handler actualiza automaticamente la adherencia de la Posta Medica Huascar de 35% a 30% y cambia su color en el mapa de calor de amarillo a rojo. El admin ve el cambio en tiempo real en FerovaClinic sin necesidad de generar un nuevo reporte. |
+| **OnAdherence-**<br>**ReportSubmitted-**<br>**EventHandler** | Cuando la enfermera submite su reporte de adherencia semanal desde FerovaClinic los datos de su posta deben actualizarse automaticamente en el sistema analitico para que el dashboard del admin siempre refleje los datos mas recientes de todas las postas del distrito. | Recibe el evento AdherenceReportSubmitted con el facilityId, el adherencePercentage calculado y el criticalPatients. Consulta al BC Health Facility para obtener el districtId correspondiente a esa posta. Busca la FacilityMetric de esa posta en el FacilityMetricRepository. Si no existe crea una nueva FacilityMetric para esa posta. Llama al metodo updateMetrics con los nuevos datos. Persiste los cambios en MongoDB. Recalcula el RiskZone de la posta con el ReportGeneratorService. Actualiza el DistrictHeatMap con el nuevo nivel de riesgo. Persiste el mapa de calor actualizado y dispara el evento HeatMapUpdated. | La enfermera Rosa submite su reporte de adherencia semanal de la Posta Medica Zarate en FerovaClinic con 65% de adherencia y 3 pacientes criticos. Este handler actualiza automaticamente las metricas de la posta en el sistema analitico y cambia su color en el mapa de calor a amarillo. El admin ve el cambio en tiempo real en su dashboard sin necesidad de solicitar un nuevo reporte. |
+
+##### 2.6.7.4. Infrastructure Layer
+
+En esta seccion se presentan las clases que acceden a servicios externos dentro del bounded context Analytics & Reporting. Esta capa contiene las implementaciones concretas de los Repositories definidos como interfaces en el Domain Layer, los adaptadores para servicios externos como Google Maps API y la configuracion tecnica necesaria para el funcionamiento del bounded context. Es en esta capa donde se resuelve todo lo relacionado con la persistencia en MongoDB de los reportes, metricas de postas y mapas de calor, y la comunicacion con Google Maps API para renderizar el mapa de calor del distrito en FerovaClinic.
+
+###### Persistence
+
+| Implementación | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **MongoReport-**<br>**Repository** | Es la implementacion concreta de la interfaz ReportRepository definida en el Domain Layer. El Domain Layer solo define que operaciones necesita pero no sabe como ejecutarlas en MongoDB. Esta clase es la que sabe exactamente como guardar y recuperar un documento Report en la base de datos incluyendo como ordenarlos por fecha y como filtrar por distrito. | Implementa la interfaz ReportRepository del Domain Layer. Gestiona la persistencia de los reportes analiticos del distrito en la coleccion reports de MongoDB. Realiza el mapeo entre el Aggregate Root Report del dominio y el documento MongoDB correspondiente. Provee las siguientes operaciones:<br><br>**save(report)** → guarda o actualiza el documento Report en la coleccion reports. Se ejecuta cuando el admin genera un nuevo reporte o cuando exporta uno existente cambiando su status a EXPORTED.<br>**findAll()** → retorna todos los reportes de todos los distritos ordenados por fecha de generacion de mas reciente a mas antiguo. Lo usa el GetAllReportsQueryHandler para mostrar el historial global de reportes al admin.<br>**findByDistrictId(districtId)** → retorna todos los reportes de un distrito especifico ordenados por fecha. Lo usa el GetReportsByDistrictQueryHandler cuando el admin filtra por un distrito especifico para ver su historial.<br>**findLatestByDistrictId(districtId)** → retorna solo el reporte mas reciente de un distrito especifico. Lo usa el GetLatestReportQueryHandler para mostrar los datos mas actualizados de cada distrito en el dashboard principal del admin. | El admin genera el reporte de San Juan de Lurigancho en Abril 2026. El GenerateReportCommandHandler crea el Aggregate Report con adherencePercentage 60% y criticalFacilitiesCount 3. Luego llama a save(report) y este repositorio convierte el Aggregate en un documento MongoDB y lo guarda en la coleccion reports. Cuando el admin abre el dashboard este repositorio ejecuta findLatestByDistrictId y retorna el reporte mas reciente para mostrarlo en FerovaClinic. |
+| **MongoFacility-**<br>**MetricRepository** | Es la implementacion concreta de la interfaz FacilityMetricRepository definida en el Domain Layer. Sabe exactamente como guardar y recuperar documentos FacilityMetric en MongoDB incluyendo como filtrar las postas criticas de un distrito especifico sin recorrer toda la coleccion gracias a los indices definidos en MongoConfig. | Implementa la interfaz FacilityMetricRepository del Domain Layer. Gestiona la persistencia de las metricas de adherencia de cada posta en la coleccion facility_metrics de MongoDB. Provee las siguientes operaciones:<br><br>**save(metric)** → guarda o actualiza el documento FacilityMetric en la coleccion facility_metrics. Se ejecuta cada vez que llega un nuevo reporte de adherencia de una enfermera via el OnAdherenceReportSubmittedEventHandler.<br>**findByReportId(reportId)** → retorna todas las metricas de las postas de un reporte especifico. Lo usa el GetFacilityMetricsQueryHandler para mostrar la tabla comparativa de postas cuando el admin selecciona un reporte del historial.<br>**findCriticalByDistrictId(districtId)** → retorna solo las postas con adherencia menor al 50% de un distrito especifico. Lo usa el GetCriticalFacilitiesQueryHandler para mostrar la seccion de alertas criticas en el dashboard del admin. | La enfermera Rosa submite su reporte de adherencia con 65% para la Posta Medica Zarate. El OnAdherenceReportSubmittedEventHandler llama a save(metric) y este repositorio actualiza el documento FacilityMetric en MongoDB con el nuevo adherencePercentage y criticalPatients. Cuando el admin consulta las postas criticas este repositorio ejecuta findCriticalByDistrictId y retorna solo las postas con adherencia menor al 50%. |
+| **MongoDistrict-**<br>**HeatMapRepository** | Es la implementacion concreta de la interfaz DistrictHeatMapRepository definida en el Domain Layer. Sabe exactamente como guardar y recuperar los mapas de calor de todos los distritos en MongoDB incluyendo como devolver todos los mapas para el mapa nacional o solo el de un distrito especifico cuando el admin hace click en uno. | Implementa la interfaz DistrictHeatMapRepository del Domain Layer. Gestiona la persistencia de los mapas de calor en la coleccion district_heat_maps de MongoDB. Provee las siguientes operaciones:<br><br>**save(heatMap)** → guarda o actualiza el documento DistrictHeatMap en la coleccion district_heat_maps. Se ejecuta cada vez que cambia el nivel de riesgo de alguna posta del distrito y el mapa necesita actualizarse.<br>**findAll()** → retorna los mapas de calor de todos los distritos. Lo usa el GetHeatMapQueryHandler para renderizar el mapa nacional con todos los distritos coloreados usando Google Maps API.<br>**findByDistrictId(districtId)** → retorna el mapa de calor de un distrito especifico. Lo usa el GetDistrictHeatMapQueryHandler cuando el admin hace click en un distrito del mapa nacional para ver el detalle de sus postas coloreadas. | Un paciente de la Posta Medica Huascar abandona su tratamiento. El OnTreatmentAbandonedEventHandler actualiza el DistrictHeatMap de San Juan de Lurigancho cambiando el RiskZone de la Posta Medica Huascar de YELLOW a RED. Luego llama a save(heatMap) y este repositorio actualiza el documento en MongoDB. El admin ve el cambio en tiempo real en el mapa de calor de FerovaClinic. |
+
+###### Mapper
+
+| Mapper | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- |
+| **ReportDocument-**<br>**Mapper** | Convierte entre el Aggregate Root Report del dominio y el documento MongoDB. Es necesario porque el Aggregate tiene metodos y comportamiento que no deben persistirse directamente en la base de datos. Solo sus atributos de estado son los que se guardan en MongoDB. | El Aggregate Report tiene atributos como adherencePercentage y status pero tambien tiene metodos como generate() y export(). El mapper extrae solo los atributos de estado y los convierte en un documento MongoDB plano. Al leer de MongoDB hace el proceso inverso convirtiendo el documento en un Aggregate con todos sus metodos disponibles. |
+| **FacilityMetric-**<br>**DocumentMapper** | Convierte entre la entidad FacilityMetric del dominio y el documento MongoDB. Garantiza que todos los atributos de la metrica incluyendo el adherencePercentage y criticalPatients se mapeen correctamente tanto al guardar como al leer de MongoDB. | El mapper toma la entidad FacilityMetric con sus datos de adherencia y la transforma en el formato BSON que MongoDB entiende. Cuando se consulta una posta, el mapper reconstruye la entidad para que la lógica de dominio pueda usar los datos de pacientes críticos. |
+| **DistrictHeatMap-**<br>**DocumentMapper** | Convierte entre la entidad DistrictHeatMap del dominio y el documento MongoDB. Garantiza que la lista de zones con sus RiskZone se mapee correctamente en MongoDB incluyendo las coordenadas GPS de cada posta que Google Maps API necesita para renderizar el mapa de calor. | Al persistir el mapa de calor de un distrito, el mapper recorre la lista de zonas y guarda cada una con su `facilityId`, `location` (GPS) y su `RiskZone`. Al recuperar el mapa, asegura que la estructura sea idéntica para que el GoogleMapsAdapter pueda procesarla sin errores. |
+
+###### External Services
+
+| Implementación | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GoogleMaps-**<br>**Adapter** | Es el adaptador que gestiona la comunicacion con Google Maps API para renderizar el mapa de calor del distrito en FerovaClinic. Sin este adaptador el sistema no podria mostrar las postas coloreadas en el mapa interactivo del distrito ni calcular las distancias entre postas. | Recibe la lista de zones del DistrictHeatMap con sus coordenadas GPS y sus niveles de riesgo RiskZone. Construye el payload requerido por la API de Google Maps y ejecuta la llamada para renderizar cada posta en el mapa con el color correspondiente. Retorna el mapa renderizado con todas las postas coloreadas segun su nivel de adherencia. Provee las siguientes operaciones:<br><br>**renderHeatMap(zones: List)** → recibe la lista de zonas con coordenadas y niveles de riesgo y retorna el mapa de calor renderizado con cada posta coloreada en verde, amarillo o rojo segun su RiskZone. Lo usa FerovaClinic para mostrar el mapa interactivo del distrito al admin.<br>**getCoordinates(facilityId: String)** → consulta a Google Maps API las coordenadas GPS de una posta especifica usando su facilityId. Lo usa el OnAdherenceReportSubmittedEventHandler cuando necesita agregar una nueva posta al mapa de calor del distrito. | El admin abre el mapa de calor de San Juan de Lurigancho en FerovaClinic. El GetDistrictHeatMapQueryHandler obtiene el DistrictHeatMap de MongoDB con sus zones. El GoogleMapsAdapter recibe la lista de zones con las coordenadas GPS y los RiskZone de cada posta y llama a Google Maps API para renderizar el mapa con la Posta Medica Huascar en rojo, la Posta Medica Zarate en amarillo y la Posta Medica Canto Grande en verde. FerovaClinic muestra el mapa interactivo al admin. |
+
+###### Configuration
+
+| Configuración | Razon | Funcionamiento |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexion a MongoDB para el bounded context Analytics & Reporting. Define los indices necesarios para las colecciones reports, facility_metrics y district_heat_maps garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. Sin estos indices las consultas serian lentas porque MongoDB tendria que recorrer todos los documentos de cada coleccion. | Inicializa la base de datos y crea los siguientes índices:<br><br>**Coleccion reports:**<br>* Indice en `districtId` para busquedas rapidas por distrito con `findByDistrictId`.<br>* Indice compuesto en `districtId` y `generatedAt` para obtener rapidamente el reporte mas reciente con `findLatestByDistrictId`.<br>* Indice en `status` para filtrar reportes `GENERATED` o `EXPORTED` rapidamente.<br><br>**Coleccion facility_metrics:**<br>* Indice en `reportId` para obtener rapidamente todas las metricas de un reporte con `findByReportId`.<br>* Indice compuesto en `districtId` y `adherencePercentage` para filtrar rapidamente las postas criticas con `findCriticalByDistrictId`.<br><br>**Coleccion district_heat_maps:**<br>* Indice unico en `districtId` para garantizar un solo mapa de calor por distrito y permitir busquedas rapidas con `findByDistrictId`. |
+| **GoogleMapsConfig** | Configura la conexion con Google Maps API. Inicializa el cliente de Google Maps con las credenciales del proyecto Ferova y define los parametros de conexion como el timeout de las llamadas a la API y el numero maximo de reintentos ante fallos de conexion. Sin esta configuracion el GoogleMapsAdapter no podria autenticarse correctamente con la API de Google Maps para renderizar el mapa de calor. | Gestiona las credenciales y parámetros de infraestructura para la integración externa:<br><br>* **Autenticación:** Carga la API Key oficial del proyecto Ferova.<br>* **Timeout:** Define el tiempo máximo de espera para las respuestas de Google Maps para evitar bloqueos en el hilo principal.<br>* **Retries:** Establece la lógica de reintentos automáticos ante errores de red intermitentes.<br>* **Cliente:** Expone el cliente de Google Maps inicializado para ser usado por el `GoogleMapsAdapter`. |
+
+###### Modelo de datos MongoDB
+
+<h4>Coleccion reports:</h4>
+
+```json
+{
+  "_id": "rep:uuid",
+  "districtId": "dist:uuid",
+  "districtName": "San Juan de Lurigancho",
+  "generatedBy": "admin:uuid",
+  "period": "Abril 2026",
+  "adherencePercentage": 60.0,
+  "criticalFacilitiesCount": 3,
+  "status": "GENERATED",
+  "generatedAt": "2026-04-19T10:00:00Z"
+}
+
+```
+
+<h4>Coleccion facility_metrics:</h4>
+
+```json
+{
+  "_id": "metric:uuid",
+  "reportId": "rep:uuid",
+  "facilityId": "facility:uuid",
+  "facilityName": "Posta Medica Huascar",
+  "adherencePercentage": 30.0,
+  "totalPatients": 45,
+  "criticalPatients": 15,
+  "updatedAt": "2026-04-19T09:00:00Z"
+}
+
+```
+
+<h4>Coleccion district_heat_maps:</h4>
+
+```json
+{
+  "_id": "heatmap:uuid",
+  "districtId": "dist:uuid",
+  "districtName": "San Juan de Lurigancho",
+  "zones": [
+    {
+      "facilityId": "facility:uuid",
+      "facilityName": "Posta Medica Huascar",
+      "coordinates": { "lat": -12.0031, "lng": -77.0082 },
+      "riskZone": "RED"
+    },
+    {
+      "facilityId": "facility:uuid2",
+      "facilityName": "Posta Medica Zarate",
+      "coordinates": { "lat": -12.0155, "lng": -77.0021 },
+      "riskZone": "YELLOW"
+    }
+  ],
+  "updatedAt": "2026-04-19T09:30:00Z"
+}
+
+```
+
+##### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align="">
+	<img src="resources/images/chapter-II/Software_Architecture/Analytics Reporting/Analytics_Reporting-diagran-component.png">
+</div>
+
+##### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align="">
+	<img src="resources/images/chapter-II/Class_Diagram/Analytic Reporting/diagram-class-analytic-reporting.png">
+</div>
+
+
+###### 2.6.7.6.2. Bounded Context Database Design Diagram
+
+<div align="">
+	<img src="resources/images/chapter-II/DB_Diagram/Analytic-Reporting/diagram-database-analytics-reporting.png">
+</div>
