@@ -7922,3 +7922,13 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 <div align="">
 	<img src="resources/images/chapter-II/DB_Diagram/Analytic-Reporting/diagram-database-analytics-reporting.png">
 </div>
+
+#### 2.6.8. Bounded Context: `Health-Facility`
+##### 2.6.8.1. Domain Layer
+##### 2.6.8.2. Interface Layer
+##### 2.6.8.3. Application Layer
+##### 2.6.8.4. Infrastructure Layer
+##### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
+##### 2.6.8.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.8.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.8.6.2. Bounded Context Database Design Diagram
