@@ -5669,7 +5669,7 @@ en MongoDB y las integraciones con servicios externos.
 - **Mobile first:** Android nativo (Kotlin + Jetpack Compose) para
 madres en FerovaFamilia; Flutter (Dart) para enfermeras y coordinadores
 en FerovaClinic con acceso diferenciado por rol.
-- **Backend:** Java + Spring Boot como API REST centralizada que agrupa
+- **Backend:** Node.js - Javascript + Spring Boot como API REST centralizada que agrupa
 la lógica de los nueve bounded contexts.
 - **Persistencia:** MongoDB — esquema flexible para el registro de
 pacientes, tratamientos, dosis y diario nutricional.
