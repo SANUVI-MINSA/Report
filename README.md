@@ -280,13 +280,13 @@
   * [4.3.2 Registro de Entrevistas](04-Chapter-4-Product-Implementation-%26-Validation.md#432-registro-de-entrevistas)
   * [4.3.3 Evaluaciones según heurísticas](04-Chapter-4-Product-Implementation-%26-Validation.md#433-evaluaciones-según-heurísticas)
 
-## [Conclusiones](05-Conclusions.md)
+## [Conclusiones](05-Conclusions.md#conclusiones)
 
 * [Conclusiones y recomendaciones](05-Conclusions.md#conclusiones-y-recomendaciones)
 * [Video App Validation](05-Conclusions.md#video-app-validation)
 * [Video About the product](05-Conclusions.md#video-about-the-product)
 * [Video About the team](05-Conclusions.md#video-about-the-team)
 
-## [Glosoario](08-Glosoario.md)
-## [Bibliografía](07-bibliography.md)
-## [Anexos](07-Annexes.md)
+## [Glosoario](08-Glosoario.md#glosoario)
+## [Bibliografía](06-Bibliography.md#biblografia)
+## [Anexos](07-Annexes.md#anexos)
