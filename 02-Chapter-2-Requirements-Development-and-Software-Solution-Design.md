@@ -7924,7 +7924,130 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 </div>
 
 #### 2.6.8. Bounded Context: `Health-Facility`
+
+El bounded context Health Facility gestiona toda la informacion geografica y organizacional de las postas medicas del distrito dentro de la plataforma Ferova. Su proposito es registrar las postas del MINSA con sus coordenadas GPS, horarios de atencion y personal asignado, permitir a la madre encontrar la posta mas cercana desde FerovaFamilia usando Google Maps API, y gestionar la reserva y cancelacion de citas presenciales entre la madre y la enfermera. Es el bounded context que provee el districtId y las coordenadas geograficas al BC Analytics & Reporting para renderizar el mapa de calor del distrito.
+
+
 ##### 2.6.8.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Health Facility. Aqui se definen las reglas de negocio relacionadas con el registro de postas medicas, la asignacion de enfermeras y la gestion de citas presenciales. Se incluyen el Aggregate Root HealthFacility, las entidades Appointment y NurseAssignment, los Value Objects FacilityStatus y AppointmentStatus, el Domain Service FacilityLocatorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregate Root: HealthFacility
+
+**Proposito:** Representa una posta medica del MINSA registrada en la plataforma Ferova. Gestiona la informacion geografica de la posta, su personal asignado y sus citas programadas.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | **String** | Identificador unico de la posta medica en MongoDB generado automaticamente por el sistema al momento del registro. |
+| **Atributo** | `name` | **String** | Nombre oficial de la posta medica. Por ejemplo "Posta Medica Huascar". Lo usa FerovaFamilia para mostrar el nombre de la posta mas cercana a la madre y FerovaClinic para mostrar la posta asignada a la enfermera. |
+| **Atributo** | `address` | **String** | Direccion exacta de la posta medica. Por ejemplo "Av. Huascar 1250, San Juan de Lurigancho". Lo usa FerovaFamilia cuando la madre necesita ir presencialmente a una cita. |
+| **Atributo** | `districtId` | **String** | Referencia logica al id del distrito proveniente de la coleccion districts del seed inicial de Ferova. Por ejemplo "dist-001" para San Juan de Lurigancho. El admin selecciona el distrito de un dropdown en FerovaClinic y el sistema toma automaticamente el districtId correspondiente del seed. Lo usa el BC Analytics & Reporting para agrupar las postas por distrito y generar el mapa de calor. |
+| **Atributo** | `districtName` | **String** | Nombre legible del distrito proveniente del seed inicial. Por ejemplo "San Juan de Lurigancho". Se almacena junto al districtId para que FerovaClinic pueda mostrar el nombre del distrito sin necesidad de consultar la coleccion districts en cada peticion. |
+| **Atributo** | `coordinates` | **Coordinates (VO)** | Value Object que encapsula la latitud y longitud de la posta medica. Google Maps API usa coordinates.lat y coordinates.lng para mostrar la posta en el mapa de FerovaFamilia y calcular la distancia entre la madre y las postas cercanas. |
+| **Atributo** | `scheduleOfOperation` | **String** | Horario de atencion de la posta medica. Por ejemplo "Lunes a Viernes de 8:00 AM a 5:00 PM". Lo usa FerovaFamilia para mostrar el horario cuando la madre quiere reservar una cita presencial. |
+| **Atributo** | `status` | **FacilityStatus (VO)** | Value Object enumerador que indica si la posta esta ACTIVE o INACTIVE. Permite filtrar solo las postas activas cuando la madre busca la posta mas cercana desde FerovaFamilia. |
+| **Método** | `registerFacility()` | **void** | Verifica que name, address, districtId y coordinates esten completos. Cambia el status a ACTIVE y dispara el evento HealthFacilityRegistered para notificar al BC Analytics & Reporting que agregue la posta al mapa de calor del distrito. |
+| **Método** | `assignNurse(nurseId: String)` | **void** | Crea una NurseAssignment para la enfermera verificando que no este ya asignada a otra posta. Dispara el evento NurseAssignedToFacility para notificar al BC Notifications. |
+| **Método** | `deactivate()` | **void** | Cambia el status a INACTIVE impidiendo que la posta aparezca en busquedas de FerovaFamilia y que las madres reserven citas en ella. |
+
+###### Entities
+
+<h4>District</h4>
+
+**Proposito:** Representa un distrito administrativo del sistema de salud del Peru. Tiene identidad propia con id porque es una entidad del catalogo seed que se persiste en MongoDB y que es referenciada por multiples postas del mismo distrito. A diferencia de un Value Object el District tiene ciclo de vida propio dentro del sistema ya que puede ser consultado, listado y referenciado independientemente de las postas.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | **String** | Identificador unico del distrito en MongoDB generado durante el seed inicial del sistema. Por ejemplo "dist-001" para San Juan de Lurigancho. Es el id que el Aggregate HealthFacility almacena en su atributo districtId para referenciar el distrito correcto. |
+| **Atributo** | `name` | **String** | Nombre oficial del distrito. Por ejemplo "San Juan de Lurigancho" o "Ate Vitarte". Lo usa FerovaClinic para mostrar el dropdown de distritos cuando el admin registra una nueva posta medica. |
+| **Método** | `getDistricts()` | **List<District>** | Retorna la lista completa de distritos disponibles en el sistema. Lo usa FerovaClinic para mostrar el dropdown de seleccion de distrito cuando el admin registra una nueva posta medica. |
+
+<h4>Appointment</h4>
+
+**Proposito:** Representa una cita presencial reservada por la madre para llevar a su hijo a la posta medica. Tiene identidad propia con id porque dos citas pueden tener la misma fecha y posta pero ser citas diferentes de distintas madres.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | **String** | Identificador unico de la cita en MongoDB. |
+| **Atributo** | `facilityId` | **String** | Referencia logica a la posta medica donde se realizara la cita. |
+| **Atributo** | `patientId` | **String** | Referencia logica al paciente para quien se reserva la cita. |
+| **Atributo** | `motherId` | **String** | Referencia logica a la madre que reservo la cita. Permite notificar a la madre correcta cuando la cita es confirmada o cancelada. |
+| **Atributo** | `nurseId` | **String** | Referencia logica a la enfermera que atrendera la cita. |
+| **Atributo** | `date` | **DateTime** | Fecha y hora programada de la cita presencial. |
+| **Atributo** | `status` | **AppointmentStatus (VO)** | Value Object enumerador que indica si la cita es CONFIRMED o CANCELLED. |
+| **Método** | `confirm()` | **void** | Cambia el status a CONFIRMED y dispara el evento AppointmentConfirmed para que el BC Notifications notifique a la madre y la enfermera via Firebase FCM. |
+| **Método** | `cancel()` | **void** | Cambia el status a CANCELLED y dispara el evento AppointmentCancelled para que el BC Notifications notifique a la enfermera via Firebase FCM. |
+
+<h4>NurseAssignment</h4>
+
+**Proposito:** Representa la asignacion formal de una enfermera a una posta medica. Tiene identidad propia con id porque cada asignacion es unica y debe poder auditarse individualmente.
+
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `id` | **String** | Identificador unico de la asignacion en MongoDB. |
+| **Atributo** | `facilityId` | **String** | Referencia logica a la posta a la que fue asignada la enfermera. |
+| **Atributo** | `nurseId` | **String** | Referencia logica a la enfermera asignada. |
+| **Atributo** | `dateAssigned` | **DateTime** | Fecha en que se realizo la asignacion. Permite auditar cuando fue asignada cada enfermera. |
+| **Método** | `assign()` | **void** | Registra el dateAssigned con la fecha actual y dispara el evento NurseAssignedToFacility. |
+| **Método** | `unassign()` | **void** | Elimina la asignacion cuando la enfermera es transferida o deja el sistema. |
+
+###### ValueObjects
+
+<h4>Coordinates</h4>
+
+**Proposito:** Encapsula las coordenadas GPS de la posta. No tiene id propio porque es un dato inmutable que describe la ubicacion geografica de la posta. Se iguala por valor: dos postas con el mismo lat y lng estarian en el mismo lugar fisico.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `lat` | **Double** | Latitud de la posta. Por ejemplo -12.0031 para una posta en San Juan de Lurigancho. |
+| **Atributo** | `lng` | **Double** | Longitud de la posta. Por ejemplo -77.0082 para una posta en San Juan de Lurigancho. |
+| **Validación** | **Inmutabilidad** | **Reglas de Negocio** | Se valida en construccion que lat este entre -90 y 90 y que lng este entre -180 y 180. Si las coordenadas de la posta cambian se reemplaza el Value Object completo con las nuevas coordenadas. |
+
+<h4>FacilityStatus</h4>
+
+**Proposito:** Clasifica el estado operativo de la posta. No tiene id propio porque es un enumerador con valores fijos predefinidos.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `ACTIVE` | **Status** | La posta esta operativa y aparece en busquedas de FerovaFamilia. |
+| **Atributo** | `INACTIVE` | **Status** | La posta fue cerrada temporalmente y no aparece en busquedas. |
+
+<h4>AppointmentStatus</h4>
+
+**Proposito:** Clasifica el estado de una cita presencial. No tiene id propio porque es un enumerador con valores fijos predefinidos.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `CONFIRMED` | **Status** | La cita fue reservada exitosamente por la madre. |
+| **Atributo** | `CANCELLED` | **Status** | La madre cancelo la cita antes de la fecha programada. |
+
+###### Domain Services
+
+| Servicio | Propósito | Métodos |
+| :--- | :--- | :--- |
+| **FacilityLocatorService** | Gestiona la logica de busqueda de postas cercanas a la ubicacion actual de la madre usando Google Maps API. | • `findNearbyFacilities(coordinates: Coordinates)` : Recibe las Coordinates actuales de la madre y consulta Google Maps API usando coordinates.lat y coordinates.lng para calcular la distancia a cada posta activa del sistema. Retorna la lista de postas ordenada de menor a mayor distancia. Por ejemplo si Maria esta en el paradero de Huascar retorna las 5 postas mas cercanas con su nombre, direccion y horario de atencion.<br><br>• `calculateDistance(origin: Coordinates, destination: Coordinates)` : Calcula la distancia en kilometros entre dos Coordinates usando Google Maps API. Lo usa findNearbyFacilities para ordenar las postas por distancia y determinar cual es la mas cercana a la madre. |
+
+###### Repositories
+
+| Repositorio | Propósito | Métodos |
+| :--- | :--- | :--- |
+| **HealthFacilityRepository** | Interfaz para gestionar la persistencia de las postas medicas y su informacion geografica en MongoDB. | • `save(facility: HealthFacility)` : Guarda o actualiza una posta en MongoDB incluyendo su districtId, districtName y el Value Object Coordinates embebido en el documento.<br><br>• `findById(id: String)` : Busca una posta por su id. Lo usa el BC Analytics & Reporting para obtener el districtId y coordinates de la posta al actualizar el mapa de calor. Retorna null si no existe.<br><br>• `findAll()` : Retorna todas las postas ACTIVE del sistema. Lo usa el FacilityLocatorService para buscar las postas cercanas a la madre.<br><br>• `findByDistrictId(districtId: String)` : Retorna todas las postas ACTIVE de un distrito especifico. Lo usa el BC Analytics & Reporting para generar el reporte del distrito. |
+| **AppointmentRepository** | Interfaz para gestionar la persistencia y el ciclo de vida de las citas presenciales. | • `save(appointment: Appointment)` : Guarda o actualiza una cita en MongoDB.<br><br>• `findById(id: String)` : Busca una cita por su id. Retorna null si no existe.<br><br>• `findByPatientId(patientId: String)` : Retorna todas las citas de un paciente. Lo usa FerovaFamilia para mostrar el historial de citas de la madre.<br><br>• `findByNurseId(nurseId: String)` : Retorna todas las citas de una enfermera. Lo usa FerovaClinic para mostrar la agenda de citas de la enfermera. |
+| **NurseAssignmentRepository** | Interfaz para gestionar la persistencia de las asignaciones de enfermeras a postas medicas. | • `save(assignment: NurseAssignment)` : Guarda o actualiza una asignacion en MongoDB.<br><br>• `findByFacilityId(facilityId: String)` : Retorna todas las enfermeras asignadas a una posta.<br><br>• `findByNurseId(nurseId: String)` : Retorna la asignacion actual de una enfermera. Lo usa el BC Treatment Tracking para saber a que posta pertenece la enfermera cuando genera eventos de adherencia. |
+| **DistrictRepository** | Interfaz para gestionar el acceso al catalogo de distritos administrativos del sistema. | • `findAll()` : Retorna todos los distritos del seed inicial. Lo usa FerovaClinic para mostrar el dropdown de seleccion de distrito cuando el admin registra una nueva posta medica.<br><br>• `findById(id: String)` : Busca un distrito por su id. Lo usa el sistema para validar que el districtId seleccionado por el admin exista en el catalogo antes de registrar la posta. |
+
+###### Domain Events
+
+| Evento | Descripción |
+| :--- | :--- |
+| **HealthFacilityRegistered** | Se dispara cuando el admin registra una nueva posta medica en el sistema. Notifica al BC Analytics & Reporting para que agregue la posta al mapa de calor del distrito usando el districtId y coordinates del Aggregate. |
+| **NurseAssignedToFacility** | Se dispara cuando el admin asigna una enfermera a una posta medica. Notifica al BC Notifications para que envie la confirmacion a la enfermera via Firebase FCM informandole a que posta fue asignada. |
+| **AppointmentConfirmed** | Se dispara cuando la madre reserva una cita presencial exitosamente. Notifica al BC Notifications para que envie la confirmacion tanto a la madre como a la enfermera via Firebase FCM con la fecha, hora y nombre de la posta. |
+| **AppointmentCancelled** | Se dispara cuando la madre cancela una cita presencial. Notifica al BC Notifications para que envie la cancelacion a la enfermera via Firebase FCM para liberar el horario. |
+
+
+
 ##### 2.6.8.2. Interface Layer
 ##### 2.6.8.3. Application Layer
 ##### 2.6.8.4. Infrastructure Layer
