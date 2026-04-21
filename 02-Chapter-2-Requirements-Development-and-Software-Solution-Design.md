@@ -8509,6 +8509,89 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **Consultar Catálogo** | `GET` <br>`/api/v1/food-items` | La madre necesita ver todos los alimentos disponibles en el catalogo para seleccionar los correctos al registrar la alimentacion de su hijo. Sin este endpoint FerovaFamilia no sabria que alimentos mostrar en el listado. | La madre abre la seccion de registro de alimentos en FerovaFamilia y ve el catalogo completo organizado por categorias: "Carnes: Higado de pollo, Res. Verduras: Espinaca, Brocoli. Legumbres: Lentejas, Frijoles." |
 | **Filtrar por Categoría** | `GET` <br>`/api/v1/food-items/` <br>`{category}` | El catalogo completo de alimentos puede ser extenso. Filtrar por categoria permite a la madre encontrar rapidamente el alimento correcto sin tener que desplazarse por toda la lista. | La madre hace click en la categoria "Verduras" en FerovaFamilia y ve solo: "Espinaca, Brocoli, Acelga, Zanahoria." Selecciona "Espinaca" e ingresa 200 gramos. |
 
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. RegisterFoodEntryRequest**
+
+**Razon:** Contiene los datos minimos necesarios para registrar un alimento en el diario del dia. El patientId viene en la URL del endpoint y el diaryId se determina automaticamente por la fecha actual. Sin este DTO el sistema no tendria un formato estandar para recibir los registros de alimentos de la madre.
+
+**Ejemplo en el aplicativo:** La madre selecciona "Espinaca" del catalogo en FerovaFamilia e ingresa 200 gramos. FerovaFamilia envia este DTO con el foodItemId, quantity y la unidad de medida al NutritionalDiaryController.
+
+```json
+{
+  "foodItemId": "food-001",
+  "quantity": 200.0,
+  "unit": "gramos"
+}
+```
+
+#### **2. FoodEntryResponse**
+
+**Razon:** Contiene la informacion de cada alimento registrado que necesita FerovaFamilia para mostrar el diario del dia. Incluye el foodItemName para que la madre vea el nombre del alimento sin necesidad de consultas adicionales.
+
+```json
+{
+  "id": "entry-123",
+  "foodItemId": "food-001",
+  "foodItemName": "Espinaca",
+  "quantity": 200.0,
+  "unit": "gramos",
+  "ironContributed": 5.6,
+  "registeredAt": "2026-04-20T10:30:00Z"
+}
+```
+
+#### **3. NutritionalDiaryResponse**
+
+**Razon:** Contiene el resumen completo del diario nutricional del dia incluyendo el total de hierro absorbido, si hay inhibidores y la lista de alimentos registrados. Es el DTO principal de la pantalla de diario nutricional de FerovaFamilia.
+
+**Ejemplo en el aplicativo:** FerovaFamilia recibe este DTO y muestra: "Diario del 20 de abril. Hierro absorbido: 3.2 mg. Alerta de inhibidor: Si. Alimentos: Espinaca 200g, Lentejas 150g, Leche 250ml."
+
+```json
+{
+  "id": "diary-456",
+  "patientId": "pat-001",
+  "date": "2026-04-20",
+  "totalIronAbsorbed": 3.2,
+  "hasInhibitor": true,
+  "entries": [
+    {
+      "id": "entry-123",
+      "foodItemName": "Espinaca",
+      "quantity": 200.0,
+      "ironContributed": 5.6
+    }
+  ]
+}
+```
+
+#### **4. FoodItemResponse**
+
+**Razon:** Contiene la informacion de cada alimento del catalogo que necesita FerovaFamilia para mostrar el listado y destacar los alimentos ricos en hierro y los inhibidores con iconos visuales diferentes.
+
+**Ejemplo en el aplicativo:** FerovaFamilia recibe la lista de FoodItemResponse y muestra la espinaca con un icono verde de hierro alto, la leche con un icono rojo de inhibidor y las lentejas con un icono amarillo de hierro moderado.
+
+```json
+{
+  "id": "food-001",
+  "name": "Espinaca",
+  "ironMg": 2.8,
+  "ironType": "no-hemo",
+  "isInhibitor": false,
+  "category": "VEGETABLE"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **RegisterFoodEntry-**<br>**CommandFromResource-**<br>**Assembler** | `RegisterFoodEntryRequest`<br>→<br>`RegisterFoodEntryCommand` | Convierte el RegisterFoodEntryRequest en un RegisterFoodEntryCommand para la Application Layer. Agrega el patientId de la URL y la fecha actual al comando para que el AddFoodEntryCommandHandler pueda encontrar o crear el diario del dia correcto. | El NutritionalDiaryController recibe el JSON con foodItemId, quantity y unit. El Assembler agrega el patientId de la URL y la fecha actual del servidor y crea el RegisterFoodEntryCommand completo para enviarlo al AddFoodEntryCommandHandler. |
+| **NutritionalDiary-**<br>**ResponseFromEntity-**<br>**Assembler** | `NutritionalDiary`<br>→<br>`NutritionalDiaryResponse` | Convierte el Aggregate Root NutritionalDiary del dominio en un NutritionalDiaryResponse que puede viajar via HTTP hacia FerovaFamilia. Incluye la lista de FoodEntry convertidos en FoodEntryResponse para mostrar el diario completo del dia. | El Assembler toma el Aggregate con sus métodos y lógica, extrae los datos de estado, mapea la lista de entradas y genera un DTO plano listo para ser enviado como JSON al frontend de la madre. |
+| **FoodEntry-**<br>**ResponseFromEntity-**<br>**Assembler** | `FoodEntry`<br>→<br>`FoodEntryResponse` | Convierte la entidad FoodEntry del dominio en un FoodEntryResponse. Agrega el foodItemName consultando el FoodItemRepository para que FerovaFamilia pueda mostrar el nombre del alimento directamente sin consultas adicionales desde el frontend. | Al convertir una entrada de "Espinaca", el assembler busca el nombre en el repositorio de alimentos y lo coloca en el DTO, así la madre ve "Espinaca" en su pantalla en lugar de solo un ID técnico. |
+| **FoodItem-**<br>**ResponseFromEntity-**<br>**Assembler** | `FoodItem`<br>→<br>`FoodItemResponse` | Convierte la entidad FoodItem del catalogo en un FoodItemResponse. Extrae el ironMg y ironType del Value Object NutrientContent y los expone como campos planos en el DTO para que FerovaFamilia pueda mostrarlos directamente. | El Assembler "aplana" el Value Object NutrientContent, de modo que el ironMg (ej. 2.8) queda como un atributo directo del JSON, facilitando que FerovaFamilia pinte los iconos de colores según el nivel de hierro. |
+
+
 
 
 #### 2.6.9.3. Application Layer
