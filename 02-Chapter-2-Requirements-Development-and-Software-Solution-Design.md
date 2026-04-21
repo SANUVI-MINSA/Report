@@ -8366,7 +8366,61 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 </div>
 
 ### 2.6.9. Bounded Context: `Nutritional Diary`
+
+El bounded context Nutritional Diary gestiona el registro diario de los alimentos consumidos por el paciente durante el tratamiento de anemia en Ferova. Su proposito es permitir a la madre registrar los alimentos que le dio a su hijo cada dia, calcular automaticamente el contenido de hierro absorbido segun el tipo de alimento y alertar a la madre en tiempo real cuando registra un alimento inhibidor de la absorcion de hierro como leche, te o cafe. Es el bounded context que complementa al BC Treatment Tracking porque no basta con tomar el suplemento de hierro sino que la alimentacion del nino juega un papel fundamental en la efectividad del tratamiento.
+
 #### 2.6.9.1. Domain Layer
+
+En esta seccion se documentan las clases que forman el core del bounded context Nutritional Diary. Aqui se definen las reglas de negocio relacionadas con el registro diario de alimentos, el calculo de hierro absorbido y la deteccion de inhibidores. Se incluyen el Aggregate Root NutritionalDiary, las entidades FoodEntry y FoodItem, los Value Objects NutrientContent y FoodCategory, el Domain Service IronCalculatorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+
+###### Aggregate Root: NutritionalDiary
+
+**Proposito:** Representa el diario nutricional diario de un paciente especifico. Gestiona el registro de alimentos consumidos durante el dia, el calculo total de hierro absorbido y la deteccion de alimentos inhibidores de la absorcion del suplemento de hierro.
+
+| Elemento | Categoría | Definición | Descripción |
+| :--- | :--- | :--- | :--- |
+| **id** | **Atributo** | `String` | Identificador unico del diario nutricional en MongoDB. Permite al sistema encontrar y actualizar el diario del dia actual del paciente cada vez que la madre registra un nuevo alimento. |
+| **patientId** | **Atributo** | `String` | Referencia logica al paciente cuya alimentacion se esta registrando. Sin este atributo el sistema no sabria a que paciente asociar el diario nutricional del dia. Por ejemplo cuando Maria registra los alimentos de Juan el sistema usa el patientId para encontrar el diario correcto. |
+| **motherId** | **Atributo** | `String` | Referencia logica a la madre que esta registrando los alimentos. Permite al sistema mostrar el diario nutricional correcto cuando la madre abre FerovaFamilia y asegura que solo la madre asignada al paciente pueda registrar sus alimentos. |
+| **date** | **Atributo** | `DateTime` | Fecha del diario nutricional. Cada dia genera un nuevo NutritionalDiary para el paciente. Por ejemplo el diario del 20 de abril de 2026 contiene todos los alimentos que Juan consumio ese dia. Permite a la madre y a la enfermera ver el historial nutricional dia por dia. |
+| **totalIronAbsorbed** | **Atributo** | `Double` | Total de hierro absorbido en miligramos calculado automaticamente por el IronCalculatorService sumando el hierro de todos los alimentos registrados en el dia. Es el dato mas importante del diario porque permite evaluar si el paciente esta recibiendo suficiente hierro a traves de su alimentacion ademas del suplemento. |
+| **hasInhibitor** | **Atributo** | `Boolean` | Indica si algun alimento registrado en el dia es un inhibidor de la absorcion de hierro. Cuando es true el sistema dispara el evento IronInhibitorDetected para alertar a la madre via BC Notifications. Permite a la madre corregir la alimentacion de su hijo a tiempo. |
+| **addFoodEntry** | **Método** | `(entry: FoodEntry): void` | Agrega un nuevo registro de alimento al diario del dia. Verifica que el alimento exista en el catalogo del BC via FoodItemRepository. Calcula el hierro aportado por el alimento usando el IronCalculatorService y actualiza el totalIronAbsorbed. Si el alimento es un inhibidor cambia hasInhibitor a true y dispara el evento IronInhibitorDetected. |
+| **calculateTotalIron** | **Método** | `(): Double` | Recalcula el totalIronAbsorbed sumando el hierro de todos los FoodEntry del dia. Se ejecuta cada vez que se agrega o elimina un alimento del diario para mantener el total actualizado en tiempo real. |
+| **generateDailySummary** | **Método** | `(): void` | Genera el resumen nutricional del dia con el total de hierro absorbido, la lista de alimentos consumidos y si hubo inhibidores. Dispara el evento DailyNutritionalSummaryGenerated para que FerovaFamilia muestre el resumen completo del dia a la madre. |
+
+###### Entity
+
+<h4>FoodEntry</h4>
+
+**Proposito:** Representa el registro de un alimento especifico consumido por el paciente en un dia determinado. Cada vez que la madre registra un alimento se crea un nuevo FoodEntry dentro del NutritionalDiary del dia.
+
+| Elemento | Categoría | Definición | Descripción |
+| :--- | :--- | :--- | :--- |
+| **id** | **Atributo** | `String` | Identificador unico del registro de alimento en MongoDB. Permite al sistema encontrar y eliminar un registro especifico si la madre cometio un error al registrar un alimento. |
+| **diaryId** | **Atributo** | `String` | Referencia logica al NutritionalDiary al que pertenece este registro. Sin este atributo el sistema no sabria a que diario del dia asociar el alimento registrado por la madre. |
+| **foodItemId** | **Atributo** | `String` | Referencia logica al FoodItem del catalogo de alimentos. Permite al sistema obtener el contenido nutricional del alimento sin tener que almacenarlo nuevamente en cada registro. Por ejemplo si la madre registra "leche" el sistema busca el FoodItem "leche" en el catalogo y obtiene su contenido de hierro y si es inhibidor. |
+| **quantity** | **Atributo** | `Double` | Cantidad del alimento consumida por el paciente en gramos o mililitros. Por ejemplo 200 gramos de espinaca o 250 mililitros de leche. Es el dato que el IronCalculatorService usa para calcular exactamente cuanto hierro aporto ese alimento segun la cantidad consumida. |
+| **unit** | **Atributo** | `String` | Unidad de medida de la cantidad registrada. Por ejemplo gramos, mililitros o porciones. Permite al sistema calcular el hierro correctamente independientemente de la unidad en que la madre registro el alimento. |
+| **ironContributed** | **Atributo** | `Double` | Cantidad de hierro en miligramos aportada por este alimento especifico segun la cantidad consumida. Se calcula automaticamente por el IronCalculatorService al momento del registro. Por ejemplo 200 gramos de espinaca aportan aproximadamente 5.6 mg de hierro. |
+| **registeredAt** | **Atributo** | `DateTime` | Fecha y hora en que la madre registro este alimento en FerovaFamilia. Permite auditar cuando se registraron los alimentos del dia y mostrar el historial en orden cronologico. |
+| **calculateIron** | **Método** | `(nutrientContent: NutrientContent, quantity: Double): Double` | Calcula el hierro aportado por este alimento especifico multiplicando el contenido de hierro por 100 gramos del NutrientContent por la cantidad consumida dividida entre 100. Por ejemplo si la espinaca tiene 2.8 mg de hierro por 100 gramos y Juan consumio 200 gramos el calculo retorna 5.6 mg de hierro. |
+
+<h4>FoodItem</h4>
+
+**Proposito:**  Representa un alimento del catalogo nutricional de Ferova. Es el catalogo seed de alimentos que el sistema usa como referencia para calcular el hierro aportado por cada alimento registrado por la madre. Similar al catalogo de distritos del BC Health Facility este catalogo se pobla una sola vez durante el despliegue inicial y no se modifica en tiempo de ejecucion.
+
+| Elemento | Categoría | Definición | Descripción |
+| :--- | :--- | :--- | :--- |
+| **id** | **Atributo** | `String` | Identificador unico del alimento en el catalogo de MongoDB. Permite al sistema encontrar rapidamente el alimento cuando la madre lo selecciona del listado en FerovaFamilia. |
+| **name** | **Atributo** | `String` | Nombre del alimento en el catalogo. Por ejemplo "Espinaca", "Leche", "Lentejas" o "Higado de pollo". Lo usa FerovaFamilia para mostrar el listado de alimentos disponibles cuando la madre registra lo que comio su hijo. |
+| **nutrientContent** | **Atributo** | `NutrientContent` | Value Object que encapsula el contenido nutricional del alimento por cada 100 gramos incluyendo el hierro en miligramos y el tipo de hierro hemo o no hemo. Es el dato que el IronCalculatorService usa para calcular el hierro aportado segun la cantidad consumida. |
+| **isInhibitor** | **Atributo** | `Boolean` | Indica si el alimento es un inhibidor de la absorcion de hierro. Por ejemplo la leche, el te y el cafe tienen isInhibitor en true porque reducen la absorcion del suplemento de hierro cuando se consumen junto con el.  Cuando la madre registra un alimento con isInhibitor true el sistema activa la alerta en FerovaFamilia. |
+| **category** | **Atributo** | `FoodCategory` | Value Object enumerador que clasifica el alimento en una categoria nutricional. Por ejemplo DAIRY para lacteos, LEGUME para legumbres, MEAT para carnes o VEGETABLE para verduras. Permite organizar el listado de alimentos por categoria en FerovaFamilia para que la madre encuentre facilmente el alimento que quiere registrar. |
+| **isIronRich** | **Método** | `(): Boolean` | Retorna true si el alimento tiene un contenido de hierro mayor a 2 mg por 100 gramos. Lo usa FerovaFamilia para destacar los alimentos ricos en hierro en el listado con un icono especial para que la madre sepa cuales son los mejores para la alimentacion de su hijo durante el tratamiento. |
+
+
+
 #### 2.6.9.2. Interface Layer
 #### 2.6.9.3. Application Layer
 #### 2.6.9.4. Infrastructure Layer
