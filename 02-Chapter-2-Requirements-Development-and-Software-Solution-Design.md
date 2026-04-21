@@ -8457,6 +8457,19 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **calculateTotalIron-**<br>**(entries: List)** | Recibe la lista completa de FoodEntry del dia y suma el ironContributed de cada uno. Retorna el total de hierro absorbido en el dia. Lo usa el Aggregate NutritionalDiary para actualizar el totalIronAbsorbed cada vez que la madre agrega un nuevo alimento al diario. |
 | **isInhibitorConflict-**<br>**(entries: List)** | Verifica si algun FoodEntry del dia corresponde a un alimento inhibidor. Retorna true si encuentra al menos un FoodEntry cuyo FoodItem tiene isInhibitor en true. Lo usa el Aggregate NutritionalDiary para actualizar el flag hasInhibitor y decidir si debe disparar el evento IronInhibitorDetected. |
 
+###### Repositories
+
+| Repository | Método | Propósito / Funcionamiento |
+| :--- | :--- | :--- |
+| **NutritionalDiary-**<br>**Repository** | **save(diary: NutritionalDiary)** | Guarda o actualiza el diario nutricional del dia en MongoDB. Se ejecuta cada vez que la madre registra un nuevo alimento y el totalIronAbsorbed o el hasInhibitor cambian. |
+| | **findByPatientIdAndDate-**<br>**(patientId: String,**<br>**date: DateTime)** | Busca el diario nutricional de un paciente especifico para una fecha especifica. Lo usa el AddFoodEntryCommandHandler para encontrar el diario del dia actual antes de agregar un nuevo alimento. Si no existe crea un nuevo NutritionalDiary para ese dia. |
+| | **findByPatientId-**<br>**(patientId: String)** | Retorna todos los diarios nutricionales de un paciente ordenados por fecha. Lo usa FerovaFamilia para mostrar el historial nutricional del paciente dia por dia. |
+| **FoodEntry-**<br>**Repository** | **save(entry: FoodEntry)** | Guarda un nuevo registro de alimento en MongoDB. Se ejecuta cuando la madre registra un alimento en el diario del dia. |
+| | **findByDiaryId-**<br>**(diaryId: String)** | Retorna todos los registros de alimentos de un diario especifico. Lo usa FerovaFamilia para mostrar la lista de alimentos registrados en el dia actual del paciente. |
+| | **deleteById(id: String)** | Elimina un registro de alimento especifico. Lo usa FerovaFamilia cuando la madre cometio un error al registrar un alimento y quiere eliminarlo del diario del dia. |
+| **FoodItem-**<br>**Repository** | **findAll()** | Retorna el catalogo completo de alimentos disponibles. Lo usa FerovaFamilia para mostrar el listado de alimentos que la madre puede seleccionar cuando registra lo que comio su hijo. |
+| | **findById(id: String)** | Busca un alimento especifico del catalogo por su id. Lo usa el AddFoodEntryCommandHandler para obtener el NutrientContent y el isInhibitor del alimento seleccionado por la madre antes de calcular su aporte de hierro. |
+| | **findByCategory-**<br>**(category: FoodCategory)** | Retorna todos los alimentos de una categoria especifica. Lo usa FerovaFamilia para mostrar el listado filtrado por categoria cuando la madre navega por el catalogo de alimentos. |
 
 
 #### 2.6.9.2. Interface Layer
