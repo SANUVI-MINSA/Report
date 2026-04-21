@@ -8646,7 +8646,66 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 | :--- | :--- | :--- |
 | **MongoConfig** | Configura la conexion a MongoDB para el bounded context Nutritional Diary. Define los indices necesarios para las colecciones nutritional_diaries, food_entries y food_items garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. | **Indices de la coleccion nutritional_diaries:**<br>• Indice compuesto unico en `patientId` y `date` → garantiza que cada paciente tenga un solo diario por dia y permite buscar el diario del dia actual rapidamente con `findByPatientIdAndDate`.<br>• Indice en `patientId` → permite retornar rapidamente todos los diarios de un paciente con `findByPatientId`.<br><br>**Indices de la coleccion food_entries:**<br>• Indice en `diaryId` → permite retornar rapidamente todos los alimentos de un diario con `findByDiaryId`.<br>• Indice compuesto en `diaryId` y `registeredAt` → permite retornar los alimentos ordenados cronologicamente sin necesidad de ordenar en memoria.<br><br>**Indices de la coleccion food_items:**<br>• Indice en `category` → permite filtrar rapidamente el catalogo por categoria con `findByCategory`.<br>• Indice en `isInhibitor` → permite identificar rapidamente los alimentos inhibidores del catalogo. |
 
+###### Modelo de datos MongoDB
 
+<h4>Coleccion nutritional_diaries:</h4>
+
+```json
+
+{
+  "_id": "diary:uuid",
+  "patientId": "pat:uuid",
+  "motherId": "user:uuid",
+  "date": "2026-04-20T00:00:00Z",
+  "totalIronAbsorbed": 3.2,
+  "hasInhibitor": true
+}
+
+```
+
+<h4>Coleccion food_entries:</h4>
+
+```json
+
+{
+  "_id": "entry:uuid",
+  "diaryId": "diary:uuid",
+  "foodItemId": "food:uuid",
+  "quantity": 250.0,
+  "unit": "mililitros",
+  "ironContributed": 0.0,
+  "registeredAt": "2026-04-20T08:30:00Z"
+}
+
+```
+
+<h4>Coleccion food_items (seed inicial):</h4>
+
+```json
+
+{
+  "_id": "food:uuid",
+  "name": "Espinaca",
+  "nutrientContent": {
+    "ironMg": 2.8,
+    "ironType": "no-hemo"
+  },
+  "isInhibitor": false,
+  "category": "VEGETABLE"
+}
+
+{
+  "_id": "food:uuid2",
+  "name": "Leche",
+  "nutrientContent": {
+    "ironMg": 0.1,
+    "ironType": "no-hemo"
+  },
+  "isInhibitor": true,
+  "category": "DAIRY"
+}
+
+```
 
 #### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
