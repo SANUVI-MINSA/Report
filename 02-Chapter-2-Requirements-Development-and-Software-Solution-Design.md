@@ -8640,6 +8640,12 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 | **FoodEntry-**<br>**DocumentMapper** | Convierte entre la entidad FoodEntry del dominio y el documento MongoDB. Garantiza que todos los atributos del registro se mapeen correctamente al guardar o leer de la base de datos. | **Mapeo:** Asegura que el `ironContributed` (calculado por el servicio) y la fecha de registro `registeredAt` queden bien guardaditos en la colección `food_entries`. |
 | **FoodItem-**<br>**DocumentMapper** | Convierte entre la entidad FoodItem del catalogo y el documento MongoDB. Maneja la persistencia de los Value Objects como subdocumentos. | **Mapeo:** Toma el Value Object `NutrientContent` y lo guarda como un subdocumento con `ironMg` e `ironType`. Al leer de la base de datos, reconstruye el Value Object para que el dominio lo use como un solo bloque de información inmutable. |
 
+###### Configuracion
+
+| Configuración | Razon | Funcionamiento (Índices) |
+| :--- | :--- | :--- |
+| **MongoConfig** | Configura la conexion a MongoDB para el bounded context Nutritional Diary. Define los indices necesarios para las colecciones nutritional_diaries, food_entries y food_items garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. | **Indices de la coleccion nutritional_diaries:**<br>• Indice compuesto unico en `patientId` y `date` → garantiza que cada paciente tenga un solo diario por dia y permite buscar el diario del dia actual rapidamente con `findByPatientIdAndDate`.<br>• Indice en `patientId` → permite retornar rapidamente todos los diarios de un paciente con `findByPatientId`.<br><br>**Indices de la coleccion food_entries:**<br>• Indice en `diaryId` → permite retornar rapidamente todos los alimentos de un diario con `findByDiaryId`.<br>• Indice compuesto en `diaryId` y `registeredAt` → permite retornar los alimentos ordenados cronologicamente sin necesidad de ordenar en memoria.<br><br>**Indices de la coleccion food_items:**<br>• Indice en `category` → permite filtrar rapidamente el catalogo por categoria con `findByCategory`.<br>• Indice en `isInhibitor` → permite identificar rapidamente los alimentos inhibidores del catalogo. |
+
 
 
 #### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
