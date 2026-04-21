@@ -8591,10 +8591,35 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **FoodEntry-**<br>**ResponseFromEntity-**<br>**Assembler** | `FoodEntry`<br>→<br>`FoodEntryResponse` | Convierte la entidad FoodEntry del dominio en un FoodEntryResponse. Agrega el foodItemName consultando el FoodItemRepository para que FerovaFamilia pueda mostrar el nombre del alimento directamente sin consultas adicionales desde el frontend. | Al convertir una entrada de "Espinaca", el assembler busca el nombre en el repositorio de alimentos y lo coloca en el DTO, así la madre ve "Espinaca" en su pantalla en lugar de solo un ID técnico. |
 | **FoodItem-**<br>**ResponseFromEntity-**<br>**Assembler** | `FoodItem`<br>→<br>`FoodItemResponse` | Convierte la entidad FoodItem del catalogo en un FoodItemResponse. Extrae el ironMg y ironType del Value Object NutrientContent y los expone como campos planos en el DTO para que FerovaFamilia pueda mostrarlos directamente. | El Assembler "aplana" el Value Object NutrientContent, de modo que el ironMg (ej. 2.8) queda como un atributo directo del JSON, facilitando que FerovaFamilia pinte los iconos de colores según el nivel de hierro. |
 
-
-
-
 #### 2.6.9.3. Application Layer
+
+En esta seccion se explican las clases que manejan los flujos de procesos del negocio dentro del bounded context Nutritional Diary. Esta capa actua como el director de orquesta coordinando las interacciones entre el Domain Layer y el Infrastructure Layer sin contener logica de negocio propia. Se incluyen los Command Handlers que procesan los registros de alimentos, los Query Handlers que gestionan las consultas del diario nutricional y el catalogo de alimentos y los Event Handlers que notifican al BC Notifications cuando se detecta un inhibidor.
+
+###### Command Handler
+
+| Command Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **AddFoodEntry-**<br>**CommandHandler** | Es el handler mas importante. La madre necesita registrar los alimentos que le dio a su hijo cada dia desde FerovaFamilia. Sin el no se podria crear el FoodEntry ni detectar inhibidores. | Recibe el comando con `patientId`, `foodItemId`, `quantity`, `unit` y fecha. Busca el `FoodItem` para obtener su `NutrientContent`. Busca el `NutritionalDiary` del dia (o lo crea si no existe). Usa el `IronCalculatorService` para calcular el aporte. Agrega el `FoodEntry` al Aggregate, recalcula el total y persiste en MongoDB. Dispara eventos como `IronInhibitorDetected` y `FoodEntryRegistered`. | La madre selecciona "Leche" (250ml). El handler detecta que es un inhibidor, crea el registro, actualiza el diario del dia y dispara la alerta. El BC Notifications envia la alerta push: "La leche puede reducir la absorcion del hierro de Juan." |
+| **DeleteFoodEntry-**<br>**CommandHandler** | La madre puede equivocarse al registrar un alimento. Sin este handler no tendria forma de corregir el error y el total de hierro del dia seria incorrecto. | Recibe el comando con `entryId` y `patientId`. Busca el registro y verifica que sea del dia actual para evitar editar el pasado. Elimina el `FoodEntry` via repositorio. Busca el `NutritionalDiary` y recalcula el `totalIronAbsorbed` y el estado de `hasInhibitor` basandose en los alimentos que quedan. Persiste los cambios. | La madre registro "Higado de res" en lugar de "Higado de pollo" por error. Al eliminarlo, este handler borra el dato de MongoDB y recalcula el total de hierro al instante. FerovaFamilia muestra el nuevo total corregido. |
+
+###### Query Handler
+
+| Query Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GetTodayDiary-**<br>**QueryHandler** | La madre necesita ver el diario actual de su hijo para saber si la alimentacion esta complementando bien el tratamiento de anemia. | Recibe el query con `patientId`. Busca en el repositorio por fecha actual. Si no hay registros, devuelve un diario vacio (0 mg). Obtiene los `FoodEntry` del dia y usa el `Assembler` para devolver un `NutritionalDiaryResponse`. | La madre abre FerovaFamilia y ve: "Hierro absorbido hoy: 3.2 mg. Alimentos: Espinaca 200g (1.12 mg), Lentejas 150g (2.1 mg), Leche 250ml (0 mg - inhibidor)." |
+| **GetDiaryHistory-**<br>**QueryHandler** | La madre y la enfermera necesitan evaluar la alimentacion a lo largo del tiempo y detectar patrones de consumo de inhibidores. | Recibe el query con `patientId`. Consulta todos los diarios del paciente ordenados por fecha (descendente). El `Assembler` convierte cada diario en un `NutritionalDiaryResponse` para la lista del historial. | La madre abre el historial y ve: "20 abril - 3.2 mg hierro - inhibidor detectado. 19 abril - 5.8 mg hierro - sin inhibidores. 18 abril - 2.1 mg hierro - sin inhibidores." |
+| **GetAllFoodItems-**<br>**QueryHandler** | FerovaFamilia necesita el catalogo completo para que la madre pueda seleccionar los alimentos que consumio su hijo. | Recibe el query sin parametros. Consulta el `FoodItemRepository` usando `findAll`. El `Assembler` aplana los `Value Objects` para mostrar el hierro y tipo de forma directa en el listado. | La madre abre el registro y ve el catalogo organizado por categorias con iconos verdes para hierro alto y rojos para los inhibidores. |
+| **GetFoodItemsBy-**<br>**CategoryQueryHandler** | Permite a la madre encontrar rapidamente el alimento correcto sin desplazarse por toda la lista, mejorando la experiencia de uso. | Recibe el query con la `FoodCategory`. Filtra en el repositorio por esa categoria y usa el `Assembler` para preparar los datos que van hacia la aplicacion movil. | La madre hace click en "Verduras" y ve solo: "Espinaca, Brocoli, Acelga, Zanahoria." Selecciona "Espinaca" y registra sus 200 gramos al instante. |
+
+###### Event Handler
+
+| Event Handler | Razon | Funcionamiento | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **OnIronInhibitor-**<br>**Detected-**<br>**EventHandler** | Cuando la madre registra un alimento inhibidor, el BC Notifications debe ser notificado para enviar la alerta push en tiempo real. Sin él, la madre no sabría que el alimento afecta la absorción del suplemento. | Reacciona al evento `IronInhibitorDetected`. Recibe el `patientId`, `motherId` y el mensaje de alerta. Notifica al BC Notifications usando el `motherId` como destinatario para disparar la alerta push vía Firebase (FCM) hacia FerovaFamilia. | La madre registra "Leche" para Juan. El handler activa la notificación y ella recibe en su celular: "La leche puede reducir la absorcion del hierro de Juan. Evita darsela junto con el suplemento de hierro." |
+| **OnFoodEntry-**<br>**Registered-**<br>**EventHandler** | FerovaFamilia debe actualizar el total de hierro del día en tiempo real para que la madre vea el progreso inmediatamente después de cada registro sin necesidad de recargar la pantalla. | Reacciona al evento `FoodEntryRegistered`. Recibe el `patientId` y el nuevo `totalIronAbsorbed`. Actualiza el estado de la vista en la aplicación para que el contador de hierro se refresque automáticamente con el valor calculado. | La madre registra "Espinaca 200g". El sistema dispara el evento y el contador de hierro en la pantalla de FerovaFamilia sube de 0 mg a 1.12 mg al instante, sin que ella tenga que hacer nada más. |
+
+
+
 #### 2.6.9.4. Infrastructure Layer
 #### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
