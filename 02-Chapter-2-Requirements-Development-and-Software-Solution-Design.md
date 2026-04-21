@@ -8419,6 +8419,32 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **category** | **Atributo** | `FoodCategory` | Value Object enumerador que clasifica el alimento en una categoria nutricional. Por ejemplo DAIRY para lacteos, LEGUME para legumbres, MEAT para carnes o VEGETABLE para verduras. Permite organizar el listado de alimentos por categoria en FerovaFamilia para que la madre encuentre facilmente el alimento que quiere registrar. |
 | **isIronRich** | **Método** | `(): Boolean` | Retorna true si el alimento tiene un contenido de hierro mayor a 2 mg por 100 gramos. Lo usa FerovaFamilia para destacar los alimentos ricos en hierro en el listado con un icono especial para que la madre sepa cuales son los mejores para la alimentacion de su hijo durante el tratamiento. |
 
+###### Value Objects
+
+<h4>NutrientContent</h4>
+
+**Proposito:** Encapsula el contenido nutricional de un alimento por cada 100 gramos. No tiene id propio porque es un dato inmutable que describe las propiedades nutricionales del alimento. Se iguala por valor: dos alimentos con el mismo ironMg y el mismo ironType tienen el mismo contenido nutricional.
+
+| Atributo | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **ironMg** | `Double` | Contenido de hierro en miligramos por cada 100 gramos del alimento. Por ejemplo la espinaca tiene 2.8 mg de hierro por 100 gramos y el higado de pollo tiene 8.5 mg por 100 gramos. Es el dato principal que el IronCalculatorService usa para calcular el hierro aportado por cada FoodEntry. |
+| **ironType** | `String` | Tipo de hierro del alimento que puede ser "hemo" para carnes y pescados o "no-hemo" para vegetales y legumbres. El hierro hemo se absorbe mejor que el no hemo. Este dato permite al IronCalculatorService aplicar el factor de absorcion correcto al calcular el hierro efectivamente absorbido por el paciente. |
+
+<h4>FoodCategory</h4>
+
+**Proposito:** Clasifica el alimento en una categoria nutricional para organizar el listado de alimentos en FerovaFamilia. No tiene id propio porque es un enumerador con valores fijos predefinidos.
+
+| Valor (Enum) | Descripción |
+| :--- | :--- |
+| **MEAT** | carnes y aves como pollo, res e higado. Son fuentes de hierro hemo de alta absorcion. |
+| **FISH** | pescados y mariscos. Son fuentes de hierro hemo de alta absorcion. |
+| **VEGETABLE** | verduras y hojas verdes como espinaca y brocoli. Son fuentes de hierro no hemo. |
+| **LEGUME** | legumbres como lentejas, frijoles y garbanzos. Son fuentes de hierro no hemo. |
+| **DAIRY** | lacteos como leche, queso y yogur. Son inhibidores de la absorcion de hierro. |
+| **GRAIN** | cereales y granos como avena y arroz. |
+| **FRUIT** | frutas. Algunas como la naranja potencian la absorcion de hierro no hemo. |
+| **BEVERAGE** | bebidas como te, cafe y jugos. El te y el cafe son inhibidores de la absorcion de hierro. |
+
 
 
 #### 2.6.9.2. Interface Layer
