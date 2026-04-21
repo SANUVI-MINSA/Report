@@ -8209,14 +8209,17 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 
 ###### Assemblers / Mappers
 
-| Assembler / Mapper | Descripción |
-| :--- | :--- |
-| **RegisterFacilityCommandFromResourceAssembler** | Convierte el RegisterFacilityRequest en un RegisterFacilityCommand para la Application Layer. Extrae el lat y lng del request y los encapsula en el Value Object Coordinates antes de crear el comando. Separa la representacion HTTP del comando de dominio. |
-| **FacilityResponseFromEntityAssembler** | Convierte el Aggregate Root HealthFacility en un FacilityResponse que puede viajar via HTTP hacia FerovaFamilia o FerovaClinic. Extrae el lat y lng del Value Object Coordinates y los expone como campos planos en el DTO. |
-| **CreateAppointmentCommandFromResourceAssembler** | Convierte el CreateAppointmentRequest en un CreateAppointmentCommand para la Application Layer. Separa la capa HTTP de la logica de creacion de citas del dominio. |
-| **AppointmentResponseFromEntityAssembler** | Convierte la entidad Appointment en un AppointmentResponse que puede viajar via HTTP. Agrega el facilityName consultando el HealthFacilityRepository para que el usuario vea el nombre de la posta sin consultas adicionales desde el frontend. |
-| **NearbyFacilityResponseFromEntityAssembler** | Convierte el Aggregate Root HealthFacility en un NearbyFacilityResponse agregando el campo distanceKm calculado por el FacilityLocatorService. Es el assembler mas especializado del bounded context porque combina datos del dominio con datos calculados externamente. |
-| **DistrictResponseFromEntityAssembler** | Convierte la entidad District en un DistrictResponse para enviarlo a FerovaClinic. Garantiza que solo se exponga el id y name del distrito para el dropdown de seleccion del admin. |
+### Assemblers / Mappers
+
+| Assembler / Mapper | Dirección de la Traducción | Razón |
+| :--- | :--- | :--- |
+| **RegisterFacilityCommandFromResourceAssembler** | `RegisterFacilityRequest` → `RegisterFacilityCommand` | Convierte el RegisterFacilityRequest en un RegisterFacilityCommand para la Application Layer. Extrae el lat y lng del request y los encapsula en el Value Object Coordinates antes de crear el comando. Separa la representacion HTTP del comando de dominio. |
+| **FacilityResponseFromEntityAssembler** | `HealthFacility` → `FacilityResponse` | Convierte el Aggregate Root HealthFacility en un FacilityResponse que puede viajar via HTTP hacia FerovaFamilia o FerovaClinic. Extrae el lat y lng del Value Object Coordinates y los expone como campos planos en el DTO. |
+| **CreateAppointmentCommandFromResourceAssembler** | `CreateAppointmentRequest` → `CreateAppointmentCommand` | Convierte el CreateAppointmentRequest en un CreateAppointmentCommand para la Application Layer. Separa la capa HTTP de la logica de creacion de citas del dominio. |
+| **AppointmentResponseFromEntityAssembler** | `Appointment` → `AppointmentResponse` | Convierte la entidad Appointment en un AppointmentResponse que puede viajar via HTTP. Agrega el facilityName consultando el HealthFacilityRepository para que el usuario vea el nombre de la posta sin consultas adicionales desde el frontend. |
+| **NearbyFacilityResponseFromEntityAssembler** | `HealthFacility` → `NearbyFacilityResponse` | Convierte el Aggregate Root HealthFacility en un NearbyFacilityResponse agregando el campo distanceKm calculado por el FacilityLocatorService. Es el assembler mas especializado del bounded context porque combina datos del dominio con datos calculados externamente. |
+| **DistrictResponseFromEntityAssembler** | `District` → `DistrictResponse` | Convierte la entidad District en un DistrictResponse para enviarlo a FerovaClinic. Garantiza que solo se exponga el id y name del distrito para el dropdown de seleccion del admin. |
+
 
 ##### 2.6.8.3. Application Layer
 ##### 2.6.8.4. Infrastructure Layer
