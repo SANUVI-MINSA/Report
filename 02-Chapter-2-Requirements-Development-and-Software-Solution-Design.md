@@ -8480,6 +8480,37 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **DailyNutritionalSummary-**<br>**Generated** | Se dispara al final del dia cuando el sistema genera el resumen nutricional completo del paciente. Incluye el total de hierro absorbido en el dia, la lista de alimentos consumidos y si hubo inhibidores. Lo usa FerovaFamilia para mostrar a la madre un resumen visual de la nutricion de su hijo del dia. |
 
 #### 2.6.9.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Nutritional Diary. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaFamilia y transformandolas en comandos y consultas que entiende la Application Layer. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+###### Controllers (REST)
+
+<h4>NutritionalDiaryController</h4>
+
+**Proposito:** Expone los endpoints REST para gestionar el diario nutricional diario del paciente. Permite a la madre registrar alimentos, ver el diario del dia actual y consultar el historial nutricional de su hijo desde FerovaFamilia.
+
+**Razon:** Se necesita este controller porque la madre necesita una forma de registrar los alimentos que le dio a su hijo cada dia y ver el total de hierro absorbido en tiempo real desde FerovaFamilia. Sin este controller el sistema no podria recibir los registros de alimentacion de la madre.
+
+| Endpoint | Método | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **Registrar Alimento** | `POST` <br>`/api/v1/diaries/` <br>`{patientId}/entries` | Se necesita un endpoint POST porque registrar un alimento crea un nuevo FoodEntry en MongoDB y puede disparar el evento IronInhibitorDetected hacia el BC Notifications si el alimento es un inhibidor. | La madre abre FerovaFamilia y selecciona "Leche" del catalogo de alimentos. Ingresa 250 mililitros como cantidad y presiona "Registrar". El sistema detecta que la leche es un inhibidor y envia inmediatamente una alerta push: "La leche puede reducir la absorcion del hierro de Juan. Evita darsela junto con el suplemento." |
+| **Resumen Diario** | `GET` <br>`/api/v1/diaries/` <br>`{patientId}/today` | La madre necesita ver en todo momento cuanto hierro lleva acumulado su hijo en el dia y que alimentos ya registro para no duplicar registros ni olvidar alimentos importantes. | La madre abre la seccion de diario nutricional en FerovaFamilia y ve: "Hierro absorbido hoy: 3.2 mg. Alimentos registrados: Espinaca 200g, Lentejas 150g, Leche 250ml. Alerta: La leche es un inhibidor." |
+| **Historial Nutricional** | `GET` <br>`/api/v1/diaries/` <br>`{patientId}/history` | La madre y la enfermera necesitan ver el historial nutricional del paciente para evaluar si la alimentacion esta complementando correctamente el tratamiento de anemia a lo largo del tiempo. | La madre abre el historial nutricional de Juan en FerovaFamilia y ve: "20 abril - 3.2 mg hierro - 1 inhibidor. 19 abril - 5.8 mg hierro - sin inhibidores. 18 abril - 2.1 mg hierro - sin inhibidores." |
+| **Eliminar Registro** | `DELETE` <br>`/api/v1/diaries/` <br>`{patientId}/entries/` <br>`{entryId}` | La madre puede equivocarse al registrar un alimento. Sin este endpoint no tendria forma de corregir el error y el totalIronAbsorbed del dia quedaria incorrecto. | La madre registro "Higado de res" en lugar de "Higado de pollo" por error. Abre FerovaFamilia, encuentra el registro incorrecto en el diario del dia y lo elimina. El sistema recalcula automaticamente el totalIronAbsorbed del dia con los alimentos restantes. |
+
+<h4>FoodItemController</h4>
+
+**Proposito:** Expone los endpoints REST para que FerovaFamilia pueda obtener el catalogo de alimentos disponibles cuando la madre registra los alimentos de su hijo.
+
+**Razon:** Se necesita un controller separado para el catalogo de alimentos porque es una consulta independiente del diario nutricional. La madre necesita navegar por el catalogo para seleccionar los alimentos correctos antes de registrarlos en el diario del dia.
+
+| Endpoint | Método | Razon | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **Consultar Catálogo** | `GET` <br>`/api/v1/food-items` | La madre necesita ver todos los alimentos disponibles en el catalogo para seleccionar los correctos al registrar la alimentacion de su hijo. Sin este endpoint FerovaFamilia no sabria que alimentos mostrar en el listado. | La madre abre la seccion de registro de alimentos en FerovaFamilia y ve el catalogo completo organizado por categorias: "Carnes: Higado de pollo, Res. Verduras: Espinaca, Brocoli. Legumbres: Lentejas, Frijoles." |
+| **Filtrar por Categoría** | `GET` <br>`/api/v1/food-items/` <br>`{category}` | El catalogo completo de alimentos puede ser extenso. Filtrar por categoria permite a la madre encontrar rapidamente el alimento correcto sin tener que desplazarse por toda la lista. | La madre hace click en la categoria "Verduras" en FerovaFamilia y ve solo: "Espinaca, Brocoli, Acelga, Zanahoria." Selecciona "Espinaca" e ingresa 200 gramos. |
+
+
+
 #### 2.6.9.3. Application Layer
 #### 2.6.9.4. Infrastructure Layer
 #### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
