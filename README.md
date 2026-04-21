@@ -186,6 +186,18 @@
     * [2.6.7.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26762-bounded-context-database-design-diagram)
 
       
+  * [2.6.8. Bounded Context: `Health-Facility`](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#268-bounded-context-health-facility)
+
+    * [2.6.8.1. Domain Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2681-domain-layer)
+    * [2.6.8.2. Interface Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2682-interface-layer)
+    * [2.6.8.3. Application Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2683-application-layer)
+    * [2.6.8.4. Infrastructure Layer](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2684-infrastructure-layer)
+    * [2.6.8.5. Bounded Context Software Architecture Component Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2685-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.8.6. Bounded Context Software Architecture Code Level Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#2686-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.8.6.1. Bounded Context Domain Layer Class Diagrams](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26861-bounded-context-domain-layer-class-diagrams)
+    * [2.6.8.6.2. Bounded Context Database Design Diagram](02-Chapter-2-Requirements-Development-and-Software-Solution-Design.md#26862-bounded-context-database-design-diagram)
+
+      
       
 ## [Capítulo III: Solution UI/UX Design](03-Chapter-3-Solution-UI-UX-Design.md)
 
