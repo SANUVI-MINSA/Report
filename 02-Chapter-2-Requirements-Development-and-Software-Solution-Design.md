@@ -8365,12 +8365,12 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 	<img src="resources/images/chapter-II/DB_Diagram/Heality Facility/healytu facilty diagram database.png">
 </div>
 
-2.6.9. Bounded Context: `Nutritional Diary`
-2.6.9.1. Domain Layer
-2.6.9.2. Interface Layer
-2.6.9.3. Application Layer
-2.6.9.4. Infrastructure Layer
-2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
-2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
-2.6.9.6.1. Bounded Context Domain Layer Class Diagrams
-2.6.9.6.2. Bounded Context Database Design Diagram
+### 2.6.9. Bounded Context: `Nutritional Diary`
+#### 2.6.9.1. Domain Layer
+#### 2.6.9.2. Interface Layer
+#### 2.6.9.3. Application Layer
+#### 2.6.9.4. Infrastructure Layer
+#### 2.6.9.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.9.6. Bounded Context Software Architecture Code Level Diagrams
+###### 2.6.9.6.1. Bounded Context Domain Layer Class Diagrams
+###### 2.6.9.6.2. Bounded Context Database Design Diagram
