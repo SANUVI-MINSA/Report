@@ -8288,6 +8288,62 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 | **MongoConfig** | Configura la conexion a MongoDB para el bounded context Health Facility. Define los indices necesarios para las colecciones health_facilities, appointments, nurse_assignments y districts garantizando el rendimiento optimo de las consultas mas frecuentes del sistema. | **Indices de la coleccion health_facilities:** <br> * Indice en `districtId` para retornar rapidamente todas las postas de un distrito con `findByDistrictId`. <br> * Indice en `status` para filtrar solo las postas ACTIVE rapidamente en `findAll`. <br> * Indice compuesto en `districtId` y `status` para filtrar postas ACTIVE de un distrito especifico. <br><br> **Indices de la coleccion appointments:** <br> * Indice en `patientId` para retornar rapidamente el historial de citas de un paciente con `findByPatientId`. <br> * Indice en `nurseId` para retornar rapidamente la agenda de citas de una enfermera con `findByNurseId`. <br> * Indice compuesto en `nurseId` y `status` para filtrar solo las citas CONFIRMED de una enfermera. <br><br> **Indices de la coleccion nurse_assignments:** <br> * Indice unico en `nurseId` para garantizar que cada enfermera tenga una sola asignacion activa y para busquedas rapidas con `findByNurseId`. <br> * Indice en `facilityId` para retornar rapidamente todas las enfermeras de una posta con `findByFacilityId`. <br><br> **Indices de la coleccion districts:** <br> * Indice unico en `id` para garantizar que cada distrito tenga un solo documento en el catalogo seed. |
 | **GoogleMapsConfig** | Configura la conexion con Google Maps API. Inicializa el cliente de Google Maps con las credenciales del proyecto Ferova y define los parametros de conexion como el timeout de las llamadas a la API y el numero maximo de reintentos ante fallos de conexion. Sin esta configuracion el GoogleMapsAdapter no podria autenticarse correctamente con la API de Google Maps para calcular distancias y buscar postas cercanas. | **Parámetros inicializados:** <br> * Credenciales del proyecto Ferova. <br> * Timeout de llamadas a la API. <br> * Número máximo de reintentos ante fallos de conexión. |
 
+###### Modelo de datos MongoDB
+
+<h4>Coleccion health_facilities:</h4>
+
+```json
+{
+  "_id": "facility:uuid",
+  "name": "Posta Medica Huascar",
+  "address": "Av. Huascar 1250, San Juan de Lurigancho",
+  "districtId": "dist-001",
+  "districtName": "San Juan de Lurigancho",
+  "coordinates": {
+    "lat": -12.0031,
+    "lng": -77.0082
+  },
+  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
+  "status": "ACTIVE"
+}
+```
+
+<h4>Coleccion appointments:</h4>
+
+```json
+{
+  "_id": "appt:uuid",
+  "facilityId": "facility:uuid",
+  "patientId": "pat:uuid",
+  "motherId": "user:uuid",
+  "nurseId": "user:uuid",
+  "date": "2026-04-22T10:00:00Z",
+  "status": "CONFIRMED"
+}
+```
+
+<h4>Coleccion nurse_assignments:</h4>
+
+```json
+{
+  "_id": "assign:uuid",
+  "facilityId": "facility:uuid",
+  "nurseId": "user:uuid",
+  "dateAssigned": "2026-04-20T08:00:00Z"
+}
+```
+
+<h4>Coleccion districts (seed inicial):</h4>
+
+```json
+
+{ "_id": "dist-001", "name": "San Juan de Lurigancho" }
+{ "_id": "dist-002", "name": "Ate Vitarte" }
+{ "_id": "dist-003", "name": "Villa El Salvador" }
+{ "_id": "dist-004", "name": "San Martin de Porres" }
+{ "_id": "dist-005", "name": "Comas" }
+
+```
 
 
 ##### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
