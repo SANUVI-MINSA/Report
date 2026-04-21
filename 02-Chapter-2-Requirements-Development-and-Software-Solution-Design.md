@@ -8471,6 +8471,13 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | | **findById(id: String)** | Busca un alimento especifico del catalogo por su id. Lo usa el AddFoodEntryCommandHandler para obtener el NutrientContent y el isInhibitor del alimento seleccionado por la madre antes de calcular su aporte de hierro. |
 | | **findByCategory-**<br>**(category: FoodCategory)** | Retorna todos los alimentos de una categoria especifica. Lo usa FerovaFamilia para mostrar el listado filtrado por categoria cuando la madre navega por el catalogo de alimentos. |
 
+###### Domain Events
+
+| Evento de Dominio | Propósito / Funcionamiento |
+| :--- | :--- |
+| **FoodEntryRegistered** | Se dispara cuando la madre registra un nuevo alimento en el diario nutricional del dia. Actualiza el totalIronAbsorbed del NutritionalDiary en tiempo real para que FerovaFamilia muestre el total de hierro del dia actualizado inmediatamente despues de cada registro. |
+| **IronInhibitorDetected** | Se dispara cuando la madre registra un alimento que es un inhibidor de la absorcion de hierro como leche, te o cafe. Notifica al BC Notifications para que envie inmediatamente una alerta push a la madre en FerovaFamilia con el mensaje `messageAlertInhibitor` indicandole que ese alimento puede reducir la efectividad del suplemento de hierro de su hijo. |
+| **DailyNutritionalSummary-**<br>**Generated** | Se dispara al final del dia cuando el sistema genera el resumen nutricional completo del paciente. Incluye el total de hierro absorbido en el dia, la lista de alimentos consumidos y si hubo inhibidores. Lo usa FerovaFamilia para mostrar a la madre un resumen visual de la nutricion de su hijo del dia. |
 
 #### 2.6.9.2. Interface Layer
 #### 2.6.9.3. Application Layer
