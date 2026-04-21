@@ -8347,6 +8347,20 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 
 ##### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
+
+<div align="center">
+	<img src="resources/images/chapter-II/Software_Architecture/Heality Facility/Heality-Facility-Diagram-Components.png">
+</div>
+
 ##### 2.6.8.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+<div align="center">
+	<img src="resources/images/chapter-II/Class_Diagram/Heality Facility/diagrama de clases heality.png">
+</div>
+
 ###### 2.6.8.6.2. Bounded Context Database Design Diagram
+
+<div align="center">
+	<img src="resources/images/chapter-II/DB_Diagram/Heality Facility/healytu facilty diagram database.png">
+</div>
