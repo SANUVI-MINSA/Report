@@ -8102,7 +8102,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 
 ###### Resources (DTOs / Request & Response Models)
 
-#### **1. RegisterFacilityRequest **
+#### **1. RegisterFacilityRequest**
 
 **Razon:** Contiene todos los datos necesarios para registrar una nueva posta medica en el sistema. El admin envia el districtId y districtName seleccionados del dropdown junto con las coordenadas GPS de la posta. Sin este DTO el sistema no tendria un formato estandar para recibir los datos de registro de una posta.
 
@@ -8120,7 +8120,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 }
 ```
 
-#### **2. FacilityResponse **
+#### **2. FacilityResponse**
 
 **Razon:** Contiene toda la informacion de la posta que necesitan FerovaFamilia y FerovaClinic para mostrar los datos de la posta al usuario. Sin este DTO el frontend no tendria un formato estandar para recibir y mostrar los datos de una posta.
 
@@ -8139,7 +8139,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 ```
 
 
-#### **3. AssignNurseRequest  **
+#### **3. AssignNurseRequest**
 
 **Razon:** Contiene el ID de la enfermera que el admin quiere asignar a la posta. Es un DTO minimalista porque el facilityId ya viene en la URL del endpoint y solo falta el nurseId para completar la asignacion.
 
@@ -8149,7 +8149,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 }
 ```
 
-#### **4. CreateAppointmentRequest   **
+#### **4. CreateAppointmentRequest**
 
 **Razon:** Contiene todos los datos necesarios para crear una cita presencial. La madre selecciona la posta y la fecha desde FerovaFamilia y el sistema toma el motherId y patientId del token JWT autenticado.
 
@@ -8180,7 +8180,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 }
 ```
 
-#### **6. NearbyFacilityResponse **
+#### **6. NearbyFacilityResponse**
 
 **Razon:** Contiene la informacion de cada posta cercana incluyendo la distancia calculada por Google Maps API. Es el DTO especializado del FacilityLocatorController que agrega el campo distanceKm que no existe en el Aggregate HealthFacility.
 
