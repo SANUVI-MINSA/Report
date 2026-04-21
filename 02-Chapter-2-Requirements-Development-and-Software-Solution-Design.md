@@ -8080,6 +8080,144 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **GET /api/v1/appointments/nurse/{nurseId}** | Retorna todas las citas asignadas a una enfermera especifica. Lo usa FerovaClinic para mostrar la agenda de citas de la enfermera. | La enfermera necesita ver su agenda de citas programadas en FerovaClinic para organizarse y saber cuantos pacientes tiene programados para cada dia. | La enfermera Rosa abre la seccion de citas en FerovaClinic y ve su agenda: "Martes 22 abril - 10:00 AM - Juan Garcia - Posta Medica Huascar - CONFIRMADA" y "Martes 22 abril - 11:00 AM - Pedro Lopez - Posta Medica Huascar - CONFIRMADA". |
 | **DELETE /api/v1/appointments/{id}** | Cancela una cita presencial especifica. Lo invoca la madre desde FerovaFamilia cuando no puede asistir a la cita programada. | Se necesita un endpoint DELETE porque cancelar una cita cambia su status a CANCELLED en MongoDB y dispara el evento AppointmentCancelled hacia el BC Notifications para notificar a la enfermera que libere el horario. | La madre no puede llevar a Juan a la cita del martes 22 de abril. Abre FerovaFamilia y cancela la cita. El sistema cambia el status a CANCELLED y la enfermera Rosa recibe una notificacion push: "La madre de Juan Garcia cancelo la cita del martes 22 de abril a las 10:00 AM." |
 
+<h4>FacilityLocatorController</h4>
+
+**Proposito:** Expone el endpoint REST para que la madre pueda buscar las postas medicas mas cercanas a su ubicacion actual desde FerovaFamilia usando Google Maps API.
+
+**Razon:** Se necesita un controller separado para el localizador de postas porque tiene su propia logica de busqueda geografica independiente de la gestion de postas y citas. Delega al FacilityLocatorService el calculo de distancias usando Google Maps API.
+
+| Endpoint | Descripción | Razón | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GET /api/v1/facilities/nearby** | Recibe las coordenadas GPS actuales de la madre como parametros de la peticion y retorna la lista de postas activas mas cercanas ordenadas de menor a mayor distancia. Lo usa FerovaFamilia cuando la madre quiere encontrar la posta mas cercana para reservar una cita. | La madre necesita encontrar rapidamente la posta mas cercana a su ubicacion actual sin tener que buscar manualmente en un mapa. Este endpoint usa el GPS del dispositivo de la madre y Google Maps API para calcular automaticamente las distancias. | La madre abre FerovaFamilia y presiona "Buscar posta cercana". La app envia sus coordenadas GPS actuales a este endpoint. El sistema retorna: "1. Posta Medica Huascar - 0.5 km. 2. Centro de Salud Zarate - 1.2 km. 3. Posta Medica San Hilarion - 2.1 km." |
+
+<h4>DistrictController</h4>
+
+**Proposito:** Expone el endpoint REST para que FerovaClinic pueda obtener la lista de distritos del catalogo seed cuando el admin registra una nueva posta medica.
+
+**Razon:** Se necesita un controller separado para los distritos porque el catalogo de distritos es una consulta independiente que el admin usa unicamente al momento de registrar una posta. Sin este controller FerovaClinic no podria mostrar el dropdown de seleccion de distrito al admin.
+
+| Endpoint | Descripción | Razón | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **GET /api/v1/districts** | Retorna la lista completa de distritos disponibles en el catalogo seed del sistema. Lo usa FerovaClinic para mostrar el dropdown de seleccion de distrito cuando el admin registra una nueva posta medica. | El admin necesita seleccionar el distrito de una lista controlada y consistente para evitar que dos admins escriban el nombre del mismo distrito de manera diferente. El catalogo seed garantiza que todos los distritos tengan el mismo id y nombre en todo el sistema. | El admin abre FerovaClinic para registrar una nueva posta y hace click en el campo "Distrito". El sistema consume este endpoint y muestra un dropdown con todos los distritos disponibles: "San Juan de Lurigancho", "Ate Vitarte", "Villa El Salvador", etc. El admin selecciona el distrito correcto y el sistema toma automaticamente su districtId del catalogo. |
+
+###### Resources (DTOs / Request & Response Models)
+
+#### **1. RegisterFacilityRequest **
+
+**Razon:** Contiene todos los datos necesarios para registrar una nueva posta medica en el sistema. El admin envia el districtId y districtName seleccionados del dropdown junto con las coordenadas GPS de la posta. Sin este DTO el sistema no tendria un formato estandar para recibir los datos de registro de una posta.
+
+**Ejemplo en el aplicativo:** El admin completa el formulario de registro en FerovaClinic y FerovaClinic envia este DTO con el nombre, direccion, districtId="dist-001", districtName="San Juan de Lurigancho", lat=-12.0031, lng=-77.0082 y horario de atencion.
+
+```json
+{
+  "name": "Posta Medica Huascar",
+  "address": "Av. Huascar 1250",
+  "districtId": "dist-001",
+  "districtName": "San Juan de Lurigancho",
+  "lat": -12.0031,
+  "lng": -77.0082,
+  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM"
+}
+```
+
+#### **2. FacilityResponse **
+
+**Razon:** Contiene toda la informacion de la posta que necesitan FerovaFamilia y FerovaClinic para mostrar los datos de la posta al usuario. Sin este DTO el frontend no tendria un formato estandar para recibir y mostrar los datos de una posta.
+
+```json
+{
+  "id": "fac-789",
+  "name": "Posta Medica Huascar",
+  "address": "Av. Huascar 1250",
+  "districtId": "dist-001",
+  "districtName": "San Juan de Lurigancho",
+  "lat": -12.0031,
+  "lng": -77.0082,
+  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
+  "status": "ACTIVE"
+}
+```
+
+
+#### **3. AssignNurseRequest  **
+
+**Razon:** Contiene el ID de la enfermera que el admin quiere asignar a la posta. Es un DTO minimalista porque el facilityId ya viene en la URL del endpoint y solo falta el nurseId para completar la asignacion.
+
+```json
+{
+ "nurseId": "nurse-123"
+}
+```
+
+#### **4. CreateAppointmentRequest   **
+
+**Razon:** Contiene todos los datos necesarios para crear una cita presencial. La madre selecciona la posta y la fecha desde FerovaFamilia y el sistema toma el motherId y patientId del token JWT autenticado.
+
+```json
+{
+  "facilityId": "fac-789",
+  "patientId": "pat-555",
+  "motherId": "mom-456",
+  "nurseId": "nurse-123",
+  "date": "2026-04-22T10:00:00Z"
+}
+```
+
+#### **5. AppointmentResponse**
+
+**Razon:** Contiene la informacion de la cita que necesitan FerovaFamilia y FerovaClinic para mostrar el historial de citas. Incluye el facilityName para que el usuario vea el nombre de la posta sin necesidad de hacer una consulta adicional.
+
+```json
+{
+  "id": "app-001",
+  "facilityId": "fac-789",
+  "facilityName": "Posta Medica Huascar",
+  "patientId": "pat-555",
+  "motherId": "mom-456",
+  "nurseId": "nurse-123",
+  "date": "2026-04-22T10:00:00Z",
+  "status": "CONFIRMED"
+}
+```
+
+#### **6. NearbyFacilityResponse **
+
+**Razon:** Contiene la informacion de cada posta cercana incluyendo la distancia calculada por Google Maps API. Es el DTO especializado del FacilityLocatorController que agrega el campo distanceKm que no existe en el Aggregate HealthFacility.
+
+```json
+{
+  "id": "fac-789",
+  "name": "Posta Medica Huascar",
+  "address": "Av. Huascar 1250",
+  "distanceKm": 0.5,
+  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
+  "lat": -12.0031,
+  "lng": -77.0082
+}
+```
+
+#### **7. DistrictResponse**
+
+**Razon:** Contiene el id y nombre de cada distrito del catalogo seed. Lo usa FerovaClinic para construir el dropdown de seleccion de distrito cuando el admin registra una nueva posta medica.
+
+```json
+{
+  "id": "dist-001",
+  "name": "San Juan de Lurigancho"
+}
+```
+
+###### Assemblers / Mappers
+
+| Assembler / Mapper | Descripción |
+| :--- | :--- |
+| **RegisterFacilityCommandFromResourceAssembler** | Convierte el RegisterFacilityRequest en un RegisterFacilityCommand para la Application Layer. Extrae el lat y lng del request y los encapsula en el Value Object Coordinates antes de crear el comando. Separa la representacion HTTP del comando de dominio. |
+| **FacilityResponseFromEntityAssembler** | Convierte el Aggregate Root HealthFacility en un FacilityResponse que puede viajar via HTTP hacia FerovaFamilia o FerovaClinic. Extrae el lat y lng del Value Object Coordinates y los expone como campos planos en el DTO. |
+| **CreateAppointmentCommandFromResourceAssembler** | Convierte el CreateAppointmentRequest en un CreateAppointmentCommand para la Application Layer. Separa la capa HTTP de la logica de creacion de citas del dominio. |
+| **AppointmentResponseFromEntityAssembler** | Convierte la entidad Appointment en un AppointmentResponse que puede viajar via HTTP. Agrega el facilityName consultando el HealthFacilityRepository para que el usuario vea el nombre de la posta sin consultas adicionales desde el frontend. |
+| **NearbyFacilityResponseFromEntityAssembler** | Convierte el Aggregate Root HealthFacility en un NearbyFacilityResponse agregando el campo distanceKm calculado por el FacilityLocatorService. Es el assembler mas especializado del bounded context porque combina datos del dominio con datos calculados externamente. |
+| **DistrictResponseFromEntityAssembler** | Convierte la entidad District en un DistrictResponse para enviarlo a FerovaClinic. Garantiza que solo se exponga el id y name del distrito para el dropdown de seleccion del admin. |
+
 ##### 2.6.8.3. Application Layer
 ##### 2.6.8.4. Infrastructure Layer
 ##### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
