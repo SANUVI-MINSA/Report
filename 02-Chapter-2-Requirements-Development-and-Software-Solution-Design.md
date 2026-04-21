@@ -8445,6 +8445,18 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **FRUIT** | frutas. Algunas como la naranja potencian la absorcion de hierro no hemo. |
 | **BEVERAGE** | bebidas como te, cafe y jugos. El te y el cafe son inhibidores de la absorcion de hierro. |
 
+###### Domain Service
+
+<h4>IronCalculatorService</h4>
+
+**Proposito:** Gestiona la logica de calculo del hierro absorbido por el paciente a partir de los alimentos registrados en el diario nutricional del dia. Aplica los factores de absorcion correctos segun el tipo de hierro hemo o no hemo de cada alimento.
+
+| Método | Propósito / Funcionamiento |
+| :--- | :--- |
+| **calculateIronFromFood-**<br>**(foodItem: FoodItem,**<br>**quantity: Double)** | Recibe el FoodItem del catalogo y la cantidad consumida en gramos. Multiplica el ironMg del NutrientContent por la cantidad dividida entre 100 y aplica el factor de absorcion segun el ironType. Para hierro hemo aplica un factor de absorcion del 25% y para hierro no hemo aplica un factor del 5%. Por ejemplo 200 gramos de espinaca con 2.8 mg por 100 gramos y factor no hemo retorna 0.28 mg de hierro efectivamente absorbido. |
+| **calculateTotalIron-**<br>**(entries: List)** | Recibe la lista completa de FoodEntry del dia y suma el ironContributed de cada uno. Retorna el total de hierro absorbido en el dia. Lo usa el Aggregate NutritionalDiary para actualizar el totalIronAbsorbed cada vez que la madre agrega un nuevo alimento al diario. |
+| **isInhibitorConflict-**<br>**(entries: List)** | Verifica si algun FoodEntry del dia corresponde a un alimento inhibidor. Retorna true si encuentra al menos un FoodEntry cuyo FoodItem tiene isInhibitor en true. Lo usa el Aggregate NutritionalDiary para actualizar el flag hasInhibitor y decidir si debe disparar el evento IronInhibitorDetected. |
+
 
 
 #### 2.6.9.2. Interface Layer
