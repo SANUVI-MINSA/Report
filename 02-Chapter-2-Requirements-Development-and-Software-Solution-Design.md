@@ -8046,9 +8046,40 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **AppointmentConfirmed** | Se dispara cuando la madre reserva una cita presencial exitosamente. Notifica al BC Notifications para que envie la confirmacion tanto a la madre como a la enfermera via Firebase FCM con la fecha, hora y nombre de la posta. |
 | **AppointmentCancelled** | Se dispara cuando la madre cancela una cita presencial. Notifica al BC Notifications para que envie la cancelacion a la enfermera via Firebase FCM para liberar el horario. |
 
-
-
 ##### 2.6.8.2. Interface Layer
+
+En esta seccion se presentan las clases que forman parte de la Interface Layer del bounded context Analytics & Reporting. Esta capa actua como la puerta de entrada al sistema recibiendo las peticiones HTTP que llegan desde FerovaClinic cuando el admin MINSA interactua con el dashboard analitico. Se incluyen los Controllers REST, los Resources o modelos de solicitud y respuesta y los Assemblers que realizan la traduccion entre ambos mundos.
+
+###### Controllers (REST)
+
+<h4>HealthFacilityController</h4>
+
+**Proposito:** Expone los endpoints REST para gestionar el ciclo de vida completo de las postas medicas del sistema. Es el controller principal del bounded context porque concentra las operaciones de registro, desactivacion y asignacion de enfermeras a las postas.
+
+**Razon:**  Se necesita este controller porque el admin MINSA necesita una forma de registrar nuevas postas medicas, asignar enfermeras a cada posta y desactivar postas que fueron cerradas temporalmente desde FerovaClinic.
+
+
+| Endpoint | Descripción | Razón | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **POST /api/v1/facilities** | Registra una nueva posta medica en el sistema. Lo invoca el admin desde FerovaClinic cuando necesita agregar una nueva posta al distrito. El sistema verifica que el districtId seleccionado exista en el catalogo del seed antes de registrar la posta. | Se necesita un endpoint POST porque registrar una posta es una operacion que crea un nuevo documento en MongoDB y dispara el evento HealthFacilityRegistered hacia el BC Analytics & Reporting. | El admin abre FerovaClinic, selecciona "San Juan de Lurigancho" del dropdown de distritos, ingresa el nombre "Posta Medica Huascar", la direccion y el horario de atencion, y presiona "Registrar posta". El sistema guarda la posta en MongoDB y la agrega automaticamente al mapa de calor del distrito. |
+| **GET /api/v1/facilities** | Retorna todas las postas activas del sistema. Lo usa FerovaFamilia para mostrar el mapa de postas cercanas a la madre y FerovaClinic para mostrar la lista de postas del distrito al admin. | Tanto la madre como el admin necesitan ver la lista de postas activas del sistema para diferentes propositos. La madre para encontrar la mas cercana y el admin para gestionar su personal y citas. | La madre abre FerovaFamilia y FerovaClinic consume este endpoint para obtener todas las postas activas y pasarlas al FacilityLocatorService que calcula cuales son las mas cercanas a la ubicacion actual de la madre. |
+| **GET /api/v1/facilities/{id}** | Retorna los datos completos de una posta especifica por su id. Lo usa FerovaFamilia para mostrar el detalle de una posta cuando la madre la selecciona del mapa. | Cuando la madre hace click en una posta del mapa necesita ver sus datos completos incluyendo nombre, direccion, horario y coordenadas antes de decidir si reserva una cita presencial ahi. | La madre hace click en "Posta Medica Huascar" en el mapa de FerovaFamilia y el sistema muestra el detalle completo de la posta con su nombre, direccion "Av. Huascar 1250", horario "Lunes a Viernes 8AM-5PM" y un boton para reservar una cita. |
+| **PUT /api/v1/facilities/{id}/deactivate** | Desactiva una posta medica cambiando su status a INACTIVE. Lo invoca el admin desde FerovaClinic cuando una posta es cerrada temporalmente. | Se necesita un endpoint PUT porque desactivar una posta modifica su status en MongoDB sin eliminarla del sistema. La posta deja de aparecer en busquedas pero su historial de citas y asignaciones se mantiene intacto. | El admin detecta que la Posta Medica San Hilarion fue cerrada por mantenimiento. Abre FerovaClinic y presiona "Desactivar posta". El sistema cambia el status a INACTIVE y la posta deja de aparecer en el mapa de FerovaFamilia inmediatamente. |
+| **POST /api/v1/facilities/{id}/assign-nurse** | Asigna una enfermera a una posta medica especifica. Lo invoca el admin desde FerovaClinic cuando incorpora una nueva enfermera al sistema o cuando transfiere una enfermera de una posta a otra. | El admin necesita poder asignar enfermeras a las postas desde FerovaClinic para que el sistema sepa que enfermera es responsable de los pacientes de cada posta y pueda enrutar correctamente las notificaciones y teleconsultas. | El admin incorpora a la enfermera Rosa al sistema en FerovaClinic y la asigna a la Posta Medica Huascar. El sistema crea la NurseAssignment y envia a Rosa una notificacion push via Firebase FCM informandole a que posta fue asignada. |
+
+<h4>AppointmentController</h4>
+
+**Proposito:** Expone los endpoints REST para gestionar el ciclo de vida completo de las citas presenciales entre la madre y la posta medica. Permite a la madre reservar y cancelar citas desde FerovaFamilia y a la enfermera ver su agenda de citas desde FerovaClinic.
+
+**Razon:** Se necesita este controller porque la madre necesita poder reservar citas presenciales desde FerovaFamilia para llevar a su hijo a la posta y la enfermera necesita ver su agenda de citas desde FerovaClinic para organizarse.
+
+| Endpoint | Descripción | Razón | Ejemplo en el aplicativo |
+| :--- | :--- | :--- | :--- |
+| **POST /api/v1/appointments** | Crea una nueva cita presencial. Lo invoca la madre desde FerovaFamilia cuando quiere reservar una cita en una posta especifica para llevar a su hijo. | Se necesita un endpoint POST porque crear una cita genera un nuevo documento Appointment en MongoDB con status CONFIRMED y dispara el evento AppointmentConfirmed hacia el BC Notifications. | La madre selecciona "Posta Medica Huascar" en FerovaFamilia y reserva una cita para el martes 22 de abril a las 10:00 AM. El sistema crea la cita con status CONFIRMED y tanto la madre como la enfermera Rosa reciben una notificacion push con los detalles de la cita. |
+| **GET /api/v1/appointments/{patientId}** | Retorna el historial de citas de un paciente especifico. Lo usa FerovaFamilia para mostrar a la madre todas las citas que ha reservado para su hijo. | La madre necesita poder ver el historial de citas de su hijo para recordar cuando tiene citas proximas y revisar las citas pasadas desde FerovaFamilia. | La madre abre la seccion de citas en FerovaFamilia y ve la lista de citas de Juan: "Martes 22 abril - 10:00 AM - Posta Medica Huascar - CONFIRMADA" y "Lunes 15 abril - 9:00 AM - Posta Medica Huascar - CANCELADA". |
+| **GET /api/v1/appointments/nurse/{nurseId}** | Retorna todas las citas asignadas a una enfermera especifica. Lo usa FerovaClinic para mostrar la agenda de citas de la enfermera. | La enfermera necesita ver su agenda de citas programadas en FerovaClinic para organizarse y saber cuantos pacientes tiene programados para cada dia. | La enfermera Rosa abre la seccion de citas en FerovaClinic y ve su agenda: "Martes 22 abril - 10:00 AM - Juan Garcia - Posta Medica Huascar - CONFIRMADA" y "Martes 22 abril - 11:00 AM - Pedro Lopez - Posta Medica Huascar - CONFIRMADA". |
+| **DELETE /api/v1/appointments/{id}** | Cancela una cita presencial especifica. Lo invoca la madre desde FerovaFamilia cuando no puede asistir a la cita programada. | Se necesita un endpoint DELETE porque cancelar una cita cambia su status a CANCELLED en MongoDB y dispara el evento AppointmentCancelled hacia el BC Notifications para notificar a la enfermera que libere el horario. | La madre no puede llevar a Juan a la cita del martes 22 de abril. Abre FerovaFamilia y cancela la cita. El sistema cambia el status a CANCELLED y la enfermera Rosa recibe una notificacion push: "La madre de Juan Garcia cancelo la cita del martes 22 de abril a las 10:00 AM." |
+
 ##### 2.6.8.3. Application Layer
 ##### 2.6.8.4. Infrastructure Layer
 ##### 2.6.8.5. Bounded Context Software Architecture Component Level Diagrams
