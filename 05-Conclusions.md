@@ -1,3 +1,5 @@
+<div class="chapter">
+
 ## Conclusiones
 
 ### Conclusiones y recomendaciones
@@ -9,3 +11,5 @@ El desarrollo de la documentación para crear una aplicación móvil que permita
 ### Video App Validation
 ### Video About the product
 ### Video About the team
+
+</div>
