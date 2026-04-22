@@ -53,6 +53,16 @@
 
 # Student Outcome
 
+<div align="justify">
+   
+|Criterio Específico|Acciones Realizadas|Conclusiones|
+|-------------------|-------------------|------------|
+|Trabaja en equipo para proporcionar liderazgo en forma conjunta|**Baca Camargo, Vitaly Arturo**<br>**TB1:**<br>Contribuí en dividir las partes del trabajo y realizar secciones en todos los capítulos. Además, realicé entrevistas a los segmentos objetivos designados.<br><br>**Huapaya Galindo, Dyron**<br>**TB1:**<br>He realizado avances en varias secciones de los capítulos del trabajo. He aportado en la entrevista del segundo segmento y apoyado activamente a todo el equipo realizando pequeñas pero significativas acciones.<br>**Pariachi Limahuaya, Sebastian Ubaldo**<br>**TB1:**<br>He apoyado principalmente en el documento y en la creación de los *Wireframes* y *Mockups* de nuestro *Landing Page* y aplicación web.<br>**Ramirez Carrasco, Ariana Lizeth**<br>**TB1:**<br>He apoyado activamente y realicé avances en varias secciones del documento. También apoyé en la sección de entrevistas y realicé entrevistas al segundo segmento.<br>**López Roman, Franco Mauricio**<br>**TB1:**<br>Nosotros como equipo hemos colaborado activamente en el trabajo, ofreciendo nuestro tiempo y ayuda a quien más lo necesitaba en diversas partes del trabajo. Nos comprometimos a trabajar y comentar las dudas sobre los avances, por lo que logramos entregar el primer entregable con buena calidad en cuanto al *Landing Page*. Cumplimos los plazos de entrega considerando los tiempos de trabajo de cada integrante.<br>|
+
+|Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.|**Baca Camargo, Vitaly Arturo**<br>**TB1:**<br>Con mis habilidades, he separado los trabajos en secciones para que todos puedan realizar con tranquilidad su parte. También, he apoyado activamente a los integrantes que necesitaban ayuda.<br>**Huapaya Galindo, Dyron**<br>**TB1:**<br>He realizado mis partes del trabajo designadas y he apoyado en las partes que tenían errores corrigiéndolos. También, he ofrecido mi apoyo al grupo en general para avanzar el trabajo con más tranquilidad.<br>**Pariachi Limahuaya, Sebastian Ubaldo**<br>**TB1:**<br>He apoyado creando el grupo de WhatsApp, donde todos podemos comunicar nuestras dudas. También, he apoyado en secciones del trabajo que eran difíciles para otros integrantes.<br>**Ramirez Carrasco, Ariana Lizeth**<br>**TB1:**<br>He apoyado dando ideas para el trabajo, también, he fomentado la unión como equipo para no tener resentimientos entre todos los integrantes del grupo.<br>**López Roman, Franco Mauricio**<br>**TB1:**<br>Nuestro equipo fomentó el respeto entre todos los integrantes. Al no conocernos previamente, tuvimos dificultades para comentar nuestras dudas, pero con el apoyo de todos pudimos entregar un trabajo excelente. Planificamos metas necesarias para conocer los avances del trabajo y logramos una entrega organizada.<br>|
+</div>
+
+
 # Objetivos SMART
 
 
