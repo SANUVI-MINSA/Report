@@ -2,6 +2,6 @@
 
 - Link de la organización de GitHub: [Repositorio SANUVI-MINSA](https://github.com/SANUVI-MINSA)
 
-- Link del Event Storming: [Event Storming](https://miro.com/welcomeonboard/Mmg2R2FCZ05iRW1qQUw1OEdZL2pKNTdTV2RDL1Nmci9SaEJ2azh5bU1yMWhpc0FTSzVNM2JNd0FORGg3NDQ5bjJQRzRVdE9sMkxDNnB2dGVqeXZ3aS9mdzQ3QVkzWmFoalVhN1FnMGw5YWkrRWMwdi9pYmRKam8yWUZNcktCY2hnbHpza3F6REdEcmNpNEFOMmJXWXBBPT0hdjE=?share_link_id=864424247042)
+- Link del Event Storming: [Event Storming](https://miro.com/app/board/uXjVGk2o3eY=/?share_link_id=870114176340)
 
-- Link del Bounded Context Canvas: [Bounded Context Canvas](https://miro.com/welcomeonboard/a3hVeEJIZ1IwQ0ZNaVljTm4wYzBUY1lpakNwZm44M3NqNkpXQmcyQmRvMjhsd3k4YUVJMTkySnc2V29rbExyNVBzSDVxVDVjcU5iaXB2Unc1N1gvL1BmdzQ3QVkzWmFoalVhN1FnMGw5YWhRM1hySERFNWR0UGpKM0lyZWdncVNQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=884544490547)
+- Link del Bounded Context Canvas: [Bounded Context Canvas](https://miro.com/app/board/uXjVGjt11WQ=/?share_link_id=33153782886)
