@@ -1,3 +1,5 @@
+<div class="chapter">
+
 # Biblografia
 
 **Ambreen, A., Habib, A., Sajjad, A. H., Malik, A. J., & Javed, Q.** (2025).
@@ -129,3 +131,5 @@ Efecto de la anemia en el desarrollo infantil: consecuencias a largo plazo.
 🔗 [Ver fuente](https://www.redalyc.org/pdf/363/36353911020.pdf)
 
 ---
+
+</div>
