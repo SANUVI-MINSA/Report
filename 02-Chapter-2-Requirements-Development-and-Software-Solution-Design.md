@@ -1,3 +1,5 @@
+<div class="chapter">
+
 ## Capítulo II: Requirements Development and Software Solution Design
 
 ### 2.1 Competidores
@@ -8724,4 +8726,6 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 <div align ="center">
 <img src="resources/images/chapter-II/DB_Diagram/Nutritional_diary/Nutritional_diary_diagram_database.png">
+</div>
+
 </div>
