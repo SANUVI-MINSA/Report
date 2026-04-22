@@ -177,3 +177,106 @@ a { color: var(--text); text-decoration: none; }
   p             { orphans: 3; widows: 3; }
   a::after      { content: ""; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   PORTADA   <div class="cover"> ... </div>
+   ══════════════════════════════════════════════════════════ */
+.cover {
+  text-align:  center;
+  line-height: 1.7;
+  padding:     30px 0 40px;
+}
+ 
+/* Logo UPC */
+.cover img {
+  display:      block;
+  margin:       0 auto 20px;
+  max-width:    130px;
+  height:       auto;
+}
+ 
+/* Todos los headings dentro de la portada */
+.cover h1, .cover h2,
+.cover h3, .cover h4 {
+  font-family:  'Times New Roman', Times, serif;
+  font-size:    12pt;
+  color:        var(--text);
+  text-align:   center;
+  margin:       2px 0;
+  font-style:   normal;
+  line-height:  1.7;
+}
+ 
+/* Nombre de la universidad */
+.cover h2:first-of-type {
+  font-size:   14pt;
+  font-weight: bold;
+  margin-top:  6px;
+}
+ 
+/* "Informe de Trabajo Final" */
+.cover h3 {
+  font-size:   13pt;
+  font-weight: bold;
+  margin-top:  16px;
+}
+ 
+/* "Relación de integrantes" y similares */
+.cover h4 {
+  font-size:   12pt;
+  font-weight: bold;
+  margin-top:  18px;
+}
+ 
+/* Párrafos y strong de la portada */
+.cover p,
+.cover strong {
+  display:     block;
+  font-size:   12pt;
+  text-indent: 0;
+  text-align:  center;
+  margin:      0;
+}
+ 
+/* Tabla de integrantes */
+.cover table {
+  margin:          22px auto;
+  width:           auto;
+  min-width:       400px;
+  border-collapse: collapse;
+  font-size:       12pt;
+  text-align:      left;
+  line-height:     1.6;
+}
+ 
+.cover thead tr {
+  border-top:    2px solid var(--text);
+  border-bottom: 1px solid var(--text);
+}
+ 
+.cover thead th {
+  padding:     6px 14px;
+  font-weight: bold;
+  background:  transparent;
+}
+ 
+.cover tbody tr:last-child td {
+  border-bottom: 2px solid var(--text);
+}
+ 
+.cover td {
+  padding:    5px 14px;
+  border:     none;
+  background: transparent;
+}
+ 
+.cover tbody tr:nth-child(even) td {
+  background: var(--bg-row);
+}
+ 
+/* Mes y año al final de portada */
+.cover p:last-of-type {
+  margin-top:  18px;
+  font-weight: bold;
+}
+ 
