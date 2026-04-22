@@ -1,3 +1,5 @@
+<div class="chapter">
+
 ## Capítulo I: Presentación
 
 ### 1.1 Startup Profile
@@ -160,3 +162,5 @@ Perú cuenta con 23,656 establecimientos de salud, el 83% del primer nivel de
 atención. El MINSA (2023) señala que la falta de monitoreo digital genera un 
 retraso promedio de 30 días en la detección de casos de abandono del 
 tratamiento.
+
+</div>
