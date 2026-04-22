@@ -54,8 +54,6 @@
 # Tabla de contenidos
 
 
-# Tabla de contenidos
-
 ## [Capítulo I: Presentación](01-Chapter-1-Presentation.md)
 
 * [1.1 Startup Profile](01-Chapter-1-Presentation.md#11-startup-profile)
