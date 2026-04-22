@@ -1,128 +1,179 @@
-/* markdown.css */
+/* ============================================================
+   markdown.css — Estilo formal APA 7
+   Solo negro y grises, sin colores decorativos
+   ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+
+:root {
+  --text:     #000000;
+  --border:   #bbbbbb;
+  --bg-light: #f5f5f5;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.4;
-  padding: 1cm;
+  font-family:   'Times New Roman', Times, serif;
+  font-size:     12pt;
+  line-height:   2;
+  color:         var(--text);
+  background:    #ffffff;
+  max-width:     816px;
+  margin:        0 auto;
+  padding:       72px 72px 96px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0.5em auto;
+/* ── Títulos (jerarquía APA 7) ────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family:  'Times New Roman', Times, serif;
+  font-size:    12pt;
+  color:        var(--text);
+  line-height:  2;
+  margin-top:   0;
+  margin-bottom: 0;
+  page-break-after: avoid;
 }
 
-pre, code {
-  white-space: pre-wrap;
-  word-wrap: break-word;
+/* Nivel 1 — Centrado, negrita */
+h1 { text-align: center; font-weight: bold; font-style: normal; }
+
+/* Nivel 2 — Centrado, negrita cursiva */
+h2 { text-align: center; font-weight: bold; font-style: italic; }
+
+/* Nivel 3 — Izquierda, negrita */
+h3 { text-align: left; font-weight: bold; font-style: normal; }
+
+/* Nivel 4 — Izquierda, negrita cursiva */
+h4 { text-align: left; font-weight: bold; font-style: italic; text-indent: 0.5in; }
+
+/* Nivel 5 — Izquierda, cursiva normal */
+h5 { text-align: left; font-weight: normal; font-style: italic; text-indent: 0.5in; }
+
+h6 { text-align: left; font-weight: normal; font-style: normal; text-indent: 0.5in; }
+
+/* ── Párrafos ─────────────────────────────────────────────── */
+p {
+  margin:      0;
+  text-indent: 0.5in;
+  text-align:  justify;
 }
 
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p { text-indent: 0.5in; }
+
+/* ── Énfasis ──────────────────────────────────────────────── */
+strong { font-weight: bold;  color: var(--text); }
+em     { font-style: italic; color: var(--text); }
+
+/* ── Blockquotes (citas largas ≥40 palabras) ──────────────── */
+blockquote {
+  margin:      0.5em 0 0.5em 0.5in;
+  padding:     0;
+  border:      none;
+  font-size:   12pt;
+  line-height: 2;
+  text-indent: 0.5in;
+  text-align:  justify;
+}
+
+blockquote p { text-indent: 0.5in; margin: 0; }
+
+/* ── Listas ───────────────────────────────────────────────── */
+ul, ol {
+  margin:       0.3em 0 0.3em 0.5in;
+  padding-left: 0.25in;
+  line-height:  2;
+}
+
+li             { margin-bottom: 0; }
+ul > li::marker { color: var(--text); }
+ol > li::marker { color: var(--text); }
+
+/* ── Tablas (estilo APA: solo líneas horizontales) ─────────── */
 table {
-  width: 100%;
+  width:           100%;
   border-collapse: collapse;
-  page-break-inside: avoid; /* Evita que la tabla se corte entre páginas */
-  table-layout: fixed; /* Asegura que las celdas tengan un tamaño controlado */
-  margin-bottom: 20px; /* Añade espacio después de cada tabla para mejor legibilidad */
+  font-size:       12pt;
+  font-family:     'Times New Roman', Times, serif;
+  margin:          1.2em 0;
+  line-height:     1.5;
 }
 
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 0.8em; /* Aumenta el padding para mejorar la legibilidad */
-  text-align: left;
-  max-width: 150px; /* Limita el ancho máximo de las celdas */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Añade puntos suspensivos si el contenido es demasiado largo */
+thead tr {
+  border-top:    1.5px solid var(--text);
+  border-bottom: 1px solid var(--text);
 }
 
-table th {
-  background-color: #f2f2f2; /* Mejora la visibilidad de los encabezados */
-  font-weight: bold; /* Hace los encabezados más visibles */
+thead th {
+  padding:     5px 8px;
+  font-weight: bold;
+  font-style:  normal;
+  text-align:  left;
+  background:  transparent;
+  color:       var(--text);
 }
+
+tbody tr:last-child td { border-bottom: 1.5px solid var(--text); }
 
 td {
-  white-space: normal; /* Permite que el texto se ajuste automáticamente */
-  word-wrap: break-word; /* Asegura que las palabras largas no desborden */
-  padding-right: 10px; /* Añade un pequeño espacio a la derecha de las celdas */
+  padding:        5px 8px;
+  border:         none;
+  vertical-align: top;
+  background:     transparent;
 }
 
-/* Mejoras para la visibilidad de la tabla y una apariencia más limpia */
-table tr:nth-child(even) {
-  background-color: #f9f9f9; /* Alterna el color de fondo de las filas para mejor legibilidad */
+tbody tr:nth-child(even) td { background: #f9f9f9; }
+
+/* ── Código ───────────────────────────────────────────────── */
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size:   10.5pt;
+  background:  var(--bg-light);
+  border:      1px solid var(--border);
+  padding:     1px 4px;
+  color:       var(--text);
 }
 
-table tr:hover {
-  background-color: #e0e0e0; /* Resalta una fila cuando el ratón pasa sobre ella */
+pre {
+  background:  var(--bg-light);
+  border:      1px solid var(--border);
+  padding:     12px 14px;
+  font-size:   10.5pt;
+  line-height: 1.5;
+  overflow-x:  auto;
+  margin:      0.8em 0;
 }
 
-table caption {
-  font-size: 1.2em; /* Hace que el título de la tabla sea más prominente */
-  font-weight: bold;
-  margin-bottom: 10px; /* Añade espacio debajo del título de la tabla */
+pre code { background: transparent; border: none; padding: 0; }
+
+/* ── Imágenes ─────────────────────────────────────────────── */
+img {
+  max-width: 100%;
+  height:    auto;
+  display:   block;
+  margin:    1em auto;
 }
 
-table {
-  page-break-before: auto; /* Evita el salto de página innecesario */
+/* ── Separadores ──────────────────────────────────────────── */
+hr {
+  border:     none;
+  border-top: 1px solid var(--border);
+  margin:     2em 0;
 }
 
-.page {
- display: block;
-  page-break-after: always;
-  margin: 0;       /* sin margen arriba ni abajo */
-  padding: 0;      /* sin relleno */
-  height: 0;       /* sin altura visible */
-  overflow: hidden;
-}
- 
-.no-break {
-  page-break-after: always;    /* salto antes del bloque */
-  page-break-inside: avoid;    /* no fragmentar lo que haya dentro */
-  margin: 0;
-  padding: 0;
-  height: auto;
-}
+/* ── Links (sin color en PDF) ─────────────────────────────── */
+a { color: var(--text); text-decoration: none; }
 
-/* 1) Permitir fragmentar la tabla salvo la cabecera + primera fila */
-table {
-  page-break-inside: auto !important;
-  break-inside: auto !important;
-}
-
-/* 2) Nunca cortar _entre_ el <thead> y la primera fila */
-thead {
-  page-break-after: avoid !important;
-}
-tbody tr:first-child {
-  page-break-inside: avoid !important;
-}
-
-/* 3) (Opcional) Si no quieres repetir la cabecera en cada página: */
-thead {
-  /* desactiva la “repetición” automática */
-  display: table-row-group !important;
-}
-
-.center {
-  text-align: center !important;
-}
-
-.center * {
-  text-align: center !important;
-}
-
-.center table {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-.center img {
-  display: inline-block;
-  margin: 0 auto;
-}
-
-#cover-page * {
-  text-align: center !important;
-}
-#cover-page table {
-  margin-left: auto !important;
-  margin-right: auto !important;
+/* ── Print ────────────────────────────────────────────────── */
+@media print {
+  body          { padding: 25mm 25mm 30mm; max-width: 100%; }
+  h1, h2, h3,
+  h4, h5, h6   { page-break-after: avoid; }
+  table         { page-break-inside: auto; }
+  tr            { page-break-inside: avoid; }
+  thead         { display: table-header-group; }
+  img           { page-break-inside: avoid; }
+  p             { orphans: 3; widows: 3; }
+  a::after      { content: ""; }
 }
