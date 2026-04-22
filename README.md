@@ -67,7 +67,14 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 ![AV1 Insights de Github](/resources/images/presentation/AV1_Insights.png "AV1 Insights")
 
+- **Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 310 commits
+- **Huapaya Galindo, Dyron (`MaineMa`)**: 76 commits
+- **Pariachi Limahuaya, Sebastian Ubaldo (`SebastianLima-PE`)**: 41 commits
+- **Ramirez Carrasco, Ariana Lizeth (`ariana9513`)**: 6 commits
+- **López Roman, Franco Mauricio (`FrancoLopez00`)**: 22 commits
+- **Total de commits en TB1:** 455
 
+La colaboracion del equipo al realizar el primer avance del proyecto fue activa, donde cada quien realizo una parte del reporte.
 
 # Tabla de contenidos
 
