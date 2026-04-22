@@ -51,6 +51,21 @@
 
 # Project Report Collaboration Insights
 
+En esta sección, mostraremos como se desarrolla cada hito del trabajo final y todo su análisis correspondiente mediante las herramientas de Github.
+
+Link de la organización: [SANUVI-MINSA](https://github.com/SANUVI-MINSA)
+
+**AV1:**
+
+Durante este avance del trabajo, se desarrollaron los siguientes puntos del reporte:
+
+- Carátula e información esencial
+- Registro de versiones y Project Report Collaboration Insights
+- **Capitulo I: Presentación**
+- **Capitulo II: Requirements Development and Software Solution Design**
+- Conclusiones y Anexos
+
+
 
 # Tabla de contenidos
 
