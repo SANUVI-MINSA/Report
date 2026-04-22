@@ -65,6 +65,8 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 - **Capitulo II: Requirements Development and Software Solution Design**
 - Conclusiones y Anexos
 
+![AV1 Insights de Github](/resources/images/presentation/AV1_Insights.png "AV1 Insights")
+
 
 
 # Tabla de contenidos
