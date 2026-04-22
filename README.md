@@ -45,6 +45,10 @@
 
 ## Registro de Versiones
 
+| Versión | Fecha | Autor | Descripción de modificación |
+| :--- | :--- | :--- | :--- |
+| AV1 | 22/04/2026 | - Baca Camargo, Vitaly Arturo <br> - Huapaya Galindo, Dyron <br> - Pariachi Limahuaya, Sebastian Ubaldo <br> - Ramirez Carrasco, Ariana Lizeth <br> - López Roman, Franco Mauricio | Se agregaron los siguientes contenidos:<br> **Capitulo I: Presentación**<br>1.1 Startup Profile<br>1.2. Solution Profile<br>1.3. Segmentos Objetivo<br>**Capitulo II: Requirements Development and Software Solution Design**<br>2.1. Competidores<br>2.2. Entrevistas<br>2.3. Needfinding<br>2.4.Requirement Specification<br>2.5. Strategic-Level Domain-Driven Design<br>2.6. Bounded Contexts|
+
 # Project Report Collaboration Insights
 
 # Student Outcome
