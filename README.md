@@ -1,3 +1,5 @@
+<div class="cover">
+ 
 <div align="center">
 <img src="resources/images/presentation/UPC_logo.png" alt="Logo-UPC" width="150">
 
@@ -293,3 +295,5 @@
 ## [Glosoario](08-Glosoario.md#glosoario)
 ## [Bibliografía](06-Bibliography.md#biblografia)
 ## [Anexos](07-Annexes.md#anexos)
+
+</div>
