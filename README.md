@@ -56,7 +56,7 @@ En esta sección, mostraremos como se desarrolla cada hito del trabajo final y t
 Link de la organización: [SANUVI-MINSA](https://github.com/SANUVI-MINSA)
 
 **AV1:**
-
+---
 Durante este avance del trabajo, se desarrollaron los siguientes puntos del reporte:
 
 - Carátula e información esencial
