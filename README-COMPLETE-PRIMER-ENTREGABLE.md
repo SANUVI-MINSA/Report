@@ -261,7 +261,16 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 ## Capítulo I: Presentación
 
+En este capítulo se presenta el perfil de la startup Sanuvi y el producto
+Ferova, describiendo el contexto del problema que busca resolver, el
+proceso Lean UX aplicado para validar los supuestos del modelo de negocio
+y los segmentos objetivo identificados.
+
 ### 1.1 Startup Profile
+
+Esta sección se describe a Sanuvi como organización, incluyendo su misión,
+visión y el equipo de desarrollo que conforma el proyecto.
+
 #### 1.1.1 Descripción de la Startup
 
 Sanuvi surge con el propósito de abordar uno de los principales problemas de salud pública en el Perú: la baja adherencia al tratamiento de la anemia en niños y gestantes. A pesar de la disponibilidad de suplementos de hierro y programas de control, una gran proporción de pacientes abandona el tratamiento antes de completarlo, generando consecuencias en el desarrollo infantil y riesgos en la salud materna. Frente a esta problemática, proponemos una solución tecnológica integral que conecta a pacientes, cuidadores y personal de salud mediante una plataforma digital enfocada en el seguimiento y la prevención.
@@ -283,6 +292,11 @@ En Sanuvi, buscamos contribuir a la transformación digital del sector salud med
 | ![Franco](resources/images/chapter-I/Franco.png) | **Nombre Completo** Franco Mauricio López Roman <br> **Código:** U202315890  <br> **Carrera:** Ingeniería de Software – UPC  <br><br> **Perfil:**  <br> Soy estudiante de la carrera de Ingenieria de Software dentro de la Universidad Peruana de Ciencias Aplicadas. Tengo experiencia con proyectos que incluyen C++, Python, HTML, CSS, MongoDB; con algunos conocimiento en javascript, typescript y java. Me considero una persona responsable y comprometida, que da su mayor esfuerzo para el proyecto, con una comunicación para el trabajo en equipo.  <br><br> **Habilidades Técnicas:**  <br> - C++ C# Javascript  <br> - Angular streamlit  <br> - Jetbrains VSC Github  <br><br> **Habilidades Sociales:**  <br> - Responsable <br> - Práctico <br> - Organizado |
 
 ### 1.2 Solution Profile
+
+En esta sección se presenta el perfil de la solución propuesta por Sanuvi,
+detallando los antecedentes del problema y el proceso Lean UX ejecutado
+para definir la propuesta de valor de Ferova.
+
 #### 1.2.1 Antecedentes y problemática
 
 ##### Who (¿Quiénes se ven afectados?)
@@ -424,6 +438,13 @@ tratamiento.
 
 ## Capítulo II: Requirements Development and Software Solution Design
 
+En este capítulo se documenta el proceso de investigación, análisis de
+requisitos y diseño de la solución de software. Se identifican los
+competidores del mercado, se registran las entrevistas con los segmentos
+objetivo, se desarrollan los artefactos de needfinding y se especifican
+los requisitos mediante User Stories. Finalmente, se presenta el diseño
+estratégico y táctico basado en Domain-Driven Design.
+
 ### 2.1 Competidores
 Ferova presenta tres competidores relevantes en el mercado de salud 
 digital orientado al seguimiento de tratamientos y adherencia terapéutica:
@@ -449,6 +470,7 @@ pacientes con enfermedades crónicas. Incorpora un sistema de recompensas
 visuales por cumplimiento, diario de salud imprimible y notificación 
 automática a familiares. Tiene alta presencia en Europa y Latinoamérica 
 pero sin adaptación al sistema de salud peruano ni al dominio de anemia.
+
 #### 2.1.1 Análisis competitivo
 
 **¿Por qué llevar a cabo este análisis?**  
@@ -1105,7 +1127,11 @@ Has usado 75% de tu límite semanalObtener más uso
 
 ### 2.3 Needfinding
 
-Para crear un producto que cumpla con las necesidades específicas de un cliente, nuestro equipo se dedicará a identificar los User persona, User Task Matrix, User Journey Maps y Empathy Mapping.
+A partir de la información recolectada en las entrevistas, el equipo
+elaboró los siguientes artefactos con el objetivo de comprender en
+profundidad las necesidades, frustraciones y objetivos de cada segmento
+objetivo de Ferova: User Personas, User Task Matrix, User Journey Maps,
+Empathy Mapping, Big Picture EventStorming y Ubiquitous Language.
 
 #### 2.3.1 User Personas
 
@@ -1230,6 +1256,12 @@ En esta sección se presentan los términos clave del proyecto UI-Topic. Estos t
 | **User (Usuario)**                                      | Persona que interactúa con la aplicación (cuidador, enfermera o administrador).                    |
 
 ### 2.4 Requirements Specification
+
+En esta sección se especifican los requisitos del sistema Ferova mediante
+User Stories, Impact Mapping y Product Backlog, tomando como base los
+hallazgos obtenidos en el proceso de needfinding y las entrevistas con
+los segmentos objetivo.
+
 #### 2.4.1 User Stories
 
 En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron identificados durante el análisis del proyecto.
@@ -5709,9 +5741,17 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 | 86 | TS-42 | Descarga de reporte de control médico específico por fecha mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de un control médico individual por fecha para obtener el comprobante detallado de una atención específica. | 3 |
 
 ### 2.5 Strategic-Level Domain-Driven Design
+
+En esta sección se documenta el proceso de diseño estratégico aplicado
+al dominio del problema de Ferova. A través de las herramientas de
+EventStorming, Bounded Context Canvases y Context Mapping, el equipo
+identificó y delimitó los nueve bounded contexts que conforman la
+arquitectura del sistema, y se presenta la arquitectura de software
+mediante el C4 Model.
+
 #### 2.5.1 EventStorming
 
-ara la construcción del Event Storming, el equipo coordinó la elaboración de una primera 
+Para la construcción del Event Storming, el equipo coordinó la elaboración de una primera 
 versión del modelo del dominio siguiendo un proceso estructurado de 8 etapas, con el objetivo 
 de identificar los eventos, comandos, actores y límites del sistema de forma colaborativa.
 
@@ -6470,6 +6510,13 @@ integraciones con plataformas externas.
 </div>
 
 ### 2.6 Tactical-Level Domain-Driven Design
+
+En esta sección se presenta el diseño táctico de Ferova, detallando la
+estructura interna de cada bounded context mediante las capas de Domain,
+Interface, Application e Infrastructure, así como los diagramas de
+componentes, clases y base de datos correspondientes.
+
+
 #### 2.6.1. Bounded Context: `Identify and Access Management`
 
 El Bounded Context de **Identity and Access Management (IAM)** se encarga de gestionar la 
