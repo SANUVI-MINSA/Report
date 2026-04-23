@@ -109,10 +109,10 @@ de salud como red de apoyo formal, algo que MyTherapy no contempla en su
 modelo de notificación a familiares.
 
 ### 2.2 Entrevistas
+
 #### 2.2.1 Diseño de entrevistas
 
 ##### <h4>Segmento Objetivo 1: Madres y Cuidadores de niños con anemia</h4> 
----
 
 <h4>Preguntas Personales:</h4> 
 
@@ -581,95 +581,105 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
 
 #### 2.2.3 Análisis de entrevistas
 
-##### **Segmento objetivo 1:  Madres y Cuidadores de Pacientes con Anemia**
+##### **Segmento objetivo 1: Madres y Cuidadores de Pacientes con Anemia**
 ---
 
 **Contexto actual del seguimiento**
-Las entrevistas realizadas a madres y cuidadores evidencian que el seguimiento del tratamiento de la anemia se realiza de manera manual, informal y poco estructurada. El 100% de los entrevistados menciona que utiliza métodos básicos como la memoria, cuadernos o indicaciones verbales del médico para llevar el control. Además, el tratamiento depende en gran medida de la rutina diaria del hogar y del trabajo, lo que genera inconsistencias en los horarios y olvidos ocasionales. Aunque todos intentan cumplir con las indicaciones médicas, no cuentan con herramientas que les permitan un seguimiento continuo y confiable. También se observa que el control de citas médicas se realiza de forma básica (anotaciones o indicaciones del centro de salud), lo que puede generar desorganización o dependencia de recordatorios externos.
 
-**Motivaciones de los profesionales**
-En cuanto a motivaciones, el 100% de los entrevistados coincide en que su principal objetivo es recuperar la salud del niño y evitar complicaciones futuras. Asimismo, aproximadamente el 80% muestra interés en aprender más sobre cómo mejorar la alimentación y complementar el tratamiento, especialmente en relación con dietas ricas en hierro. También se evidencia que todos los entrevistados están abiertos al uso de tecnología, siempre que esta sea simple, clara y fácil de usar, destacando una preferencia marcada por contenido visual como videos.
+Las entrevistas realizadas a madres y cuidadores revelan que el seguimiento del tratamiento de la anemia se lleva a cabo de manera manual, informal y poco estructurada. El 100% de los entrevistados recurre a métodos básicos como la memoria, cuadernos de notas o indicaciones verbales del médico para controlar el tratamiento. La adherencia depende en gran medida de la rutina diaria del hogar y del trabajo, lo que genera inconsistencias en los horarios y olvidos frecuentes. Si bien todos manifiestan el deseo de cumplir con las indicaciones médicas, ninguno cuenta con herramientas que faciliten un seguimiento continuo y confiable. Del mismo modo, el control de citas médicas se realiza de forma básica mediante anotaciones o avisos del centro de salud, situación que puede derivar en desorganización o dependencia de recordatorios externos.
+
+**Motivaciones de los cuidadores**
+
+El 100% de los entrevistados coincide en que su principal motivación es recuperar la salud del niño y prevenir complicaciones a futuro. Aproximadamente el 80% muestra interés activo en aprender cómo mejorar la alimentación y complementar el tratamiento, particularmente en lo relacionado con dietas ricas en hierro. Asimismo, todos los participantes se muestran abiertos al uso de tecnología, siempre que sea simple, clara y fácil de manejar, con una marcada preferencia por contenido visual como videos explicativos.
 
 **Principales problemáticas identificadas**
-Las principales dificultades están relacionadas con la adherencia al tratamiento, aunque no por falta de intención, sino por limitaciones prácticas:
 
-- **Olvido de dosis** (≈70%): debido al trabajo, responsabilidades del hogar o falta de recordatorios
-- **Falta de claridad en indicaciones médicas** (≈70%): especialmente en temas de alimentación y tratamiento
-- **Dificultad en la alimentación adecuada** (≈80%): no saben exactamente qué comidas ayudan a mejorar la anemia
-- **Dependencia de métodos manuales** (100%): cuadernos, memoria o indicaciones verbales
-- **Carga laboral o rutinas variables** (≈60%): afecta la organización diaria del tratamiento
-  
-A pesar de esto, se identifica que los cuidadores sí están comprometidos, pero no cuentan con herramientas adecuadas.
+Las dificultades más recurrentes están vinculadas a la adherencia al tratamiento, no por falta de compromiso, sino por limitaciones prácticas del entorno:
+
+- **Olvido de dosis** (≈70%): ocasionado por el trabajo, las responsabilidades del hogar y la ausencia de recordatorios automatizados.
+- **Falta de claridad en las indicaciones médicas** (≈70%): especialmente en temas de alimentación y administración del tratamiento.
+- **Dificultad para garantizar una alimentación adecuada** (≈80%): los cuidadores desconocen con exactitud qué alimentos favorecen la recuperación.
+- **Dependencia total de métodos manuales** (100%): cuadernos, memoria o indicaciones verbales sin ningún respaldo digital.
+- **Rutinas variables o carga laboral elevada** (≈60%): factores que afectan directamente la organización diaria del tratamiento.
+
+A pesar de estas dificultades, se evidencia que los cuidadores sí están comprometidos con la recuperación del niño; la principal barrera es la ausencia de herramientas de apoyo adecuadas.
 
 **Brechas en el sistema actual**
 
-A partir del análisis, se identifican tres brechas principales:
+A partir del análisis de las entrevistas, se identifican tres brechas fundamentales:
 
-- **Brecha de seguimiento**
-No existe un sistema que permita llevar un control diario estructurado del tratamiento.
-- **Brecha de información**
-Las indicaciones médicas no siempre son claras ni prácticas, especialmente en nutrición.
-- **Brecha de adherencia**
-Los olvidos y la falta de acompañamiento afectan la continuidad del tratamiento.
+- **Brecha de seguimiento:** No existe un sistema que permita llevar un registro diario, estructurado y accesible del tratamiento.
+- **Brecha de información:** Las indicaciones médicas no siempre son claras ni prácticas, especialmente en lo referido a nutrición y hábitos alimenticios.
+- **Brecha de adherencia:** Los olvidos frecuentes y la falta de acompañamiento continuo afectan directamente la regularidad del tratamiento.
 
-Estas brechas evidencian que el problema no es solo médico, sino también **organizacional**, **educativo** y **conductual.**
+Estas brechas evidencian que el problema no es exclusivamente médico, sino también **organizacional**, **educativo** y **conductual**.
 
 **Oportunidades de solución**
-A partir de los hallazgos, se identifican oportunidades claras:
 
-- Recordatorios automáticos de dosis **(≈90% necesidad)**
-- Seguimiento diario del tratamiento **(100% necesidad)**
-- Contenido educativo en videos sobre anemia y dietas **(≈90% preferencia)**
-- Guías prácticas de alimentación **(≈80% necesidad)**
-- Contacto o asesoría con profesionales de salud **(≈70% interés)**
-- Aplicación simple, intuitiva y fácil de usar **(100% requisito crítico)**
+Los hallazgos permiten identificar oportunidades concretas para el desarrollo de una solución digital:
 
-Las entrevistas muestran que los cuidadores están altamente comprometidos con la salud de los niños, pero enfrentan dificultades prácticas que afectan la continuidad del tratamiento. La falta de herramientas de apoyo, información clara y seguimiento estructurado impacta directamente en la adherencia. Existe una oportunidad clara para desarrollar una solución digital que no solo informe, sino que acompañe activamente el proceso del tratamiento, facilitando la organización, el aprendizaje y el cumplimiento diario.
+- Recordatorios automáticos de dosis **(≈90% de necesidad)**
+- Seguimiento diario estructurado del tratamiento **(100% de necesidad)**
+- Contenido educativo en video sobre anemia y alimentación **(≈90% de preferencia)**
+- Guías prácticas de alimentación rica en hierro **(≈80% de necesidad)**
+- Acceso a asesoría o contacto con profesionales de salud **(≈70% de interés)**
+- Interfaz simple, intuitiva y fácil de usar **(100% requisito crítico)**
+
+En síntesis, las entrevistas demuestran que los cuidadores están altamente comprometidos con la salud de los niños, pero enfrentan dificultades prácticas que comprometen la continuidad del tratamiento. La ausencia de herramientas de apoyo, información clara y seguimiento estructurado impacta directamente en la adherencia. Existe una oportunidad clara para desarrollar una solución digital que no solo informe, sino que acompañe activamente el proceso de recuperación, facilitando la organización, el aprendizaje y el cumplimiento diario.
+
+---
 
 ##### **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 ---
 
 **Contexto actual del seguimiento**
-Las entrevistas realizadas a profesionales de salud evidencian que el seguimiento del tratamiento de la anemia se desarrolla de manera fragmentada y poco digitalizada. Aproximadamente el **100% de los entrevistados** utiliza herramientas básicas como Excel, papel o sistemas internos no integrados, lo que genera duplicidad de información y pérdida de tiempo en la gestión. Además, el seguimiento suele depender de consultas presenciales, visitas domiciliarias o comunicación informal, lo que limita la continuidad del tratamiento. Esta situación provoca que la información esté dispersa entre diferentes áreas (enfermería, nutrición, medicina), dificultando una visión integral del paciente.
+
+Las entrevistas realizadas a profesionales de salud evidencian que el seguimiento del tratamiento de la anemia se desarrolla de manera fragmentada y escasamente digitalizada. El 100% de los entrevistados utiliza herramientas básicas como hojas de cálculo en Excel, registros en papel o sistemas internos no integrados entre sí, lo que genera duplicidad de información y pérdida de tiempo en la gestión de datos. Asimismo, el seguimiento depende principalmente de consultas presenciales, visitas domiciliarias o comunicación informal, lo que limita la continuidad del tratamiento. Esta situación provoca que la información del paciente quede dispersa entre distintas áreas (enfermería, nutrición, medicina), dificultando una visión integral y oportuna de su evolución.
 
 **Motivaciones de los profesionales**
-En cuanto a sus motivaciones, el **100% de los entrevistados** coincide en que su principal objetivo es **mejorar la salud del paciente y prevenir recaídas**, especialmente en poblaciones vulnerables como niños y gestantes. Asimismo, alrededor del **80% destaca la importancia de optimizar el seguimiento y la comunicación**, buscando herramientas que les permitan ahorrar tiempo y ser más eficientes en su trabajo diario. También se evidencia una disposición positiva hacia la adopción de tecnología, siempre que esta sea **simple, intuitiva y accesible**, sin aumentar la carga operativa.
+
+El 100% de los entrevistados coincide en que su principal objetivo es mejorar la salud del paciente y prevenir recaídas, con especial énfasis en poblaciones vulnerables como niños y gestantes. Alrededor del 80% destaca la importancia de optimizar el seguimiento y la comunicación con el paciente, buscando herramientas que permitan reducir tiempos y aumentar la eficiencia en su trabajo diario. Además, todos muestran una disposición positiva hacia la adopción de tecnología, siempre que esta sea simple, intuitiva y accesible, sin incrementar la carga operativa del personal.
 
 **Principales problemáticas identificadas**
-Las principales dificultades detectadas giran en torno a la **baja adherencia al tratamiento**. Según los entrevistados, el **abandono del tratamiento es frecuente**, especialmente en etapas intermedias cuando el paciente empieza a mostrar mejoría. Este problema está asociado a varios factores:
 
-- **Desinformación** sobre alimentación y tratamiento.  
-- **Falta de interés o compromiso** por parte de pacientes o cuidadores.  
-- **Hábitos alimenticios inadecuados**, incluyendo rechazo a alimentos ricos en hierro.  
-- **Limitaciones logísticas**, como distancia, trabajo o falta de tiempo.  
-- **Datos desactualizados**, lo que dificulta el contacto y seguimiento.  
+Las principales dificultades giran en torno a la baja adherencia al tratamiento. Según los entrevistados, el abandono es frecuente, especialmente en etapas intermedias cuando el paciente empieza a mostrar mejoras y reduce su motivación para continuar. Este problema está asociado a múltiples factores:
 
-Además, el **100% de los entrevistados** coincide en que los procesos actuales son ineficientes y requieren demasiado esfuerzo manual, lo que reduce la capacidad de cubrir a todos los pacientes.
+- **Desinformación** sobre alimentación adecuada y correcta administración del tratamiento.
+- **Falta de compromiso** por parte de pacientes o cuidadores, especialmente en seguimientos prolongados.
+- **Hábitos alimenticios inadecuados**, incluyendo el rechazo a alimentos ricos en hierro.
+- **Limitaciones logísticas**, como distancia al centro de salud, carga laboral o falta de tiempo.
+- **Datos desactualizados**, que dificultan el contacto oportuno y el seguimiento efectivo del paciente.
+
+El 100% de los entrevistados coincide en que los procesos actuales son ineficientes, requieren un esfuerzo manual excesivo y reducen significativamente la capacidad de atender a todos los pacientes bajo seguimiento.
 
 **Brechas en el sistema actual**
 
-Se identifican tres brechas principales:
+Se identifican tres brechas críticas en el sistema de seguimiento actual:
 
-- **1. Brecha de información**
-La información del paciente no está centralizada ni actualizada, lo que genera pérdida de seguimiento.
-- **2. Brecha de comunicación**
-Existe poca interacción continua entre profesional y paciente, limitándose a citas esporádicas.
-- **3. Brecha de adherencia**
-Los pacientes no mantienen el tratamiento por falta de recordatorios, educación clara y acompañamiento.
+- **Brecha de información:** La información del paciente no está centralizada ni actualizada en tiempo real, lo que genera pérdida de continuidad en el seguimiento.
+- **Brecha de comunicación:** La interacción entre el profesional y el paciente se limita a citas esporádicas, sin canales de comunicación continua entre consultas.
+- **Brecha de adherencia:** Los pacientes no mantienen el tratamiento por falta de recordatorios, educación clara y acompañamiento sostenido.
 
-Estas brechas reflejan que el problema no es únicamente médico, sino también **comportamental y sistémico**.
+Estas brechas reflejan que el problema no es únicamente médico, sino también **conductual y sistémico**, y requiere una solución que aborde simultáneamente varias dimensiones del proceso.
 
 **Oportunidades de solución**
-A partir de los hallazgos, se identifica una clara oportunidad para desarrollar una solución digital que:
 
-- Centralice la información del paciente (**100% necesidad detectada**).  
-- Incorpore recordatorios y seguimiento continuo (**≈90% relevancia**).  
-- Brinde educación clara y práctica sobre anemia (**≈80% necesidad**).  
-- Mejore la comunicación entre paciente y profesional (**≈80% necesidad**).  
-- Sea simple, intuitiva y accesible para todo tipo de usuario (**100% requisito crítico**).  
+Los hallazgos identifican una oportunidad clara para desarrollar una solución digital que:
 
-En conjunto, las entrevistas demuestran que existe una necesidad urgente de herramientas que no solo optimicen procesos, sino que también **incrementen la adherencia al tratamiento**, atacando directamente una de las principales causas del fracaso en la recuperación de la anemia.
+- Centralice la información del paciente en tiempo real **(100% de necesidad detectada)**.
+- Incorpore recordatorios automáticos y seguimiento continuo **(≈90% de relevancia)**.
+- Brinde contenido educativo claro y práctico sobre anemia y nutrición **(≈80% de necesidad)**.
+- Mejore la comunicación entre el paciente y el profesional de salud **(≈80% de necesidad)**.
+- Sea simple, intuitiva y accesible para todo tipo de usuario **(100% requisito crítico)**.
 
+En conjunto, las entrevistas demuestran que existe una necesidad urgente de herramientas que no solo optimicen los procesos internos del personal de salud, sino que también incrementen la adherencia al tratamiento, atacando directamente una de las principales causas del fracaso en la recuperación de la anemia.
+Los cambios principales que hice fueron:
+
+Redacción más fluida y cohesionada entre párrafos
+Eliminé repeticiones innecesarias
+Uniformicé el tono y estilo entre ambos segmentos
+Reforcé las transiciones entre secciones para que el análisis se lea como un todo integrado
+Has usado 75% de tu límite semanalObtener más uso
 
 ### 2.3 Needfinding
 
@@ -729,20 +739,30 @@ La seccion User Task Matrix permite identificar y comparar las tareas más relev
 
 #### 2.3.3 User Journey Mapping
 
-En esta sección, se desarrollan los User Journey Maps para cada User Persona, proporcionando una visión completa del recorrido del usuario desde el inicio hasta el final. Estos mapas representan la situación actual (As-Is) de cada segmento, sin ofrecer soluciones.
+En esta sección se presentan los User Journey Maps correspondientes a cada User Persona, 
+ofreciendo una visión integral del recorrido que sigue el usuario desde el primer contacto 
+con el problema hasta el cumplimiento de sus objetivos. Estos mapas representan la situación 
+actual (As-Is) de cada segmento, sin contemplar soluciones tecnológicas, con el fin de 
+identificar puntos de fricción, emociones y oportunidades de mejora en el proceso real.
 
 ##### **Usuario Madre / Cuidadora (Carla Briceño)**
 
-Mediante este artefacto se explicará y comprenderá como los usuarios del segmento cuidador realizan sus actividades para alcanzar sus objetivos desde su perspectiva.
+El siguiente artefacto ilustra el recorrido que realiza una madre o cuidadora al intentar 
+gestionar el tratamiento de anemia de su hijo. A través de este mapa se identifican las 
+etapas, acciones, emociones y dificultades que enfrenta desde su perspectiva, permitiendo 
+comprender con mayor profundidad las barreras que afectan la adherencia al tratamiento.
 
 <img src="resources/images/chapter-II/User-Journey/User Journey Mapping Carla Briceño.png">
 
-##### **Usuario Enfermera (Leslie Rodriguez)**
+##### **Usuario Enfermera (Leslie Rodríguez)**
 
-Mediante este artefacto se explicará y comprenderá como los usuarios del segmento nutricionista/enfermera realizan sus actividades para alcanzar sus objetivos desde su perspectiva.
+El siguiente artefacto ilustra el recorrido que realiza una enfermera o nutricionista al 
+llevar a cabo el seguimiento de pacientes con anemia. A través de este mapa se identifican 
+las etapas, acciones, emociones y limitaciones que enfrenta desde su perspectiva, 
+permitiendo evidenciar las ineficiencias del sistema actual y las brechas en la continuidad 
+del cuidado.
 
 <img src="resources/images/chapter-II/User-Journey/User Journey Leslie Rodriguez.png">
-
 #### 2.3.4 Empathy Mapping
 
 Lo siguiente a evaluar como parte del needfinding es a nuestros segmentos objetivos a través de empathy maps, con el objetivo de conocer mejor a nuestros segmentos objetivos e identificar sus necesidades profundas.
@@ -5267,189 +5287,411 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 ### 2.5 Strategic-Level Domain-Driven Design
 #### 2.5.1 EventStorming
 
-Para la construcion del Event Storming, se cordino obtener una primera version del modelo del dominio
-para ello se siguio el proceso de 8 etapas.
+ara la construcción del Event Storming, el equipo coordinó la elaboración de una primera 
+versión del modelo del dominio siguiendo un proceso estructurado de 8 etapas, con el objetivo 
+de identificar los eventos, comandos, actores y límites del sistema de forma colaborativa.
 
-**Paso 1:** lluvia de ideas de los eventos del dominio relacionado al dominio problematico que se esta solucionando.
+**Paso 1: Lluvia de ideas de eventos del dominio**
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/1-step.png" alt="Paso-1">
+Se identificaron y listaron todos los eventos relevantes relacionados con el dominio 
+problemático que se está abordando, sin filtros ni restricciones, con el fin de obtener 
+una visión amplia del sistema.
 
-**Paso 2:** Ordenar los eventos del dominio definiendo los timelines.
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/1-step.png" alt="Paso 1">
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/2-step.png" alt ="Paso-2">
+**Paso 2: Ordenamiento de eventos y definición de timelines**
 
-**Paso 3:**  Identificar puntos problemáticos (paint points) en el proceso.
+Los eventos identificados fueron ordenados cronológicamente, estableciendo líneas de tiempo 
+que permiten comprender el flujo natural del proceso dentro del dominio.
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/3-step.png" alt ="Paso-3">
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/2-step.png" alt="Paso 2">
 
-**Paso 4:**  Identificar eventos comerciales importantes (pivotal points) que indiquen un cambio en el contexto o fase del negocio.
+**Paso 3: Identificación de puntos problemáticos (Pain Points)**
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/4-step.png" alt ="Paso-4">
+Se detectaron las fricciones, cuellos de botella e inconvenientes presentes en el proceso, 
+marcando aquellos puntos donde el flujo actual genera dificultades para los usuarios o el sistema.
 
-**Paso 5:**  Definir comandos que desencadenan eventos. Tambien definir las politicas que desencadenan la ejecución de comandos.
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/3-step.png" alt="Paso 3">
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/5-step.png" alt ="Paso-5">
+**Paso 4: Identificación de puntos pivote (Pivotal Points)**
 
-**Paso 6:** Identificar read models, los cuales son modelos de lectura o vistas que los usuarios necesitan para tomar.
+Se señalaron los eventos comerciales clave que representan un cambio significativo de contexto 
+o fase dentro del negocio, permitiendo delimitar las transiciones más importantes del flujo.
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/6-step.png" alt="Paso-6">
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/4-step.png" alt="Paso 4">
 
-**Paso 7:**  Identificar sistemas externos que se conectan con el dominio.
+**Paso 5: Definición de comandos y políticas**
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/7-step.png" alt="Paso-7">
+Se definieron los comandos que desencadenan cada evento del dominio, así como las políticas 
+que determinan bajo qué condiciones dichos comandos son ejecutados automáticamente como 
+respuesta a otros eventos.
 
-**Paso 8:**  Definir aggregates agrupando comandos y eventos relacionados en unidades lógicas.
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/5-step.png" alt="Paso 5">
 
-<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/8-step.png" alt="Paso-8">
+**Paso 6: Identificación de Read Models**
 
+Se identificaron los modelos de lectura o vistas de información que los usuarios necesitan 
+consultar para tomar decisiones dentro del sistema, representando la información relevante 
+en cada etapa del proceso.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/6-step.png" alt="Paso 6">
+
+**Paso 7: Identificación de sistemas externos**
+
+Se identificaron los sistemas externos que interactúan con el dominio, estableciendo los 
+puntos de integración y las dependencias que el sistema debe considerar en su diseño.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/7-step.png" alt="Paso 7">
+
+**Paso 8: Definición de Aggregates**
+
+Finalmente, se agruparon los comandos y eventos relacionados en unidades lógicas denominadas 
+aggregates, consolidando así los límites del modelo del dominio y estableciendo las bases 
+para el diseño de la arquitectura del sistema.
+
+<img src="resources/images/chapter-II/Event_Storming/step-sptep-even-storming/8-step.png" alt="Paso 8">
 
 ##### 2.5.1.1 Candidate Context Discovery
 
-A partir del modelo de Event Storming, se llevo a cabo la seccion Candidate Context Discovery para identificar los bounded context para resolver el subdominio del problema. 
+A partir del modelo de Event Storming, se llevó a cabo la sesión de Candidate Context Discovery 
+con el objetivo de identificar los Bounded Contexts necesarios para resolver el subdominio del 
+problema. Durante esta sesión se utilizó principalmente la técnica **look-for-pivotal-events**.
 
-Se utilizó principalmente la técnica look-for-pivotal-events durante la sesión.
-
-
-Primero, se buscaron eventos clave que indiquen cambios de estado entre diferentes partes del proceso del negocio:
+En primer lugar, se identificaron los eventos clave que señalan cambios de estado entre las 
+distintas partes del proceso del negocio:
 
 <img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/1.png" alt="1">
 
-Luego, se agruparon los eventos de acuerdo a los principales cambios de contexto.
+A continuación, los eventos fueron agrupados de acuerdo a los principales cambios de contexto 
+identificados:
 
 <img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/2.png" alt="2">
 
-Se trazaron circulos alrededor de los grupos identificados, estableciendo los límites iniciales de los bounded contexts.
+Posteriormente, se trazaron círculos alrededor de cada agrupación, estableciendo los límites 
+iniciales de los Bounded Contexts:
 
 <img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/3.png" alt="3">
 
-Finalmente, se seleccionaron nombres para los bounded context. Dando como resultado la definición de 9 bounded contexts y la versión final del Event Storming:
+Finalmente, se asignaron nombres a cada Bounded Context, obteniendo como resultado la definición 
+de 9 Bounded Contexts y la versión final del Event Storming:
 
 <img src="resources/images/chapter-II/Event_Storming/look-for-pivotal-events/4.png" alt="4">
 
-A continuación, se explicará en qué consiste cada bounded context:
+A continuación se describe en detalle el propósito y las responsabilidades de cada Bounded Context identificado:
+
+---
 
 #### Identity and Access Management
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/IAM.png" alt ="IAM">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/IAM.png" alt="IAM">
 
-Este bounded context se encarga de gestionar el acceso y la autenticación de los usuarios dentro de la plataforma Ferova. Es responsable del registro de nuevos usuarios, la asignación automática de roles diferenciados como madre, enfermera y administrador, el inicio y cierre de sesión, y el cambio de contraseña. Sin este bounded context ningún usuario puede acceder a las funcionalidades del sistema.
+Este Bounded Context gestiona el acceso y la autenticación de todos los usuarios dentro de la 
+plataforma Ferova. Es responsable del registro de nuevos usuarios, la asignación automática de 
+roles diferenciados (madre, enfermera y administrador), el inicio y cierre de sesión, y el cambio 
+de contraseña. Constituye la puerta de entrada al sistema: sin este contexto, ningún usuario puede 
+acceder a las funcionalidades de la plataforma.
 
+---
 
 #### Patient Management
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Patient Management.png" alt ="Patient Management">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Patient Management.png" alt="Patient Management">
 
-Este bounded context se encarga de gestionar toda la información clínica y personal de los pacientes con anemia dentro de Ferova. Es responsable del registro de nuevos pacientes, el ingreso de datos personales, el registro del diagnóstico de anemia, el seguimiento de los niveles de hemoglobina y la asignación de pacientes a una enfermera específica. Es la base sobre la cual los demás bounded contexts operan.
+Este Bounded Context centraliza la gestión de la información clínica y personal de los pacientes 
+con anemia registrados en Ferova. Es responsable del registro de nuevos pacientes, el ingreso de 
+datos personales, el registro del diagnóstico de anemia, el seguimiento de los niveles de 
+hemoglobina y la asignación de cada paciente a una enfermera específica. Actúa como la base sobre 
+la cual operan los demás Bounded Contexts del sistema.
+
+---
 
 #### Treatment Tracking
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Treatment Tracking.png" alt ="Treatment Tracking">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Treatment Tracking.png" alt="Treatment Tracking">
 
-Este bounded context se encarga del seguimiento diario del tratamiento de anemia de cada paciente. Es responsable de programar las dosis diarias de hierro, registrar las confirmaciones de la madre, calcular el score de riesgo de abandono, clasificar a los pacientes en un semáforo de riesgo y notificar a la enfermera cuando un paciente está en peligro de abandonar el tratamiento. Es el corazón del problema que Ferova busca resolver.
+Este Bounded Context gestiona el seguimiento diario del tratamiento de anemia de cada paciente. 
+Es responsable de programar las dosis diarias de hierro, registrar las confirmaciones realizadas 
+por la madre, calcular el score de riesgo de abandono, clasificar a los pacientes mediante un 
+semáforo de riesgo y notificar a la enfermera cuando un paciente presenta señales de abandono. 
+Representa el núcleo del problema que Ferova busca resolver.
+
+---
 
 #### Nutritional Diary
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Nutrional Diary.png" alt ="Nutrional Diary">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Nutrional Diary.png" alt="Nutritional Diary">
 
-Este bounded context se encarga del registro y análisis del diario nutricional diario del niño con anemia. Es responsable de registrar los alimentos consumidos por el niño, calcular el contenido de hierro absorbido según cada alimento, detectar alimentos inhibidores de la absorción de hierro y enviar alertas a la madre cuando se detecta alguno. Complementa al Treatment Tracking porque una buena alimentación es clave para la recuperación de la anemia.
+Este Bounded Context se encarga del registro y análisis del diario nutricional diario del niño 
+con anemia. Es responsable de registrar los alimentos consumidos, calcular el contenido de hierro 
+absorbido según cada alimento, detectar alimentos inhibidores de la absorción del hierro y emitir 
+alertas a la madre cuando estos son identificados. Complementa directamente al Treatment Tracking, 
+dado que una alimentación adecuada es un factor determinante en la recuperación de la anemia.
+
+---
 
 #### Achievements & Rewards
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Achievements & Rewards.png" alt ="Achievements & Rewards">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Achievements & Rewards.png" alt="Achievements & Rewards">
 
-Este bounded context se encarga de la gamificación del tratamiento de anemia dentro de FerovaFamilia. Es responsable de gestionar las rachas de días consecutivos cumplidos, acumular puntos por cada dosis confirmada, desbloquear insignias al alcanzar hitos importantes del tratamiento y registrar los logros obtenidos por la madre. Su objetivo es motivar a la madre a mantener la constancia en el tratamiento mediante recompensas digitales.
+Este Bounded Context gestiona la capa de gamificación del tratamiento dentro de FerovaFamilia. 
+Es responsable de administrar las rachas de días consecutivos cumplidos, acumular puntos por cada 
+dosis confirmada, desbloquear insignias al alcanzar hitos importantes del tratamiento y registrar 
+los logros obtenidos por la madre. Su propósito es motivar la constancia mediante un sistema de 
+recompensas digitales que refuerce positivamente el cumplimiento del tratamiento.
+
+---
 
 #### Communication
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Comunication.png" alt ="Communication">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Comunication.png" alt="Communication">
 
-Este bounded context se encarga de la teleconsulta asíncrona entre la madre y la enfermera asignada dentro de Ferova. Es responsable de gestionar la creación de consultas por parte de la madre, el envío y recepción de mensajes, las plantillas de respuesta rápida para la enfermera y el historial completo de consultas por paciente. Los mensajes son almacenados y sincronizados en tiempo real mediante Firebase Firestore.
+Este Bounded Context gestiona la teleconsulta asíncrona entre la madre y la enfermera asignada 
+dentro de Ferova. Es responsable de la creación de consultas por parte de la madre, el envío y 
+recepción de mensajes, el uso de plantillas de respuesta rápida para la enfermera y la 
+conservación del historial completo de consultas por paciente. Los mensajes son almacenados y 
+sincronizados en tiempo real mediante Firebase Firestore.
+
+---
 
 #### Health Facility
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Health Facility.png" alt ="Health Facility">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Health Facility.png" alt="Health Facility">
 
-Este bounded context se encarga de la gestión de las postas médicas del distrito, su personal asignado y la reserva de citas. Es responsable del registro de postas médicas con su ubicación en Google Maps, la asignación y transferencia de enfermeras entre postas, el registro de horarios de atención y la reserva y cancelación de citas por parte de las madres. Conecta el mundo digital de Ferova con el mundo físico de las postas médicas del MINSA.
+Este Bounded Context gestiona las postas médicas del distrito, su personal asignado y la reserva 
+de citas. Es responsable del registro de postas médicas con su geolocalización en Google Maps, la 
+asignación y transferencia de enfermeras entre postas, el registro de horarios de atención, y la 
+reserva y cancelación de citas por parte de las madres. Establece el vínculo entre el entorno 
+digital de Ferova y la red física de postas médicas del MINSA.
+
+---
 
 #### Notifications
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Notification.png" alt ="Notifications">
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Notification.png" alt="Notifications">
 
-Este bounded context se encarga del sistema de notificaciones inteligentes multicapa de Ferova. Es responsable de enviar recordatorios diarios de dosis a la madre, escalar las alertas a la enfermera cuando la madre no responde, y notificar a ambas partes sobre consultas, citas y logros desbloqueados. Todas las notificaciones son enviadas via Firebase Cloud Messaging garantizando que nadie se quede sin ser avisado cuando algo importante ocurre.
+Este Bounded Context gestiona el sistema de notificaciones inteligentes multicapa de Ferova. Es 
+responsable de enviar recordatorios diarios de dosis a la madre, escalar alertas a la enfermera 
+cuando la madre no responde, y notificar a ambas partes sobre consultas pendientes, citas 
+programadas y logros desbloqueados. Todas las notificaciones son enviadas a través de Firebase 
+Cloud Messaging, garantizando la entrega oportuna de información crítica para el seguimiento del 
+tratamiento.
 
+---
 
 #### Analytics & Reporting
 
+<img src="resources/images/chapter-II/Event_Storming/bounded-context/Analytics && Report.png" alt="Analytics & Reporting">
 
-<img src="resources/images/chapter-II/Event_Storming/bounded-context/Analytics && Report.png" alt ="Analytics & Reporting">
+Este Bounded Context gestiona el dashboard analítico destinado al coordinador MINSA y la 
+generación de reportes a nivel distrital. Es responsable de consolidar los reportes de adherencia 
+enviados por las enfermeras, calcular automáticamente el porcentaje de adherencia por posta, 
+generar mapas de calor del distrito para identificar zonas críticas, comparar el rendimiento entre 
+postas y exportar reportes en formato PDF para su remisión al MINSA central.
 
-Este bounded context se encarga del dashboard analítico del coordinador MINSA y la generación de reportes del distrito. Es responsable de recibir los reportes de adherencia enviados por las enfermeras, calcular automáticamente el porcentaje de adherencia por posta, generar el mapa de calor del distrito identificando zonas críticas, comparar el rendimiento entre postas y exportar reportes en PDF para ser enviados al MINSA central.
 
 ##### 2.5.1.2 Domain Message Flows Modeling
 
-Los Domain Message Flows modelan las interacciones entre los diferentes bounded contexts, mostrando cómo se comunican entre sí mediante comandos, eventos y consultas. A continuación, se muestran los flujos de mensaje para los escenarios clave del negocio:
+Los Domain Message Flows modelan las interacciones entre los diferentes Bounded Contexts, 
+mostrando cómo se comunican entre sí mediante comandos, eventos y consultas. A continuación 
+se presentan los flujos de mensaje para los escenarios clave del negocio.
 
-- <h4>Registro e Inicio de sesion</h4>
+---
+
+#### Registro e Inicio de Sesión
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Registro e Inicio de Seccion.jpg">
 </div>
-En este flujo se muestra la interaccion entre el bounded context IAM y los sistemas FerovaFamily y FerovaClinic al momento en que un usuario accede a la plataforma Ferova. La madre se registra desde FerovaFamily enviando sus datos personales mientras que el Admin o Enfermera se registra desde FerovaClinic seleccionando su rol. En ambos casos el bounded context IAM gestiona la autenticacion, asigna el rol correspondiente y almacena los datos del usuario en el sistema. Adicionalmente se muestra el flujo de inicio de sesion donde el usuario envia su DNI y contrasena al Backend System que lo valida contra IAM y retorna el token JWT con el rol asignado.
 
-- <h4>Reserva de cita en posta</h4>
+Este flujo describe la interacción entre el Bounded Context **IAM** y los sistemas **FerovaFamily** 
+y **FerovaClinic** durante el acceso a la plataforma. El flujo se divide en dos partes:
+
+- **Registro:** La madre se registra desde FerovaFamily enviando sus datos personales, mientras 
+que el administrador o enfermera lo hace desde FerovaClinic seleccionando su rol. En ambos casos, 
+IAM gestiona la autenticación, asigna el rol correspondiente y almacena los datos del usuario en 
+el sistema.
+
+- **Inicio de sesión:** El usuario envía su DNI y contraseña al Backend System, que los valida 
+contra IAM y retorna el token JWT con el rol asignado, habilitando el acceso a las funcionalidades 
+de la plataforma.
+
+---
+
+#### Reserva de Cita en Posta
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Reserva de cita en posta.jpg">
 </div>
- En este flujo se muestra la interaccion entre el bounded context Health Facility, el bounded context Notification, el sistema Google Maps API y Firebase FCM al momento en que el admin registra una posta medica y la madre reserva una cita presencial. El flujo se divide en dos partes. En la primera el admin registra la posta desde FerovaClinic enviando el nombre, direccion, coordenadas y horario de atencion hacia Health Facility que lo registra en Google Maps API y asigna a la enfermera correspondiente a traves de IAM. En la segunda parte la madre accede desde FerovaClinic y solicita ver las postas cercanas enviando sus coordenadas GPS, Health Facility consulta Google Maps API y devuelve la lista de postas disponibles. La madre selecciona la posta y crea su cita con los datos del paciente, la enfermera, la fecha y la hora. Health Facility confirma la cita y dispara el bounded context Notification que via Firebase FCM notifica a la madre con la confirmacion de su cita y a la enfermera con los datos de la nueva cita en su posta.
 
-- <h4>Teleconsulta madre-enfermera</h4>
+Este flujo describe la interacción entre los Bounded Contexts **Health Facility** y **Notification**, 
+y los sistemas externos **Google Maps API** y **Firebase FCM** durante el registro de una posta y 
+la reserva de una cita presencial. El flujo se divide en dos partes:
+
+- **Registro de posta:** El administrador registra la posta desde FerovaClinic enviando el nombre, 
+dirección, coordenadas y horario de atención hacia Health Facility, que lo registra en Google Maps 
+API y asigna a la enfermera correspondiente a través de IAM.
+
+- **Reserva de cita:** La madre accede desde FerovaFamily, envía sus coordenadas GPS y recibe la 
+lista de postas cercanas consultada por Health Facility a Google Maps API. Tras seleccionar la 
+posta y registrar los datos de la cita, Health Facility confirma la reserva y activa el Bounded 
+Context Notification, que notifica a la madre con la confirmación de su cita y a la enfermera 
+con los datos de la nueva atención, ambas vía Firebase FCM.
+
+---
+
+#### Teleconsulta Madre-Enfermera
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Teleconsulta madre-enfermera.jpg">
 </div>
 
-En este flujo se muestra la interaccion entre el bounded context Communication, el bounded context Notification, y los sistemas Firebase Firestore y Firebase FCM al momento en que la madre envia una consulta a su enfermera asignada y recibe una respuesta. El flujo se divide en dos partes. En la primera la madre crea una consulta desde FerovaFamily enviando el patientId, motherId, nurseId y el mensaje hacia el bounded context Communication, que almacena la consulta en Firebase Firestore generando el evento Consultation Created con todos los datos de la consulta. Communication dispara el bounded context Notification que envia el comando Send Consultation Notification via Firebase FCM a FerovaClinic notificando a la enfermera que tiene una nueva consulta pendiente. En la segunda parte la enfermera abre FerovaClinic, lee la consulta y envia su respuesta mediante el comando Send Reply con el consultationId, nurseId y la respuesta. Communication almacena la respuesta en Firebase Firestore y genera el evento Reply Sent. Notification recibe este evento y envia el comando Send Reply Notification via Firebase FCM a FerovaFamily notificando a la madre que su enfermera ya respondio su consulta.
+Este flujo describe la interacción entre los Bounded Contexts **Communication** y **Notification**, 
+y los sistemas **Firebase Firestore** y **Firebase FCM** durante el intercambio de mensajes entre 
+la madre y su enfermera asignada. El flujo se divide en dos partes:
 
- - <h4>Registro de paciente e asignacion de paciente</h4>
+- **Envío de consulta:** La madre crea una consulta desde FerovaFamily enviando el `patientId`, 
+`motherId`, `nurseId` y el mensaje hacia Communication, que almacena la consulta en Firebase 
+Firestore generando el evento `Consultation Created`. Notification recibe este evento y notifica 
+a la enfermera vía Firebase FCM sobre la nueva consulta pendiente en FerovaClinic.
+
+- **Respuesta de la enfermera:** La enfermera lee la consulta desde FerovaClinic y envía su 
+respuesta mediante el comando `Send Reply`. Communication almacena la respuesta en Firebase 
+Firestore, genera el evento `Reply Sent` y activa Notification, que notifica a la madre vía 
+Firebase FCM que su consulta ha sido respondida.
+
+---
+
+#### Registro y Asignación de Paciente
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Registro de paciente e asignación de paciente.jpg">
 </div>
 
-En este flujo se muestra la interaccion entre el bounded context Patient Management, el bounded context IAM y los sistemas FerovaFamily y FerovaClinic al momento en que se registra un nuevo paciente y se le asigna una enfermera. El flujo se divide en dos partes. En la primera la madre envia el comando Register Patient desde FerovaFamily con los datos del nino como nombre, apellido, fecha de nacimiento y peso. Patient Management procesa el registro y genera el evento Patient Registered con el patientId y el motherId confirmando que el paciente fue creado correctamente en el sistema. En la segunda parte la enfermera inicia el proceso de busqueda desde FerovaClinic enviando la query Search Patient by DNI con el DNI de la madre hacia el bounded context IAM, que verifica que ese DNI existe como usuario registrado en el sistema. IAM devuelve la confirmacion a Patient Management que ejecuta la query Get Patient y retorna los datos completos del paciente a FerovaClinic incluyendo nombre, apellido, fecha de nacimiento, peso, motherId y telefono de la madre. Finalmente la enfermera envia el comando Assign Patient to Nurse con el patientId y el nurseId y Patient Management genera el evento Patient Assigned to Nurse confirmando la vinculacion del paciente con su enfermera responsable.
+Este flujo describe la interacción entre los Bounded Contexts **Patient Management** e **IAM**, 
+y los sistemas **FerovaFamily** y **FerovaClinic** durante el registro de un nuevo paciente y su 
+asignación a una enfermera. El flujo se divide en dos partes:
 
- - <h4>Registro de diario Nutricional</h4>
- 
+- **Registro de paciente:** La madre envía el comando `Register Patient` desde FerovaFamily con 
+los datos del niño (nombre, apellido, fecha de nacimiento y peso). Patient Management procesa el 
+registro y genera el evento `Patient Registered` con el `patientId` y el `motherId`, confirmando 
+la creación del paciente en el sistema.
+
+- **Asignación a enfermera:** La enfermera busca al paciente desde FerovaClinic mediante la query 
+`Search Patient by DNI`. IAM verifica que el DNI existe como usuario registrado y Patient 
+Management retorna los datos completos del paciente. Finalmente, la enfermera envía el comando 
+`Assign Patient to Nurse` con el `patientId` y el `nurseId`, y Patient Management genera el 
+evento `Patient Assigned to Nurse`, confirmando la vinculación entre el paciente y su enfermera 
+responsable.
+
+---
+
+#### Registro de Diario Nutricional
+
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Registro de diario Nutricional.jpg">
 </div>
 
-En este flujo se muestra la interaccion entre el bounded context Nutritional Diary, el bounded context Notification, y los sistemas FerovaFamily, Backend System y Firebase FCM al momento en que la madre registra los alimentos consumidos por su hijo durante el dia. La madre inicia el flujo desde FerovaFamily enviando el comando Create Nutritional Entry con el patientId y la fecha, seguido del comando Register Food Item con el patientId, el alimento y la cantidad. El bounded context Nutritional Diary recibe estos datos y los procesa a traves del Backend System que calcula automaticamente el contenido de hierro de cada alimento generando el evento Iron Content Calculated con el patientId, el alimento, el hierro calculado y el total de hierro del dia. Si el Backend System detecta que algun alimento registrado es un inhibidor de la absorcion de hierro genera el evento Inhibitor Detected con el patientId, el flag isInhibitor, el alimento y el foodInhibitorDetected. Este evento activa el bounded context Notification que envia el comando Send Iron Inhibitor Alert via Firebase FCM a FerovaFamily generando el evento Iron Inhibitor Alert Sent con el mensaje de alerta messageAlertInhibitor para que la madre sea informada en tiempo real del impacto del alimento en el tratamiento de su hijo. Finalmente el Backend System genera el evento Daily Nutritional Summary Generated con el resumen completo del dia incluyendo los alimentos registrados, el hierro calculado y el total de hierro absorbido que se muestra a la madre en FerovaFamily.
+Este flujo describe la interacción entre los Bounded Contexts **Nutritional Diary** y 
+**Notification**, y los sistemas **FerovaFamily**, **Backend System** y **Firebase FCM** durante 
+el registro diario de alimentos consumidos por el niño. El flujo se desarrolla de la siguiente manera:
 
-- <h4>Generación de reporte del distrito</h4>
+- **Registro de alimentos:** La madre envía el comando `Create Nutritional Entry` con el 
+`patientId` y la fecha, seguido del comando `Register Food Item` con el alimento y la cantidad. 
+Nutritional Diary procesa los datos a través del Backend System, que calcula el contenido de 
+hierro de cada alimento y genera el evento `Iron Content Calculated` con el total de hierro del día.
+
+- **Detección de inhibidores:** Si el Backend System detecta un alimento inhibidor de la absorción 
+de hierro, genera el evento `Inhibitor Detected`, que activa Notification para enviar una alerta 
+inmediata a la madre vía Firebase FCM, informándole del impacto del alimento en el tratamiento.
+
+- **Resumen diario:** Al finalizar el registro, el Backend System genera el evento 
+`Daily Nutritional Summary Generated` con el resumen completo del día, incluyendo los alimentos 
+registrados y el total de hierro absorbido, visible para la madre en FerovaFamily.
+
+---
+
+#### Generación de Reporte del Distrito
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Generación de reporte del distrito.jpg">
 </div>
 
-En este flujo se muestra la interaccion entre el bounded context Analytics & Reporting, el sistema Backend System y Google Maps API al momento en que la enfermera envia su reporte de adherencia semanal y el admin visualiza y exporta el reporte del distrito. El flujo se divide en tres partes. En la primera la enfermera envia el comando Submit Adherence Report desde FerovaClinic con el nurseId, facilityId, total de dosis programadas y el periodo reportado. El Backend System recibe los datos y genera el evento Adherence Report Submitted confirmando el registro del reporte. Luego el Backend System calcula automaticamente el porcentaje de adherencia dividiendo las dosis confirmadas entre las dosis programadas y genera el evento Adherence Percentage Calculated con el facilityId, las dosis confirmadas, las dosis programadas y el porcentaje de adherencia. Analytics & Reporting actualiza el reporte de la posta y genera el evento Health Facility Report Updated con el facilityId, el porcentaje de adherencia y la fecha de actualizacion. En la segunda parte el admin envia el comando View District Dashboard con el districtId desde FerovaClinic hacia Analytics & Reporting que genera el evento District Report Generated con el porcentaje de adherencia por posta, la comparativa entre postas y las zonas criticas identificadas. Paralelamente el Sistema Backend envia el comando Generate Heat Map a Google Maps API con el districtId y las coordenadas de las postas, y Google Maps API genera el evento Heat Map Updated coloreando cada posta segun su nivel de adherencia en rojo para zonas criticas, amarillo para riesgo medio y verde para adherencia alta. En la tercera parte el admin envia el comando Export District Report con el districtId y el formato PDF y el Sistema Backend genera el evento District Report Exported con el archivo PDF completo listo para enviarlo al MINSA central.
+Este flujo describe la interacción entre el Bounded Context **Analytics & Reporting**, el 
+**Backend System** y **Google Maps API** durante el reporte de adherencia semanal y la 
+visualización del dashboard distrital. El flujo se divide en tres partes:
 
-- <h4>Confirmacion e inicio del tratamiento de dosis</h4>
+- **Envío de reporte por enfermera:** La enfermera envía el comando `Submit Adherence Report` 
+desde FerovaClinic con el `nurseId`, `facilityId`, total de dosis programadas y el período 
+reportado. El Backend System calcula automáticamente el porcentaje de adherencia y genera el 
+evento `Adherence Percentage Calculated`. Analytics & Reporting actualiza el reporte de la posta 
+y emite el evento `Health Facility Report Updated`.
+
+- **Visualización del dashboard:** El administrador solicita el dashboard distrital desde 
+FerovaClinic. Analytics & Reporting genera el evento `District Report Generated` con el 
+porcentaje de adherencia por posta y las zonas críticas identificadas. Paralelamente, el Backend 
+System envía las coordenadas de las postas a Google Maps API, que genera un mapa de calor 
+coloreando cada posta según su nivel de adherencia: rojo para zonas críticas, amarillo para 
+riesgo medio y verde para adherencia alta.
+
+- **Exportación del reporte:** El administrador exporta el reporte en formato PDF mediante el 
+comando `Export District Report`. El Backend System genera el evento `District Report Exported` 
+con el archivo listo para ser remitido al MINSA central.
+
+---
+
+#### Confirmación e Inicio del Tratamiento de Dosis
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Confirmación e inicio del tratamiento de dosis.jpg">
 </div>
 
- En este flujo se muestra la interaccion entre el bounded context Treatment Tracking, el bounded context Achievements & Rewards, el bounded context Notification y los sistemas FerovaClinic, FerovaFamily y Firebase FCM al momento en que la enfermera inicia el tratamiento de un paciente y la madre confirma la dosis diaria. El flujo se divide en dos partes. En la primera la enfermera envia el comando Start Treatment desde FerovaClinic con el patientId, nurseId, suplemento, cantidad, hora de dosis y duracion del tratamiento en dias. El bounded context Treatment Tracking procesa el comando y genera el evento Treatment Started con el treatmentId, patientId, dosingHours, suplemento, cantidad, fecha de inicio y fecha de fin del tratamiento, activando automaticamente los recordatorios diarios en FerovaFamily. En la segunda parte la madre envia el comando Confirm Daily Dose desde FerovaFamily con el treatmentId, patientId y la fecha de confirmacion hacia Treatment Tracking. Este genera el evento Daily Dose Confirmed con el treatmentId, patientId, la racha actualizada y el score de adherencia del paciente. Treatment Tracking notifica al bounded context Achievements & Rewards que genera el evento Treatment Streak Updated con el patientId, los dias consecutivos cumplidos y los puntos ganados. Achievements & Rewards envia el comando Send Achievement Notification al bounded context Notification con el patientId y el tipo de logro alcanzado. Finalmente Notification genera el evento Notification Sent via Firebase FCM a FerovaFamily con el mensaje celebratorio y la insignia desbloqueada para que la madre vea su progreso en tiempo real.
+Este flujo describe la interacción entre los Bounded Contexts **Treatment Tracking**, 
+**Achievements & Rewards** y **Notification**, y los sistemas **FerovaClinic**, **FerovaFamily** 
+y **Firebase FCM** durante el inicio del tratamiento y la confirmación de la dosis diaria. El 
+flujo se divide en dos partes:
 
-- <h4>Confirmacion de dosis diaria</h4>
+- **Inicio del tratamiento:** La enfermera envía el comando `Start Treatment` desde FerovaClinic 
+con el `patientId`, suplemento, cantidad, hora de dosis y duración del tratamiento. Treatment 
+Tracking genera el evento `Treatment Started` con todos los datos del tratamiento y activa 
+automáticamente los recordatorios diarios en FerovaFamily.
+
+- **Confirmación de dosis:** La madre envía el comando `Confirm Daily Dose` desde FerovaFamily. 
+Treatment Tracking genera el evento `Daily Dose Confirmed` con la racha actualizada y el score 
+de adherencia, y notifica a Achievements & Rewards, que emite el evento `Treatment Streak Updated` 
+con los días consecutivos cumplidos y los puntos ganados. Finalmente, Notification envía vía 
+Firebase FCM el mensaje celebratorio con la insignia desbloqueada para que la madre visualice 
+su progreso en tiempo real.
+
+---
+
+#### Escalamiento de Alertas por Dosis No Confirmada
 
 <div align="center">
 <img src="resources/images/chapter-II/Message_Flows/Confirmación de dosis diaria.jpg">
 </div>
 
-En este flujo se muestra la interaccion entre el bounded context Treatment Tracking, el bounded context Notification y los sistemas Backend System, FerovaFamily, FerovaClinic y Firebase FCM al momento en que la madre no confirma la dosis diaria y el sistema escala automaticamente las alertas. El flujo inicia cuando el Backend System detecta que la madre no confirmo la dosis en el tiempo establecido y genera el evento Daily Dose Omitted con el treatmentId, patientId y la fecha de omision. Treatment Tracking recibe este evento y actualiza automaticamente el score de riesgo del paciente generando el evento Risk Score Updated con el patientId, el riskScore y la clasificacion del semaforo en rojo, amarillo o verde. Paralelamente Treatment Tracking envia el comando Send First Reminder con el patientId y la hora del primer recordatorio al bounded context Notification, que genera el evento First Reminder Sent via Firebase FCM a FerovaFamily con el mensaje de recordatorio de dosis para la madre. Si la madre no responde al primer recordatorio despues de 2 horas, Treatment Tracking envia el comando Send Second Reminder con el patientId y la hora del segundo recordatorio a Notification que genera el evento Send Second Reminder via Firebase FCM con un mensaje mas urgente a FerovaFamily. Si el paciente llega a las 72 horas sin confirmar su dosis el Backend System genera el evento Patient Added to Critical List con el patientId, las horas sin confirmacion y el riskScore. Treatment Tracking envia el comando Send Abandonment Alert al bounded context Notification con el patientId, el score de riesgo y las horas sin dosis. Notification genera el evento Abandonment Alert Sent to Nurse via Firebase FCM a FerovaClinic con el messageAlert y el scoreRisk para que la enfermera tome accion inmediata sobre el paciente en riesgo de abandono.
+Este flujo describe la interacción entre los Bounded Contexts **Treatment Tracking** y 
+**Notification**, y los sistemas **Backend System**, **FerovaFamily**, **FerovaClinic** y 
+**Firebase FCM** cuando la madre no confirma la dosis diaria y el sistema escala las alertas 
+de forma automática. El flujo se desarrolla en etapas progresivas:
+
+- **Detección de omisión:** El Backend System detecta que la madre no confirmó la dosis en el 
+tiempo establecido y genera el evento `Daily Dose Omitted`. Treatment Tracking actualiza 
+automáticamente el score de riesgo del paciente y genera el evento `Risk Score Updated` con la 
+clasificación del semáforo (rojo, amarillo o verde).
+
+- **Primer recordatorio:** Treatment Tracking envía el comando `Send First Reminder` a 
+Notification, que notifica a la madre vía Firebase FCM con un mensaje de recordatorio de dosis.
+
+- **Segundo recordatorio:** Si la madre no responde en las siguientes 2 horas, Treatment Tracking 
+escala la alerta enviando el comando `Send Second Reminder` a Notification, que envía un mensaje 
+más urgente a FerovaFamily.
+
+- **Alerta de abandono:** Si el paciente acumula 72 horas sin confirmar su dosis, el Backend 
+System genera el evento `Patient Added to Critical List`. Treatment Tracking envía el comando 
+`Send Abandonment Alert` a Notification, que alerta a la enfermera vía Firebase FCM en FerovaClinic 
+con el `messageAlert` y el `scoreRisk`, habilitando una acción inmediata sobre el paciente en 
+riesgo de abandono.
 
 ##### 2.5.1.3 Bounded Context Canvases
 
@@ -5511,10 +5753,12 @@ Para mejorar la organización del dominio y facilitar una comunicación consiste
 
 #### 2.5.2 Context Mapping
 
-En esta sección se explica el proceso de elaboración de los contexts maps. Asimismo, se permite la
-visualizacón de las relaciones estructurales entre bounded contexts, junto a los patrones de relaciones
-entre Bounded contexts establecidos en Domain Driven Design, como Anti-corruption Layer,
-Conformist, Customer/Supplier ó Shared Kernel
+En esta sección se explica el proceso de elaboración de los Context Maps, permitiendo visualizar 
+las relaciones estructurales entre los Bounded Contexts del sistema. Se aplican los patrones de 
+relación establecidos en Domain-Driven Design, incluyendo **Customer/Supplier**, 
+**Anti-Corruption Layer**, **Conformist** y **Shared Kernel**.
+
+---
 
 ##### IAM → Patient Management
 
@@ -5522,11 +5766,22 @@ Conformist, Customer/Supplier ó Shared Kernel
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/IAM → Patient Management.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Identity and Access Management (IAM) actua como el upstream (U) y Patient Management actua como el downstream (D).
-IAM es el proveedor porque es el bounded context que gestiona todos los usuarios registrados en la plataforma Ferova. Cuando la enfermera busca a un paciente por el DNI de la madre, Patient Management necesita primero consultar a IAM para verificar que ese DNI existe como usuario registrado en el sistema. De esta manera IAM influye directamente sobre Patient Management ya que sin la validacion del usuario no es posible encontrar ni asignar al paciente.
-Patient Management es el cliente porque depende completamente de IAM para poder operar. Si IAM no valida la existencia del usuario, Patient Management no puede devolver ningun dato del paciente a la enfermera en FerovaClinic.
+En esta relación, **Identity and Access Management (IAM)** actúa como el upstream (U) y 
+**Patient Management** actúa como el downstream (D).
+
+- **IAM como proveedor:** Gestiona todos los usuarios registrados en la plataforma Ferova. Cuando 
+la enfermera busca un paciente por el DNI de la madre, Patient Management debe consultar primero 
+a IAM para verificar que ese DNI corresponde a un usuario registrado en el sistema. IAM influye 
+directamente sobre Patient Management, ya que sin dicha validación no es posible localizar ni 
+asignar al paciente.
+
+- **Patient Management como cliente:** Depende completamente de IAM para operar. Si IAM no 
+valida la existencia del usuario, Patient Management no puede devolver ningún dato del paciente 
+a la enfermera en FerovaClinic.
+
+---
 
 ##### IAM → Treatment Tracking
 
@@ -5534,11 +5789,23 @@ Patient Management es el cliente porque depende completamente de IAM para poder 
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/IAM → Treatment Tracking.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Identity and Access Management (IAM) actua como el upstream (U) y Treatment Tracking actua como el downstream (D).
-IAM es el proveedor porque es el bounded context que valida que el usuario autenticado tiene el rol correcto antes de permitir cualquier operacion sobre el tratamiento. Cuando la enfermera intenta iniciar un tratamiento desde FerovaClinic o la madre intenta confirmar una dosis desde FerovaFamilia, Treatment Tracking necesita que IAM confirme que el token JWT del usuario es valido y que su rol es el correcto para realizar esa accion.
-Treatment Tracking es el cliente porque no puede ejecutar ninguna operacion de tratamiento sin que IAM primero autorice al usuario. Si IAM rechaza el token o detecta que el usuario no tiene el rol adecuado, Treatment Tracking no puede proceder con la confirmacion de dosis ni con el inicio del tratamiento.
+En esta relación, **IAM** actúa como el upstream (U) y **Treatment Tracking** actúa como el 
+downstream (D).
+
+- **IAM como proveedor:** Valida que el usuario autenticado posee el rol correcto antes de 
+permitir cualquier operación sobre el tratamiento. Cuando la enfermera inicia un tratamiento 
+desde FerovaClinic o la madre confirma una dosis desde FerovaFamily, Treatment Tracking requiere 
+que IAM confirme la validez del token JWT y que el rol del usuario sea el adecuado para ejecutar 
+dicha acción.
+
+- **Treatment Tracking como cliente:** No puede ejecutar ninguna operación de tratamiento sin que 
+IAM autorice previamente al usuario. Si IAM rechaza el token o detecta un rol inadecuado, 
+Treatment Tracking no puede proceder con la confirmación de dosis ni con el inicio del 
+tratamiento.
+
+---
 
 ##### Treatment Tracking → Achievements & Rewards
 
@@ -5546,89 +5813,174 @@ Treatment Tracking es el cliente porque no puede ejecutar ninguna operacion de t
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Achievements & Rewards.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Treatment Tracking actua como el upstream (U) y Achievements & Rewards actua como el downstream (D).
-Treatment Tracking es el proveedor porque es el bounded context que genera los eventos que activan toda la logica de gamificacion. Cada vez que la madre confirma una dosis diaria desde FerovaFamilia, Treatment Tracking dispara el evento Daily Dose Confirmed con la informacion del paciente, el tratamiento y la racha actualizada. Sin ese evento Achievements & Rewards no tiene manera de saber que ocurrio algo relevante en el sistema.
-Achievements & Rewards es el cliente porque depende completamente de los eventos que genera Treatment Tracking para poder funcionar. No decide por si solo cuando actualizar la racha, sumar puntos o desbloquear una insignia. Espera pasivamente el evento del upstream y reacciona en consecuencia. Si Treatment Tracking dejara de enviar eventos, Achievements & Rewards quedaria completamente inactivo sin importar lo que la madre haga en la app.
+En esta relación, **Treatment Tracking** actúa como el upstream (U) y **Achievements & Rewards** 
+actúa como el downstream (D).
 
-#####  Treatment Tracking → Notifications
+- **Treatment Tracking como proveedor:** Genera los eventos que activan toda la lógica de 
+gamificación. Cada vez que la madre confirma una dosis desde FerovaFamily, Treatment Tracking 
+emite el evento `Daily Dose Confirmed` con la información del paciente, el tratamiento y la racha 
+actualizada. Sin ese evento, Achievements & Rewards no tiene forma de saber que ocurrió algo 
+relevante en el sistema.
+
+- **Achievements & Rewards como cliente:** Depende completamente de los eventos de Treatment 
+Tracking para funcionar. No decide por sí solo cuándo actualizar la racha, sumar puntos o 
+desbloquear una insignia; simplemente reacciona a los eventos del upstream. Si Treatment Tracking 
+dejara de emitir eventos, Achievements & Rewards quedaría completamente inactivo.
+
+---
+
+##### Treatment Tracking → Notifications
 
 <div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Notifications.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Treatment Tracking actua como el upstream (U) y Notifications actua como el downstream (D).
-Treatment Tracking es el proveedor porque es el bounded context que detecta los eventos criticos del tratamiento y ordena a Notifications que actue. Cuando un paciente lleva 72 horas sin confirmar su dosis, Treatment Tracking genera el evento Patient Added to Critical List con el ID del paciente, el ID de la enfermera y las horas sin confirmacion. Tambien genera el evento Treatment Completed cuando la enfermera cierra exitosamente un tratamiento. En ambos casos Treatment Tracking es quien tiene la informacion y quien decide que algo importante ocurrio.
-Notifications es el cliente porque no tiene logica propia para detectar cuando enviar una alerta. Simplemente espera los eventos del upstream y los convierte en notificaciones push via Firebase FCM dirigidas al usuario correcto. Si Treatment Tracking no le indica que un paciente esta en riesgo, Notifications nunca enviaria la alerta de abandono a la enfermera en FerovaClinic ni el mensaje celebratorio a la madre cuando completa el tratamiento.
+En esta relación, **Treatment Tracking** actúa como el upstream (U) y **Notifications** actúa 
+como el downstream (D).
 
+- **Treatment Tracking como proveedor:** Detecta los eventos críticos del tratamiento y ordena a 
+Notifications que actúe. Cuando un paciente acumula 72 horas sin confirmar su dosis, genera el 
+evento `Patient Added to Critical List`. Cuando la enfermera cierra exitosamente un tratamiento, 
+genera el evento `Treatment Completed`. En ambos casos, es Treatment Tracking quien tiene la 
+información y quien determina que algo importante ha ocurrido.
 
-#####  Nutritional Diary → Notifications
+- **Notifications como cliente:** No posee lógica propia para detectar cuándo enviar una alerta. 
+Espera los eventos del upstream y los convierte en notificaciones push vía Firebase FCM dirigidas 
+al usuario correspondiente. Sin esos eventos, Notifications nunca enviaría la alerta de abandono 
+a la enfermera en FerovaClinic ni el mensaje celebratorio a la madre al completar el tratamiento.
+
+---
+
+##### Nutritional Diary → Notifications
 
 <div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Nutritional Diary → Notifications.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Nutritional Diary actua como el upstream (U) y Notifications actua como el downstream (D).
-Nutritional Diary es el proveedor porque es el bounded context que tiene la logica de deteccion de alimentos inhibidores de la absorcion de hierro. Cuando la madre registra un alimento desde FerovaFamilia, Nutritional Diary procesa la lista predefinida de inhibidores en MongoDB y si detecta uno como leche, te o cafe genera el evento Iron Inhibitor Detected con el ID del paciente, el ID de la madre y el mensaje de alerta predefinido messageAlertInhibitor. Sin ese evento Notifications no tiene manera de saber que la madre registro un alimento que perjudica la absorcion del suplemento de hierro.
-Notifications es el cliente porque depende completamente del evento que genera Nutritional Diary para saber cuando y a quien enviar la alerta de inhibidor. No tiene acceso a la lista de alimentos ni puede detectar inhibidores por si mismo. Simplemente recibe el evento del upstream y lo convierte en una alerta visible inmediatamente en FerovaFamilia para educar a la madre en tiempo real sobre el impacto del alimento en el tratamiento de su hijo
+En esta relación, **Nutritional Diary** actúa como el upstream (U) y **Notifications** actúa 
+como el downstream (D).
 
-#####  Communication → Notifications
+- **Nutritional Diary como proveedor:** Contiene la lógica de detección de alimentos inhibidores 
+de la absorción de hierro. Cuando la madre registra un alimento desde FerovaFamily, Nutritional 
+Diary consulta la lista predefinida de inhibidores en MongoDB y, si detecta uno (como leche, té 
+o café), genera el evento `Iron Inhibitor Detected` con el ID del paciente, el ID de la madre y 
+el mensaje de alerta `messageAlertInhibitor`. Sin ese evento, Notifications no tendría forma de 
+saber que se registró un alimento perjudicial para la absorción del suplemento.
 
+- **Notifications como cliente:** Depende completamente del evento generado por Nutritional Diary 
+para saber cuándo y a quién enviar la alerta. No tiene acceso a la lista de alimentos ni puede 
+detectar inhibidores por sí mismo. Simplemente recibe el evento del upstream y lo convierte en 
+una alerta visible en FerovaFamily para educar a la madre en tiempo real.
+
+---
+
+##### Communication → Notifications
 
 <div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Communication → Notifications.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Communication actua como el upstream (U) y Notifications actua como el downstream (D).
-Communication es el proveedor porque es el bounded context que gestiona toda la logica de la teleconsulta entre la madre y la enfermera. Cuando la madre crea una nueva consulta desde FerovaFamilia, Communication almacena el mensaje en Firebase Firestore y genera el evento Consultation Created con el ID de la enfermera y el ID de la consulta. De igual manera cuando la enfermera responde desde FerovaClinic, Communication genera el evento Reply Sent con el ID de la madre y el ID de la consulta. En ambos casos Communication es quien tiene el conocimiento de que ocurrio una interaccion importante entre los dos usuarios.
-Notifications es el cliente porque no tiene visibilidad sobre lo que ocurre dentro del canal de teleconsulta. No sabe cuando una madre escribio una consulta ni cuando una enfermera respondio. Depende completamente de los eventos que genera Communication para saber a quien notificar y con que mensaje. Sin esos eventos la enfermera nunca sabria que tiene una consulta pendiente en FerovaClinic y la madre nunca sabria que su enfermera ya le respondio en FerovaFamilia.
+En esta relación, **Communication** actúa como el upstream (U) y **Notifications** actúa como 
+el downstream (D).
 
-#####   Health Facility → Notifications
+- **Communication como proveedor:** Gestiona toda la lógica de la teleconsulta entre la madre y 
+la enfermera. Cuando la madre crea una consulta desde FerovaFamily, Communication almacena el 
+mensaje en Firebase Firestore y genera el evento `Consultation Created`. Cuando la enfermera 
+responde desde FerovaClinic, genera el evento `Reply Sent`. En ambos casos, Communication es 
+quien tiene el conocimiento de que ocurrió una interacción relevante entre los usuarios.
 
-<div align  = "center">
+- **Notifications como cliente:** No tiene visibilidad sobre lo que ocurre dentro del canal de 
+teleconsulta. Depende completamente de los eventos de Communication para saber a quién notificar 
+y con qué mensaje. Sin esos eventos, la enfermera nunca sabría que tiene una consulta pendiente 
+en FerovaClinic y la madre nunca sabría que ya recibió una respuesta en FerovaFamily.
+
+---
+
+##### Health Facility → Notifications
+
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Health Facility → Notifications.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Health Facility actua como el upstream (U) y Notifications actua como el downstream (D).
-Health Facility es el proveedor porque es el bounded context que gestiona toda la logica de reserva y cancelacion de citas en las postas medicas del distrito. Cuando la madre reserva una cita desde FerovaFamilia, Health Facility verifica la disponibilidad del horario, confirma la reserva y genera el evento Appointment Confirmed con el ID del paciente, el ID de la madre, el ID de la enfermera, la fecha, la hora y el nombre de la posta medica. De igual manera cuando la madre cancela una cita, Health Facility libera el horario y genera el evento Appointment Cancelled con el ID de la enfermera y los detalles de la cita cancelada. En ambos casos Health Facility es quien tiene el conocimiento completo de lo que ocurrio con la cita.
-Notifications es el cliente porque no tiene acceso a la informacion de las postas ni a la logica de reserva de citas. No puede detectar por si mismo cuando una cita fue confirmada o cancelada. Depende completamente de los eventos que genera Health Facility para saber a quien notificar y con que informacion. Sin esos eventos la madre nunca recibiria la confirmacion de su cita en FerovaFamilia y la enfermera nunca sabria que una madre reservo o cancelo una cita en su posta medica en FerovaClinic.
+En esta relación, **Health Facility** actúa como el upstream (U) y **Notifications** actúa como 
+el downstream (D).
 
-#####   Treatment Tracking → Analytics & Reporting
+- **Health Facility como proveedor:** Gestiona toda la lógica de reserva y cancelación de citas 
+en las postas médicas del distrito. Cuando la madre reserva una cita, Health Facility verifica 
+la disponibilidad, confirma la reserva y genera el evento `Appointment Confirmed` con los datos 
+completos de la cita. Cuando la cancela, libera el horario y genera el evento 
+`Appointment Cancelled`. En ambos casos, Health Facility es quien tiene el conocimiento completo 
+de lo que ocurrió.
 
-<div align  = "center">
+- **Notifications como cliente:** No tiene acceso a la información de las postas ni a la lógica 
+de reservas. Depende completamente de los eventos de Health Facility para saber a quién notificar. 
+Sin esos eventos, la madre no recibiría la confirmación de su cita en FerovaFamily y la enfermera 
+no sería informada de nuevas reservas o cancelaciones en FerovaClinic.
+
+---
+
+##### Treatment Tracking → Analytics & Reporting
+
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Treatment Tracking → Analytics & Reporting.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Treatment Tracking actua como el upstream (U) y Analytics & Reporting actua como el downstream (D).
-Treatment Tracking es el proveedor porque es el bounded context que genera los datos de abandono del tratamiento que alimentan las estadisticas del distrito. Cuando la enfermera registra formalmente el abandono de un tratamiento desde FerovaClinic, Treatment Tracking genera el evento Treatment Abandoned con el ID del paciente, el ID de la posta medica y la fecha de abandono. Este evento es la fuente de informacion que permite a Analytics & Reporting calcular la tasa de abandono por posta, identificar las zonas criticas del distrito y actualizar el mapa de calor con los datos mas recientes.
-Analytics & Reporting es el cliente porque no puede generar por si mismo las estadisticas de abandono sin los datos que provee Treatment Tracking. No tiene acceso directo al estado de los tratamientos ni puede detectar cuando un paciente abandono. Depende completamente del evento del upstream para actualizar las metricas del distrito. Sin ese evento el dashboard analitico del admin MINSA en FerovaClinic mostraria datos incompletos y el mapa de calor no reflejaria correctamente las zonas con mayor tasa de abandono del tratamiento de anemia.
+En esta relación, **Treatment Tracking** actúa como el upstream (U) y **Analytics & Reporting** 
+actúa como el downstream (D).
 
-#####   Health Facility → Analytics & Reporting
+- **Treatment Tracking como proveedor:** Genera los datos de abandono que alimentan las 
+estadísticas del distrito. Cuando la enfermera registra formalmente el abandono de un tratamiento, 
+Treatment Tracking emite el evento `Treatment Abandoned` con el ID del paciente, el ID de la 
+posta y la fecha de abandono. Este evento permite a Analytics & Reporting calcular la tasa de 
+abandono por posta, identificar zonas críticas y actualizar el mapa de calor con datos recientes.
 
-<div align  = "center">
+- **Analytics & Reporting como cliente:** No puede generar estadísticas de abandono sin los datos 
+de Treatment Tracking. No tiene acceso directo al estado de los tratamientos ni puede detectar 
+abandonos por sí mismo. Sin ese evento, el dashboard del administrador MINSA mostraría datos 
+incompletos y el mapa de calor no reflejaría correctamente las zonas con mayor tasa de abandono.
+
+---
+
+##### Health Facility → Analytics & Reporting
+
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/Relatioship/Health Facility → Analytics & Reporting.png">
 </div>
 
-**Patron: Customer / Supplier**
+**Patrón: Customer / Supplier**
 
-En esta relacion Health Facility actua como el upstream (U) y Analytics & Reporting actua como el downstream (D).
-Health Facility es el proveedor porque es el bounded context que gestiona la informacion geografica y organizacional de todas las postas medicas del distrito. Cuando el admin registra una posta desde FerovaClinic, Health Facility almacena sus coordenadas exactas en Google Maps API, su nombre, su direccion y su horario de atencion. Esta informacion geografica es fundamental para que Analytics & Reporting pueda generar el mapa de calor del distrito correctamente, ya que necesita las coordenadas de cada posta para colorearla segun su porcentaje de adherencia y mostrarla en la posicion correcta del mapa.
-Analytics & Reporting es el cliente porque no puede generar el mapa de calor del distrito sin la informacion de ubicacion de las postas que provee Health Facility. No tiene acceso directo a las coordenadas geograficas ni a la lista de postas del distrito. Depende completamente de los datos del upstream para poder colorear cada posta en el mapa segun su nivel de adherencia. Sin esa informacion el admin MINSA veria un dashboard analitico con estadisticas pero sin la visualizacion geografica del mapa de calor que le permite identificar rapidamente las zonas criticas del distrito.
+En esta relación, **Health Facility** actúa como el upstream (U) y **Analytics & Reporting** 
+actúa como el downstream (D).
 
-##### Final Context Map
+- **Health Facility como proveedor:** Gestiona la información geográfica y organizacional de 
+todas las postas médicas del distrito. Al registrar una posta, Health Facility almacena sus 
+coordenadas exactas en Google Maps API, junto con su nombre, dirección y horario de atención. 
+Esta información es fundamental para que Analytics & Reporting pueda posicionar correctamente 
+cada posta en el mapa de calor del distrito.
 
-<div align  = "center">
+- **Analytics & Reporting como cliente:** No puede generar el mapa de calor sin la información 
+de ubicación provista por Health Facility. No tiene acceso directo a las coordenadas geográficas 
+ni a la lista de postas del distrito. Sin esos datos, el administrador MINSA vería estadísticas 
+en el dashboard pero sin la visualización geográfica que le permite identificar rápidamente las 
+zonas críticas del distrito.
+
+---
+
+##### Context Map Final
+
+<div align="center">
 <img src="resources/images/chapter-II/Context_Mapping/View General/Context Mapping.jpg">
 </div>
 
@@ -5696,15 +6048,25 @@ integraciones con plataformas externas.
 ### 2.6 Tactical-Level Domain-Driven Design
 #### 2.6.1. Bounded Context: `Identify and Access Management`
 
-El Bounded Context de Identify and Access Management (IAM) se encarga de gestionar la identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, autenticación y autorización.
+El Bounded Context de **Identity and Access Management (IAM)** se encarga de gestionar la 
+identidad de los usuarios y el control de acceso al sistema, incluyendo procesos como registro, 
+autenticación y autorización.
 
-Este contexto se organiza siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD). El Domain Layer contiene las reglas de negocio, el Interface Layer gestiona la interacción con el usuario, el Application Layer coordina los procesos y el Infrastructure Layer maneja la parte técnica y las integraciones externas.
+Este contexto se organiza siguiendo una arquitectura por capas basada en Domain-Driven Design 
+(DDD). El Domain Layer contiene las reglas de negocio, el Interface Layer gestiona la interacción 
+con el usuario, el Application Layer coordina los procesos y el Infrastructure Layer maneja la 
+parte técnica y las integraciones externas.
 
-Además, se presentan diagramas a nivel de componentes y de código para describir la estructura y el diseño del sistema.
+Además, se presentan diagramas a nivel de componentes y de código para describir la estructura 
+y el diseño del sistema.
+
+---
 
 ##### 2.6.1.1. Domain Layer
 
-En esta sección se definen las clases que representan el núcleo del Bounded Context Identity and Access Management (IAM), encargadas de gestionar la identidad de los usuarios, su autenticación y la asignación de roles dentro del sistema.
+En esta sección se definen las clases que representan el núcleo del Bounded Context IAM, 
+encargadas de gestionar la identidad de los usuarios, su autenticación y la asignación de roles 
+dentro del sistema.
 
 ###### Aggregates
 
@@ -5973,15 +6335,24 @@ Seed inicial:
 
 #### 2.6.2. Bounded Context: `Patient Management`
 
-El Bounded Context de Patient Management se encarga de gestionar la información personal y clínica de los pacientes dentro de la plataforma Ferova. Incluye el registro de pacientes, la actualización de sus datos y el seguimiento de indicadores clave como el nivel de hemoglobina, peso y altura.
+El Bounded Context de **Patient Management** es responsable de gestionar la información personal 
+y clínica de los pacientes dentro de la plataforma Ferova. Incluye el registro de pacientes, 
+la actualización de sus datos y el seguimiento de indicadores clave como el nivel de hemoglobina, 
+el peso y la altura.
 
-Asimismo, permite la asociación del paciente con su madre y la asignación de una enfermera responsable, facilitando el monitoreo continuo y organizado del estado de salud del niño.
+Asimismo, permite la asociación del paciente con su madre y la asignación de una enfermera 
+responsable, facilitando el monitoreo continuo y organizado del estado de salud del niño.
 
-Este contexto se estructura siguiendo una arquitectura por capas basada en Domain-Driven Design (DDD), permitiendo una clara separación de responsabilidades entre la lógica de negocio, la interacción con el usuario, la orquestación de procesos y la implementación técnica.
+Este contexto se estructura siguiendo una arquitectura por capas basada en Domain-Driven Design 
+(DDD), permitiendo una clara separación de responsabilidades entre la lógica de negocio, la 
+interacción con el usuario, la orquestación de procesos y la implementación técnica.
 
 ##### 2.6.2.1. Domain Layer
 
-En esta capa se definen las entidades y reglas de negocio relacionadas con la gestión de pacientes con anemia dentro de la plataforma Ferova. Este bounded context es responsable del registro, almacenamiento y seguimiento de la información clínica básica del paciente, así como su asignación a una enfermera.
+En esta capa se definen las entidades y reglas de negocio relacionadas con la gestión de 
+pacientes con anemia dentro de la plataforma Ferova. Este Bounded Context es responsable del 
+registro, almacenamiento y seguimiento de la información clínica básica del paciente, así como 
+de su asignación a una enfermera responsable.
 
 
 ###### Aggregate
@@ -7927,16 +8298,28 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 #### 2.6.8. Bounded Context: `Health-Facility`
 
-El bounded context Health Facility gestiona toda la informacion geografica y organizacional de las postas medicas del distrito dentro de la plataforma Ferova. Su proposito es registrar las postas del MINSA con sus coordenadas GPS, horarios de atencion y personal asignado, permitir a la madre encontrar la posta mas cercana desde FerovaFamilia usando Google Maps API, y gestionar la reserva y cancelacion de citas presenciales entre la madre y la enfermera. Es el bounded context que provee el districtId y las coordenadas geograficas al BC Analytics & Reporting para renderizar el mapa de calor del distrito.
+El Bounded Context **Health Facility** gestiona toda la información geográfica y organizacional 
+de las postas médicas del distrito dentro de la plataforma Ferova. Su propósito es registrar 
+las postas del MINSA con sus coordenadas GPS, horarios de atención y personal asignado, permitir 
+a la madre encontrar la posta más cercana desde FerovaFamily usando Google Maps API, y gestionar 
+la reserva y cancelación de citas presenciales entre la madre y la enfermera. Es el Bounded 
+Context que provee el `districtId` y las coordenadas geográficas al BC Analytics & Reporting 
+para renderizar el mapa de calor del distrito.
 
 
 ##### 2.6.8.1. Domain Layer
 
-En esta seccion se documentan las clases que forman el core del bounded context Health Facility. Aqui se definen las reglas de negocio relacionadas con el registro de postas medicas, la asignacion de enfermeras y la gestion de citas presenciales. Se incluyen el Aggregate Root HealthFacility, las entidades Appointment y NurseAssignment, los Value Objects FacilityStatus y AppointmentStatus, el Domain Service FacilityLocatorService, las interfaces de los Repositories y los Domain Events generados por el bounded context.
+En esta sección se documentan las clases que forman el core del Bounded Context Health Facility. 
+Aquí se definen las reglas de negocio relacionadas con el registro de postas médicas, la 
+asignación de enfermeras y la gestión de citas presenciales. Se incluyen el Aggregate Root 
+`HealthFacility`, las entidades `Appointment` y `NurseAssignment`, los Value Objects 
+`FacilityStatus` y `AppointmentStatus`, el Domain Service `FacilityLocatorService`, las 
+interfaces de los Repositories y los Domain Events generados por el Bounded Context.
 
 ###### Aggregate Root: HealthFacility
 
-**Proposito:** Representa una posta medica del MINSA registrada en la plataforma Ferova. Gestiona la informacion geografica de la posta, su personal asignado y sus citas programadas.
+**Propósito:** Representa una posta médica del MINSA registrada en la plataforma Ferova. 
+Gestiona la información geográfica de la posta, su personal asignado y sus citas programadas.
 
 | Categoría | Elemento | Detalle | Descripción |
 | :--- | :--- | :--- | :--- |
