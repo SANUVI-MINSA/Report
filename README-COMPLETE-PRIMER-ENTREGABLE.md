@@ -79,168 +79,169 @@ La colaboracion del equipo al realizar el primer avance del proyecto fue activa,
 # Tabla de contenidos
 
 
-## [Capítulo I: Presentación](README-COMPLETE-PRIMER-ENTREGABLE.md#capítulo-i-presentación-1)
+## [Capítulo I: Presentación](#capítulo-i-presentación-1)
 
-* [1.1 Startup Profile](README-COMPLETE-PRIMER-ENTREGABLE.md#11-startup-profile)
+* [1.1 Startup Profile](#11-startup-profile)
 
-  * [1.1.1 Descripción de la Startup](README-COMPLETE-PRIMER-ENTREGABLE.md#111-descripción-de-la-startup)
-  * [1.1.2 Perfiles de integrantes del equipo](README-COMPLETE-PRIMER-ENTREGABLE.md#112-perfiles-de-integrantes-del-equipo)
-* [1.2 Solution Profile](README-COMPLETE-PRIMER-ENTREGABLE.md#12-solution-profile)
+  * [1.1.1 Descripción de la Startup](#111-descripción-de-la-startup)
+  * [1.1.2 Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+* [1.2 Solution Profile](#12-solution-profile)
 
-  * [1.2.1 Antecedentes y problemática](README-COMPLETE-PRIMER-ENTREGABLE.md#121-antecedentes-y-problemática)
-  * [1.2.2 Lean UX Process](README-COMPLETE-PRIMER-ENTREGABLE.md#122-lean-ux-process)
+  * [1.2.1 Antecedentes y problemática](#121-antecedentes-y-problemática)
+  * [1.2.2 Lean UX Process](#122-lean-ux-process)
 
-    * [1.2.2.1 Lean UX Problem Statements](README-COMPLETE-PRIMER-ENTREGABLE.md#1221-lean-ux-problem-statements)
-    * [1.2.2.2 Lean UX Assumptions](README-COMPLETE-PRIMER-ENTREGABLE.md#1222-lean-ux-assumptions)
-    * [1.2.2.3 Lean UX Hypothesis Statements](README-COMPLETE-PRIMER-ENTREGABLE.md#1223-lean-ux-hypothesis-statements)
-    * [1.2.2.4 Lean UX Canvas](README-COMPLETE-PRIMER-ENTREGABLE.md#1224-lean-ux-canvas)
-* [1.3 Segmentos objetivo](README-COMPLETE-PRIMER-ENTREGABLE.md#13-segmentos-objetivo)
+    * [1.2.2.1 Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+    * [1.2.2.2 Lean UX Assumptions](#1222-lean-ux-assumptions)
+    * [1.2.2.3 Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+    * [1.2.2.4 Lean UX Canvas](#1224-lean-ux-canvas)
+* [1.3 Segmentos objetivo](#13-segmentos-objetivo)
 
-## [Capítulo II: Requirements Development and Software Solution Design](README-COMPLETE-PRIMER-ENTREGABLE.md#capítulo-ii-requirements-development-and-software-solution-design-1)
+## [Capítulo II: Requirements Development and Software Solution Design](#capítulo-ii-requirements-development-and-software-solution-design-1)
 
-* [2.1 Competidores](README-COMPLETE-PRIMER-ENTREGABLE.md#21-competidores)
+* [2.1 Competidores](#21-competidores)
 
-  * [2.1.1 Análisis competitivo](README-COMPLETE-PRIMER-ENTREGABLE.md#211-análisis-competitivo)
-  * [2.1.2 Estrategias y tácticas frente a competidores](README-COMPLETE-PRIMER-ENTREGABLE.md#212-estrategias-y-tácticas-frente-a-competidores)
-* [2.2 Entrevistas](README-COMPLETE-PRIMER-ENTREGABLE.md#22-entrevistas)
+  * [2.1.1 Análisis competitivo](#211-análisis-competitivo)
+  * [2.1.2 Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+* [2.2 Entrevistas](#22-entrevistas)
 
-  * [2.2.1 Diseño de entrevistas](README-COMPLETE-PRIMER-ENTREGABLE.md#221-diseño-de-entrevistas)
-  * [2.2.2 Registro de entrevistas](README-COMPLETE-PRIMER-ENTREGABLE.md#222-registro-de-entrevistas)
-  * [2.2.3 Análisis de entrevistas](README-COMPLETE-PRIMER-ENTREGABLE.md#223-análisis-de-entrevistas)
-* [2.3 Needfinding](README-COMPLETE-PRIMER-ENTREGABLE.md#23-needfinding)
+  * [2.2.1 Diseño de entrevistas](#221-diseño-de-entrevistas)
+  * [2.2.2 Registro de entrevistas](#222-registro-de-entrevistas)
+  * [2.2.3 Análisis de entrevistas](#223-análisis-de-entrevistas)
+* [2.3 Needfinding](#23-needfinding)
 
-  * [2.3.1 User Personas](README-COMPLETE-PRIMER-ENTREGABLE.md#231-user-personas)
-  * [2.3.2 User Task Matrix](README-COMPLETE-PRIMER-ENTREGABLE.md#232-user-task-matrix)
-  * [2.3.3 User Journey Mapping](README-COMPLETE-PRIMER-ENTREGABLE.md#233-user-journey-mapping)
-  * [2.3.4 Empathy Mapping](README-COMPLETE-PRIMER-ENTREGABLE.md#234-empathy-mapping)
-  * [2.3.5 Ubiquitous Language](README-COMPLETE-PRIMER-ENTREGABLE.md#235-ubiquitous-language)
-* [2.4 Requirements Specification](README-COMPLETE-PRIMER-ENTREGABLE.md#24-requirements-specification)
+  * [2.3.1 User Personas](#231-user-personas)
+  * [2.3.2 User Task Matrix](#232-user-task-matrix)
+  * [2.3.3 User Journey Mapping](#233-user-journey-mapping)
+  * [2.3.4 Empathy Mapping](#234-empathy-mapping)
+  * [2.3.5 Ubiquitous Language](#235-ubiquitous-language)
+* [2.4 Requirements Specification](#24-requirements-specification)
 
-  * [2.4.1 User Stories](README-COMPLETE-PRIMER-ENTREGABLE.md#241-user-stories)
-  * [2.4.2 Impact Mapping](README-COMPLETE-PRIMER-ENTREGABLE.md#242-impact-mapping)
-  * [2.4.3 Product Backlog](README-COMPLETE-PRIMER-ENTREGABLE.md#243-product-backlog)
-* [2.5 Strategic-Level Domain-Driven Design](README-COMPLETE-PRIMER-ENTREGABLE.md#25-strategic-level-domain-driven-design)
+  * [2.4.1 User Stories](#241-user-stories)
+  * [2.4.2 Impact Mapping](#242-impact-mapping)
+  * [2.4.3 Product Backlog](#243-product-backlog)
+* [2.5 Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)
 
-  * [2.5.1 EventStorming](README-COMPLETE-PRIMER-ENTREGABLE.md#251-eventstorming)
+  * [2.5.1 EventStorming](#251-eventstorming)
 
-    * [2.5.1.1 Candidate Context Discovery](README-COMPLETE-PRIMER-ENTREGABLE.md#2511-candidate-context-discovery)
-    * [2.5.1.2 Domain Message Flows Modeling](README-COMPLETE-PRIMER-ENTREGABLE.md#2512-domain-message-flows-modeling)
-    * [2.5.1.3 Bounded Context Canvases](README-COMPLETE-PRIMER-ENTREGABLE.md#2513-bounded-context-canvases)
-  * [2.5.2 Context Mapping](README-COMPLETE-PRIMER-ENTREGABLE.md#252-context-mapping)
-  * [2.5.3 Software Architecture](README-COMPLETE-PRIMER-ENTREGABLE.md#253-software-architecture)
+    * [2.5.1.1 Candidate Context Discovery](#2511-candidate-context-discovery)
+    * [2.5.1.2 Domain Message Flows Modeling](#2512-domain-message-flows-modeling)
+    * [2.5.1.3 Bounded Context Canvases](#2513-bounded-context-canvases)
+  * [2.5.2 Context Mapping](#252-context-mapping)
+  * [2.5.3 Software Architecture](#253-software-architecture)
 
-    * [2.5.3.1 Software Architecture Context Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2531-software-architecture-context-level-diagrams)
-    * [2.5.3.2 Software Architecture Container Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2532-software-architecture-container-level-diagrams)
-    * [2.5.3.3 Software Architecture Deployment Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2533-software-architecture-deployment-diagrams)
-* [2.6 Tactical-Level Domain-Driven Design](README-COMPLETE-PRIMER-ENTREGABLE.md#26-tactical-level-domain-driven-design)
+    * [2.5.3.1 Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)
+    * [2.5.3.2 Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
+    * [2.5.3.3 Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
+* [2.6 Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
 
-  * [2.6.1. Bounded Context: `identify-and-access-management`](README-COMPLETE-PRIMER-ENTREGABLE.md#261-bounded-context-identify-and-access-management)
+  * [2.6.1. Bounded Context: `identify-and-access-management`](#261-bounded-context-identify-and-access-management)
 
-    * [2.6.1.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2611-domain-layer)
-    * [2.6.1.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2612-interface-layer)
-    * [2.6.1.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2613-application-layer)
-    * [2.6.1.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2614-infrastructure-layer)
-    * [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2615-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.1.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2616-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26161-bounded-context-domain-layer-class-diagrams)
-    * [2.6.1.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26162-bounded-context-database-design-diagram)
+    * [2.6.1.1. Domain Layer](#2611-domain-layer)
+    * [2.6.1.2. Interface Layer](#2612-interface-layer)
+    * [2.6.1.3. Application Layer](#2613-application-layer)
+    * [2.6.1.4. Infrastructure Layer](#2614-infrastructure-layer)
+    * [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.1.6. Bounded Context Software Architecture Code Level Diagrams](#2616-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#26161-bounded-context-domain-layer-class-diagrams)
+    * [2.6.1.6.2. Bounded Context Database Design Diagram](#26162-bounded-context-database-design-diagram)
 
-  * [2.6.2. Bounded Context: `Patient Management`](README-COMPLETE-PRIMER-ENTREGABLE.md#262-bounded-context-patient-management)
+  * [2.6.2. Bounded Context: `Patient Management`](#262-bounded-context-patient-management)
 
-    * [2.6.2.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2621-domain-layer)
-    * [2.6.2.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2622-interface-layer)
-    * [2.6.2.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2623-application-layer)
-    * [2.6.2.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2624-infrastructure-layer)
-    * [2.6.2.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2625-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.2.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2626-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.2.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26261-bounded-context-domain-layer-class-diagrams)
-    * [2.6.2.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26262-bounded-context-database-design-diagram)
+    * [2.6.2.1. Domain Layer](#2621-domain-layer)
+    * [2.6.2.2. Interface Layer](#2622-interface-layer)
+    * [2.6.2.3. Application Layer](#2623-application-layer)
+    * [2.6.2.4. Infrastructure Layer](#2624-infrastructure-layer)
+    * [2.6.2.5. Bounded Context Software Architecture Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.2.6. Bounded Context Software Architecture Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.2.6.1. Bounded Context Domain Layer Class Diagrams](#26261-bounded-context-domain-layer-class-diagrams)
+    * [2.6.2.6.2. Bounded Context Database Design Diagram](#26262-bounded-context-database-design-diagram)
 
-  * [2.6.3. Bounded Context: `Notification Management`](README-COMPLETE-PRIMER-ENTREGABLE.md#263-bounded-context-notifications)
+  * [2.6.3. Bounded Context: `Notification Management`](#263-bounded-context-notifications)
 
-    * [2.6.3.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2631-domain-layer)
-    * [2.6.3.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2632-interface-layer)
-    * [2.6.3.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2633-application-layer)
-    * [2.6.3.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2634-infrastructure-layer)
-    * [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2635-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2636-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26231-bounded-context-domain-layer-class-diagrams)
-    * [2.6.3.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26232-bounded-context-database-design-diagram)
+    * [2.6.3.1. Domain Layer](#2631-domain-layer)
+    * [2.6.3.2. Interface Layer](#2632-interface-layer)
+    * [2.6.3.3. Application Layer](#2633-application-layer)
+    * [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
+    * [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](#26231-bounded-context-domain-layer-class-diagrams)
+    * [2.6.3.6.2. Bounded Context Database Design Diagram](#26232-bounded-context-database-design-diagram)
 
 
-  * [2.6.4. Bounded Context: `Comunication Management`](README-COMPLETE-PRIMER-ENTREGABLE.md#264-bounded-context-comunication-management)
+  * [2.6.4. Bounded Context: `Comunication Management`](#264-bounded-context-comunication-management)
 
-    * [2.6.4.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2641-domain-layer)
-    * [2.6.4.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2642-interface-layer)
-    * [2.6.4.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2643-application-layer)
-    * [2.6.4.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2644-infrastructure-layer)
-    * [2.6.4.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2645-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.4.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2646-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.4.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26461-bounded-context-domain-layer-class-diagrams)
-    * [2.6.4.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26462-bounded-context-database-design-diagram)
-
-      
-  * [2.6.5. Bounded Context: `Treatment Tracking`](README-COMPLETE-PRIMER-ENTREGABLE.md#265-bounded-context-treatment-tracking)
-
-    * [2.6.5.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2651-domain-layer)
-    * [2.6.5.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2652-interface-layer)
-    * [2.6.5.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2653-application-layer)
-    * [2.6.5.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2654-infrastructure-layer)
-    * [2.6.5.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2655-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.5.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2656-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.5.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26561-bounded-context-domain-layer-class-diagrams)
-    * [2.6.5.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26562-bounded-context-database-design-diagram)
-
-  * [2.6.6. Bounded Context: `Achievements & Rewards`](README-COMPLETE-PRIMER-ENTREGABLE.md#266-bounded-context-achievements--rewards)
-
-    * [2.6.6.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2661-domain-layer)
-    * [2.6.6.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2662-interface-layer)
-    * [2.6.6.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2663-application-layer)
-    * [2.6.6.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2664-infrastructure-layer)
-    * [2.6.6.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2665-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.6.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2666-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.6.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26661-bounded-context-domain-layer-class-diagrams)
-    * [2.6.6.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26662-bounded-context-database-design-diagram)
-
-  * [2.6.7. Bounded Context: `Analytics & Reporitng`](README-COMPLETE-PRIMER-ENTREGABLE.md#267-bounded-context-analytics--reporting)
-
-    * [2.6.7.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2671-domain-layer)
-    * [2.6.7.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2672-interface-layer)
-    * [2.6.7.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2673-application-layer)
-    * [2.6.7.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2674-infrastructure-layer)
-    * [2.6.7.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2675-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.7.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2676-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.7.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26761-bounded-context-domain-layer-class-diagrams)
-    * [2.6.7.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26762-bounded-context-database-design-diagram)
+    * [2.6.4.1. Domain Layer](#2641-domain-layer)
+    * [2.6.4.2. Interface Layer](#2642-interface-layer)
+    * [2.6.4.3. Application Layer](#2643-application-layer)
+    * [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
+    * [2.6.4.5. Bounded Context Software Architecture Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.4.6. Bounded Context Software Architecture Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.4.6.1. Bounded Context Domain Layer Class Diagrams](#26461-bounded-context-domain-layer-class-diagrams)
+    * [2.6.4.6.2. Bounded Context Database Design Diagram](#26462-bounded-context-database-design-diagram)
 
       
-  * [2.6.8. Bounded Context: `Health-Facility`](README-COMPLETE-PRIMER-ENTREGABLE.md#268-bounded-context-health-facility)
+  * [2.6.5. Bounded Context: `Treatment Tracking`](#265-bounded-context-treatment-tracking)
 
-    * [2.6.8.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2681-domain-layer)
-    * [2.6.8.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2682-interface-layer)
-    * [2.6.8.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2683-application-layer)
-    * [2.6.8.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2684-infrastructure-layer)
-    * [2.6.8.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2685-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.8.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2686-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.8.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26861-bounded-context-domain-layer-class-diagrams)
-    * [2.6.8.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26862-bounded-context-database-design-diagram)
+    * [2.6.5.1. Domain Layer](#2651-domain-layer)
+    * [2.6.5.2. Interface Layer](#2652-interface-layer)
+    * [2.6.5.3. Application Layer](#2653-application-layer)
+    * [2.6.5.4. Infrastructure Layer](#2654-infrastructure-layer)
+    * [2.6.5.5. Bounded Context Software Architecture Component Level Diagrams](#2655-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.5.6. Bounded Context Software Architecture Code Level Diagrams](#2656-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.5.6.1. Bounded Context Domain Layer Class Diagrams](#26561-bounded-context-domain-layer-class-diagrams)
+    * [2.6.5.6.2. Bounded Context Database Design Diagram](#26562-bounded-context-database-design-diagram)
 
-  * [2.6.9. Bounded Context: `Nutritional Diary`](README-COMPLETE-PRIMER-ENTREGABLE.md#269-bounded-context-nutritional-diary)
+  * [2.6.6. Bounded Context: `Achievements & Rewards`](#266-bounded-context-achievements--rewards)
 
-    * [2.6.9.1. Domain Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2691-domain-layer)
-    * [2.6.9.2. Interface Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2692-interface-layer)
-    * [2.6.9.3. Application Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2693-application-layer)
-    * [2.6.9.4. Infrastructure Layer](README-COMPLETE-PRIMER-ENTREGABLE.md#2694-infrastructure-layer)
-    * [2.6.9.5. Bounded Context Software Architecture Component Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2695-bounded-context-software-architecture-component-level-diagrams)
-    * [2.6.9.6. Bounded Context Software Architecture Code Level Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#2696-bounded-context-software-architecture-code-level-diagrams)
-    * [2.6.9.6.1. Bounded Context Domain Layer Class Diagrams](README-COMPLETE-PRIMER-ENTREGABLE.md#26961-bounded-context-domain-layer-class-diagrams)
-    * [2.6.9.6.2. Bounded Context Database Design Diagram](README-COMPLETE-PRIMER-ENTREGABLE.md#26962-bounded-context-database-design-diagram)
+    * [2.6.6.1. Domain Layer](#2661-domain-layer)
+    * [2.6.6.2. Interface Layer](#2662-interface-layer)
+    * [2.6.6.3. Application Layer](#2663-application-layer)
+    * [2.6.6.4. Infrastructure Layer](#2664-infrastructure-layer)
+    * [2.6.6.5. Bounded Context Software Architecture Component Level Diagrams](#2665-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.6.6. Bounded Context Software Architecture Code Level Diagrams](#2666-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.6.6.1. Bounded Context Domain Layer Class Diagrams](#26661-bounded-context-domain-layer-class-diagrams)
+    * [2.6.6.6.2. Bounded Context Database Design Diagram](#26662-bounded-context-database-design-diagram)
+
+  * [2.6.7. Bounded Context: `Analytics & Reporitng`](#267-bounded-context-analytics--reporting)
+
+    * [2.6.7.1. Domain Layer](#2671-domain-layer)
+    * [2.6.7.2. Interface Layer](#2672-interface-layer)
+    * [2.6.7.3. Application Layer](#2673-application-layer)
+    * [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
+    * [2.6.7.5. Bounded Context Software Architecture Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.7.6. Bounded Context Software Architecture Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.7.6.1. Bounded Context Domain Layer Class Diagrams](#26761-bounded-context-domain-layer-class-diagrams)
+    * [2.6.7.6.2. Bounded Context Database Design Diagram](#26762-bounded-context-database-design-diagram)
+
+      
+  * [2.6.8. Bounded Context: `Health-Facility`](#268-bounded-context-health-facility)
+
+    * [2.6.8.1. Domain Layer](#2681-domain-layer)
+    * [2.6.8.2. Interface Layer](#2682-interface-layer)
+    * [2.6.8.3. Application Layer](#2683-application-layer)
+    * [2.6.8.4. Infrastructure Layer](#2684-infrastructure-layer)
+    * [2.6.8.5. Bounded Context Software Architecture Component Level Diagrams](#2685-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.8.6. Bounded Context Software Architecture Code Level Diagrams](#2686-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.8.6.1. Bounded Context Domain Layer Class Diagrams](#26861-bounded-context-domain-layer-class-diagrams)
+    * [2.6.8.6.2. Bounded Context Database Design Diagram](#26862-bounded-context-database-design-diagram)
+
+  * [2.6.9. Bounded Context: `Nutritional Diary`](#269-bounded-context-nutritional-diary)
+
+    * [2.6.9.1. Domain Layer](#2691-domain-layer)
+    * [2.6.9.2. Interface Layer](#2692-interface-layer)
+    * [2.6.9.3. Application Layer](#2693-application-layer)
+    * [2.6.9.4. Infrastructure Layer](#2694-infrastructure-layer)
+    * [2.6.9.5. Bounded Context Software Architecture Component Level Diagrams](#2695-bounded-context-software-architecture-component-level-diagrams)
+    * [2.6.9.6. Bounded Context Software Architecture Code Level Diagrams](#2696-bounded-context-software-architecture-code-level-diagrams)
+    * [2.6.9.6.1. Bounded Context Domain Layer Class Diagrams](#26961-bounded-context-domain-layer-class-diagrams)
+    * [2.6.9.6.2. Bounded Context Database Design Diagram](#26962-bounded-context-database-design-diagram)
       
 
-## [Conclusiones](README-COMPLETE-PRIMER-ENTREGABLE.md#conclusiones)
+# [Conclusiones](#conclusiones-1)
 
-## [Bibliografía](README-COMPLETE-PRIMER-ENTREGABLE.md#biblografia)
-## [Anexos](README-COMPLETE-PRIMER-ENTREGABLE.md#anexos)
+# [Bibliografia](#biblografia)
+
+# [Anexos](#anexos-1)
 
 </div>
 
@@ -9533,11 +9534,10 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 </div>
 
 
-<div class="toc">
 
 ## Conclusiones
 
-#### En relación a los Problem Statements
+<h4>En relación a los Problem Statements </h4>
 
 El problema central identificado — el abandono del tratamiento de anemia 
 por parte de los padres de familia — se sustenta en evidencia estadística 
@@ -9563,7 +9563,9 @@ panel de semáforo de riesgo en FerovaClinic fue el elemento que más
 llamó la atención de las enfermeras, quienes señalaron que les permitiría 
 actuar antes de que el abandono ocurra.
 
-#### En relación a los Assumptions
+<h4> En relación a los Assumptions </h4>
+
+
 
 1. **Assumption sobre la adopción por parte de los padres de familia** — 
 Se asumió que los padres de familia seguirían el tratamiento si contaban 
@@ -9585,7 +9587,7 @@ fue mitigado mediante el almacenamiento local en Room DB (FerovaFamilia)
 y Hive (FerovaClinic), garantizando el registro de dosis sin conexión 
 a internet y sincronizando cuando la conectividad se restablece.
 
-#### En relación a los Hypothesis Statements y criterios de éxito
+<h4> En relación a los Hypothesis Statements y criterios de éxito </h4>
 
 1. **Hipótesis 1 — El 90% de las dosis programadas serán consumidas y 
 registradas correctamente** — Durante las validaciones, los usuarios 
@@ -9615,9 +9617,8 @@ del dispositivo reduce la fricción del registro. Se estima que el criterio
 es alcanzable si se acompaña de un recordatorio automático previo a cada 
 cita de control.
 
----
 
-### Recomendaciones y Roadmap
+<h4> Recomendaciones y Roadmap <h4>
 
 A partir de los resultados obtenidos, el equipo de Sanuvi propone los 
 siguientes pasos para el roadmap de los productos digitales que conforman 
@@ -9660,7 +9661,7 @@ el modelo de negocio de Ferova:
 
 
 
-# Biblografia
+## Biblografia
 
 **Ambreen, A., Habib, A., Sajjad, A. H., Malik, A. J., & Javed, Q.** (2025).
 Assessment of adherence to oral iron supplementation guidelines in patients with iron deficiency anemia: A cross-sectional study.
@@ -9791,7 +9792,6 @@ Efecto de la anemia en el desarrollo infantil: consecuencias a largo plazo.
 🔗 [Ver fuente](https://www.redalyc.org/pdf/363/36353911020.pdf)
 
 ---
-
 
 
 ## Anexos
