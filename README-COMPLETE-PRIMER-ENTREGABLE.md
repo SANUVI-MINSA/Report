@@ -5612,7 +5612,9 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
 
 En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
 
-![Foto de Impact Mapping](/resources/images/chapter-II/Impact-Map/Impact.png)
+<div align ="center">
+<img src="resources/images/chapter-II/Impact-Map/Impact.png">
+</div>
 
 #### 2.4.3 Product Backlog
 
@@ -7347,21 +7349,21 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 ##### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
 
 <div align = "center">
-  <img src="/resources/images/chapter-II/Software_Architecture/Notifications/c4-notifications.png">
+  <img src="resources/images/chapter-II/Software_Architecture/Notifications/c4-notifications.png">
 </div>
 
 ##### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
 ###### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
 
 <div align = "center">
-  <img src="/resources/images/chapter-II/Class_Diagram/Notification/diagrama class notifications.png">
+  <img src="resources/images/chapter-II/Class_Diagram/Notification/diagrama class notifications.png">
 </div>
 
 ###### 2.6.3.6.2. Bounded Context Database Design Diagram
 
 
 <div align = "center">
-  <img src="/resources/images/chapter-II/DB_Diagram/Notification/diagram data base not realtional.png">
+  <img src="resources/images/chapter-II/DB_Diagram/Notification/diagram data base not realtional.png">
 </div>
 
 #### 2.6.4. Bounded Context: `Comunication Management`
