@@ -6928,6 +6928,9 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
   "id": "patient-1",
   "name": "Juan",
   "lastName": "Perez",
+  "motherId": "mother:uuid",
+  "nurseId": "nurse:uuid",
+  "facilityId:" "facility:uuid",
   "sexo": "MASCULINO",
   "currentWeight": 12.5,
   "currentHeight": 85.0,
@@ -6992,6 +6995,7 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 
 #### **5. AssignNurseRequest**
 **Propósito:** Envía el identificador de la enfermera que tratara al paciente.
+contiene solo el ID de la enfermera. El facilityId se hereda automáticamente de la posta de esa enfermera.
 
 ```json
 {
@@ -7017,6 +7021,7 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 | **ControlCommandAssembler** | `AddControlRequest` → `Control` | Transforma los datos de seguimiento en un objeto de control, permitiendo cálculos lógicos como el estado de anemia. |
 | **PatientResourceFromEntityAssembler** | `Patient (Entity)` → `PatientResource` | Transforma la entidad del dominio en un recurso seguro y resumido para ser enviado al cliente. |
 | **DischargePatientCommandAssembler** | `DischargePatientRequest` → `DischargePatientCommand` | Traduce la petición de alta médica en una instrucción ejecutable por el negocio. |
+| **AssignNurseCommandFromResourceAssembler** | `AssignNurseRequest` → `AssignNurseCommand` | Convierte la petición en un comando, consultando el centro de salud para obtener el identificador de la posta de la enfermera. |
 
 ##### 2.6.2.3. Application Layer
 
@@ -7031,6 +7036,7 @@ En esta capa se coordinan los casos de uso del sistema relacionados con la gesti
 | **CreateMedicalRecordCommandHandler** | Registrar historial médico inicial. | Buscar paciente, crear MedicalRecord, asociarlo y guardar cambios. |
 | **AddControlCommandHandler** | Agregar control en consulta posterior. | Buscar paciente/registro, crear Control, calcular estado y guardar. |
 | **DischargePatientCommandHandler** | Dar de alta médica al paciente. | Validar enfermera, cambiar estado a DISCHARGED, generar evento y guardar. |
+| **AssignNurseCommandHandler** | Asignar una enfermera y su puesto de salud a un paciente. Recibe el comando, obtiene el `facilityId` del centro de salud, actualiza al paciente mediante el Agregado y dispara el evento `NurseAssignedToPatient`. |
 
 ###### Query Handlers (Application Layer)
 
@@ -7087,6 +7093,7 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
   "currentHemoglobinLevel": 10.5,
   "motherId": "user-123",
   "nurseId": "nurse-456",
+  "facilityId": "facility:uuid",
   "status": "IN_TREATMENT"
 }
 ```
