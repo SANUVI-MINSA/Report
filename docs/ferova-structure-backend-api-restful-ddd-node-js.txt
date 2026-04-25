@@ -1,0 +1,740 @@
+ferova-backend/
+├── src/
+│   │
+│   ├── bounded-contexts/
+│   │   │
+│   │   ├── iam/                                        # BC1: Identity & Access Management
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── user.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── role.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   │   ├── username.value-object.js
+│   │   │   │   │   └── password.value-object.js
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   └── role-type.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── create-user.command.js
+│   │   │   │   │   ├── change-password.command.js
+│   │   │   │   │   └── assign-role.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-user.query.js
+│   │   │   │   │   └── list-roles.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── user.repository.js
+│   │   │   │   │   └── role.repository.js
+│   │   │   │   └── services/
+│   │   │   │       ├── password-policy.service.js
+│   │   │   │       └── role-resolution.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── create-user.command-handler.js
+│   │   │   │   │   ├── change-password.command-handler.js
+│   │   │   │   │   └── assign-role.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-user.query-handler.js
+│   │   │   │   │   └── list-roles.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-user-created.event-handler.js
+│   │   │   │       └── on-user-password-changed.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── auth.controller.js
+│   │   │   │   │   ├── users.controller.js
+│   │   │   │   │   └── roles.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   ├── login.request.js
+│   │   │   │       │   ├── create-user.request.js
+│   │   │   │       │   └── change-password.request.js
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── token.response.js
+│   │   │   │       │   ├── user.response.js
+│   │   │   │       │   └── role.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── create-user-command-from-resource.assembler.js
+│   │   │   │           ├── user-response-from-entity.assembler.js
+│   │   │   │           └── assign-role-command-from-resource.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   ├── mongo.config.js
+│   │   │       │   └── security.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── user.schema.js
+│   │   │       │       ├── role.schema.js
+│   │   │       │       ├── mongo-user.repository.js
+│   │   │       │       └── mongo-role.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── user-document.mapper.js
+│   │   │       │   └── role-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │               ├── bcrypt-password-hasher.adapter.js
+│   │   │               └── jwt-token-provider.adapter.js
+│   │   │
+│   │   ├── patient-management/                         # BC2: Patient Management
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── patient.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── medical-record.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   │ 	├── hemoglobin-level-value-object.js
+│   │   │   │   │	├── weight-value-object.js
+│   │   │   │   │	├── height-value-object.js
+│   │   │   │   │	├── birth-date-value-object.js
+│   │   │   │   │	├── antecedente-value-object.js
+│   │   │   │   │ 	├── motivo-de-consulta-value-object.js
+│   │   │   │   │	├── observaciones-value-object.js
+│   │   │   │   │	├── control-value-object.js
+│   │   │   │   │	├── tratamiento-recetado.js
+│   │   │   │   │	
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   └── sexo-genero.enum.js
+│   │   │   │   │   ├── patient-status-enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── create-patient.command.js
+│   │   │   │   │   ├── assign-nurse.command.js
+│   │   │   │   │   ├── create-medical-record.command.js
+│   │   │   │   │   ├── add-control.command.js
+│   │   │   │   │   └── discharge-patient.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-patient-by-id.query.js
+│   │   │   │   │   ├── search-patient-by-mother-dni.query.js
+│   │   │   │   │   ├── get-patients-by-nurse-id.query.js
+│   │   │   │   │   ├── get-medical-history.query.js
+│   │   │   │   │   ├── get-medical-history-pdf.query.js
+│   │   │   │   │   └── get-controls-pdf.query.js
+│   │   │   │   │   └── get-control-by-date-pdf.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── patient.repository.js
+│   │   │   │   │   └── medical-history.repository.js
+│   │   │   │   └── services/
+│   │   │   │       └── patient-assingment.service.js
+│   │   │   │       └── hemoglobin-analytisis.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── register-patient.command-handler.js
+│   │   │   │   │   ├── assign-nurse.command-handler.js
+│   │   │   │   │   ├── create-medical-record.command-handler.js
+│   │   │   │   │   ├── add-control.command-handler.js
+│   │   │   │   │   └── discharge-patient.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├──  get-patient-by-id.query-handler.js
+│   │   │   │   │   ├── search-patient-by-mother-dni.query-handler.js
+│   │   │   │   │   ├── get-patients-by-nurse-id.query-handler.js
+│   │   │   │   │   ├── get-medical-history.query-handler.js
+│   │   │   │   │   ├── get-medical-history-pdf.query-handler.js
+│   │   │   │   │   └── get-controls-pdf.query-handler.js
+│   │   │   │   │   └── get-control-by-date-pdf.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-patient-registered.event-handler.js
+│   │   │   │       ├── on-nurse-assigned-to-patient.event-handler.js
+│   │   │   │       └── on-patient-discharged-notify.event-handler.js
+│   │   │   │       └── on-patient-discharged-analytics.event.handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── patient.controller.js
+│   │   │   │   │   └── medical-history.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   ├── create-patient-request.js
+│   │   │   │       │   ├── assign-nurse.request.js
+│   │   │   │       │   ├── medical-record.request.js
+│   │   │   │       │   └── add-control-request.js
+│   │   │   │       │   └── discharge-patient-request.js
+│   │   │   │  	 	├── responses/
+│   │   │   │       │   ├── patient.response.js
+│   │   │   │       │   └── medical-record.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── create-patient-command-from-resource.assembler.js
+│   │   │   │           ├── medical-record-command-assembler.js
+│   │   │   │           ├── control-command-assembler.js
+│   │   │   │           ├── patient-resource-from-entity.assembler.js
+│   │   │   │           ├── discharge-patient-command-assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   └── mongo.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── patient.schema.js
+│   │   │       │       ├── medical-history.schema.js
+│   │   │       │       ├── mongo-patient.repository.js
+│   │   │       │       └── mongo-medical-history.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── patient-document.mapper.js
+│   │   │       │   ├── control-mapper.mapper.js
+│   │   │       │   └── medical-history-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │					├── notifcation.service
+│   │   │					├── analytics-service
+│   │   ├── treatment-tracking/                         # BC3: Treatment Tracking
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── treatment.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   ├── daily-dose.entity.js
+│   │   │   │   │   └── risk-score.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   ├── treatment-status.enum.js
+│   │   │   │   │   ├── dose-status.enum.js
+│   │   │   │   │   └── risk-level.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── start-treatment.command.js
+│   │   │   │   │   ├── confirm-dose.command.js
+│   │   │   │   │   ├── complete-treatment.command.js
+│   │   │   │   │   └── abandon-treatment.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-treatment.query.js
+│   │   │   │   │   ├── get-dose-history.query.js
+│   │   │   │   │   ├── get-risk-score.query.js
+│   │   │   │   │   └── get-critical-patients.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── treatment.repository.js
+│   │   │   │   │   ├── daily-dose.repository.js
+│   │   │   │   │   └── risk-score.repository.js
+│   │   │   │   └── services/
+│   │   │   │       ├── adherence-calculator.service.js
+│   │   │   │       └── dose-reminder.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── start-treatment.command-handler.js
+│   │   │   │   │   ├── confirm-dose.command-handler.js
+│   │   │   │   │   ├── complete-treatment.command-handler.js
+│   │   │   │   │   └── abandon-treatment.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-treatment.query-handler.js
+│   │   │   │   │   ├── get-dose-history.query-handler.js
+│   │   │   │   │   ├── get-risk-score.query-handler.js
+│   │   │   │   │   └── get-critical-patients.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-dose-omitted.event-handler.js
+│   │   │   │       └── on-patient-added-to-critical-list.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── treatment.controller.js
+│   │   │   │   │   ├── daily-dose.controller.js
+│   │   │   │   │   └── risk-score.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   ├── start-treatment.request.js
+│   │   │   │       │   ├── confirm-dose.request.js
+│   │   │   │       │   ├── complete-treatment.request.js
+│   │   │   │       │   └── abandon-treatment.request.js
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── treatment.response.js
+│   │   │   │       │   ├── daily-dose.response.js
+│   │   │   │       │   ├── risk-score.response.js
+│   │   │   │       │   └── critical-patient.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── start-treatment-command-from-resource.assembler.js
+│   │   │   │           ├── treatment-response-from-entity.assembler.js
+│   │   │   │           ├── confirm-dose-command-from-resource.assembler.js
+│   │   │   │           ├── daily-dose-response-from-entity.assembler.js
+│   │   │   │           └── risk-score-response-from-entity.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   └── mongo.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── treatment.schema.js
+│   │   │       │       ├── daily-dose.schema.js
+│   │   │       │       ├── risk-score.schema.js
+│   │   │       │       ├── mongo-treatment.repository.js
+│   │   │       │       ├── mongo-daily-dose.repository.js
+│   │   │       │       └── mongo-risk-score.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── treatment-document.mapper.js
+│   │   │       │   ├── daily-dose-document.mapper.js
+│   │   │       │   └── risk-score-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │               └── dose-reminder-scheduler.adapter.js
+│   │   │
+│   │   ├── nutritional-diary/                          # BC4: Nutritional Diary
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── nutritional-diary.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   ├── food-entry.entity.js
+│   │   │   │   │   └── food-item.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   │   └── nutrient-content.value-object.js
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   └── food-category.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── add-food-entry.command.js
+│   │   │   │   │   └── delete-food-entry.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-today-diary.query.js
+│   │   │   │   │   ├── get-diary-history.query.js
+│   │   │   │   │   ├── get-all-food-items.query.js
+│   │   │   │   │   └── get-food-items-by-category.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── nutritional-diary.repository.js
+│   │   │   │   │   ├── food-entry.repository.js
+│   │   │   │   │   └── food-item.repository.js
+│   │   │   │   └── services/
+│   │   │   │       └── iron-calculator.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── add-food-entry.command-handler.js
+│   │   │   │   │   └── delete-food-entry.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-today-diary.query-handler.js
+│   │   │   │   │   ├── get-diary-history.query-handler.js
+│   │   │   │   │   ├── get-all-food-items.query-handler.js
+│   │   │   │   │   └── get-food-items-by-category.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-iron-inhibitor-detected.event-handler.js
+│   │   │   │       └── on-food-entry-registered.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── nutritional-diary.controller.js
+│   │   │   │   │   └── food-item.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   └── register-food-entry.request.js
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── nutritional-diary.response.js
+│   │   │   │       │   ├── food-entry.response.js
+│   │   │   │       │   └── food-item.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── register-food-entry-command-from-resource.assembler.js
+│   │   │   │           ├── nutritional-diary-response-from-entity.assembler.js
+│   │   │   │           ├── food-entry-response-from-entity.assembler.js
+│   │   │   │           └── food-item-response-from-entity.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   └── mongo.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── nutritional-diary.schema.js
+│   │   │       │       ├── food-entry.schema.js
+│   │   │       │       ├── food-item.schema.js
+│   │   │       │       ├── mongo-nutritional-diary.repository.js
+│   │   │       │       ├── mongo-food-entry.repository.js
+│   │   │       │       └── mongo-food-item.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── nutritional-diary-document.mapper.js
+│   │   │       │   ├── food-entry-document.mapper.js
+│   │   │       │   └── food-item-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │
+│   │   ├── achievements-rewards/                       # BC5: Achievements & e
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── achievement.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── badge.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   ├── achievement-status.enum.js
+│   │   │   │   │   └── badge-type.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-achievement.query.js
+│   │   │   │   │   └── get-badges.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── achievement.repository.js
+│   │   │   │   │   └── badge.repository.js
+│   │   │   │   └── services/
+│   │   │   │       └── achievement-evaluator.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-achievement.query-handler.js
+│   │   │   │   │   └── get-badges.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-daily-dose-confirmed.event-handler.js
+│   │   │   │       ├── on-daily-dose-omitted.event-handler.js
+│   │   │   │       ├── on-treatment-completed.event-handler.js
+│   │   │   │       └── on-treatment-abandoned.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   └── achievement.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── achievement.response.js
+│   │   │   │       │   └── badge.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── achievement-response-from-entity.assembler.js
+│   │   │   │           └── badge-response-from-entity.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   └── mongo.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── achievement.schema.js
+│   │   │       │       ├── badge.schema.js
+│   │   │       │       ├── mongo-achievement.repository.js
+│   │   │       │       └── mongo-badge.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── achievement-document.mapper.js
+│   │   │       │   └── badge-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │
+│   │   ├── communication/                              # BC6: Communication
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── consultation.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── message.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   │   └── quick-reply-template.value-object.js
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   ├── consultation-status.enum.js
+│   │   │   │   │   └── message-sender.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── create-consultation.command.js
+│   │   │   │   │   ├── send-message.command.js
+│   │   │   │   │   ├── send-quick-reply-message.command.js
+│   │   │   │   │   └── close-consultation.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-consultation-history.query.js
+│   │   │   │   │   └── get-consultation-messages.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── consultation.repository.js
+│   │   │   │   │   └── message.repository.js
+│   │   │   │   └── services/
+│   │   │   │       └── consultation.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── create-consultation.command-handler.js
+│   │   │   │   │   ├── send-message.command-handler.js
+│   │   │   │   │   ├── send-quick-reply-message.command-handler.js
+│   │   │   │   │   └── close-consultation.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-consultation-history.query-handler.js
+│   │   │   │   │   └── get-consultation-messages.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-consultation-created.event-handler.js
+│   │   │   │       ├── on-message-sent.event-handler.js
+│   │   │   │       └── on-consultation-closed.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── consultation.controller.js
+│   │   │   │   │   └── message.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   ├── create-consultation.request.js
+│   │   │   │       │   ├── send-message.request.js
+│   │   │   │       │   └── send-quick-reply-message.request.js
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── consultation.response.js
+│   │   │   │       │   └── message.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── create-consultation-command-from-resource.assembler.js
+│   │   │   │           ├── consultation-response-from-entity.assembler.js
+│   │   │   │           ├── send-message-command-from-resource.assembler.js
+│   │   │   │           ├── message-response-from-entity.assembler.js
+│   │   │   │           └── send-quick-reply-command-from-resource.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   └── mongo.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── consultation.schema.js
+│   │   │       │       ├── mongo-consultation.repository.js
+│   │   │       │       └── firestore-message.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── consultation-document.mapper.js
+│   │   │       │   └── message-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │               └── firebase-firestore.adapter.js
+│   │   │
+│   │   ├── health-facility/                            # BC7: Health Facility
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── health-facility.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   ├── appointment.entity.js
+│   │   │   │   │   ├── nurse-assignment.entity.js
+│   │   │   │   │   └── district.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   │   └── coordinates.value-object.js
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   ├── facility-status.enum.js
+│   │   │   │   │   └── appointment-status.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── register-facility.command.js
+│   │   │   │   │   ├── deactivate-facility.command.js
+│   │   │   │   │   ├── assign-nurse-to-facility.command.js
+│   │   │   │   │   ├── create-appointment.command.js
+│   │   │   │   │   └── cancel-appointment.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-all-facilities.query.js
+│   │   │   │   │   ├── get-facility-by-id.query.js
+│   │   │   │   │   ├── get-nearby-facilities.query.js
+│   │   │   │   │   ├── get-appointments-by-patient.query.js
+│   │   │   │   │   ├── get-appointments-by-nurse.query.js
+│   │   │   │   │   └── get-all-districts.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── health-facility.repository.js
+│   │   │   │   │   ├── appointment.repository.js
+│   │   │   │   │   ├── nurse-assignment.repository.js
+│   │   │   │   │   └── district.repository.js
+│   │   │   │   └── services/
+│   │   │   │       └── facility-locator.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── register-facility.command-handler.js
+│   │   │   │   │   ├── deactivate-facility.command-handler.js
+│   │   │   │   │   ├── assign-nurse-to-facility.command-handler.js
+│   │   │   │   │   ├── create-appointment.command-handler.js
+│   │   │   │   │   └── cancel-appointment.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-all-facilities.query-handler.js
+│   │   │   │   │   ├── get-facility-by-id.query-handler.js
+│   │   │   │   │   ├── get-nearby-facilities.query-handler.js
+│   │   │   │   │   ├── get-appointments-by-patient.query-handler.js
+│   │   │   │   │   ├── get-appointments-by-nurse.query-handler.js
+│   │   │   │   │   └── get-all-districts.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-health-facility-registered.event-handler.js
+│   │   │   │       └── on-nurse-assigned-to-facility.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── health-facility.controller.js
+│   │   │   │   │   ├── appointment.controller.js
+│   │   │   │   │   ├── facility-locator.controller.js
+│   │   │   │   │   └── district.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   ├── register-facility.request.js
+│   │   │   │       │   ├── assign-nurse-to-facility.request.js
+│   │   │   │       │   └── create-appointment.request.js
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── health-facility.response.js
+│   │   │   │       │   ├── nearby-facility.response.js
+│   │   │   │       │   ├── appointment.response.js
+│   │   │   │       │   └── district.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── register-facility-command-from-resource.assembler.js
+│   │   │   │           ├── facility-response-from-entity.assembler.js
+│   │   │   │           ├── create-appointment-command-from-resource.assembler.js
+│   │   │   │           ├── appointment-response-from-entity.assembler.js
+│   │   │   │           ├── nearby-facility-response-from-entity.assembler.js
+│   │   │   │           └── district-response-from-entity.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   └── mongo.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── health-facility.schema.js
+│   │   │       │       ├── appointment.schema.js
+│   │   │       │       ├── nurse-assignment.schema.js
+│   │   │       │       ├── district.schema.js
+│   │   │       │       ├── mongo-health-facility.repository.js
+│   │   │       │       ├── mongo-appointment.repository.js
+│   │   │       │       ├── mongo-nurse-assignment.repository.js
+│   │   │       │       └── mongo-district.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── health-facility-document.mapper.js
+│   │   │       │   ├── appointment-document.mapper.js
+│   │   │       │   ├── nurse-assignment-document.mapper.js
+│   │   │       │   └── district-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │               └── google-maps.adapter.js
+│   │   │
+│   │   ├── notifications/                              # BC8: Notifications
+│   │   │   ├── domain/
+│   │   │   │   ├── models/
+│   │   │   │   │   └── notification.aggregate.js
+│   │   │   │   ├── entities/
+│   │   │   │   │   └── fcm-token.entity.js
+│   │   │   │   ├── value-objects/
+│   │   │   │   ├── enumerations/
+│   │   │   │   │   ├── notification-type.enum.js
+│   │   │   │   │   └── notification-status.enum.js
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── send-notification.command.js
+│   │   │   │   │   ├── retry-notification.command.js
+│   │   │   │   │   ├── register-fcm-token.command.js
+│   │   │   │   │   └── delete-fcm-token.command.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-notification-history.query.js
+│   │   │   │   │   └── get-failed-notifications.query.js
+│   │   │   │   ├── repositories/
+│   │   │   │   │   ├── notification.repository.js
+│   │   │   │   │   └── fcm-token.repository.js
+│   │   │   │   └── services/
+│   │   │   │       └── notification-dispatcher.service.js
+│   │   │   ├── application/
+│   │   │   │   ├── commands/
+│   │   │   │   │   ├── send-notification.command-handler.js
+│   │   │   │   │   ├── retry-notification.command-handler.js
+│   │   │   │   │   ├── register-fcm-token.command-handler.js
+│   │   │   │   │   └── delete-fcm-token.command-handler.js
+│   │   │   │   ├── queries/
+│   │   │   │   │   ├── get-notification-history.query-handler.js
+│   │   │   │   │   └── get-failed-notifications.query-handler.js
+│   │   │   │   └── event-handlers/
+│   │   │   │       ├── on-dose-reminder-triggered.event-handler.js
+│   │   │   │       ├── on-abandonment-alert-triggered.event-handler.js
+│   │   │   │       ├── on-badge-unlocked.event-handler.js
+│   │   │   │       ├── on-consultation-created.event-handler.js
+│   │   │   │       ├── on-reply-sent.event-handler.js
+│   │   │   │       ├── on-appointment-confirmed.event-handler.js
+│   │   │   │       ├── on-iron-inhibitor-detected.event-handler.js
+│   │   │   │       └── on-patient-discharged.event-handler.js
+│   │   │   ├── interfaces/
+│   │   │   │   ├── controllers/
+│   │   │   │   │   ├── notification.controller.js
+│   │   │   │   │   └── fcm-token.controller.js
+│   │   │   │   └── dtos/
+│   │   │   │       ├── requests/
+│   │   │   │       │   ├── send-notification.request.js
+│   │   │   │       │   └── register-fcm-token.request.js
+│   │   │   │       ├── responses/
+│   │   │   │       │   ├── notification.response.js
+│   │   │   │       │   ├── retry-notification.response.js
+│   │   │   │       │   └── fcm-token.response.js
+│   │   │   │       └── assemblers/
+│   │   │   │           ├── send-notification-command-from-resource.assembler.js
+│   │   │   │           ├── notification-response-from-entity.assembler.js
+│   │   │   │           └── register-fcm-token-command-from-resource.assembler.js
+│   │   │   └── infrastructure/
+│   │   │       ├── config/
+│   │   │       │   ├── mongo.config.js
+│   │   │       │   └── firebase.config.js
+│   │   │       ├── persistence/
+│   │   │       │   └── mongo/
+│   │   │       │       ├── notification.schema.js
+│   │   │       │       ├── fcm-token.schema.js
+│   │   │       │       ├── mongo-notification.repository.js
+│   │   │       │       └── mongo-fcm-token.repository.js
+│   │   │       ├── mappers/
+│   │   │       │   ├── notification-document.mapper.js
+│   │   │       │   └── fcm-token-document.mapper.js
+│   │   │       └── external-services/
+│   │   │           └── adapters/
+│   │   │               └── firebase-fcm.adapter.js
+│   │   │
+│   │   └── analytics-reporting/                       # BC9: Analytics & Reporting
+│   │       ├── domain/
+│   │       │   ├── models/
+│   │       │   │   └── report.aggregate.js
+│   │       │   ├── entities/
+│   │       │   │   ├── facility-metric.entity.js
+│   │       │   │   └── district-heat-map.entity.js
+│   │       │   ├── value-objects/
+│   │       │   ├── enumerations/
+│   │       │   │   ├── report-status.enum.js
+│   │       │   │   └── risk-zone.enum.js
+│   │       │   ├── commands/
+│   │       │   │   ├── generate-report.command.js
+│   │       │   │   └── export-report.command.js
+│   │       │   ├── queries/
+│   │       │   │   ├── get-all-reports.query.js
+│   │       │   │   ├── get-reports-by-district.query.js
+│   │       │   │   ├── get-latest-report.query.js
+│   │       │   │   ├── get-heatmap.query.js
+│   │       │   │   ├── get-district-heatmap.query.js
+│   │       │   │   ├── get-facility-metrics.query.js
+│   │       │   │   └── get-critical-facilities.query.js
+│   │       │   ├── repositories/
+│   │       │   │   ├── report.repository.js
+│   │       │   │   ├── facility-metric.repository.js
+│   │       │   │   └── district-heat-map.repository.js
+│   │       │   └── services/
+│   │       │       └── report-generator.service.js
+│   │       ├── application/
+│   │       │   ├── commands/
+│   │       │   │   ├── generate-report.command-handler.js
+│   │       │   │   └── export-report.command-handler.js
+│   │       │   ├── queries/
+│   │       │   │   ├── get-all-reports.query-handler.js
+│   │       │   │   ├── get-reports-by-district.query-handler.js
+│   │       │   │   ├── get-latest-report.query-handler.js
+│   │       │   │   ├── get-heatmap.query-handler.js
+│   │       │   │   ├── get-district-heatmap.query-handler.js
+│   │       │   │   ├── get-facility-metrics.query-handler.js
+│   │       │   │   └── get-critical-facilities.query-handler.js
+│   │       │   └── event-handlers/
+│   │       │       ├── on-treatment-abandoned.event-handler.js
+│   │       │       ├── on-treatment-completed.event-handler.js
+│   │       │       ├── on-daily-dose-confirmed.event-handler.js
+│   │       │       ├── on-daily-dose-omitted.event-handler.js
+│   │       │       ├── on-treatment-started.event-handler.js
+│   │       │       └── on-health-facility-registered.event-handler.js
+│   │       ├── interfaces/
+│   │       │   ├── controllers/
+│   │       │   │   ├── report.controller.js
+│   │       │   │   ├── heat-map.controller.js
+│   │       │   │   └── facility-metric.controller.js
+│   │       │   └── dtos/
+│   │       │       ├── requests/
+│   │       │       │   └── generate-report.request.js
+│   │       │       ├── responses/
+│   │       │       │   ├── report.response.js
+│   │       │       │   ├── heat-map.response.js
+│   │       │       │   └── facility-metric.response.js
+│   │       │       └── assemblers/
+│   │       │           ├── generate-report-command-from-resource.assembler.js
+│   │       │           ├── report-response-from-entity.assembler.js
+│   │       │           ├── heat-map-response-from-entity.assembler.js
+│   │       │           └── facility-metric-response-from-entity.assembler.js
+│   │       └── infrastructure/
+│   │           ├── config/
+│   │           │   ├── mongo.config.js
+│   │           │   └── google-maps.config.js
+│   │           ├── persistence/
+│   │           │   └── mongo/
+│   │           │       ├── report.schema.js
+│   │           │       ├── facility-metric.schema.js
+│   │           │       ├── district-heat-map.schema.js
+│   │           │       ├── mongo-report.repository.js
+│   │           │       ├── mongo-facility-metric.repository.js
+│   │           │       └── mongo-district-heat-map.repository.js
+│   │           ├── mappers/
+│   │           │   ├── report-document.mapper.js
+│   │           │   ├── facility-metric-document.mapper.js
+│   │           │   └── district-heat-map-document.mapper.js
+│   │           └── external-services/
+│   │               └── adapters/
+│   │                   └── google-maps.adapter.js
+│   │
+│   ├── shared/                                         # Elementos compartidos entre BCs
+│   │   ├── domain/
+│   │   │   ├── events/
+│   │   │   │   └── domain-event.js
+│   │   │   └── exceptions/
+│   │   │       ├── not-found.exception.js
+│   │   │       ├── validation.exception.js
+│   │   │       └── unauthorized.exception.js
+│   │   ├── infrastructure/
+│   │   │   ├── event-bus/
+│   │   │   │   └── event-bus.js
+│   │   │   └── middleware/
+│   │   │       ├── auth.middleware.js
+│   │   │       ├── error-handler.middleware.js
+│   │   │       └── logger.middleware.js
+│   │   └── utils/
+│   │       ├── date.util.js
+│   │       └── uuid.util.js
+│   │
+│   └── config/                                         # Configuracion global del proyecto
+│       ├── swagger/
+│       │   ├── swagger.config.js
+│       │   └── swagger.options.js
+│       ├── database/
+│       │   └── mongoose.connection.js
+│       ├── firebase/
+│       │   └── firebase.init.js
+│       └── app.js
+│
+├── .env
+├── .env.example
+├── .gitignore
+├── package.json
+└── index.js
