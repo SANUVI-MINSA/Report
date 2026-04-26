@@ -295,3 +295,51 @@ Resultado: 0.28 mg de hierro
 | Sistema       | Calcula automaticamente |
 
 ---
+
+## Name de Food Items
+
+El `name` de food_items ES predefinido en el catalogo seed.
+La madre NO puede escribir libremente lo que comio. Siempre selecciona de una lista predefinida.
+¿Por que no puede escribir libremente?
+Porque si la madre escribe libremente el sistema no puede calcular el hierro. El `ironMg` solo existe para los alimentos del catalogo. Si la madre escribe "pollo guisado con papas" el sistema no sabria cuanto hierro tiene ese plato.
+
+```
+Madre escribe: "pollo guisado con papas"
+Sistema busca en food_items: ❌ no encuentra
+ironContributed = ??? → imposible calcular
+```
+
+¿Como funciona entonces en FerovaFamilia?
+La madre busca o navega por el catalogo y selecciona el alimento mas cercano a lo que le dio a su hijo:
+
+```
+┌─────────────────────────────────┐
+│  🔍 Buscar alimento...          │
+├─────────────────────────────────┤
+│  CARNES                         │
+│  🥩 Higado de pollo             │
+│  🥩 Res                         │
+│  🐟 Atun                        │
+├─────────────────────────────────┤
+│  VERDURAS                       │
+│  🥬 Espinaca                    │
+│  🥦 Brocoli                     │
+├─────────────────────────────────┤
+│  LEGUMBRES                      │
+│  🫘 Lentejas                    │
+│  🫘 Frijoles                    │
+└─────────────────────────────────┘
+```
+
+¿Que pasa si el alimento que comio Juan no esta en el catalogo?
+Esa es la limitacion del sistema. La madre selecciona el alimento mas parecido disponible. Por ejemplo si Juan comio "caldo de pollo" la madre selecciona "pollo" del catalogo.
+Para Ferova esto es aceptable porque el objetivo no es un registro nutricional perfecto sino detectar inhibidores y dar una aproximacion del hierro consumido.
+¿Quien define el catalogo seed?
+El equipo de Ferova lo define antes del lanzamiento basandose en los alimentos mas comunes en la dieta infantil peruana segun las guias nutricionales del MINSA. Una vez definido se inserta en MongoDB como datos iniciales y no cambia en tiempo de ejecucion.
+Resumen simple:
+
+| Quien | Puede hacer |
+|---|---|
+| Madre | Solo selecciona del catalogo predefinido |
+| Equipo Ferova | Define el catalogo antes del lanzamiento |
+| Sistema | Calcula el hierro usando los datos del catalogo |
