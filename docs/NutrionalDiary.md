@@ -343,3 +343,552 @@ Resumen simple:
 | Madre | Solo selecciona del catalogo predefinido |
 | Equipo Ferova | Define el catalogo antes del lanzamiento |
 | Sistema | Calcula el hierro usando los datos del catalogo |
+
+# 🩸 Tabla de Hierro en Alimentos
+
+> Guía de contenido de hierro por cada 100g de alimento, organizada por categorías.  
+> **Hierro hemo** (origen animal) = mejor absorción | **Hierro no hemo** (origen vegetal) = menor absorción
+
+---
+
+## 🥩 Carnes y Vísceras
+> Hierro **hemo** — mejor absorción
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Sangrecita de pollo | 29.5 | Hemo | ❌ No |
+| Bazo de res | 14.0 | Hemo | ❌ No |
+| Hígado de pollo | 8.5 | Hemo | ❌ No |
+| Hígado de res | 6.5 | Hemo | ❌ No |
+| Carne de res | 2.7 | Hemo | ❌ No |
+| Pavo | 1.8 | Hemo | ❌ No |
+| Huevo entero cocido | 1.8 | No hemo | ❌ No |
+| Pollo | 1.3 | Hemo | ❌ No |
+
+---
+
+## 🐟 Pescados y Mariscos
+> Hierro **hemo** — mejor absorción
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Anchoveta | 3.2 | Hemo | ❌ No |
+| Sardina en conserva | 2.9 | Hemo | ❌ No |
+| Atún en conserva | 1.9 | Hemo | ❌ No |
+| Bonito | 1.5 | Hemo | ❌ No |
+
+---
+
+## 🫘 Legumbres
+> Hierro **no hemo**
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Lentejas cocidas | 3.3 | No hemo | ❌ No |
+| Garbanzos cocidos | 2.9 | No hemo | ❌ No |
+| Pallares cocidos | 2.5 | No hemo | ❌ No |
+| Frijoles cocidos | 2.1 | No hemo | ❌ No |
+| Arvejas cocidas | 1.8 | No hemo | ❌ No |
+
+---
+
+## 🥦 Verduras y Hojas Verdes
+> Hierro **no hemo**
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Espinaca cocida | 2.8 | No hemo | ❌ No |
+| Acelga cocida | 1.8 | No hemo | ❌ No |
+| Brócoli cocido | 0.7 | No hemo | ❌ No |
+| Camote cocido | 0.7 | No hemo | ❌ No |
+| Papa cocida | 0.5 | No hemo | ❌ No |
+| Zanahoria cocida | 0.4 | No hemo | ❌ No |
+| Zapallo cocido | 0.4 | No hemo | ❌ No |
+
+---
+
+## 🌾 Cereales y Granos
+> Hierro **no hemo**
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Kiwicha cocida | 3.1 | No hemo | ❌ No |
+| Pan de trigo | 2.5 | No hemo | ❌ No |
+| Avena cocida | 1.7 | No hemo | ❌ No |
+| Quinua cocida | 1.5 | No hemo | ❌ No |
+| Arroz cocido | 0.2 | No hemo | ❌ No |
+
+---
+
+## 🍊 Frutas
+> Hierro **no hemo** — algunas potencian la absorción (vitamina C)
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Lúcuma | 0.4 | No hemo | ❌ No |
+| Plátano | 0.3 | No hemo | ❌ No |
+| Naranja | 0.1 | No hemo | ❌ No |
+| Mandarina | 0.1 | No hemo | ❌ No |
+| Mango | 0.1 | No hemo | ❌ No |
+| Papaya | 0.1 | No hemo | ❌ No |
+
+---
+
+## 🥛 Lácteos
+> ⚠️ **Inhibidores de absorción** — reducen la absorción del hierro
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Queso fresco | 0.2 | No hemo | ✅ Sí |
+| Leche de vaca | 0.1 | No hemo | ✅ Sí |
+| Yogur | 0.1 | No hemo | ✅ Sí |
+
+---
+
+## ☕ Bebidas
+> ⚠️ **Té y café = inhibidores** — evitar junto a comidas con hierro
+
+| Alimento | Hierro (mg/100g) | Tipo | ¿Inhibidor? |
+|---|---|---|---|
+| Té | 0.0 | No hemo | ✅ Sí |
+| Café | 0.0 | No hemo | ✅ Sí |
+| Jugo de naranja | 0.1 | No hemo | ❌ No |
+| Agua | 0.0 | No hemo | ❌ No |
+
+---
+
+## 💡 Notas Importantes
+
+- **Hierro hemo** (carnes, vísceras, pescados): se absorbe entre un 15–35%.
+- **Hierro no hemo** (vegetales, legumbres, cereales): se absorbe entre un 2–10%.
+- La **vitamina C** (naranja, mandarina, papaya, limón) potencia la absorción del hierro no hemo.
+- El **té, café y lácteos** inhiben la absorción — evitar consumirlos junto a alimentos ricos en hierro.
+- Las **vísceras** (especialmente sangrecita y bazo) son las fuentes más concentradas de hierro en la dieta peruana.
+
+```json
+
+[
+  {
+    "_id": "food:sangrecita-pollo",
+    "name": "Sangrecita de pollo",
+    "nutrientContent": {
+      "ironMg": 29.5,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:bazo-res",
+    "name": "Bazo de res",
+    "nutrientContent": {
+      "ironMg": 14.0,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:higado-pollo",
+    "name": "Hígado de pollo",
+    "nutrientContent": {
+      "ironMg": 8.5,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:higado-res",
+    "name": "Hígado de res",
+    "nutrientContent": {
+      "ironMg": 6.5,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:carne-res",
+    "name": "Carne de res",
+    "nutrientContent": {
+      "ironMg": 2.7,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:pavo",
+    "name": "Pavo",
+    "nutrientContent": {
+      "ironMg": 1.8,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:huevo-entero-cocido",
+    "name": "Huevo entero cocido",
+    "nutrientContent": {
+      "ironMg": 1.8,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:pollo",
+    "name": "Pollo",
+    "nutrientContent": {
+      "ironMg": 1.3,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "MEAT"
+  },
+  {
+    "_id": "food:anchoveta",
+    "name": "Anchoveta",
+    "nutrientContent": {
+      "ironMg": 3.2,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "FISH"
+  },
+  {
+    "_id": "food:sardina-conserva",
+    "name": "Sardina en conserva",
+    "nutrientContent": {
+      "ironMg": 2.9,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "FISH"
+  },
+  {
+    "_id": "food:atun-conserva",
+    "name": "Atún en conserva",
+    "nutrientContent": {
+      "ironMg": 1.9,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "FISH"
+  },
+  {
+    "_id": "food:bonito",
+    "name": "Bonito",
+    "nutrientContent": {
+      "ironMg": 1.5,
+      "ironType": "hemo"
+    },
+    "isInhibitor": false,
+    "category": "FISH"
+  },
+  {
+    "_id": "food:lentejas-cocidas",
+    "name": "Lentejas cocidas",
+    "nutrientContent": {
+      "ironMg": 3.3,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "LEGUME"
+  },
+  {
+    "_id": "food:garbanzos-cocidos",
+    "name": "Garbanzos cocidos",
+    "nutrientContent": {
+      "ironMg": 2.9,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "LEGUME"
+  },
+  {
+    "_id": "food:pallares-cocidos",
+    "name": "Pallares cocidos",
+    "nutrientContent": {
+      "ironMg": 2.5,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "LEGUME"
+  },
+  {
+    "_id": "food:frijoles-cocidos",
+    "name": "Frijoles cocidos",
+    "nutrientContent": {
+      "ironMg": 2.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "LEGUME"
+  },
+  {
+    "_id": "food:arvejas-cocidas",
+    "name": "Arvejas cocidas",
+    "nutrientContent": {
+      "ironMg": 1.8,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "LEGUME"
+  },
+  {
+    "_id": "food:espinaca-cocida",
+    "name": "Espinaca cocida",
+    "nutrientContent": {
+      "ironMg": 2.8,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:acelga-cocida",
+    "name": "Acelga cocida",
+    "nutrientContent": {
+      "ironMg": 1.8,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:brocoli-cocido",
+    "name": "Brócoli cocido",
+    "nutrientContent": {
+      "ironMg": 0.7,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:camote-cocido",
+    "name": "Camote cocido",
+    "nutrientContent": {
+      "ironMg": 0.7,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:papa-cocida",
+    "name": "Papa cocida",
+    "nutrientContent": {
+      "ironMg": 0.5,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:zanahoria-cocida",
+    "name": "Zanahoria cocida",
+    "nutrientContent": {
+      "ironMg": 0.4,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:zapallo-cocido",
+    "name": "Zapallo cocido",
+    "nutrientContent": {
+      "ironMg": 0.4,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "VEGETABLE"
+  },
+  {
+    "_id": "food:kiwicha-cocida",
+    "name": "Kiwicha cocida",
+    "nutrientContent": {
+      "ironMg": 3.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "GRAIN"
+  },
+  {
+    "_id": "food:pan-trigo",
+    "name": "Pan de trigo",
+    "nutrientContent": {
+      "ironMg": 2.5,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "GRAIN"
+  },
+  {
+    "_id": "food:avena-cocida",
+    "name": "Avena cocida",
+    "nutrientContent": {
+      "ironMg": 1.7,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "GRAIN"
+  },
+  {
+    "_id": "food:quinua-cocida",
+    "name": "Quinua cocida",
+    "nutrientContent": {
+      "ironMg": 1.5,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "GRAIN"
+  },
+  {
+    "_id": "food:arroz-cocido",
+    "name": "Arroz cocido",
+    "nutrientContent": {
+      "ironMg": 0.2,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "GRAIN"
+  },
+  {
+    "_id": "food:lucuma",
+    "name": "Lúcuma",
+    "nutrientContent": {
+      "ironMg": 0.4,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "FRUIT"
+  },
+  {
+    "_id": "food:platano",
+    "name": "Plátano",
+    "nutrientContent": {
+      "ironMg": 0.3,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "FRUIT"
+  },
+  {
+    "_id": "food:naranja",
+    "name": "Naranja",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "FRUIT"
+  },
+  {
+    "_id": "food:mandarina",
+    "name": "Mandarina",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "FRUIT"
+  },
+  {
+    "_id": "food:mango",
+    "name": "Mango",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "FRUIT"
+  },
+  {
+    "_id": "food:papaya",
+    "name": "Papaya",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "FRUIT"
+  },
+  {
+    "_id": "food:queso-fresco",
+    "name": "Queso fresco",
+    "nutrientContent": {
+      "ironMg": 0.2,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": true,
+    "category": "DAIRY"
+  },
+  {
+    "_id": "food:leche-vaca",
+    "name": "Leche de vaca",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": true,
+    "category": "DAIRY"
+  },
+  {
+    "_id": "food:yogur",
+    "name": "Yogur",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": true,
+    "category": "DAIRY"
+  },
+  {
+    "_id": "food:te",
+    "name": "Té",
+    "nutrientContent": {
+      "ironMg": 0.0,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": true,
+    "category": "BEVERAGE"
+  },
+  {
+    "_id": "food:cafe",
+    "name": "Café",
+    "nutrientContent": {
+      "ironMg": 0.0,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": true,
+    "category": "BEVERAGE"
+  },
+  {
+    "_id": "food:jugo-naranja",
+    "name": "Jugo de naranja",
+    "nutrientContent": {
+      "ironMg": 0.1,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "BEVERAGE"
+  },
+  {
+    "_id": "food:agua",
+    "name": "Agua",
+    "nutrientContent": {
+      "ironMg": 0.0,
+      "ironType": "no-hemo"
+    },
+    "isInhibitor": false,
+    "category": "BEVERAGE"
+  }
+]
+
+```
+
