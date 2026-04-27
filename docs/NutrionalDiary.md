@@ -892,3 +892,83 @@ Resumen simple:
 
 ```
 
+# Manejo de unidades en el cálculo de hierro — FerovaFamilia
+
+## El problema del atributo `unit` en `FoodEntry`
+
+El catálogo `food_items` define el `ironMg` por cada **100 gramos** siempre.
+Por eso el sistema asume que la `quantity` ingresada está en gramos o mililitros,
+tratándolas igual para el cálculo.
+
+En la práctica, `unit` es solo un campo **descriptivo visual**. El problema
+aparece cuando la madre ingresa unidades que no son gramos ni mililitros:
+
+```
+Espinaca  → quantity: 200  unit: "gramos"      ✅ correcto
+Leche     → quantity: 250  unit: "mililitros"   ✅ correcto
+```
+
+---
+
+## ¿Se pueden mezclar gramos y mililitros?
+
+Sí, físicamente es posible, **pero no todos los alimentos tienen la misma densidad**:
+
+| Alimento         | 100 ml equivale a... | ¿Seguro intercambiar? |
+|------------------|----------------------|-----------------------|
+| Leche            | ≈ 100–103 g          | ✅ Casi igual          |
+| Aceite           | ≈ 92 g               | ❌ Diferencia notable  |
+| Lentejas cocidas | ≈ 80–90 g            | ❌ Diferencia notable  |
+
+> **Conclusión:** Si se mezclan unidades sin conversión,
+> el cálculo de hierro arrojará resultados incorrectos.
+
+---
+
+## Opciones de solución
+
+### Opción 1 — Simplificar: solo gramos y mililitros ✅ Recomendada
+
+El sistema no permite que la madre escriba la unidad libremente.
+En FerovaFamilia aparece un **selector fijo** con solo dos opciones:
+
+- **gramos** → para sólidos
+- **mililitros** → para líquidos
+
+El campo `unit` en `FoodEntry` sigue existiendo, pero solo con esos dos valores.
+El cálculo siempre usa la `quantity` tal cual, sin conversión adicional.
+
+**Vista del campo en la interfaz:**
+
+```
+┌─────────────────────────────────┐
+│ Espinaca                        │
+│                                 │
+│ Cantidad:  [ 200 ] [ gramos ▼ ] │
+│                    [ mililitros ]│
+│                                 │
+│         [ Registrar ]           │
+└─────────────────────────────────┘
+```
+
+---
+
+### Opción 2 — Eliminar `unit` del FoodEntry
+
+El catálogo ya define todo por 100 gramos, así que el sistema asume
+que la madre **siempre ingresa gramos**.
+
+- El campo `unit` desaparece del modelo.
+- FerovaFamilia muestra `"g"` fijo junto al número.
+
+---
+
+## Regla práctica para las unidades
+
+| Objetivo          | Unidad recomendada                        |
+|-------------------|-------------------------------------------|
+| Precisión máxima  | gramos                                    |
+| Facilidad de uso  | g para sólidos, ml para líquidos          |
+
+> Si se necesita aceptar mililitros para líquidos, **se debe convertir a gramos**
+> antes de calcular el hierro, usando la densidad específica del alimento.
