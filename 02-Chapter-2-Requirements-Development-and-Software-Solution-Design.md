@@ -8545,6 +8545,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
     "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
     "availableSlots": ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
   },
+  "scheduleOfOperation: " "Lunes a Viernes: 8:00 AM - 16:00 PM"
   "status": "ACTIVE"
 }
 ```
@@ -8718,6 +8719,7 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
     "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
     "availableSlots": ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
   },
+  "scheduleOfOperation: " "Lunes a Viernes: 8:00 AM - 16:00 PM"
   "status": "ACTIVE"
 }
 ```
