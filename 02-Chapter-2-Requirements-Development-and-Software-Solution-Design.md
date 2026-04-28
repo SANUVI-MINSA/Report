@@ -8576,9 +8576,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 {
   "id": "fac-789",
   "name": "Posta Medica Huascar",
-  "address": "Av. Huascar 1250",
   "distanceKm": 0.5,
-  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
   "lat": -12.0031,
   "lng": -77.0082
 }
