@@ -8332,6 +8332,9 @@ Gestiona la información geográfica de la posta, su personal asignado y sus cit
 | **Atributo** | `districtId` | **String** | Referencia logica al id del distrito proveniente de la coleccion districts del seed inicial de Ferova. Por ejemplo "dist-001" para San Juan de Lurigancho. El admin selecciona el distrito de un dropdown en FerovaClinic y el sistema toma automaticamente el districtId correspondiente del seed. Lo usa el BC Analytics & Reporting para agrupar las postas por distrito y generar el mapa de calor. |
 | **Atributo** | `districtName` | **String** | Nombre legible del distrito proveniente del seed inicial. Por ejemplo "San Juan de Lurigancho". Se almacena junto al districtId para que FerovaClinic pueda mostrar el nombre del distrito sin necesidad de consultar la coleccion districts en cada peticion. |
 | **Atributo** | `coordinates` | **Coordinates (VO)** | Value Object que encapsula la latitud y longitud de la posta medica. Google Maps API usa coordinates.lat y coordinates.lng para mostrar la posta en el mapa de FerovaFamilia y calcular la distancia entre la madre y las postas cercanas. |
+| **Atributo** | `phoneNumber` | **String** | Numero telefonico de contacto de la posta medica. Por ejemplo "+51 01 234-5678". Lo usa FerovaFamilia para mostrar el contacto de la posta cuando la madre necesita comunicarse directamente con el personal. |
+| **Atributo** | `services` | **List\<String\>** | Lista de servicios medicos disponibles en la posta. Por ejemplo ["Control de crecimiento y desarrollo", "Vacunacion", "Consulta pediatrica"]. Lo usa FerovaFamilia para mostrar a la madre los servicios disponibles antes de reservar una cita. |
+| **Atributo** | `operatingSchedule` | **OperatingSchedule (VO)** | Value Object que define los dias habiles y los slots de hora disponibles para reservar una cita en la posta. Contiene availableDays como lista de dias habiles y availableSlots como lista de horarios disponibles en formato HH:mm. FerovaFamilia usa availableDays para deshabilitar dias no habiles en el selector de fecha y availableSlots para mostrar solo los horarios disponibles que aun no esten ocupados por otra cita confirmada de la misma enfermera. |
 | **Atributo** | `scheduleOfOperation` | **String** | Horario de atencion de la posta medica. Por ejemplo "Lunes a Viernes de 8:00 AM a 5:00 PM". Lo usa FerovaFamilia para mostrar el horario cuando la madre quiere reservar una cita presencial. |
 | **Atributo** | `status` | **FacilityStatus (VO)** | Value Object enumerador que indica si la posta esta ACTIVE o INACTIVE. Permite filtrar solo las postas activas cuando la madre busca la posta mas cercana desde FerovaFamilia. |
 | **Método** | `registerFacility()` | **void** | Verifica que name, address, districtId y coordinates esten completos. Cambia el status a ACTIVE y dispara el evento HealthFacilityRegistered para notificar al BC Analytics & Reporting que agregue la posta al mapa de calor del distrito. |
@@ -8410,6 +8413,16 @@ Gestiona la información geográfica de la posta, su personal asignado y sus cit
 | **Atributo** | `CONFIRMED` | **Status** | La cita fue reservada exitosamente por la madre. |
 | **Atributo** | `CANCELLED` | **Status** | La madre cancelo la cita antes de la fecha programada. |
 
+<h4>OperatingSchedule</h4>
+
+**Proposito:** Encapsula el horario operativo de la posta medica de forma estructurada. No tiene id propio porque es un dato que describe atributos fijos de la posta y se iguala por valor: dos postas con los mismos dias y horas tendrian el mismo horario. Reemplaza el campo scheduleOfOperation de tipo String para permitir validaciones programaticas al momento de reservar una cita.
+
+| Categoría | Elemento | Detalle | Descripción |
+| :--- | :--- | :--- | :--- |
+| **Atributo** | `availableDays` | **List\<DayOfWeek\>** | Lista de dias habiles en los que la posta atiende. Usa el enum DayOfWeek con valores MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY. Por ejemplo ["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY"] para una posta de lunes a viernes. |
+| **Atributo** | `availableSlots` | **List\<String\>** | Lista de horarios disponibles para reservar una cita en formato HH:mm en hora local Peru (UTC-5). Por ejemplo ["08:00","09:00","10:00","11:00","14:00","15:00","16:00"]. FerovaFamilia muestra estos slots como botones seleccionables. Cuando una madre reserva un slot, el sistema verifica que no exista ya una Appointment confirmada para la misma enfermera en ese mismo dia y hora antes de crear la cita, evitando asi el doble-booking. |
+| **Validación** | **Inmutabilidad** | **Reglas de Negocio** | Se valida en construccion que availableDays no este vacio y que availableSlots tenga al menos un horario en formato HH:mm valido entre 00:00 y 23:59. Si el horario cambia se reemplaza el Value Object completo. FerovaFamilia usa availableDays para deshabilitar los dias no habiles en el selector de fecha y usa availableSlots para mostrar unicamente los horarios configurados por la posta, ocultando los que ya esten ocupados por otra cita confirmada de la misma posta. |
+
 ###### Domain Services
 
 | Servicio | Propósito | Métodos |
@@ -8420,7 +8433,7 @@ Gestiona la información geográfica de la posta, su personal asignado y sus cit
 
 | Repositorio | Propósito | Métodos |
 | :--- | :--- | :--- |
-| **HealthFacilityRepository** | Interfaz para gestionar la persistencia de las postas medicas y su informacion geografica en MongoDB. | • `save(facility: HealthFacility)` : Guarda o actualiza una posta en MongoDB incluyendo su districtId, districtName y el Value Object Coordinates embebido en el documento.<br><br>• `findById(id: String)` : Busca una posta por su id. Lo usa el BC Analytics & Reporting para obtener el districtId y coordinates de la posta al actualizar el mapa de calor. Retorna null si no existe.<br><br>• `findAll()` : Retorna todas las postas ACTIVE del sistema. Lo usa el FacilityLocatorService para buscar las postas cercanas a la madre.<br><br>• `findByDistrictId(districtId: String)` : Retorna todas las postas ACTIVE de un distrito especifico. Lo usa el BC Analytics & Reporting para generar el reporte del distrito. |
+| **HealthFacilityRepository** | Interfaz para gestionar la persistencia de las postas medicas y su informacion geografica en MongoDB. | • `save(facility: HealthFacility)` : Guarda o actualiza una posta en MongoDB incluyendo su districtId, districtName y el Value Object Coordinates y OperatingSchedule embebido en el documento.<br><br>• `findById(id: String)` : Busca una posta por su id. Lo usa el BC Analytics & Reporting para obtener el districtId y coordinates de la posta al actualizar el mapa de calor. Retorna null si no existe.<br><br>• `findAll()` : Retorna todas las postas ACTIVE del sistema. Lo usa el FacilityLocatorService para buscar las postas cercanas a la madre.<br><br>• `findByDistrictId(districtId: String)` : Retorna todas las postas ACTIVE de un distrito especifico. Lo usa el BC Analytics & Reporting para generar el reporte del distrito. |
 | **AppointmentRepository** | Interfaz para gestionar la persistencia y el ciclo de vida de las citas presenciales. | • `save(appointment: Appointment)` : Guarda o actualiza una cita en MongoDB.<br><br>• `findById(id: String)` : Busca una cita por su id. Retorna null si no existe.<br><br>• `findByPatientId(patientId: String)` : Retorna todas las citas de un paciente. Lo usa FerovaFamilia para mostrar el historial de citas de la madre.<br><br>• `findByNurseId(nurseId: String)` : Retorna todas las citas de una enfermera. Lo usa FerovaClinic para mostrar la agenda de citas de la enfermera. |
 | **NurseAssignmentRepository** | Interfaz para gestionar la persistencia de las asignaciones de enfermeras a postas medicas. | • `save(assignment: NurseAssignment)` : Guarda o actualiza una asignacion en MongoDB.<br><br>• `findByFacilityId(facilityId: String)` : Retorna todas las enfermeras asignadas a una posta.<br><br>• `findByNurseId(nurseId: String)` : Retorna la asignacion actual de una enfermera. Lo usa el BC Treatment Tracking para saber a que posta pertenece la enfermera cuando genera eventos de adherencia. |
 | **DistrictRepository** | Interfaz para gestionar el acceso al catalogo de distritos administrativos del sistema. | • `findAll()` : Retorna todos los distritos del seed inicial. Lo usa FerovaClinic para mostrar el dropdown de seleccion de distrito cuando el admin registra una nueva posta medica.<br><br>• `findById(id: String)` : Busca un distrito por su id. Lo usa el sistema para validar que el districtId seleccionado por el admin exista en el catalogo antes de registrar la posta. |
@@ -8504,7 +8517,12 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
   "districtName": "San Juan de Lurigancho",
   "lat": -12.0031,
   "lng": -77.0082,
-  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM"
+  "phoneNumber": "+51 01 234-5678",
+  "services": ["Control de crecimiento y desarrollo", "Vacunacion", "Consulta pediatrica"],
+  "operatingSchedule": {
+    "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+    "availableSlots": ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
+  }
 }
 ```
 
@@ -8521,7 +8539,12 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
   "districtName": "San Juan de Lurigancho",
   "lat": -12.0031,
   "lng": -77.0082,
-  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
+  "phoneNumber": "+51 01 234-5678",
+  "services": ["Control de crecimiento y desarrollo", "Vacunacion", "Consulta pediatrica"],
+  "operatingSchedule": {
+    "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+    "availableSlots": ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
+  },
   "status": "ACTIVE"
 }
 ```
@@ -8599,8 +8622,8 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 
 | Assembler / Mapper | Dirección de la Traducción | Razón |
 | :--- | :--- | :--- |
-| **RegisterFacilityCommandFromResourceAssembler** | `RegisterFacilityRequest` → `RegisterFacilityCommand` | Convierte el RegisterFacilityRequest en un RegisterFacilityCommand para la Application Layer. Extrae el lat y lng del request y los encapsula en el Value Object Coordinates antes de crear el comando. Separa la representacion HTTP del comando de dominio. |
-| **FacilityResponseFromEntityAssembler** | `HealthFacility` → `FacilityResponse` | Convierte el Aggregate Root HealthFacility en un FacilityResponse que puede viajar via HTTP hacia FerovaFamilia o FerovaClinic. Extrae el lat y lng del Value Object Coordinates y los expone como campos planos en el DTO. |
+| **RegisterFacilityCommandFromResourceAssembler** | `RegisterFacilityRequest` → `RegisterFacilityCommand` | Convierte el RegisterFacilityRequest en un RegisterFacilityCommand para la Application Layer. Extrae el lat y lng del request y los encapsula en el Value Object Coordinates. Extrae availableDays y availableSlots del request y los encapsula en el Value Object OperatingSchedule. Separa la representacion HTTP del comando de dominio.|
+| **FacilityResponseFromEntityAssembler** | `HealthFacility` → `FacilityResponse` |Convierte el Aggregate Root HealthFacility en un FacilityResponse que puede viajar via HTTP hacia FerovaFamilia o FerovaClinic. Extrae el lat y lng del Value Object Coordinates y los expone como campos planos en el DTO. Extrae availableDays y availableSlots del Value Object OperatingSchedule y los expone como campos planos en el DTO.|
 | **CreateAppointmentCommandFromResourceAssembler** | `CreateAppointmentRequest` → `CreateAppointmentCommand` | Convierte el CreateAppointmentRequest en un CreateAppointmentCommand para la Application Layer. Separa la capa HTTP de la logica de creacion de citas del dominio. |
 | **AppointmentResponseFromEntityAssembler** | `Appointment` → `AppointmentResponse` | Convierte la entidad Appointment en un AppointmentResponse que puede viajar via HTTP. Agrega el facilityName consultando el HealthFacilityRepository para que el usuario vea el nombre de la posta sin consultas adicionales desde el frontend. |
 | **NearbyFacilityResponseFromEntityAssembler** | `HealthFacility` → `NearbyFacilityResponse` | Convierte el Aggregate Root HealthFacility en un NearbyFacilityResponse agregando el campo distanceKm calculado por el FacilityLocatorService. Es el assembler mas especializado del bounded context porque combina datos del dominio con datos calculados externamente. |
@@ -8656,7 +8679,7 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 | Mapper | Descripción |
 | :--- | :--- |
-| **HealthFacilityDocumentMapper** | Convierte entre el Aggregate Root HealthFacility del dominio y el documento MongoDB. Es necesario porque el Aggregate tiene metodos y comportamiento que no deben persistirse directamente. El mapper extrae el Value Object Coordinates y lo convierte en un subdocumento embebido con lat y lng en MongoDB. Al leer de MongoDB hace el proceso inverso reconstruyendo el Value Object Coordinates desde el subdocumento. |
+| **HealthFacilityDocumentMapper** | Convierte entre el Aggregate Root HealthFacility del dominio y el documento MongoDB. Es necesario porque el Aggregate tiene metodos y comportamiento que no deben persistirse directamente. El mapper extrae los Value Objects Coordinates y OperatingSchedule y los convierte en subdocumentos embebidos en MongoDB. Al leer de MongoDB hace el proceso inverso reconstruyendo ambos Value Objects desde sus respectivos subdocumentos. |
 | **AppointmentDocumentMapper** | Convierte entre la entidad Appointment del dominio y el documento MongoDB. Garantiza que el Value Object enumerador AppointmentStatus se mapee correctamente como un String en MongoDB y se reconstruya como el enum correcto al leer. |
 | **NurseAssignmentDocumentMapper** | Convierte entre la entidad NurseAssignment del dominio y el documento MongoDB. Garantiza que el dateAssigned se mapee correctamente como un campo Date en MongoDB. |
 | **DistrictDocumentMapper** | Convierte entre la entidad District del dominio y el documento MongoDB del catalogo seed. Es un mapper simple porque District solo tiene id y name. |
@@ -8689,7 +8712,12 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
     "lat": -12.0031,
     "lng": -77.0082
   },
-  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
+  "phoneNumber": "+51 01 234-5678",
+  "services": ["Control de crecimiento y desarrollo", "Vacunacion", "Consulta pediatrica"],
+  "operatingSchedule": {
+    "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+    "availableSlots": ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
+  },
   "status": "ACTIVE"
 }
 ```
