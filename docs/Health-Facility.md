@@ -14,15 +14,15 @@ Es el bounded context que gestiona todo lo relacionado con las postas médicas d
 
 ### 🏥 El Admin MINSA desde FerovaClinic
 
-- Registra nuevas postas médicas con su nombre, dirección, coordenadas GPS y horario
+- Registra nuevas postas médicas con su nombre, dirección, coordenadas GPS, número telefónico, lista de servicios, días hábiles de atención (`availableDays`) y slots de hora disponibles para citas (`availableSlots`)
 - Asigna enfermeras a cada posta
 - Desactiva postas que fueron cerradas temporalmente
 
 ### 👩 La madre desde FerovaFamilia
 
 - Busca las postas más cercanas a su ubicación actual
-- Ve el detalle de una posta (dirección y horario)
-- Reserva una cita presencial en la posta
+- Ve el detalle de una posta (dirección, teléfono, servicios disponibles, días hábiles y slots de hora disponibles para reservar)
+- Reserva una cita presencial en la posta seleccionando primero un día hábil del calendario (los días no hábiles aparecen bloqueados según `availableDays`) y luego un slot de hora disponible (los slots ya ocupados por otra cita confirmada de la misma enfermera aparecen deshabilitados según `availableSlots`). El sistema combina el día y el slot seleccionados para construir el `date` en UTC que se guarda en el `Appointment`
 - Cancela una cita si no puede asistir
 
 ### 👩‍⚕️ La enfermera desde FerovaClinic
@@ -62,12 +62,15 @@ Resultado mostrado a la madre:
 El admin abre FerovaClinic y registra la posta con estos datos:
 
 ```
-Nombre:    Posta Médica Huáscar
-Dirección: Av. Huáscar 1250, San Juan de Lurigancho
-Distrito:  San Juan de Lurigancho (selecciona del dropdown)
-Latitud:   -12.0031
-Longitud:  -77.0082
-Horario:   Lunes a Viernes 8AM - 5PM
+Nombre:         Posta Médica Huáscar
+Dirección:      Av. Huáscar 1250, San Juan de Lurigancho
+Distrito:       San Juan de Lurigancho (selecciona del dropdown)
+Latitud:        -12.0031
+Longitud:       -77.0082
+Teléfono:       +51 01 234-5678
+Servicios:      Control de crecimiento y desarrollo, Vacunacion, Consulta pediatrica
+Días hábiles:   Lunes a Viernes
+Slots de hora:  08:00, 09:00, 10:00, 11:00, 14:00, 15:00, 16:00
 ```
 
 Al guardar, el sistema dispara el evento `HealthFacilityRegistered` y el BC Analytics & Reporting recibe ese evento para agregar la posta al mapa de calor del distrito con **color verde inicial**.
@@ -106,36 +109,120 @@ El admin selecciona una enfermera y la asigna a la posta. El sistema crea una `N
 
 ---
 
+## ¿Cómo funciona el detalle de una posta?
+
+La madre toca un pin del mapa en FerovaFamilia y ve esta pantalla:
+
+### Frame 1 — Mapa con postas cercanas
+
+```
+┌─────────────────────────┐
+│  🗺️  Mapa               │
+│                         │
+│    📍 Posta Huáscar     │
+│    📍 Posta Zárate      │
+│    📍 Posta San Hilarión│
+│                         │
+│  [La madre toca un pin] │
+└─────────────────────────┘
+```
+
+---
+
+### Frame 2 — Detalle completo de la posta
+
+```
+┌─────────────────────────┐
+│  ← Detalle de Posta     │
+│                         │
+│  🏥 Posta Médica Huáscar│
+│  📍 Av. Huáscar 1250    │
+│  📞 +51 01 234-5678     │
+│                         │
+│  Servicios disponibles  │
+│  ✅ Control crecimiento │
+│  ✅ Vacunación          │
+│  ✅ Consulta pediátrica │
+│                         │
+│  Días de atención       │
+│  Lun Mar Mié Jue Vie    │
+│                         │
+│  [ Reservar cita ]      │
+└─────────────────────────┘
+```
+
+> El frontend llama a `GET /api/v1/facilities/{id}` y recibe el `FacilityResponse`. `name`, `address` y `phoneNumber` se muestran directo. `services` se lista como ✅. `availableDays` se traduce a nombres cortos de días. `availableSlots` todavía no se usa aquí, recién entra en el flujo de reserva cuando la madre presiona "Reservar cita".
+
+---
+
 ## ¿Cómo funciona la reserva de una cita?
 
-La madre sigue este flujo desde FerovaFamilia:
+La madre sigue este flujo de pantallas desde FerovaFamilia:
+
+### Frame 1 — Calendario con días bloqueados
 
 ```
-Paso 1:
-  Madre presiona "Buscar posta cercana"
-  Sistema muestra lista ordenada por distancia
-          ↓
-Paso 2:
-  Madre selecciona "Posta Médica Huáscar"
-  Ve: nombre, dirección, horario y botón "Reservar cita"
-          ↓
-Paso 3:
-  Madre selecciona fecha y hora disponible
-  Presiona "Confirmar cita"
-          ↓
-Paso 4:
-  Sistema crea Appointment con status CONFIRMED
-  Dispara evento AppointmentConfirmed
-          ↓
-Paso 5:
-  BC Notifications envía notificación push a la madre:
-  "Tu cita en Posta Médica Huáscar fue confirmada
-   para el martes 22 de abril a las 10:00 AM"
-
-  Y a la enfermera Rosa:
-  "La madre de Juan García reservó una cita
-   para el martes 22 de abril a las 10:00 AM"
+┌─────────────────────────┐
+│  ← Reservar cita        │
+│  Posta Médica Huáscar   │
+│                         │
+│  Selecciona un día      │
+│                         │
+│  ◀  Abril 2026  ▶       │
+│  Lu Ma Mi Ju Vi Sa Do   │
+│           1  2  3 ░░ ░░ │
+│  ░░  6  7  8  9 10 ░░░░ │
+│  ░░ 13 14 15 16 17 ░░░░ │
+│  ░░ 20 21 22 23 24 ░░░░ │
+│  ░░ 27 28 29 30    ░░░░ │
+└─────────────────────────┘
 ```
+
+> ░░ = días bloqueados. El frontend usa `availableDays` del `FacilityResponse` para deshabilitar sábado y domingo sin llamar al backend.
+
+---
+
+### Frame 2 — Slots de hora disponibles
+
+```
+┌─────────────────────────┐
+│  ← Reservar cita        │
+│  Posta Médica Huáscar   │
+│  Martes 22 de abril     │
+│                         │
+│  Selecciona una hora    │
+│                         │
+│  [08:00] [~~09:00~~] [10:00] │
+│  [~~11:00~~] [14:00] [15:00] │
+│  [16:00]                     │
+└──────────────────────────────┘
+```
+
+> El frontend llama a `GET /api/v1/appointments/available-slots?facilityId=fac-789&date=2026-04-22`. El backend toma los slots de `availableSlots` de la posta y elimina los que ya tienen un `Appointment` confirmado con la misma enfermera ese día. `09:00` y `11:00` aparecen tachados porque ya están ocupados.
+
+---
+
+### Frame 3 — Confirmación de la cita
+
+```
+┌─────────────────────────┐
+│                         │
+│          ✅             │
+│   ¡Cita confirmada!     │
+│                         │
+│  Posta Médica Huáscar   │
+│  Martes 22 de abril     │
+│  10:00 AM               │
+│                         │
+│  Recibirás una          │
+│  notificación de        │
+│  recordatorio           │
+│                         │
+│  [ Volver al inicio ]   │
+└─────────────────────────┘
+```
+
+> El frontend llama a `POST /api/v1/appointments` con `date: 2026-04-22T15:00:00Z` (10:00 AM Perú convertido a UTC). El sistema crea el `Appointment` con status `CONFIRMED` y dispara `AppointmentConfirmed` hacia el BC Notifications, que envía notificación push a la madre y a la enfermera Rosa.
 
 ---
 
@@ -176,13 +263,18 @@ Health Facility tiene **4 colecciones**:
 
 ```json
 {
-  "name":              "Posta Médica Huáscar",
-  "address":           "Av. Huáscar 1250",
-  "districtId":        "dist-001",
-  "districtName":      "San Juan de Lurigancho",
-  "coordinates":       { "lat": -12.0031, "lng": -77.0082 },
-  "scheduleOfOperation": "Lunes a Viernes 8AM-5PM",
-  "status":            "ACTIVE"
+  "name":          "Posta Médica Huáscar",
+  "address":       "Av. Huáscar 1250",
+  "districtId":    "dist-001",
+  "districtName":  "San Juan de Lurigancho",
+  "coordinates":   { "lat": -12.0031, "lng": -77.0082 },
+  "phoneNumber":   "+51 01 234-5678",
+  "services":      ["Control de crecimiento y desarrollo", "Vacunacion", "Consulta pediatrica"],
+  "operatingSchedule": {
+    "availableDays": ["MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"],
+    "availableSlots": ["08:00", "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"]
+  },
+  "status":        "ACTIVE"
 }
 ```
 
