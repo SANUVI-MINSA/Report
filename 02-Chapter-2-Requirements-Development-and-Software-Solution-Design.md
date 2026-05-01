@@ -7478,10 +7478,11 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 
 
 ```json
-{
+[
+  {
     "patientId": "pat-001",
-    "patientName": "Lucia",
-    "patientAge": 10,
+    "patientName": "Juan Garcia",
+    "patientAge": 32,
     "score": 94.0,
     "riskLevel": "HIGH",
     "hoursWithoutConfirmation": 72,
@@ -7489,13 +7490,75 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
   },
   {
     "patientId": "pat-002",
-    "patientName": "Pedro",
-    "patientAge": 11,
+    "patientName": "Pedro Lopez",
+    "patientAge": 28,
     "score": 78.0,
     "riskLevel": "HIGH",
     "hoursWithoutConfirmation": 48,
     "justification": "El paciente lleva 2 dias sin confirmar su dosis."
   }
+]
+
+[
+  {
+    "patientId": "pat-003",
+    "patientName": "Maria Torres",
+    "patientAge": 18,
+    "score": 68.0,
+    "riskLevel": "MEDIUM",
+    "hoursWithoutConfirmation": 24,
+    "justification": "El paciente lleva 24 horas sin confirmar su dosis."
+  },
+  {
+    "patientId": "pat-004",
+    "patientName": "Ana Flores",
+    "patientAge": 24,
+    "score": 61.0,
+    "riskLevel": "MEDIUM",
+    "hoursWithoutConfirmation": 18,
+    "justification": "El paciente lleva 18 horas sin confirmar su dosis."
+  },
+  {
+    "patientId": "pat-005",
+    "patientName": "Luis Quispe",
+    "patientAge": 36,
+    "score": 53.0,
+    "riskLevel": "MEDIUM",
+    "hoursWithoutConfirmation": 10,
+    "justification": "El paciente lleva 10 horas sin confirmar su dosis."
+  }
+]
+
+[
+  {
+    "patientId": "pat-006",
+    "patientName": "Sofia Mamani",
+    "patientAge": 12,
+    "score": 20.0,
+    "riskLevel": "LOW",
+    "hoursWithoutConfirmation": 0,
+    "justification": "El paciente confirmo su dosis hace menos de 1 hora."
+  },
+  {
+    "patientId": "pat-007",
+    "patientName": "Carlos Huanca",
+    "patientAge": 28,
+    "score": 15.0,
+    "riskLevel": "LOW",
+    "hoursWithoutConfirmation": 0,
+    "justification": "El paciente confirmo su dosis hace 3 horas."
+  },
+  {
+    "patientId": "pat-008",
+    "patientName": "Rosa Condori",
+    "patientAge": 20,
+    "score": 8.0,
+    "riskLevel": "LOW",
+    "hoursWithoutConfirmation": 0,
+    "justification": "El paciente confirmo su dosis hace 5 horas."
+  }
+]
+
 ```
 
 
