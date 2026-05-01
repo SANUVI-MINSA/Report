@@ -104,3 +104,18 @@ Cuando la enfermera toca a un paciente desde la lista de HIGH, ve la siguiente i
 | Fin estimado   | 30 de junio 2026    |
 | **Adherencia** | **71.4%**           |
 | Dosis confirmadas | 15 de 21 días    |
+
+
+#### Endpoints
+
+```
+1. GET /api/v1/treatments/{patientId}
+
+2. GET /api/v1/treatments/{id}/risk-score
+```
+
+
+
+
+
+
