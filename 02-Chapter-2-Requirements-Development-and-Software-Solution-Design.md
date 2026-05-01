@@ -7307,6 +7307,7 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **RiskScoreRepository** | **Propósito** | Historial de Riesgo | Interfaz para gestionar la persistencia de los cálculos de riesgo y niveles de adherencia. |
 | | **Método** | `save()` | Guarda un nuevo score de riesgo o actualiza el existente en MongoDB. Se ejecuta cada vez que el AdherenceCalculatorService recalcula el score despues de una confirmacion u omision de dosis actualizando el nivel de riesgo del paciente en tiempo real para la enfermera en FerovaClinic. |
 | | **Método** | `findByTreatmentId()` | Busca y retorna el score de riesgo actual de un tratamiento especifico. Es el metodo que usa FerovaClinic para mostrar el semaforo de cada paciente en el panel de la enfermera. Sin este metodo la enfermera no podria ver en tiempo real el nivel de riesgo de abandono de sus pacientes. |
+| | **Método** | `findByNurseIdAndRiskLevel()` | Retorna todos los RiskScore de los pacientes de una enfermera especifica filtrados por riskLevel  |
 
 ###### Domain Events
 
@@ -7339,6 +7340,9 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **RiskScoreController** | **Propósito** | Monitoreo de Riesgo | Expone los endpoints REST para consultar el score de riesgo de abandono de los pacientes. Es el controller que alimenta el semaforo de FerovaClinic permitiendo a la enfermera ver el nivel de riesgo de cada uno de sus pacientes en tiempo real. |
 | | **Endpoint** | `GET /api/v1/treatments/{id}/risk-score` | retorna el score de riesgo actual del paciente con su clasificacion en semaforo y la justificacion del score. Lo usa FerovaClinic para mostrar el color del semaforo de cada paciente en el panel de la enfermera. |
 | | **Endpoint** | `GET /api/v1/treatments/critical-patients` | retorna la lista de pacientes criticos de la enfermera autenticada, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el endpoint mas urgente del bounded context porque le permite a la enfermera identificar rapidamente quien necesita atencion inmediata. |
+| | **Endpoint** | `GET /api/v1/risk-scores/summary` | retorna el conteo de pacientes por cada nivel de riesgo del RiskLevel (HIGH, MEDIUM, LOW) |
+| | **Endpoint** | `GET  /api/v1/risk-scores/by-level/{riskLevel}` | retorna la lista de pacientes de un nivel de riesgo especifico |
+
 
 ###### Resources (DTOs / Request & Response Models)
 
@@ -7453,6 +7457,48 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 }
 ```
 
+#### **9. RiskScoreSummaryResponse**
+
+**Propósito:** Para mostrar las 3 tarjetas del Home con los numeros de pacientes en cada level de riesgo
+
+
+```json
+{
+  "HIGH":   { "count": 15, "riskLevel": "HIGH" },
+  "MEDIUM": { "count": 12, "riskLevel": "MEDIUM" },
+  "LOW":    { "count": 18, "riskLevel": "LOW" }
+}
+```
+
+#### **10. PatientByRiskLevelResponse**
+
+
+**Propósito:** Para mostrar la lista de pacientes pertenecientes a dicho risk_level
+
+
+
+```json
+{
+    "patientId": "pat-001",
+    "patientName": "Lucia",
+    "patientAge": 10,
+    "score": 94.0,
+    "riskLevel": "HIGH",
+    "hoursWithoutConfirmation": 72,
+    "justification": "El paciente lleva 3 dias sin confirmar su dosis."
+  },
+  {
+    "patientId": "pat-002",
+    "patientName": "Pedro",
+    "patientAge": 11,
+    "score": 78.0,
+    "riskLevel": "HIGH",
+    "hoursWithoutConfirmation": 48,
+    "justification": "El paciente lleva 2 dias sin confirmar su dosis."
+  }
+```
+
+
 ###### Assemblers / Mappers
 
 | Assembler / Mapper | Dirección de la Traducción | Propósito |
@@ -7491,6 +7537,8 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **GetDoseHistory-QueryHandler** | Obtener el historial de dosis del paciente. | Recibe el GetDoseHistoryQuery con el treatmentId. Consulta el DailyDoseRepository con findByTreatmentId y retorna el historial completo de dosis ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de todas sus confirmaciones y omisiones a lo largo del tratamiento permitiendole ver su progreso de adherencia dia a dia. |
 | **GetRiskScore-QueryHandler** | Obtener el score de riesgo y semáforo. | Recibe el GetRiskScoreQuery con el treatmentId. Consulta el RiskScoreRepository con findByTreatmentId y retorna el score de riesgo actual del paciente con su clasificacion y justificacion. Lo usa FerovaClinic para mostrar el semaforo de color correcto para cada paciente en el panel de la enfermera en tiempo real. |
 | **GetCriticalPatients-QueryHandler** | Listar pacientes en riesgo crítico (>72h). | Recibe el GetCriticalPatientsQuery con el nurseId. Consulta el TreatmentRepository con findCriticalPatients y retorna la lista de pacientes que llevan 72 horas o mas sin confirmar su dosis. Es el query handler mas urgente del bounded context porque alimenta la lista roja de FerovaClinic que le indica a la enfermera quienes necesitan atencion inmediata para evitar el abandono del tratamiento. |
+| **GetRiskScoreSummaryQueryHandler** | Necesita contar cuantos pacientes de la enfermera autenticada tienen cada nivel de riesgo consultando el RiskScoreRepository agrupado por riskLevel. | Obtiene el nurseId de la enfermera autenticada via el token JWT. Consulta el RiskScoreRepository con findByNurseId y agrupa los resultados por riskLevel contando cuantos hay en cada grupo. Retorna el resumen con los tres conteos. |
+| **GetPatientsByRiskLevelQueryHandler** | Necesita retornar la lista completa de pacientes de la enfermera que tienen un nivel de riesgo especifico para mostrarla cuando la enfermera toca una tarjeta del Home.| Recibe el riskLevel seleccionado por la enfermera. Obtiene el nurseId de la enfermera autenticada. Consulta el RiskScoreRepository con findByNurseIdAndRiskLevel y retorna la lista de pacientes con su score, justificacion y horas sin confirmacion ordenados de mayor a menor score. |
 
 ###### Event Handlers
 
