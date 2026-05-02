@@ -6485,13 +6485,7 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
     {
       "fecha": "2026-01-01T10:00:00",
       "hemoglobinaGdl": 10.2,
-      "sintomas": ["cansancio"],
-      "tratamiento": {
-        "medicamento": "Hierro",
-        "dosis": "10mg",
-        "duracionDias": 30,
-        "indicaciones": "Después de comidas"
-      }
+      "estado": "LEVE",
     }
   ]
 }
@@ -6634,13 +6628,6 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
       "fecha": "2026-02-01",
       "hemoglobinaGdl": 10.5,
       "estado": "LEVE",
-      "sintomas": ["cansancio"],
-      "tratamiento": {
-        "medicamento": "Hierro",
-        "dosis": "10mg",
-        "duracionDias": 30,
-        "indicaciones": "Después de comidas"
-      }
     }
   ]
 }
