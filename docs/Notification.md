@@ -154,9 +154,7 @@ El dispositivo del usuario recibe la notificación
 │ 🚨 Ferova                           │
 │ Paciente en riesgo de abandono      │
 │ Juan García lleva 72 horas          │
-│ sin confirmar su dosis.             │
-│ Score de riesgo: 94%                │
-│ Toca para ver el detalle.           │
+│ sin confirmar su dosis.             │      │
 └─────────────────────────────────────┘
 ```
 
