@@ -6367,7 +6367,7 @@ El `facilityId` del paciente se asigna automáticamente desde la posta de la enf
 
 | Entidad | Propósito | Atributos | Métodos | Reglas y Relaciones |
 | :--- | :--- | :--- | :--- | :--- |
-| **MedicalRecord** | Representa un registro clínico detallado para la trazabilidad de la evolución médica y física del paciente. | • **id**: `String`<br>• **date**: `LocalDateTime`<br>• **hemoglobinLevel**: `HemoglobinLevel`<br>• **weight**: `Weight`<br>• **height**: `Height`<br>• **sexo**: `SexoGenero`<br>• **antecedentes**: `List<Antecedente>`<br>• **motivoConsulta**: `MotivoConsulta`<br>• **observaciones**: `Observaciones`<br>• **controls**: `List<Control>`<br>• **nurseId**: `String`<br>• **patientId**: `String`<br>• **motherId**: `String`<br>•**Sintomas:** List<String> | • `registerRecord()` : `void`<br>• `addControl(control: Control)` : `void`<br>• `addAntecedente(antecedente: Antecedente)` : `void` | • **Relación**: Patient (1) --- (0..*) MedicalRecord.<br>• **Regla**: Un paciente centraliza múltiples registros que forman su historial clínico histórico.<br>• **Regla**: La hemoglobina, peso y talla deben ser valores clínicos válidos y mayores a cero. |
+| **MedicalRecord** | Representa un registro clínico detallado para la trazabilidad de la evolución médica y física del paciente. | • **id**: `String`<br>• **date**: `LocalDateTime`<br>• **hemoglobinLevel**: `HemoglobinLevel`<br>• **weight**: `Weight`<br>• **height**: `Height`<br>• **sexo**: `SexoGenero`<br>• **antecedentes**: `List<Antecedente>`<br>• **motivoConsulta**: `MotivoConsulta`<br>• **observaciones**: `Observaciones`<br>• **controls**: `List<Control>`<br>• **nurseId**: `String`<br>• **patientId**: `String`<br>•**Sintomas:** List<String> | • `registerRecord()` : `void`<br>• `addControl(control: Control)` : `void`<br>• `addAntecedente(antecedente: Antecedente)` : `void` | • **Relación**: Patient (1) --- (0..*) MedicalRecord.<br>• **Regla**: Un paciente centraliza múltiples registros que forman su historial clínico histórico.<br>• **Regla**: La hemoglobina, peso y talla deben ser valores clínicos válidos y mayores a cero. |
 
 ###### Value Objects
 
@@ -6396,7 +6396,7 @@ El `facilityId` del paciente se asigna automáticamente desde la posta de la enf
 
 | Repository (Interfaz) | Propósito | Métodos de Consulta (Lectura) | Métodos de Persistencia (Escritura) |
 | :--- | :--- | :--- | :--- |
-| **PatientRepository** | Gestionar el acceso a los datos de los pacientes y su historial clínico, permitiendo búsquedas por responsables o identidad única. | • `findById(id: String)`<br>• `findByMotherDni(dni: String)`<br>• `findByNurseDni(dni: String)` | • `save(patient: Patient)`<br>• `deleteById(id: String)` |
+| **PatientRepository** | Gestionar el acceso a los datos de los pacientes y su historial clínico, permitiendo búsquedas por responsables o identidad única. | • `findById(id: String)`<br>• `findByMotherDni(dni: String)`<br>• `findByNurseid(id: String)` | • `save(patient: Patient)`<br>• `deleteById(id: String)` |
 | **MedicalHistoryRepository** | Gestionar el registro y la recuperación del historial médico en MongoDB, vital para las visitas presenciales de las enfermeras. | • `findByPatientId(patientId: String)` | • `save(history: MedicalHistory)` |
 
 ###### Domain Events
@@ -6420,16 +6420,17 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 | :--- | :--- | :--- | :--- |
 | **PatientController** | `/api/v1/patients` | **POST** | Registrar un nuevo paciente en el sistema. |
 | | `/api/v1/patients/{id}` | **GET** | Obtener información detallada del niño (incluye estado e historial). |
-| | `/api/v1/patients/mother/{dni}` | **GET** | Listar todos los pacientes asociados a una madre. |
-| | `/api/v1/patients/nurse/{dni}` | **GET** | Listar todos los pacientes asignados a una enfermera. |
+| | `/api/v1/patients/mother/{DNI}` | **GET** | Listar todos los pacientes asociados a una madre. |
+| | `/api/v1/patients/nurse/{id}` | **GET** | Listar todos los pacientes asignados a una enfermera. |
 | | `/api/v1/patients/{id}/assign-nurse` | **PUT** | Enfermera desde FerovaClinic: incorpora al paciente a su cartera. El sistema hereda automáticamente el `facilityId` de la posta de la enfermera. |
 | | `/api/v1/patients/{id}/medical-records` | **POST** | Registrar una nueva entrada en el historial médico. |
-| | `/api/v1/patients/{id}/medical-history` | **GET** | Recuperar toda la línea de tiempo clínica del paciente. |
+| | `/api/v1/patients/{id}/medical-records/{recordId}` | **GET** | Obtener el detalle del historial médico de un paciente al seleccionarlo. |
+| | `/api/v1/patients/{id}/medical-records` | **PUT** |Actualizar el historial médico del paciente (no incluye sexo). |
 | | `/api/v1/patients/{id}/controls` | **POST** | Agregar un nuevo control clínico en consultas posteriores. |
+| | `/api/v1/patients/{id}/medical-records/{recordId}/hemoglobin-stats` | **GET** | Obtener el promedio de hemoglobina y la evolución neta entre el primer y último control del historial médico. |
 | | `/api/v1/patients/{id}/discharge` | **POST** | Dar de alta médica al paciente (finalizar ciclo). |
-| |`/api/v1/patients/{id}/medical-history/pdf` | **GET** | Descargar historial médico completo (PDF). |
+| |`/api/v1/patients/{id}/medical-records/pdf` | **GET** | Descargar historial médico completo (PDF). |
 | |`/api/v1/patients/{id}/controls/pdf` | **GET** | Descargar SOLO los controles médicos (PDF). |
-| |`/api/v1/patients/{id}/controls/{date}/pdf` | **GET** | Descargar un reporte de control específico por fecha (PDF). |
 ###### Resources (DTOs / Request & Response Models)
 
 #### **1. CreatePatientRequest**
@@ -6484,18 +6485,11 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
  "sintomas": [
 	"Dolor de Cabeza",
     "Vomito"	
-  ],
-  "controls": [
-    {
-      "fecha": "2026-01-01T10:00:00",
-      "hemoglobinaGdl": 10.2,
-      "estado": "LEVE",
-    }
   ]
 }
 ```
 #### **4. AddControlRequest**
-**Propósito:** Registra un nuevo control de seguimiento y tratamiento para una consulta posterior.
+**Propósito:** Registra un nuevo control de seguimiento en el historial y tratamiento para una consulta posterior.
 
 ```json
 {
@@ -6523,12 +6517,99 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 }
 ```
 
+#### **7. UpdateMedicalRecordRequest**
+
+**Propósito:** Actualiza los datos de un historial médico existente. No incluye el campo sexo.
+
+```json
+{
+  "hemoglobinLevel": 10.5,
+  "weight": 13.0,
+  "height": 87.0,
+  "motivoConsulta": "Seguimiento mensual",
+  "observaciones": "Mejoría leve en valores de hemoglobina",
+  "antecedentes": [
+    {
+      "type": "ALERGIA",
+      "content": "Alergia a penicilina"
+    }
+  ],
+  "sintomas": [
+    "Cansancio"
+  ]
+}
+```
+#### **8. MedicalRecordDetailResponse**
+
+**Propósito:** Devuelve el detalle completo de un historial médico al seleccionar un paciente.
+
+```json
+{
+  "id": "mr-1",
+  "patientId": "patient-1",
+  "date": "2026-01-01T10:00:00",
+  "hemoglobinLevel": 10.2,
+  "weight": 12.8,
+  "height": 86.0,
+  "motivoConsulta": "Primera evaluación",
+  "observaciones": "Paciente estable",
+  "antecedentes": [
+    {
+      "type": "ALERGIA",
+      "content": "Alergia a penicilina"
+    }
+  ],
+  "sintomas": [
+    "Dolor de Cabeza",
+    "Vomito"
+  ],
+  "controls": [
+    {
+      "fecha": "2026-02-01",
+      "hemoglobinaGdl": 10.5,
+      "estado": "LEVE"
+    },
+    {
+      "fecha": "2026-03-01",
+      "hemoglobinaGdl": 11.2,
+      "estado": "CONTROLADA"
+    }
+  ]
+}
+```
+
+#### **9. HemoglobinStatsResponse**
+
+**Propósito:** Devuelve el promedio de hemoglobina, la evolución neta entre el primer y último control, y la lista de todos los controles registrados en el historial médico.
+
+```json
+{
+  "recordId": "mr-1",
+  "totalControles": 2,
+  "hemoglobinaPromedio": 10.85,
+  "evolucionNeta": 0.7,
+  "controls": [
+    {
+      "fecha": "2026-02-01",
+      "hemoglobinaGdl": 10.5,
+      "estado": "LEVE"
+    },
+    {
+      "fecha": "2026-03-01",
+      "hemoglobinaGdl": 11.2,
+      "estado": "CONTROLADA"
+    }
+  ]
+}
+```
+
 ###### Assemblers / Mappers
 
 | Assembler / Mapper | Dirección de la Traducción | Propósito |
 | :--- | :--- | :--- |
 | **CreatePatientCommandFromResourceAssembler** | `CreatePatientRequest` → `CreatePatientCommand` | Convierte el formulario de registro externo en un comando formal para el dominio. |
 | **MedicalRecordCommandAssembler** | `MedicalRecordRequest` → `MedicalRecord` | Traduce el JSON complejo del historial médico en un objeto estructurado, validando y convirtiendo tipos. |
+| **UpdateMedicalRecordCommandAssembler** | `UpdateMedicalRecordRequest ` → `UpdateMedicalRecordCommand` | Traduce la petición de actualización del historial médico en un comando del dominio, sin incluir el campo sexo. |
 | **ControlCommandAssembler** | `AddControlRequest` → `Control` | Transforma los datos de seguimiento en un objeto de control, permitiendo cálculos lógicos como el estado de anemia. |
 | **PatientResourceFromEntityAssembler** | `Patient (Entity)` → `PatientResource` | Transforma la entidad del dominio en un recurso seguro y resumido para ser enviado al cliente. |
 | **DischargePatientCommandAssembler** | `DischargePatientRequest` → `DischargePatientCommand` | Traduce la petición de alta médica en una instrucción ejecutable por el negocio. |
@@ -6544,6 +6625,7 @@ En esta capa se coordinan los casos de uso del sistema relacionados con la gesti
 | **CreatePatientCommandHandler** | Registrar un nuevo paciente. | Validar entrada, crear entidad, asignar estado ACTIVE/IN_TREATMENT y guardar. |
 | **AssignNurseCommandHandler** | Asignar enfermera a un paciente. | Buscar paciente, actualizar nurseId y persistir cambios. |
 | **CreateMedicalRecordCommandHandler** | Registrar historial médico inicial. | Buscar paciente, crear MedicalRecord, asociarlo y guardar cambios. |
+| **UpdateMedicalRecordCommandHandler** |Actualizar historial médico del paciente. | Buscar el registro existente, aplicar los cambios permitidos (sin modificar sexo) y persistir. |
 | **AddControlCommandHandler** | Agregar control en consulta posterior. | Buscar paciente/registro, crear Control, calcular estado y guardar. |
 | **DischargePatientCommandHandler** | Dar de alta médica al paciente. | Validar enfermera, cambiar estado a DISCHARGED, generar evento y guardar. |
 
@@ -6553,11 +6635,11 @@ En esta capa se coordinan los casos de uso del sistema relacionados con la gesti
 | :--- | :--- | :--- |
 | **GetPatientByIdQueryHandler** | Obtener información completa del paciente. | Buscar paciente por ID y retornar sus datos. |
 | **GetPatientsByMotherDniQueryHandler** | Obtener pacientes asociados a una madre. | Filtrar en el repositorio por DNI de la madre y retornar lista. |
-| **GetPatientsByNurseDniQueryHandler** | Obtener pacientes asignados a una enfermera. | Filtrar en el repositorio por DNI de la enfermera y retornar lista. |
-| **GetMedicalHistoryQueryHandler** | Obtener historial médico del paciente. | Obtener el paciente y retornar su colección de MedicalRecords. |
-| **GetMedicalHistoryPdfQueryHandler** | Generar el PDF con el historial médico completo del paciente. | Obtener registros médicos, validar su existencia y enviar los datos al PDFService para generar el historial completo. |
+| **GetPatientsByNurseIdQueryHandler** | Obtener pacientes asignados a una enfermera. | Filtrar en el repositorio por Id de la enfermera y retornar lista de pacientes. |
+| **GetMedicalRecordDetailQueryHandler** | Obtener el detalle del historial médico al seleccionar un paciente. | Recuperar el MedicalRecord por su ID y retornar todos sus datos clínicos junto a sus controles. |
+| **GetHemoglobinStatsQueryHandler** | Obtener estadísticas de hemoglobina de un historial médico.|Recuperar el MedicalRecord por su ID, calcular el promedio de hemoglobina de todos sus controles (suma(hemoglobinaGdl) / totalControles) y calcular la evolución neta (hemoglobinaGdl[último] - hemoglobinaGdl[primero]). Retornar ambos indicadores. |
+| **GetMedicalRecordPdfQueryHandler** | Generar el PDF con el historial médico completo del paciente. | Obtener registros médicos, validar su existencia y enviar los datos al PDFService para generar el historial completo. |
 | **GetControlsPdfQueryHandler** | Generar un PDF con todos los controles del paciente. | Obtener el historial médico, extraer únicamente la lista de todos los controles y enviarlos al PDFService. |
-| **GetControlByDatePdfQueryHandler** | Generar un PDF de un control específico según su fecha. | Obtener el historial, buscar el control que coincida con la fecha solicitada, validar que exista y enviarlo al PDFService. |
 
 ###### Event Handlers
 
@@ -6575,7 +6657,7 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
 
 | Repositorio | Implementación | Responsabilidades | Métodos |
 | :--- | :--- | :--- | :--- |
-| **MongoPatientRepository** | `PatientRepository` | Guardar, buscar por ID, filtrar por madre/enfermera y eliminar pacientes. | `save`, `findById`, `findByMotherDni`, `findByNurseDni`, `deleteById` |
+| **MongoPatientRepository** | `PatientRepository` | Guardar, buscar por ID, filtrar por madre/enfermera y eliminar pacientes. | `save`, `findById`, `findByMotherDni`, `findByNurseId`, `deleteById` |
 | **MongoMedicalRecordRepository** | Técnico (Infra) | Guardar registros médicos y buscar historiales completos por paciente. | `save`, `findByPatientId` |
 
 ###### Mappers
@@ -6611,7 +6693,6 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
 {
   "_id": "mr-1",
   "patientId": "patient-1",
-  "motherId": "user-123",
   "nurseId": "nurse-456",
   "date": "2026-01-01",
   "hemoglobinLevel": 10.2,
