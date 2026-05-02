@@ -6381,7 +6381,7 @@ El `facilityId` del paciente se asigna automáticamente desde la posta de la enf
 | **Antecedente** | Registra información médica o familiar previa relevante. | • El tipo y el contenido son obligatorios.<br>• No se permiten campos vacíos. | • `isValid()` |
 | **MotivoConsulta** | Describe la razón principal de la visita médica. | • Texto descriptivo obligatorio.<br>• Longitud mínima requerida. | • Formateo de texto. |
 | **Observaciones** | Notas adicionales y detalles del profesional. | • Campo de texto para hallazgos clínicos.<br>• Puede ser opcional pero debe ser válido. | • `isEmpty()` |
-| **Control** | Almacena resultados específicos de laboratorio. | • Valores de Hb, Hematocrito y Ferritina deben ser `> 0`.<br>• La fecha no puede ser futura. | • `isValid()`<br>• Determinar `EstadoAnemia`. |
+| **Control** | Almacena resultados específicos de laboratorio. | • Valores de Hb deben ser `> 0`.<br>• La fecha no puede ser futura. | • `isValid()`<br>• Determinar `EstadoAnemia`. |
 | **TratamientoRecetado**| Detalla la prescripción médica para el paciente. | • Medicamento, dosis y duración son obligatorios.<br>• Días de duración debe ser mayor a 0. | • `generarInstrucciones()` |
 | **EstadoAnemia** | Clasifica la severidad de la condición. | • Valores: `LEVE`, `MODERADA`, `GRAVE`, `CONTROLADA`.<br>• Basado en niveles de hemoglobina. | • Lógica de cálculo automática. |
 | **PatientStatus** | Representa el estado actual del ciclo de vida del paciente en el sistema. | • Valores permitidos: `ACTIVE`, `IN_TREATMENT`, `DISCHARGED`. | • `isDischarged()`|
@@ -6408,7 +6408,7 @@ El `facilityId` del paciente se asigna automáticamente desde la posta de la enf
 | **PatientUpdated** | Cuando se modifican datos personales o el estado clínico del niño. | El usuario confirma los cambios en el perfil del paciente. |
 | **PatientAssignedToNurse** | Cuando se vincula a un paciente con una enfermera responsable. | El sistema o administrador realiza la asignación de seguimiento. |
 | **MedicalRecordAdded** | Cuando se genera un nuevo registro clínico en la línea de tiempo. | El profesional de salud guarda una nueva consulta médica. |
-| **ControlAdded** | Cuando se registran nuevos valores de laboratorio (Hb, Ferritina y Hematocrito). | Se añaden resultados de análisis al historial clínico. |
+| **ControlAdded** | Cuando se registran nuevos valores de laboratorio (Hb). | Se añaden resultados de análisis al historial clínico. |
 | **PatientDischarged** | Cuando el paciente completa su tratamiento y es dado de alta médica. | El médico o enfermera confirma que el paciente superó la condición. |
 
 ##### 2.6.2.2. Interface Layer
@@ -6486,8 +6486,6 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
     {
       "fecha": "2026-01-01T10:00:00",
       "hemoglobinaGdl": 10.2,
-      "hematocrito": 32.5,
-      "ferritina": 15.0,
       "sintomas": ["cansancio"],
       "tratamiento": {
         "medicamento": "Hierro",
@@ -6506,8 +6504,6 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 {
  "fecha": "2026-02-01T10:00:00",
   "hemoglobinaGdl": 10.5,
-  "hematocrito": 32.0,
-  "ferritina": 15.0,
   "sintomas": ["cansancio"],
   "tratamiento": {
     "medicamento": "Hierro",
@@ -6638,8 +6634,6 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
     {
       "fecha": "2026-02-01",
       "hemoglobinaGdl": 10.5,
-      "hematocrito": 32.0,
-      "ferritina": 15.0,
       "estado": "LEVE",
       "sintomas": ["cansancio"],
       "tratamiento": {
