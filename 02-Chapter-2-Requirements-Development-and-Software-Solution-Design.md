@@ -1810,53 +1810,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </thead>
   <tbody>
     <tr>
-      <td>US-16</td>
-      <td>Enfermera</td>
-      <td>High</td>
-      <td>EP-03</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Visualización de lista de pacientes críticos</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como enfermera, quiero poder ver una lista de mis pacientes críticos que llevan más de 72 horas sin confirmar su dosis, para tomar acción inmediata y evitar que abandonen el tratamiento.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Visualización de lista critica exitosa<br>
-        Dado que la enfermera accede a la sección 'Pacientes críticos' en FerovaClinic,<br>
-        cuando revisa la lista,<br>
-        entonces el sistema debe mostrar únicamente los pacientes que llevan 72 horas o más sin confirmar su dosis, indicando el nombre del paciente, el número de horas sin confirmación y su score de riesgo de abandono.<br>
-        <br>
-        Escenario 2: Sin pacientes críticos<br>
-        Dado que todos los pacientes de la enfermera están cumpliendo su tratamiento correctamente,<br>
-        cuando accede a la sección 'Pacientes críticos',<br>
-        entonces el sistema debe mostrar un mensaje indicando que no hay pacientes en estado crítico en este momento.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td>US-17</td>
       <td>Enfermera</td>
       <td>High</td>
@@ -2833,52 +2786,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>US-38</td>
-      <td>Enfermera</td>
-      <td>High</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Recepción de alerta de riesgo de abandono</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como enfermera, quiero recibir una notificación push cuando uno de mis pacientes este en riesgo de abandonar el tratamiento, para tomar acción inmediata y evitar que lo abandone.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Recepción de alerta de riesgo exitosa<br>
-        Dado que un paciente lleva 72 horas o más sin confirmar su dosis diaria,<br>
-        cuando el sistema detecta que el paciente está en riesgo de abandono,<br>
-        entonces debe enviar automáticamente una notificación push vía Firebase FCM a FerovaClinic indicando el nombre del paciente, las horas sin confirmación y su score de riesgo de abandono.<br>
-        <br>
-        Escenario 2: Paciente retoma el tratamiento tras la alerta<br>
-        Dado que la enfermera recibió una alerta de riesgo de abandono de un paciente,<br>
-        cuando la madre del paciente confirma la dosis posteriormente,<br>
-        entonces el sistema debe actualizar automáticamente el estado del paciente y notificar a la enfermera que el paciente retomo el tratamiento.
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -3788,57 +3695,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TS-13</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-03</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Obtener lista de pacientes críticos mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de obtención de la lista de pacientes críticos mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera los pacientes que llevan 72 horas o más sin confirmar su dosis diaria.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Obtención de lista crítica exitosa</b><br>
-        Dado que el endpoint /api/v1/treatments/critical-patients está disponible,<br>
-        cuando se envía una solicitud GET con el token JWT válido y el ID de la enfermera,<br>
-        entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de pacientes que llevan 72 horas o más sin confirmar su dosis, indicando el nombre del paciente, las horas sin confirmación y su score de riesgo de abandono.<br>
-        <br>
-        <b>Escenario 2: Sin pacientes críticos</b><br>
-        Dado que el endpoint /api/v1/treatments/critical-patients está disponible,<br>
-        cuando se envía una solicitud GET y todos los pacientes de la enfermera están cumpliendo su tratamiento correctamente,<br>
-        entonces se recibe una respuesta con estado 200 y el cuerpo contiene una lista vacía con el mensaje: 'No hay pacientes en estado crítico en este momento.'<br>
-        <br>
-        <b>Escenario 3: Token JWT inválido o expirado</b><br>
-        Dado que el endpoint /api/v1/treatments/critical-patients está disponible,<br>
-        cuando se envía una solicitud GET con un token JWT inválido o expirado,<br>
-        entonces se recibe una respuesta con estado 401 y el cuerpo contiene el mensaje: 'Token de autenticación inválido o expirado.'
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -5253,7 +5109,6 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 | 54 | TS-10 | Iniciar tratamiento del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de inicio de tratamiento mediante una API REST, para que la enfermera pueda activar el tratamiento de anemia de un paciente y programar automáticamente los recordatorios diarios de dosis en el sistema. | 5 |
 | 55 | TS-11 | Confirmar dosis diaria mediante API RESTful | Como desarrollador, quiero implementar el endpoint de confirmación de dosis diaria mediante una API REST, para que la madre pueda registrar el cumplimiento de la dosis del día y el sistema actualice automáticamente la racha y el score de adherencia del paciente en MongoDB. | 3 |
 | 56 | TS-12 | Obtener score de riesgo de abandono del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del score de riesgo de abandono del paciente mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera el semáforo de riesgo de cada paciente calculado automáticamente por el sistema. | 5 |
-| 57 | TS-13 | Obtener lista de pacientes críticos mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la lista de pacientes críticos mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera los pacientes que llevan 72 horas o más sin confirmar su dosis diaria. | 3 |
 | 58 | TS-14 | Completar tratamiento del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cierre exitoso del tratamiento del paciente mediante una API REST, para que la enfermera pueda marcar el tratamiento como completado y el sistema notifique automáticamente a la madre en FerovaFamilia. | 2 |
 | 59 | TS-15 | Registrar abandono del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de abandono del tratamiento mediante una API REST, para que la enfermera pueda marcar el tratamiento como abandonado y el sistema actualice las estadísticas del distrito en MongoDB. | 2 |
 | 60 | TS-16 | Registrar entrada del diario nutricional mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de alimentos en el diario nutricional mediante una API REST, para que la madre pueda registrar los alimentos consumidos por su hijo y el sistema calcule automáticamente el hierro absorbido y detecte alimentos inhibidores en MongoDB. | 8 |
@@ -5687,12 +5542,6 @@ Notification, que notifica a la madre vía Firebase FCM con un mensaje de record
 escala la alerta enviando el comando `Send Second Reminder` a Notification, que envía un mensaje 
 más urgente a FerovaFamily.
 
-- **Alerta de abandono:** Si el paciente acumula 72 horas sin confirmar su dosis, el Backend 
-System genera el evento `Patient Added to Critical List`. Treatment Tracking envía el comando 
-`Send Abandonment Alert` a Notification, que alerta a la enfermera vía Firebase FCM en FerovaClinic 
-con el `messageAlert` y el `scoreRisk`, habilitando una acción inmediata sobre el paciente en 
-riesgo de abandono.
-
 ##### 2.5.1.3 Bounded Context Canvases
 
 Para mejorar la organización del dominio y facilitar una comunicación consistente, se elaboraron Bounded Context Canvases para cada subdominio. Estos canvases delimitan claramente las responsabilidades, establecen el lenguaje ubicuo y los modelos clave, y describen los puntos de integración y los flujos de mensajes entre contextos. Los diagramas que siguen consolidan estas decisiones y sirvieron como guía para alinear la arquitectura, las interfaces y la evolución del sistema.
@@ -5843,8 +5692,7 @@ En esta relación, **Treatment Tracking** actúa como el upstream (U) y **Notifi
 como el downstream (D).
 
 - **Treatment Tracking como proveedor:** Detecta los eventos críticos del tratamiento y ordena a 
-Notifications que actúe. Cuando un paciente acumula 72 horas sin confirmar su dosis, genera el 
-evento `Patient Added to Critical List`. Cuando la enfermera cierra exitosamente un tratamiento, 
+Notifications que actúe. Cuando la enfermera cierra exitosamente un tratamiento, 
 genera el evento `Treatment Completed`. En ambos casos, es Treatment Tracking quien tiene la 
 información y quien determina que algo importante ha ocurrido.
 
@@ -7306,11 +7154,10 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | | **Atributo** | `scheduledDate` | DateTime | Fecha y hora programada en que la madre debia dar la dosis a su hijo. Es el dato de referencia que el sistema usa para calcular cuanto tiempo lleva el paciente sin confirmar y determinar si ya supero el umbral critico de 72 horas. |
 | | **Atributo** | `confirmedAt` | DateTime | Fecha y hora exacta en que la madre confirmo la dosis en FerovaFamilia. Permite saber con precision cuando se realizo la confirmacion y calcular el tiempo transcurrido entre la dosis programada y la confirmacion real. |
 | | **Atributo** | `status` | DoseStatus | Estado actual de la dosis que puede ser PENDING cuando aun no llega la hora, CONFIRMED cuando la madre la registro exitosamente u OMITTED cuando paso el tiempo y la madre no confirmo. Es el atributo mas importante de la entidad porque determina si esa dosis cuenta como cumplida o perdida en el calculo del score de adherencia. |
-| | **Atributo** | `hoursWithoutConfirmation` | Integer | Numero de horas transcurridas desde la hora programada de la dosis sin que la madre haya confirmado. Es el atributo que dispara el escalamiento automatico de alertas. Cuando llega a 2 horas se envia el segundo recordatorio y cuando llega a 72 horas el paciente se agrega a la lista critica. |
+| | **Atributo** | `hoursWithoutConfirmation` | Integer | Numero de horas transcurridas desde la hora programada de la dosis sin que la madre haya confirmado. Es el atributo que dispara el escalamiento automatico de alertas. Cuando llega a 2 horas se envia el segundo recordatorio. |
 | | **Método** | `confirm()` | void | Cambia el estado de la dosis a CONFIRMED y registra el confirmedAt con la fecha y hora actual. Se ejecuta cuando la madre presiona el boton de confirmacion en FerovaFamilia. Dispara el evento DailyDoseConfirmed hacia el BC Achievements & Rewards. |
 | | **Método** | `omit()` | void | Cambia el estado de la dosis a OMITTED cuando el sistema detecta que paso el tiempo establecido sin confirmacion. Incrementa el contador totalOmitted del tratamiento y recalcula el adherenceScore automaticamente. |
 | | **Método** | `getHoursWithoutConfirmation()` | Integer | Calcula y retorna el numero de horas transcurridas desde la hora programada de la dosis hasta el momento actual. Es el metodo que consulta el DoseReminderService para decidir si debe enviar el segundo recordatorio o escalar la alerta a la enfermera. |
-| | **Método** | `isCritical()` | Boolean | Retorna true si las hoursWithoutConfirmation superan las 72 horas establecidas como umbral critico. Es el metodo que determina si el paciente debe agregarse a la lista critica y si la enfermera debe recibir la alerta de riesgo de abandono en FerovaClinic. |
 | **RiskScore** | **Atributo** | `id` | String | Identificador unico del score de riesgo en MongoDB. Permite rastrear el historial de scores calculados para un paciente y ver como evoluciono su nivel de riesgo a lo largo del tratamiento. |
 | | **Atributo** | `treatmentId` | String | Referencia logica al tratamiento para el que se calculo este score de riesgo. Sin este atributo el sistema no sabria a que tratamiento y paciente asociar el resultado del calculo de riesgo. |
 | | **Atributo** | `score` | Double | Valor numerico del score de riesgo de abandono calculado automaticamente por el AdherenceCalculatorService. Va de 0 a 100 donde 0 significa adherencia perfecta y 100 significa riesgo maximo de abandono. Es el dato que determina el color del semaforo en FerovaClinic. |
@@ -7349,7 +7196,6 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | | **Método** | `findById()` | Busca y retorna un tratamiento especifico por su ID. Se usa cuando el sistema necesita obtener los datos completos de un tratamiento para procesarlo, por ejemplo cuando la madre confirma una dosis y el sistema necesita actualizar el adherenceScore y el currentStreak del tratamiento correspondiente. |
 | | **Método** | `findByPatientId()` | Busca y retorna el tratamiento activo de un paciente especifico. Se usa cuando FerovaFamilia necesita mostrar a la madre el estado actual del tratamiento de su hijo incluyendo la racha actual y el proximo recordatorio programado. |
 | | **Método** | `findActiveByNurseId()` | Retorna todos los tratamientos activos asignados a una enfermera especifica. Es el metodo que alimenta el panel principal de FerovaClinic donde la enfermera ve el semaforo de todos sus pacientes activos con su nivel de riesgo actual. |
-| | **Método** | `findCriticalPatients()` | Retorna la lista de pacientes criticos de una enfermera, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el metodo mas urgente del repositorio porque alimenta la lista roja de FerovaClinic que le indica a la enfermera quienes necesitan atencion inmediata. |
 | **DailyDoseRepository** | **Propósito** | Registro de Dosis | Interfaz para gestionar el almacenamiento y la consulta de los registros de dosis diarias. |
 | | **Método** | `save()` | Guarda un nuevo registro de dosis diaria o actualiza uno existente en MongoDB. Se ejecuta cada vez que la madre confirma una dosis cambiando su estado a CONFIRMED o cuando el sistema detecta una omision cambiando su estado a OMITTED. |
 | | **Método** | `findByTreatmentId()` | Retorna todas las dosis registradas de un tratamiento especifico. Se usa cuando FerovaFamilia necesita mostrar a la madre el historial completo de dosis del tratamiento de su hijo incluyendo cuales confirmo y cuales olvido a lo largo del tiempo. |
@@ -7366,7 +7212,6 @@ En esta seccion se documentan las clases que forman el core del bounded context 
 | **TreatmentStarted** | Se dispara cuando la enfermera inicia el tratamiento de un paciente desde FerovaClinic. Notifica al BC Notifications para que programe automaticamente los recordatorios diarios de dosis en FerovaFamilia a la hora definida por la enfermera. Sin este evento la madre nunca recibiria los recordatorios push de la dosis de su hijo. |
 | **DailyDoseConfirmed** | Se dispara cuando la madre presiona el boton de confirmacion de dosis en FerovaFamilia. Notifica al BC Achievements & Rewards para que actualice la racha de dias consecutivos, sume los puntos correspondientes y verifique si la madre desbloqueo alguna insignia. Es el evento mas frecuente del bounded context porque ocurre potencialmente todos los dias por cada paciente activo. |
 | **DailyDoseOmitted** | Se dispara automaticamente cuando el sistema detecta que la madre no confirmo la dosis en el tiempo establecido. Activa el proceso de escalamiento en el BC Notifications para enviar el segundo recordatorio a las 2 horas y la alerta de abandono a la enfermera a las 72 horas. Sin este evento el sistema no podria reaccionar automaticamente ante una omision de dosis. |
-| **PatientAddedToCriticalList** | Se dispara cuando el sistema detecta que un paciente lleva 72 horas o mas sin confirmar su dosis y lo agrega automaticamente a la lista critica. Notifica al BC Notifications para que envie inmediatamente la alerta de riesgo de abandono a la enfermera asignada en FerovaClinic con el nombre del paciente, las horas sin confirmacion y el score de riesgo actual. |
 | **RiskScoreUpdated** | Se dispara cada vez que el AdherenceCalculatorService recalcula el score de riesgo del paciente despues de una confirmacion u omision de dosis. Actualiza en tiempo real el color del semaforo del paciente en el panel de FerovaClinic para que la enfermera siempre vea el nivel de riesgo mas actualizado sin necesidad de recargar la pantalla manualmente. |
 | **TreatmentCompleted** | Se dispara cuando la enfermera marca el tratamiento como completado exitosamente en FerovaClinic. Notifica al BC Notifications para que envie a la madre un mensaje celebratorio en FerovaFamilia informandole que su hijo supero el tratamiento de anemia. Tambien notifica al BC Achievements & Rewards para desbloquear la insignia de tratamiento completado que es la recompensa maxima de la gamificacion. |
 | **TreatmentAbandoned** | Se dispara cuando la enfermera registra formalmente el abandono del tratamiento en FerovaClinic. Notifica al BC Analytics & Reporting para que actualice las estadisticas de abandono del distrito y refleje el caso en el mapa de calor de la posta medica correspondiente. Es el evento que alimenta los datos que el admin MINSA usa para identificar zonas criticas del distrito. |
@@ -7389,7 +7234,6 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | | **Endpoint** | `GET /api/v1/treatments/{id}/doses` | retorna el historial completo de dosis del tratamiento ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de sus confirmaciones y omisiones a lo largo del tratamiento. |
 | **RiskScoreController** | **Propósito** | Monitoreo de Riesgo | Expone los endpoints REST para consultar el score de riesgo de abandono de los pacientes. Es el controller que alimenta el semaforo de FerovaClinic permitiendo a la enfermera ver el nivel de riesgo de cada uno de sus pacientes en tiempo real. |
 | | **Endpoint** | `GET /api/v1/treatments/{id}/risk-score` | retorna el score de riesgo actual del paciente con su clasificacion en semaforo y la justificacion del score. Lo usa FerovaClinic para mostrar el color del semaforo de cada paciente en el panel de la enfermera. |
-| | **Endpoint** | `GET /api/v1/treatments/critical-patients` | retorna la lista de pacientes criticos de la enfermera autenticada, es decir aquellos que llevan 72 horas o mas sin confirmar su dosis. Es el endpoint mas urgente del bounded context porque le permite a la enfermera identificar rapidamente quien necesita atencion inmediata. |
 | | **Endpoint** | `GET /api/v1/risk-scores/summary` | retorna el conteo de pacientes por cada nivel de riesgo del RiskLevel (HIGH, MEDIUM, LOW) |
 | | **Endpoint** | `GET  /api/v1/risk-scores/by-level/{riskLevel}` | retorna la lista de pacientes de un nivel de riesgo especifico |
 
@@ -7649,7 +7493,6 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | **GetTreatment-QueryHandler** | Consultar el estado del tratamiento activo. | Recibe el GetTreatmentQuery con el patientId. Consulta el TreatmentRepository con findByPatientId y retorna el tratamiento activo del paciente. Lo usa FerovaFamilia para mostrar a la madre el estado actual del tratamiento de su hijo incluyendo la racha actual, el adherenceScore y la hora de la proxima dosis programada. |
 | **GetDoseHistory-QueryHandler** | Obtener el historial de dosis del paciente. | Recibe el GetDoseHistoryQuery con el treatmentId. Consulta el DailyDoseRepository con findByTreatmentId y retorna el historial completo de dosis ordenadas por fecha. Lo usa FerovaFamilia para mostrar a la madre un registro visual de todas sus confirmaciones y omisiones a lo largo del tratamiento permitiendole ver su progreso de adherencia dia a dia. |
 | **GetRiskScore-QueryHandler** | Obtener el score de riesgo y semáforo. | Recibe el GetRiskScoreQuery con el treatmentId. Consulta el RiskScoreRepository con findByTreatmentId y retorna el score de riesgo actual del paciente con su clasificacion y justificacion. Lo usa FerovaClinic para mostrar el semaforo de color correcto para cada paciente en el panel de la enfermera en tiempo real. |
-| **GetCriticalPatients-QueryHandler** | Listar pacientes en riesgo crítico (>72h). | Recibe el GetCriticalPatientsQuery con el nurseId. Consulta el TreatmentRepository con findCriticalPatients y retorna la lista de pacientes que llevan 72 horas o mas sin confirmar su dosis. Es el query handler mas urgente del bounded context porque alimenta la lista roja de FerovaClinic que le indica a la enfermera quienes necesitan atencion inmediata para evitar el abandono del tratamiento. |
 | **GetRiskScoreSummaryQueryHandler** | Necesita contar cuantos pacientes de la enfermera autenticada tienen cada nivel de riesgo consultando el RiskScoreRepository agrupado por riskLevel. | Obtiene el nurseId de la enfermera autenticada via el token JWT. Consulta el RiskScoreRepository con findByNurseId y agrupa los resultados por riskLevel contando cuantos hay en cada grupo. Retorna el resumen con los tres conteos. |
 | **GetPatientsByRiskLevelQueryHandler** | Necesita retornar la lista completa de pacientes de la enfermera que tienen un nivel de riesgo especifico para mostrarla cuando la enfermera toca una tarjeta del Home.| Recibe el riskLevel seleccionado por la enfermera. Obtiene el nurseId de la enfermera autenticada. Consulta el RiskScoreRepository con findByNurseIdAndRiskLevel y retorna la lista de pacientes con su score, justificacion y horas sin confirmacion ordenados de mayor a menor score. |
 
@@ -7668,7 +7511,7 @@ En esta seccion se presentan las clases que acceden a servicios externos dentro 
 
 | Repositorio | Implementación | Responsabilidades | Métodos y Descripciones |
 | :--- | :--- | :--- | :--- |
-| **MongoTreatmentRepository** | `TreatmentRepository` | Es el componente central del Bounded Context. Gestiona el ciclo de vida del Aggregate Root **Treatment** en MongoDB, persistiendo datos críticos como el `adherenceScore`, rachas actuales (`currentStreak`) y estados de finalización o abandono. | **save**: Guarda o actualiza el estado completo del tratamiento.<br>**findById**: Recupera un tratamiento por su ID único.<br>**findByPatientId**: Obtiene el tratamiento asociado a un paciente específico.<br>**findActiveByNurseId**: Lista los tratamientos vigentes asignados a una enfermera.<br>**findCriticalPatients**: obtener la lista de pacientes criticos. |
+| **MongoTreatmentRepository** | `TreatmentRepository` | Es el componente central del Bounded Context. Gestiona el ciclo de vida del Aggregate Root **Treatment** en MongoDB, persistiendo datos críticos como el `adherenceScore`, rachas actuales (`currentStreak`) y estados de finalización o abandono. | **save**: Guarda o actualiza el estado completo del tratamiento.<br>**findById**: Recupera un tratamiento por su ID único.<br>**findByPatientId**: Obtiene el tratamiento asociado a un paciente específico.<br>**findActiveByNurseId**: Lista los tratamientos vigentes asignados a una enfermera.|
 | **MongoDailyDoseRepository** | `DailyDoseRepository` | Gestiona la persistencia de los registros de dosis diarias en la colección `daily_doses`. Permite rastrear individualmente cada dosis para auditar el historial completo de confirmaciones y omisiones del paciente. | **save**: Registra una nueva toma o actualización de dosis.<br>**findAllByTreatmentId**: buscar todas las dosis de un tratamiento .<br>**findBySpecificDay**:  buscar la dosis de un dia especifico para verificar que no haya sido confirmada anteriormente. |
 | **MongoRiskScoreRepository** | `RiskScoreRepository` | Gestiona la persistencia del score de riesgo de abandono en la colección `risk_scores`. Almacena el score calculado, nivel de riesgo y justificación para su visualización en el panel de enfermería de FerovaClinic. | **save(riskScore: RiskScore): void**: Guarda o actualiza el score mediante un **upsert**; si ya existe un score para el `treatmentId`, lo sobrescribe con los nuevos valores del `AdherenceCalculatorService`.<br>**findByTreatmentId(treatmentId: String): RiskScore?**: Busca el score actual para el "semáforo" de FerovaClinic. Retorna `null` si el tratamiento es nuevo y no tiene cálculos aún.<br>**findByRiskLevel(riskLevel: RiskLevel): List**: Retorna todos los scores de un nivel (HIGH, MEDIUM, LOW) para que el `GetCriticalPatientsQueryHandler` identifique todos los pacientes con nivel HIGH que necesitan atencion inmediata de la enfermera en FerovaClinic sin tener que revisar el score de cada paciente individualmente. |
 
