@@ -6367,7 +6367,7 @@ El `facilityId` del paciente se asigna automáticamente desde la posta de la enf
 
 | Entidad | Propósito | Atributos | Métodos | Reglas y Relaciones |
 | :--- | :--- | :--- | :--- | :--- |
-| **MedicalRecord** | Representa un registro clínico detallado para la trazabilidad de la evolución médica y física del paciente. | • **id**: `String`<br>• **date**: `LocalDateTime`<br>• **hemoglobinLevel**: `HemoglobinLevel`<br>• **weight**: `Weight`<br>• **height**: `Height`<br>• **sexo**: `SexoGenero`<br>• **antecedentes**: `List<Antecedente>`<br>• **motivoConsulta**: `MotivoConsulta`<br>• **observaciones**: `Observaciones`<br>• **controls**: `List<Control>`<br>• **nurseId**: `String`<br>• **patientId**: `String`<br>• **motherId**: `String` | • `registerRecord()` : `void`<br>• `addControl(control: Control)` : `void`<br>• `addAntecedente(antecedente: Antecedente)` : `void` | • **Relación**: Patient (1) --- (0..*) MedicalRecord.<br>• **Regla**: Un paciente centraliza múltiples registros que forman su historial clínico histórico.<br>• **Regla**: La hemoglobina, peso y talla deben ser valores clínicos válidos y mayores a cero. |
+| **MedicalRecord** | Representa un registro clínico detallado para la trazabilidad de la evolución médica y física del paciente. | • **id**: `String`<br>• **date**: `LocalDateTime`<br>• **hemoglobinLevel**: `HemoglobinLevel`<br>• **weight**: `Weight`<br>• **height**: `Height`<br>• **sexo**: `SexoGenero`<br>• **antecedentes**: `List<Antecedente>`<br>• **motivoConsulta**: `MotivoConsulta`<br>• **observaciones**: `Observaciones`<br>• **controls**: `List<Control>`<br>• **nurseId**: `String`<br>• **patientId**: `String`<br>• **motherId**: `String`<br>•**Sintomas:** List<String> | • `registerRecord()` : `void`<br>• `addControl(control: Control)` : `void`<br>• `addAntecedente(antecedente: Antecedente)` : `void` | • **Relación**: Patient (1) --- (0..*) MedicalRecord.<br>• **Regla**: Un paciente centraliza múltiples registros que forman su historial clínico histórico.<br>• **Regla**: La hemoglobina, peso y talla deben ser valores clínicos válidos y mayores a cero. |
 
 ###### Value Objects
 
@@ -6481,6 +6481,10 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
       "content": "Alergia a penicilina"
     }
   ],
+ "sintomas": [
+	"Dolor de Cabeza",
+    "Vomito"	
+  ],
   "controls": [
     {
       "fecha": "2026-01-01T10:00:00",
@@ -6497,13 +6501,7 @@ En esta capa se definen los puntos de interacción entre el sistema y los usuari
 {
  "fecha": "2026-02-01T10:00:00",
   "hemoglobinaGdl": 10.5,
-  "sintomas": ["cansancio"],
-  "tratamiento": {
-    "medicamento": "Hierro",
-    "dosis": "10mg",
-    "duracionDias": 30,
-    "indicaciones": "Después de comidas"
-  }
+  "type": "LEVE"
 }
 ```
 
@@ -6623,6 +6621,10 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
   "motivoConsulta": "Primera evaluación",
   "observaciones": "Paciente estable",
   "antecedentes": [],
+  "sintomas": [
+	"Dolor de Cabeza",
+    "Vomito"	
+  ],
   "controls": [
     {
       "fecha": "2026-02-01",
@@ -6632,6 +6634,7 @@ En esta capa se implementan los detalles técnicos necesarios para la persistenc
   ]
 }
 ```
+
 ###### Servicios Externos (Bounded Contexts Integrations)
 
 | Servicio | Propósito | Integración |
