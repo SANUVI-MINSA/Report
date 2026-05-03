@@ -13,7 +13,11 @@ Incluiremos la guía de estilos para nuestras dos aplicaciones: **FerovaFamily**
 
 Para FerovaFamily, el branding se diseñó para mostrar confianza y profesionalismo, abarcando el tema de la salud. Los tres iconos del logo (Gota de sangre, corazón y casa) representan la salud y bienestar que nuestra aplicación promete mediante sus funcionalidades principales. En el tema de colores, el color rojo representa la vitalidad y temas de salud de la persona y el color salmón representa la calidez, contrastando de buena manera con el otro color. El diseño incluye el logo del producto y su nombre para que sea fácil de identificar.
 
+![Branding Ferova Family](./resources/images/chapter-III/General_Style_Guidelines/Branding_FerovaFamily.png "Ferova Family")
 
+El branding de FerovaClinic se diseñó para mostrar profesionalismo, enfocado en el análisis de datos. Los iconos del logo (gota de sangre, barras y cruz roja) muestran la conexión entre el análisis de datos y la salud. En los colores, el color azul muestra profesionalismo y confianza y el color rojo muestra todo lo relacionado a la salud. El diseño incluye el logo del producto y su nombre para que sea identificable.
+
+![Branding Ferova Family](./resources/images/chapter-III/General_Style_Guidelines/Branding_FerovaClinic.png "Ferova Family")
 
 **Typography**
 
