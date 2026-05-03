@@ -21,7 +21,9 @@ El branding de FerovaClinic se diseñó para mostrar profesionalismo, enfocado e
 
 **Typography**
 
+Para las dos aplicaciones, se selecciono la tipografía "Inter" como fuente principal y secundaria por su legibilidad, tono profesional y neutralidad. Esta fuente es agradable al usuario, mostrando diferencias claras en cada letra.
 
+![Branding Ferova Family](./resources/images/chapter-III/General_Style_Guidelines/Typography_Inter.png "Inter")
 
 **Colors**
 
