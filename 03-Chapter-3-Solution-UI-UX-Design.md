@@ -10,8 +10,17 @@
 ##### 3.1.2.4 Searching Systems
 ##### 3.1.2.5 Navigation Systems
 #### 3.1.3 Landing Page UI Design
+
+
+
 ##### 3.1.3.1 Landing Page Wireframe
+
+<img src="resources/images/chapter-III/Landing Page/LP Mock Up.png" alt="Landing Page Wireframe">
+
 ##### 3.1.3.2 Landing Page Mock-up
+
+<img src="resources/images/chapter-III/Landing Page/LP Wireframe.png" alt="Landing Page Mock Up">
+
 #### 3.1.4 Mobile Applications UX/UI Design
 ##### 3.1.4.1 Mobile Applications Wireframes
 ##### 3.1.4.2 Mobile Applications Wireflow Diagrams
