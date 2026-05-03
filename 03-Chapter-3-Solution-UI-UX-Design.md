@@ -43,7 +43,7 @@ La paleta de colores de Ferova Family y Ferova Clinic se compone de 4 colores y 
 
 **Spacing**
 
-
+El diseño de las dos aplicaciones utiliza correctamente los espaciados para mantener un orden entre los distintos componentes que se muestran en la pantalla. Cada componente fue posicionado para que exista un espaciado y no se muestre abultado. En las dos aplicaciones, existira un espacio predefinido para la muestra del contenido y los componentes están diseñados para que se ajuste según la resolución del dispositivo.
 
 #### 3.1.2 Information Architecture
 ##### 3.1.2.1 Organization Systems
