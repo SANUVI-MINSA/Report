@@ -6,6 +6,25 @@ En esta sección se presenta el diseño de nuestros productos de software (Landi
 
 #### 3.1.1 Style Guidelines
 ##### 3.1.1.1 General Style Guidelines
+
+Incluiremos la guía de estilos para nuestras dos aplicaciones: **FerovaFamily** y **FerovaClinic**
+
+**Branding**
+
+
+
+**Typography**
+
+
+
+**Colors**
+
+
+
+**Spacing**
+
+
+
 #### 3.1.2 Information Architecture
 ##### 3.1.2.1 Organization Systems
 ##### 3.1.2.2 Labelling Systems
