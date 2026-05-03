@@ -15,9 +15,17 @@
 
 ##### 3.1.3.1 Landing Page Wireframe
 
+Para elaborar nuestro prototipo de baja fidelidad, hemos utilizado la plataforma Figma, que nos permite crear, representar y exportar nuestros prototipos. Gracias a esta herramienta, podemos presentar un Wireframe de una buena calidad de una manera sencilla.
+
+Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1">Wireframe del Landing Page en Figma</a>
+
 <img src="resources/images/chapter-III/Landing Page/LP Mock Up.png" alt="Landing Page Wireframe">
 
 ##### 3.1.3.2 Landing Page Mock-up
+
+Hemos finalizado con éxito el mock-up de la página de inicio, aplicando los principios y elementos de diseño clave. Gracias a estas directrices, la experiencia para los usuarios de nuestra plataforma será mucho más sencilla e intuitiva.
+
+Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1">Mock Up del Landing Page en Figma</a>
 
 <img src="resources/images/chapter-III/Landing Page/LP Wireframe.png" alt="Landing Page Mock Up">
 
