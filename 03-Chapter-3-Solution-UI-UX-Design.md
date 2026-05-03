@@ -1,6 +1,9 @@
 ## Capítulo III: Solution UI/UX Design
 
 ### 3.1 Product Design
+
+En esta sección se presenta el diseño de nuestros productos de software (Landing Page, FerovaClinic y FerovaFamily). Presentamos la información acerca de los estilos generales que se utilizarán para cada producto que diseñemos. Además, se incluye la infomación sobre el diseño de las interfaces de usuario y como estas mejoran la experiencia del usuario (UX/UI).
+
 #### 3.1.1 Style Guidelines
 ##### 3.1.1.1 General Style Guidelines
 #### 3.1.2 Information Architecture
