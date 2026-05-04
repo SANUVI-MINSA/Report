@@ -391,3 +391,109 @@ distrito, porcentaje y color de cada posta
 FerovaClinic muestra la lista con el
 semaforo de color correcto para cada posta
 ```
+
+# Cálculo de la Adherencia Global
+
+## ¿De dónde viene el 63.2%?
+
+La adherencia global es el **promedio de la adherencia de todas las postas del sistema**. No es la adherencia de un paciente específico, sino un número que resume cómo va todo el sistema en conjunto.
+
+### Fórmula
+
+```
+adherenciaGlobal = suma de adherencias de todas las postas
+                   ─────────────────────────────────────────
+                   total de postas
+```
+
+### Ejemplo concreto con 5 postas
+
+| Posta | Adherencia |
+|---|---|
+| Posta Huascar | 30% |
+| Posta San Hilarion | 42% |
+| Posta Zarate | 65% |
+| Posta Bayovar | 72% |
+| Posta Canto Grande | 80% |
+
+```
+Suma total = 30 + 42 + 65 + 72 + 80 = 289
+Total postas = 5
+
+adherenciaGlobal = 289 / 5 = 57.8%
+```
+
+---
+
+## ¿De dónde saca esos porcentajes de cada posta?
+
+De la colección `facility_metrics` en MongoDB. Cada posta tiene su propio documento con su `adherencePercentage`, que se actualiza automáticamente cada vez que un paciente confirma o falla una dosis.
+
+```json
+// facility_metrics en MongoDB
+{ "facilityId": "001", "adherencePercentage": 30.0 }
+{ "facilityId": "002", "adherencePercentage": 42.0 }
+{ "facilityId": "003", "adherencePercentage": 65.0 }
+{ "facilityId": "004", "adherencePercentage": 72.0 }
+{ "facilityId": "005", "adherencePercentage": 80.0 }
+```
+
+### Código en el backend
+
+```javascript
+// En GetDashboardSummaryQueryHandler.js
+
+const allMetrics = await facilityMetricRepository.findAll()
+
+const globalAdherence = allMetrics.length > 0
+  ? allMetrics.reduce(
+      (sum, metric) => sum + metric.adherencePercentage, 0
+    ) / allMetrics.length
+  : 0
+
+// Redondea a un decimal
+const result = parseFloat(globalAdherence.toFixed(1))
+// Resultado: 57.8
+```
+
+---
+
+## ¿Cuándo se actualiza este número?
+
+La `adherenciaGlobal` **no se guarda en MongoDB**. Se calcula en tiempo real cada vez que el admin abre el Home.
+
+```
+Admin abre FerovaClinic
+        ↓
+Llama a GET /api/v1/reports/dashboard/summary
+        ↓
+Backend lee todos los facility_metrics actuales
+        ↓
+Suma todos los adherencePercentage
+        ↓
+Divide entre el total de postas
+        ↓
+Retorna 57.8% al frontend
+```
+
+Los `facility_metrics` de cada posta **sí se actualizan en tiempo real** cada vez que un paciente confirma o falla una dosis, vía los eventos de Treatment Tracking.
+
+---
+
+## Resumen visual del flujo
+
+```
+Paciente confirma dosis
+        ↓
+BC Treatment Tracking dispara DailyDoseConfirmed
+        ↓
+BC Analytics & Reporting recalcula adherencia de la posta
+facility_metrics: { facilityId: "001", adherencePercentage: 32.0 }
+        ↓
+Admin abre el Home
+        ↓
+Backend suma todos los facility_metrics
+(32 + 42 + 65 + 72 + 80) / 5 = 58.2%
+        ↓
+Admin ve 58.2% en su tarjeta
+```
