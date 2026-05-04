@@ -222,3 +222,172 @@ countCritical()
 | Pacientes activos | patients | countDocuments status ACTIVE |
 | Adherencia global | facility_metrics | promedio de todos los adherencePercentage |
 | Postas criticas | facility_metrics | countDocuments adherencePercentage menor a 50 |
+
+
+
+##### ¿De donde vienen los datos de la lista?
+La lista necesita dos datos por cada posta:
+
+###### La lista de estado de postas muestra todas las postas del sistema:
+
+
+```
+┌─────────────────────────────────────┐
+│ Estado de postas          Ver mapa →│
+├─────────────────────────────────────┤
+│ 🔴  Posta Huascar          30%      │
+│     San Juan de Lurigancho          │
+├─────────────────────────────────────┤
+│ 🔴  Posta San Hilarion     42%      │
+│     San Juan de Lurigancho          │
+├─────────────────────────────────────┤
+│ 🟡  Posta Zarate           65%      │
+│     Ate Vitarte                     │
+├─────────────────────────────────────┤
+│ 🟢  Posta Canto Grande     80%      │
+│     Villa El Salvador               │
+└─────────────────────────────────────┘
+```
+
+- El nombre de la posta y su distrito → viene de **health_facilities**
+- El porcentaje de adherencia y el color → viene de **facility_metrics**
+
+El Query Handler que alimenta la lista:
+
+```javascript
+// GetFacilitiesStatusQueryHandler.js
+// En BC Analytics & Reporting → application/queries/
+
+async handle() {
+
+  // Paso 1: Obtiene todas las metricas de todas las postas
+  const allMetrics = await facilityMetricRepository.findAll()
+
+  // Paso 2: Por cada metrica obtiene el nombre y distrito
+  // de la posta correspondiente
+  const facilitiesStatus = await Promise.all(
+    allMetrics.map(async (metric) => {
+
+      const facility = await healthFacilityRepository
+        .findById(metric.facilityId)
+
+      return {
+        facilityId: metric.facilityId,
+        facilityName: facility.name,
+        districtName: facility.districtName,
+        adherencePercentage: metric.adherencePercentage,
+        riskZone: classifyZone(metric.adherencePercentage)
+      }
+    })
+  )
+
+  // Paso 3: Ordena de menor a mayor adherencia
+  // para que las postas criticas aparezcan primero
+  return facilitiesStatus.sort(
+    (a, b) => a.adherencePercentage - b.adherencePercentage
+  )
+}
+
+// Funcion de clasificacion de zona
+function classifyZone(adherencePercentage) {
+  if (adherencePercentage >= 75) return 'GREEN'
+  if (adherencePercentage >= 50) return 'YELLOW'
+  return 'RED'
+}
+```
+
+### El endpoint:
+
+```json
+GET /api/v1/reports/facilities/status
+
+Response:
+[
+  {
+    "facilityId": "facility-001",
+    "facilityName": "Posta Huascar",
+    "districtName": "San Juan de Lurigancho",
+    "adherencePercentage": 30.0,
+    "riskZone": "RED"
+  },
+  {
+    "facilityId": "facility-002",
+    "facilityName": "Posta San Hilarion",
+    "districtName": "San Juan de Lurigancho",
+    "adherencePercentage": 42.0,
+    "riskZone": "RED"
+  },
+  {
+    "facilityId": "facility-003",
+    "facilityName": "Posta Zarate",
+    "districtName": "Ate Vitarte",
+    "adherencePercentage": 65.0,
+    "riskZone": "YELLOW"
+  },
+  {
+    "facilityId": "facility-004",
+    "facilityName": "Posta Bayovar",
+    "districtName": "San Juan de Lurigancho",
+    "adherencePercentage": 72.0,
+    "riskZone": "YELLOW"
+  },
+  {
+    "facilityId": "facility-005",
+    "facilityName": "Posta Canto Grande",
+    "districtName": "Villa El Salvador",
+    "adherencePercentage": 80.0,
+    "riskZone": "GREEN"
+  }
+]
+```
+
+#### ¿Como sabe el backend el orden de la lista?
+
+```
+// Antes del sort:
+// P osta Canto Grande 80% GREEN
+// Posta Zarate       65% YELLOW
+// Posta Bayovar      72% YELLOW
+// Posta Huascar      30% RED
+// Posta San Hilarion 42% RED
+
+// Despues del sort por adherencePercentage ascendente:
+// Posta Huascar     30% RED      ← primero
+// Posta San Hilarion 42% RED
+// Posta Zarate       65% YELLOW
+// Posta Bayovar      72% YELLOW
+// Posta Canto Grande 80% GREEN    ← ultimo
+```
+
+#### Las colecciones que participan:
+
+```
+facility_metrics
+→ adherencePercentage de cada posta
+→ facilityId para hacer el join
+
+health_facilities
+→ name del nombre de la posta
+→ districtName del distrito al que pertenece
+```
+
+#### Resumen del flujo completo:
+
+```
+FerovaClinic carga el Home del admin
+        ↓
+Llama a GET /api/v1/reports/facilities/status
+        ↓
+GetFacilitiesStatusQueryHandler ejecuta:
+  1. Obtiene todas las facility_metrics
+  2. Por cada metrica busca el nombre y distrito
+     en health_facilities
+  3. Clasifica el riskZone segun adherencePercentage
+  4. Ordena de menor a mayor adherencia
+        ↓
+Retorna la lista ordenada con nombre,
+distrito, porcentaje y color de cada posta
+        ↓
+FerovaClinic muestra la lista con el
+semaforo de color correcto para cada posta
+```
