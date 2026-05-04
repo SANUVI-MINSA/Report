@@ -8068,6 +8068,8 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | :--- | :--- | :--- | :--- |
 | **GET** `/api/v1/metrics/{reportId}` | Retorna todas las metricas de adherencia de las postas incluidas en un reporte especifico. Lo usa FerovaClinic para mostrar la tabla comparativa de postas cuando el admin selecciona un reporte del historial. | El admin necesita ver los datos exactos de cada posta en formato tabla para poder comparar sus porcentajes de adherencia y tomar decisiones informadas sobre donde enfocar sus intervenciones. | El admin selecciona el reporte de Abril 2026 de San Juan de Lurigancho en FerovaClinic y ve una tabla con todas las postas del distrito mostrando su nombre, porcentaje de adherencia, total de pacientes y pacientes criticos ordenadas de menor a mayor adherencia. |
 | **GET** `/api/v1/metrics/{districtId}/critical` | Retorna las postas criticas de un distrito especifico con adherencia menor al 50%. Lo usa FerovaClinic para destacar las postas que necesitan atencion inmediata en el dashboard del admin. | El admin necesita identificar rapidamente cuales postas de un distrito estan en situacion critica sin tener que revisar toda la tabla de postas. Este endpoint le da directamente la lista de postas que requieren su intervencion inmediata. | El admin abre el dashboard de San Juan de Lurigancho y FerovaClinic muestra automaticamente una seccion de alertas criticas con las postas que tienen menos del 50% de adherencia destacadas en rojo con su numero de pacientes criticos. |
+| **GET** `/api/v1/reports/dashboard/summary` | Retorna un resumen consolidado del sistema con las 4 métricas principales del dashboard. Lo usa FerovaClinic para cargar la sección home del admin con una sola llamada al backend en lugar de hacer 4 consultas separadas. | El admin necesita ver el estado general del sistema al ingresar a FerovaClinic sin esperar multiples cargas. Un solo endpoint evita overhead de red y simplifica la logica del frontend. | El admin abre el home de FerovaClinic y el sistema hace una sola llamada que carga simultaneamente las 4 tarjetas: 23 postas activas, 1450 pacientes activos, 63.2% de adherencia global y 8 postas criticas. |
+
 
 ###### Resources (DTOs / Request & Response Models)
 
@@ -8147,6 +8149,21 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
   "totalPatients": "integer",
   "criticalPatients": "integer",
   "updatedAt": "datetime"
+}
+```
+
+#### 5. DashboardSummaryResponse
+
+**Razón:** Contiene las 4 metricas clave que necesita FerovaClinic para renderizar el home del admin. Sin este DTO el frontend tendria que combinar respuestas de multiples endpoints para construir la misma vista.
+
+**Ejemplo en el aplicativo:** FerovaClinic recibe este DTO y muestra en el home: "23 postas activas - 1450 pacientes - Adherencia global: 63.2% - 8 postas criticas."    
+
+```json
+{
+  "totalFacilities": 23,
+  "totalPatients": 1450,
+  "globalAdherence": 63.2,
+  "criticalFacilities": 8
 }
 ```
 
