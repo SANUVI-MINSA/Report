@@ -63,10 +63,47 @@ Muestra que la página se adapta a cada resolución de pantalla de dispositivo, 
 
 2. Ferova Family y Ferova Clinic
 
-
+**Se tiene que ver durante el desarrollo de la app**
 
 ##### 3.1.2.4 Searching Systems
+
+En esta sección, mostraremos los diferentes metodos de busqueda y filtrado de nuestras aplicaciones Ferova Family y Ferova Clinic.
+
+**Ferova Family**
+- Pestaña Diario:
+1. Busqueda de alimentos ricos en hierro
+2. Filtro de busqueda de alimentos ricos en hierro.
+
+**Ferova Clinic**
+- Pestaña Inicio:
+1. Busqueda de pacientes para dar de alta.
+2. Busqueda de pacientes para registro de control de hemoglobina.
+- Pestaña Pacientes:
+1. Registro de nuevo paciente utilizando busqueda de DNI de la madre registrada.
+2. Filtro de pacientes por nivel de riesgo.
+- Pestaña Consultas:
+1. Busqueda de consultas por paciente
+- Pestaña Historial:
+1. Busqueda por paciente registrado.
+
 ##### 3.1.2.5 Navigation Systems
+
+La navegación es muy importante ya que permite utilizar todas las funcionalidades que fueron implementadas en una aplicación. Hemos implementado la navegación de la siguiente manera:
+
+1. Ferova Family: En Ferova Family se organizo mediante secciones, las cuales permiten acceder a todos los beneficios que la aplicación ofrece. Además, se incluyen botones que acceden a otras funcionalidades dentro de cada sección:
+
+- Inicio
+- Diario
+- Citas
+- Consultas
+
+2. Ferova Clinic: En Ferova Clinic, se organizo mediante secciones, permitiendo acceder a todas las funcionalidades de la aplicación. Además, se incluyen botones que acceden a otras funcionalidades dentro de cada sección:
+
+- Inicio
+- Pacientes
+- Consultas
+- Historial
+
 #### 3.1.3 Landing Page UI Design
 ##### 3.1.3.1 Landing Page Wireframe
 ##### 3.1.3.2 Landing Page Mock-up
