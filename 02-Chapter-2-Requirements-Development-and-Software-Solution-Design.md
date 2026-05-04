@@ -7966,7 +7966,6 @@ Define los niveles de riesgo de cada posta médica basándose en su tasa de adhe
 | | **Método** | `findCriticalByDistrictId(districtId: String)` | retorna las postas criticas de un distrito especifico con adherencia menor al 50%. Lo usa el dashboard del admin para destacar las postas que necesitan atencion inmediata dentro de cada distrito. |
 | **DistrictHeatMapRepository** | **Método** | `save(heatMap: DistrictHeatMap)` | guarda o actualiza el mapa de calor de un distrito en MongoDB. Se ejecuta cada vez que cambia el nivel de riesgo de alguna posta del distrito y el mapa necesita actualizarse. |
 | | **Método** | `findAll()` | retorna los mapas de calor de todos los distritos. Lo usa FerovaClinic para renderizar el mapa de calor nacional con todos los distritos coloreados segun su nivel de adherencia usando Google Maps API. |
-| | **Método** | `criticalFacilities()` | retorna todas las postas criticas con el adherencePercentage de menor al 50% |
 | | **Método** | `findByDistrictId(districtId: String)` | retorna el mapa de calor de un distrito especifico. Lo usa FerovaClinic cuando el admin hace click en un distrito del mapa nacional para ver el detalle de sus postas coloreadas segun su nivel de riesgo. |
 
 ##### Relaciones y dependencias en BC Analytics & Reporting
