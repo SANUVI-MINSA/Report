@@ -8069,12 +8069,11 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | **GET** `/api/v1/metrics/{reportId}` | Retorna todas las metricas de adherencia de las postas incluidas en un reporte especifico. Lo usa FerovaClinic para mostrar la tabla comparativa de postas cuando el admin selecciona un reporte del historial. | El admin necesita ver los datos exactos de cada posta en formato tabla para poder comparar sus porcentajes de adherencia y tomar decisiones informadas sobre donde enfocar sus intervenciones. | El admin selecciona el reporte de Abril 2026 de San Juan de Lurigancho en FerovaClinic y ve una tabla con todas las postas del distrito mostrando su nombre, porcentaje de adherencia, total de pacientes y pacientes criticos ordenadas de menor a mayor adherencia. |
 | **GET** `/api/v1/metrics/{districtId}/critical` | Retorna las postas criticas de un distrito especifico con adherencia menor al 50%. Lo usa FerovaClinic para destacar las postas que necesitan atencion inmediata en el dashboard del admin. | El admin necesita identificar rapidamente cuales postas de un distrito estan en situacion critica sin tener que revisar toda la tabla de postas. Este endpoint le da directamente la lista de postas que requieren su intervencion inmediata. | El admin abre el dashboard de San Juan de Lurigancho y FerovaClinic muestra automaticamente una seccion de alertas criticas con las postas que tienen menos del 50% de adherencia destacadas en rojo con su numero de pacientes criticos. |
 | **GET** `/api/v1/reports/dashboard/summary` | Retorna un resumen consolidado del sistema con las 4 métricas principales del dashboard. Lo usa FerovaClinic para cargar la sección home del admin con una sola llamada al backend en lugar de hacer 4 consultas separadas. | El admin necesita ver el estado general del sistema al ingresar a FerovaClinic sin esperar multiples cargas. Un solo endpoint evita overhead de red y simplifica la logica del frontend. | El admin abre el home de FerovaClinic y el sistema hace una sola llamada que carga simultaneamente las 4 tarjetas: 23 postas activas, 1450 pacientes activos, 63.2% de adherencia global y 8 postas criticas. |
+| **GET** ` /api/v1/reports/facilities/status` | Retorna la lista completa de todas las postas del sistema con su nombre, distrito, porcentaje de adherencia y zona de riesgo, ordenadas de menor a mayor adherencia. Lo usa FerovaClinic para mostrar la tabla de estado general de postas en el home del admin. |  El admin necesita una vista consolidada de todas las postas sin filtrar por distrito para detectar de un vistazo cuales estan en zona critica a nivel nacional y priorizar sus intervenciones.| El admin abre el home de FerovaClinic y ve la tabla de estado de postas con Posta Huascar al tope con 30% en rojo, seguida de Posta San Hilarion con 42% en rojo, luego Posta Zarate con 65% en amarillo, y al final Posta Canto Grande con 80% en verde. |
+
 
 
 ###### Resources (DTOs / Request & Response Models)
-
-
-
 
 
 #### 1. HeatMapResponse   
@@ -8114,6 +8113,53 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 }
 ```
 
+#### 3. FacilityStatusResponse (array)
+
+**Razón:** Contiene por cada posta los datos necesarios para que FerovaClinic renderice la tabla con colores por zona de riesgo. Sin el campo riskZone el frontend tendria que recalcular la clasificacion en el cliente.
+
+**Ejemplo en el aplicativo:** FerovaClinic recibe el array y colorea cada fila segun el riskZone: rojo para RED, amarillo para YELLOW y verde para GREEN, mostrando facilityName, districtName y adherencePercentage en cada columna de la tabla.
+
+```json
+[
+  {
+    "facilityId": "facility-001",
+    "facilityName": "Posta Huascar",
+    "districtName": "San Juan de Lurigancho",
+    "adherencePercentage": 30.0,
+    "riskZone": "RED"
+  },
+  {
+    "facilityId": "facility-002",
+    "facilityName": "Posta San Hilarion",
+    "districtName": "San Juan de Lurigancho",
+    "adherencePercentage": 42.0,
+    "riskZone": "RED"
+  },
+  {
+    "facilityId": "facility-003",
+    "facilityName": "Posta Zarate",
+    "districtName": "Ate Vitarte",
+    "adherencePercentage": 65.0,
+    "riskZone": "YELLOW"
+  },
+  {
+    "facilityId": "facility-004",
+    "facilityName": "Posta Bayovar",
+    "districtName": "San Juan de Lurigancho",
+    "adherencePercentage": 72.0,
+    "riskZone": "YELLOW"
+  },
+  {
+    "facilityId": "facility-005",
+    "facilityName": "Posta Canto Grande",
+    "districtName": "Villa El Salvador",
+    "adherencePercentage": 80.0,
+    "riskZone": "GREEN"
+  }
+]
+```
+
+
 ###### Assembler / Mapper
 
 
@@ -8121,6 +8167,7 @@ En esta seccion se presentan las clases que forman parte de la Interface Layer d
 | :--- | :--- | :--- | :--- |
 | **HeatMapResponse-**<br>**FromEntityAssembler** | `DistrictHeatMap` → `HeatMapResponse` | Convierte la entidad DistrictHeatMap del dominio en un HeatMapResponse que puede viajar via HTTP hacia FerovaClinic con el formato que Google Maps API necesita para renderizar el mapa de calor correctamente. | El GetHeatMapQueryHandler obtiene el DistrictHeatMap de MongoDB con su lista de zones. El Assembler convierte cada zone en el formato correcto con las coordenadas GPS y el RiskZone que Google Maps API necesita para colorear cada posta en el mapa del distrito. |
 | **DashboardSummaryResponse**<br>**FromEntityAssembler** | `DashboardSummary → DashboardSummaryResponse` | Convierte los datos agregados del dominio en un DashboardSummaryResponse que puede viajar via HTTP hacia FerovaClinic con las 4 metricas consolidadas listas para renderizar el home del admin. | El GetDashboardSummaryQueryHandler obtiene los valores calculados de los repositorios. El Assembler los empaqueta en el formato correcto con totalFacilities, totalPatients, globalAdherence y criticalFacilities para que FerovaClinic los muestre directamente en las 4 tarjetas del home. |
+
 
 
 ##### 2.6.7.3. Application Layer
@@ -8140,6 +8187,8 @@ En esta seccion se explican las clases que manejan los flujos de procesos del ne
 | :--- | :--- | :--- | :--- |
 | **GetHeatMap-**<br>**QueryHandler** | El admin necesita ver el mapa de calor nacional con todos los distritos coloreados segun su nivel de adherencia para identificar rapidamente las zonas criticas del pais sin tener que revisar cada distrito individualmente. | Recibe el GetHeatMapQuery sin parametros. Consulta el DistrictHeatMapRepository con findAll y retorna los mapas de calor de todos los distritos. El HeatMapResponseFromEntityAssembler convierte cada DistrictHeatMap en un HeatMapResponse con el formato que Google Maps API necesita para colorear cada distrito en el mapa nacional. | El admin abre la seccion de mapa de calor en FerovaClinic y ve el mapa del Peru con todos los distritos coloreados. San Juan de Lurigancho aparece en rojo con 45% de adherencia, Miraflores en verde con 85% y Villa El Salvador en amarillo con 62%. |
 | **GetDashboardSummaryQueryHandler** |El admin necesita ver un resumen consolidado del estado general del sistema sin hacer multiples consultas separadas, para tomar decisiones rapidas desde la pantalla principal. | Recibe el GetDashboardSummaryQuery. Consulta en paralelo el HealthFacilityRepository con countActive, el PatientRepository con countActive, el FacilityMetricRepository con findAll para calcular la adherencia global promediando todos los porcentajes, y el FacilityMetricRepository con countCritical. Retorna un objeto con los cuatro valores consolidados para enviarlo a FerovaClinic. | El admin abre el home de FerovaClinic y ve las 4 tarjetas del dashboard: total de postas activas, total de pacientes activos, porcentaje de adherencia global y numero de postas criticas, todo cargado con una sola llamada al backend. |
+| **GetFacilitiesStatusQueryHandler** |El admin necesita ver el estado de todas las postas del sistema en una sola lista ordenada por nivel de riesgo para identificar rapidamente cuales requieren intervencion sin tener que revisar distrito por distrito.| Recibe el GetFacilitiesStatusQuery. Obtiene todas las metricas del FacilityMetricRepository con findAll, luego por cada metrica consulta el HealthFacilityRepository con findById para obtener el nombre y distrito de la posta. Clasifica cada posta en zona RED, YELLOW o GREEN segun su porcentaje de adherencia y retorna la lista ordenada de menor a mayor adherencia para que las postas criticas aparezcan primero en FerovaClinic.| El admin abre la seccion de estado de postas en FerovaClinic y ve una tabla completa con todas las postas del sistema ordenadas de menor a mayor adherencia, mostrando el nombre, distrito, porcentaje de adherencia y zona de riesgo de cada una, con las postas en rojo apareciendo al tope de la lista.|
+
 
 ###### Events
 
