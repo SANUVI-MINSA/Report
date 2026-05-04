@@ -4,7 +4,17 @@
 #### 3.1.1 Style Guidelines
 ##### 3.1.1.1 General Style Guidelines
 #### 3.1.2 Information Architecture
+
+En esta sección, se plantean los sistemas en los que se basarán nuestra aplicación, incluyendo los Tags de busqueda.
+
 ##### 3.1.2.1 Organization Systems
+
+En las dos aplicaciones se emplea la organización jerárquica para destacar las notificaciones emergentes, logros a cumplir, alertas de probabilidad alta de abandono de tratamiento o alertas de consumo de medicamentos. Esta jerarquía permite mostrar al usuario diferenciar entre las alertas importantes de las demás.
+
+En varias funcionalidades de las aplicaciones utilizamos la organización secuencial, donde el usuario realizará una serie de pasos para completar, sea un formulario o datos preestablecidos. La secuencia nos permite que el usuario realice todos los pasos obligatoriamente para obtener datos.
+
+También se utiliza la organización matricial, principalmente en todo acerca de exportación de datos, donde se permite el filtrado por fecha, nombre o rango de días. Esta organización es importante ya que permite analizar gran información de datos facilmente.
+
 ##### 3.1.2.2 Labelling Systems
 ##### 3.1.2.3 SEO Tags and Meta Tags
 ##### 3.1.2.4 Searching Systems
