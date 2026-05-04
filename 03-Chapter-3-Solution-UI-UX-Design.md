@@ -49,16 +49,16 @@ Se presentará el sistema de etiquetado para la página de presentación (Landin
 
 1. Landing Page
 
+**Charset**
 ```html
 <meta charset="UTF-8">
 ```
-
 Su función principal es indicar como interpreta el navegador los caracteres de texto en la página. UTF-8 signfica codificación universal, lo que muestra una correcta visualización de todos los caracteres, incluyendo los especiales como la letra "ñ", garantizando una experiencia consistente por cada idioma.
 
+**Viewport**
 ```html
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 ```
-
 Muestra que la página se adapta a cada resolución de pantalla de dispositivo, o sea, siendo responsiva por cada dispositivo: Desde PC hasta tablet o celular. Ajusta el ancho del contenido al ancho del dispositivo y establece un zoom 1:1 para la correcta visualización de los datos.
 
 2. Ferova Family y Ferova Clinic
