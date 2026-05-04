@@ -7969,6 +7969,7 @@ Define los niveles de riesgo de cada posta médica basándose en su tasa de adhe
 | | **Método** | `findByDistrictId(districtId: String)` | retorna el mapa de calor de un distrito especifico. Lo usa FerovaClinic cuando el admin hace click en un distrito del mapa nacional para ver el detalle de sus postas coloreadas segun su nivel de riesgo. |
 | | **Método** | `getGlobalAdherence()` | obtiene todas las metricas de todas las postas y promedia sus porcentajes de adherencia. Lo usa el dashboard principal para mostrar el indicador global de cumplimiento.|
 
+
 ##### Relaciones y dependencias en BC Analytics & Reporting
 
 #### Pregunta 1: ¿Qué tiene que ver Treatment Tracking con `save(metric)` y `updateMetrics`?
