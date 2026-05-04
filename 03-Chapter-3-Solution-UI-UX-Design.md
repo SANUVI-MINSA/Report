@@ -31,11 +31,19 @@ Se presentará el sistema de etiquetado para la página de presentación (Landin
 
 **Ferova Family**
 
-
+- Inicio: Muestra la información esencial sobre la aplicación. Muestra los niños registrados, la dosis registrada, muestra de logros y cantidad de hierro absorbida y cards de acceso rápido.
+- Diario: Muestra toda la información acerca de la nutrición de un niño: Hierro absorbido, alimentos consumidos, creación de nueva dieta e historial de dietas y Tips de consumo de comidas.
+- Citas: Muestra toda la información sobre las citas médicas para los niños: Selección de niño, cita actual, reserva de citas e historial de citas.
+- Consultas: Muestra toda la información sobre consultas médicas virtuales: Consultas por niño, consultas realizadas y creación de nueva consulta.
+- Notificaciones: Muestra de todas las notificaciones de la aplicación.
 
 **Ferova Clinic**
 
-
+- Inicio: Muestra la información esencial sobre la aplicación. Muestra los pacientes, estado de riesgo clínico de cada paciente, agenda de actividades diarias y cards de acceso rápido.
+- Pacientes: Muestra toda la información acerca de los pacientes registrados. Se puede vincular un paciente, seleccionar un paciente, monitoreo de pacientes según riesgo, detalle de cada paciente.
+- Consultas: Muestra toda la información acerca de las consultas: Bandeja de consultas por paciente y chat con el paciente.
+- Historial: Muestra la información del historial médico de cada paciente registrado. Se puede registrar y actualizar un historial médico
+- Notificaciones: Muestra de todas las notificaciones de la aplicación.
 
 ##### 3.1.2.3 SEO Tags and Meta Tags
 ##### 3.1.2.4 Searching Systems
