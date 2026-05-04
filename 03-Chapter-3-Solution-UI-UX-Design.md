@@ -16,6 +16,27 @@ En varias funcionalidades de las aplicaciones utilizamos la organización secuen
 También se utiliza la organización matricial, principalmente en todo acerca de exportación de datos, donde se permite el filtrado por fecha, nombre o rango de días. Esta organización es importante ya que permite analizar gran información de datos facilmente.
 
 ##### 3.1.2.2 Labelling Systems
+
+Se presentará el sistema de etiquetado para la página de presentación (Landing Page) y nuestras dos aplicaciones: Ferova Family y Ferova Clinic. Nuestro sistema se ha diseñado para separar y mostrar los datos de forma clara, minimizando la cantidad de información a un punto que sea fácil de entender y manejar.
+
+**Landing Page**
+
+- Presentación: Presentación de Slogan de nuestra empresa. Incluye botones de descarga e imagen que representa la aplicación.
+- Problema: Datos estadísticos sobre la anemia y como afecta a los infantes.
+- Funcionalidades: Funcionalidades principales de la aplicación para madres.
+- Para quién: Muestra las funcionalidades para cada aplicación.
+- Cómo funciona: Ruta guiada sobre las funciones de la aplicación Ferova Family.
+- Opiniones: Opiniones de los usuarios que utilizaron la app para madres.
+- Descarga de Apps: Botones de descarga de la aplicación.
+
+**Ferova Family**
+
+
+
+**Ferova Clinic**
+
+
+
 ##### 3.1.2.3 SEO Tags and Meta Tags
 ##### 3.1.2.4 Searching Systems
 ##### 3.1.2.5 Navigation Systems
