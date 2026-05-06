@@ -40,48 +40,48 @@ La estructura prioriza la eficiencia operativa, permitiendo a los proveedores re
 
 Pantalla principal de la aplicacion: Permita vesualizar la información primaria sobre el progreso de la persona anémica
 
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Home.png" alt="wireframe home">
 
 **Sección Notificación**
 
 Wireframes de notificaciones sobre alertas o avances del usuario en la aplicación
 
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Notificaciones.png" >
 
 **Sección Health Facility**
 
 Pantalla de información de centros médicos para la programación de citas que necesita el paciente
 
 <br>Postas cercanas<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Postas cercanas.png" >
 
 <br>Detalle de posta<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Detalle de posta.png" alt="">
 
 <br>Reserva de cita parte 1<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Reserva de cita 1.png" alt="">
 
 <br>Reserva de cita parte 2<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Reserva de cita 2.png" alt="">
 
 <br>Cancelar cita<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cancelar cita.png" alt="">
 
 <br>Cita confirmada<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita confirmada.png" alt="">
 
 <br>Cita actual<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita actual.png" alt="">
 
 <br>Cita cancelada<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita cancelada.png" alt="">
 
-**Sección Nutritional Diary**
+**Sección Patient Management**
 
 Sección donde el nutricionista o enfermero/a puede visualizar la información de su paciente asignado
 
 <br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Patient Management.png" alt="">
 <br>
 
 **Sección Nutritional Diary**
@@ -89,51 +89,51 @@ Sección donde el nutricionista o enfermero/a puede visualizar la información d
 Sección de la app donde se puede ver la información del progreso del paciente y los pasos a seguir de su tratamiento diario
 
 <br>Resumen diario<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Resumen diario.png" alt="">
 
 <br>historial<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Historial.png" alt="">
 
 <br>Registro de alimento<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento.png" alt="">
 
 <br>Registro de alimento (vacio)<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento vacio.png" alt="">
 
 <br>Registro de alimento (lleno)<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento lleno.png" alt="">
 
 **Sección Achivements and Badges**
 
 Sección donde el paciente puede ver su progreso en el tratamiento en forma de logros y recompensas virtuales
 
 <br>Dosis Confirmada<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Dosis confirmada.png" alt="">
 
 <br>Perdida de racha<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframes Perdida de racha.png" alt="">
 
 <br>Progresión<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Frame Progreso.png" alt="">
 
 **Sección Comunication**
 
 Sección de comunicación entre el encargado del paciente y el profesional de la salud encargado del seguimiento de su caso
 
 <br>Consulta<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Consulta.png" alt="">
 
 <br>Nueva consulta<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Nueva consulta.png" alt="">
 
 <br>Bandeja de consultas<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Bandeja de consultas.png" alt="">
 
 <br>Inicio de consulta<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Menu consulta.png" alt="">
 
 <br>Mensajes en la consulta<br>
-<img src="" alt="">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframes Menu Consulta - Mensaje.png" alt="">
 
 
 ##### 3.1.4.2 Mobile Applications Wireflow Diagrams
