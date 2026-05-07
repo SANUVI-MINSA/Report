@@ -138,5 +138,78 @@ Sección de comunicación entre el encargado del paciente y el profesional de la
 
 ##### 3.1.4.2 Mobile Applications Wireflow Diagrams
 ##### 3.1.4.3 Mobile Applications Mock-ups
+
+**Version Mobile - Profesional de salud**
+
+**Inicio de tratamiento**
+
+El profesional puede asignar a un determinado paciente su tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Inicio tratamiento.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Inicio tratamiento 2.png">
+
+**Lista de tratamientos y detalle**
+
+El profesional puede observar los tratamientos de sus pacientes asignados y los detalles de estos mismos
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp tratamiento desarrollo.png">
+
+**Lista de pacientes y sus detalles**
+
+El profesional puede observar la información principal de sus pacientes y su progreso dentro del tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Lista de pacientes.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Pacientes detalles.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Pacientes detalles 2.png">
+
+**Perfil del profesional**
+
+Pantalla donde el profesional puede observar su perfil, accesos rapidos para la aplicación e información relacionada con sus pacientes
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Perfil de profesional.png">
+
+**Finalizar tratamiento**
+
+Pantalla donde el profesional puede dar de alta a sus pacientes dando el tratamiento por terminado
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Dar de alta.png">
+
+**Bandeja de consultas**
+
+Pantalla donde el profesional puede interactuar con sus pacientes asignados por medio de chats privados
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Bandeja consulta.png">
+
+**Historial medico y control**
+
+Sección donde el profesional puede crear, actualizar y revisar un historial médico y de controles
+<br>
+
+Historial de paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Historial medico.png">
+
+Selección de historial médico
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Selecc historial medico.png">
+
+Control de hemoglobina
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Control hemo.png">
+
+Historial de controles
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Historial control.png">
+
+**Asignación de pacientes**
+
+Sección donde el padre/madre, tutor o apoderado es capaz de registrar a su hijo/a a seguimiento dentro de la aplicación
+
+Asignar paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar paciente.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar paciente 2.png">
+
+Registrar paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Registrar paciente.png">
+
+Busqueda de paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar busqueda.png">
+
 ##### 3.1.4.4 Mobile Applications User Flow Diagrams
 ##### 3.1.4.5 Mobile Applications Prototyping
