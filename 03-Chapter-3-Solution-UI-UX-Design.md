@@ -211,5 +211,87 @@ Registrar paciente
 Busqueda de paciente
 <img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar busqueda.png">
 
+**Version Mobile - Tutor de paciente**
+
+**Pagina principal**
+
+En esta sección el encargado del paciente puede ver la información principal sobre el progreso del paciente en su tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Menu Principal.png">
+
+**Health Facility**
+
+En esta sección el tutor puede ver toda la información sobre las postas medicas: Localización, detalles, programación de citas
+
+Localización de postas
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Postas cercanas.png">
+
+Reserva de citas
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Reserva cita.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Cita confirmada.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Detalle  citas.png">
+
+**Patient management**
+
+El tutor es capaz de añadir pacientes a la aplicación para su continuo tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Registro paciente.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Registro paciente datos.png">
+
+**Nutritional Diary**
+
+En esta sección el responsable del paciente puede ver la información del plan nutricional que necesita el paciente
+
+Busqueda
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Nutricion  busqueda.png">
+
+Registro de alimentos
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Diario Nutricional.png">
+
+Detalles de alimentos
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Detalles nutricionales.png">
+
+Historial alimenticio
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Historial nutricional.png">
+
+**Achivements and badges**
+
+El tutor podra observar el progreso del paciente por medio de logros y medallas 
+
+Medallas
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Medallas.png">
+
+Racha de dosis 
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/Mock Up Racha de dosis.png">
+
+Racha recuperada
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Racha recuperada.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Racha recuperada 2.png">
+
+Progreso
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Progreso y medallas.png">
+
+**Comunication**
+
+En esta sección el tutor puede contactar al profesional de salud para preguntas y dudas con respecto al tratamiento del paciente
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Consulta tutor.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Consulta tutor 2.png">
+
 ##### 3.1.4.4 Mobile Applications User Flow Diagrams
 ##### 3.1.4.5 Mobile Applications Prototyping
