@@ -282,7 +282,10 @@ La colaboracion del equipo al realizar el primer avance del proyecto fue activa,
     * [4.2.1.6 Services Documentation Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4216-services-documentation-evidence-for-sprint-review)
     * [4.2.1.7 Software Deployment Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4217-software-deployment-evidence-for-sprint-review)
     * [4.2.1.8 Team Collaboration Insights during Sprint](04-Chapter-4-Product-Implementation-%26-Validation.md#4218-team-collaboration-insights-during-sprint)
+    * 
+## [Conclusiones](05-Conclusions.md#conclusiones)
 
+* [Conclusiones y recomendaciones](05-Conclusions.md#conclusiones-y-recomendaciones)
 
 </div>
 
