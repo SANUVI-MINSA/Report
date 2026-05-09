@@ -282,42 +282,7 @@ La colaboracion del equipo al realizar el primer avance del proyecto fue activa,
     * [4.2.1.6 Services Documentation Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4216-services-documentation-evidence-for-sprint-review)
     * [4.2.1.7 Software Deployment Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4217-software-deployment-evidence-for-sprint-review)
     * [4.2.1.8 Team Collaboration Insights during Sprint](04-Chapter-4-Product-Implementation-%26-Validation.md#4218-team-collaboration-insights-during-sprint)
-  * [4.2.2 Sprint 2](04-Chapter-4-Product-Implementation-%26-Validation.md#422-sprint-2)
-    * [4.2.2.1 Sprint Planning 2](04-Chapter-4-Product-Implementation-%26-Validation.md#4221-sprint-planning-2)
-    * [4.2.2.2 Sprint Backlog 2](04-Chapter-4-Product-Implementation-%26-Validation.md#4222-sprint-backlog-2)
-    * [4.2.2.3 Development Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4223-development-evidence-for-sprint-review)
-    * [4.2.2.4 Testing Suite Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4224-testing-suite-evidence-for-sprint-review)
-    * [4.2.2.5 Execution Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4225-execution-evidence-for-sprint-review)
-    * [4.2.2.6 Services Documentation Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4226-services-documentation-evidence-for-sprint-review)
-    * [4.2.2.7 Software Deployment Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4227-software-deployment-evidence-for-sprint-review)
-    * [4.2.2.8 Team Collaboration Insights during Sprint](04-Chapter-4-Product-Implementation-%26-Validation.md#4228-team-collaboration-insights-during-sprint)
-  * [4.2.3 Sprint 3](04-Chapter-4-Product-Implementation-%26-Validation.md#423-sprint-3)
-    * [4.2.3.1 Sprint Planning 3](04-Chapter-4-Product-Implementation-%26-Validation.md#4231-sprint-planning-3)
-    * [4.2.3.2 Sprint Backlog 3](04-Chapter-4-Product-Implementation-%26-Validation.md#4232-sprint-backlog-3)
-    * [4.2.3.3 Development Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4233-development-evidence-for-sprint-review)
-    * [4.2.3.4 Testing Suite Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4234-testing-suite-evidence-for-sprint-review)
-    * [4.2.3.5 Execution Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4235-execution-evidence-for-sprint-review)
-    * [4.2.3.6 Services Documentation Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4236-services-documentation-evidence-for-sprint-review)
-    * [4.2.3.7 Software Deployment Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4237-software-deployment-evidence-for-sprint-review)
-    * [4.2.3.8 Team Collaboration Insights during Sprint](04-Chapter-4-Product-Implementation-%26-Validation.md#4238-team-collaboration-insights-during-sprint)
 
-
-* [4.3 Validation Interviews](04-Chapter-4-Product-Implementation-%26-Validation.md#43-validation-interviews)
-
-  * [4.3.1 Diseño de Entrevistas](04-Chapter-4-Product-Implementation-%26-Validation.md#431-diseño-de-entrevistas)
-  * [4.3.2 Registro de Entrevistas](04-Chapter-4-Product-Implementation-%26-Validation.md#432-registro-de-entrevistas)
-  * [4.3.3 Evaluaciones según heurísticas](04-Chapter-4-Product-Implementation-%26-Validation.md#433-evaluaciones-según-heurísticas)
-
-## [Conclusiones](05-Conclusions.md#conclusiones)
-
-* [Conclusiones y recomendaciones](05-Conclusions.md#conclusiones-y-recomendaciones)
-* [Video App Validation](05-Conclusions.md#video-app-validation)
-* [Video About the product](05-Conclusions.md#video-about-the-product)
-* [Video About the team](05-Conclusions.md#video-about-the-team)
-
-## [Glosoario](08-Glosoario.md#glosoario)
-## [Bibliografía](06-Bibliography.md#biblografia)
-## [Anexos](07-Annexes.md#anexos)
 
 </div>
 
