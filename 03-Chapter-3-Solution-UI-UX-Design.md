@@ -366,4 +366,36 @@ En esta sección el tutor puede contactar al profesional de salud para preguntas
 <img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Consulta tutor 2.png">
 
 ##### 3.1.4.4 Mobile Applications User Flow Diagrams
+
+**User Flow 1 Ingreso de datos de paciente:** <br> El flujo muestra cómo el usuario accede a su perfil desde el menú principal para registrar los datos de un nuevo paciente. El proceso concluye al guardar el registro.
+<img src="resources/images/chapter-III/User Flow/User Flow 1.png">
+
+**User Flow 2 Crear nueva entrada del diario nutricional:** <br> El flujo muestra como el usuario registra una nueva entrada de alimento al diario nutricional. Esto permita agregar un nuevo alimento al diario nutricional.
+<img src="resources/images/chapter-III/User Flow/User Flow 2.png">
+
+**User Flow 3 Monitorear el progreso del paciente:** <br> El cuidador visualiza gráficos o reportes con la evolución de hemoglobina, dosis cumplidas y avance general del tratamiento.
+<img src="resources/images/chapter-III/User Flow/User Flow 3.png">
+
+**User Flow 4 Comunicación con el personal médico:** <br> El cuidador puede enviar consultas o realizar teleconsultas con enfermeros(as) y nutricionistas para resolver dudas sobre el tratamiento.
+<img src="resources/images/chapter-III/User Flow/User Flow 4.png">
+
+**User Flow 5 Recibir alertas de riesgo o abandono:** <br> La aplicación identifica posibles interrupciones en el tratamiento y envía alertas preventivas para reducir el abandono y reforzar la adherencia.
+<img src="resources/images/chapter-III/User Flow/User Flow 5.png">
+
+**User Flow 6 Reservar cita para paciente:** <br> El cuidador puede agendar una cita para la revisión del paciente dentro de una posta médica registrada dentro de la aplicación.
+<img src="resources/images/chapter-III/User Flow/User Flow 6.png">
+
+**User Flow 7 Cancelar cita reservada:** <br> El ciudador pueda cancelar una cita de revisión para la evaluación del paciente.
+<img src="resources/images/chapter-III/User Flow/User Flow 7.png">
+
+**User Flow 8 Confirmar dosis diaria:** <br> El cuidador puede verificar la suministración del medicamento diario al paciente mediante la pestaña de notificaciones.
+<img src="resources/images/chapter-III/User Flow/User Flow 8.png">
+
+**User Flow 9 Visualización de datos de pacientes:** <br> El personal medico puede revisar los datos de sus pacientes asignados para estudiarlos y crear un plan de tratamientos para el último.
+<img src="resources/images/chapter-III/User Flow/User Flow 9.png">
+
+**User Flow 10 Iniciar tratamiento:** <br> El medico asignado puede iniciar el tratamiento asignando los suplementos correspondientes a uno de sus pacientes.
+<img src="resources/images/chapter-III/User Flow/User Flow 10.png">
+
+
 ##### 3.1.4.5 Mobile Applications Prototyping
