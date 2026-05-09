@@ -13,23 +13,24 @@ Incluiremos la guía de estilos para nuestras dos aplicaciones: **FerovaFamily**
 
 Para Ferova Family, el branding se diseñó para mostrar confianza y profesionalismo, abarcando el tema de la salud. Los tres iconos del logo (Gota de sangre, corazón y casa) representan la salud y bienestar que nuestra aplicación promete mediante sus funcionalidades principales. En el tema de colores, el color rojo representa la vitalidad y temas de salud de la persona y el color salmón representa la calidez, contrastando de buena manera con el otro color. El diseño incluye el logo del producto y su nombre para que sea fácil de identificar.
 
-![Branding Ferova Family](./resources/images/chapter-III/General_Style_Guidelines/Branding_FerovaFamily.png "Ferova Family")
+
+<img src="./resources/images/chapter-III/General_Style_Guidelines/Branding_FerovaFamily.png" alt="Branding Ferova Family" title="Ferova Family">
 
 El branding de Ferova Clinic se diseñó para mostrar profesionalismo, enfocado en el análisis de datos. Los iconos del logo (gota de sangre, barras y cruz roja) muestran la conexión entre el análisis de datos y la salud. En los colores, el color azul muestra profesionalismo y confianza y el color rojo muestra todo lo relacionado a la salud. El diseño incluye el logo del producto y su nombre para que sea identificable.
 
-![Branding Ferova Family](./resources/images/chapter-III/General_Style_Guidelines/Branding_FerovaClinic.png "Ferova Family")
+<img src="./resources/images/chapter-III/General_Style_Guidelines/Branding_FerovaClinic.png" alt="Branding Ferova Family" title="Ferova Family">
 
 **Typography**
 
 Para las dos aplicaciones, se selecciono la tipografía "Inter" como fuente principal y secundaria por su legibilidad, tono profesional y neutralidad. Esta fuente es agradable al usuario, mostrando diferencias claras en cada letra.
 
-![Typography](./resources/images/chapter-III/General_Style_Guidelines/Typography_Inter.png "Inter")
+<img src="./resources/images/chapter-III/General_Style_Guidelines/Typography_Inter.png" alt="Typography" title="Inter">
 
 **Colors**
 
 La paleta de colores de Ferova Family y Ferova Clinic se compone de 4 colores y sus variantes. Los colores, en conjunto, permiten mostrar una claridad en el diseño de las dos aplicaciones.
 
-![Ferova Colors](./resources/images/chapter-III/General_Style_Guidelines/Ferova_Colors.png "Colors")
+<img src="./resources/images/chapter-III/General_Style_Guidelines/Ferova_Colors.png" alt="Ferova Colors" title="Colors">
 
 - #7C0303 (Lava derretida): Utilizado en Ferova Family. Este color y sus variaciones están asociadas a la vitalidad y salud, también se le relaciona a la urgencia. Representa la salud principalmente. Utilizada en botones primarios y la interfaz de la aplicación.
 
