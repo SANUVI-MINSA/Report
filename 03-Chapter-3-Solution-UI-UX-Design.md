@@ -148,7 +148,7 @@ Cada Wireflow Diagram representa el recorrido visual e interactivo que realiza e
   <tr>
     <td>UG-01 — Ingreso de datos de paciente: El flujo muestra cómo el usuario accede a su perfil desde el menú principal para registrar los datos de un nuevo paciente. El proceso concluye al guardar el registro.</td>
     <td>
-      <img src="" alt="Mobile Wireflow 1" width="100%"><br>
+      <img src="resources/images/chapter-III/Wireflow/Wireflow 1.png" alt="Mobile Wireflow 1" width="100%"><br>
     </td>
   </tr>
   <tr>
@@ -156,67 +156,55 @@ Cada Wireflow Diagram representa el recorrido visual e interactivo que realiza e
       UG-02 — Crear nueva entrada del diario nutricional: El flujo muestra como el usuario registra una nueva entrada de alimento al diario nutricional. Esto permita agregar un nuevo alimento al diario nutricional.
     </td>
     <td>
-        <img src="" alt="Mobile Wireflow 2" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 2.png" alt="Mobile Wireflow 2" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td> UG-03 — Monitorear el progreso del paciente: El cuidador visualiza gráficos o reportes con la evolución de hemoglobina, dosis cumplidas y avance general del tratamiento. </td>
     <td>
-        <img src="" alt="Mobile Wireflow 3" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 3.png" alt="Mobile Wireflow 3" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td> UG-04 — Comunicación con el personal médico: El cuidador puede enviar consultas o realizar teleconsultas con enfermeros(as) y nutricionistas para resolver dudas sobre el tratamiento.</td>
     <td>
-        <img src="" alt="Mobile Wireflow 4" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 4.png" alt="Mobile Wireflow 4" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td>UG-05 — Recibir alertas de riesgo o abandono: La aplicación identifica posibles interrupciones en el tratamiento y envía alertas preventivas para reducir el abandono y reforzar la adherencia.</td>
     <td>
-        <img src="" alt="Mobile Wireflow 5" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 5.png" alt="Mobile Wireflow 5" width="100%"><br>
     </td> 
   </tr>
   <tr>
     <td>UG-06 — Reservar cita para paciente: El cuidador puede agendar una cita para la revisión del paciente dentro de una posta médica registrada dentro de la aplicación.</td>
     <td>
-        <img src="" alt="Mobile Wireflow 6" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 6.png" alt="Mobile Wireflow 6" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td>UG-07 — Cancelar cita reservada: El ciudador pueda cancelar una cita de revisión para la evaluación del paciente  .</td>
     <td>
-        <img src="" alt="Mobile Wireflow 7" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 7.png" alt="Mobile Wireflow 7" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td>UG-08 — Confirmar dosis diaria: El cuidador puede verificar la suministración del medicamento diario al paciente mediante la pestaña de notificaciones.</td>
     <td>
-        <img src="" alt="Mobile Wireflow 8" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 8.png" alt="Mobile Wireflow 8" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td>UG-09 — Visualización de datos de pacientes: El personal medico puede revisar los datos de sus pacientes asignados para estudiarlos y crear un plan de tratamientos para el último.</td>
     <td>
-        <img src="" alt="Mobile Wireflow 9" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 9.png" alt="Mobile Wireflow 9" width="100%"><br>
     </td>
   </tr>
   <tr>
     <td>UG-10 — Iniciar tratamiento: El medico asignado puede iniciar el tratamiento asignando los suplementos correspondientes a uno de sus pacientes. </td>
     <td>
-        <img src="" alt="Mobile Wireflow 10" width="100%"><br>
-    </td>
-  </tr>
-  <tr>
-    <td>UG-11 — Control de productos en el inventario del proveedor: El flujo evidencia cómo el proveedor revisa y actualiza el estado de sus productos, modificando unidades, corrigiendo información o eliminando ítems vencidos. Con ello, mantiene un inventario preciso y actualizado.</td>
-    <td>
-        <img src="assets/images/cap3/ug-11.png" alt="Mobile Wireflow 11" width="100%"><br>
-    </td>
-  </tr>
-  <tr>
-    <td> UG-12 — Gestión y actualización del estado de órdenes recibidas: El proveedor accede a la sección de órdenes para consultar solicitudes de restaurantes, revisar detalles y decidir si aprobarlas o rechazarlas. Este flujo permite mantener una comunicación ágil y transparente en la cadena de suministro.</td>
-    <td>
-        <img src="assets/images/cap3/ug-12.png" alt="Mobile Wireflow 12" width="100%"><br>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 10.png" alt="Mobile Wireflow 10" width="100%"><br>
     </td>
   </tr>
 </table>
