@@ -18,7 +18,7 @@ A continuación, se listan las herramientas y estándares adoptados por el equip
 
 #### 4.1.2 Source Code Management
 
-#### Frontend (Landing Page - HTML, CSS, JavaScript)
+#### Landing Page (Landing Page - HTML, CSS, JavaScript)
 
 ##### Convenciones generales:
 
