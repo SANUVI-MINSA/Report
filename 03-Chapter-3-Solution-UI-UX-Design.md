@@ -1,3 +1,5 @@
+
+
 ## Capítulo III: Solution UI/UX Design
 ### 3.1 Product Design
 #### 3.1.1 Style Guidelines
@@ -39,49 +41,59 @@ La estructura prioriza la eficiencia operativa, permitiendo a los proveedores re
 **Sección Home**
 
 Pantalla principal de la aplicacion: Permita vesualizar la información primaria sobre el progreso de la persona anémica
-
-<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Home.png" alt="wireframe home">
-
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Home.png" alt="wireframe home" >
+</p>
 **Sección Notificación**
 
 Wireframes de notificaciones sobre alertas o avances del usuario en la aplicación
-
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Notificaciones.png" >
-
+</p>
 **Sección Health Facility**
 
 Pantalla de información de centros médicos para la programación de citas que necesita el paciente
 
 <br>Postas cercanas<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Postas cercanas.png" >
-
+</p>
 <br>Detalle de posta<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Detalle de posta.png" alt="">
-
+</p>
 <br>Reserva de cita parte 1<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Reserva de cita 1.png" alt="">
-
+</p>
 <br>Reserva de cita parte 2<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Reserva de cita 2.png" alt="">
-
+</p>
 <br>Cancelar cita<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cancelar cita.png" alt="">
-
+</p>
 <br>Cita confirmada<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita confirmada.png" alt="">
-
+</p>
 <br>Cita actual<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita actual.png" alt="">
-
+</p>
 <br>Cita cancelada<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita cancelada.png" alt="">
-
+</p>
 **Sección Patient Management**
 
 Sección donde el nutricionista o enfermero/a puede visualizar la información de su paciente asignado
 
 <br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Patient Management.png" alt="">
+</p>
 <br>
 
 **Sección Nutritional Diary**
@@ -89,52 +101,65 @@ Sección donde el nutricionista o enfermero/a puede visualizar la información d
 Sección de la app donde se puede ver la información del progreso del paciente y los pasos a seguir de su tratamiento diario
 
 <br>Resumen diario<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Resumen diario.png" alt="">
-
+</p>
 <br>historial<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Historial.png" alt="">
-
+</p>
 <br>Registro de alimento<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento.png" alt="">
-
+</p>
 <br>Registro de alimento (vacio)<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento vacio.png" alt="">
-
+</p>
 <br>Registro de alimento (lleno)<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento lleno.png" alt="">
-
+</p>
 **Sección Achivements and Badges**
 
 Sección donde el paciente puede ver su progreso en el tratamiento en forma de logros y recompensas virtuales
 
 <br>Dosis Confirmada<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Dosis confirmada.png" alt="">
-
+</p>
 <br>Perdida de racha<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframes Perdida de racha.png" alt="">
-
+</p>
 <br>Progresión<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Frame Progreso.png" alt="">
-
+</p>
 **Sección Comunication**
 
 Sección de comunicación entre el encargado del paciente y el profesional de la salud encargado del seguimiento de su caso
 
 <br>Consulta<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Consulta.png" alt="">
-
+</p>
 <br>Nueva consulta<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Nueva consulta.png" alt="">
-
+</p>
 <br>Bandeja de consultas<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Bandeja de consultas.png" alt="">
-
+</p>
 <br>Inicio de consulta<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Menu consulta.png" alt="">
-
+</p>
 <br>Mensajes en la consulta<br>
+<p align="center">
 <img src="resources/images/chapter-III/MobileApp Wireframes/Wireframes Menu Consulta - Mensaje.png" alt="">
-
+</p>
 
 ##### 3.1.4.2 Mobile Applications Wireflow Diagrams
 
@@ -399,3 +424,14 @@ En esta sección el tutor puede contactar al profesional de salud para preguntas
 
 
 ##### 3.1.4.5 Mobile Applications Prototyping
+
+En cuanto a la arquitectura de información, el prototipo móvil de RESTOCK emplea una navegación jerárquica clara, acompañada de flujos secuenciales en procesos clave como el registro de compras y la creación de recetas. También se definieron etiquetas intuitivas, categorías adaptadas a cada tipo de usuario y herramientas de búsqueda que facilitan una interacción fluida y dirigida.<br>
+
+Asimismo, se implementaron interacciones responsivas (como estados active), validaciones visuales en formularios y retroalimentaciones inmediatas ante las acciones del usuario. Estos elementos garantizan que tanto el acceso a la información como la ejecución de tareas se realicen de forma eficiente y adaptada al contexto móvil.<br>
+
+Además, se grabó un video donde se explican los principales flujos de interacción del prototipo móvil, mostrando cómo las decisiones de diseño se reflejan en la experiencia del usuario. <br>
+
+<img src="resources/images/chapter-III/Prototype/Prototype.png">
+
+Mobile Application Prototyping
+[Prototipe](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQD4vCblLyzPQYl1lFrKwn0-AaGm4FEgRmXZmX34dPrRQms?e=PrA81X&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
