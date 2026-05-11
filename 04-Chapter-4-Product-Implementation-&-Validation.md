@@ -1017,6 +1017,1215 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
   </tbody>
 </table>
 
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px; text-align: center">
+  <thead>
+    <tr>
+      <th style="margin-bottom:18px; text-align: center">Repository</th>
+      <th style="margin-bottom:18px; text-align: center">Branch</th>
+      <th style="margin-bottom:18px; text-align: center">Commit id</th>
+      <th style="margin-bottom:18px; text-align: center">Commit Message/Body</th>
+      <th style="margin-bottom:18px; text-align: center">Commited on (Date)</th>
+    </tr>
+  </thead>
+  <tbody style="margin-bottom:18px; text-align: center">
+    <tr>
+      <td colspan="5"><strong>Backend - Ferova</strong></td>
+    </tr>
+    <!-- 08/05/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>3582cf0</td>
+      <td>feat(model): add aggregate Consultation, entity Message, valueObjects ConsultationStatus and MessageSender</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>3e26985</td>
+      <td>feat(commands): add commands</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>136958f</td>
+      <td>feat(queries): add new query types for consultation and nurse information retrieval</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>d9407ed</td>
+      <td>feat(query): add GetMessagesAfterQuery for incremental message synchronization</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>2bdf513</td>
+      <td>feat(communication): implement command and query services for consultation management</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>12f77fb</td>
+      <td>feat(communication): add ConsultationRepository</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>571d7ef</td>
+      <td>refactor(): delete status</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>d129587</td>
+      <td>feat(communication): add resource assemblers for message and consultation commands</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>3bbeae2</td>
+      <td>feat(communication): add StartConsultationResource interface</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>503a997</td>
+      <td>refactor(communication): remove ConsultationStatus from Consultation class</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>fbca2a5</td>
+      <td>fix(communication): ensure randomUUID is called as a function in Message and Consultation instantiation</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>ccc11cc</td>
+      <td>feat(communication): add Consultation and Message schemas for database modeling</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>5627556</td>
+      <td>feat(communication): add ConsultationMapper for mapping between domain and persistence layers</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>0cf6b99</td>
+      <td>feat(communication): add CommunicationController and CommunicationFacade for managing consultations and messages</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>7f65dc7</td>
+      <td>feat(communication): add CommunicationRoutes and dependencies for managing consultations and messages</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>35f75d6</td>
+      <td>feat(communication): add MongoConsultationRepository for managing consultations in MongoDB</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>f89888b</td>
+      <td>feat(communication): add communication routes to main application</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>b8b9ebd</td>
+      <td>feat(communication): enrich open consultations with patient and mother data</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>6660ca6</td>
+      <td>Add documentation for Communication API endpoints</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>57ef976</td>
+      <td>feat(communication): enrich open consultations with patient, mother, and nurse data</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>2a4d630</td>
+      <td>Merge remote-tracking branch 'origin/feat/comunication-management' into feat/comunication-management</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/comunication-management</td>
+      <td>239e29a</td>
+      <td>feat(communication): update API documentation for teleconsultation system</td>
+      <td>08/05/2026</td>
+    </tr>
+    <!-- 07/05/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>c77cef2</td>
+      <td>feat(nutritional-diary): implement patient validation against mother ID in diary operations</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/authentication</td>
+      <td>ac1a372</td>
+      <td>feat(): add token</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/health-facilities</td>
+      <td>246012e</td>
+      <td>feat(health-facilities): enforce admin role for health facility registration and nurse assignment</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/health-facilities</td>
+      <td>7153f81</td>
+      <td>feat(health-facilities): add validation for patient and appointment ownership by mother</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/health-facilities</td>
+      <td>667400e</td>
+      <td>feat(health-facilities): update nurse appointment schedule endpoint to use nurse ID from token</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>9c60adc</td>
+      <td>feat(patient-management): implement mother ID validation for patient registration and hemoglobin chart retrieval</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>85cfc8e</td>
+      <td>feat(patient-management): enforce nurse authentication and validate patient ownership in patient management operations</td>
+      <td>07/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>85b0f64</td>
+      <td>feat(patient-management): enhance patient management endpoints with nurse authentication and access validation</td>
+      <td>07/05/2026</td>
+    </tr>
+    <!-- 06/05/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>63bf7e6</td>
+      <td>feat(model): add aggregate, value objects, entities and enum</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>dfc9e49</td>
+      <td>feat(model): add repository</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/commands-queries</td>
+      <td>7ad5acb</td>
+      <td>feat(): add commands and queries</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/user-repository</td>
+      <td>9c566a8</td>
+      <td>feat(user-repository): add method to find mother by ID</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>f922f33</td>
+      <td>feat(nutritional-diary): implement iron absorption calculation and food entry registration</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/mapper</td>
+      <td>e92f6fc</td>
+      <td>feat(mapper): add mapper</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>b4b5199</td>
+      <td>feat(model): add FoodEntryModel</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>cf0827f</td>
+      <td>feat(nutritional-diary): add query assemblers and resource interfaces for food items and nutritional history</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>80c402c</td>
+      <td>feat(nutritional-diary): add schema</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>41db66d</td>
+      <td>feat(nutritional-diary): add repository mongo with implement with repositories interfaces</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>2078f4d</td>
+      <td>feat(nutritional-diary): add resource and command assembler for food entry registration</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>d9aedf3</td>
+      <td>feat(nutritional-diary): implement NutritionalDiaryController and facade for managing food entries and nutritional data</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>c20aa71</td>
+      <td>feat(nutritional-diary): add new NutrionalDiarySchema</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>5787cce</td>
+      <td>feat(nutritional-diary): add food item seeding script and update @types/node version</td>
+      <td>06/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/nutritional-diary</td>
+      <td>37887d3</td>
+      <td>feat(nutritional-diary): add nutritional diary routes to the main application</td>
+      <td>06/05/2026</td>
+    </tr>
+    <!-- 05/05/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/domain</td>
+      <td>bd34082</td>
+      <td>feat(domain): add Patient aggregate</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/value-objects</td>
+      <td>d09fd08</td>
+      <td>feat(valeue-objects): add valueObjects</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/entities</td>
+      <td>0848712</td>
+      <td>feat(entities): add entities Control and MedicalRecord</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor</td>
+      <td>c129c85</td>
+      <td>refactor: moved anemiastatus to enum files</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>47ca65a</td>
+      <td>feat(patient-management): add commands Assign patient to nurse, create patient</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>8848f45</td>
+      <td>feat(model): add associated medical record with patient</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/queries</td>
+      <td>905c30b</td>
+      <td>feat(queries): add query types for hemoglobin and medical record retrieval</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/command</td>
+      <td>1e52ef4</td>
+      <td>feat(command): add UpdateMedicalRecordCommand</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>80d8534</td>
+      <td>feat(patient-management): add PatientCommandService and PatientQueryService</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor/model</td>
+      <td>ea97a99</td>
+      <td>refactor(model): remove medicalRecord</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/entities</td>
+      <td>f97baff</td>
+      <td>feat(entities): add nurseId</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/repositories</td>
+      <td>38c2561</td>
+      <td>feat(repositories): add MedicalRecordRepository and PatientRepository interfaces</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor</td>
+      <td>96c2415</td>
+      <td>refactor: rename files and update import paths for consistency</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/models</td>
+      <td>acfd08c</td>
+      <td>feat(models): add model schema mongo patient and medical record</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>d82ca16</td>
+      <td>feat(model): add sintomas</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/mappers</td>
+      <td>623338f</td>
+      <td>feat(mappers): add medical mappers and patient mappers</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/repositories</td>
+      <td>552a531</td>
+      <td>feat(repositories): add mongo repositories Patient and Medical Record</td>
+      <td>05/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>e5a457a</td>
+      <td>feat(patient-management): add patient and medical record resources, use cases</td>
+      <td>05/05/2026</td>
+    </tr>
+    <!-- 04/05/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/appointment-repository</td>
+      <td>61be070</td>
+      <td>feat(appointment-repository): fix appointment time typo and filter confirmation</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/health-facility</td>
+      <td>b677b1a</td>
+      <td>feat(health-facility): update appointment date parameter and add available slots query</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/health-facility</td>
+      <td>190ee66</td>
+      <td>feat(health-facility): implement nurse assignment logic with validation</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/health-facility</td>
+      <td>3531da8</td>
+      <td>feat(health-facility): add new method in the repository implements Mongo</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>b28ae9f</td>
+      <td>feat(patient-management): implement patient appointment history retrieval</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>855b5d8</td>
+      <td>feat(patient-management): add type definition for GetPatientsAssignedToNurseQuery</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>754856b</td>
+      <td>feat(patient-management): enhance HemoglobinHistoryResource and HemoglobinEvolution</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>3ac7df7</td>
+      <td>feat(patient-management): update medical record structure and validation</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>8d7aea9</td>
+      <td>feat(patient-management): enhance medical record creation and add patient validation</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>cd8cec6</td>
+      <td>feat(patient-management): add new method getPatientsAssignedToNurse</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>cb69bf7</td>
+      <td>feat(patient-management): enforce required value for Observaciones field</td>
+      <td>04/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>eb37c63</td>
+      <td>feat(patient-management): add endpoint to retrieve patients assigned to nurse</td>
+      <td>04/05/2026</td>
+    </tr>
+    <!-- 03/05/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>d408fea</td>
+      <td>feat(patient-management): update medical record command and enhance creation logic</td>
+      <td>03/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/queryservice</td>
+      <td>57cff0b</td>
+      <td>feat(queryservice): add logic to see patient active in queryGetPatientsAssignedToNurse</td>
+      <td>03/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/patient-management</td>
+      <td>9c48106</td>
+      <td>feat(patient-management): implement PDF generation for medical record</td>
+      <td>03/05/2026</td>
+    </tr>
+    <!-- 28/04/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/config</td>
+      <td>9f70a4e</td>
+      <td>feat(config): add .env and server connect with mongodb and config swagger</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/value-objects</td>
+      <td>fd81abf</td>
+      <td>feat(value-objects): add Coordinates, FacilityStatus and OperationSchedule</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/shared</td>
+      <td>452d1da</td>
+      <td>feat(shared): add district catalogs</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/shared</td>
+      <td>bc4587a</td>
+      <td>feat(shared): add mongo connection</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/enum</td>
+      <td>4d19314</td>
+      <td>feat(enum): add AppointmentStatus</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>3ed518c</td>
+      <td>feat(model): add HealthFacility</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/entities</td>
+      <td>53b5702</td>
+      <td>feat(entities): add NurseAssigment manages the Assignment Nurse and Facility</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/entities</td>
+      <td>5ad0b3f</td>
+      <td>feat(entities): add Appointment manages appointments of the facility</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/command</td>
+      <td>92c8cf3</td>
+      <td>feat(command): add commands assign nurse, book appointment, cancel appointment</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor/healthy-facility</td>
+      <td>0187fe8</td>
+      <td>refactor(healthy-facility): moved from domain files</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor/queries</td>
+      <td>d1cc385</td>
+      <td>refactor(queries): add queries to List Facility, Get History Appointment</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/services</td>
+      <td>8411ea9</td>
+      <td>feat(services): add Commands and queries</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/repositories</td>
+      <td>72eff35</td>
+      <td>feat(repositories): add Appointment, HealthFacility, and NurseAssignment repositories</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>22340ef</td>
+      <td>feat(model): defined model mongo HealthFacility</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/infrastructure</td>
+      <td>4f922b5</td>
+      <td>feat(infrastructure): defined model mongo Appointment</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/infrastructure</td>
+      <td>1ddbd90</td>
+      <td>feat(infrastructure): defined model mongo NurseAssignment</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/model</td>
+      <td>1bd968a</td>
+      <td>feat(model): enhance HealthFacility with nurseAssignments mapping and methods</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>docs</td>
+      <td>57d6f44</td>
+      <td>docs: add comments</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/infrastructure</td>
+      <td>186d9b5</td>
+      <td>feat(infrastructure): add mappers Appointment and NurseAssigment</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor/infrastructure</td>
+      <td>f7a30ea</td>
+      <td>refactor(infrastructure): moved from files</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/repositories</td>
+      <td>26eed16</td>
+      <td>feat(repositories): refactor array to unique value to method findByNurseId</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat/repositories</td>
+      <td>f42b4d7</td>
+      <td>feat(repositories): implement Repositories for Healthy management operations</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor(command)</td>
+      <td>495321c</td>
+      <td>refactor(command): refactor named cancelAppointmentCommand to CancelAppointmentCommand</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor(entities)</td>
+      <td>4affee1</td>
+      <td>refactor(entities): refactor date to appointmentDate and appointmentTime</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor(entities)</td>
+      <td>d6ded88</td>
+      <td>refactor(entities): add date to appointmentDate and appointmentTime</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(repositories)</td>
+      <td>e270271</td>
+      <td>feat(repositories): add new methode findbyid</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(repositories)</td>
+      <td>308d740</td>
+      <td>feat(repositories): add update</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(repositories)</td>
+      <td>13313d6</td>
+      <td>feat(repositories): add findById</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(repositories)</td>
+      <td>de289ac</td>
+      <td>feat(repositories): add update</td>
+      <td>28/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(services)</td>
+      <td>3c2ab65</td>
+      <td>feat(services): add command servicesImpl commands implements HealthyFacility</td>
+      <td>28/04/2026</td>
+    </tr>
+    <!-- 27/04/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(services)</td>
+      <td>78439d3</td>
+      <td>feat(services): add GoogleMapsService to calculate distances</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(services)</td>
+      <td>19154da</td>
+      <td>feat(services): add HealthFacilityQueryServiceImpl implements HealthyFacilityQueryService</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor</td>
+      <td>0b5f2c8</td>
+      <td>refactor: refactor moved files</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor(registerHealthFacility)</td>
+      <td>50fdf3b</td>
+      <td>refactor(registerHealthFacility): add registerFacility of the implements</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat</td>
+      <td>0d4f3ee</td>
+      <td>feat: remove all adapter of google Service</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(queries)</td>
+      <td>95680da</td>
+      <td>feat(queries): add new queries GetFacilityAvailableSlotsQuery, GetNearestFacilitiesQuery</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(resources)</td>
+      <td>e889422</td>
+      <td>feat(resources): add new resource types for appointment history, health facility</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(mappers)</td>
+      <td>4aac930</td>
+      <td>feat(mappers): add [] to security that nurseAssigment is undefine</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(mappers)</td>
+      <td>942cddf</td>
+      <td>feat(mappers): add assembler the history appointment, Detail Healthy, Nearest</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(mappers)</td>
+      <td>54c7320</td>
+      <td>feat(mappers): new methods findConfirmedByNurseId, findByFacilityAndDate</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(service)</td>
+      <td>4bfa347</td>
+      <td>feat(service): add DistanceCalculatorService for calculating distances between coordinates</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(services)</td>
+      <td>5791ebe</td>
+      <td>feat(services): add registerFacility and implements DistrictRepository</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(repositories)</td>
+      <td>8b7ac5d</td>
+      <td>feat(repositories): add mongo repositories appointments</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(repositories)</td>
+      <td>8c35b6a</td>
+      <td>feat(repositories): add HealthFacilityQueryService implements HealthFacilityQueryService</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(controller)</td>
+      <td>52b01e8</td>
+      <td>feat(controller): implement HealthFacilityController with CRUD operations</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(command)</td>
+      <td>bc116e7</td>
+      <td>feat(command): update RegisterHealthFacilityCommand by removing district dependency</td>
+      <td>27/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(command)</td>
+      <td>91f60ba</td>
+      <td>feat(command): add route "/api/health-facilities"</td>
+      <td>27/04/2026</td>
+    </tr>
+    <!-- 25/04/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>chore</td>
+      <td>e52e801</td>
+      <td>chore: add bcrypt to hash password</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat</td>
+      <td>4f0baf2</td>
+      <td>feat: add User aggregate</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>64da0eb</td>
+      <td>feat(iam): add role enum with the options 'Mother', 'Nurse' and 'Admin'</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat</td>
+      <td>3e69705</td>
+      <td>feat: add value objects for DNI, Email, Password, Phone, and UserId</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>51308ab</td>
+      <td>feat(iam): add command RegisterMotherCommand.ts to register new mother</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>5c01881</td>
+      <td>feat(iam): add command CreateStaffUserCommand.ts to register new admin or nurse</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>91b2216</td>
+      <td>feat(iam): add RequestPasswordResetCommand.ts and ResetPasswordCommand.ts</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>0745949</td>
+      <td>feat(iam): add GetUserByIdQuery.ts to get the information completed about user</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>e6e9548</td>
+      <td>feat(iam): add GetUserProfileQuery.ts to get the profile completed and related data</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>faf25a0</td>
+      <td>feat(iam): add GetMothersQuery.ts to get information mother</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>10aa736</td>
+      <td>feat(iam): add GetAllStaffUsersQuery.ts</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>705c6d6</td>
+      <td>feat(iam): add GetUserByEmailQuery</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>refactor(iam)</td>
+      <td>74be01e</td>
+      <td>refactor(iam): refactor domain/model file to better structure</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>44fad56</td>
+      <td>feat(iam): add services to commands service and queryservices</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(password)</td>
+      <td>8628739</td>
+      <td>feat(password): remove hash in the value-object the password follows the rule</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(env)</td>
+      <td>a0a107c</td>
+      <td>feat(env): .env secrets</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>26513ce</td>
+      <td>feat(iam): initialize value property in Dni class constructor</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>49dd051</td>
+      <td>feat(iam): add fromPersistence to return string the phone</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(outbound-services)</td>
+      <td>36fcb70</td>
+      <td>feat(outbound-services): add EmailService to send email</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(security)</td>
+      <td>773fae4</td>
+      <td>feat(security): add BcryptHashingService.ts and JwTokenService to pass dependencies</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>6085d2c</td>
+      <td>feat(iam): add resource types for staff user, login user, and mother profile</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>c2998bd</td>
+      <td>feat(iam): update login and password reset commands to use dni and code</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>9344591</td>
+      <td>feat(iam): delete RequestPasswordResetCommand</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(application)</td>
+      <td>b2f6868</td>
+      <td>feat(application): add service to all commands and queries</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>d5f9504</td>
+      <td>feat(iam): implement UserRepository for user management operations to mongo</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(swagger)</td>
+      <td>d238a38</td>
+      <td>feat(swagger): config url and apis theme errors connection with routes</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>c19ff22</td>
+      <td>feat(iam): add password field and getter method in User class</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>b0dad2d</td>
+      <td>feat(iam): add UserMapper for converting between User domain model and persistence</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>3d913ad</td>
+      <td>feat(iam): update requestCode with new command 'RequestResetCodeCommand'</td>
+      <td>25/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(shared)</td>
+      <td>02548f3</td>
+      <td>feat(shared): add MongoConnection with connection with database of Mongo</td>
+      <td>25/04/2026</td>
+    </tr>
+    <!-- 24/04/2026 -->
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>ead754c</td>
+      <td>feat(iam): add new dependencies for JWT, Mongoose, and Nodemailer</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>861912c</td>
+      <td>feat(iam): add UserController for user registration, login, and password reset</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>09711bc</td>
+      <td>feat(iam): add UserFacade for user registration, login, and password reset</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>c38b4bc</td>
+      <td>feat(iam): defined model to collection in mongo 'user'</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>5f537cf</td>
+      <td>feat(iam): add UserResource and UserResourceAssembler for user data handling</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>687f5f9</td>
+      <td>feat(iam): add UserDependencyInjection and UserRoutes for user management</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(app)</td>
+      <td>24b8b17</td>
+      <td>feat(app): add userRoutes</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(iam)</td>
+      <td>e687826</td>
+      <td>feat(iam): refactor server initialization to use async MongoDB connection</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(command)</td>
+      <td>94be968</td>
+      <td>feat(command): add new command to verify code reset</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(services)</td>
+      <td>061a713</td>
+      <td>feat(services): add verifyResetCode to CommandServices</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(services)</td>
+      <td>5ffa780</td>
+      <td>feat(services): add implementation verifyCode and add logic to verify code reset</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(facade)</td>
+      <td>baf063d</td>
+      <td>feat(facade): add verifyResetCode method in the facade</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(controller)</td>
+      <td>fa8af82</td>
+      <td>feat(controller): add verifyCode method to handle code verification</td>
+      <td>24/04/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/backend</td>
+      <td>feat(route)</td>
+      <td>N/A</td>
+      <td>feat(route): add new route endpoint to verify-code</td>
+      <td>24/04/2026</td>
+    </tr>
+  </tbody>
+</table>
 
 ##### 4.2.1.4 Testing Suite Evidence for Sprint Review
 ##### 4.2.1.5 Execution Evidence for Sprint Review
