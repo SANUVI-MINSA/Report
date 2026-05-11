@@ -18,16 +18,48 @@ A continuación, se listan las herramientas y estándares adoptados por el equip
 
 #### 4.1.2 Source Code Management
 
-#### Landing Page (Landing Page - HTML, CSS, JavaScript)
-
 ##### Convenciones generales:
 
-- **Idioma**: Todo el código, incluyendo nombres de variables, funciones y clases, está escrito en **inglés**.
-- **Formato de archivos**: `.html`, `.css`, `.js`
-- **Estilo de código adoptado**:
-  - [W3Schools HTML Style Guide](https://www.w3schools.com/html/html5_syntax.asp)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)
+###### Repositorios en GitHub
 
+En esta seccion presentamos los 3 productos en los repositorios de GitHub.
+
+- [Landing Page](https://github.com/SANUVI-MINSA/ferova-landing-page)
+- [Web Services](https://github.com/SANUVI-MINSA/backend-ferova/tree/deployment-primero-presentacion)
+- [Mobile Application](https://github.com/SANUVI-MINSA/ferova-mobile-android/tree/develop)
+
+###### Implementación de GitFlow
+
+En este seccion se presenta la implentacion de Git flow para el registro de versiones se organizo bajo estas ramas.
+
+<div align="center">
+
+| Actividad  | Herramienta / Guía   |
+| ----------| --------------------- | 
+| main      | Contiene el código en producción. Solo recibe merges desde release. | 
+| develop   | Rama principal de desarrollo. Integra todas las features terminadas y el desarrollo del producto. | 
+| feat  | Una rama por cada nueva funcionalidad. Se crea desde develop y se fusiona de vuelta a develop. | 
+| release  | Preparación de una nueva versión. Se crea desde develop y se fusiona a main y develop. | 
+
+</div>
+
+###### Conventional Commits
+
+Los mensajes de todos los commits seguirán el estándar Conventional Commits, con el siguiente formato:
+
+<div align="center">
+
+| Actividad  | Herramienta / Guía   |
+| ----------| --------------------- | 
+| feat      | Nueva funcionalidad | 
+| fix   | Corrección de un bug | 
+| docs |Cambios en documentación | 
+| style      | Cambios de formato, espacios, etc. (sin lógica) | 
+| refactor   | Mejora de código sin cambiar funcionalidad | 
+| test | Añadir o modificar pruebas | 
+| chore | Tareas de mantenimiento, configuración | 
+
+</div>
 
 #### 4.1.3 Source Code Style Guide & Conventions
 #### 4.1.4 Software Deployment Configuration
