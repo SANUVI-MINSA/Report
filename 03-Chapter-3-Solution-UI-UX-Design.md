@@ -1,5 +1,6 @@
-## Capítulo III: Solution UI/UX Design
 
+
+## Capítulo III: Solution UI/UX Design
 ### 3.1 Product Design
 
 En esta sección se presenta el diseño de nuestros productos de software (Landing Page, Ferova Clinic y Ferova Family). Presentamos la información acerca de los estilos generales que se utilizarán para cada producto que diseñemos. Además, se incluye la infomación sobre el diseño de las interfaces de usuario y como estas mejoran la experiencia del usuario (UX/UI).
@@ -204,7 +205,421 @@ Los usuarios destacan que la app mejora la organización del tratamiento y facil
 
 #### 3.1.4 Mobile Applications UX/UI Design
 ##### 3.1.4.1 Mobile Applications Wireframes
+Los siguientes wireframes corresponden a la aplicación web SUMADI
+
+Principios aplicados
+-**Jerarquía funcional clara:**
+
+ El flujo de navegación prioriza las acciones más relevantes para proveedores, como gestión de productos, visualización de órdenes y acceso a reportes de ventas.
+
+-**Consistencia y patrones de diseño:**
+
+ Los componentes mantienen uniformidad en su comportamiento visual e interactivo, asegurando coherencia entre pantallas y módulos.
+
+-**Accesibilidad en interfaces:**
+
+ Se aplicaron contrastes adecuados, fuentes legibles, botones de tamaño óptimo y estructura de navegación compatible con teclado y lectores de pantalla.
+
+-**Diseño adaptativo:**
+
+ Los wireframes consideran que la aplicación será utilizada tanto en pantallas de laptop como en tablets, por lo que el diseño es responsivo y se ajusta a distintos anchos de pantalla.
+
+-**Arquitectura de información enfocada al flujo de tareas:**
+
+La estructura prioriza la eficiencia operativa, permitiendo a los proveedores registrar productos, atender pedidos y monitorear métricas clave en el menor número de clics posible.
+
+**Sección Home**
+
+Pantalla principal de la aplicacion: Permita vesualizar la información primaria sobre el progreso de la persona anémica
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Home.png" alt="wireframe home" >
+</p>
+**Sección Notificación**
+
+Wireframes de notificaciones sobre alertas o avances del usuario en la aplicación
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Notificaciones.png" >
+</p>
+**Sección Health Facility**
+
+Pantalla de información de centros médicos para la programación de citas que necesita el paciente
+
+<br>Postas cercanas<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Postas cercanas.png" >
+</p>
+<br>Detalle de posta<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Detalle de posta.png" alt="">
+</p>
+<br>Reserva de cita parte 1<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Reserva de cita 1.png" alt="">
+</p>
+<br>Reserva de cita parte 2<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Reserva de cita 2.png" alt="">
+</p>
+<br>Cancelar cita<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cancelar cita.png" alt="">
+</p>
+<br>Cita confirmada<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita confirmada.png" alt="">
+</p>
+<br>Cita actual<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita actual.png" alt="">
+</p>
+<br>Cita cancelada<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Cita cancelada.png" alt="">
+</p>
+**Sección Patient Management**
+
+Sección donde el nutricionista o enfermero/a puede visualizar la información de su paciente asignado
+
+<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Patient Management.png" alt="">
+</p>
+<br>
+
+**Sección Nutritional Diary**
+
+Sección de la app donde se puede ver la información del progreso del paciente y los pasos a seguir de su tratamiento diario
+
+<br>Resumen diario<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Resumen diario.png" alt="">
+</p>
+<br>historial<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Historial.png" alt="">
+</p>
+<br>Registro de alimento<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento.png" alt="">
+</p>
+<br>Registro de alimento (vacio)<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento vacio.png" alt="">
+</p>
+<br>Registro de alimento (lleno)<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Registro de alimento lleno.png" alt="">
+</p>
+**Sección Achivements and Badges**
+
+Sección donde el paciente puede ver su progreso en el tratamiento en forma de logros y recompensas virtuales
+
+<br>Dosis Confirmada<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Dosis confirmada.png" alt="">
+</p>
+<br>Perdida de racha<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframes Perdida de racha.png" alt="">
+</p>
+<br>Progresión<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Frame Progreso.png" alt="">
+</p>
+**Sección Comunication**
+
+Sección de comunicación entre el encargado del paciente y el profesional de la salud encargado del seguimiento de su caso
+
+<br>Consulta<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Consulta.png" alt="">
+</p>
+<br>Nueva consulta<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Nueva consulta.png" alt="">
+</p>
+<br>Bandeja de consultas<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Bandeja de consultas.png" alt="">
+</p>
+<br>Inicio de consulta<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframe Menu consulta.png" alt="">
+</p>
+<br>Mensajes en la consulta<br>
+<p align="center">
+<img src="resources/images/chapter-III/MobileApp Wireframes/Wireframes Menu Consulta - Mensaje.png" alt="">
+</p>
+
 ##### 3.1.4.2 Mobile Applications Wireflow Diagrams
+
+Cada Wireflow Diagram representa el recorrido visual e interactivo que realiza el usuario dentro de la aplicación para cumplir un objetivo específico (User Goal). En cada flujo se detalla la secuencia de pantallas y acciones que permiten alcanzar dicho propósito, desde la navegación inicial hasta la confirmación o registro de una tarea.
+
+<table width="100%">
+  <tr>
+    <th width="25%">User Goal</th>
+    <th width="75%">Imágen</th>
+  </tr>
+  <tr>
+    <td>UG-01 — Ingreso de datos de paciente: El flujo muestra cómo el usuario accede a su perfil desde el menú principal para registrar los datos de un nuevo paciente. El proceso concluye al guardar el registro.</td>
+    <td>
+      <img src="resources/images/chapter-III/Wireflow/Wireflow 1.png" alt="Mobile Wireflow 1" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td> 
+      UG-02 — Crear nueva entrada del diario nutricional: El flujo muestra como el usuario registra una nueva entrada de alimento al diario nutricional. Esto permita agregar un nuevo alimento al diario nutricional.
+    </td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 2.png" alt="Mobile Wireflow 2" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td> UG-03 — Monitorear el progreso del paciente: El cuidador visualiza gráficos o reportes con la evolución de hemoglobina, dosis cumplidas y avance general del tratamiento. </td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 3.png" alt="Mobile Wireflow 3" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td> UG-04 — Comunicación con el personal médico: El cuidador puede enviar consultas o realizar teleconsultas con enfermeros(as) y nutricionistas para resolver dudas sobre el tratamiento.</td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 4.png" alt="Mobile Wireflow 4" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td>UG-05 — Recibir alertas de riesgo o abandono: La aplicación identifica posibles interrupciones en el tratamiento y envía alertas preventivas para reducir el abandono y reforzar la adherencia.</td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 5.png" alt="Mobile Wireflow 5" width="100%"><br>
+    </td> 
+  </tr>
+  <tr>
+    <td>UG-06 — Reservar cita para paciente: El cuidador puede agendar una cita para la revisión del paciente dentro de una posta médica registrada dentro de la aplicación.</td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 6.png" alt="Mobile Wireflow 6" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td>UG-07 — Cancelar cita reservada: El ciudador pueda cancelar una cita de revisión para la evaluación del paciente  .</td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 7.png" alt="Mobile Wireflow 7" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td>UG-08 — Confirmar dosis diaria: El cuidador puede verificar la suministración del medicamento diario al paciente mediante la pestaña de notificaciones.</td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 8.png" alt="Mobile Wireflow 8" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td>UG-09 — Visualización de datos de pacientes: El personal medico puede revisar los datos de sus pacientes asignados para estudiarlos y crear un plan de tratamientos para el último.</td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 9.png" alt="Mobile Wireflow 9" width="100%"><br>
+    </td>
+  </tr>
+  <tr>
+    <td>UG-10 — Iniciar tratamiento: El medico asignado puede iniciar el tratamiento asignando los suplementos correspondientes a uno de sus pacientes. </td>
+    <td>
+        <img src="resources/images/chapter-III/Wireflow/Wireflow 10.png" alt="Mobile Wireflow 10" width="100%"><br>
+    </td>
+  </tr>
+</table>
+
 ##### 3.1.4.3 Mobile Applications Mock-ups
+
+**Version Mobile - Profesional de salud**
+
+**Inicio de tratamiento**
+
+El profesional puede asignar a un determinado paciente su tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Inicio tratamiento.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Inicio tratamiento 2.png">
+
+**Lista de tratamientos y detalle**
+
+El profesional puede observar los tratamientos de sus pacientes asignados y los detalles de estos mismos
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp tratamiento desarrollo.png">
+
+**Lista de pacientes y sus detalles**
+
+El profesional puede observar la información principal de sus pacientes y su progreso dentro del tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Lista de pacientes.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Pacientes detalles.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Pacientes detalles 2.png">
+
+**Perfil del profesional**
+
+Pantalla donde el profesional puede observar su perfil, accesos rapidos para la aplicación e información relacionada con sus pacientes
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Perfil de profesional.png">
+
+**Finalizar tratamiento**
+
+Pantalla donde el profesional puede dar de alta a sus pacientes dando el tratamiento por terminado
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Dar de alta.png">
+
+**Bandeja de consultas**
+
+Pantalla donde el profesional puede interactuar con sus pacientes asignados por medio de chats privados
+
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Bandeja consulta.png">
+
+**Historial medico y control**
+
+Sección donde el profesional puede crear, actualizar y revisar un historial médico y de controles
+<br>
+
+Historial de paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Historial medico.png">
+
+Selección de historial médico
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Selecc historial medico.png">
+
+Control de hemoglobina
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Control hemo.png">
+
+Historial de controles
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Historial control.png">
+
+**Asignación de pacientes**
+
+Sección donde el padre/madre, tutor o apoderado es capaz de registrar a su hijo/a a seguimiento dentro de la aplicación
+
+Asignar paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar paciente.png">
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar paciente 2.png">
+
+Registrar paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Registrar paciente.png">
+
+Busqueda de paciente
+<img src="resources/images/chapter-III/MobileApp MockUp/MockUp Asignar busqueda.png">
+
+**Version Mobile - Tutor de paciente**
+
+**Pagina principal**
+
+En esta sección el encargado del paciente puede ver la información principal sobre el progreso del paciente en su tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Menu Principal.png">
+
+**Health Facility**
+
+En esta sección el tutor puede ver toda la información sobre las postas medicas: Localización, detalles, programación de citas
+
+Localización de postas
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Postas cercanas.png">
+
+Reserva de citas
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Reserva cita.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Cita confirmada.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Detalle  citas.png">
+
+**Patient management**
+
+El tutor es capaz de añadir pacientes a la aplicación para su continuo tratamiento
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Registro paciente.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Registro paciente datos.png">
+
+**Nutritional Diary**
+
+En esta sección el responsable del paciente puede ver la información del plan nutricional que necesita el paciente
+
+Busqueda
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Nutricion  busqueda.png">
+
+Registro de alimentos
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Diario Nutricional.png">
+
+Detalles de alimentos
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Detalles nutricionales.png">
+
+Historial alimenticio
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Historial nutricional.png">
+
+**Achivements and badges**
+
+El tutor podra observar el progreso del paciente por medio de logros y medallas 
+
+Medallas
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Medallas.png">
+
+Racha de dosis 
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/Mock Up Racha de dosis.png">
+
+Racha recuperada
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Racha recuperada.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Racha recuperada 2.png">
+
+Progreso
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Progreso y medallas.png">
+
+**Comunication**
+
+En esta sección el tutor puede contactar al profesional de salud para preguntas y dudas con respecto al tratamiento del paciente
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Consulta tutor.png">
+
+<img src="resources/images/chapter-III/MobileApp MockUp/Version paciente/MockUp Consulta tutor 2.png">
+
 ##### 3.1.4.4 Mobile Applications User Flow Diagrams
+
+**User Flow 1 Ingreso de datos de paciente:** <br> El flujo muestra cómo el usuario accede a su perfil desde el menú principal para registrar los datos de un nuevo paciente. El proceso concluye al guardar el registro.
+<img src="resources/images/chapter-III/User Flow/User Flow 1.png">
+
+**User Flow 2 Crear nueva entrada del diario nutricional:** <br> El flujo muestra como el usuario registra una nueva entrada de alimento al diario nutricional. Esto permita agregar un nuevo alimento al diario nutricional.
+<img src="resources/images/chapter-III/User Flow/User Flow 2.png">
+
+**User Flow 3 Monitorear el progreso del paciente:** <br> El cuidador visualiza gráficos o reportes con la evolución de hemoglobina, dosis cumplidas y avance general del tratamiento.
+<img src="resources/images/chapter-III/User Flow/User Flow 3.png">
+
+**User Flow 4 Comunicación con el personal médico:** <br> El cuidador puede enviar consultas o realizar teleconsultas con enfermeros(as) y nutricionistas para resolver dudas sobre el tratamiento.
+<img src="resources/images/chapter-III/User Flow/User Flow 4.png">
+
+**User Flow 5 Recibir alertas de riesgo o abandono:** <br> La aplicación identifica posibles interrupciones en el tratamiento y envía alertas preventivas para reducir el abandono y reforzar la adherencia.
+<img src="resources/images/chapter-III/User Flow/User Flow 5.png">
+
+**User Flow 6 Reservar cita para paciente:** <br> El cuidador puede agendar una cita para la revisión del paciente dentro de una posta médica registrada dentro de la aplicación.
+<img src="resources/images/chapter-III/User Flow/User Flow 6.png">
+
+**User Flow 7 Cancelar cita reservada:** <br> El ciudador pueda cancelar una cita de revisión para la evaluación del paciente.
+<img src="resources/images/chapter-III/User Flow/User Flow 7.png">
+
+**User Flow 8 Confirmar dosis diaria:** <br> El cuidador puede verificar la suministración del medicamento diario al paciente mediante la pestaña de notificaciones.
+<img src="resources/images/chapter-III/User Flow/User Flow 8.png">
+
+**User Flow 9 Visualización de datos de pacientes:** <br> El personal medico puede revisar los datos de sus pacientes asignados para estudiarlos y crear un plan de tratamientos para el último.
+<img src="resources/images/chapter-III/User Flow/User Flow 9.png">
+
+**User Flow 10 Iniciar tratamiento:** <br> El medico asignado puede iniciar el tratamiento asignando los suplementos correspondientes a uno de sus pacientes.
+<img src="resources/images/chapter-III/User Flow/User Flow 10.png">
+
+
 ##### 3.1.4.5 Mobile Applications Prototyping
+
+En cuanto a la arquitectura de información, el prototipo móvil de SUMADI emplea una navegación jerárquica clara, acompañada de flujos secuenciales en procesos clave como el registro de pacientes y la creación y asignacion de tratamientos. También se definieron paginas intuitivas y herramientas de búsqueda que facilitan una interacción fluida y dirigida.<br>
+
+Además, se grabó un video donde se explican los principales flujos de interacción del prototipo móvil, mostrando cómo las decisiones de diseño se reflejan en la experiencia del usuario. <br>
+
+<img src="resources/images/chapter-III/Prototype/Prototype.png">
+
+Mobile Application Prototyping
+[Prototipe](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQD4vCblLyzPQYl1lFrKwn0-AaGm4FEgRmXZmX34dPrRQms?e=PrA81X&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
