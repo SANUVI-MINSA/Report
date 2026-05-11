@@ -1093,7 +1093,497 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Epic ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>EP-10</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Navegación e Interacción con la Landing Page de Ferova</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero poder explorar la landing page de Ferova de manera fluida e intuitiva, para comprender el valor de la plataforma, conocer sus funcionalidades y tomar la decisión de descargar la app o contactar al equipo según mi perfil (madre o personal de salud).
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 **User Stories**
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-01</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualización del hero y propuesta de valor</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero ver una sección hero clara con el propósito de Ferova al ingresar a la landing page, para entender en segundos si la plataforma resuelve mi problema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Carga inicial exitosa<br>
+        Dado que el visitante accede a la URL de la landing page,<br>
+        cuando la página carga completamente,<br>
+        entonces debe ver el título "Vence la anemia con cada dosis", el subtítulo, los botones "Descargar Ferova" y "Cómo funciona", y las estadísticas animadas (43%, 1 de 3, -10%).<br><br>
+        Escenario 2: Animación de estadísticas<br>
+        Dado que el visitante observa la sección hero,<br>
+        cuando el contador animado llega al valor final (ej. 43%),<br>
+        entonces el número debe haberse incrementado de forma progresiva con efecto ease-out.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-02</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Navegación principal con scroll activo</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero que el menú de navegación esté siempre visible y muestre la sección activa mientras hago scroll, para orientarme en cualquier momento dentro de la página.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Navbar con efecto de scroll<br>
+        Dado que el visitante hace scroll hacia abajo más de 60px,<br>
+        cuando el evento de scroll se dispara,<br>
+        entonces el navbar debe mostrar la clase "scrolled" (fondo sólido y sombra visible).<br><br>
+        Escenario 2: Enlace activo resaltado<br>
+        Dado que el visitante está en una sección determinada (ej. #funcionalidades),<br>
+        cuando esa sección entra al viewport con al menos 40% de visibilidad,<br>
+        entonces el enlace correspondiente en el navbar debe cambiar de color a var(--crimson).
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-03</td>
+      <td>Visitante</td>
+      <td>Medium</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Menú móvil hamburguesa funcional</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante desde un dispositivo móvil, quiero acceder a un menú desplegable al tocar el ícono hamburguesa, para navegar a cualquier sección sin necesidad de hacer scroll manual.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Apertura del menú móvil<br>
+        Dado que el visitante está en móvil y toca el botón hamburguesa,<br>
+        cuando el clic se registra,<br>
+        entonces el menú móvil debe desplegarse, el scroll del body debe bloquearse y el ícono debe cambiar de estado.<br><br>
+        Escenario 2: Cierre al seleccionar enlace<br>
+        Dado que el menú móvil está abierto,<br>
+        cuando el visitante toca cualquier enlace de la lista,<br>
+        entonces el menú debe cerrarse automáticamente y el scroll del body debe restablecerse.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-04</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Comprensión del problema de la anemia infantil</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero ver datos y estadísticas claras sobre la crisis de anemia en el Perú, para comprender la urgencia del problema que Ferova busca resolver.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de la sección "El problema"<br>
+        Dado que el visitante hace scroll hasta la sección #problema,<br>
+        cuando los elementos entran al viewport (threshold 10%),<br>
+        entonces deben revelarse con animación las tres cajas de estadísticas (43%, 80%, 30 días).<br><br>
+        Escenario 2: Animación de contadores<br>
+        Dado que las cajas de estadísticas son visibles con threshold del 60%,<br>
+        cuando el contador se activa,<br>
+        entonces los valores deben animarse desde 0 hasta el valor objetivo en 1800ms con efecto ease-out cúbico.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-05</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Exploración de funcionalidades de Ferova</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero ver todas las funcionalidades de Ferova presentadas de forma clara, para evaluar si la app cubre mis necesidades antes de descargarla.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Grid de funcionalidades con animación escalonada<br>
+        Dado que el visitante llega a la sección #funcionalidades,<br>
+        cuando las feature cards entran al viewport,<br>
+        entonces deben aparecer con animación reveal escalonada (delay de 90ms entre tarjetas).<br><br>
+        Escenario 2: Visualización de las 6 funcionalidades<br>
+        Dado que el visitante observa el grid de funcionalidades,<br>
+        entonces debe ver las 6 tarjetas: Registro de dosis, Gamificación, Diario nutricional, Teleconsulta, Postas en mapa y Panel de enfermera, cada una con ícono, título y descripción.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-06</td>
+      <td>Visitante</td>
+      <td>Medium</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Identificación del segmento al que pertenece</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero ver claramente los dos perfiles de usuario de Ferova (madres y personal de salud), para identificar cuál app debo descargar según mi rol.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de los dos segmentos<br>
+        Dado que el visitante llega a la sección #segmentos,<br>
+        cuando hace scroll hasta las tarjetas de segmento,<br>
+        entonces debe ver dos tarjetas diferenciadas: FerovaFamily (madres/Android) y FerovaClinic (personal MINSA/Flutter), cada una con su lista de funcionalidades y su botón de descarga/acceso.<br><br>
+        Escenario 2: CTA diferenciado por segmento<br>
+        Dado que el visitante identifica su perfil,<br>
+        cuando hace clic en el botón de su segmento (ej. "Descargar FerovaFamily"),<br>
+        entonces debe ser redirigido a la sección #descargar.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-07</td>
+      <td>Visitante</td>
+      <td>Medium</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Comprensión del flujo de uso de la app</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero ver los pasos de cómo funciona Ferova presentados de forma visual y secuencial, para entender el proceso antes de descargar la app.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Pasos revelados con animación<br>
+        Dado que el visitante llega a la sección #como,<br>
+        cuando los steps entran al viewport,<br>
+        entonces deben revelarse con animación escalonada mostrando los 4 pasos numerados: registro, asignación, acompañamiento y monitoreo.<br><br>
+        Escenario 2: Claridad del contenido<br>
+        Dado que el visitante lee los pasos,<br>
+        entonces cada paso debe incluir número visible, título descriptivo y descripción concisa del rol de cada actor.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-08</td>
+      <td>Visitante</td>
+      <td>Low</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Lectura de testimonios de usuarios reales</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante, quiero leer testimonios de madres y enfermeras que ya usan Ferova, para ganar confianza en la plataforma antes de descargarla.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de testimonios<br>
+        Dado que el visitante llega a la sección de testimonios,<br>
+        cuando las tarjetas entran al viewport,<br>
+        entonces deben mostrarse 3 testimonios con nombre, rol, ubicación y texto de la reseña, con animación reveal escalonada.<br><br>
+        Escenario 2: Credibilidad del contenido<br>
+        Dado que el visitante lee los testimonios,<br>
+        entonces debe ver el avatar con iniciales, nombre completo, rol y localidad del usuario, lo que refuerza la autenticidad de cada reseña.
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-09</td>
+      <td>Visitante</td>
+      <td>High</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Descarga o acceso a la app desde la CTA final</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante que ya está convencido, quiero encontrar un CTA claro al final de la página para descargar FerovaFamily o acceder a FerovaClinic según mi perfil.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización del bloque CTA<br>
+        Dado que el visitante llega a la sección #descargar,<br>
+        cuando hace scroll hasta el bloque CTA,<br>
+        entonces debe ver dos botones: "Descargar FerovaFamily" y "Soy personal de salud", junto con la nota "Gratis · Sin tarjeta de crédito · Disponible en Android".<br><br>
+        Escenario 2: Acción del botón de descarga<br>
+        Dado que el visitante hace clic en "Descargar FerovaFamily",<br>
+        cuando el evento se registra,<br>
+        entonces debe ser dirigido al enlace de descarga correspondiente (Play Store u otro destino configurado).
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LP-10</td>
+      <td>Visitante</td>
+      <td>Low</td>
+      <td>EP-10</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Botón de scroll al inicio para volver rápidamente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como visitante que ha explorado toda la página, quiero un botón visible para volver rápidamente al inicio sin tener que hacer scroll manual.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Aparición del botón scroll-top<br>
+        Dado que el visitante ha bajado más de 500px en la página,<br>
+        cuando el evento scroll se detecta,<br>
+        entonces el botón "#scrollTop" debe hacerse visible con la clase "visible".<br><br>
+        Escenario 2: Acción de scroll suave<br>
+        Dado que el botón scroll-top es visible y el visitante hace clic en él,<br>
+        cuando el evento click se dispara,<br>
+        entonces la página debe hacer scroll suave (smooth) hasta el inicio (top: 0).
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
