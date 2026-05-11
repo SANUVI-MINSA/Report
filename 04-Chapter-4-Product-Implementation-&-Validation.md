@@ -164,7 +164,7 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
 			<td><strong>Description</strong></td>
 			<td><strong>Estimation (Hours)</strong></td>
 			<td><strong>Assigned To</strong></td>
-			<td><strong>Status (To-do / In-Process / To-review / Done)</strong></td>
+			<td><strong>Status (Done / In-Process / To-review / Done)</strong></td>
 		</tr>
 		<tr>
 			<td rowspan="2">LP-01</td>
@@ -346,6 +346,444 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
 			<td></td>
 			<td>Done</td>
 		</tr>
+	</tbody>
+</table>
+
+
+<table>
+	<tbody>
+		<tr>
+			<td><strong>Sprint #</strong></td>
+			<td colspan="7">Sprint 1</td>
+		</tr>
+		<tr>
+			<td colspan="2"><strong>User Story</strong></td>
+			<td colspan="6"><strong>Work-item / Task</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Id</strong></td>
+			<td><strong>Title</strong></td>
+			<td><strong>Id</strong></td>
+			<td><strong>Title</strong></td>
+			<td><strong>Description</strong></td>
+			<td><strong>Estimation (Hours)</strong></td>
+			<td><strong>Assigned To</strong></td>
+			<td><strong>Status (To-Do / In-Process / To-review / Done)</strong></td>
+		</tr>
+		<tr>
+		<td rowspan="2">TS-01</td>
+		<td rowspan="2">Registrar usuario mediante API RESTful</td>
+		<td>T1</td>
+		<td>Implementar endpoint POST /auth/register</td>
+		<td>Crear el endpoint de registro con validación de campos, hash de contraseña y asignación de rol automático en MongoDB.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T2</td>
+		<td>Manejar duplicados y datos inválidos</td>
+		<td>Retornar 409 si el DNI o correo ya existen y 422 si los campos tienen formato incorrecto.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-02</td>
+		<td rowspan="2">Autenticar usuario mediante API RESTful</td>
+		<td>T3</td>
+		<td>Implementar endpoint POST /auth/login</td>
+		<td>Crear el endpoint de inicio de sesión con validación de DNI y contraseña y generación de token JWT con rol del usuario.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T4</td>
+		<td>Implementar bloqueo por intentos fallidos</td>
+		<td>Retornar 403 y bloquear la cuenta por 30 minutos tras tres intentos fallidos consecutivos.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-03</td>
+		<td rowspan="2">Cambiar contraseña de usuario mediante API RESTful</td>
+		<td>T5</td>
+		<td>Implementar endpoint PUT /auth/change-password</td>
+		<td>Crear el endpoint para cambio de contraseña verificando el token JWT y la contraseña actual antes de actualizar en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T6</td>
+		<td>Manejar contraseña incorrecta y token inválido</td>
+		<td>Retornar 400 si la contraseña actual no coincide y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-04</td>
+		<td rowspan="2">Registrar paciente mediante API RESTful</td>
+		<td>T7</td>
+		<td>Implementar endpoint POST /patients</td>
+		<td>Crear el endpoint de registro de pacientes con validación de nombre, apellido, fecha de nacimiento y peso, almacenando el perfil en MongoDB.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T8</td>
+		<td>Validar campos obligatorios y token JWT</td>
+		<td>Retornar 422 si los campos están vacíos o con formato incorrecto y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-05</td>
+		<td rowspan="2">Obtener paciente por DNI de la madre mediante API RESTful</td>
+		<td>T9</td>
+		<td>Implementar endpoint GET /patients/search</td>
+		<td>Crear el endpoint de búsqueda de paciente por DNI de la madre para que la enfermera pueda encontrarlo y asignárselo desde FerovaClinic.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T10</td>
+		<td>Manejar DNI no encontrado y token inválido</td>
+		<td>Retornar 404 si el DNI no existe en el sistema y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-06</td>
+		<td rowspan="2">Asignar paciente a enfermera mediante API RESTful</td>
+		<td>T11</td>
+		<td>Implementar endpoint PUT /patients/{id}/assign</td>
+		<td>Crear el endpoint para vincular un paciente con una enfermera específica y almacenar la relación en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T12</td>
+		<td>Manejar paciente ya asignado y recursos no encontrados</td>
+		<td>Retornar 409 si el paciente ya tiene enfermera asignada y 404 si el paciente o la enfermera no existen.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-07</td>
+		<td rowspan="2">Registrar diagnóstico del paciente mediante API RESTful</td>
+		<td>T13</td>
+		<td>Implementar endpoint POST /patients/{id}/diagnosis</td>
+		<td>Crear el endpoint para registrar tipo y severidad de anemia del paciente en su historial médico en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T14</td>
+		<td>Validar datos del diagnóstico y paciente existente</td>
+		<td>Retornar 422 si los campos obligatorios están incompletos y 404 si el paciente no existe en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-08</td>
+		<td rowspan="2">Registrar nivel de hemoglobina del paciente mediante API RESTful</td>
+		<td>T15</td>
+		<td>Implementar endpoint POST /patients/{id}/hemoglobin</td>
+		<td>Crear el endpoint para registrar el nivel de hemoglobina en g/dL del paciente y actualizar automáticamente su historial médico en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T16</td>
+		<td>Validar valor de hemoglobina y paciente existente</td>
+		<td>Retornar 422 si el valor está fuera del rango permitido y 404 si el paciente no existe en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-09</td>
+		<td rowspan="2">Actualizar historial médico del paciente mediante API RESTful</td>
+		<td>T17</td>
+		<td>Implementar endpoint PUT /patients/{id}/medical-history</td>
+		<td>Crear el endpoint para actualizar peso, hemoglobina y observaciones del paciente por cada control presencial registrado en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T18</td>
+		<td>Validar datos incompletos y paciente no encontrado</td>
+		<td>Retornar 422 si los campos obligatorios están vacíos o con formato incorrecto y 404 si el paciente no existe.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-16</td>
+		<td rowspan="2">Registrar entrada del diario nutricional mediante API RESTful</td>
+		<td>T19</td>
+		<td>Implementar endpoint POST /nutritional-diary</td>
+		<td>Crear el endpoint para registrar alimentos consumidos por el paciente, calcular el hierro absorbido por alimento y detectar inhibidores como leche, té o café.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T20</td>
+		<td>Manejar alimentos inhibidores y lista vacía</td>
+		<td>Incluir alerta de inhibidores detectados en la respuesta 201 y retornar 422 si no se incluye ningún alimento en la lista.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-17</td>
+		<td rowspan="2">Obtener resumen nutricional diario mediante API RESTful</td>
+		<td>T21</td>
+		<td>Implementar endpoint GET /nutritional-diary/{id}/summary</td>
+		<td>Crear el endpoint para obtener el total de hierro absorbido en el día, los alimentos registrados y si se alcanzó la meta diaria de hierro.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T22</td>
+		<td>Manejar día sin alimentos y paciente no encontrado</td>
+		<td>Retornar mensaje informativo si no hay alimentos registrados en el día y 404 si el paciente no existe en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-20</td>
+		<td rowspan="2">Crear consulta de teleconsulta mediante API RESTful</td>
+		<td>T23</td>
+		<td>Implementar endpoint POST /consultations</td>
+		<td>Crear el endpoint para que la madre envíe su consulta a la enfermera asignada y el sistema la almacene en Firebase Firestore en tiempo real.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T24</td>
+		<td>Manejar mensaje vacío y paciente sin enfermera</td>
+		<td>Retornar 422 si el mensaje está vacío y 409 si el paciente no tiene enfermera asignada para recibir la consulta.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-21</td>
+		<td rowspan="2">Obtener lista de consultas de teleconsulta mediante API RESTful</td>
+		<td>T25</td>
+		<td>Implementar endpoint GET /consultations</td>
+		<td>Crear el endpoint para que la enfermera visualice todas las consultas recibidas con el nombre de la madre, el último mensaje y la fecha de actualización.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T26</td>
+		<td>Manejar lista vacía y token inválido</td>
+		<td>Retornar lista vacía con mensaje si la enfermera no tiene consultas y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-22</td>
+		<td rowspan="2">Obtener historial de consultas mediante API RESTful</td>
+		<td>T27</td>
+		<td>Implementar endpoint GET /consultations/{id}/history</td>
+		<td>Crear el endpoint para mostrar el historial completo de consultas entre madre y enfermera ordenadas por fecha, con su estado abierta o cerrada.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T28</td>
+		<td>Manejar sin consultas y paciente no encontrado</td>
+		<td>Retornar lista vacía con mensaje si no hay consultas registradas y 404 si el paciente no existe en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-23</td>
+		<td rowspan="2">Cerrar consulta de teleconsulta mediante API RESTful</td>
+		<td>T29</td>
+		<td>Implementar endpoint PUT /consultations/{id}/close</td>
+		<td>Crear el endpoint para que la enfermera cierre una consulta, actualice su estado en Firebase Firestore y registre la fecha y hora del cierre.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T30</td>
+		<td>Manejar cierre sin respuesta y consulta no encontrada</td>
+		<td>Retornar 409 si la consulta aún no ha sido respondida y 404 si la consulta no existe en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-24</td>
+		<td rowspan="2">Registrar posta médica mediante API RESTful</td>
+		<td>T31</td>
+		<td>Implementar endpoint POST /health-facilities</td>
+		<td>Crear el endpoint para que el admin registre postas médicas con nombre, dirección y coordenadas de ubicación en Google Maps, almacenadas en MongoDB.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T32</td>
+		<td>Validar datos de la posta y token JWT</td>
+		<td>Retornar 422 si los campos obligatorios están vacíos o con formato incorrecto y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-25</td>
+		<td rowspan="2">Registrar horario de atención de la posta mediante API RESTful</td>
+		<td>T33</td>
+		<td>Implementar endpoint POST/PUT /health-facilities/{id}/schedule</td>
+		<td>Crear el endpoint para registrar y actualizar días y horas de atención de cada posta, reflejados automáticamente en FerovaFamilia.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T34</td>
+		<td>Manejar posta no encontrada en el sistema</td>
+		<td>Retornar 404 si el ID de la posta no existe al intentar registrar o actualizar su horario de atención.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-26</td>
+		<td rowspan="2">Obtener postas médicas del distrito mediante API RESTful</td>
+		<td>T35</td>
+		<td>Implementar endpoint GET /health-facilities</td>
+		<td>Crear el endpoint para listar todas las postas del distrito del paciente con nombre, dirección, horario de atención y link de Google Maps.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T36</td>
+		<td>Manejar distrito sin postas y token inválido</td>
+		<td>Retornar lista vacía con mensaje si no hay postas registradas en el distrito y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-27</td>
+		<td rowspan="2">Transferir enfermera entre postas mediante API RESTful</td>
+		<td>T37</td>
+		<td>Implementar endpoint PUT /health-facilities/{id}/transfer-nurse</td>
+		<td>Crear el endpoint para que el admin reasigne una enfermera de una posta a otra, actualizando automáticamente el personal en ambas postas en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T38</td>
+		<td>Manejar misma posta y recursos no encontrados</td>
+		<td>Retornar 409 si la enfermera ya está en la posta de destino y 404 si la enfermera o la posta no existen en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-28</td>
+		<td rowspan="2">Obtener postas médicas cercanas por GPS mediante API RESTful</td>
+		<td>T39</td>
+		<td>Implementar endpoint GET /health-facilities/nearby</td>
+		<td>Crear el endpoint para mostrar postas cercanas ordenadas por distancia usando coordenadas GPS del dispositivo de la madre y Google Maps API.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T40</td>
+		<td>Manejar zona sin postas y coordenadas no enviadas</td>
+		<td>Retornar lista vacía si no hay postas disponibles en la zona y 422 si las coordenadas de latitud y longitud no fueron proporcionadas.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-29</td>
+		<td rowspan="2">Reservar cita en posta médica mediante API RESTful</td>
+		<td>T41</td>
+		<td>Implementar endpoint POST /appointments</td>
+		<td>Crear el endpoint para que la madre reserve una cita de control presencial y el sistema notifique automáticamente a la enfermera asignada en MongoDB.</td>
+		<td>3</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T42</td>
+		<td>Manejar horario ocupado y recursos no encontrados</td>
+		<td>Retornar 409 si el horario seleccionado ya está ocupado y 404 si la posta o el paciente no existen en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-30</td>
+		<td rowspan="2">Cancelar cita en posta médica mediante API RESTful</td>
+		<td>T43</td>
+		<td>Implementar endpoint PUT /appointments/{id}/cancel</td>
+		<td>Crear el endpoint para que la madre cancele su cita reservada, libere el horario y notifique automáticamente a la enfermera en MongoDB.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T44</td>
+		<td>Manejar cita ya cancelada y cita no encontrada</td>
+		<td>Retornar 409 si la cita ya fue cancelada anteriormente y 404 si el ID de la cita no existe en el sistema.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td rowspan="2">TS-31</td>
+		<td rowspan="2">Obtener lista de citas programadas mediante API RESTful</td>
+		<td>T45</td>
+		<td>Implementar endpoint GET /appointments</td>
+		<td>Crear el endpoint para que la enfermera visualice las citas de control presencial de sus pacientes asignados desde FerovaClinic.</td>
+		<td>2</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
+	<tr>
+		<td>T46</td>
+		<td>Manejar sin citas registradas y token inválido</td>
+		<td>Retornar lista vacía con mensaje si no hay citas programadas y 401 si el token JWT es inválido o expirado.</td>
+		<td>1</td>
+		<td></td>
+		<td>Done</td>
+	</tr>
 	</tbody>
 </table>
 
