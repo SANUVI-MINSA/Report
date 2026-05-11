@@ -350,6 +350,234 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
 </table>
 
 ##### 4.2.1.3 Development Evidence for Sprint Review
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px; text-align: center">
+  <thead>
+    <tr>
+      <th style="margin-bottom:18px; text-align: center">Repository</th>
+      <th style="margin-bottom:18px; text-align: center">Branch</th>
+      <th style="margin-bottom:18px; text-align: center">Commit id</th>
+      <th style="margin-bottom:18px; text-align: center">Commit Message/Body</th>
+      <th style="margin-bottom:18px; text-align: center">Commited on (Date)</th>
+    </tr>
+  </thead>
+  <tbody style="margin-bottom:18px; text-align: center">
+    <tr>
+      <td colspan="5"><strong>Landing Page - Ferova</strong></td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>0c434b5</td>
+      <td>feat: created a new CSS file for styles including variables, layout, and animations.</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Franco</td>
+      <td>731d2dc</td>
+      <td>Delete public/js/assets/images/abrir</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Franco</td>
+      <td>c58997</td>
+      <td>add Logo</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Franco</td>
+      <td>24b6ec9</td>
+      <td>Create abrir</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>6229d33</td>
+      <td>Merge pull request #2 from SANUVI-MINSA/feat/javascript</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>f308838</td>
+      <td>feat: implement active navigation link highlighting on scroll</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>e5ff1cd</td>
+      <td>feat: add active navigation link functionality on scroll</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>35e7900</td>
+      <td>feat: implement scroll reveal and counter animation functionality</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>00163a1</td>
+      <td>feat: add scroll reveal initialization for staggered elements</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>41ee03c</td>
+      <td>feat: add event listeners for mobile menu links to close menu on click</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>415aeae</td>
+      <td>feat: add mobile menu toggle functionality</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>67761d3</td>
+      <td>feat: add initialization for Lucide icons and mobile menu elements</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>2cf19f3</td>
+      <td>feat: implement scroll event listener for navbar and scrollTop button visibility</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>6668d70</td>
+      <td>feat: add navbar and scrollTop button functionality in main.js</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>1c259a0</td>
+      <td>feat: initialize main.js with lucide icon creation</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/javascript</td>
+      <td>7528dee</td>
+      <td>feat: add main.js file for JavaScript functionality</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>f106b12</td>
+      <td>Merge pull request #1 from SANUVI-MINSA/feat/Sebas</td>
+      <td>08/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>e0ae249</td>
+      <td>Merge pull request #7 from SANUVI-MINSA/develop</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Sebas</td>
+      <td>a9d26bf</td>
+      <td>Add files via upload</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Sebas</td>
+      <td>d5943d1</td>
+      <td>Add Ferova.png image to assets</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Sebas</td>
+      <td>31a65c2</td>
+      <td>Add main.js for navbar and scroll animations</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Sebas</td>
+      <td>498ee50</td>
+      <td>Add global styles and responsive design to styles.css</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>14bb15d</td>
+      <td>Delete public/css directory</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Franco</td>
+      <td>03e5317</td>
+      <td>Merge pull request #6 from SANUVI-MINSA/feat/Franco</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>74c5943</td>
+      <td>Delete public/js/main.js</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>42b11a9</td>
+      <td>Delete public/js/assets/images directory</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Ariana</td>
+      <td>a805742</td>
+      <td>Merge pull request #5 from SANUVI-MINSA/feat/Ariana</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>fa8f5cd</td>
+      <td>Delete public/assets/images directory</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>develop</td>
+      <td>e75724b</td>
+      <td>Delete public/js directory</td>
+      <td>09/05/2026</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/landing-page</td>
+      <td>feat/Franco</td>
+      <td>ce94969</td>
+      <td>Merge pull request #4 from SANUVI-MINSA/feat/Franco</td>
+      <td>09/05/2026</td>
+    </tr>
+  </tbody>
+</table>
+
 ##### 4.2.1.4 Testing Suite Evidence for Sprint Review
 ##### 4.2.1.5 Execution Evidence for Sprint Review
 ##### 4.2.1.6 Services Documentation Evidence for Sprint Review
