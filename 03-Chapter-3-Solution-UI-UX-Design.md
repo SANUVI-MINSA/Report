@@ -425,7 +425,7 @@ En esta sección el tutor puede contactar al profesional de salud para preguntas
 
 ##### 3.1.4.5 Mobile Applications Prototyping
 
-En cuanto a la arquitectura de información, el prototipo móvil de SUMADI emplea una navegación jerárquica clara, acompañada de flujos secuenciales en procesos clave como el registro de compras y la creación de recetas. También se definieron etiquetas intuitivas, categorías adaptadas a cada tipo de usuario y herramientas de búsqueda que facilitan una interacción fluida y dirigida.<br>
+En cuanto a la arquitectura de información, el prototipo móvil de SUMADI emplea una navegación jerárquica clara, acompañada de flujos secuenciales en procesos clave como el registro de pacientes y la creación y asignacion de tratamientos. También se definieron paginas intuitivas y herramientas de búsqueda que facilitan una interacción fluida y dirigida.<br>
 
 Además, se grabó un video donde se explican los principales flujos de interacción del prototipo móvil, mostrando cómo las decisiones de diseño se reflejan en la experiencia del usuario. <br>
 
