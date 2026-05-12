@@ -718,21 +718,19 @@ MONGO_URI = "mongodb+srv://prod_user:prod_pass@cluster-prod.mongodb.net/ferova_p
   </tr>
   <tr>
     <td><strong>Sprint Goal & User Stories</strong></td>
-    <td></td>
+    <td>El objetivo principal del Sprint 1 es establecer las bases funcionales del proyecto mediante el avance simultáneo en tres grandes frentes de desarrollo. En primer lugar, se busca desarrollar y desplegar la Landing Page, la cual tendrá como propósito fundamental atraer a visitantes interesados en los servicios de salud digital, difundir los alcances del proyecto FEROVA y proporcionar información clara sobre las funcionalidades del sistema, así como generar confianza en los usuarios potenciales mediante una interfaz atractiva, responsiva y de fácil navegación. En segundo lugar, se tiene como meta avanzar significativamente en el sistema frontend web, el cual debe contemplar los siguientes módulos esenciales: la gestión completa de usuarios (incluyendo registro, autenticación, roles y perfiles), la administración de pacientes (registro, historial, seguimiento y asignación a profesionales), el módulo de nutrición (registro de alimentos, planes nutricionales y diarios alimenticios), la gestión de postas de salud o health facilities (registro, ubicación, capacidad y servicios ofrecidos), y el módulo de teleconsultas(creacion de consultas, envio de mensaje, cerrar una consulta). En tercer lugar, se contempla el desarrollo del frontend móvil, el cual debe replicar las funcionalidades clave del sistema web en dispositivos móviles, garantizando que los usuarios (pacientes, nutricionistas, médicos y administradores) puedan acceder a las mismas operaciones desde sus teléfonos, con una interfaz adaptada a pantallas táctiles, notificaciones push, rendimiento optimizado y una experiencia de usuario coherente y fluida. </td>
   </tr>
   <tr>
     <td>Sprint 1 Goal</td>
-    <td>Nuestro enfoque está en presentar de forma efectiva nuestra propuesta de valor y e información detallada del producto a los nuevos visitantes. Además, habilitar funcionalidades clave para los administradores de restaurantes, como la gestión de inventario, la configuración de perfil, la gestión de recetas y la sección de ventas. Asimismo, en proporcionar puntos de acceso mediante el API de la plataforma, con el objetivo de que los desarrolladores frontend puedan integrar funcionalidades relacionadas con autenticación, perfil, inventario, recetas y ventas dentro de la app.
-Creemos que esto ofrece mayor confianza hacia el equipo de trabajo y motiva a los visitantes a registrarse y probar el producto. Del mismo modo, mejora la eficiencia operativa de los administradores de restaurantes al facilitar la creación y gestión de ventas e insumos desde la aplicación móvil. Además, permite a los desarrolladores frontend implementar funcionalidades esenciales de forma más eficiente, incluyendo autenticación, inventario, ventas, recetas y perfil. 
-Esto se confirmará cuando aumente la cantidad de visitantes que se registren en la plataforma. Del mismo modo, cuando se incremente la cantidad de ventas e insumos que registran administradores de restaurantes en la plataforma. Por último, cuando los desarrolladores frontend aumenten la cantidad de funcionalidades relacionadas con ventas, recetas, inventario y perfil en la app móvil.</td>
+    <td></td>
   </tr>
   <tr>
     <td>Sprint 1 Velocity</td>
-    <td>28</td>
+    <td>108</td>
   </tr>
   <tr>
     <td>Sum of Story Points</td>
-    <td>28</td>
+    <td>108</td>
   </tr>
 </table>
 
