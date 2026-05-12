@@ -2276,11 +2276,38 @@ Se han automatizado 4 escenarios de prueba de aceptación (AT01-AT04) cubriendo 
 </table>
 
 ##### 4.2.1.5 Execution Evidence for Sprint Review
+
 ##### 4.2.1.6 Services Documentation Evidence for Sprint Review
 
 Durante este sprint se avanzó significativamente en la documentación de los servicios web **(REST API)** del sistema Ferova, cubriendo los módulos de **IAM (Users)**, **Patient Management**, **Nutritional Diary**, **Health Facilities** y **Communication**. La documentación se generó utilizando **OpenAPI (Swagger)** y fue validada mediante peticiones reales desde el entorno de desarrollo **(localhost)**. Se registraron los endpoints principales relacionados con la gestión de madres, pacientes, diario nutricional, centros de salud, citas y comunicación, cubriendo los métodos **HTTP** **GET**, **POST**, **PUT** y **DELETE**.
 
 A continuación, se presenta la tabla resumen de los Endpoints documentados, incluyendo la acción implementada, verbo HTTP, parámetros o cuerpo de solicitud y ejemplos de uso.
+
+| Endpoint | Acción | Verbo HTTP | Parámetros / Request Body | Ejemplo |
+| :--- | :--- | :--- | :--- | :--- |
+| `/api/users/register/mother` | Registrar una madre | POST | `{ "name": "string", "lastname": "string", "dni": "string", "email": "string", "phone": "string", "password": "string" }` | `{ "name": "Diana", "lastname": "Perez", "dni": "76543210", "email": "diana@example.com", "phone": "955123456", "password": "SecurePass123" }` |
+| `/api/users/login` | Iniciar sesión (madre/enfermera/admin) | POST | `{ "dni": "string", "password": "string" }` | `{ "dni": "76543210", "password": "SecurePass123" }` |
+| `/api/patients/register` | Registrar un nuevo paciente (hijo) | POST | `{ "name": "string", "lastName": "string", "birthDate": "date", "gender": "MALE/FEMALE", "weight": "number", "height": "number" }` | `{ "name": "Mateo", "lastName": "Perez", "birthDate": "2023-05-10", "gender": "MALE", "weight": 12.5, "height": 85 }` |
+| `/api/patients/assign-nurse` | Asignar paciente a enfermera | POST | `{ "patientId": "string" }` | `{ "patientId": "patient-123" }` |
+| `/api/patients/medical-record` | Crear historial médico inicial | POST | `{ "patientId": "string", "weight": "number", "height": "number", "motivoConsulta": "string", "observaciones": "string", "antecedentes": "array", "sintomas": "array" }` | `{ "patientId": "patient-123", "weight": 12.5, "height": 85, "motivoConsulta": "Control de rutina", "observaciones": "Paciente en buen estado general" }` |
+| `/api/patients/hemoglobin-control` | Registrar control de hemoglobina | POST | `{ "patientId": "string", "hemoglobinLevel": "number" }` | `{ "patientId": "patient-123", "hemoglobinLevel": 11.5 }` |
+| `/api/patients/medical-record/update` | Actualizar historial médico | PUT | `{ "patientId": "string", "weight": "number", "height": "number", "motivoConsulta": "string", "observaciones": "string" }` | `{ "patientId": "patient-123", "weight": 13.2, "height": 88, "observaciones": "Paciente con buen apetito" }` |
+| `/api/patients/discharge` | Dar de alta a un paciente | PUT | `{ "patientId": "string" }` | `{ "patientId": "patient-123" }` |
+| `/api/patients/mother/search/{dni}` | Buscar madre por DNI | GET | Path param: `dni` | `/api/patients/mother/search/76543210` |
+| `/api/patients/mother/{motherId}` | Listar pacientes por madre | GET | Path param: `motherId` | `/api/patients/mother/mother-456` |
+| `/api/patients/{patientId}/medical-record` | Obtener historial médico | GET | Path param: `patientId` | `/api/patients/patient-123/medical-record` |
+| `/api/patients/medical-record/{medicalRecordId}/controls` | Obtener historial de hemoglobina | GET | Path param: `medicalRecordId` | `/api/patients/medical-record/record-789/controls` |
+| `/api/patients/nurse` | Obtener pacientes asignados a la enfermera | GET | `(authentication from token)` | `/api/patients/nurse` |
+| `/api/nutritional-diary/food-entry` | Registrar consumo de alimento | POST | `{ "patientId": "string", "foodItemId": "string", "quantity": "number" }` | `{ "patientId": "patient-123", "foodItemId": "food-456", "quantity": 1.5 }` |
+| `/api/nutritional-diary/today/{patientId}` | Obtener diario nutricional del día | GET | Path param: `patientId` | `/api/nutritional-diary/today/patient-123` |
+| `/api/nutritional-diary/history/{patientId}` | Obtener historial nutricional | GET | Path param: `patientId` | `/api/nutritional-diary/history/patient-123` |
+| `/api/health-facilities` | Registrar centro de salud | POST | `{ "name": "string", "address": "string", "districtId": "string", "latitude": "number", "longitude": "number", "phoneNumber": "string", "services": "array", "availableDays": "array", "availableSlots": "array" }` | `{ "name": "Posta Ate", "address": "Av Los Olivos 123", "latitude": -12.0464, "longitude": -77.0428 }` |
+| `/api/health-facilities/appointments` | Reservar cita | POST | `{ "facilityId": "string", "patientId": "string", "appointmentDate": "date", "appointmentTime": "string" }` | `{ "facilityId": "facility-001", "patientId": "patient-123", "appointmentDate": "2026-06-10", "appointmentTime": "09:00" }` |
+| `/api/health-facilities/nearby` | Buscar centros cercanos | GET | Query params: `lat`, `lng` | `/api/health-facilities/nearby?lat=-12.0464&lng=-77.0428` |
+| `/api/communication/consultations` | Iniciar consulta (chat) | POST | `{ "motherId": "string", "patientId": "string", "firstMessageContent": "string" }` | `{ "motherId": "mother-456", "patientId": "patient-123", "firstMessageContent": "Hola, tengo una consulta sobre la alimentación" }` |
+| `/api/communication/messages` | Enviar mensaje | POST | `{ "consultationId": "string", "senderId": "string", "senderRole": "MOTHER/NURSE", "content": "string" }` | `{ "consultationId": "consult-001", "senderId": "mother-456", "senderRole": "MOTHER", "content": "¿Es normal que no quiera comer?" }` |
+| `/api/communication/chat/{consultationId}` | Obtener conversación | GET | Path param: `consultationId`, Query param: `requesterId` | `/api/communication/chat/consult-001?requesterId=mother-456` |
+| `/api/users/password/reset` | Restablecer contraseña | POST | `{ "email": "string", "code": "string", "newPassword": "string" }` | `{ "email": "diana@example.com", "code": "4832", "newPassword": "Nueva123@" }` |
 
 
 
