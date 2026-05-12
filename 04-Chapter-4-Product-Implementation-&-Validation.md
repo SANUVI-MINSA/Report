@@ -1374,6 +1374,367 @@ MONGO_URI = "mongodb+srv://prod_user:prod_pass@cluster-prod.mongodb.net/ferova_p
 	</tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+	<tbody>
+		<tr>
+			<td><strong>Sprint #</strong></td>
+			<td colspan="7">Sprint 1</td>
+		</tr>
+		<tr>
+			<td colspan="2"><strong>User Story</strong></td>
+			<td colspan="6"><strong>Work-item / Task</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Id</strong></td>
+			<td><strong>Title</strong></td>
+			<td><strong>Id</strong></td>
+			<td><strong>Title</strong></td>
+			<td><strong>Description</strong></td>
+			<td><strong>Estimation (Hours)</strong></td>
+			<td><strong>Assigned To</strong></td>
+			<td><strong>Status</strong></td>
+		</tr>
+		<!-- US-01: Registro de nuevo usuario -->
+		<tr>
+			<td rowspan="2">US-01</td>
+			<td rowspan="2">Registro de nuevo usuario</td>
+			<td>T1</td>
+			<td>Implementar pantalla CreateAccountScreen</td>
+			<td>UI completa de registro con campos de nombre, apellido, DNI, teléfono, correo y contraseña.</td>
+			<td>4</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T2</td>
+			<td>Conectar UI con lógica mock</td>
+			<td>Validación de contraseñas coincidentes y términos aceptados; navegación a Login.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-02: Inicio de sesión -->
+		<tr>
+			<td rowspan="2">US-02</td>
+			<td rowspan="2">Inicio de sesión</td>
+			<td>T3</td>
+			<td>Implementar pantalla LoginScreen</td>
+			<td>UI con campos de DNI y contraseña, toggle de visibilidad de contraseña.</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T4</td>
+			<td>Navegación a Home</td>
+			<td>Al hacer clic en "Iniciar Sesión", navegar a HomeScreen.</td>
+			<td>1</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-04: Cambio de contraseña -->
+		<tr>
+			<td rowspan="3">US-04</td>
+			<td rowspan="3">Cambio de contraseña</td>
+			<td>T5</td>
+			<td>Implementar RecoveryPasswordScreen</td>
+			<td>UI para ingresar correo y recibir código de verificación.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T6</td>
+			<td>Implementar VerificationScreen</td>
+			<td>UI para ingresar código de 4 dígitos.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T7</td>
+			<td>Implementar NewPasswordScreen</td>
+			<td>UI para nueva contraseña con validación de requisitos de seguridad (8 caracteres, número, especial).</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-05: Cierre de sesión -->
+		<tr>
+			<td rowspan="1">US-05</td>
+			<td rowspan="1">Cierre de sesión</td>
+			<td>T8</td>
+			<td>Implementar cierre de sesión</td>
+			<td>Botón de logout en TopAppBar del HomeScreen que navega de vuelta a LoginScreen.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-06: Registro de paciente -->
+		<tr>
+			<td rowspan="2">US-06</td>
+			<td rowspan="2">Registro de paciente</td>
+			<td>T9</td>
+			<td>Implementar CreatePatientScreen</td>
+			<td>UI para registrar paciente: nombre, apellido, fecha de nacimiento, peso, talla.</td>
+			<td>4</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T10</td>
+			<td>Mock de registro</td>
+			<td>Guardar datos mock del niño y navegar de vuelta al Home.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-13: Confirmación de dosis diarias -->
+		<tr>
+			<td rowspan="3">US-13</td>
+			<td rowspan="3">Confirmación de dosis diarias</td>
+			<td>T11</td>
+			<td>Implementar sección "Dosis de hoy" en HomeScreen</td>
+			<td>Mostrar progreso semanal, medallas y botón de confirmación.</td>
+			<td>5</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T12</td>
+			<td>Implementar DoseConfirmedScreen</td>
+			<td>Pantalla de confirmación exitosa mostrando puntos, racha y próxima medalla.</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T13</td>
+			<td>Conectar confirmación de dosis</td>
+			<td>Botón de confirmación en Home navega a pantalla de confirmación.</td>
+			<td>1</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-14: Visualización del progreso del tratamiento -->
+		<tr>
+			<td rowspan="1">US-14</td>
+			<td rowspan="1">Visualización del progreso del tratamiento</td>
+			<td>T14</td>
+			<td>Implementar ProgressScreen</td>
+			<td>Pantalla con gráfica de evolución de hemoglobina, estado de salud y rachas.</td>
+			<td>6</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-17: Perdida de racha (Demo) -->
+		<tr>
+			<td rowspan="1">US-17</td>
+			<td rowspan="1">Perdida de racha (Demo)</td>
+			<td>T15</td>
+			<td>Implementar StreakLostScreen</td>
+			<td>Pantalla que se muestra al perder la racha, con opción de empezar de nuevo.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-19: Registro de alimentos en diario nutricional -->
+		<tr>
+			<td rowspan="3">US-19</td>
+			<td rowspan="3">Registro de alimentos en diario nutricional</td>
+			<td>T16</td>
+			<td>Implementar NutritionalDiaryScreen</td>
+			<td>Pantalla principal del diario con resumen de hierro absorbido y lista de comidas del día.</td>
+			<td>5</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T17</td>
+			<td>Implementar NewNutritionalMealScreen</td>
+			<td>Pantalla con buscador y catálogo de alimentos para registrar nueva comida.</td>
+			<td>5</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T18</td>
+			<td>Mock de FoodDatabase</td>
+			<td>Base de datos mock con alimentos y su contenido de hierro.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-20: Alerta de alimento inhibidor -->
+		<tr>
+			<td rowspan="1">US-20</td>
+			<td rowspan="1">Alerta de alimento inhibidor</td>
+			<td>T19</td>
+			<td>Lógica de detección en RegisterMealDialog</td>
+			<td>Detectar alimentos inhibidores (leche, té, café) y mostrar alerta.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-21: Visualización del resumen nutricional diario -->
+		<tr>
+			<td rowspan="1">US-21</td>
+			<td rowspan="1">Visualización del resumen nutricional diario</td>
+			<td>T20</td>
+			<td>Componente IronAbsorptionCard</td>
+			<td>Mostrar total de hierro absorbido del día y meta diaria.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-22: Visualización de racha de tratamiento -->
+		<tr>
+			<td rowspan="1">US-22</td>
+			<td rowspan="1">Visualización de racha de tratamiento</td>
+			<td>T21</td>
+			<td>Mostrar racha en HomeScreen y ProgressScreen</td>
+			<td>Contador de días consecutivos cumplidos visible en ambas pantallas.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-23: Desbloqueo de insignias por hitos -->
+		<tr>
+			<td rowspan="3">US-23</td>
+			<td rowspan="3">Desbloqueo de insignias por hitos</td>
+			<td>T22</td>
+			<td>Implementar AchievementsScreen</td>
+			<td>Pantalla que lista todas las insignias (desbloqueadas y bloqueadas) con sus requisitos.</td>
+			<td>4</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T23</td>
+			<td>Implementar AchievementDetailScreen</td>
+			<td>Pantalla de detalle de insignia con descripción y fecha de obtención.</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T24</td>
+			<td>Mock de desbloqueo</td>
+			<td>Simular desbloqueo de medalla y navegar a MedalUnlockedScreen.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-24: Acumulación de puntos por confirmación de dosis -->
+		<tr>
+			<td rowspan="1">US-24</td>
+			<td rowspan="1">Acumulación de puntos por confirmación de dosis</td>
+			<td>T25</td>
+			<td>Mostrar puntos en HomeScreen</td>
+			<td>Visualizar puntos acumulados en el componente de logros.</td>
+			<td>1</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-25: Creación de consulta a la enfermera -->
+		<tr>
+			<td rowspan="2">US-25</td>
+			<td rowspan="2">Creación de consulta a la enfermera</td>
+			<td>T26</td>
+			<td>Implementar ConsultationsScreen</td>
+			<td>UI para seleccionar hijo y crear nueva consulta.</td>
+			<td>4</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T27</td>
+			<td>Implementar NewConsultationScreen</td>
+			<td>UI para redactar primer mensaje y enviar a enfermera.</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-26: Respuesta a consulta de la madre -->
+		<tr>
+			<td rowspan="2">US-26</td>
+			<td rowspan="2">Respuesta a consulta de la madre</td>
+			<td>T28</td>
+			<td>Implementar ChatScreen</td>
+			<td>UI de chat con burbujas de mensajes (madre/enfermera).</td>
+			<td>5</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T29</td>
+			<td>Simular respuesta automática</td>
+			<td>Respuesta automática de la enfermera tras 1.5 segundos.</td>
+			<td>2</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-27: Visualización del historial de consultas -->
+		<tr>
+			<td rowspan="1">US-27</td>
+			<td rowspan="1">Visualización del historial de consultas</td>
+			<td>T30</td>
+			<td>Implementar MyConsultationsScreen</td>
+			<td>Lista de todas las consultas activas filtradas por hijo.</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<!-- US-33: Visualización de postas médicas en el mapa -->
+		<tr>
+			<td rowspan="1">US-33</td>
+			<td rowspan="1">Visualización de postas médicas en el mapa</td>
+			<td>T31</td>
+			<td>Implementar HealthCentersMapScreen</td>
+			<td>Mapa con Google Maps API mostrando marcadores de postas cercanas.</td>
+			<td>6</td>
+			<td></td>
+			<td>To do</td>
+		</tr>
+		<!-- US-34: Reserva de cita en posta médica -->
+		<tr>
+			<td rowspan="4">US-34</td>
+			<td rowspan="4">Reserva de cita en posta médica</td>
+			<td>T32</td>
+			<td>Implementar HealthCenterDetailScreen</td>
+			<td>Pantalla de detalle de posta con horarios, servicios y botón de reserva.</td>
+			<td>4</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T33</td>
+			<td>Implementar AppointmentBookingScreen</td>
+			<td>Calendario para seleccionar fecha y selector de paciente.</td>
+			<td>5</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T34</td>
+			<td>Implementar TimeSlotSelectionScreen</td>
+			<td>Grid de horarios disponibles para la fecha seleccionada.</td>
+			<td>4</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+		<tr>
+			<td>T35</td>
+			<td>Implementar AppointmentConfirmedScreen</td>
+			<td>Pantalla de confirmación con resumen de la cita reservada.</td>
+			<td>3</td>
+			<td></td>
+			<td>Done</td>
+		</tr>
+	</tbody>
+</table>
+
+
 
 ##### 4.2.1.3 Development Evidence for Sprint Review
 
@@ -2810,6 +3171,8 @@ MONGO_URI = "mongodb+srv://prod_user:prod_pass@cluster-prod.mongodb.net/ferova_p
     </tr>
   </tbody>
 </table>
+
+
 
 ##### 4.2.1.4 Testing Suite Evidence for Sprint Review
 
