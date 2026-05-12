@@ -1031,7 +1031,6 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
     <tr>
       <td colspan="5"><strong>Backend - Ferova</strong></td>
     </tr>
-    <!-- 08/05/2026 -->
     <tr>
       <td>SANUVI-MINSA/backend</td>
       <td>feat/comunication-management</td>
@@ -1349,7 +1348,6 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
       <td>feat(nutritional-diary): add nutritional diary routes to the main application</td>
       <td>06/05/2026</td>
     </tr>
-    <!-- 05/05/2026 -->
     <tr>
       <td>SANUVI-MINSA/backend</td>
       <td>feat/domain</td>
@@ -1583,7 +1581,6 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
       <td>feat(patient-management): implement PDF generation for medical record</td>
       <td>03/05/2026</td>
     </tr>
-    <!-- 28/04/2026 -->
     <tr>
       <td>SANUVI-MINSA/backend</td>
       <td>feat/config</td>
@@ -2280,5 +2277,12 @@ Se han automatizado 4 escenarios de prueba de aceptación (AT01-AT04) cubriendo 
 
 ##### 4.2.1.5 Execution Evidence for Sprint Review
 ##### 4.2.1.6 Services Documentation Evidence for Sprint Review
+
+Durante este sprint se avanzó significativamente en la documentación de los servicios web **(REST API)** del sistema Ferova, cubriendo los módulos de **IAM (Users)**, **Patient Management**, **Nutritional Diary**, **Health Facilities** y **Communication**. La documentación se generó utilizando **OpenAPI (Swagger)** y fue validada mediante peticiones reales desde el entorno de desarrollo **(localhost)**. Se registraron los endpoints principales relacionados con la gestión de madres, pacientes, diario nutricional, centros de salud, citas y comunicación, cubriendo los métodos **HTTP** **GET**, **POST**, **PUT** y **DELETE**.
+
+A continuación, se presenta la tabla resumen de los Endpoints documentados, incluyendo la acción implementada, verbo HTTP, parámetros o cuerpo de solicitud y ejemplos de uso.
+
+
+
 ##### 4.2.1.7 Software Deployment Evidence for Sprint Review
 ##### 4.2.1.8 Team Collaboration Insights during Sprint
