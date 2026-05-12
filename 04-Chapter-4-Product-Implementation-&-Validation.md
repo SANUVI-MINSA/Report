@@ -2864,6 +2864,21 @@ Se han automatizado 4 escenarios de prueba de aceptación (AT01-AT04) cubriendo 
 
 ##### 4.2.1.5 Execution Evidence for Sprint Review
 
+A continuación se presentan los materiales de evidencia correspondientes a los tres productos desarrollados durante el Sprint 1: Landing Page, Backend y Aplicación Móvil. Cada sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
+
+#### Landing Page
+
+**Alcance entregado (Sprint 1)**
+
+- Landing Page desplegada y accesible públicamente.
+- Contenido explicativo sobre la propuesta de valor de RESTOCK: gestión de supplies para administradores de restaurantes y proveedores.
+- Secciones principales implementadas: Hero / Valor diferencial, Funcionalidades clave, CTA para registro/inicio de sesión, y contacto.
+- Diseño responsivo básico (desktop ↔ mobile) y coherencia visual con la identidad del producto.
+
+**Video de Landing Page:** [Landing Page](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQDAXU_jDKYXQKaOkS1M5SrHAThjCzx7iJlTZa7R71L058I?e=0sXQmi&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+<img src="resources/images/chapter-IV/Deploy evidence/Landing Page Deployment Evidence.png">
+
 ###### Video del Backend (demostración)
 
 <img src="resources/images/sprint-1/evidencias/video-backend.png">
