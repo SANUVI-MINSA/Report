@@ -72,9 +72,6 @@ Los mensajes de todos los commits seguirán el estándar Conventional Commits, c
 | **Legibilidad** | Priorizar código claro y auto-documentado sobre soluciones ingeniosas pero oscuras |
 | **Formato automático** | Usar herramientas de linting y formateo para mantener la consistencia |
 
-
-##### Frontend Mobile — Kotlin + Android Studio + Jetpack Compose
-
 ###### Convenciones Generales
 
 | Ítem | Valor |
@@ -2866,6 +2863,13 @@ Se han automatizado 4 escenarios de prueba de aceptación (AT01-AT04) cubriendo 
 </table>
 
 ##### 4.2.1.5 Execution Evidence for Sprint Review
+
+###### Video del Backend (demostración)
+
+<img src="resources/images/sprint-1/evidencias/video-backend.png">
+
+[Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDI12xWrXPYRJ2I9oOHEQqsAXj-03JLqkA_YAm7VY9bl8E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=NJb8HA)
+
 
 ##### 4.2.1.6 Services Documentation Evidence for Sprint Review
 
