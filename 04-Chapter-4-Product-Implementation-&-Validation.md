@@ -2903,32 +2903,108 @@ A continuación, se presenta la tabla resumen de los Endpoints documentados, inc
 
 ##### 4.2.1.7 Software Deployment Evidence for Sprint Review
 
-Durante este Sprint, se realizaron actividades de despliegue de la Landing Page utilizando GitHub Pages como plataforma de hosting. A continuación, se detallan los pasos ejecutados:
 
 **1- Se accedió a la sección Settings del repositorio.**
 
-Dentro de Pages, se seleccionó la rama (main o master) y la carpeta (root o /docs) desde la cual GitHub Pages debía publicar el sitio. Se guardaron los cambios para activar la publicación automática.
+Desde la sección Settings > Pages del repositorio, se configuró el origen del despliegue seleccionando la rama develop y la carpeta /root como fuente de publicación. Se guardaron los cambios para que GitHub Pages comenzara a construir el sitio desde esa ubicación.
 
 <div align="center">
 <img src="resources/images/sprint-1/deployment/step-1.png">
 </div>
 
-**2- Por default ya esta activado el https**
 
-<div align="center">
-<img src="resources/images/sprint-1/deployment/step-2.png">
-</div>
+**2- En la seccion "All workflows" se puede ver que la app se esta desplegando.**
 
-**3- En la seccion "All workflows" se puede ver que la app se esta desplegando.**
+Se revisó el flujo de trabajo pages-build-deployment en la pestaña Actions. Se confirmó que el despliegue se ejecutó correctamente (#1), con el evento asociado al usuario SebastianLima-PE, en la rama main (o develop), con una duración de 42 segundos, finalizando el proceso exitosamente.
 
 <div align="center">
 <img src="resources/images/sprint-1/deployment/step-3.png">
 </div>
 
-**4- Se obtuvo y verificó la URL pública proporcionada por GitHub Pages.**
+**3- Se obtuvo y verificó la URL pública proporcionada por GitHub Pages.**
+
+inalmente, se verificó que la Landing Page estuviera activa y accesible al público mediante la URL generada: **https://sanuvi-minsa.github.io/ferova-landing-page/**. El sitio fue desplegado por el colaborador SebastianLima-PE hace 2 días, quedando listo para su uso.
 
 <div align="center">
 <img src="resources/images/sprint-1/deployment/step-4.png">
 </div>
+
+Durante este Sprint, se realizaron actividades de despliegue de una base de datos en la nube utilizando MongoDB Atlas como plataforma. A continuación, se detallan los pasos ejecutados:
+
+**1. Acceso al proyecto y clúster**
+
+Se muestra el panel principal del proyecto, donde se visualiza el clúster Cluster0 y las opciones de seguridad, rendimiento y conexión. Desde aquí se accede a las herramientas de administración de la base de datos.
+
+<div align="center">
+<img src="resources/images/sprint-1/mongo/step-1-mongo.jpeg">	
+</div>
+
+**2. Selección del método de conexión**
+
+Se presentan las distintas formas de acceder a los datos: mediante controladores nativos (Node.js, Go, etc.), con Compass (GUI), Shell, extensión para VS Code o mediante SQL. Es el paso previo a elegir el método según el entorno de desarrollo.
+
+<div align="center">
+<img src="resources/images/sprint-1/mongo/step-2-mongo.jpeg">
+</div>
+
+**3. Configuración del driver y cadena de conexión**
+
+Se selecciona el driver Node.js (versión 6.7 o superior) y se instala con npm install mongodb. Además, se proporciona la cadena de conexión SRV (mongodb+srv://ferova:<db_password>@cluster0...), que debe personalizarse con la contraseña del usuario de base de datos.
+
+<div align="center">
+<img src="resources/images/sprint-1/mongo/step-3-mongo.jpeg">
+</div>
+
+**4. Configuración de la lista de IPs autorizadas**
+
+Se define qué direcciones IP pueden conectarse al clúster. En este caso, se ha añadido 0.0.0.0/0 (todas las IPs, incluyendo la actual) con el comentario "Railway deployment", lo que permite la conexión desde cualquier origen (útil para entornos de desarrollo o despliegues en la nube).
+
+<div align="center">
+<img src="resources/images/sprint-1/mongo/step-4-mongo.png">
+</div>
+
+**5. Exploración de las colecciones de la base de datos**
+
+Se visualizan las colecciones creadas dentro de la base de datos ferova: appointments, consultations, fooditems, healthfacilities, medicalrecords, nurseseassignments, nutritionaldiaries, patients y users. También se muestra el tamaño de almacenamiento y el número de índices.
+
+<div align="center">
+<img src="resources/images/sprint-1/mongo/step-5-mongo.png">
+</div>
+
+Durante este Sprint, se realizaron actividades de despliegue del backend en Railway como plataforma de hosting en la nube. A continuación, se detallan los pasos ejecutados:
+
+**1. Selección del repositorio a desplegar**
+
+A través de la integración con GitHub, se seleccionó el repositorio **SANUVI-MINSA/backend-ferova** de entre los disponibles. Railway importó automáticamente el código fuente para iniciar el proceso de despliegue.
+
+<div align="center">
+	<img src="resources/images/sprint-1/raliway/step-1-raliway.png">
+</div>
+
+**2. Configuración del build y Dockerfile**
+
+Se configuró el builder como Dockerfile, utilizando BuildKit para el proceso de construcción. Se definió la ruta absoluta del Dockerfile dentro del repositorio: **/src/Dockerfile**. Además, se establecieron reglas de Watch Paths para disparar nuevos despliegues automáticos según los cambios en archivos específicos.
+
+<div align="center">
+	<img src="resources/images/sprint-1/raliway/step-2-raliway.png">
+</div>
+
+**3. Definición de variables de entorno**
+
+Se añadieron 5 variables de servicio esenciales para el funcionamiento del backend: EMAIL_PASS, EMAIL_USER, JWT_SECRET, MONGO_URI (cadena de conexión a MongoDB Atlas) y PORT. Estas variables permiten parametrizar la aplicación sin exponer información sensible en el código fuente.
+
+<div align="center">
+	<img src="resources/images/sprint-1/raliway/step-3-raliway.png">
+</div>
+
+
+**4. Verificación del despliegue exitoso**
+
+Se comprobó que el backend estuviera desplegado correctamente en la URL backend-ferova-production.up.railway.app. El estado se reportó como ACTIVE, 
+
+<div align="center">
+	<img src="resources/images/sprint-1/raliway/step-4-raliway.png">
+</div>
+
 
 ##### 4.2.1.8 Team Collaboration Insights during Sprint
