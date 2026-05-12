@@ -2228,6 +2228,56 @@ Esto se confirmará cuando aumente la cantidad de visitantes que se registren en
 </table>
 
 ##### 4.2.1.4 Testing Suite Evidence for Sprint Review
+
+Se han automatizado 4 escenarios de prueba de aceptación (AT01-AT04) cubriendo los Bounded Contexts de IAM, Patient Management y Nutritional Diary. Los commits han sido integrados en la rama develop del repositorio pediatric-care-acceptance-tests.
+
+<table>
+  <thead>
+    <tr>
+      <th>Repository</th>
+      <th>Branch</th>
+      <th>Commit Id</th>
+      <th>Commit Message</th>
+      <th>Commit Message Body</th>
+      <th>Commited on (Date)</th>
+    </tr>
+  </thead>
+	  <tbody>
+		     <tr>
+      			<td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+      			<td>main</td>
+      			<td>5cbad71</td>
+      			<td>add feature for mother registration and login scenarios</td>
+      			<td>Cubre escenarios de registro e inicio de sesión para rol MADRE</td>
+      			<td>11/05/2025</td>
+    		</tr>
+		   <tr>
+      			<td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+      			<td>main</td>
+      			<td>e3add79</td>
+      			<td>add feature for mother to register a new patient</td>
+      			<td>Verifica que una madre pueda registrar un nuevo paciente</td>
+      			<td>11/05/2025</td>
+    		</tr>
+		   <tr>
+      			<td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+      			<td>main</td>
+      			<td>c7ad292</td>
+      			<td>add feature for mother to register food in nutritional diary</td>
+      			<td>Cubre el registro de alimentos en el diario nutricional</td>
+      			<td>11/05/2025</td>
+    		</tr>
+		     <tr>
+      			<td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+      			<td>main</td>
+      			<td>fa4fe67</td>
+      			<td>add feature for nurse to assign a patient to herself</td>
+      			<td>Verifica que una enfermera pueda asignarse un paciente</td>
+      			<td>11/05/2025</td>
+    		</tr>
+	  </tbody>
+</table>
+
 ##### 4.2.1.5 Execution Evidence for Sprint Review
 ##### 4.2.1.6 Services Documentation Evidence for Sprint Review
 ##### 4.2.1.7 Software Deployment Evidence for Sprint Review
