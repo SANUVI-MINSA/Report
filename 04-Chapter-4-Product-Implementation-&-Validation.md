@@ -2309,7 +2309,34 @@ A continuación, se presenta la tabla resumen de los Endpoints documentados, inc
 | `/api/communication/chat/{consultationId}` | Obtener conversación | GET | Path param: `consultationId`, Query param: `requesterId` | `/api/communication/chat/consult-001?requesterId=mother-456` |
 | `/api/users/password/reset` | Restablecer contraseña | POST | `{ "email": "string", "code": "string", "newPassword": "string" }` | `{ "email": "diana@example.com", "code": "4832", "newPassword": "Nueva123@" }` |
 
-
-
 ##### 4.2.1.7 Software Deployment Evidence for Sprint Review
+
+Durante este Sprint, se realizaron actividades de despliegue de la Landing Page utilizando GitHub Pages como plataforma de hosting. A continuación, se detallan los pasos ejecutados:
+
+**1- Se accedió a la sección Settings del repositorio.**
+
+Dentro de Pages, se seleccionó la rama (main o master) y la carpeta (root o /docs) desde la cual GitHub Pages debía publicar el sitio. Se guardaron los cambios para activar la publicación automática.
+
+<div align="center">
+<img src="resources/images/sprint-1/deployment/step-1.png">
+</div>
+
+**2- Por default ya esta activado el https**
+
+<div align="center">
+<img src="resources/images/sprint-1/deployment/step-2.png">
+</div>
+
+**3- En la seccion "All workflows" se puede ver que la app se esta desplegando.**
+
+<div align="center">
+<img src="resources/images/sprint-1/deployment/step-3.png">
+</div>
+
+**4- Se obtuvo y verificó la URL pública proporcionada por GitHub Pages.**
+
+<div align="center">
+<img src="resources/images/sprint-1/deployment/step-4.png">
+</div>
+
 ##### 4.2.1.8 Team Collaboration Insights during Sprint
