@@ -3006,3 +3006,17 @@ Se comprobó que el backend estuviera desplegado correctamente en la URL backend
 
 
 ##### 4.2.1.8 Team Collaboration Insights during Sprint
+
+**Landing Page**
+
+Durante el desarrollo de la Landing Page se aplicaron prácticas de colaboración que facilitaron la entrega de un front público coherente y responsivo. A continuación se detallan las prácticas aplicadas:
+
+- Las tareas se distribuyeron por secciones (Hero, Funcionalidades, Casos de uso, CTA, Contacto) y cada sección quedó asignada a un responsable para acelerar la implementación.
+- Se realizaron commits frecuentes y atómicos con mensajes descriptivos para facilitar revisiones y trazabilidad.
+- Las integraciones se realizaron mediante pull requests hacia develop y se exigió una revisión mínima por otro miembro antes del merge.
+- La comunicación se coordinó principalmente vía Discord y registros de decisiones quedaron documentados en el canal y en el README del submódulo.
+- Se emplearon revisiones visuales en distintos tamaños de pantalla y se ordenaron los assets en assets/landing/ Analíticos de colaboración — Landing Page
+
+<div align="center">
+<img src="resources/images/sprint-1/avanzes/landing-page-avanze.png">
+</div>
