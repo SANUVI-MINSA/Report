@@ -62,6 +62,373 @@ Los mensajes de todos los commits seguirán el estándar Conventional Commits, c
 </div>
 
 #### 4.1.3 Source Code Style Guide & Conventions
+
+#####  Principios Transversales
+
+| Principio | Descripción |
+|-----------|-------------|
+| **Idioma** | Todo el código, nombres de clases, funciones, variables, comentarios y documentación en **inglés** |
+| **Consistencia** | El código debe ser uniforme en todo el proyecto, independientemente del desarrollador |
+| **Legibilidad** | Priorizar código claro y auto-documentado sobre soluciones ingeniosas pero oscuras |
+| **Formato automático** | Usar herramientas de linting y formateo para mantener la consistencia |
+
+
+##### Frontend Mobile — Kotlin + Android Studio + Jetpack Compose
+
+###### Convenciones Generales
+
+| Ítem | Valor |
+|------|-------|
+| Idioma | Inglés (todo el código, nombres de clases, funciones, variables) |
+| Indentación | 4 espacios (convención oficial de Kotlin/Android) |
+| Formato de archivos | `.kt` |
+| Guías de estilo | [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html) · [Android Kotlin Style Guide](https://developer.android.com/kotlin/style-guide) |
+
+###### Convenciones de Nomenclatura
+
+| Elemento | Convención | Ejemplo |
+|---------|------------|---------|
+| Clases y objetos | `PascalCase` | `UserProfileScreen`, `FerovaApp` |
+| Funciones y variables | `camelCase` | `getUserName()`, `userList` |
+| Constantes | `UPPER_SNAKE_CASE` | `MAX_RETRY_COUNT` |
+| Paquetes | minúsculas separadas por punto | `com.ferova.ui.profile` |
+| Layouts y recursos XML | `snake_case` | `activity_main.xml`, `patient_card.xml` |
+| IDs en layouts | `camelCase` | `btnSubmit`, `tvPatientName` |
+
+##### Buenas Prácticas
+
+- Usar `data class` para modelos inmutables.
+- Preferir `val` sobre `var` siempre que sea posible.
+- Organizar el código por features/módulos (clean architecture).
+- Usar `ViewModel` + `StateFlow`/`SharedFlow` para la capa de UI.
+- Documentar APIs públicas con KDoc (`/** */`).
+
+
+
+##### Frontend Mobile — Flutter + Dart
+
+###### Convenciones Generales
+
+| Ítem | Valor |
+|------|-------|
+| Idioma | Inglés (todo el código, nombres de clases, funciones, variables) |
+| Indentación | 2 espacios (convención oficial de Dart) |
+| Formato de archivos | `.dart` |
+| Guías de estilo | [Effective Dart](https://dart.dev/guides/language/effective-dart/style) · [Flutter Style Guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo) · [flutter_lints](https://pub.dev/packages/flutter_lints) |
+
+###### Convenciones de Nomenclatura
+
+| Elemento | Convención | Ejemplo |
+|---------|------------|---------|
+| Clases y tipos | `PascalCase` | `UserProfileScreen`, `PatientRepository` |
+| Funciones y variables | `lowerCamelCase` | `getUserName()`, `userList` |
+| Constantes | `lowerCamelCase` | `defaultTimeout`, `maxRetries` |
+| Archivos | `snake_case` | `user_profile_screen.dart`, `patient_repository.dart` |
+| Directorios | `snake_case` | `lib/features/auth/`, `lib/core/utils/` |
+| Widgets | `PascalCase` con sufijo descriptivo | `CustomButton`, `PatientCard` |
+| Enums | Tipo en `PascalCase`, valores en `lowerCamelCase` | ver ejemplo abajo |
+
+```dart
+enum RequestStatus { loading, success, error }
+```
+
+###### Buenas Prácticas
+
+- Usar constructores `const` siempre que sea posible para optimización.
+- Organizar el código por features/módulos.
+- Separar la lógica de negocio (BLoC / Provider / Riverpod) de la UI.
+- Usar trailing commas para mejor formateo automático.
+- Documentar elementos públicos con `///`.
+
+
+
+##### Backend — TypeScript + Node.js + MongoDB
+
+###### Convenciones Generales
+
+| Ítem | Valor |
+|------|-------|
+| Idioma | Inglés (código y documentación interna) |
+| Indentación | 2 espacios (convención estándar del ecosistema Node.js/TypeScript) |
+| Formato de archivos | `.ts` para código fuente · `.test.ts` / `.spec.ts` para pruebas |
+| Compilación | Target ES2022+, `strict: true` en `tsconfig.json` |
+| Guías de estilo | [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html) · [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/styleguide) · ESLint + `@typescript-eslint` |
+
+##### Convenciones de Nomenclatura
+
+| Elemento | Convención | Ejemplo |
+|---------|------------|---------|
+| Clases | `PascalCase` | `UserService`, `PatientRepository` |
+| Interfaces | `PascalCase` | `User`, `ApiResponse` |
+| Type aliases | `PascalCase` | `UserRole`, `Nullable<T>` |
+| Enums | `PascalCase` | `Role`, `PatientStatus` |
+| Valores de Enum | `PascalCase` | `Role.Mother`, `PatientStatus.Active` |
+| Funciones y métodos | `camelCase` | `getUserById()`, `validateEmail()` |
+| Variables locales | `camelCase` | `userName`, `isValid` |
+| Constantes globales | `UPPER_SNAKE_CASE` | `MAX_FILE_SIZE`, `JWT_SECRET` |
+| Archivos | `kebab-case` | `user-service.ts`, `patient-repository.ts` |
+| Directorios | `kebab-case` | `src/modules/auth/`, `src/core/utils/` |
+| Endpoints REST | `kebab-case` | `POST /api/patients/register` |
+| Variables de entorno | `UPPER_SNAKE_CASE` | `DATABASE_URL`, `JWT_SECRET` |
+
+
+
+##### Convenciones Específicas de TypeScript
+
+###### Interfaces vs Types
+
+```typescript
+interface User {
+  id: string;
+  name: string;
+  email: string;
+}
+
+interface PatientRepository {
+  findById(id: string): Promise<Patient | null>;
+}
+
+type UserRole = 'admin' | 'user' | 'guest';
+type Nullable<T> = T | null;
+```
+
+###### Enums
+
+```typescript
+export enum Role {
+  Mother = 'Mother',
+  Nurse = 'Nurse',
+  Admin = 'Admin',
+}
+
+export enum PatientStatus {
+  Active = 'Active',
+  Discharged = 'Discharged',
+}
+```
+
+###### Clases
+
+```typescript
+export class UserService {
+  constructor(private readonly userRepository: UserRepository) {}
+}
+
+export default class UserService { ... }
+```
+
+###### Módulos e Importaciones
+
+Orden: **externos → internos → relativos → tipos**
+
+```typescript
+import express, { Request, Response } from 'express';
+import { UserService } from '../services/user-service.js';
+import type { User } from '../types/user.types.js';
+```
+
+###### Async / Await
+
+```typescript
+async function fetchPatient(id: string): Promise<Patient> {
+  try {
+    const patient = await patientRepository.findById(id);
+    if (!patient) throw new NotFoundError(`Patient ${id} not found`);
+    return patient;
+  } catch (error) {
+    logger.error('Failed to fetch patient', { id, error });
+    throw error;
+  }
+}
+```
+
+
+
+###### Value Objects (DDD)
+
+El proyecto usa Value Objects para encapsular la validación de conceptos del dominio:
+
+| Value Object | Propósito |
+|--------------|-----------|
+| `UserId` | Identificador único de usuario |
+| `Dni` | DNI peruano (validación de formato) |
+| `Email` | Correo electrónico (validación de formato) |
+| `Phone` | Número de teléfono |
+| `Password` | Contraseña encriptada |
+| `BirthDate` | Fecha de nacimiento |
+| `Weight` | Peso en kg |
+| `Height` | Altura en cm |
+| `HemoglobinLevel` | Nivel de hemoglobina (g/dL) |
+
+```typescript
+export class HemoglobinLevel {
+  constructor(private value: number) {
+    if (value < 0 || value > 20) {
+      throw new Error('Hemoglobin level must be between 0 and 20 g/dL');
+    }
+  }
+
+  getValue(): number {
+    return this.value;
+  }
+}
+```
+
+
+
+###### Patrón Repository
+
+```typescript
+export interface PatientRepository {
+  save(patient: Patient): Promise<Patient>;
+  findById(patientId: string): Promise<Patient | null>;
+  findByMotherId(motherId: string): Promise<Patient[]>;
+  update(patient: Patient): Promise<void>;
+}
+```
+
+### Convención de Nombres para Métodos
+
+| Prefijo | Propósito | Ejemplo |
+|---------|-----------|---------|
+| `get` / `getId` | Getters | `getId()`, `getRole()` |
+| `ensure` | Validaciones de pre-condición | `ensureMotherExists()` |
+| `assign` | Asignaciones | `assignNurse()` |
+| `add` / `register` | Agregar entidades hijas | `addControl()` |
+| `update` | Actualizaciones parciales | `updateMetrics()` |
+| `discharge` | Cambios de estado | `discharge()` |
+| `mark` | Activación de flags | `markInhibitorDetected()` |
+| `reset` | Reinicio de valores | `resetDailyIron()` |
+| `has` / `is` | Verificaciones booleanas | `hasDetectedInhibitor()` |
+| `calculate` | Cálculos | `calculateAnemiaStatus()` |
+| `toPrimitives` | Serialización | `toPrimitives()` |
+
+
+
+###### Gestión de Errores
+
+```typescript
+export class NotFoundError extends Error {
+  constructor(resource: string, id: string) {
+    super(`${resource} with id ${id} not found`);
+    this.name = 'NotFoundError';
+  }
+}
+
+throw new Error('Patient already has an assigned nurse');
+throw new Error('Control date cannot be in the future');
+throw new Error('Only assigned nurse can discharge patient');
+```
+
+
+
+### Pruebas (Testing)
+
+```typescript
+describe('PatientService', () => {
+  it('should return patient when id exists', async () => {
+    const patient = await patientService.getPatient('123');
+    expect(patient).toBeDefined();
+  });
+});
+```
+
+- Archivos de prueba: `*.test.ts` o `*.spec.ts`
+- Usar **Vitest** o **Jest** con soporte nativo para TypeScript
+
+
+
+##### Base de Datos — MongoDB
+
+###### Convenciones Generales
+
+| Ítem | Valor |
+|------|-------|
+| Formato | Documentos BSON / JSON |
+| Indentación | 2 espacios para logs y dumps JSON |
+| Clave primaria | `ObjectId` por defecto |
+| Estilo de modelado | Documentos denormalizados (referencias mínimas, priorizar embebido) |
+| Arrays | Evitar crecimiento ilimitado — siempre acotar arrays |
+
+###### Convenciones de Nomenclatura
+
+| Elemento | Convención | Ejemplo |
+|---------|------------|---------|
+| Bases de datos | `snake_case` | `ferova_prod`, `ferova_dev` |
+| Colecciones | `snake_case` en plural | `users`, `patients`, `medical_records`, `nutritional_diaries` |
+| Campos de documentos | `camelCase` | `userName`, `createdAt`, `isActive` |
+| Índices | `campo1_campo2_index` | `user_email_index`, `patient_motherId_status_index` |
+| Vistas | `snake_case` + sufijo `_view` | `active_patients_view`, `monthly_controls_view` |
+
+###### Estructura de Documento Recomendada
+
+```javascript
+{
+  "_id": ObjectId("507f1f77bcf86cd799439011"),
+  "name": "Mateo",
+  "lastName": "Perez",
+  "birthDate": ISODate("2023-05-10T00:00:00Z"),
+  "gender": "MALE",
+  "motherId": "user_123",
+  "nurseId": "user_456",
+  "facilityId": "facility_789",
+  "status": "ACTIVE",
+  "createdAt": ISODate("2024-01-15T10:30:00Z"),
+  "updatedAt": ISODate("2024-01-15T10:30:00Z")
+}
+```
+
+##### Buenas Prácticas
+
+- Siempre incluir los campos `createdAt` y `updatedAt` (tipo `ISODate()`).
+- Usar `ISODate()` para fechas y `NumberDecimal()` para montos monetarios.
+- Nombrar los campos de relación con sufijo `Id`: `motherId`, `nurseId`, `patientId`.
+- Usar `ObjectId` salvo necesidad específica de IDs personalizados.
+- Documentar índices complejos en el repositorio de código.
+
+
+
+##### Herramientas de Verificación Automática
+
+| Tecnología | Linter / Formateador | Configuración recomendada |
+|------------|---------------------|--------------------------|
+| TypeScript | ESLint + `@typescript-eslint` | `eslint:recommended` + `plugin:@typescript-eslint/recommended` |
+| Formateo | Prettier | Tab width: 2, comillas simples, trailing commas: `es5` |
+| Kotlin | `ktlint` o `Detekt` | Configuración estándar de Android |
+| Dart | `dart analyze` + `dart format` | Incluido en `flutter_lints` |
+| MongoDB | Scripts de validación (opcional) | JSON Schema validation a nivel de colección |
+
+
+
+##### `.editorconfig` — Raíz del proyecto
+
+```ini
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.ts]
+indent_style = space
+indent_size = 2
+
+[*.{kt,kts}]
+indent_style = space
+indent_size = 4
+
+[*.dart]
+indent_style = space
+indent_size = 2
+
+[*.{json,yml,yaml}]
+indent_style = space
+indent_size = 2
+```
+
+
 #### 4.1.4 Software Deployment Configuration
 
 #### 1. Landing Page - HTML, CSS y JavaScript
