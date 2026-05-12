@@ -3020,3 +3020,16 @@ Durante el desarrollo de la Landing Page se aplicaron prácticas de colaboració
 <div align="center">
 <img src="resources/images/sprint-1/avanzes/landing-page-avanze.png">
 </div>
+
+**Backend**
+
+El desarrollo del Backend siguió un flujo de trabajo enfocado en estabilidad y pruebas, garantizando que los endpoints core quedasen documentados y testeados: 
+- Se trabajó por dominios funcionales creando ramas temáticas como feature/iam, feature/patient-management, feature/comunication para permitir despliegue paralelo y revisiones independientes.
+- Se usó Swagger como fuente de verdad para la documentación de endpoints; las colecciones se actualizaron junto con los cambios en código.
+- Commits atómicos y PRs con descripciones técnicas claras permitieron revisiones eficaces por pares (covering: controllers/services).
+- Pruebas unitarias básicas y logs de integración se incluyeron en los PRs para facilitar el QA.
+- Se definieron responsables por Bounded Context para planificar la migración a MongoDB y minimizar riesgos durante el cambio de persistencia.
+
+<div align="center">
+<img src="resources/images/sprint-1/avanzes/backend-avanze.png">
+</div>
