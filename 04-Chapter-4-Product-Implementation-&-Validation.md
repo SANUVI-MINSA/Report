@@ -287,7 +287,7 @@ export interface PatientRepository {
 }
 ```
 
-### Convención de Nombres para Métodos
+###### Convención de Nombres para Métodos
 
 | Prefijo | Propósito | Ejemplo |
 |---------|-----------|---------|
@@ -322,7 +322,7 @@ throw new Error('Only assigned nurse can discharge patient');
 
 
 
-### Pruebas (Testing)
+###### Pruebas (Testing)
 
 ```typescript
 describe('PatientService', () => {
@@ -431,24 +431,249 @@ indent_size = 2
 
 #### 4.1.4 Software Deployment Configuration
 
-#### 1. Landing Page - HTML, CSS y JavaScript
 
-**Tecnología Base:**
+Esta sección detalla los pasos necesarios para desplegar satisfactoriamente los componentes digitales de la solución Ferova: la Landing Page, la aplicación móvil (frontend) y los Web Services (backend), partiendo desde sus respectivos repositorios de código fuente.
 
-- Lenguajes: HTML5, CSS3, JavaScript
-- Hosting: GitHub Pages
 
-**Configuración y Despliegue:**
+#### 1. Landing Page
 
-- El código fuente se aloja en un repositorio público de GitHub.
-- El archivo `index.html` debe encontrarse en la raíz del repositorio para que GitHub Pages lo detecte como punto de entrada.
-- Para desplegar la Landing Page, se siguen los siguientes pasos:
-  1. Acceder al repositorio en GitHub.
-  2. Continuar con la sección **Settings** > **Pages**.
-  3. En **Source**, se selecciona la rama principal (`main`) y la carpeta raíz (`/`).
-  4. Se procede a guardar los cambios realizados.
-- GitHub Pages genera automáticamente una URL pública con el formato `https://<organizacion>.github.io/<repositorio>/` donde el sitio estará disponible.
-- Cada vez que se realiza un commit en la rama `main`, GitHub Pages actualiza de forma automática la versión publicada.
+##### Tecnología Base
+
+| Ítem | Valor |
+|------|-------|
+| Lenguajes | HTML5, CSS3, JavaScript |
+| Hosting | GitHub Pages |
+
+##### Configuración y Despliegue
+
+El código fuente se aloja en un repositorio público de GitHub. El archivo `index.html` debe encontrarse en la raíz del repositorio para que GitHub Pages lo detecte como punto de entrada.
+
+**Pasos para desplegar la Landing Page:**
+
+1. Acceder al repositorio en GitHub.
+2. Navegar a **Settings > Pages**.
+3. En **Source**, seleccionar la rama principal (`main`) y la carpeta raíz (`/`).
+4. Guardar los cambios realizados.
+5. GitHub Pages generará automáticamente una URL pública con el formato:
+
+
+**Actualización:** Cada vez que se realiza un commit en la rama `main`, GitHub Pages actualiza de forma automática la versión publicada.
+
+
+
+#### 2. Aplicación Móvil — Android (Kotlin + Android Studio)
+
+##### Tecnología Base
+
+| Ítem | Valor |
+|------|-------|
+| Lenguaje | Kotlin |
+| Framework | Android Studio + Jetpack Compose |
+| Distribución | APK (Android Package) |
+| Hosting de pruebas | Firebase App Distribution |
+
+##### Configuración y Despliegue
+
+El código fuente se gestiona en un repositorio de GitHub.
+
+**Generación de versiones de prueba:**
+
+1. Compilar el proyecto en Android Studio (**Build > Generate Signed APK**).
+2. Verificar el funcionamiento de la aplicación en dispositivos físicos o emuladores Android.
+3. Subir el archivo APK generado a **Firebase App Distribution**, lo que permite el testeo con usuarios internos y externos seleccionados antes de la publicación oficial.
+4. Compartir el enlace de descarga con los testers a través de correo electrónico, Google Drive o mediante la Landing Page.
+
+**Gestión de versiones:** Cada nueva versión de la aplicación para testeo se publica y gestiona mediante la plataforma Firebase, facilitando la retroalimentación y el control de versiones.
+
+
+
+#### 3. Aplicación Móvil — Flutter (Dart)
+
+##### Tecnología Base
+
+| Ítem | Valor |
+|------|-------|
+| Lenguaje | Dart |
+| Framework | Flutter |
+| Distribución | APK para Android, IPA para iOS |
+| Hosting de pruebas | Firebase App Distribution |
+
+##### Configuración y Despliegue
+
+El código fuente se gestiona en un repositorio de GitHub.
+
+**Requisitos previos:**
+
+- Instalar Flutter SDK (versión estable utilizada por el proyecto).
+- **Android:** Android Studio + Android SDK (platforms y build-tools adecuados).
+- **iOS:** macOS con Xcode instalado (para compilación y firma).
+
+**Generación de versiones de prueba — Android:**
+
+```bash
+flutter build apk --release
+```
+
+**Generación de versiones de prueba — iOS (requiere macOS):**
+
+```bash
+flutter build ipa --export-options-plist=<ruta>
+```
+
+Alternativamente, exportar desde Xcode (`Runner.xcworkspace`) y subir a TestFlight.
+
+**Distribución:**
+
+- El artefacto generado (APK / IPA) se sube a Firebase App Distribution, Google Play (internal/closed track) o TestFlight para distribuir a testers.
+- El enlace de descarga se comparte con testers a través de correo, Google Drive o la Landing Page, según el flujo del equipo.
+- Cada nueva versión para prueba se publica y gestiona mediante la plataforma de distribución elegida (Firebase / Play Console / App Store Connect).
+
+
+
+#### 4. Backend (TypeScript + Node.js + MongoDB)
+
+##### Tecnología Base
+
+| Ítem | Valor |
+|------|-------|
+| Lenguaje | TypeScript |
+| Runtime | Node.js (versión 20 LTS o superior) |
+| Framework | Express.js o NestJS |
+| Base de datos | MongoDB Atlas (Cloud) |
+| Contenedorización | Docker (opcional) |
+| Hosting | Railway |
+
+##### Arquitectura
+
+El backend está estructurado siguiendo principios de **Domain-Driven Design (DDD)** y **Clean Architecture**, organizando el código en las siguientes capas:
+
+| Capa | Contenido |
+|------|-----------|
+| **Domain layer** | Entidades, Value Objects, Enums, Repositorios (interfaces) |
+| **Application layer** | Casos de uso / Servicios de aplicación |
+| **Infrastructure layer** | Implementaciones de repositorios, controladores HTTP, configuración de base de datos |
+| **Shared layer** | Utilidades comunes, middlewares, configuraciones |
+
+
+
+##### Configuración de MongoDB Atlas
+
+**Requisitos previos:**
+
+1. Crear una cuenta en [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+2. Crear un cluster (la opción gratuita M0 es suficiente para desarrollo y pruebas).
+3. Configurar **Network Access** para permitir conexiones desde Railway (o desde cualquier IP temporalmente para pruebas iniciales).
+4. Crear un usuario de base de datos con permisos de lectura/escritura.
+5. Obtener la **Connection String** con el siguiente formato:
+
+```
+mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/<database>?retryWrites=true&w=majority
+```
+
+
+##### Configuración de Railway
+
+**Requisitos previos:**
+
+1. Crear una cuenta en [Railway.app](https://railway.app/).
+
+**Pasos para desplegar el backend:**
+
+1. Conectar el repositorio de GitHub a Railway:
+   - En el dashboard de Railway, seleccionar **New Project > Deploy from GitHub repo**.
+   - Autorizar el acceso a GitHub y seleccionar el repositorio del backend.
+2. Railway detectará automáticamente la configuración del proyecto:
+   - Si existe `package.json`, Railway ejecutará `npm install` y usará el script definido en `start`.
+   - Si existe `Dockerfile`, Railway construirá y ejecutará la imagen.
+3. Configurar las **variables de entorno** en Railway (obligatorio):
+
+| Variable | Propósito | Ejemplo |
+|----------|-----------|---------|
+| `PORT` | Puerto del servidor (Railway lo asigna automáticamente) | `3000` |
+| `MONGO_URI` | Connection string de MongoDB Atlas | `mongodb+srv://user:pass@cluster.mongodb.net/ferova` |
+| `JWT_SECRET` | Secreto para firmar tokens JWT | `supersecretkey123` |
+| `JWT_EXPIRES_IN` | Tiempo de expiración de tokens | `7d` |
+| `NODE_ENV` | Entorno de ejecución | `production` |
+| `CORS_ORIGIN` | Orígenes permitidos (separados por coma) | `https://ferova.github.io` |
+
+4. Railway generará automáticamente una URL pública con el formato:
+
+```
+https://<nombre-proyecto>.up.railway.app
+```
+
+5. **Despliegue automático:** Cada push a la rama principal del repositorio activa automáticamente un nuevo despliegue en Railway.
+
+
+##### Configuración con Docker
+
+Crear un `Dockerfile` en la raíz del proyecto:
+
+```dockerfile
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+RUN npm run build
+
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY package*.json ./
+
+EXPOSE 3000
+CMD ["node", "dist/index.js"]
+```
+
+Crear un `.dockerignore` en la raíz del proyecto:
+
+```
+node_modules
+dist
+.git
+.env
+*.log
+```
+
+
+
+##### API REST y Documentación
+
+- La API REST expuesta por el backend sigue la convención RESTful.
+- Los endpoints están documentados mediante **OpenAPI (Swagger)**.
+- La interfaz Swagger UI está disponible en la ruta `/api-docs`:
+
+```
+https://ferova-backend.up.railway.app/api-docs
+```
+
+- Los servicios protegidos requieren autorización mediante **JWT**, implementada con middleware de autenticación.
+- Los roles de usuario (`Mother`, `Nurse`, `Admin`) definen el nivel de acceso a cada funcionalidad.
+
+
+
+##### Base de Datos — MongoDB Atlas
+
+| Ítem | Valor |
+|------|-------|
+| Proveedor | MongoDB Atlas (Cloud) |
+| Tipo de cluster | M0 (free tier) o superior |
+| Zona de red | Allow access from anywhere (configurar reglas específicas en producción) |
+| Backup | Automático (habilitado por defecto) |
+
+**Strings de conexión por entorno:**
+
+```javascript
+// Desarrollo
+MONGO_URI = "mongodb+srv://dev_user:dev_pass@cluster-dev.mongodb.net/ferova_dev"
+
+// Producción
+MONGO_URI = "mongodb+srv://prod_user:prod_pass@cluster-prod.mongodb.net/ferova_prod"
+```
 
 ### 4.2 Landing Page & Mobile Application Implementation
 #### 4.2.1 Sprint 1
