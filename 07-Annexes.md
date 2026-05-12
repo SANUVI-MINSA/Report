@@ -6,8 +6,8 @@
 
 | Recurso | Enlace |
 |---|---|
-| Organización GitHub | [SANUVI-MINSA](https://github.com/SANUVI-MINSA) |
-| Repositorio del Informe | [SANUVI-MINSA/Report](https://github.com/SANUVI-MINSA/Report) |
+| Organización GitHub | https://github.com/SANUVI-MINSA |
+| Repositorio del Informe | https://github.com/SANUVI-MINSA/Report |
 
 <div class="page"></div>
 
@@ -15,8 +15,8 @@
 
 | Recurso | Enlace |
 |---|---|
-| Event Storming | [Ver en Miro](https://miro.com/app/board/uXjVGk2o3eY=/?share_link_id=870114176340) |
-| Bounded Context Canvas | [Ver en Miro](https://miro.com/app/board/uXjVGjt11WQ=/?share_link_id=33153782886) |
+| Event Storming | https://miro.com/app/board/uXjVGk2o3eY=/?share_link_id=870114176340 |
+| Bounded Context Canvas | https://miro.com/app/board/uXjVGjt11WQ=/?share_link_id=33153782886 |
 
 <div class="page"></div>
 
