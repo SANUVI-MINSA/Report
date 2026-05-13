@@ -3472,7 +3472,9 @@ A continuación se presentan los materiales de evidencia correspondientes a los 
 
 <img src="resources/images/chapter-IV/Deploy evidence/Landing Page Deployment Evidence.png">
 
-**Video del Frontend (demostración): ** [Frontend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQBbUl7Nyl3JT552XDO6ny7eAVCTe-RT4_eVOTfpdy5gPgM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=S42Ffo)
+**Video del Frontend (demostración):** [Frontend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQBbUl7Nyl3JT552XDO6ny7eAVCTe-RT4_eVOTfpdy5gPgM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=S42Ffo)
+
+<img src="resources/images/chapter-IV/Deploy evidence/Frontend Evidence.png">
 
 
 **Video del Backend (demostración):**  [Backend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDI12xWrXPYRJ2I9oOHEQqsAXj-03JLqkA_YAm7VY9bl8Enav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=NJb8HA)
