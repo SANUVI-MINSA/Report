@@ -3172,6 +3172,244 @@ MONGO_URI = "mongodb+srv://prod_user:prod_pass@cluster-prod.mongodb.net/ferova_p
   </tbody>
 </table>
 
+<table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px; text-align: center">
+  <thead>
+    <tr>
+      <th style="margin-bottom:18px; text-align: center">Repository</th>
+      <th style="margin-bottom:18px; text-align: center">Branch</th>
+      <th style="margin-bottom:18px; text-align: center">Commit id</th>
+      <th style="margin-bottom:18px; text-align: center">Commit Message/Body</th>
+      <th style="margin-bottom:18px; text-align: center">Commited on (Date)</th>
+    </tr>
+  </thead>
+  <tbody style="margin-bottom:18px; text-align: center">
+    <!-- Frontend - Ferova Family -->
+    <tr>
+      <td colspan="5"><strong>Frontend - Ferova Family</strong></td>
+    </tr>
+    <tr>
+      <td>SSANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>21a66c4</td>
+      <td>feat: Add navigation callback for new meal entry on Home screen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>130dfca</td>
+      <td>feat: Initialize Nutritional Diary navigation routes</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>af2fce0</td>
+      <td>feat: Implement Nutritional Diary navigation and placeholder screens</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>a26c1cf</td>
+      <td>feat: Initialize NutritionalDiaryScreen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>e828614</td>
+      <td>feat: Initialize NewNutritionalMealScreen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>5b50313</td>
+      <td>feat: Add NutritionalHistoryScreen and update NewNutritionalMealScree…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>4efe493</td>
+      <td>feat: Implement TipCard component and update Nutritional Diary screen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>f600d46</td>
+      <td>refactor: Remove unused imports in TipCard.kt</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>d33d544</td>
+      <td>feat: Implement ActionButtons component for Nutritional Diary</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>9b21f63</td>
+      <td>feat: Implement ActionButtons component for Nutritional Diary</td>
+      <td>3 days ago</td>
+    </tr>
+    </tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>45408a7</td>
+      <td>feat: Integrate Nutritional Diary screen into navigation</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>0581706</td>
+      <td>feat: Integrate iron absorption tracking and action buttons into Nutr…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>ee9d7bc</td>
+      <td>feat: Implement Today's Food Entries list and inhibitor alerts</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>afc72c1</td>
+      <td>feat: Implement navigation and screens for Nutritional Diary</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>16fc1a0</td>
+      <td>feat: Implement meal search and catalog for nutritional diary</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>ec2a2b1</td>
+      <td>feat: Implement meal registration dialog and item selection logic</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>8f18f1f</td>
+      <td>feat: Implement nutritional history screen with date filtering</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>c91af33</td>
+      <td>refactor: Remove unused Button import in MealEntryHistory</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/nutritional-diary</td>
+      <td>48d9a29</td>
+      <td>Merge branch 'develop' into feat/nutritional-diary</td>
+      <td>3 days ago</td>
+    </tr>
+    <!-- Commits de MaineMa - feat/patient-management -->
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>d3c3bd6</td>
+      <td>feat: Add click interaction to home screen and initialize CreatePatie…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>23427ca</td>
+      <td>feat: Implement navigation to Create Patient screen and add placehold…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>31273b2</td>
+      <td>feat: Implement Scaffold and TopAppBar for CreatePatientScreen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>c5ed1e9</td>
+      <td>feat: Implement UI layout and registration form in CreatePatientScreen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>022d617</td>
+      <td>feat: Implement form fields and date picker in CreatePatientScreen</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>177179e</td>
+      <td>style: Remove colorControlNormal tint from gender icons</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>bb2ab22</td>
+      <td>feat: Implement child registration form and refactor patient manageme…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/patient-management</td>
+      <td>2a77659</td>
+      <td>Merge branch 'develop' into feat/patient-management</td>
+      <td>3 days ago</td>
+    </tr>
+    <!-- Commits de ariana9513 -->
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/ide-config</td>
+      <td>a3e47b6</td>
+      <td>feat: configure project IDE settings and code styles. Added configura…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/dose-tracking</td>
+      <td>75820ec</td>
+      <td>feat: update home screen navigation and enhance dose tracking UI. Add…</td>
+      <td>3 days ago</td>
+    </tr>
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>feat/treatment-tracking</td>
+      <td>001fe7c</td>
+      <td>feat: implement treatment tracking history screen and navigation. Add…</td>
+      <td>3 days ago</td>
+    </tr>
+    <!-- Commit de SebastianLima-PE -->
+    <tr>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
+      <td>main</td>
+      <td>N/A</td>
+      <td>Initialize FerovaFamily project and implement core modules</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
 ##### 4.2.1.4 Testing Suite Evidence for Sprint Review
