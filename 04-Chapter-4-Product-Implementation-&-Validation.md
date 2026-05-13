@@ -3638,6 +3638,20 @@ Durante el desarrollo de la Landing Page se aplicaron prácticas de colaboració
 <img src="resources/images/sprint-1/avanzes/landing-page-avanze.png">
 </div>
 
+**Front end**
+
+La colaboración en el módulo móvil se orientó a entregar pantallas core integradas con el backend y a mantener buena cohesión entre diseño y desarrollo:
+
+- Ramas `feature/*` por pantalla (Nutritional Diary, consultas, citas, etc.) para aislar cambios y facilitar PRs pequeños y revisables.
+- Se adoptó MVVM y convenciones de Kotlin en todo el módulo; los PRs incluyeron ejemplos de ViewModel y pruebas unitarias cuando fue posible.
+- Coordinación continua con los responsables del backend para definir contratos (DTOs/JSON) y evitar retrabajo.
+- Commits regulares con mensajes que enlazaban a issues/tickets de la planificación del sprint.
+- Builds y APKs parciales compartidos en el canal de releases para revisión de UX y pruebas manuales.
+
+<div align="center">
+<img src="resources/images/sprint-1/avanzes/frontend-avanze.png">
+</div>
+
 **Backend**
 
 El desarrollo del Backend siguió un flujo de trabajo enfocado en estabilidad y pruebas, garantizando que los endpoints core quedasen documentados y testeados: 
