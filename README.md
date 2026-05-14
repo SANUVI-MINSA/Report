@@ -37,13 +37,17 @@
 
 **Mes y Año**: Marzo 2026
 
+<br>
+<br>
+<br>
+
 ---
 
 </div>
 
 <div class="page"></div>
 
-Aquí tienes la nueva fila lista para agregar a tu tabla de Registro de Versiones:
+# Registro de Versiones
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | :--- | :--- | :--- | :--- |
