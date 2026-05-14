@@ -5549,6 +5549,10 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
 
 En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
 
+**SMART Goals:**
+1. Alcanzar 500 usuarios registrados en la plataforma en un periodo de 6 meses.
+2. Alcanzar los 100 usuarios que cumplieron totalmente su tratamiento de la anemia en un periodo de 6 meses.
+
 ![Foto de Impact Mapping](/resources/images/chapter-II/Impact-Map/Impact.png)
 
 #### 2.4.3 Product Backlog
