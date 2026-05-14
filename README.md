@@ -43,11 +43,12 @@
 
 <div class="page"></div>
 
-## Registro de Versiones
+Aquí tienes la nueva fila lista para agregar a tu tabla de Registro de Versiones:
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | :--- | :--- | :--- | :--- |
-| AV1 | 22/04/2026 | - Baca Camargo, Vitaly Arturo <br> - Huapaya Galindo, Dyron <br> - Pariachi Limahuaya, Sebastian Ubaldo <br> - Ramirez Carrasco, Ariana Lizeth <br> - López Roman, Franco Mauricio | Se agregaron los siguientes contenidos:<br> **Capitulo I: Presentación**<br>1.1 Startup Profile<br>1.2. Solution Profile<br>1.3. Segmentos Objetivo<br>**Capitulo II: Requirements Development and Software Solution Design**<br>2.1. Competidores<br>2.2. Entrevistas<br>2.3. Needfinding<br>2.4.Requirement Specification<br>2.5. Strategic-Level Domain-Driven Design<br>2.6. Bounded Contexts|
+| AV1 | 22/04/2026 | - Baca Camargo, Vitaly Arturo <br> - Huapaya Galindo, Dyron <br> - Pariachi Limahuaya, Sebastian Ubaldo <br> - Ramirez Carrasco, Ariana Lizeth <br> - López Roman, Franco Mauricio | Se agregaron los siguientes contenidos:<br> **Capítulo I: Presentación**<br>1.1 Startup Profile<br>1.2. Solution Profile<br>1.3. Segmentos Objetivo<br>**Capítulo II: Requirements Development and Software Solution Design**<br>2.1. Competidores<br>2.2. Entrevistas<br>2.3. Needfinding<br>2.4. Requirement Specification<br>2.5. Strategic-Level Domain-Driven Design<br>2.6. Bounded Contexts |
+| TB1 | 13/05/2026 | - Baca Camargo, Vitaly Arturo <br> - Huapaya Galindo, Dyron <br> - Pariachi Limahuaya, Sebastian Ubaldo <br> - Ramirez Carrasco, Ariana Lizeth <br> - López Roman, Franco Mauricio | Se agregaron los siguientes contenidos correspondientes al **2. Segundo Hito: TB1. Stage Review** *(Semana 7)*:<br><br>- Versión actualizada de Registro de Versiones del Informe, Project Report Collaboration Insights y Sección Student Outcome.<br>- Versión corregida y mejorada de artefactos previamente presentados.<br>- Landing Page desplegado.<br>- Backend desplegado al 70%.<br>- Pantallas core de la aplicación.<br><br>**Capítulo III:** Solution UI/UX Design<br>**Capítulo IV:** Product Implementation & Validation<br>*(Sprint 1)*<br>Conclusiones<br>Bibliografía<br>Anexos |
 
 # Project Report Collaboration Insights
 
