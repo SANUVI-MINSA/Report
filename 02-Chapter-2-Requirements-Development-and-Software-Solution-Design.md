@@ -5440,6 +5440,19 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+| ID | Spike Title | Description |
+| :--- | :--- | :--- |
+| SPK-01 | Definición del flujo de confirmación de dosis | Investigar y establecer el rango horario permitido para que una dosis sea considerada "cumplida" y cómo afecta esto al porcentaje de adherencia real. |
+| SPK-02 | Lógica de estados y ciclo de vida de Teleconsulta | Definir bajo qué condiciones una consulta se considera "Resuelta" y si la madre puede reabrir un caso cerrado o debe generar una nueva consulta. |
+| SPK-03 | Criterios de asignación Binomio Madre-Enfermera | Determinar si la asignación de pacientes será automática por cercanía a la posta, por carga laboral equitativa de la enfermera o mediante registro manual. |
+| SPK-04 | Umbrales de criticidad para el Mapa de Calor | Investigar y definir los porcentajes exactos de adherencia que disparan las alertas de color (Rojo, Amarillo, Verde) en el dashboard del administrador. |
+| SPK-05 | Flujo de reprogramación y penalización de citas | Definir qué sucede funcionalmente si una madre falta a una cita: ¿el sistema bloquea nuevas reservas temporales o reprograma automáticamente la cita perdida? |
+| SPK-06 | Sistema de méritos y reglas de Gamificación | Definir la matriz de puntos: cuántas dosis seguidas otorgan una insignia y si los olvidos parciales reinician la racha de beneficios del programa. |
+| SPK-07 | Estructura legal del Historial Médico consolidado | Investigar los requisitos de información obligatorios por el MINSA para que el PDF exportado tenga validez como documento de control médico oficial. |
+| SPK-08 | Definición del estado de "Abandono de Tratamiento" | Establecer el número de días de inactividad o dosis fallidas consecutivas para que el sistema cambie automáticamente el estado del paciente a "Abandono". |
+| SPK-09 | Reglas de visibilidad de Postas y Stock | Investigar si la visualización de postas cercanas debe estar condicionada a la disponibilidad de suplementos de hierro informada en el sistema. |
+| SPK-10 | Protocolo de validación de identidad en Registro | Definir el flujo de aprobación de cuentas: ¿la madre puede usar la app inmediatamente o requiere una validación de su DNI contra el padrón de la posta primero? |
+
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
     <tr>
