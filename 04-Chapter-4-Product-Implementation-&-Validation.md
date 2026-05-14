@@ -3640,11 +3640,10 @@ Durante el desarrollo de la Landing Page se aplicaron prácticas de colaboració
 
 **Front end**
 
-La colaboración en el módulo móvil se orientó a entregar pantallas core integradas con el backend y a mantener buena cohesión entre diseño y desarrollo:
+La colaboración en el módulo móvil se orientó a entregar pantallas y a mantener buena cohesión entre diseño y desarrollo:
 
 - Ramas `feature/*` por pantalla (Nutritional Diary, consultas, citas, etc.) para aislar cambios y facilitar PRs pequeños y revisables.
 - Se adoptó MVVM y convenciones de Kotlin en todo el módulo; los PRs incluyeron ejemplos de ViewModel y pruebas unitarias cuando fue posible.
-- Coordinación continua con los responsables del backend para definir contratos (DTOs/JSON) y evitar retrabajo.
 - Commits regulares con mensajes que enlazaban a issues/tickets de la planificación del sprint.
 - Builds y APKs parciales compartidos en el canal de releases para revisión de UX y pruebas manuales.
 
