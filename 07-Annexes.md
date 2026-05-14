@@ -25,6 +25,8 @@
 | Recurso | Enlace |
 |---|---|
 | Video About-the-Product | — |
+| Video Frontend Mobile | https://upcedupe-my.sharepoint.com/personal/u202322855_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202322855%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202601%2Dcc238%2D3821%2DSANUVI%20MINSA%20%2Dproduct%20navigation%2Dsprint%201%2Emp4 |
+| Video Landing Page | https://upcedupe-my.sharepoint.com/personal/u202315890_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202315890%5Fupc%5Fedu%5Fpe%2FDocuments%2FLanding%20Page%2Emkv |
 
 <div class="page"></div>
 
