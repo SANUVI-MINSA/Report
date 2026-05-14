@@ -58,7 +58,7 @@
 
 En esta sección, mostraremos como se desarrolla cada hito del trabajo final y todo su análisis correspondiente mediante las herramientas de Github.
 
-Link de la organización: [SANUVI-MINSA](https://github.com/SANUVI-MINSA)
+Link de la organización: https://github.com/SANUVI-MINSA
 
 **AV1:**
 ---
@@ -72,14 +72,48 @@ Durante este avance del trabajo, se desarrollaron los siguientes puntos del repo
 
 ![AV1 Insights de Github](/resources/images/presentation/AV1_Insights.png "AV1 Insights")
 
+## Commits por integrante
+
 - **Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 310 commits
 - **Huapaya Galindo, Dyron (`MaineMa`)**: 76 commits
 - **Pariachi Limahuaya, Sebastian Ubaldo (`SebastianLima-PE`)**: 41 commits
 - **Ramirez Carrasco, Ariana Lizeth (`ariana9513`)**: 6 commits
 - **López Roman, Franco Mauricio (`FrancoLopez00`)**: 22 commits
-- **Total de commits en TB1:** 455
+- **Total de commits en AV1:** 455
 
 La colaboracion del equipo al realizar el primer avance del proyecto fue activa, donde cada quien realizo una parte del reporte.
+
+<br>
+
+**TB1:**
+---
+
+Durante este sprint, el equipo concentró sus esfuerzos en la construcción y documentación integral de los tres productos principales del proyecto: la **Landing Page**, el **Backend** y la **Aplicación Móvil FerovaFamily**. De forma paralela, se avanzó en la elaboración del **Project Report**, incorporando nuevas secciones y consolidando el contenido técnico correspondiente al Sprint 1.
+
+La **Landing Page** se desarrolló utilizando HTML5, CSS3 y JavaScript, aplicando principios de diseño responsivo y buenas prácticas de accesibilidad. Se realizaron mejoras visuales y estructurales respecto al entregable anterior, optimizando la carga y adaptabilidad para distintos dispositivos, con el objetivo de comunicar de forma clara la propuesta de valor de Ferova frente al problema de la anemia infantil en el Perú.
+
+En el **Backend**, implementado con **Java Spring Boot**, se construyeron y validaron los principales endpoints correspondientes a los bounded contexts del sistema: **IAM** (gestión de identidad y autenticación), **Patient** (gestión de pacientes), **Nutrition** (nutrición y diario nutricional), **Communication** (mensajería entre cuidador y enfermera) y **Postas** (centros de salud). También se revisó la documentación de los servicios y la configuración del entorno de desarrollo para reflejar el modelo de dominio definido durante el AV1.
+
+Por su parte, la **Aplicación Móvil FerovaFamily** se desarrolló en **Android Studio con Kotlin y Jetpack Compose**, priorizando las pantallas core para el cuidador familiar: el flujo de autenticación, la pantalla principal con bottom bar de cuatro secciones (Inicio, Diario, Citas y Consultas), y los módulos completos de **Consultas con la enfermera**, **Reserva de citas en postas cercanas** (integrado con OpenStreetMap) y **Progreso y Medallas** (gamificación con racha, hemoglobina y celebraciones). Estas interfaces se diseñaron siguiendo los lineamientos del prototipo UX/UI y las Style Guidelines definidas por el equipo, dejando preparada la integración con el backend para el siguiente incremento.
+
+En cuanto al **Project Report**, se incluyeron los siguientes apartados requeridos para esta entrega:
+
+- Capítulo III: Solution UI/UX Design, donde se documentaron las guías de estilo, arquitectura de información y diseño de las aplicaciones web y móvil.
+- Capítulo IV: Product Implementation & Validation, que detalla la configuración del entorno de desarrollo, gestión de código, planificación del sprint y evidencias de implementación.
+- Además, se añadieron las secciones de Conclusiones, Bibliografía y Anexos, completando la estructura formal del informe para el Stage Review.
+
+![TB1 Insights de Github](/resources/images/presentation/TB1_Insights.png "AV1 Insights")
+
+---
+
+## Commits por integrante
+
+- **Baca Camargo, Vitaly Arturo (`Mr-code-star`)**: 1 commits
+- **Huapaya Galindo, Dyron (`MaineMa`)**: 26 commits
+- **Pariachi Limahuaya, Sebastian Ubaldo (`SebastianLima-PE`)**: 3 commits
+- **Ramirez Carrasco, Ariana Lizeth (`ariana9513`)**: 3 commits
+- **López Roman, Franco Mauricio (`FrancoLopez00`)**: 1 commits
+- **Total de commits en TB1:** 34
 
 # Tabla de contenidos
 
