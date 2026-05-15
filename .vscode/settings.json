@@ -23,9 +23,12 @@
     // tiempo de espera para que carguen bien las imágenes
     "markdown-pdf.renderDelay": 1000,
   
+    "markdown-pdf.breaks": true, // SALTO DE PAGINA
+
     
     // incluye tu CSS
     "markdown-pdf.styles": [
       ".vscode/markdown.css"
     ]
+    
   }

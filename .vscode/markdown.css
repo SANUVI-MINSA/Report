@@ -414,3 +414,11 @@ a { color: var(--text); text-decoration: none; }
   .chapter p { orphans: 3; widows: 3; }
   a::after   { content: ""; }
 }
+
+/* ══════════════════════════════════════════════════════════
+   SALTO DE PÁGINA antes de cada capítulo
+   ══════════════════════════════════════════════════════════ */
+.chapter {
+  page-break-before: always; /* Para navegadores legacy */
+  break-before: page;        /* Estándar moderno */
+}
