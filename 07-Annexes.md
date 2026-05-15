@@ -34,5 +34,5 @@
 
 | Entrega | Título | Enlace |
 |---|---|---|
-| TB1 | Exposición TB1 — Ferova | — |
+| TB1 | Exposición TB1 — Ferova | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202314115_upc_edu_pe/IQBp2u-ekGQqQIWT_K55XWc1ARqPsI36Wc9fyyHnLsG5eZM?e=8ZaWQt&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
 | TB2 | Exposición TB2 — Ferova | — |
