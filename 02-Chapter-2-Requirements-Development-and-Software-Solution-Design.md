@@ -3325,52 +3325,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>US-41</td>
-      <td>Admin</td>
-      <td>Medium</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Visualización de historial de notificaciones enviadas</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como admin, quiero poder ver un historial de todas las notificaciones push enviadas por el sistema desde FerovaClinic, para llevar un control de las comunicaciones realizadas a madres y enfermeras.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Visualización de historial de notificaciones exitosa<br>
-        Dado que el admin desea revisar las notificaciones enviadas,<br>
-        cuando accede a la sección 'Historial de notificaciones' en FerovaClinic,<br>
-        entonces el sistema debe mostrar una lista de todas las notificaciones enviadas, incluyendo el tipo de notificación, destinatario, fecha, hora y el estado de entrega (enviado/fallido).<br>
-        <br>
-        Escenario 2: Filtrado de historial por tipo de notificación<br>
-        Dado que el admin se encuentra en la sección 'Historial de notificaciones',<br>
-        cuando aplica un filtro por tipo (ej. recordatorio de dosis, alerta de riesgo, reserva de cita),<br>
-        entonces el sistema debe mostrar únicamente las notificaciones que correspondan al tipo seleccionado.
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -3437,14 +3391,14 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3">Visualización del mapa de calor del distrito</td>
+      <td colspan="3">Visualización del mapa de calor</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b></td>
     </tr>
     <tr>
       <td colspan="4">
-        Como admin, quiero poder ver el mapa de calor de mi distrito en FerovaClinic, para identificar visualmente que zonas tienen mayor tasa de abandono del tratamiento y priorizar las intervenciones necesarias.
+        Como admin, quiero poder ver el mapa de calor de todas las postas de FerovaClinic, para identificar visualmente que zonas tienen mayor tasa de adherencia del tratamiento y priorizar las intervenciones necesarias.
       </td>
     </tr>
     <tr>
@@ -3484,14 +3438,14 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
     </tr>
     <tr>
       <td><b>Title</b></td>
-      <td colspan="3">Exportación de reporte del distrito en PDF</td>
+      <td colspan="3">Exportación de reporte en PDF</td>
     </tr>
     <tr>
       <td colspan="4"><b>Description</b></td>
     </tr>
     <tr>
       <td colspan="4">
-        Como admin, quiero poder exportar el reporte completo del distrito en formato PDF desde FerovaClinic, para enviarlo al MINSA central con las estadísticas actualizadas del tratamiento de anemia en mi distrito.
+        Como admin, quiero poder exportar el reporte completo de las posta en formato PDF desde FerovaClinic, para enviarlo al MINSA central con las estadísticas actualizadas del tratamiento de anemia.
       </td>
     </tr>
     <tr>
@@ -3500,7 +3454,7 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
     <tr>
       <td colspan="4">
         Escenario 1: Exportación de reporte exitosa<br>
-        Dado que el admin desea exportar el reporte del distrito,<br>
+        Dado que el admin desea exportar el reporte,<br>
         cuando presiona 'Exportar reporte en PDF' en FerovaClinic,<br>
         entonces el sistema debe generar automáticamente un documento PDF con el porcentaje de adherencia por posta, la comparativa de rendimiento entre postas y las zonas críticas identificadas en el mapa de calor, y permitirle descargarlo en su dispositivo.<br>
         <br>
