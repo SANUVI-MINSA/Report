@@ -3666,6 +3666,64 @@ El desarrollo del Backend siguió un flujo de trabajo enfocado en estabilidad y 
 
 #### 4.2.2 Sprint 2
 ##### 4.2.2.1 Sprint Planning 2
+
+<table>
+  <tr>
+    <td>Sprint #</td>
+    <td>Sprint 2</td>
+  </tr>
+  <tr>
+    <td><strong>Sprint Planning Background</strong></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>2026-05-15</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>04:00 pm (GMT-5)</td>
+  </tr>
+  <tr>
+    <td>Location</td>
+    <td>Modalidad remota mediante la plataforma Discord</td>
+  </tr>
+  <tr>
+    <td>Prepared By</td>
+    <td>Vitaly </td>
+  </tr>
+  <tr>
+    <td>Attendees (to planning meeting)</td>
+    <td>López Román, Franco Mauricio / Vitaly / Sebas / Ariana / Dyron</td>
+  </tr>
+  <tr>
+    <td>Sprint 1 Review Summary</td>
+    <td> En el sprint anterior el avance se centró principalmente en el backend, donde se desarrollaron los módulos base del sistema. En IAM se implementó el registro, inicio de sesión y recuperación de contraseña. En Health Facilities se trabajó el registro de postas médicas, la reserva de citas, la visualización de postas cercanas y la asignación de enfermeros a cada posta. En Comunicación se avanzó con las teleconsultas y el envío de mensajes/consultas de los pacientes hacia los enfermeros. En Diario Nutricional se implementó la búsqueda y registro de alimentos consumidos, además de la visualización del diario y de las comidas brindadas al infante. Y en Patients se desarrolló el registro de pacientes y la visualización de los mismos por parte de la madre.
+Por el lado de frontend se trabajaron los frames estáticos principales: Home, vista del mapa de postas cercanas y vista del diario nutricional, sentando las bases visuales para integrarlas con el backend en los siguientes sprints. Además, se desarrolló el landing page, una página estática orientada a los visitantes. </td>
+  </tr>
+  <tr>
+    <td>Sprint 1 Retrospective Summary</td>
+    <td> Como aspectos positivos, el equipo logró definir y estructurar los módulos principales del backend (IAM, Health Facilities, Comunicación, Diario Nutricional y Patients), lo que permitió tener una base sólida para los siguientes sprints. También se avanzó en paralelo con los frames estáticos del frontend, lo cual ayudó a visualizar mejor el flujo de la aplicación.
+Como puntos a mejorar, se identificó que la comunicación entre el equipo de backend y frontend pudo ser más fluida, ya que algunos módulos se desarrollaron sin una definición completa de los contratos de API desde el inicio. El siguiente sprint, el equipo acordó definir los endpoints y contratos de API antes de iniciar el desarrollo de cada módulo, además de mantener reuniones de sincronización más frecuentes entre backend y frontend para evitar retrabajo.</td>
+  </tr>
+  <tr>
+    <td><strong>Sprint Goal & User Stories</strong></td>
+    <td> El objetivo de este sprint es culminar el desarrollo del backend, implementando los módulos que aún faltan, así como avanzar con la integración del frontend de ambas aplicaciones. En el backend se completará el módulo de Achievements & Rewards para el tema de medallas, el módulo de Analytics para el dashboard de análisis con postas activas, postas críticas, adherencia global, mapa de calor y reporte en PDF, y el módulo de Treatment Tracking para la confirmación de dosis, entre otros endpoints necesarios para los productos moviles. En paralelo, se buscará terminar el mobile application de FerovaFamily conectando los endpoints necesarios para su funcionamiento, además de avanzar con FerovaClinic conectando sus respectivos endpoints y presentando una primera versión funcional de la misma. </td>
+  </tr>
+  <tr>
+    <td>Sprint 1 Goal</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sprint 1 Velocity</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sum of Story Points</td>
+    <td></td>
+  </tr>
+</table>
+
 ##### 4.2.2.2 Sprint Backlog 2
 ##### 4.2.2.3 Development Evidence for Sprint Review
 ##### 4.2.2.4 Testing Suite Evidence for Sprint Review
