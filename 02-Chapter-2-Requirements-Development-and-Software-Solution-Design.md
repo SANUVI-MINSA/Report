@@ -2994,52 +2994,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>US-32</td>
-      <td>Admin</td>
-      <td>Medium</td>
-      <td>EP-07</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Transferencia de enfermera entre postas</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como admin, quiero poder transferir una enfermera de una posta a otra desde FerovaClinic, para rebalancear el personal de salud entre las postas del distrito cuando sea necesario.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Transferencia de enfermera exitosa<br>
-        Dado que el admin desea transferir una enfermera a otra posta,<br>
-        cuando selecciona a la enfermera en FerovaClinic, elige la nueva posta de destino y presiona 'Transferir enfermera',<br>
-        entonces el sistema debe desvincular a la enfermera de su posta actual, vincularla a la nueva posta y actualizar automáticamente la lista de enfermeras disponibles en ambas postas.<br>
-        <br>
-        Escenario 2: Transferencia a la misma posta<br>
-        Dado que el admin intenta transferir a una enfermera a la misma posta donde ya está asignada,<br>
-        cuando presiona 'Transferir enfermera',<br>
-        entonces el sistema debe mostrar un mensaje de error indicando que la enfermera ya se encuentra asignada a esa posta.
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
