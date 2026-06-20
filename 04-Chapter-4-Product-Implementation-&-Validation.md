@@ -3901,6 +3901,931 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
 		  <tr>
       		<td colspan="5"><strong>Backend - Ferova</strong></td>
     	</tr>
+		  <tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>432aa9f</td>
+    <td>feat(dto): add Responses HeatmapDataResponseDto, FacilitiesAnalyticsResponseDto and DashboardSummaryResponseDto</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>cefaa40</td>
+    <td>feat(queries): add GetFacilityHeatmapDataQuery, GetFacilitiesAnalyticsQuery and GetDashboardSummaryQuery</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>d1fa574</td>
+    <td>feat(services): add AnalyticsQueryService</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>1e3c83a</td>
+    <td>feat(controller): add AnalyticsController manages endpoint</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>7c95fad</td>
+    <td>feat(controller): add AnalyticsQueryServiceImpl implements getDashboardSummary, getFacilitiesAnalytics and getFacilityHeatmapData</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>76ab962</td>
+    <td>feat(dependencies): add dependencies manages controllers</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>ce469bb</td>
+    <td>feat(routes): add endpoints of analytics reporting bounded context</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>cfca256</td>
+    <td>feat(app): add routes in the application</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>6918980</td>
+    <td>feat(app): add MongoAnalyticsRepository</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>1f4b83b</td>
+    <td>feat: modify order of the endpoints</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>2a7f3c5</td>
+    <td>chore: install moment-timezone dependency</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>93bf1a5</td>
+    <td>feat: implement Peru timezone support using moment-timezone</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>d4747c9</td>
+    <td>feat: add GetTopFacilitiesQuery and TopFacilitiesResponseDto</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>8702a79</td>
+    <td>feat: add getTopFacilities in MongoAnalyticsRepository</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>bb3eb48</td>
+    <td>feat: add route /api/analytics/facilities/top</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>e5bf866</td>
+    <td>feat: add getTopFacilities query handler</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>6acacd4</td>
+    <td>feat: implement getTopFacilities in AnalyticsQueryServiceImpl</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>d06e7e1</td>
+    <td>feat: add getTopFacilities endpoint in controller</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>2ae5254</td>
+    <td>feat: add GeneratePdfReportQuery</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>1172670</td>
+    <td>feat: add PdfReportResponseDto</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>cefc900</td>
+    <td>feat: add PdfReportService</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>68e448a</td>
+    <td>feat: add generatePdfReport functionality</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>ec27648</td>
+    <td>feat: implement generatePdfReport in AnalyticsQueryServiceImpl</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>b28a890</td>
+    <td>feat: add generatePdfReport endpoint and route</td>
+    <td>3 weeks ago</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/analytics-reporting</td>
+    <td>bfdf950</td>
+    <td>feat: add analytics reporting documentation</td>
+    <td>3 weeks ago</td>
+</tr>
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>a47af04</td>
+    <td>feat(AchievementBadges): add AchievementStatus and BadgeType enums</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>df75564</td>
+    <td>feat(AchievementBadges): implement MilestoneCalculator for badge milestones</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>040ce2c</td>
+    <td>feat(AchievementBadges): add Achievement and Badge classes for tracking achievements and unlocking badges</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>db73a93</td>
+    <td>feat(Achievement): remove comment</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>aeafaac</td>
+    <td>feat(AchievementBadges): rename files for AchievementStatus, BadgeType and MilestoneCalculator</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>249d659</td>
+    <td>feat(AchievementBadges): add AchievementEvaluatorService for badge evaluation and points calculation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>ae4de4c</td>
+    <td>feat(AchievementBadges): add event classes for badge unlocking and points earning</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>ded321f</td>
+    <td>feat(AchievementBadges): add AchievementRepository and BadgeRepository interfaces</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>f15923f</td>
+    <td>feat(AchievementBadges): add mappers for Achievement and Badge entities</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>bca4734</td>
+    <td>feat(AchievementBadges): add AchievementModel and BadgeModel schemas for data representation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>0471eef</td>
+    <td>feat(AchievementBadges): update AchievementModel and BadgeModel schemas</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>ffaafb2</td>
+    <td>feat(queries): add GetPatientAchievementQuery and GetPatientBadgesQuery</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>0a8b08a</td>
+    <td>refactor(entities): change description of FIRST_MONTH</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>71c6c23</td>
+    <td>feat(MilestoneCalculator): add TREATMENT_COMPLETED milestone and calculateRemaining method</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>9ad235f</td>
+    <td>feat(repositories): add delete method</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>0a905e8</td>
+    <td>feat(TreatmentTracking): add events and dependencies in TreatmentCommandServiceImpl</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>3aee8ef</td>
+    <td>feat(AchievementBadges): add EventPublisher.ts for event management</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>9f05be0</td>
+    <td>feat(achievements): add treatment event handlers for achievement lifecycle</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>9c67470</td>
+    <td>feat(achievements): implement achievement query service with badge progress logic</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>cd0f708</td>
+    <td>feat(achievements): define achievement query service interface</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>68d33ae</td>
+    <td>feat(achievements): add achievement facade to delegate queries to service</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>8aa35b1</td>
+    <td>feat(achievements): register routes for patient achievements and badges</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>feec3c9</td>
+    <td>feat(achievements): add controller for patient achievement and badge endpoints</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>31d6e58</td>
+    <td>feat(achievements): wire dependencies and subscribe to treatment events</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>67346cb</td>
+    <td>feat(app): register achievements-rewards routes in express app</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>45ce1d9</td>
+    <td>feat: add Documentation.md</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>0939a63</td>
+    <td>feat: add testing of confirm forcing</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>e06c692</td>
+    <td>feat(TreatmentCommandServiceImpl): delete badges when abandoning treatment</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>7248fb3</td>
+    <td>feat: remove FIRST_MONTH</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>82424ac</td>
+    <td>feat: add new config calculator to MilestoneCalculator</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>cbe15c2</td>
+    <td>feat: remove comments</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>42636a7</td>
+    <td>feat(achievements): implement sequential badge progress calculation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>5c0a3af</td>
+    <td>feat: remove conditional</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>b3974fb</td>
+    <td>feat: add DailyDoseOmitted event</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/Achievement-Badges</td>
+    <td>309481a</td>
+    <td>docs: add Documentation.md</td>
+    <td>Last month</td>
+</tr>
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>b9f617a</td>
+    <td>feat(treatments): implement Treatment class with validation and management methods</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>678094f</td>
+    <td>feat(value-objects): add DoseStatus, RiskLevel and TreatmentStatus enums</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>e0c7e5d</td>
+    <td>feat(entities): add DailyDose and RiskScore classes with validation and management methods</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>f64122e</td>
+    <td>feat(commands): add command types for treatment management</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>e29c549</td>
+    <td>feat(queries): add query types for patient and treatment management</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>d7efc40</td>
+    <td>feat(repositories): add DailyDoseRepository and TreatmentRepository interfaces</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>895f6f7</td>
+    <td>feat(services): add TreatmentCommandService interface</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>a86503b</td>
+    <td>feat(services): add TreatmentQueryService interface</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>f714d3b</td>
+    <td>feat(services): implement TreatmentCommandService</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>d12400b</td>
+    <td>feat(services): implement TreatmentQueryService</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>31b7bb2</td>
+    <td>feat(services): implement critical alert retrieval for nurses</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>0ff881a</td>
+    <td>feat(infrastructure): add DailyDoseMapper and TreatmentMapper</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>232026c</td>
+    <td>feat(models): add DailyDoseModel and TreatmentModel schemas</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>cb578f5</td>
+    <td>feat(repositories): add MongoDailyDoseRepository and MongoTreatmentRepository</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>6b7ba62</td>
+    <td>feat(assemblers): add command assemblers for treatment and dose operations</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>6038559</td>
+    <td>feat(resources): add treatment and dose resource interfaces</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>59fa617</td>
+    <td>feat(controller): add TreatmentController and TreatmentFacade</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>f041e5d</td>
+    <td>feat(routes): add treatment and dose routes with Swagger documentation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>ef3941b</td>
+    <td>feat(routes): add treatment tracking routes to the application</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>ec97b9c</td>
+    <td>refactor: delete RiskScoreModel.ts</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>5276e39</td>
+    <td>feat(model): update TreatmentModel to include RiskScore as subdocument</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>7133bee</td>
+    <td>feat(controller): enhance startTreatment with nurse validation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>ed77489</td>
+    <td>feat(controller): add PatientRepository to TreatmentFacade initialization</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>f49b709</td>
+    <td>feat(controller): integrate PatientRepository and nurse validation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>e0c5477</td>
+    <td>feat(command): simplify ConfirmDoseCommand</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>7643acb</td>
+    <td>feat(resource): simplify ConfirmDoseResource</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>bc1d827</td>
+    <td>feat(command): refactor confirmDose validation and update logic</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>b086244</td>
+    <td>feat(controller): enhance confirmDose with motherId from token</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>70339e6</td>
+    <td>feat(controller): improve confirmDose error handling</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>60a263d</td>
+    <td>feat(service): filter doses to include only CONFIRMED and OMITTED statuses</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>818b60f</td>
+    <td>feat(AuthRequest): add AuthRequest for mother token validation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>aa8d5df</td>
+    <td>feat(TreatmentFacade): add validation for mother's access to patient records</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>3c860fe</td>
+    <td>feat(routes): add authentication and authorization for patient dose history</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>d02bed9</td>
+    <td>feat(TreatmentQueryService): remove unused Promise import</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>eb0bf8a</td>
+    <td>feat(TreatmentController): enhance nurse authentication and access validation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>b0b13f1</td>
+    <td>feat(TreatmentRoutes): add authentication for risk overview and patient detail endpoints</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>00eb98a</td>
+    <td>feat(app): add test routes for route testing functionality</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>0d7e1be</td>
+    <td>feat(route-testing): add route for forcing dose omission in testing</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>b7dca9e</td>
+    <td>feat(TreatmentCommandService): add force omit dose method</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>13499b0</td>
+    <td>feat(TreatmentController): add force omit dose endpoint</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>e4fdb84</td>
+    <td>feat(DoseEvaluationScheduler): implement dose evaluation scheduler</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>212fd9a</td>
+    <td>feat(DoseConfig): enhance omission threshold logic</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>bb46d15</td>
+    <td>feat(TreatmentController): remove critical alerts retrieval method</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>e6a76a7</td>
+    <td>feat(AbandonTreatment): make nurseId optional and add validation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>f40af88</td>
+    <td>feat(CompleteTreatment): make nurseId optional and add validation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>df74106</td>
+    <td>feat(TreatmentController): update request type to AuthRequest</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>bd34ee1</td>
+    <td>feat(TreatmentRoutes): update routes and authentication</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>7bdd51a</td>
+    <td>feat(DailyDoseRepository): add delete and deleteMany methods</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>831126b</td>
+    <td>feat(TreatmentCommandServiceImpl): implement deletion of doses when treatment is abandoned</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>9fb0fc5</td>
+    <td>feat(TreatmentController): enforce nurse authentication</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>6216050</td>
+    <td>feat(DailyDose): simplify calculateHoursWithoutConfirmation</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>2897060</td>
+    <td>feat(TreatmentCommandServiceImpl): enhance force omit dose logic</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>b4f3bd9</td>
+    <td>feat(TreatmentController): update getTodayDose to use motherId from token</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>52f7675</td>
+    <td>feat(TreatmentQueryServiceImpl): enhance logging</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>85fe064</td>
+    <td>feat(TreatmentRoutes): add security and require motherId for getTodayDose</td>
+    <td>Last month</td>
+</tr>
+
+<tr>
+    <td>Backend - Ferova</td>
+    <td>feat/treatments</td>
+    <td>138e3c9</td>
+    <td>feat(TreatmentTracking): add treatment tracking documentation for pediatric patients</td>
+    <td>Last month</td>
+</tr>
 	  </tbody>
 </table>
 
