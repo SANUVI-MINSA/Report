@@ -3711,11 +3711,7 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
     <td> El objetivo de este sprint es culminar el desarrollo del backend, implementando los módulos que aún faltan, así como avanzar con la integración del frontend de ambas aplicaciones. En el backend se completará el módulo de Achievements & Rewards para el tema de medallas, el módulo de Analytics para el dashboard de análisis con postas activas, postas críticas, adherencia global, mapa de calor y reporte en PDF, y el módulo de Treatment Tracking para la confirmación de dosis, entre otros endpoints necesarios para los productos moviles. En paralelo, se buscará terminar el mobile application de FerovaFamily conectando los endpoints necesarios para su funcionamiento, además de avanzar con FerovaClinic conectando sus respectivos endpoints y presentando una primera versión funcional de la misma. </td>
   </tr>
   <tr>
-    <td>Sprint 1 Goal</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Sprint 1 Velocity</td>
+    <td>Sprint 2 Velocity</td>
     <td></td>
   </tr>
   <tr>
@@ -3725,6 +3721,29 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
 </table>
 
 ##### 4.2.2.2 Sprint Backlog 2
+
+<table>
+	<tbody>
+		<tr>
+			<td><strong>Sprint #</strong></td>
+			<td colspan="7">Sprint 2</td>
+		</tr>
+		<tr>
+			<td colspan="2"><strong>User Story</strong></td>
+			<td colspan="6"><strong>Work-item / Task</strong></td>
+		</tr>
+		<tr>
+			<td><strong>Id</strong></td>
+			<td><strong>Title</strong></td>
+			<td><strong>Id</strong></td>
+			<td><strong>Title</strong></td>
+			<td><strong>Description</strong></td>
+			<td><strong>Estimation (Hours)</strong></td>
+			<td><strong>Assigned To</strong></td>
+			<td><strong>Status (To-Do / In-Process / To-review / Done)</strong></td>
+		</tr>
+</table>
+
 ##### 4.2.2.3 Development Evidence for Sprint Review
 ##### 4.2.2.4 Testing Suite Evidence for Sprint Review
 ##### 4.2.2.5 Execution Evidence for Sprint Review
