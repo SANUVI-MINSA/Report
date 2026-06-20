@@ -5074,97 +5074,9 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%"> <thead> <tr> <th>Story ID</th> <th>User</th> <th>Priority</th> <th>Epic</th> </tr> </thead> <tbody> <tr> <td>TS-37</td> <td>Desarrollador</td> <td>High</td> <td>EP-09</td> </tr> <tr> <td><b>Title</b></td> <td colspan="3">Obtener resumen del dashboard analítico mediante API RESTful</td> </tr> <tr> <td colspan="4"><b>Description</b></td> </tr> <tr> <td colspan="4"> Como desarrollador, quiero implementar el endpoint de obtención del resumen del dashboard analítico mediante una API REST, para que FerovaClinic pueda mostrar al administrador las métricas globales de adherencia de todas las postas activas. </td> </tr> <tr> <td colspan="4"><b>Acceptance Criteria</b></td> </tr> <tr> <td colspan="4"> <b>Escenario 1: Obtención del dashboard exitosa</b><br> Dado que el endpoint <code>GET /api/analytics/dashboard/summary</code> está disponible, cuando se envía una solicitud GET con el token JWT válido y rol ADMIN, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el total de postas activas, el total de postas críticas y el porcentaje de adherencia global.<br> <br> <b>Escenario 2: Sin postas activas disponibles</b><br> Dado que el endpoint <code>GET /api/analytics/dashboard/summary</code> está disponible, cuando se envía una solicitud GET y no hay postas activas con tratamientos, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el mensaje: 'No hay postas activas disponibles para mostrar en el dashboard.'<br> <br> <b>Escenario 3: Token JWT inválido o sin permisos de admin</b><br> Dado que el endpoint <code>GET /api/analytics/dashboard/summary</code> está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder al dashboard analítico.' </td> </tr> </tbody> </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TS-38</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-09</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Obtener mapa de calor del distrito mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor del distrito mediante una API REST, para que FerovaClinic pueda mostrar al admin las zonas críticas del distrito coloreadas según el porcentaje de adherencia de cada posta.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Obtención del mapa de calor exitosa</b><br>
-        Dado que el endpoint /api/v1/reports/heat-map está disponible, cuando se envía una solicitud GET con el token JWT valido y el ID del distrito, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de postas con sus coordenadas de ubicación, su porcentaje de adherencia y su clasificación de color: rojo intenso para adherencia baja, amarillo para riesgo medio y verde para adherencia alta.<br>
-        <br>
-        <b>Escenario 2: Zona critica identificada</b><br>
-        Dado que el endpoint /api/v1/reports/heat-map está disponible, cuando se envía una solicitud GET y el sistema detecta una posta con porcentaje de adherencia críticamente bajo, entonces se recibe una respuesta con estado 200 y el cuerpo contiene dicha posta marcada como zona critica con color rojo intenso y una alerta indicando que requiere intervención inmediata.<br>
-        <br>
-        <b>Escenario 3: Token JWT invalido o sin permisos de admin</b><br>
-        Dado que el endpoint /api/v1/reports/heat-map está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder al mapa de calor del distrito.'
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table border="1" cellpadding="10" cellspacing="0" width="100%"> <thead> <tr> <th>Story ID</th> <th>User</th> <th>Priority</th> <th>Epic</th> </tr> </thead> <tbody> <tr> <td>TS-38</td> <td>Desarrollador</td> <td>High</td> <td>EP-09</td> </tr> <tr> <td><b>Title</b></td> <td colspan="3">Obtener puntos para mapa de calor mediante API RESTful</td> </tr> <tr> <td colspan="4"><b>Description</b></td> </tr> <tr> <td colspan="4"> Como desarrollador, quiero implementar el endpoint de obtención de puntos para el mapa de calor mediante una API REST, para que FerovaClinic pueda mostrar al administrador un mapa interactivo con las postas del distrito coloreadas según su nivel de riesgo basado en el porcentaje de adherencia. </td> </tr> <tr> <td colspan="4"><b>Acceptance Criteria</b></td> </tr> <tr> <td colspan="4"> <b>Escenario 1: Obtención del mapa de calor exitosa</b><br> Dado que el endpoint <code>GET /api/analytics/heatmap</code> está disponible, cuando se envía una solicitud GET con el token JWT válido y rol ADMIN, entonces se recibe una respuesta con estado 200 y el cuerpo contiene la lista de postas con sus coordenadas de ubicación (lat, lng), porcentaje de adherencia y nivel de riesgo (LOW, MEDIUM, HIGH) para colorear los marcadores en el mapa.<br> <br> <b>Escenario 2: Filtro por nivel de riesgo</b><br> Dado que el endpoint <code>GET /api/analytics/heatmap</code> está disponible, cuando se envía una solicitud GET con el parámetro <code>riskLevel=HIGH</code>, entonces se recibe una respuesta con estado 200 y el cuerpo contiene solo las postas con nivel de riesgo HIGH (crítico) para visualizar zonas críticas.<br> <br> <b>Escenario 3: Zona crítica identificada</b><br> Dado que el endpoint <code>GET /api/analytics/heatmap</code> está disponible, cuando se envía una solicitud GET y el sistema detecta una posta con porcentaje de adherencia menor a 40% (riskLevel = HIGH), entonces se recibe dicha posta con <code>riskLevel: "HIGH"</code> para que el frontend la muestre con color rojo intenso y pueda indicar que requiere intervención inmediata.<br> <br> <b>Escenario 4: Token JWT inválido o sin permisos de admin</b><br> Dado que el endpoint <code>GET /api/analytics/heatmap</code> está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder al mapa de calor.' </td> </tr> </tbody> </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TS-39</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-09</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Exportar reporte del distrito en PDF mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de exportación del reporte del distrito en formato PDF mediante una API REST, para que el admin pueda descargar el reporte completo con las estadísticas de adherencia del distrito y enviarlo al MINSA central.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Exportación de reporte exitosa</b><br>
-        Dado que el endpoint /api/v1/reports/export-pdf está disponible, cuando se envía una solicitud GET con el token JWT valido y el ID del distrito, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el archivo PDF generado automáticamente con el porcentaje de adherencia por posta, la comparativa de rendimiento entre postas y las zonas críticas identificadas en el mapa de calor.<br>
-        <br>
-        <b>Escenario 2: Sin datos suficientes para generar el reporte</b><br>
-        Dado que el endpoint /api/v1/reports/export-pdf está disponible, cuando se envía una solicitud GET y ninguna enfermera ha enviado su reporte de adherencia, entonces se recibe una respuesta con estado 409 y el cuerpo contiene el mensaje: 'No hay suficientes datos para generar el reporte. Solicite a las enfermeras que envíen sus reportes primero.'<br>
-        <br>
-        <b>Escenario 3: Token JWT invalido o sin permisos de admin</b><br>
-        Dado que el endpoint /api/v1/reports/export-pdf está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para exportar el reporte del distrito.'
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table border="1" cellpadding="10" cellspacing="0" width="100%"> <thead> <tr> <th>Story ID</th> <th>User</th> <th>Priority</th> <th>Epic</th> </tr> </thead> <tbody> <tr> <td>TS-39</td> <td>Desarrollador</td> <td>High</td> <td>EP-09</td> </tr> <tr> <td><b>Title</b></td> <td colspan="3">Generar reporte PDF de adherencia mediante API RESTful</td> </tr> <tr> <td colspan="4"><b>Description</b></td> </tr> <tr> <td colspan="4"> Como desarrollador, quiero implementar el endpoint de generación de reporte PDF mediante una API REST, para que FerovaClinic pueda permitir al administrador descargar un reporte completo con todas las métricas de adherencia de las postas del distrito. </td> </tr> <tr> <td colspan="4"><b>Acceptance Criteria</b></td> </tr> <tr> <td colspan="4"> <b>Escenario 1: Generación de reporte PDF exitosa</b><br> Dado que el endpoint <code>GET /api/analytics/report/pdf</code> está disponible, cuando se envía una solicitud GET con el token JWT válido y rol ADMIN, entonces se recibe una respuesta con estado 200, Content-Type: application/pdf y el archivo se descarga con el nombre <code>reporte_postas_YYYY-MM-DD.pdf</code> conteniendo el resumen global, la lista detallada de todas las postas con sus métricas y colores por nivel de riesgo.<br> <br> <b>Escenario 2: Sin postas activas disponibles</b><br> Dado que el endpoint <code>GET /api/analytics/report/pdf</code> está disponible, cuando se envía una solicitud GET y no hay postas activas con tratamientos, entonces se recibe una respuesta con estado 400 y el cuerpo contiene el mensaje: 'No hay datos disponibles para generar el reporte.'<br> <br> <b>Escenario 3: Token JWT inválido o sin permisos de admin</b><br> Dado que el endpoint <code>GET /api/analytics/report/pdf</code> está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para generar el reporte PDF.' </td> </tr> </tbody> </table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
