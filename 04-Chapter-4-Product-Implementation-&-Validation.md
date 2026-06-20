@@ -3722,6 +3722,66 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
 
 ##### 4.2.2.2 Sprint Backlog 2
 
+#### Frontend — FerovaFamily
+
+El objetivo principal del Sprint Backlog 2 es desarrollar las funcionalidades centrales de la aplicación móvil **FerovaFamily**, orientada al paciente: el seguimiento nutricional, el control de dosis, la ubicación y reserva en postas médicas, la gestión de citas, el sistema de medallas, el dashboard de hemoglobina, la gestión de cuenta y la comunicación con el personal de salud. La estimación total del Sprint Backlog 2 es de **85 horas**.
+
+**URL público del Board:** _[insertar enlace público del Board de Trello aquí]_
+
+_[Insertar aquí el screenshot del Board del Sprint en Trello]_
+
+| US Id | US Title | WI Id | Work-Item / Task | Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|---|
+| US-19 | Registro de alimentos en el diario nutricional | T01 | Visualizar diario nutricional | Pantalla que muestra el registro diario de alimentos consumidos por el paciente. | 6 | López Roman, Franco Mauricio | To-do |
+| US-19 | Registro de alimentos en el diario nutricional | T02 | Registrar alimento | Formulario para añadir un alimento al diario nutricional. | 5 | López Roman, Franco Mauricio | To-do |
+| US-19 | Registro de alimentos en el diario nutricional | T03 | Listar alimentos por categoría | Vista que agrupa y muestra los alimentos según su categoría. | 4 | López Roman, Franco Mauricio | To-do |
+| US-19 | Registro de alimentos en el diario nutricional | T04 | Buscar alimento | Componente de búsqueda con filtrado de alimentos por nombre. | 4 | López Roman, Franco Mauricio | To-do |
+| US-21 | Visualización del resumen nutricional diario | T05 | Visualizar resumen nutricional diario | Pantalla con el total de hierro absorbido y la meta diaria alcanzada. | 4 | López Roman, Franco Mauricio | To-do |
+| US-13 | Confirmación de dosis diarias | T06 | Confirmar dosis | Acción para que la madre confirme la toma de la dosis diaria de hierro. | 4 | Baca Camargo, Vitaly Arturo | To-do |
+| US-13 | Confirmación de dosis diarias | T07 | Ver historial de dosis | Pantalla con el historial de dosis confirmadas del paciente. | 5 | Baca Camargo, Vitaly Arturo | To-do |
+| US-33 | Visualización de postas medicas en el mapa | T08 | Ver postas cercanas en el mapa | Mapa que muestra las postas médicas cercanas a la ubicación de la madre. | 6 | Pariachi Limahuaya, Sebastián Ubaldo | To-do |
+| US-34 | Reserva de cita en posta medica | T09 | Reservar una cita | Flujo para que la madre reserve una cita en una posta médica. | 6 | Huapaya Galindo, Dyron | To-do |
+| US-34 | Reserva de cita en posta medica | T10 | Ver cita actual y confirmación | Detalle de la cita reservada y su confirmación. | 3 | Huapaya Galindo, Dyron | To-do |
+| US-23 | Desbloqueo de insignias por hitos del tratamiento | T11 | Visualizar insignias / medallas | Pantalla de logros que muestra las insignias obtenidas por hitos del tratamiento. | 5 | Pariachi Limahuaya, Sebastián / Baca Camargo, Vitaly Arturo | To-do |
+| US-24 | Acumulación de puntos por confirmación de dosis | T12 | Visualizar puntos y racha | Vista de puntos acumulados y racha de días cumplidos. | 4 | Baca Camargo, Vitaly Arturo | To-do |
+| US-14 | Visualización del progreso del tratamiento | T13 | Visualizar evolución de hemoglobina | Dashboard con la gráfica de evolución de hemoglobina del paciente. | 7 | Baca Camargo, Vitaly / Pariachi Limahuaya, Sebastián | To-do |
+| US-01 | Registro de nuevo usuario | T14 | Registro de paciente / usuario | Formulario de registro de un nuevo usuario en la app. | 5 | Pariachi Limahuaya, Sebastián Ubaldo | To-do |
+| US-02 | Inicio de sesión | T15 | Login | Autenticación de usuario mediante DNI y contraseña. | 4 | Pariachi Limahuaya, Sebastián Ubaldo | To-do |
+| US-04 | Cambio de contraseña | T16 | Registro / recuperación de contraseña | Flujo de recuperación y cambio de contraseña. | 4 | Baca Camargo, Vitaly Arturo | To-do |
+| US-25 | Creación de consulta a la enfermera | T17 | Enviar consulta | Envío de una consulta dirigida a la enfermera asignada. | 4 | Ramírez Carrasco, Ariana Lizeth | To-do |
+| US-25 | Creación de consulta a la enfermera | T18 | Chat de texto / enviar mensaje | Mensajería de texto dentro de la teleconsulta. | 6 | Ramírez Carrasco, Ariana Lizeth | To-do |
+| US-27 | Visualización del historial de consultas | T19 | Ver historial de consultas | Listado del historial completo de consultas con la enfermera. | 3 | Ramírez Carrasco, Ariana Lizeth | To-do |
+
+**Estimación total del Frontend FerovaFamily: 89 horas.**
+
+---
+
+#### Frontend — FerovaClinic
+
+El objetivo principal del Sprint Backlog 2 es construir las funcionalidades base de la aplicación **FerovaClinic**, orientada al personal administrativo y clínico: la gestión de cuenta, la administración de postas médicas (registro de posta, horarios de atención y asignación de enfermeras) y el módulo de Analytics-Reporting con mapa de calor y exportación de reportes en PDF. La estimación total del Frontend de FerovaClinic es de **36 horas**.
+
+**URL público del Board:** _[insertar enlace público del Board de Trello aquí]_
+
+_[Insertar aquí el screenshot del Board del Sprint en Trello]_
+
+| US Id | US Title | WI Id | Work-Item / Task | Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|---|
+| US-02 | Inicio de sesión | T01 | Login | Autenticación del personal clínico mediante DNI y contraseña. | 4 | Pariachi Limahuaya, Sebastián Ubaldo | To-do |
+| US-04 | Cambio de contraseña | T02 | Registro / recuperación de contraseña | Flujo de recuperación y cambio de contraseña. | 4 | Baca Camargo, Vitaly Arturo | To-do |
+| US-29 | Registro de posta medica | T03 | Registro de posta médica | Formulario para registrar una nueva posta médica con su ubicación. | 5 | Huapaya Galindo, Dyron | To-do |
+| US-30 | Registro de horario de atención de la posta | T04 | Registro de horario de atención | Registro de los horarios de atención de la posta médica. | 5 | Huapaya Galindo, Dyron | To-do |
+| US-31 | Asignación de enfermera a posta medica | T05 | Asignación de enfermera a posta | Asignación de personal de enfermería a una posta médica. | 5 | Huapaya Galindo, Dyron | To-do |
+| US-43 | Visualización del mapa de calor | T06 | Visualización del mapa de calor | Mapa de calor del distrito con la información analítica consolidada. | 7 | Pariachi Limahuaya, Sebastián Ubaldo | To-do |
+| US-44 | Exportación de reporte en PDF | T07 | Exportación de reporte en PDF | Generación y exportación del reporte completo de las postas en PDF. | 6 | Pariachi Limahuaya, Sebastián Ubaldo | To-do |
+
+**Estimación total del Frontend FerovaClinic: 36 horas.**
+
+---
+
+#### Backend — Ferova Family y Clinic
+
+El objetivo principal del Sprint Backlog 2 es desarrollar los servicios y la lógica del lado del servidor de la aplicación **FerovaFamily**, orientada al paciente: las APIs y la persistencia para el seguimiento nutricional, el control de dosis, la ubicación y reserva en postas médicas, la gestión de citas, el sistema de medallas, el dashboard de hemoglobina, la gestión de cuenta y la comunicación con el personal de salud. La estimación total del Sprint Backlog 2 es de **85 horas**.
+
 <table>
     <tbody>
         <tr>
