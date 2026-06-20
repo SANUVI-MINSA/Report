@@ -4968,4 +4968,7 @@ Durante el periodo del sprint se integraron los siguientes Pull Requests princip
 
 La siguiente captura muestra la actividad del repositorio durante el Sprint 2, incluyendo los Pull Requests integrados y las métricas generales de desarrollo.
 
+<div align="center">
+	<img src="resources/images/sprint-2/avanzes/backend-avanze-sprint-2.png">
+</div>
 
