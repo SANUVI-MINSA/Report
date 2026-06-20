@@ -5083,52 +5083,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </thead>
   <tbody>
     <tr>
-      <td>TS-36</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-09</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Registrar reporte de adherencia semanal mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de registro del reporte de adherencia semanal mediante una API REST, para que la enfermera pueda enviar los datos de dosis programadas y el sistema calcule automáticamente el porcentaje de adherencia de su posta en MongoDB.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Registro de reporte exitoso</b><br>
-        Dado que el endpoint /api/v1/reports/adherence está disponible, cuando se envía una solicitud POST con el token JWT valido, el ID de la posta y el total de dosis programadas de la semana, entonces se recibe una respuesta con estado 201 y el cuerpo contiene el reporte registrado con el porcentaje de adherencia calculado automáticamente, el ID de la posta y la fecha del reporte.<br>
-        <br>
-        <b>Escenario 2: Datos del reporte incompletos</b><br>
-        Dado que el endpoint /api/v1/reports/adherence está disponible, cuando se envía una solicitud POST con campos obligatorios vacíos o con formato incorrecto, entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.<br>
-        <br>
-        <b>Escenario 3: Posta no encontrada</b><br>
-        Dado que el endpoint /api/v1/reports/adherence está disponible, cuando se envía una solicitud POST con un ID de posta que no existe en el sistema, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Posta medica no encontrada.'
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td>TS-37</td>
       <td>Desarrollador</td>
       <td>High</td>
@@ -5452,12 +5406,11 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 | 76 | TS-33 | Obtener historial de notificaciones mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de notificaciones enviadas mediante una API REST, para que la madre pueda consultar en FerovaFamilia los recordatorios previos y estados de confirmación. | 2 |
 | 77 | TS-34 | Enviar notificación de recordatorio de cita mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de recordatorio de cita mediante una API REST, para que el sistema notifique a la madre vía Firebase FCM un día antes de su cita programada. | 3 |
 | 78 | TS-35 | Enviar notificación de logro desbloqueado mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de logro desbloqueado mediante una API REST, para incentivar a la madre cuando alcance hitos importantes del tratamiento. | 3 |
-| 79 | TS-36 | Registrar reporte de adherencia semanal mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro del reporte de adherencia semanal para que el sistema calcule automáticamente el porcentaje de adherencia de la posta en MongoDB. | 3 |
-| 80 | TS-37 | Obtener dashboard analítico del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico para mostrar al admin el rendimiento, pacientes activos y comparativas entre postas. | 8 |
-| 81 | TS-38 | Obtener mapa de calor del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor para visualizar zonas críticas coloreadas según el porcentaje de adherencia. | 8 |
-| 82 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
-| 83 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
-| 84 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
+| 79 | TS-37 | Obtener dashboard analítico del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico para mostrar al admin el rendimiento, pacientes activos y comparativas entre postas. | 8 |
+| 80 | TS-38 | Obtener mapa de calor del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor para visualizar zonas críticas coloreadas según el porcentaje de adherencia. | 8 |
+| 81 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
+| 82 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
+| 83 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
 
 ### 2.5 Strategic-Level Domain-Driven Design
 #### 2.5.1 EventStorming
