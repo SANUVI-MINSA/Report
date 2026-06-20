@@ -5032,3 +5032,23 @@ La siguiente captura muestra la actividad del repositorio durante el Sprint 2, i
 	<img src="resources/images/sprint-2/avanzes/backend-avanze-sprint-2.png">
 </div>
 
+**Frontend – FerovaFamily**
+
+Durante este sprint se desarrollaron funcionalidades orientadas al seguimiento de tratamientos pediátricos, la comunicación entre madres y enfermeras, la visualización de establecimientos de salud y el monitoreo nutricional de los pacientes. La integración se realizó consumiendo los servicios REST del Backend mediante componentes y servicios reutilizables.
+
+* Se implementó el módulo de comunicación entre madres y enfermeras, permitiendo el envío y recepción de consultas relacionadas con el tratamiento de los pacientes mediante mensajería de texto.
+* Se desarrolló la funcionalidad de confirmación de dosis y visualización del historial de adherencia para facilitar el seguimiento de los tratamientos activos.
+* Se integró la visualización geográfica de postas médicas registradas por los administradores, permitiendo a las madres consultar los establecimientos disponibles y realizar reservas de citas médicas.
+* Se implementó el módulo de Achievement & Rewards para mostrar el progreso, los puntos acumulados y las insignias obtenidas por los pacientes en función de su adherencia al tratamiento.
+* Se desarrolló el Diario Nutricional, permitiendo registrar los alimentos consumidos por el paciente y visualizar la cantidad de hierro ingerida durante el seguimiento nutricional.
+* Se realizaron pruebas funcionales de navegación, consumo de APIs e integración entre los distintos módulos de la aplicación.
+
+Durante el Sprint 2 se integraron los siguientes Pull Requests principales:
+
+* Feat/achievements & rewards api (#8)
+* Feat/history dosis (#9)
+* Feat/map facilites (#10)
+* Feat/confirm doses (#11)
+* Feat/diary-nutrition (#14)
+
+La siguiente captura muestra la actividad del repositorio FerovaFamily durante el periodo del sprint, incluyendo los Pull Requests integrados y las métricas generales de desarrollo.
