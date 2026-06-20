@@ -3754,7 +3754,7 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
         </tr>
         <tr>
             <td>TS-11</td>
-            <td>Confirmar dosis diaria mediante API RESTful</td>
+            <td>Confirmar dosis diaria mediante</td>
             <td>TS-2</td>
             <td>Implementar endpoint POST /api/v1/treatments/{treatmentId}/confirm-dose</td>
             <td>Crear el endpoint de confirmación de una dosis diaria, actualizando la racha y el score de adherencia del paciente en MongoDB.</td>
@@ -3774,11 +3774,41 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
         </tr>
         <tr>
             <td>TS-14</td>
-            <td>Completar tratamiento del paciente mediante API RESTful</td>
+            <td>Completar tratamiento del paciente mediante</td>
             <td>TS-4</td>
             <td>Implementar endpoint PUT /api/v1/treatments/{treatmentId}/complete</td>
             <td>Implementar el endpoint de cierre exitoso del tratamiento para que la enfermera pueda marcar el tratamiento como completado.</td>
             <td>3</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-15</td>
+            <td>Registrar abandono del tratamiento</td>
+            <td>TS-5</td>
+            <td>Implementar endpoint PUT /api/v1/treatments/{treatmentId}/abandon</td>
+            <td>Implementar el endpoint abandono del tratamiento, para que la enfermera pueda marcar el tratamiento como abandonado y el sistema actualice las estadísticas del distrito en MongoDB.</td>
+            <td>3</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-16</td>
+            <td>Registrar entrada del diario nutricional</td>
+            <td>TS-6</td>
+            <td>Implementar endpoint POST /api/v1/nutritional-diary</td>
+            <td>Implementar el endpoint de registro de alimentos en el diario nutricional, para que la madre pueda registrar los alimentos consumidos por su hijo y el sistema calcule automáticamente el hierro absorbido y detecte alimentos inhibidores en MongoDB.</td>
+            <td>5</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-17</td>
+            <td>Obtener resumen nutricional diario</td>
+            <td>TS-7</td>
+            <td>Implementar endpoint GET /api/v1/nutritional-diary/{patientId}/summary/</td>
+            <td>Implementar el endpoint de registro de alimentos en el diario nutricional, para que la madre pueda registrar los alimentos consumidos por su hijo y el sistema calcule automáticamente el hierro absorbido y detecte alimentos inhibidores en MongoDB.</td>
+            <td>5</td>
             <td>Vitaly</td>
             <td>Done</td>
         </tr>
