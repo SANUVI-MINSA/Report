@@ -4949,3 +4949,23 @@ incluyendo la acción implementada, verbo HTTP, parámetros o cuerpo de solicitu
 ##### 4.2.2.7 Software Deployment Evidence for Sprint Review
 ##### 4.2.2.8 Team Collaboration Insights during Sprint
 
+**Backend**
+
+El desarrollo del Backend durante este sprint estuvo enfocado en la implementación de los Bounded Contexts **Treatment Tracking**, **Achievement & Rewards** y **Analytics Reporting**, incorporando nuevas capacidades para el seguimiento de tratamientos, evaluación de adherencia, asignación de logros e indicadores analíticos para la toma de decisiones clínicas.
+
+* Se trabajó mediante ramas temáticas independientes (`feat/treatments`, `feat/achievement-badges` y `feat/analytics-reporting`) para facilitar el desarrollo paralelo y la integración continua.
+* Se documentaron los nuevos endpoints mediante OpenAPI (Swagger), incluyendo servicios para seguimiento de tratamientos, consulta de logros y generación de reportes analíticos.
+* Se implementó comunicación basada en eventos entre los módulos de Treatment Tracking y Achievement & Rewards para el cálculo automático de progreso e insignias.
+* Se desarrollaron métricas analíticas para monitorear adherencia, niveles de riesgo, ranking de establecimientos y generación de reportes PDF.
+* Los Pull Requests fueron revisados e integrados en la rama `develop`, manteniendo trazabilidad mediante commits atómicos y documentación técnica asociada.
+* Se realizaron pruebas funcionales y de integración para validar la correcta interacción entre los tres Bounded Contexts implementados.
+
+Durante el periodo del sprint se integraron los siguientes Pull Requests principales:
+
+* Feat/treatments (#8)
+* Feat/achievement badges (#9)
+* Feat/analytics reporting (#12)
+
+La siguiente captura muestra la actividad del repositorio durante el Sprint 2, incluyendo los Pull Requests integrados y las métricas generales de desarrollo.
+
+
