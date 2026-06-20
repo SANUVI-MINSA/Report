@@ -5361,52 +5361,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TS-42</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-09</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Descarga de reporte de control médico específico por fecha mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de descarga de un control médico individual por fecha en formato PDF mediante una API REST, para que el personal de salud pueda obtener el comprobante detallado de una atención específica realizada en un día determinado.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Descarga de control específico exitoso</b><br>
-        Dado que el endpoint /api/v1/patients/{id}/controls/{date}/pdf está disponible, cuando se envía una solicitud GET con el token JWT válido, el ID del paciente y una fecha con registros, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el archivo PDF con el detalle de la atención, signos vitales y observaciones clínicas de ese día específico.<br>
-        <br>
-        <b>Escenario 2: Sin datos suficientes de control médico en la fecha ingresada o fecha incorrecta</b><br>
-        Dado que el endpoint /api/v1/patients/{id}/controls/{date}/pdf está disponible, cuando se envía una solicitud GET con una fecha en la que no se realizó ninguna atención o el formato de fecha es inválido, entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'No se encontró ningún registro de control médico para la fecha proporcionada.'<br>
-        <br>
-        <b>Escenario 3: Token JWT inválido o sin permiso de admin</b><br>
-        Dado que el endpoint /api/v1/patients/{id}/controls/{date}/pdf está disponible, cuando se envía una solicitud GET con un token JWT inválido o de un usuario sin los privilegios necesarios, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder a este reporte médico específico.'
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 #### 2.4.2 Impact Mapping
 
 En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear nuestros objetivos de empresa con los objetivos de nuestros segmentos.
@@ -5504,7 +5458,6 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 | 82 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
 | 83 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
 | 84 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
-| 85 | TS-42 | Descarga de reporte de control médico específico por fecha mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de un control médico individual por fecha para obtener el comprobante detallado de una atención específica. | 3 |
 
 ### 2.5 Strategic-Level Domain-Driven Design
 #### 2.5.1 EventStorming
