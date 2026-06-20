@@ -3822,6 +3822,16 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
             <td>Vitaly</td>
             <td>Done</td>
         </tr>
+			<tr>
+            <td>TS-19</td>
+            <td>Obtener insignias del tratamiento</td>
+            <td>TS-9</td>
+            <td>Implementar endpoint GET /api/v1/achievements/{patientId}/badges</td>
+            <td>implementar el endpoint de obtención de insignias desbloqueadas y bloqueadas, para que FerovaFamilia pueda mostrar a la madre todas las insignias disponibles del tratamiento y su estado actual.</td>
+            <td>9</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
     </tbody>
 </table>
 
