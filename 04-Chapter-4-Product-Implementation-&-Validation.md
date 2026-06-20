@@ -3812,6 +3812,16 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
             <td>Vitaly</td>
             <td>Done</td>
         </tr>
+			<tr>
+            <td>TS-18</td>
+            <td>Obtener racha y puntos del tratamiento</td>
+            <td>TS-8</td>
+            <td>Implementar endpoint GET /api/v1/achievements/{patientId}/streak </td>
+            <td>Implementar el endpoint de obtención de la racha de días consecutivos cumplidos y el saldo de puntos acumulados, para que FerovaFamilia pueda mostrar a la madre su progreso de gamificación actualizado.</td>
+            <td>3</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
     </tbody>
 </table>
 
