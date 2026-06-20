@@ -3832,6 +3832,56 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
             <td>Vitaly</td>
             <td>Done</td>
         </tr>
+			<tr>
+            <td>TS-37</td>
+            <td>Obtener resumen del dashboard analítico</td>
+            <td>TS-10</td>
+            <td>Implementar endpoint GET /api/analytics/dashboard/summary</td>
+            <td>implementar el endpoint de obtención del resumen del dashboard analítico, para que FerovaClinic pueda mostrar al administrador las métricas globales de adherencia de todas las postas activas.</td>
+            <td>3</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-38</td>
+            <td>Obtener puntos para mapa de calor</td>
+            <td>TS-11</td>
+            <td>Implementar endpoint GET /api/analytics/heatmap</td>
+            <td>implementar el endpoint de obtención de puntos para el mapa de calor,para que FerovaClinic pueda mostrar al administrador un mapa interactivo con las postas del distrito coloreadas según su nivel de riesgo basado en el porcentaje de adherencia.</td>
+            <td>7</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-39</td>
+            <td>Generar reporte PDF de adherencia</td>
+            <td>TS-12</td>
+            <td>Implementar endpoint GET /api/analytics/report/pdf</td>
+            <td>implementar el endpoint de generación de reporte PDF, para que FerovaClinic pueda permitir al administrador descargar un reporte completo con todas las métricas de adherencia de las postas del distrito.</td>
+            <td>5</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-40</td>
+            <td>Descargar historial médico completo en PDF </td>
+            <td>TS-13</td>
+            <td>Implementar endpoint GET /api/patients/medical-record/{medicalRecordId}/pdf</td>
+            <td>implementar el endpoint de descarga del historial médico en formato PDF mediante una API REST, para que el personal autorizado pueda obtener un documento oficial con todos los antecedentes, dosis confirmadas y observaciones del paciente para su archivo o derivación.</td>
+            <td>5</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+		<tr>
+            <td>TS-41</td>
+            <td>Descarga de control médico del paciente en PDF</td>
+            <td>TS-14</td>
+            <td>Implementar endpoint GET /api/patients/medical-record/{medicalRecordId}/hemoglobin-report</td>
+            <td>implementar el endpoint de descarga de controles médicos en formato PDF mediante una API REST, para que el personal de salud pueda obtener un documento consolidado que detalle exclusivamente las citas de control, asistencias y observaciones clínicas presenciales del paciente.</td>
+            <td>5</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
     </tbody>
 </table>
 
