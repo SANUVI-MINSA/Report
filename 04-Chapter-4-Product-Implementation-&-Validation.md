@@ -5032,6 +5032,8 @@ La siguiente captura muestra la actividad del repositorio durante el Sprint 2, i
 	<img src="resources/images/sprint-2/avanzes/backend-avanze-sprint-2.png">
 </div>
 
+<br></br>
+
 **Frontend – FerovaFamily**
 
 Durante este sprint se desarrollaron funcionalidades orientadas al seguimiento de tratamientos pediátricos, la comunicación entre madres y enfermeras, la visualización de establecimientos de salud y el monitoreo nutricional de los pacientes. La integración se realizó consumiendo los servicios REST del Backend mediante componentes y servicios reutilizables.
@@ -5052,3 +5054,7 @@ Durante el Sprint 2 se integraron los siguientes Pull Requests principales:
 * Feat/diary-nutrition (#14)
 
 La siguiente captura muestra la actividad del repositorio FerovaFamily durante el periodo del sprint, incluyendo los Pull Requests integrados y las métricas generales de desarrollo.
+
+<div align="center">
+	<img src="resources/images/sprint-2/avanzes/sprint-2-ferovafamily.png">
+</div>
