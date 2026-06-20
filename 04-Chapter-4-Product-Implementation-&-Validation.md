@@ -3723,25 +3723,66 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
 ##### 4.2.2.2 Sprint Backlog 2
 
 <table>
-	<tbody>
-		<tr>
-			<td><strong>Sprint #</strong></td>
-			<td colspan="7">Sprint 2</td>
-		</tr>
-		<tr>
-			<td colspan="2"><strong>User Story</strong></td>
-			<td colspan="6"><strong>Work-item / Task</strong></td>
-		</tr>
-		<tr>
-			<td><strong>Id</strong></td>
-			<td><strong>Title</strong></td>
-			<td><strong>Id</strong></td>
-			<td><strong>Title</strong></td>
-			<td><strong>Description</strong></td>
-			<td><strong>Estimation (Hours)</strong></td>
-			<td><strong>Assigned To</strong></td>
-			<td><strong>Status (To-Do / In-Process / To-review / Done)</strong></td>
-		</tr>
+    <tbody>
+        <tr>
+            <td><strong>Sprint #</strong></td>
+            <td colspan="7">Sprint 2</td>
+        </tr>
+        <tr>
+            <td colspan="2"><strong>User Story</strong></td>
+            <td colspan="6"><strong>Work-item / Task</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Id</strong></td>
+            <td><strong>Title</strong></td>
+            <td><strong>Id</strong></td>
+            <td><strong>Title</strong></td>
+            <td><strong>Description</strong></td>
+            <td><strong>Estimation (Hours)</strong></td>
+            <td><strong>Assigned To</strong></td>
+            <td><strong>Status (To-Do / In-Process / To-review / Done)</strong></td>
+        </tr>
+		 <tr>
+            <td>TS-10</td>
+            <td>Iniciar tratamiento del paciente mediante</td>
+            <td>TS-1</td>
+            <td>Implementar endpoint POST /api/v1/treatments</td>
+            <td>Crear el endpoint de inicio de tratamiento, para que la enfermera pueda activar el tratamiento de anemia de un paciente y programar automáticamente los recordatorios diarios de dosis en el sistema.</td>
+            <td>5</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+        <tr>
+            <td>TS-11</td>
+            <td>Confirmar dosis diaria mediante API RESTful</td>
+            <td>TS-2</td>
+            <td>Implementar endpoint POST /api/v1/treatments/{treatmentId}/confirm-dose</td>
+            <td>Crear el endpoint de confirmación de una dosis diaria, actualizando la racha y el score de adherencia del paciente en MongoDB.</td>
+            <td>7</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+        <tr>
+            <td>TS-12</td>
+            <td>Obtener score de riesgo de abandono del paciente</td>
+            <td>TS-3</td>
+            <td>Implementar endpoint GET /api/v1/treatments/{treatmentId}/risk-score</td>
+            <td>Obtener el score de riesgo de abandono del paciente para mostrar a la enfermera el semáforo de riesgo calculado automáticamente por el sistema.</td>
+            <td>5</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+        <tr>
+            <td>TS-14</td>
+            <td>Completar tratamiento del paciente mediante API RESTful</td>
+            <td>TS-4</td>
+            <td>Implementar endpoint PUT /api/v1/treatments/{treatmentId}/complete</td>
+            <td>Implementar el endpoint de cierre exitoso del tratamiento para que la enfermera pueda marcar el tratamiento como completado.</td>
+            <td>3</td>
+            <td>Vitaly</td>
+            <td>Done</td>
+        </tr>
+    </tbody>
 </table>
 
 ##### 4.2.2.3 Development Evidence for Sprint Review
