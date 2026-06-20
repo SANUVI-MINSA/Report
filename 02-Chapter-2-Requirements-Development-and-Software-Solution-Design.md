@@ -5072,51 +5072,7 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TS-37</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-09</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Obtener dashboard analítico del distrito mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico del distrito mediante una API REST, para que FerovaClinic pueda mostrar al admin el porcentaje de adherencia de cada posta, la cantidad de pacientes activos, completados y abandonados y la tabla comparativa de rendimiento entre postas.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Obtención del dashboard exitosa</b><br>
-        Dado que el endpoint /api/v1/reports/dashboard está disponible, cuando se envía una solicitud GET con el token JWT valido y el ID del distrito, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el porcentaje de adherencia de cada posta del distrito, la cantidad de pacientes activos, completados y abandonados y la tabla comparativa del rendimiento entre todas las postas.<br>
-        <br>
-        <b>Escenario 2: Sin reportes enviados por las enfermeras</b><br>
-        Dado que el endpoint /api/v1/reports/dashboard está disponible, cuando se envía una solicitud GET y ninguna enfermera ha enviado su reporte de adherencia aun, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el mensaje: 'No hay reportes disponibles para mostrar en el dashboard.'<br>
-        <br>
-        <b>Escenario 3: Token JWT invalido o sin permisos de admin</b><br>
-        Dado que el endpoint /api/v1/reports/dashboard está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder al dashboard analítico.'
-      </td>
-    </tr>
-  </tbody>
-</table>
+<table border="1" cellpadding="10" cellspacing="0" width="100%"> <thead> <tr> <th>Story ID</th> <th>User</th> <th>Priority</th> <th>Epic</th> </tr> </thead> <tbody> <tr> <td>TS-37</td> <td>Desarrollador</td> <td>High</td> <td>EP-09</td> </tr> <tr> <td><b>Title</b></td> <td colspan="3">Obtener resumen del dashboard analítico mediante API RESTful</td> </tr> <tr> <td colspan="4"><b>Description</b></td> </tr> <tr> <td colspan="4"> Como desarrollador, quiero implementar el endpoint de obtención del resumen del dashboard analítico mediante una API REST, para que FerovaClinic pueda mostrar al administrador las métricas globales de adherencia de todas las postas activas. </td> </tr> <tr> <td colspan="4"><b>Acceptance Criteria</b></td> </tr> <tr> <td colspan="4"> <b>Escenario 1: Obtención del dashboard exitosa</b><br> Dado que el endpoint <code>GET /api/analytics/dashboard/summary</code> está disponible, cuando se envía una solicitud GET con el token JWT válido y rol ADMIN, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el total de postas activas, el total de postas críticas y el porcentaje de adherencia global.<br> <br> <b>Escenario 2: Sin postas activas disponibles</b><br> Dado que el endpoint <code>GET /api/analytics/dashboard/summary</code> está disponible, cuando se envía una solicitud GET y no hay postas activas con tratamientos, entonces se recibe una respuesta con estado 200 y el cuerpo contiene el mensaje: 'No hay postas activas disponibles para mostrar en el dashboard.'<br> <br> <b>Escenario 3: Token JWT inválido o sin permisos de admin</b><br> Dado que el endpoint <code>GET /api/analytics/dashboard/summary</code> está disponible, cuando se envía una solicitud GET con un token JWT de un usuario que no tiene rol de administrador, entonces se recibe una respuesta con estado 403 y el cuerpo contiene el mensaje: 'No tiene permisos para acceder al dashboard analítico.' </td> </tr> </tbody> </table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
