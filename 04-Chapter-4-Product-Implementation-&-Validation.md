@@ -4907,7 +4907,7 @@ A continuación se presentan los materiales de evidencia correspondientes a los 
 **Video del Backend (demostración):**  [Backend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB)
 
 
-<img src="resources/images/sprint-1/evidencias/backend-sprint-2.png">
+<img src="resources/images/sprint-2/evidencias/backend-sprint-2.png">
 
 ##### 4.2.2.6 Services Documentation Evidence for Sprint Review
 
