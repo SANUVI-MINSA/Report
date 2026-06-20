@@ -4945,52 +4945,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </thead>
   <tbody>
     <tr>
-      <td>TS-32</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-08</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Enviar segundo recordatorio de dosis mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de envío del segundo recordatorio de dosis mediante una API REST, para que el sistema pueda enviar automáticamente una segunda notificación push más urgente vía Firebase FCM si la madre no confirmó la dosis después de 2 horas del primer recordatorio.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Envío de segundo recordatorio exitoso</b><br>
-        Dado que el endpoint /api/v1/notifications/second-dose-reminder está disponible, cuando el sistema detecta que han pasado 2 horas desde el primer recordatorio y la madre aún no ha confirmado la dosis, entonces se envía automáticamente una segunda notificación push más urgente vía Firebase FCM al dispositivo de la madre y se recibe una respuesta con estado 200 confirmando el envío exitoso.<br>
-        <br>
-        <b>Escenario 2: Dosis confirmada antes del segundo recordatorio</b><br>
-        Dado que el endpoint /api/v1/notifications/second-dose-reminder está disponible, cuando el sistema detecta que la madre confirmó la dosis antes de que pasen 2 horas del primer recordatorio, entonces no se envía el segundo recordatorio y se recibe una respuesta con estado 200 y el mensaje: 'La dosis fue confirmada. No se requiere enviar segundo recordatorio.'<br>
-        <br>
-        <b>Escenario 3: Error en el envío de la notificación</b><br>
-        Dado que el endpoint /api/v1/notifications/second-dose-reminder está disponible, cuando Firebase FCM falla al intentar entregar la segunda notificación al dispositivo de la madre, entonces se recibe una respuesta con estado 500 y el cuerpo contiene el mensaje: 'Error al enviar el segundo recordatorio. Se reintentará el envío automáticamente.'
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td>TS-33</td>
       <td>Desarrollador</td>
       <td>Medium</td>
@@ -5541,17 +5495,16 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 | 73 | TS-29 | Reservar cita en posta medica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de reserva de cita en posta medica mediante una API REST, para que la madre pueda programar su cita de control presencial y el sistema notifique automáticamente a la enfermera asignada en MongoDB. | 5 |
 | 74 | TS-30 | Cancelar cita en posta medica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cancelación de cita en posta medica mediante una API REST, para que la madre pueda cancelar su cita reservada y el sistema libere automáticamente el horario y notifique a la enfermera en MongoDB. | 2 |
 | 75 | TS-31 | Obtener lista de citas programadas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la lista de citas programadas mediante una API REST, para que la enfermera pueda visualizar las citas de control presencial de sus pacientes asignados desde FerovaClinic. | 3 |
-| 76 | TS-32 | Enviar segundo recordatorio de dosis mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío del segundo recordatorio de dosis mediante una API REST, para que el sistema pueda enviar automáticamente una segunda notificación push vía Firebase FCM si no hay confirmación tras 2 horas. | 5 |
-| 77 | TS-33 | Obtener historial de notificaciones mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de notificaciones enviadas mediante una API REST, para que la madre pueda consultar en FerovaFamilia los recordatorios previos y estados de confirmación. | 2 |
-| 78 | TS-34 | Enviar notificación de recordatorio de cita mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de recordatorio de cita mediante una API REST, para que el sistema notifique a la madre vía Firebase FCM un día antes de su cita programada. | 3 |
-| 79 | TS-35 | Enviar notificación de logro desbloqueado mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de logro desbloqueado mediante una API REST, para incentivar a la madre cuando alcance hitos importantes del tratamiento. | 3 |
-| 80 | TS-36 | Registrar reporte de adherencia semanal mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro del reporte de adherencia semanal para que el sistema calcule automáticamente el porcentaje de adherencia de la posta en MongoDB. | 3 |
-| 81 | TS-37 | Obtener dashboard analítico del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico para mostrar al admin el rendimiento, pacientes activos y comparativas entre postas. | 8 |
-| 82 | TS-38 | Obtener mapa de calor del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor para visualizar zonas críticas coloreadas según el porcentaje de adherencia. | 8 |
-| 83 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
-| 84 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
-| 85 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
-| 86 | TS-42 | Descarga de reporte de control médico específico por fecha mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de un control médico individual por fecha para obtener el comprobante detallado de una atención específica. | 3 |
+| 76 | TS-33 | Obtener historial de notificaciones mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de notificaciones enviadas mediante una API REST, para que la madre pueda consultar en FerovaFamilia los recordatorios previos y estados de confirmación. | 2 |
+| 77 | TS-34 | Enviar notificación de recordatorio de cita mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de recordatorio de cita mediante una API REST, para que el sistema notifique a la madre vía Firebase FCM un día antes de su cita programada. | 3 |
+| 78 | TS-35 | Enviar notificación de logro desbloqueado mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de logro desbloqueado mediante una API REST, para incentivar a la madre cuando alcance hitos importantes del tratamiento. | 3 |
+| 79 | TS-36 | Registrar reporte de adherencia semanal mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro del reporte de adherencia semanal para que el sistema calcule automáticamente el porcentaje de adherencia de la posta en MongoDB. | 3 |
+| 80 | TS-37 | Obtener dashboard analítico del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico para mostrar al admin el rendimiento, pacientes activos y comparativas entre postas. | 8 |
+| 81 | TS-38 | Obtener mapa de calor del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor para visualizar zonas críticas coloreadas según el porcentaje de adherencia. | 8 |
+| 82 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
+| 83 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
+| 84 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
+| 85 | TS-42 | Descarga de reporte de control médico específico por fecha mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de un control médico individual por fecha para obtener el comprobante detallado de una atención específica. | 3 |
 
 ### 2.5 Strategic-Level Domain-Driven Design
 #### 2.5.1 EventStorming
