@@ -4830,8 +4830,113 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
 </table>
 
 ##### 4.2.2.4 Testing Suite Evidence for Sprint Review
+
+Se han automatizado 6 escenarios de prueba de aceptación (AT05-AT10) cubriendo los
+Bounded Contexts de Achievement Badges, Analytics Reporting y Treatment Tracking.
+Los commits han sido integrados en la rama develop del repositorio
+pediatric-care-acceptance-tests.
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Repository</th>
+            <th>Branch</th>
+            <th>Commit Id</th>
+            <th>Commit Message</th>
+            <th>Commit Message Body</th>
+            <th>Commited on (Date)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+            <td>main</td>
+            <td>45bdae5</td>
+            <td>add feature for viewing achievement progress</td>
+            <td>Verifica que una madre pueda consultar el progreso de adherencia y puntos acumulados del paciente.</td>
+            <td>20/06/2026</td>
+        </tr>
+        <tr>
+            <td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+            <td>main</td>
+            <td>2952979</td>
+            <td>add feature for viewing patient badges</td>
+            <td>Verifica que una madre pueda consultar las insignias obtenidas y su progreso de desbloqueo.</td>
+            <td>20/06/2026</td>
+        </tr>
+        <tr>
+            <td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+            <td>main</td>
+            <td>aaeb4a2</td>
+            <td>add feature for analytics dashboard summary</td>
+            <td>Valida la consulta de métricas globales del dashboard para administradores.</td>
+            <td>20/06/2026</td>
+        </tr>
+        <tr>
+            <td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+            <td>main</td>
+            <td>d4d0328</td>
+            <td>add feature for facilities analytics reporting</td>
+            <td>Verifica la visualización de métricas de establecimientos de salud y niveles de riesgo.</td>
+            <td>20/06/2026</td>
+        </tr>
+        <tr>
+            <td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+            <td>main</td>
+            <td>249c41d</td>
+            <td>add feature for starting treatment</td>
+            <td>Verifica que una enfermera pueda iniciar correctamente un tratamiento para un paciente.</td>
+            <td>20/06/2026</td>
+        </tr>
+        <tr>
+            <td>SANUVI-MINSA/Sanuvi-acceptance-tests</td>
+            <td>main</td>
+            <td>b1b634a</td>
+            <td>add feature for confirming daily dose</td>
+            <td>Verifica que una madre pueda confirmar la dosis diaria y actualizar la adherencia al tratamiento.</td>
+            <td>20/06/2026</td>
+        </tr>
+    </tbody>
+</table>
+
 ##### 4.2.2.5 Execution Evidence for Sprint Review
 ##### 4.2.2.6 Services Documentation Evidence for Sprint Review
+
+Durante este sprint se avanzó significativamente en la documentación de los servicios web (REST API)
+del sistema Ferova, cubriendo los Bounded Contexts de <strong>Achievement & Rewards</strong>,
+<strong>Analytics Reporting</strong> y <strong>Treatment Tracking</strong>.
+La documentación fue generada utilizando **OpenAPI** **(Swagger)** y validada mediante pruebas de los
+endpoints implementados en el entorno de desarrollo.
+Se documentaron los endpoints relacionados con la gestión de logros y recompensas,
+seguimiento de tratamientos, adherencia de pacientes, monitoreo analítico de postas médicas,
+mapas de calor, reportes PDF y métricas de riesgo, cubriendo operaciones **HTTP** **GET**, **POST** y **PUT**.
+A continuación, se presenta la tabla resumen de los endpoints documentados,
+incluyendo la acción implementada, verbo HTTP, parámetros o cuerpo de solicitud y ejemplos de uso.
+
+| Endpoint                                                     | Acción                                    | Verbo HTTP | Parámetros / Request Body                                                                                               | Ejemplo                                                                                                     |
+| ------------------------------------------------------------ | ----------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `/api/achievements-rewards/patients/{patientId}/achievement` | Consultar progreso del paciente           | GET        | `patientId`                                                                                                             | `{ "patientName":"Mateo Perez", "totalPoints":70, "currentStreak":7, "longestStreak":30 }`                  |
+| `/api/achievements-rewards/patients/{patientId}/badges`      | Consultar insignias obtenidas             | GET        | `patientId`                                                                                                             | `{ "badges":[{ "name":"First Week", "isUnlocked":true, "progress":100 }] }`                                 |
+| `/api/analytics/dashboard/summary`                           | Obtener resumen global del dashboard      | GET        | Sin parámetros                                                                                                          | `{ "totalActiveFacilities":4, "totalCriticalFacilities":2, "globalAdherenceRate":54.25 }`                   |
+| `/api/analytics/facilities`                                  | Obtener métricas de postas médicas        | GET        | `riskLevel=LOW \| MEDIUM \| HIGH` (opcional)                                                                            | `{ "facilities":[{ "facilityName":"Posta Canto Grande", "adherenceRate":85.5, "riskLevel":"LOW" }] }`       |
+| `/api/analytics/facilities/top`                              | Obtener Top 4 postas con mejor adherencia | GET        | Sin parámetros                                                                                                          | `{ "facilities":[{ "facilityName":"Posta Canto Grande", "adherenceRate":95.8 }] }`                          |
+| `/api/analytics/heatmap`                                     | Obtener datos para mapa de calor          | GET        | `riskLevel=LOW \| MEDIUM \| HIGH` (opcional)                                                                            | `{ "points":[{ "facilityName":"Posta Canto Grande", "lat":-12.0433, "lng":-77.0282, "riskLevel":"LOW" }] }` |
+| `/api/analytics/report/pdf`                                  | Generar reporte PDF                       | GET        | Sin parámetros                                                                                                          | `Archivo PDF generado correctamente`                                                                        |
+| `/api/treatment-tracking/treatments`                         | Iniciar tratamiento                       | POST       | `{ "patientId":"uuid", "supplementName":"Vitamina C", "quantity":"500mg", "dosingHours":"8:00 AM", "durationDays":30 }` | `{ "message":"Treatment started successfully", "status":"ACTIVE" }`                                         |
+| `/api/treatment-tracking/doses/confirm`                      | Confirmar dosis diaria                    | POST       | `{ "patientId":"uuid" }`                                                                                                | `{ "message":"Dose confirmed successfully", "status":"CONFIRMED" }`                                         |
+| `/api/treatment-tracking/patients/{patientId}/today-dose`    | Consultar dosis programada para hoy       | GET        | `patientId`                                                                                                             | `{ "status":"PENDING", "canConfirm":true }`                                                                 |
+| `/api/treatment-tracking/patients/{patientId}/dose-history`  | Consultar historial de dosis              | GET        | `patientId`                                                                                                             | `{ "patientName":"Irini Baca", "doses":[{ "status":"OMITTED" }] }`                                          |
+| `/api/treatment-tracking/risk-overview`                      | Consultar resumen de riesgo               | GET        | Sin parámetros                                                                                                          | `{ "summary":{ "HIGH":2, "MEDIUM":5, "LOW":8 } }`                                                           |
+| `/api/treatment-tracking/risk/{riskLevel}/patients`          | Consultar pacientes por nivel de riesgo   | GET        | `riskLevel=HIGH \| MEDIUM \| LOW`                                                                                       | `{ "riskLevel":"MEDIUM", "patients":[{ "patientName":"Irini Baca", "score":50 }] }`                         |
+| `/api/treatment-tracking/treatments/complete`                | Completar tratamiento                     | PUT        | `{ "treatmentId":"uuid", "observation":"Tratamiento finalizado" }`                                                      | `{ "message":"Treatment completed successfully" }`                                                          |
+| `/api/treatment-tracking/treatments/abandon`                 | Abandonar tratamiento                     | PUT        | `{ "treatmentId":"uuid", "observation":"Paciente abandonó tratamiento" }`                                               | `{ "message":"Treatment abandoned successfully" }`                                                          |
+| `/api/treatment-tracking/nurses/pending-patients`               | Obtener pacientes pendientes de tratamiento             | GET        | Sin parámetros                                       | `{ "nurseId":"uuid", "hasPendingPatients":true, "pendingPatients":[{ "patientId":"uuid", "patientName":"Irini Baca" }] }` |
+| `/api/treatment-tracking/nurses/treatments`                     | Obtener tratamientos asignados a una enfermera          | GET        | `status=ACTIVE \| COMPLETED \| ABANDONED` (opcional) | `{ "treatments":[{ "patientName":"Irini Baca", "status":"ACTIVE" }] }`                                                    |
+| `/api/treatment-tracking/treatments/{treatmentId}`              | Obtener detalle de un tratamiento                       | GET        | `treatmentId`                                        | `{ "id":"uuid", "patientName":"Irini Baca", "supplementName":"Vitamina C", "status":"ACTIVE" }`                           |
+| `/api/treatment-tracking/patients/{patientId}/treatment-detail` | Obtener detalle completo del tratamiento de un paciente | GET        | `patientId`                                          | `{ "patientName":"Irini Baca", "riskLevel":"MEDIUM", "score":50, "adherenceScore":75 }`                                   |
+| `/api/treatment-tracking/doses/evaluate-missed`                 | Evaluar dosis omitida automáticamente                   | POST       | `{ "dailyDoseId":"uuid" }`                           | `{ "message":"Missed dose evaluated successfully" }`                                                                      |
+
+
 ##### 4.2.2.7 Software Deployment Evidence for Sprint Review
 ##### 4.2.2.8 Team Collaboration Insights during Sprint
 
