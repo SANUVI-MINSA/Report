@@ -4900,6 +4900,15 @@ pediatric-care-acceptance-tests.
 </table>
 
 ##### 4.2.2.5 Execution Evidence for Sprint Review
+
+A continuación se presentan los materiales de evidencia correspondientes a los tres productos desarrollados durante el Sprint 2: Backend y Aplicación Móvil Flutter (primera presentacion) y Aplicacion Movil Android - kotlin (avance completo) . Cada sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
+
+
+**Video del Backend (demostración):**  [Backend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB)
+
+
+<img src="resources/images/sprint-1/evidencias/backend-sprint-2.png">
+
 ##### 4.2.2.6 Services Documentation Evidence for Sprint Review
 
 Durante este sprint se avanzó significativamente en la documentación de los servicios web (REST API)
