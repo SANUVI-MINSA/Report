@@ -4963,7 +4963,12 @@ pediatric-care-acceptance-tests.
 
 A continuación se presentará el desarrollo de la aplicación móvil FerovaClinic, elaborada en Flutter para la gestión y monitoreo de la cobertura de vacunación en las postas del MINSA. Se mostrará su arquitectura, el sistema de autenticación por roles, el panel administrativo con sus indicadores, el mapa de calor y la conexión con el backend, lo que se demuestra en el material audiovisual.
 
-**Video del Frontend - Ferova Clinic (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG)
+**Video del Frontend - Ferova Family (demostración):** [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/personal/u20231c426_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231c426%5Fupc%5Fedu%5Fpe%2FDocuments%2F2026%2D06%2D20%2023%2D52%2D09%2Emkv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eeff3caf3%2D56e6%2D4180%2Dacfa%2D8b4c24d01752)
+
+<img src="resources/images/sprint-2/evidencias/ferova-family-sprint-2.png">
+
+
+**Video del Frontend - Ferova Family (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG)
 
 <img src="resources/images/sprint-2/evidencias/ferova-clinic-sprint-2.png">
 
