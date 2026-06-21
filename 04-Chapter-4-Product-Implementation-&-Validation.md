@@ -4961,22 +4961,27 @@ pediatric-care-acceptance-tests.
 
 ##### 4.2.2.5 Execution Evidence for Sprint Review
 
-A continuación se presentará el desarrollo de la aplicación móvil FerovaClinic, elaborada en Flutter para la gestión y monitoreo de la cobertura de vacunación en las postas del MINSA. Se mostrará su arquitectura, el sistema de autenticación por roles, el panel administrativo con sus indicadores, el mapa de calor y la conexión con el backend, lo que se demuestra en el material audiovisual.
+A continuación se presentan los materiales de evidencia correspondientes a los tres productos desarrollados durante el Sprint 2: Backend y Aplicación Móvil Flutter (primera presentacion) y Aplicacion Movil Android - kotlin (avance completo). Cada sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
 
-**Video del Frontend - Ferova Family (demostración):** [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/personal/u20231c426_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231c426%5Fupc%5Fedu%5Fpe%2FDocuments%2F2026%2D06%2D20%2023%2D52%2D09%2Emkv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eeff3caf3%2D56e6%2D4180%2Dacfa%2D8b4c24d01752)
+**Video del Frontend - Ferova Family (demostración):** [Frontend - Ferova Fam](https://upcedupe-my.sharepoint.com/personal/u20231c426_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231c426%5Fupc%5Fedu%5Fpe%2FDocuments%2F2026%2D06%2D20%2023%2D52%2D09%2Emkv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eeff3caf3%2D56e6%2D4180%2Dacfa%2D8b4c24d01752)
+
+El video muestra las funcionalidades implementadas para las madres, incluyendo el registro de alimentos en el Diario Nutricional, la visualización del consumo de hierro del paciente, la consulta de logros e insignias obtenidas mediante el módulo Achievement & Rewards, la confirmación e historial de dosis del tratamiento, la visualización de postas médicas registradas en el sistema mediante mapas interactivos, la reserva de citas médicas y el envío de consultas a enfermeras a través del módulo de comunicación.
 
 <img src="resources/images/sprint-2/evidencias/ferova-family-sprint-2.png">
 
 
 **Video del Frontend - Ferova Family (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG)
 
-<img src="resources/images/sprint-2/evidencias/ferova-clinic-sprint-2.png">
+El video presenta las funcionalidades desarrolladas para los roles de Administrador y Enfermera, incluyendo el inicio de sesión con validación de roles, recuperación de contraseña, visualización del dashboard analítico con indicadores de adherencia, gestión de postas médicas, visualización de mapas de calor, consulta de métricas de riesgo y descarga de reportes PDF relacionados con el desempeño y nivel de adherencia de los establecimientos de salud.
 
-A continuación se presentan los materiales de evidencia correspondientes a los tres productos desarrollados durante el Sprint 2: Backend y Aplicación Móvil Flutter (primera presentacion) y Aplicacion Movil Android - kotlin (avance completo) . Cada sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
+<img src="resources/images/sprint-2/evidencias/ferova-clinic-sprint-2.png">
 
 
 **Video del Backend (demostración):**  [Backend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB)
 
+
+
+El video evidencia la implementación y validación de los servicios REST API desarrollados durante el Sprint 2, correspondientes a los Bounded Contexts de Treatment Tracking, Achievement & Rewards y Analytics Reporting. Se muestran pruebas de los endpoints documentados en Swagger/OpenAPI, incluyendo seguimiento de tratamientos, confirmación de dosis, consulta de logros e insignias, generación de reportes analíticos, mapas de calor, métricas de adherencia y generación de reportes PDF.
 
 <img src="resources/images/sprint-2/evidencias/backend-sprint-2.png">
 
