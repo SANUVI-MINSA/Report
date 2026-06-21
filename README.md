@@ -335,12 +335,10 @@ En cuanto al **Project Report**, se incluyeron los siguientes apartados requerid
       
 ## [Conclusiones](05-Conclusions.md#conclusiones)
 
-* [Conclusiones y recomendaciones](05-Conclusions.md#conclusiones-y-recomendaciones)
 
+# [Video About the product](video-about-product.md#video-about-product)
 
-* [Video About the product](video-about-product.md#video-about-product)
-
-* [Video About the team](05-video-about-the-team.md#video-about-the-team)
+# [Video About the team](05-video-about-the-team.md#video-about-the-team)
   
 </div>
 
