@@ -5024,6 +5024,61 @@ incluyendo la acción implementada, verbo HTTP, parámetros o cuerpo de solicitu
 
 ##### 4.2.2.7 Software Deployment Evidence for Sprint Review
 
+Durante este sprint se realizó el despliegue del Backend del sistema Ferova utilizando Railway como plataforma de alojamiento en la nube y MongoDB Atlas como servicio de persistencia de datos. El despliegue incluyó los nuevos servicios REST correspondientes a los Bounded Contexts Achievement & Rewards, Analytics Reporting y Treatment Tracking, desarrollados durante el Sprint 2.
+
+**Paso 1: Configuración de la Base de Datos en MongoDB Atlas**
+
+Se configuraron las bases de datos necesarias dentro del clúster de MongoDB Atlas para soportar los nuevos módulos implementados durante el sprint.
+
+- **Resultado:** Las bases de datos quedaron preparadas para almacenar información relacionada con tratamientos, adherencia, logros, insignias, métricas analíticas y reportes del sistema.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment-steps-ferova-backend/step-4.png">
+</div>
+
+<br>
+
+**Paso 2: Vinculación del Repositorio Backend con Railway**
+
+Se conectó el repositorio GitHub SANUVI-MINSA/backend-ferova con Railway para automatizar el proceso de construcción y despliegue de la aplicación.
+
+- **Resultado:** Railway quedó sincronizado con el repositorio oficial del proyecto, permitiendo desplegar automáticamente las nuevas funcionalidades desarrolladas.
+ 
+<div align="center">
+	<img src="resources/images/sprint-2/deployment-steps-ferova-backend/step-1.png">
+</div>
+
+<br>
+
+**Paso 3: Configuración del Entorno de Pruebas**
+
+Se configuró un entorno de pruebas asociado a la rama `deployment-test`, utilizado para validar la integración de los nuevos endpoints antes de su liberación.
+
+- **Resultado:** Se verificó correctamente el funcionamiento de los servicios correspondientes a:
+
+	- Achievement & Rewards: consulta de logros, puntos acumulados y medallas obtenidas por los pacientes.
+	
+	- Analytics Reporting: dashboard de análisis con cantidad de postas activas, postas críticas, adherencia global, mapa de calor y generación de reportes PDF.
+
+	- Treatment Tracking: inicio de tratamientos, confirmación de dosis, historial de adherencia y monitoreo de riesgo de los pacientes.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment-steps-ferova-backend/step-2.png">
+</div>
+
+**Paso 4: Configuración del Entorno de Producción**
+
+Se configuró un entorno de producción conectado a la rama `deployment`, destinado a las versiones estables del sistema.
+
+- **Resultado:** Los nuevos módulos desarrollados durante el Sprint 2 quedaron disponibles para su ejecución en el entorno de producción mediante despliegues automáticos desde GitHub.
+
+<div align="center">
+	<img src="resources/images/sprint-2/deployment-steps-ferova-backend/step-3.png">
+</div>
+
+
+---
+
 Hemos Desplegaro la aplicación móvil Ferova Family utilizando Firebase App Distribution, permitiendo que los evaluadores o usuarios de prueba puedan instalar y probar la aplicación antes de su lanzamiento oficial.
 
 **Paso 1: Creación del Proyecto en Firebase**
