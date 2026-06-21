@@ -3712,11 +3712,11 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
   </tr>
   <tr>
     <td>Sprint 2 Velocity</td>
-    <td></td>
+    <td>195</td>
   </tr>
   <tr>
     <td>Sum of Story Points</td>
-    <td></td>
+    <td>195</td>
   </tr>
 </table>
 
