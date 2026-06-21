@@ -3990,6 +3990,98 @@ El objetivo principal del Sprint Backlog 2 es desarrollar los servicios y la ló
 
 ----
 
+
+| Repository | Branch | Commit Id | Commit Message / Body | Committed on |
+|------------|---------|-----------|------------------------|--------------|
+| Ferova Clinic | feat/health-facility | 9869fee | feat: add Appointment model and AppointmentRepository interface | Last week |
+| Ferova Clinic | feat/health-facility | ce15d3a | feat: implement AppointmentService for fetching nurse appointments | Last week |
+| Ferova Clinic | feat/health-facility | d46c921 | feat: add AppointmentService, AppointmentRepository and AppointmentViewModel | Last week |
+| Ferova Clinic | feat/health-facility | 6161fad | feat: add NurseAppointmentsPage, AppointmentCard, AppointmentState and AppointmentViewModel | Last week |
+| Ferova Clinic | feat/health-facility | 43cae8e | feat: enhance NurseHomePage with appointment management and display features | Last week |
+| Ferova Clinic | feat/health-facility | a5b8eae | feat: add AdminFacility model to represent health facility data | Last week |
+| Ferova Clinic | feat/health-facility | ade28dc | feat: add AdminFacilityResponseDto and AdminFacilityRepository for health facility management | Last week |
+| Ferova Clinic | feat/health-facility | b48fb6d | feat: implement AdminFacilityService and AdminFacilityRepositoryImpl | Last week |
+| Ferova Clinic | feat/health-facility | 91fdfae | feat: add AdminFacilityViewModel and AdminFacilityState | Last week |
+| Ferova Clinic | feat/health-facility | d9f0c0f | feat: add AdminFacilityPage and AdminFacilityCard for facility administration | Last week |
+| Ferova Clinic | feat/health-facility | 128f7d6 | feat: implement nurse availability validation for facility registration | Last week |
+| Ferova Clinic | feat/health-facility | c3d264c | feat: implement nurse availability check and update AdminFacilityCard interaction | Last week |
+| Ferova Clinic | feat/health-facility | c746297 | feat: add Nurse model with id and fullName attributes | Last week |
+| Ferova Clinic | feat/health-facility | 506d79c | feat: implement getAvailableNurses method in repository | Last week |
+| Ferova Clinic | feat/health-facility | 3434cd4 | feat: add getAvailableNurses method in AdminFacilityViewModel | Last week |
+| Ferova Clinic | feat/health-facility | 7aa2ad4 | feat: add NurseSelectionPage and integrate nurse assignment workflow | Last week |
+| Ferova Clinic | feat/health-facility | 73dfc7d | feat: add NurseAssignmentRequestDto and NurseAssignmentResponseDto | Last week |
+| Ferova Clinic | feat/health-facility | 5526626 | feat: implement assignNurse method in repository for nurse assignment | Last week |
+| Ferova Clinic | feat/health-facility | 639256b | feat: add nurse assignment functionality in AdminFacilityViewModel | Last week |
+| Ferova Clinic | feat/health-facility | 77cd581 | feat: add confirmation popup for nurse assignment | Last week |
+| Ferova Clinic | feat/health-facility | 2fd5e58 | feat: add DTOs for health facility registration request and response | Last week |
+| Ferova Clinic | feat/health-facility | b262fac | feat: implement postAdminFacility method for health facility registration | Last week |
+| Ferova Clinic | feat/health-facility | d3d0fbd | feat: add registerAdminFacility method to repository | Last week |
+| Ferova Clinic | feat/health-facility | b280257 | feat: add getDistricts method for district retrieval | 4 days ago |
+| Ferova Clinic | feat/health-facility | 744fa79 | feat: add AdminFacilityRegistrationPage and GeneralInfoStep | 4 days ago |
+| Ferova Clinic | feat/health-facility | 620e02b | feat: add MapLocationStep for location selection and address retrieval | 4 days ago |
+| Ferova Clinic | feat/health-facility | 960fc4a | feat: add ServicesSelectionStep for facility services configuration | 4 days ago |
+| Ferova Clinic | feat/health-facility | e4230cb | feat: add TimeSelectionStep for schedules and available slots | 4 days ago |
+| Ferova Clinic | feat/health-facility | 9cacd94 | feat: implement facility registration workflow in AdminFacilityViewModel | 4 days ago |
+| Ferova Clinic | feat/health-facility | 9f4643e | feat: add ConfirmedAdminFacilityRegistrationPage for registration summary | 4 days ago |
+| Ferova Clinic | feat/health-facility | 6c2f9c1 | feat: enhance facility registration and nurse assignment handling | 4 days ago |
+| Ferova Clinic | feat/health-facility | 201b0ab | feat: enhance nurse selection UI with loading and error handling | 4 days ago |
+| Ferova Clinic | feat/health-facility | bb97ef4 | feat: add confirmation dialog and loading overlay for facility registration | 4 days ago |
+| Ferova Clinic | feat/Home | 63c2e9d | feat: add AdminHome feature with state management and UI components | 2 weeks ago |
+| Ferova Clinic | feat/Home | d88392e | feat: add user retrieval methods to AuthService (getUserByEmail, getUserById) | 2 weeks ago |
+| Ferova Clinic | feat/Home | 641e7b4 | feat: add getUserByEmail and getUserById methods to AuthRepository | 2 weeks ago |
+| Ferova Clinic | feat/Home | e012835 | refactor: update AdminHomeViewModel factory to include AuthRepository dependency | 2 weeks ago |
+| Ferova Clinic | feat/Home | ab57290 | feat: implement logout functionality with confirmation dialog in AdminHomePage | 2 weeks ago |
+| Ferova Clinic | feat/Home | 73e5c39 | feat: add logout method and AuthRepository dependency to AdminHomeViewModel | 2 weeks ago |
+| Ferova Clinic | feat/Home | e4ea938 | feat: implement role-based access control and JWT decoding in LoginViewModel | 2 weeks ago |
+| Ferova Clinic | feat/Home | 34067cb | feat: reset LoginViewModel state on LoginPage initialization | 2 weeks ago |
+| Ferova Clinic | feat/Home | b94f152 | feat: add user existence and role-based validation to password recovery | 2 weeks ago |
+| Ferova Clinic | feat/Home | 58eeee3 | feat: implement role-based navigation for Admin and Nurse after login | 2 weeks ago |
+| Ferova Clinic | feat/Home | 3bec6a7 | feat: implement NurseHomePage with patient dashboard and clinical risk tracking | 2 weeks ago |
+| Ferova Clinic | feat/Home | 9cc79ce | feat: register NurseHomeViewModel in dependency injection | 2 weeks ago |
+| Ferova Clinic | feat/Home | 34ee3a0 | feat: add NurseHomeState for nurse dashboard management | 2 weeks ago |
+| Ferova Clinic | feat/Home | b76eca8 | feat: add NurseHomeViewModel with logout functionality | 2 weeks ago |
+| Ferova Clinic | feat/Home | 305f7e2 | feat: enhance AdminHome with analytics integration and dashboard UI updates | Last week |
+| Ferova Clinic | feat/auth | ede532b | feat: add User domain class for authentication and staff registration | 2 weeks ago |
+| Ferova Clinic | feat/auth | 9044cdd | feat: add methods to manage login and register | 2 weeks ago |
+| Ferova Clinic | feat/auth | f2916fa | feat: add methods to save token, retrieve token and logout | 2 weeks ago |
+| Ferova Clinic | feat/auth | 98efdac | feat: add DTOs for login and staff registration | 2 weeks ago |
+| Ferova Clinic | feat/auth | 8d6eed1 | feat: add AuthService with login and staff registration methods | 2 weeks ago |
+| Ferova Clinic | feat/auth | dcb93b8 | feat: add AuthRepositoryImpl with authentication and token management | 2 weeks ago |
+| Ferova Clinic | feat/auth | 1b59e00 | feat: add LoginState and RegisterState for authentication layer | 2 weeks ago |
+| Ferova Clinic | feat/auth | ff60d73 | feat: add RegisterViewModel and LoginViewModel | 2 weeks ago |
+| Ferova Clinic | feat/auth | ddafb1d | feat: add LoginPage and RegisterPage with role selection | 2 weeks ago |
+| Ferova Clinic | feat/auth | bd2317c | feat: improve registration and login error handling | 2 weeks ago |
+| Ferova Clinic | feat/auth | d6d496b | feat: update registerStaff response and error handling in AuthService | 2 weeks ago |
+| Ferova Clinic | feat/auth | d554897 | feat: add dependency injection configuration for authentication | 2 weeks ago |
+| Ferova Clinic | feat/auth | 0c0beab | refactor: unify LoginState and RegisterState using copyWith pattern | 2 weeks ago |
+| Ferova Clinic | feat/auth | f4c583a | feat: refactor LoginViewModel and RegisterViewModel to ChangeNotifier | 2 weeks ago |
+| Ferova Clinic | feat/auth | 4e15340 | refactor: improve RegisterStaffResponseDto validation | 2 weeks ago |
+| Ferova Clinic | feat/auth | 12b1760 | feat: integrate authentication view models with UI and form validation | 2 weeks ago |
+| Ferova Clinic | feat/auth | 91df747 | feat: configure providers and set LoginPage as application entry point | 2 weeks ago |
+| Ferova Clinic | feat/auth | b5d5703 | feat: add networking, storage and state management dependencies | 2 weeks ago |
+| Ferova Clinic | feat/auth | 294d915 | feat: improve login page feedback and message handling | 2 weeks ago |
+| Ferova Clinic | feat/auth | ea8bd1e | feat: implement message handling in login and register view models | 2 weeks ago |
+| Ferova Clinic | feat/auth | d02770e | feat: implement user feedback in registration flow | 2 weeks ago |
+| Ferova Clinic | feat/auth | 22b9a09 | feat: implement password recovery, verification and reset pages | 2 weeks ago |
+| Ferova Clinic | feat/auth | 77bc418 | feat: implement password recovery navigation and business logic | 2 weeks ago |
+| Ferova Clinic | feat/auth | 51df37f | refactor: use RegisterStaffResponseDto in repository and service | 2 weeks ago |
+| Ferova Clinic | feat/auth | 458b357 | refactor: reorganize authentication feature structure | 2 weeks ago |
+| Ferova Clinic | feat/auth | 0cffcbb | feat: add password reset methods to AuthRepository | 2 weeks ago |
+| Ferova Clinic | feat/auth | fc9d0e4 | feat: add password reset and verification code support in repository | 2 weeks ago |
+| Ferova Clinic | feat/auth | 2d27911 | feat: add DTOs for request code, verify code and reset password | 2 weeks ago |
+| Ferova Clinic | feat/auth | f0b97d5 | feat: add password reset and verification services | 2 weeks ago |
+| Ferova Clinic | feat/auth | 54967b2 | feat: add state classes for recovery, verification and reset password | 2 weeks ago |
+| Ferova Clinic | feat/auth | 6d06e9c | feat: add ViewModels for recovery password workflow | 2 weeks ago |
+| Ferova Clinic | feat/auth | 18b4fdf | feat: register recovery password ViewModels in dependency injection | 2 weeks ago |
+| Ferova Clinic | feat/auth | 866bc4e | feat: implement messaging and navigation in recovery password flow | 2 weeks ago |
+| Ferova Clinic | feat/auth | b767c5c | feat: implement verification code and resend functionality | 2 weeks ago |
+| Ferova Clinic | feat/auth | 7236e2f | feat: connect NewPasswordPage with ViewModel and UI feedback | 2 weeks ago |
+| Ferova Clinic | feat/auth | d441236 | refactor: provide RecoveryPasswordViewModel using ChangeNotifierProvider | 2 weeks ago |
+| Ferova Clinic | feat/auth | f5e1ae0 | chore: update .gitignore configuration | 2 weeks ago |
+
+
+----
+
 <table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px; text-align: center">
 	<thead>
     <tr>
