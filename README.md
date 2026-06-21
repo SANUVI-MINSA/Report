@@ -339,7 +339,7 @@ En cuanto al **Project Report**, se incluyeron los siguientes apartados requerid
 
 ## [Video About the Product](05-video-about-the-product.md#video-about-the-product)
 
-* [Video About the product](05-video-about-the-product.md#video-about-the-product)
+* [Video About the product](video-about-product.md#video-about-product)
 
 ## [Video About the Team](05-video-about-the-team.md#video-about-the-team)
 * [Video About the team](05-video-about-the-team.md#video-about-the-team)
