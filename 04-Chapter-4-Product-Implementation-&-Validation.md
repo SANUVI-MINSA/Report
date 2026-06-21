@@ -5058,3 +5058,30 @@ La siguiente captura muestra la actividad del repositorio FerovaFamily durante e
 <div align="center">
 	<img src="resources/images/sprint-2/avanzes/sprint-2-ferovafamily.png">
 </div>
+
+<br></br>
+
+**Frontend – FerovaClinic**
+
+Durante este sprint se desarrollaron las funcionalidades principales de la aplicación FerovaClinic orientadas a la gestión administrativa de establecimientos de salud y al monitoreo de indicadores de adherencia al tratamiento. La integración se realizó consumiendo los servicios REST del Backend mediante componentes reutilizables y vistas especializadas para los roles de Administrador y Enfermera.
+
+* Se implementó el módulo de autenticación, incluyendo inicio de sesión, recuperación de contraseña y validación de roles para usuarios Administrador y Enfermera.
+* Se desarrolló el Dashboard Administrativo para visualizar indicadores generales del sistema, incluyendo cantidad de postas activas, porcentaje global de adherencia y número de establecimientos críticos.
+* Se implementó el módulo de gestión de postas médicas, permitiendo registrar y administrar establecimientos de salud dentro de la plataforma.
+* Se integró la visualización geográfica de establecimientos mediante mapas interactivos y mapas de calor para el monitoreo de niveles de riesgo y adherencia.
+* Se desarrolló la generación y descarga de reportes PDF con información consolidada sobre el desempeño y nivel de adherencia de las postas registradas.
+* Se implementaron vistas diferenciadas según el rol del usuario, garantizando el acceso únicamente a las funcionalidades autorizadas para Administradores y Enfermeras.
+* Se realizaron pruebas funcionales de navegación, autenticación, autorización e integración con los servicios del Backend.
+
+Durante el Sprint 2 se integraron los siguientes Pull Requests principales:
+
+* Feat/auth (#1)
+* Feat/home (#2)
+* Feat/health facility (#3)
+
+La siguiente captura muestra la actividad del repositorio FerovaClinic durante el periodo del sprint, incluyendo los Pull Requests integrados y las métricas generales de desarrollo.
+
+
+<div align="center">
+	<img src="resources/images/sprint-2/avanzes/sprint-2-ferovaclinic.png">
+</div>
