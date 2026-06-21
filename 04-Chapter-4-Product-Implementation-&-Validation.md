@@ -3947,6 +3947,49 @@ El objetivo principal del Sprint Backlog 2 es desarrollar los servicios y la ló
 
 ##### 4.2.2.3 Development Evidence for Sprint Review
 
+| Repository | Branch | Commit Id | Commit Message / Body | Committed on |
+|------------|---------|-----------|-------------------------|--------------|
+| Ferova Family | feat/communication-management | 87b7544 | feat(communication): add Nurse domain model | 4 days ago |
+| Ferova Family | feat/communication-management | 013a3d7 | feat(communication): add Message domain model | 4 days ago |
+| Ferova Family | feat/communication-management | 230fc65 | feat(communication): add Consultation domain model | 4 days ago |
+| Ferova Family | feat/communication-management | 410a301 | feat(communication): add PatientWithNurse domain model | 4 days ago |
+| Ferova Family | feat/communication-management | 75bab72 | feat(communication): add ConsultationRepositoryImpl | 4 days ago |
+| Ferova Family | feat/communication-management | 9d05a7e | feat(communication): render patients with assigned nurse in consultations | 4 days ago |
+| Ferova Family | feat/communication-management | e62ef7c | feat(communication): bind NewConsultationScreen to selected child nurse | 4 days ago |
+| Ferova Family | feat/communication-management | 02e5eaa | feat(communication): add open and closed badges in MyConsultationsScreen | 4 days ago |
+| Ferova Family | feat/communication-management | af2cb7c | feat(communication): add closed consultation modal in ChatScreen | 4 days ago |
+| Ferova Family | feat/diary-nutrition | 9c910ce | feat: services and repositories for NutritionalDiary | 1 day ago |
+| Ferova Family | feat/diary-nutrition | 4375260 | feat: services and repositories for NutritionalDiary with DTOs | 1 day ago |
+| Ferova Family | feat/diary-nutrition | b0d9c6b | feat: NutritionalDiary domain classes | 1 day ago |
+| Ferova Family | feat/diary-nutrition | 9e58138 | feat: compose NutritionalDiary connected to endpoints | 1 day ago |
+| Ferova Family | feat/diary-nutrition | a5f0e48 | feat: NutritionalDiary screens connected to backend endpoints | 1 day ago |
+| Ferova Family | feat/diary-nutrition | 5bf19e2 | feat: MainScreen updated with NutritionalDiary integration | 1 day ago |
+| Ferova Family | feat/confirm-doses | a791cc2 | feat: implement dose confirmation and treatment tracking on HomeScreen | 2 weeks ago |
+| Ferova Family | feat/confirm-doses | 7664d33 | feat: add dosingHours field to TodayDose model | 2 weeks ago |
+| Ferova Family | feat/confirm-doses | 66980d9 | feat: update dose tracking UI in HomeScreen | 2 weeks ago |
+| Ferova Family | feat/confirm-doses | 2a9eecf | feat: update MedalListItem to display completion status and progress | 2 weeks ago |
+| Ferova Family | feat/confirm-doses | 1a2fd62 | feat: implement achievement tracking on HomeScreen | 2 weeks ago |
+| Ferova Family | feat/history-dosis | 149bf88 | feat: add DoseHistory domain model | 2 weeks ago |
+| Ferova Family | feat/history-dosis | 5fc1d97 | refactor: update TreatmentApiService and dose history response model | 2 weeks ago |
+| Ferova Family | feat/history-dosis | 863af56 | refactor: update Treatment DTOs and add DoseHistoryResponseDto | 2 weeks ago |
+| Ferova Family | feat/history-dosis | 3683414 | fix: refactor TreatmentRepository to use real API data | 2 weeks ago |
+| Ferova Family | feat/history-dosis | 014c5ee | feat: integrate remote dose history and treatment metadata | 2 weeks ago |
+| Ferova Family | feat/achievements-&-rewards-api | 26f0538 | feat: add AchievementResponse DTO for achievement tracking | 2 weeks ago |
+| Ferova Family | feat/achievements-&-rewards-api | ecddb39 | feat: persist selected child ID in TokenManager | 2 weeks ago |
+| Ferova Family | feat/achievements-&-rewards-api | aaaed30 | feat: add DTOs for hemoglobin evolution tracking | 2 weeks ago |
+| Ferova Family | feat/achievements-&-rewards-api | 654da22 | feat: add empty state handling for hemoglobin chart | 2 weeks ago |
+| Ferova Family | feat/achievements-&-rewards-api | 019e849 | feat: refactor ProgressViewModel to support dynamic badges | 2 weeks ago |
+| Ferova Family | feat/map-facilities | bf6f627 | feat: add location permissions to AndroidManifest | 3 weeks ago |
+| Ferova Family | feat/map-facilities | b276177 | feat: integrate real-time location and proximity filtering for health facilities | 3 weeks ago |
+| Ferova Family | feat/map-facilities | 1375d27 | feat: refactor location flow and health center retrieval in AppointmentsViewModel | 3 weeks ago |
+| Ferova Family | feat/map-facilities | 39e14e1 | feat: integrate AppointmentsViewModel and dynamic scheduling in AppointmentBookingScreen | 3 weeks ago |
+| Ferova Family | feat/map-facilities | bdf9d1a | refactor: optimize map performance and location retrieval | 3 weeks ago |
+| Ferova Family | feat/map-facilities | 1a9ef78 | feat: share AppointmentsViewModel across appointment navigation flow | 3 weeks ago |
+| Ferova Family | feat/map-facilities | 818a244 | feat: expand appointment management functionality in AppointmentsViewModel | 2 weeks ago |
+| Ferova Family | feat/map-facilities | 5521079 | feat: implement comprehensive UI and logic for AppointmentsScreen | 2 weeks ago |
+
+----
+
 <table border="1" cellpadding="8" cellspacing="0" width="100%" style="margin-bottom:18px; text-align: center">
 	<thead>
     <tr>
