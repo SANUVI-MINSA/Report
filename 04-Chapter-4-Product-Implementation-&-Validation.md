@@ -3726,10 +3726,6 @@ Como puntos a mejorar, se identificó que la comunicación entre el equipo de ba
 
 El objetivo principal del Sprint Backlog 2 es desarrollar las funcionalidades centrales de la aplicación móvil **FerovaFamily**, orientada al paciente: el seguimiento nutricional, el control de dosis, la ubicación y reserva en postas médicas, la gestión de citas, el sistema de medallas, el dashboard de hemoglobina, la gestión de cuenta y la comunicación con el personal de salud. La estimación total del Sprint Backlog 2 es de **85 horas**.
 
-**URL público del Board:** _[insertar enlace público del Board de Trello aquí]_
-
-_[Insertar aquí el screenshot del Board del Sprint en Trello]_
-
 | US Id | US Title | WI Id | Work-Item / Task | Description | Estimation (Hours) | Assigned To | Status |
 |---|---|---|---|---|---|---|---|
 | US-19 | Registro de alimentos en el diario nutricional | T01 | Visualizar diario nutricional | Pantalla que muestra el registro diario de alimentos consumidos por el paciente. | 6 | López Roman, Franco Mauricio | Done |
@@ -3759,10 +3755,6 @@ _[Insertar aquí el screenshot del Board del Sprint en Trello]_
 #### Frontend — FerovaClinic
 
 El objetivo principal del Sprint Backlog 2 es construir las funcionalidades base de la aplicación **FerovaClinic**, orientada al personal administrativo y clínico: la gestión de cuenta, la administración de postas médicas (registro de posta, horarios de atención y asignación de enfermeras) y el módulo de Analytics-Reporting con mapa de calor y exportación de reportes en PDF. La estimación total del Frontend de FerovaClinic es de **36 horas**.
-
-**URL público del Board:** _[insertar enlace público del Board de Trello aquí]_
-
-_[Insertar aquí el screenshot del Board del Sprint en Trello]_
 
 | US Id | US Title | WI Id | Work-Item / Task | Description | Estimation (Hours) | Assigned To | Status |
 |---|---|---|---|---|---|---|---|
