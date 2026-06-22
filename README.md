@@ -149,6 +149,11 @@ Estas actividades permitieron consolidar la integración entre frontend y backen
 
 ## Commits por integrante
 
+- Baca Camargo, Vitaly Arturo (**Mr-Code-star**) : 62 commits
+- Huapaya Galindo, Dyron (**MaineMa**) : 10 commits
+
+**Total de commits en AV2: 72**
+
 ---
 
 # Tabla de contenidos
