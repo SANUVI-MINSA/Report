@@ -119,7 +119,7 @@ En cuanto al **Project Report**, se incluyeron los siguientes apartados requerid
 **AV2:**
 ---
 
-![AV2 Insights de Github]()
+![AV2 Insights de Github](resources/images/presentation/AV2_Insights.png)
 
 ---
 
