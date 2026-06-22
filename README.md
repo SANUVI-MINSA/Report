@@ -121,6 +121,28 @@ En cuanto al **Project Report**, se incluyeron los siguientes apartados requerid
 **AV2:**
 ---
 
+Durante este Sprint 2 se continuó con el desarrollo integral de la solución Ferova, consolidando la implementación del Backend, la aplicación móvil **Ferova Family** y la aplicación móvil **Ferova Clinic**. Además, se completó la documentación técnica y las evidencias correspondientes para el Sprint Review, incluyendo pruebas automatizadas, documentación de servicios, despliegue y seguimiento de la colaboración del equipo.
+
+En el **Backend**, se desarrollaron nuevos módulos y endpoints correspondientes a los Bounded Contexts de **Analytics Reporting**, **Achievements & Rewards** y **Treatment Tracking**. Se implementaron funcionalidades para el cálculo de métricas de adherencia al tratamiento, generación de mapas de calor de establecimientos de salud, identificación de postas críticas, obtención de indicadores globales y generación de reportes en PDF. Asimismo, se incorporó la lógica para el seguimiento de tratamientos, confirmación de dosis y gestión de medallas y recompensas para los pacientes.
+
+En **Ferova Family (Android - Kotlin)** se integraron los nuevos servicios del backend y se implementaron funcionalidades completas para el registro de alimentos en el **Diario Nutricional**, visualización del consumo de hierro, gestión de tratamientos, confirmación e historial de dosis, sistema de logros y medallas, consultas mediante mensajería con enfermeras y visualización geográfica de establecimientos de salud mediante mapas interactivos. También se incorporó el flujo de reserva de citas en postas cercanas utilizando información obtenida desde el Backend.
+
+En **Ferova Clinic (Flutter)** se desarrollaron nuevas funcionalidades para los roles de Administrador y Enfermera. Se implementó el registro y gestión de establecimientos de salud, asignación de enfermeras a postas, visualización de citas médicas, dashboards con métricas de adherencia, indicadores de postas activas y críticas, mapas de calor y generación de reportes PDF. Además, se fortaleció el módulo de autenticación mediante registro de personal, inicio de sesión con validación por roles y recuperación de contraseña.
+
+Respecto al **Project Report**, durante este sprint se completaron las siguientes secciones:
+
+* Sprint Planning 2.
+* Sprint Backlog 2.
+* Development Evidence for Sprint Review.
+* Testing Suite Evidence for Sprint Review.
+* Execution Evidence for Sprint Review.
+* Services Documentation Evidence for Sprint Review.
+* Software Deployment Evidence for Sprint Review.
+* Team Collaboration Insights during Sprint.
+
+Estas actividades permitieron consolidar la integración entre frontend y backend, validar los principales casos de uso del sistema y dejar la solución preparada para las siguientes iteraciones del proyecto.
+
+
 ![AV2 Insights de Github](resources/images/presentation/AV2_Insights.png)
 
 ---
