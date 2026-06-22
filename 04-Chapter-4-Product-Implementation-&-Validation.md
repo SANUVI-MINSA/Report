@@ -5097,7 +5097,7 @@ El video muestra las funcionalidades implementadas para las madres, incluyendo e
 <img src="resources/images/sprint-2/evidencias/ferova-family-sprint-2.png">
 
 
-**Video del Frontend - Ferova Family (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG)
+**Video del Frontend - Ferova Clinic (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG)
 
 El video presenta las funcionalidades desarrolladas para los roles de Administrador y Enfermera, incluyendo el inicio de sesión con validación de roles, recuperación de contraseña, visualización del dashboard analítico con indicadores de adherencia, gestión de postas médicas, visualización de mapas de calor, consulta de métricas de riesgo y descarga de reportes PDF relacionados con el desempeño y nivel de adherencia de los establecimientos de salud.
 

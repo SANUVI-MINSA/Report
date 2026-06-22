@@ -24,9 +24,10 @@
 
 | Recurso | Enlace |
 |---|---|
-| Video About-the-Product | — |
-| Video Frontend Mobile | https://upcedupe-my.sharepoint.com/personal/u202322855_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202322855%5Fupc%5Fedu%5Fpe%2FDocuments%2Fupc%2Dpre%2D202601%2Dcc238%2D3821%2DSANUVI%20MINSA%20%2Dproduct%20navigation%2Dsprint%201%2Emp4 |
-| Video Landing Page | https://upcedupe-my.sharepoint.com/personal/u202315890_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202315890%5Fupc%5Fedu%5Fpe%2FDocuments%2FLanding%20Page%2Emkv |
+| Video About-the-Product | [Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQAK8HgcAEMnSrk2N8pNkT8zATCHvLpX2leY1EUm7BAQ2BE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=pQzFrv) |
+| Video Frontend Mobile | [Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA9xaFOYjuWSYMlnmFsUsN0AWZqSDTvxrojbb8z7RVUkP4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cVka1H) |
+| Video Landing Page | [Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD6fwgTYBFxSZx02tnhvRo6AfeRmV_6-YwKeCw-BZj6f2s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PskPks) |
+| Backend | [Link](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB)|
 
 <div class="page"></div>
 
