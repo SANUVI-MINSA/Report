@@ -116,6 +116,17 @@ En cuanto al **Project Report**, se incluyeron los siguientes apartados requerid
 - **López Roman, Franco Mauricio (`FrancoLopez00`)**: 1 commits
 - **Total de commits en TB1:** 34
 
+**AV2:**
+---
+
+![AV2 Insights de Github]()
+
+---
+
+## Commits por integrante
+
+---
+
 # Tabla de contenidos
 
 
