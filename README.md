@@ -149,8 +149,8 @@ Estas actividades permitieron consolidar la integración entre frontend y backen
 
 ## Commits por integrante
 
-- **Baca Camargo, Vitaly Arturo (`Mr-code-star`)**:: 62 commits
-- **Pariachi Limahuaya, Sebastian Ubaldo (`SebastianLima-PE`)**: 10 commits
+- **Baca Camargo, Vitaly Arturo (`Mr-code-star`)**:: 58 commits
+- **Pariachi Limahuaya, Sebastian Ubaldo (`SebastianLima-PE`)**: 7 commits
 
 **Total de commits en AV2: 72**
 
