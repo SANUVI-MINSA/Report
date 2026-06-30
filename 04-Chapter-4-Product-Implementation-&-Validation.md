@@ -5387,3 +5387,23 @@ La siguiente captura muestra la actividad del repositorio FerovaClinic durante e
 <div align="center">
 	<img src="resources/images/sprint-2/avanzes/sprint-2-ferovaclinic.png">
 </div>
+
+#### 4.2.3 Sprint 3
+##### 4.2.3.1 Sprint Planning 3
+##### 4.2.3.2 Sprint Backlog 3
+##### 4.2.3.3 Development Evidence for Sprint Review
+##### 4.2.3.4 Testing Suite Evidence for Sprint Review
+##### 4.2.3.5 Execution Evidence for Sprint Review
+##### 4.2.3.6 Services Documentation Evidence for Sprint Review
+##### 4.2.3.7 Software Deployment Evidence for Sprint Review
+##### 4.2.3.8 Team Collaboration Insights during Sprint
+
+### 4.3. Validation Interviews
+### 4.3.1. Diseño de Entrevistas
+### 4.3.2. Registro de Entrevistas
+### 4.3.3. Evaluaciones según heurísticas
+
+
+
+
+
