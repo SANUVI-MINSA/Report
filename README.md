@@ -374,6 +374,24 @@ Estas actividades permitieron consolidar la integración entre frontend y backen
     * [4.2.2.6 Services Documentation Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4226-services-documentation-evidence-for-sprint-review)
     * [4.2.2.7 Software Deployment Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4227-software-deployment-evidence-for-sprint-review)
     * [4.2.2.8 Team Collaboration Insights during Sprint](04-Chapter-4-Product-Implementation-%26-Validation.md#4228-team-collaboration-insights-during-sprint)
+
+  * [4.2.3 Sprint 3](04-Chapter-4-Product-Implementation-%26-Validation.md#423-sprint-3)
+
+    * [4.2.3.1 Sprint Planning 3](04-Chapter-4-Product-Implementation-%26-Validation.md#4231-sprint-planning-3)
+    * [4.2.3.2 Sprint Backlog 3](04-Chapter-4-Product-Implementation-%26-Validation.md#4232-sprint-backlog-3)
+    * [4.2.3.3 Development Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4233-development-evidence-for-sprint-review)
+    * [4.2.3.4 Testing Suite Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4234-testing-suite-evidence-for-sprint-review)
+    * [4.2.3.5 Execution Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4235-execution-evidence-for-sprint-review)
+    * [4.2.3.6 Services Documentation Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4236-services-documentation-evidence-for-sprint-review)
+    * [4.2.3.7 Software Deployment Evidence for Sprint Review](04-Chapter-4-Product-Implementation-%26-Validation.md#4237-software-deployment-evidence-for-sprint-review)
+    * [4.2.3.8 Team Collaboration Insights during Sprint](04-Chapter-4-Product-Implementation-%26-Validation.md#4238-team-collaboration-insights-during-sprint)
+
+* [4.3. Validation Interviews](04-Chapter-4-Product-Implementation-%26-Validation.md#43-validation-interviews)
+
+  * [4.3.1. Diseño de Entrevistas](04-Chapter-4-Product-Implementation-%26-Validation.md#431-dise%C3%B1o-de-entrevistas)
+  * [4.3.2. Registro de Entrevistas](04-Chapter-4-Product-Implementation-%26-Validation.md#432-registro-de-entrevistas)
+  * [4.3.3. Evaluaciones según heurísticas](04-Chapter-4-Product-Implementation-%26-Validation.md#433-evaluaciones-seg%C3%BAn-heur%C3%ADsticas)
+
       
 ## [Conclusiones](05-Conclusions.md#conclusiones)
 
