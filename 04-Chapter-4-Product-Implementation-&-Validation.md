@@ -5399,7 +5399,65 @@ La siguiente captura muestra la actividad del repositorio FerovaClinic durante e
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
 ### 4.3. Validation Interviews
+
+En la sección "Validation Interviews" de nuestro proyecto, nos concentramos en refinar la plataforma Ferova, la cual está orientada a mejorar la gestión integral del control y tratamiento de la anemia infantil en establecimientos de salud de zonas rurales y urbanas. Esta etapa esencial del desarrollo se centra en realizar entrevistas estructuradas y conversaciones interactivas con nuestros principales usuarios
+<br>
+El propósito de estas entrevistas es recoger sus percepciones, necesidades y recomendaciones, garantizando que Ferova no solo cumpla con los requerimientos técnicos, sino que también se adapte a las dinámicas operativas y expectativas específicas de cada tipo de usuario.
+
 ### 4.3.1. Diseño de Entrevistas
+
+En esta sección se establece por cada segmento objetivo los elementos a incluir en la sesión de validación, incluyendo el Landing Page y las aplicaciones. 
+
+Segmento 1: Madres y Cuidadores de niños con anemia
+
+Elementos a incluir:
+
+- Sensación general al usar la aplicación por primera vez (confianza, seguridad, confusión)
+- Facilidad general para completar tareas principales sin ayuda
+- Disposición a recomendar la app a otras madres
+- Identificación de momentos de frustración o confusión
+- Percepción de utilidad de la app en el tratamiento de su hijo
+
+Segmento 2: Personal de salud (enfermeros/as y nutricionistas)
+
+Elementos a incluir: 
+
+- Claridad en el registro de niveles de hemoglobina (Hb) y facilidad para documentar controles periódicos
+- Opiniones sobre la visualización del historial de hemoglobina (gráficas de evolución)
+- Funcionalidad de alertas automáticas cuando los niveles caen por debajo de umbrales críticos
+- Utilidad del histórico de controles para evaluación clínica
+
+Listado de preguntas a realizar:
+
+- ¿Qué opinas de cómo la app te permite registrar y hacer el seguimiento de los niveles de hemoglobina (Hb) de las pacientes?
+
+- ¿La forma en que la app muestra el historial y las tendencias de Hb te ayuda a tomar decisiones clínicas? ¿Qué mejorarías en la visualización?
+
+- ¿Qué te parece el flujo para ingresar una nueva medición de Hb en la app? ¿Faltó algún dato importante?
+
+- ¿Qué opinas de la gestión de citas/reservas que llegan desde las madres? ¿Cómo encaja con tu flujo de trabajo?
+
+- ¿Qué piensas sobre la sección para registrar el historial médico de cada paciente en la app?
+
+- ¿Qué opinas del diseño visual de la app (colores,legibilidad, consistencia)? ¿Te resulta agradable e intuitiva la interfaz?
+
+- En términos de experiencia de uso (UX), ¿cómo crees que te sentirías usando la app durante tu jornada? ¿Te ayuda a ahorrar tiempo o añade dificultades?. 
+
+- ¿Qué tan sencillo te resulta completar tareas frecuentes en la app (registrar Hb, actualizar historial, responder consultas de la madres)? ¿Cuánto tiempo te toma en promedio? 
+
+- ¿Qué opinas sobre el semáforo de riesgo (rojo/ámbar/verde) basado en el score de adherencia? ¿Te parece útil para priorizar pacientes?
+
+- ¿La lógica de aumento del score con cada confirmación de dosis por parte de la madre te parece comprensible y adecuada? ¿Cambiarías cómo se calcula o se muestra? 
+
+- Sobre que la duración del tratamiento (días) se defina automáticamente según la cantidad de dosis confirmadas desde Ferova Family: 
+¿te parece correcto que la app lo determine así o preferirías poder ajustarlo manualmente? ¿Por qué?
+
+- ¿Cómo valoras la categorización de niveles de riesgo (low/medium/high) según la adherencia al tratamiento? ¿Es suficiente para decidir seguimientos o intervenciones? ¿Qué harías distinto? 
+
+- En la bandeja de chat/consultas con las madres: 
+¿qué opinas del flujo de mensajes y ordenamiento de conversaciones? ¿Te sientes cómodo respondiendo por la app 
+y el sistema te permite gestionar las consultas eficientemente?
+
 ### 4.3.2. Registro de Entrevistas
 ### 4.3.3. Evaluaciones según heurísticas
 
