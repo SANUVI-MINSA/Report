@@ -674,6 +674,9 @@ MONGO_URI = "mongodb+srv://prod_user:prod_pass@cluster-prod.mongodb.net/ferova_p
 
 ### 4.2 Landing Page & Mobile Application Implementation
 #### 4.2.1 Sprint 1
+
+Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales del proyecto mediante el desarrollo de la Landing Page, el sistema backend y el frontend móvil. A continuación, se detallan los objetivos, historias de usuario y tareas asociadas a este sprint.
+
 ##### 4.2.1.1 Sprint Planning 1
 
 <table>
@@ -3665,6 +3668,9 @@ El desarrollo del Backend siguió un flujo de trabajo enfocado en estabilidad y 
 </div>
 
 #### 4.2.2 Sprint 2
+
+Durante el Sprint 2, el equipo continuará con el desarrollo e integración de las funcionalidades restantes de la plataforma FerovaFamily y FerovaClinic, priorizando la conexión de los servicios web con las aplicaciónes moviles para completar el flujo de tanto para los usuarios madres, enfermeros y admins.
+
 ##### 4.2.2.1 Sprint Planning 2
 
 <table>
@@ -5389,7 +5395,10 @@ La siguiente captura muestra la actividad del repositorio FerovaClinic durante e
 </div>
 
 #### 4.2.3 Sprint 3
-Durante el Sprint 3, el equipo continuará con el desarrollo e integración de las funcionalidades restantes de la plataforma Ferova, priorizando la conexión de los servicios del Backend con la aplicación Ferova Clinic para completar el flujo de trabajo del personal de salud.
+
+Durante el Sprint 3, el equipo continuará y finalizara con el desarrollo e integración de las funcionalidades restantes de la plataforma Ferova, priorizando la conexión de los servicios del Backend con la aplicación Ferova Clinic para completar el flujo de trabajo del personal de salud.
+Ademas, se testearan y validaran los servicios implementados en el Sprint 2, asegurando la correcta integración entre los módulos de Treatment Tracking, Achievement & Rewards y Analytics Reporting.
+
 ##### 4.2.3.1 Sprint Planning 3
 | **Sprint #**                        | **Sprint 3**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
