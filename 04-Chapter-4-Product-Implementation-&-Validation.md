@@ -5478,62 +5478,56 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 #### 1. Experiencia de usuario (UX) general
 
-* En general, ¿cómo te sentiste usando la aplicación?
-* ¿Te resultó fácil o complicada de usar? ¿Por qué?
-* ¿Lograste hacer todo lo que querías sin ayuda?
-* ¿Hubo algún momento en que te sentiste perdida o confundida?
+* En general, ¿cómo te sentiste usando la aplicación? 
+* ¿Te resultó fácil o complicada de usar? ¿Por qué? 
+* ¿Lograste hacer todo lo que querías sin ayuda? 
+* ¿Hubo algún momento en que te sentiste perdida o confundida? 
 
 ---
 
 #### 2. Diseño del aplicativo
 
-* ¿Qué te pareció el diseño de la aplicación (colores, letras, imágenes)?
-* ¿Los botones se entienden fácilmente y se identifican dónde tocar?
-* ¿Te resultó sencillo navegar entre las diferentes pantallas?
-* ¿Cambiarías algo de cómo se ve la aplicación?
+* ¿Qué te pareció el diseño de la aplicación (colores, letras, imágenes)? 
+* ¿Te resultó sencillo navegar entre las diferentes pantallas? 
+* ¿Cambiarías algo de cómo se ve la aplicación? 
 
 ---
 
 #### 3. Registro de pacientes (niños)
 
-* ¿Cómo te pareció el proceso para registrar a tu hijo en la aplicación?
-* ¿Los datos solicitados fueron claros y fáciles de completar?
-* ¿Tuviste alguna dificultad o duda durante el registro?
+* ¿Cómo te pareció el proceso para registrar a tu hijo en la aplicación? 
+* ¿Los datos solicitados fueron claros y fáciles de completar? 
 
 ---
 
 #### 4. Confirmación de dosis
 
-* ¿Te quedó claro cómo confirmar que administraste la dosis a tu hijo?
-* ¿El proceso fue rápido y sencillo o encontraste alguna dificultad?
-* ¿Entendiste para qué sirve confirmar las dosis?
-* ¿Crees que esta función te ayudaría a seguir correctamente el tratamiento?
+* ¿Te quedó claro cómo confirmar que administraste la dosis a tu hijo? 
+* ¿El proceso fue rápido y sencillo o encontraste alguna dificultad? 
+* ¿Entendiste para qué sirve confirmar las dosis? 
+* ¿Crees que esta función te ayudaría a seguir correctamente el tratamiento? 
 
 ---
 
 #### 5. Reserva de citas
 
-* ¿Cómo te pareció reservar una cita en la posta?
-* ¿Te resultó fácil elegir la fecha y la hora?
-* ¿Hubo algo confuso durante el proceso de reserva?
-* ¿Qué mejorarías de esta funcionalidad?
+* ¿Cómo te pareció reservar una cita en la posta? 
+* ¿Te resultó fácil elegir la fecha y la hora? 
 
 ---
 
 #### 6. Mapa de postas cercanas
 
-* ¿Qué te pareció el mapa para encontrar la posta más cercana?
-* ¿La ubicación mostrada te pareció correcta o precisa?
-* ¿Te resultó útil esta función?
-* ¿La utilizarías cuando necesites reservar una cita?
+* ¿Qué te pareció el mapa para encontrar la posta más cercana? 
+* ¿La ubicación mostrada te pareció correcta o precisa? 
+* ¿La utilizarías cuando necesites reservar una cita? 
 
 ---
 
 #### 7. Registro de alimentos (Diario Nutricional)
 
-* ¿Cómo te pareció registrar los alimentos consumidos por tu hijo?
+* ¿Cómo te pareció registrar los alimentos consumidos por tu hijo cada dia?
 * ¿El proceso te resultó fácil o tedioso?
-* ¿Te pareció útil visualizar el consumo de hierro?
 * ¿Crees que utilizarías esta función diariamente? ¿Por qué?
 
 ---
@@ -5542,19 +5536,15 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 * ¿Cómo fue tu experiencia consultando tus dudas mediante el chat?
 * ¿Te sentiste cómoda escribiéndole tus consultas al enfermero?
-* ¿Te pareció útil contar con esta opción dentro de la aplicación?
 * ¿Consideras que esta función te brinda mayor confianza durante el tratamiento?
 
 ---
 
 #### Preguntas finales
 
-* De todas las funciones, ¿cuál fue la que más te gustó?
-* ¿Cuál fue la que menos te gustó?
+* De todas las funciones, ¿cuál fue la que más te gustó y cual menos?
 * ¿Sentiste que faltó alguna función o información importante?
-* ¿Consideras que esta aplicación puede ayudarte a mejorar el seguimiento del tratamiento de tu hijo? ¿Por qué?
 * ¿Recomendarías Ferova Family a otras madres? ¿Por qué?
-* Del 1 al 5, ¿qué tan fácil te pareció utilizar la aplicación en general?
 
 ---
 
