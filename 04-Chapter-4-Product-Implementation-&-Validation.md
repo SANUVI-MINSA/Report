@@ -5657,7 +5657,14 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 * Del 1 al 5, ¿qué tan fácil te pareció utilizar la aplicación en general?
 
 ### 4.3.2. Registro de Entrevistas
+
+**Segmento objetivo 1: Madres y Cuidadores de Pacientes con Anemia**
+
+**Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+
 ### 4.3.3. Evaluaciones según heurísticas
+
+
 
 
 
