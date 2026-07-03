@@ -5647,7 +5647,51 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 * Del 1 al 5, ¿qué tan fácil te pareció utilizar la aplicación en general?
 
 ### 4.3.2. Registro de Entrevistas
+
+**Segmento objetivo 1: Madres y Cuidadores de Pacientes con Anemia**
+
+**Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+
 ### 4.3.3. Evaluaciones según heurísticas
+
+La evaluación heurística se centró en las aplicaciones móviles **FerovaFamily** y **FerovaClinic**, considerando los comentarios recopilados durante las entrevistas con usuarios. El objetivo fue identificar fortalezas y oportunidades de mejora en la experiencia de navegación inicial, aplicando las 10 heurísticas de usabilidad de Jakob Nielsen.
+
+---
+
+#### FerovaFamily - Aplicación para Madres y Cuidadores
+
+|    Heurísticas    |       Descripción        |         Observaciones en FerovaClinic          |            Recomendaciones de mejora            |
+|-------------------|--------------------------|------------------------------------------------|-------------------------------------------------|
+| **Visibilidad del estado del sistema** | El usuario debe saber en todo momento qué está ocurriendo. | El estado de confirmación de dosis es claro mediante animaciones y mensajes. | Mejorar indicadores visuales al registrar alimentos en el diario nutricional. |
+| **Correspondencia entre sistema y mundo real** | El diseño y lenguaje deben ser familiares para el usuario. | La terminología médica (hemoglobina, adherencia) se simplificó para madres. | Incluir explicaciones breves al pasar el cursor sobre términos técnicos. |
+| **Control y libertad** | Permitir movimiento libre e deshacer acciones fácilmente. | La navegación es lineal y sin opciones de "Volver atrás" claras en algunas pantallas. | Añadir botones "Atrás" más visibles y opciones de cancelar acciones. |
+| **Consistencia y estándares** | Mantener coherencia visual y de interacción en toda la aplicación. | Los estilos tipográficos y colores son consistentes en toda la app. | Unificar el estilo de botones en todas las pantallas. |
+| **Prevención de errores** | Evitar que el usuario cometa errores mediante validaciones. | No se detectaron errores funcionales al interactuar con elementos visibles. | Validar campos de entrada (DNI, teléfono) con mensajes de error claros. |
+| **Reconocimiento antes que recuerdo** | Mostrar opciones y controles visibles sin necesidad de recordar. | Los usuarios destacaron que los planes de beneficios estaban claramente organizados. | Mantener esta estructura; considerar íconos adicionales para identificación rápida. |
+| **Flexibilidad y eficiencia de uso** | Permitir interacciones fluidas y accesibles para todos. | La experiencia es fluida, aunque usuarios sugirieron acceso más directo a contenido dinámico. | Incluir atajos o acceso rápido a las funciones más utilizadas (confirmación de dosis). |
+| **Estética y diseño minimalista** | Evitar el exceso de información no esencial. | La mayoría de usuarios valoró el diseño limpio y la claridad general. | Mantener el enfoque minimalista; revisar espaciado en secciones densas. |
+| **Ayuda al usuario a reconocer, diagnosticar y recuperarse de errores** | Los mensajes de error deben ser claros y útiles. | No se observaron errores o mensajes de error durante las pruebas iniciales. | Añadir mensajes amigables para conexiones perdidas o fallos de carga. |
+| **Ayuda y documentación** | Ofrecer soporte e información adicional. | Algunos usuarios sugirieron incluir tutoriales o videos explicativos sobre la aplicación. | Incorporar un video introductorio y enlaces hacia documentación interactiva. |
+
+---
+
+#### FerovaClinic - Aplicación para Personal de Salud
+
+|    Heurísticas    |       Descripción        |         Observaciones en FerovaClinic          |            Recomendaciones de mejora            |
+|-------------------|--------------------------|------------------------------------------------|-------------------------------------------------|
+| **Visibilidad del estado del sistema** | El usuario debe saber en todo momento qué está ocurriendo en el sistema. | El dashboard muestra indicadores actuales, pero falta feedback inmediato al registrar datos. | Añadir confirmaciones visuales (toasts) al guardar datos de pacientes o cambios de estado. |
+| **Correspondencia entre sistema y mundo real** | Usar lenguaje y conceptos familiares para los usuarios. | La terminología clínica es precisa (hemoglobina, adherencia, riesgo), adecuada para profesionales. | Mantener la terminología técnica; considerar glosarios para nuevos usuarios. |
+| **Control y libertad del usuario** | Permitir deshacer acciones y navegar libremente sin restricciones. | El flujo de gestión de citas es lineal; falta claridad en cómo editar o cancelar citas. | Implementar opciones de edición y cancelación con confirmación de acciones. |
+| **Consistencia y estándares** | Mantener uniformidad en diseño y comportamiento. | Los estilos y patrones de navegación son consistentes en toda la aplicación. | Revisar que todos los formularios sigan el mismo patrón de validación. |
+| **Prevención de errores** | Validar datos y prevenir acciones indeseadas. | La aplicación valida correctamente campos obligatorios en registros de hemoglobina. | Implementar confirmaciones antes de marcar un tratamiento como completado o abandonado. |
+| **Reconocimiento antes que recuerdo** | Mostrar opciones disponibles sin obligar a memorizar pasos. | El menú de navegación muestra claramente todas las secciones disponibles. | Mantener esta estructura; considerar indicadores de notificaciones no leídas. |
+| **Flexibilidad y eficiencia de uso** | Permitir atajos y opciones para usuarios experimentados. | Enfermeros sugirieron acceso más rápido al historial de pacientes. | Implementar búsqueda avanzada y filtros rápidos en listados de pacientes. |
+| **Estética y diseño minimalista** | Evitar sobrecarga de información innecesaria. | El dashboard está bien estructurado, aunque algunos profesionales sugirieron más gráficos. | Añadir visualizaciones gráficas de tendencias de adherencia sin sobrecargar. |
+| **Ayuda al usuario a reconocer, diagnosticar y recuperarse de errores** | Proporcionar mensajes de error claros y soluciones. | No se observaron errores críticos, pero faltaron mensajes de validación detallados. | Implementar mensajes de error específicos indicando qué campo falló y por qué. |
+| **Ayuda y documentación** | Ofrecer soporte y documentación accesible. | Usuarios solicitaron un manual de usuario o acceso a soporte técnico. | Crear tutoriales en video y acceso a chat de soporte dentro de la aplicación. |
+
+
+
 
 
 
