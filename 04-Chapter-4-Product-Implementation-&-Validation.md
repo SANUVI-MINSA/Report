@@ -5650,6 +5650,87 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 **Segmento objetivo 1: Madres y Cuidadores de Pacientes con Anemia**
 
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista de Validación #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>Milagros</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos</strong></td>
+            <td>Vera Soledad</td>
+        </tr>
+        <tr>
+            <td><strong>Edad</strong></td>
+            <td>45 años</td>
+        </tr>
+        <tr>
+            <td><strong>Distrito</strong></td>
+            <td>Ica</td>
+        </tr>
+        <tr>
+            <td><strong>Rol</strong></td>
+            <td>Madre de familia</td>
+        </tr>
+        <tr>
+            <td><strong>Aplicación Evaluada</strong></td>
+            <td>Ferova Family</td>
+        </tr>
+        <tr>
+            <td><strong>Objetivo de la Validación</strong></td>
+            <td>Evaluar la facilidad de uso de Ferova Family y validar las funcionalidades principales para el seguimiento del tratamiento de la anemia infantil.</td>
+        </tr>
+        <tr>
+            <td><strong>Evidencia</strong></td>
+            <td>
+                <img src="resources/images/sprint-3/screnshoots-validations/mili-vera-validations.png">
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Link</strong></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQCVYhALptAbSY-qxkyofyP4AZhinI9HWR5DTDSHC3z6WRw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=tffdyw">Microsoft Stream</a></td>
+        </tr>
+        <tr>
+            <td><strong>Duración</strong></td>
+            <td>08:15 min - 22:40 min</td>
+        </tr>
+        <tr>
+            <td><strong>Resultado General</strong></td>
+            <td>La participante logró completar todas las tareas propuestas sin ayuda y manifestó que la aplicación es intuitiva y útil para el seguimiento del tratamiento de su hijo.</td>
+        </tr>
+        <tr>
+            <td><strong>Aspectos Positivos</strong></td>
+            <td>
+                <ul>
+                    <li>Confirmación de dosis clara y sencilla.</li>
+                    <li>Reserva de citas rápida.</li>
+                    <li>El mapa facilita encontrar la posta más cercana.</li>
+                    <li>El chat con el enfermero genera mayor confianza.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Oportunidades de Mejora</strong></td>
+            <td>
+                <ul>
+                    <li>Agregar recordatorios automáticos para las dosis.</li>
+                    <li>Aumentar ligeramente el tamaño de algunos botones.</li>
+                    <li>Mostrar más horarios disponibles para las citas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusión</strong></td>
+            <td>La participante indicó que utilizaría Ferova Family durante el tratamiento de su hijo y la recomendaría a otras madres. Calificó la facilidad de uso de la aplicación con <strong>5/5</strong>.</td>
+        </tr>
+    </tbody>
+</table>
+
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
 ### 4.3.3. Evaluaciones según heurísticas
