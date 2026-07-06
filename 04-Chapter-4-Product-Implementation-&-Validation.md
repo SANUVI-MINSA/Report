@@ -5731,6 +5731,88 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
     </tbody>
 </table>
 
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista de Validación #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>Jonathan</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos</strong></td>
+            <td>Ramírez</td>
+        </tr>
+        <tr>
+            <td><strong>Edad</strong></td>
+            <td>43 años</td>
+        </tr>
+        <tr>
+            <td><strong>Distrito</strong></td>
+            <td>Villa María del Triunfo</td>
+        </tr>
+        <tr>
+            <td><strong>Rol</strong></td>
+            <td>Padre de familia</td>
+        </tr>
+        <tr>
+            <td><strong>Aplicación Evaluada</strong></td>
+            <td>Ferova Family</td>
+        </tr>
+        <tr>
+            <td><strong>Objetivo de la Validación</strong></td>
+            <td>Evaluar la experiencia de uso de Ferova Family y validar si sus funcionalidades apoyan a los padres en el seguimiento del tratamiento de la anemia infantil.</td>
+        </tr>
+        <tr>
+            <td><strong>Evidencia</strong></td>
+            <td>
+                <img src="resources/images/sprint-3/screnshoots-validations/entrevista-padredefamilia.png">
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Link</strong></td>
+            <td><a href="...">Microsoft Stream</a></td>
+        </tr>
+        <tr>
+            <td><strong>Duración</strong></td>
+            <td>00:00 min - 08:03 min</td>
+        </tr>
+        <tr>
+            <td><strong>Resultado General</strong></td>
+            <td>El participante pudo utilizar todas las funciones principales de la aplicación sin ayuda. Consideró que Ferova Family es sencilla de usar y destacó que facilita el seguimiento del tratamiento de su hijo gracias a sus recordatorios y herramientas de organización.</td>
+        </tr>
+        <tr>
+            <td><strong>Aspectos Positivos</strong></td>
+            <td>
+                <ul>
+                    <li>La confirmación de dosis es rápida y fácil de utilizar.</li>
+                    <li>El registro del paciente es claro y sencillo.</li>
+                    <li>La reserva de citas permite ahorrar tiempo.</li>
+                    <li>El mapa facilita encontrar la posta más cercana.</li>
+                    <li>El chat con el enfermero brinda mayor confianza para resolver dudas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Oportunidades de Mejora</strong></td>
+            <td>
+                <ul>
+                    <li>Aumentar el tamaño de algunos botones para facilitar su uso.</li>
+                    <li>Agregar más consejos sobre alimentación y anemia.</li>
+                    <li>Incluir más notificaciones para recordar citas y controles médicos.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusión</strong></td>
+            <td>El participante manifestó que utilizaría Ferova Family para organizar el tratamiento de su hijo, ya que le ayuda a recordar las dosis, controlar las citas médicas y resolver dudas con el personal de salud. Además, indicó que recomendaría la aplicación a otros padres porque es práctica, fácil de usar y útil para quienes tienen poco tiempo debido al trabajo. Calificó la facilidad de uso de la aplicación con <strong>5/5</strong>.</td>
+        </tr>
+    </tbody>
+</table>
+
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
 ### 4.3.3. Evaluaciones según heurísticas
