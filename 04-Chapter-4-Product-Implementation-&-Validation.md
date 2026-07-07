@@ -5813,6 +5813,86 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
     </tbody>
 </table>
 
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista de Validación #3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>Sonia</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos</strong></td>
+            <td>Galindo</td>
+        </tr>
+        <tr>
+            <td><strong>Edad</strong></td>
+            <td>57 años</td>
+        </tr>
+        <tr>
+            <td><strong>Distrito</strong></td>
+            <td>Chorrillos</td>
+        </tr>
+        <tr>
+            <td><strong>Rol</strong></td>
+            <td>Madre de familia</td>
+        </tr>
+        <tr>
+            <td><strong>Aplicación Evaluada</strong></td>
+            <td>Ferova Family</td>
+        </tr>
+        <tr>
+            <td><strong>Objetivo de la Validación</strong></td>
+            <td>Evaluar la experiencia de uso de Ferova Family y validar si sus funcionalidades apoyan a las madres en el seguimiento del tratamiento de la anemia infantil.</td>
+        </tr>
+        <tr>
+            <td><strong>Evidencia</strong></td>
+            <td>
+                <img src="resources/images/sprint-3/screnshoots-validations/Entrevista Sonia Galindo Sprint 3.png">
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Link</strong></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQDypsSYXVr9SInu_NUeniLAAZZonD-iiWCE6IJS-3O6p3E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vfJkE8">Microsoft Stream</a></td>
+        </tr>
+        <tr>
+            <td><strong>Duración</strong></td>
+            <td>00:00 min - 04:59 min</td>
+        </tr>
+        <tr>
+            <td><strong>Resultado General</strong></td>
+            <td>La participante pudo utilizar todas las funcionalidades de la aplicación facilmente. Consideró que Ferova Family es sencilla de usar y destacó que facilita el seguimiento del tratamiento de su hija mediante todas las diferentes funciones creadas.</td>
+        </tr>
+        <tr>
+            <td><strong>Aspectos Positivos</strong></td>
+            <td>
+                <ul>
+                    <li>La confirmación de dosis es rápida y fácil de utilizar.</li>
+                    <li>El registro del paciente es fácil.</li>
+                    <li>La reserva de citas ahorra el tiempo que demoras en ir y sacar cita en la posta.</li>
+                    <li>El mapa facilita encontrar la posta más cercana.</li>
+                    <li>El chat con el enfermero brinda mayor confianza para resolver dudas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Oportunidades de Mejora</strong></td>
+            <td>
+                <ul>
+                    <li>Mejorar los consejos alimenticions sobre la anemia.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusión</strong></td>
+            <td>La participante menciono que la aplicación la ayuda a controlar y tratar la anemia de su hija. Menciona que todas las funcionalidades son de gran ayuda en el tratamiento.<strong>5/5</strong>.</td>
+        </tr>
+    </tbody>
+</table>
+
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
 ### 4.3.3. Evaluaciones según heurísticas
