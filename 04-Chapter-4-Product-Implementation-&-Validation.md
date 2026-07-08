@@ -5552,6 +5552,37 @@ de prueba. Esta evidencia forma parte del proceso de Sprint Review y garantiza l
 ##### 4.2.3.7 Software Deployment Evidence for Sprint Review
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
+**Frontend – FerovaClinic**
+
+Durante este sprint se continuó con el desarrollo de FerovaClinic, incorporando funcionalidades orientadas a la gestión clínica de los pacientes, el seguimiento de tratamientos, el proceso de alta médica y la comunicación directa con las madres de familia. La integración se realizó consumiendo los servicios REST del Backend mediante componentes reutilizables y vistas especializadas para el rol de Enfermera.
+
+* Se implementó el módulo de Historial Médico, permitiendo a las enfermeras registrar y consultar la información clínica relevante de cada paciente.
+* Se desarrolló la gestión de Tratamientos, permitiendo registrar, actualizar y dar seguimiento a los tratamientos asignados a los pacientes.
+* Se integró el módulo de Alta Médica (Discharge), permitiendo a las enfermeras registrar el proceso de finalización o cierre de un tratamiento activo.
+* Se implementó el módulo de Comunicación, permitiendo a las enfermeras enviar y recibir mensajes con las madres de familia respecto al tratamiento de los pacientes.
+* Se realizaron pruebas funcionales de navegación, consumo de APIs e integración entre los nuevos módulos y las funcionalidades previamente desarrolladas.
+
+Durante el Sprint 3 se integraron los siguientes Pull Requests principales:
+
+* Feat/treatement (#4)
+* Feat/discharge (#5)
+* Feat/medical record (#6)
+* Feat/communicaciton (#7)
+
+La siguiente captura muestra la actividad general del repositorio FerovaClinic durante el periodo del sprint, incluyendo los Pull Requests integrados y las métricas generales de desarrollo.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/sprint-3-ferovaclinic.jfif">
+</div>
+<br></br>
+
+Asimismo, se muestra el detalle de contribuciones individuales por autor durante el sprint, evidenciando la participación de los 5 desarrolladores del equipo en el repositorio.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/sprint-3-ferovaclinic-contributors.jfif">
+</div>
+<br></br>
+
 ### 4.3. Validation Interviews
 
 En la sección **Validation Interviews** de nuestro proyecto, nos concentramos en validar y refinar la plataforma **Ferova**, orientada a mejorar la gestión integral del tratamiento y seguimiento de la anemia infantil mediante herramientas digitales dirigidas a madres y personal de salud.
