@@ -5527,6 +5527,26 @@ El Sprint Backlog 3 reúne las historias de usuario seleccionadas para el tercer
 | Ferova Clinic | feat/treatment | 32644f5 | feat: add patient monitor page to display treatment and adherence information | Last week |
 
 ##### 4.2.3.4 Testing Suite Evidence for Sprint Review
+
+Durante el Sprint 3 se desarrolló una suite de diez pruebas de aceptación utilizando Gherkin (AT11 - AT20) para validar las funcionalidades implementadas en los módulos de Medical
+Records, Hemoglobin Control, Treatment Management, Patient Assignment, Patient Discharge y Communication. Cada prueba fue versionada en el repositorio 
+de pruebas de aceptación mediante commits independientes, permitiendo mantener la trazabilidad entre los requisitos implementados y sus respectivos escenarios 
+de prueba. Esta evidencia forma parte del proceso de Sprint Review y garantiza la validación funcional de las historias de usuario desarrolladas durante el Sprint.
+
+| Repository                            | Branch | Commit Id | Commit Message                                                         | Commit Message Body                                                                                                                                        | Committed on (Date) |
+| ------------------------------------- | ------ | --------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | bdc6845   | add feature for nurse to register a patient's medical record           | Verifica que una enfermera pueda registrar un historial médico para un paciente asignado y valida el comportamiento cuando no existen pacientes asignados. | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 335bc50   | add feature for nurse to update a patient's medical record             | Verifica la actualización del historial médico de un paciente y las validaciones cuando el historial aún no existe.                                        | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 1f2b730   | add feature for nurse to register a patient's hemoglobin control       | Verifica el registro de controles de hemoglobina y la validación de que el paciente posea un historial médico previo.                                      | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 0023eb1   | add feature for nurse to view hemoglobin control history               | Verifica la visualización del historial de controles de hemoglobina, su evolución, promedio y el registro del primer o nuevos controles.                   | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 2d86ef4   | add feature for nurse to download medical record and hemoglobin report | Verifica la generación y descarga en PDF del historial médico y del reporte de controles de hemoglobina.                                                   | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 7f58a8a   | add feature for nurse to start a patient's treatment                   | Verifica que una enfermera pueda iniciar un tratamiento, reiniciar tratamientos abandonados y administrar pacientes pendientes.                            | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 3491415   | add feature for nurse to discharge a patient                           | Verifica que una enfermera pueda dar de alta a un paciente al finalizar correctamente su tratamiento y gestionar estados vacíos.                           | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 2ddf794   | add feature for nurse to assign patients to portfolio                  | Verifica la búsqueda de madres por DNI y la asignación de pacientes sin enfermero a la cartera de la enfermera, mostrando el estado Assigned o Unassigned. | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | e3712cc   | add feature for nurse to manage consultation inbox                     | Verifica la gestión de la bandeja de consultas, la apertura de conversaciones y los estados vacíos cuando no existen consultas.                            | 08/07/2026          |
+| SANUVI-MINSA/Sanuvi-acceptance-tests	 | main   | 31899c3   | add feature for nurse to communicate with patient's mother via chat    | Verifica el intercambio de mensajes entre la enfermera y la madre del paciente, así como el cierre de una consulta cuando las dudas han sido resueltas.    | 08/07/2026          |
+
+
 ##### 4.2.3.5 Execution Evidence for Sprint Review
 ##### 4.2.3.6 Services Documentation Evidence for Sprint Review
 ##### 4.2.3.7 Software Deployment Evidence for Sprint Review
