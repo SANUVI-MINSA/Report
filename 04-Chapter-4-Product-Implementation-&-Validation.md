@@ -5548,6 +5548,20 @@ de prueba. Esta evidencia forma parte del proceso de Sprint Review y garantiza l
 
 
 ##### 4.2.3.5 Execution Evidence for Sprint Review
+
+A continuación se presentan el material de evidencia correspondientes al producto desarrollado completo durante el Sprint 3: 
+Aplicación Móvil Flutter. 
+Esta sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
+
+
+<div align ="center" width="600" height="800">
+<img src="resources/images/sprint-3/screnshoots-validations/execution_sprint_3.png">
+</div>
+
+**Video del Frontend - Ferova Clinic (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDJqGLhLRhIRo_JIflh39t-AaFN62yAL93YTjjpp_T2IVc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jdf7YG)
+
+El video presenta las funcionalidades desarrolladas para el rol de Enfermera durante el Sprint 3, incluyendo la gestión de pacientes mediante la asignación de pacientes a la cartera del enfermero, el registro y actualización de historiales médicos, el registro y consulta del historial de controles de hemoglobina, la descarga de reportes en formato PDF del historial médico y de los controles de hemoglobina, el inicio y seguimiento de tratamientos, el alta de pacientes al finalizar su tratamiento, la gestión de la bandeja de consultas enviadas por las madres y la comunicación mediante chat para responder consultas y cerrarlas una vez resueltas.
+
 ##### 4.2.3.6 Services Documentation Evidence for Sprint Review
 ##### 4.2.3.7 Software Deployment Evidence for Sprint Review
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
