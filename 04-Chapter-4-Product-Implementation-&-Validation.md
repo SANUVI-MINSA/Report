@@ -5979,6 +5979,249 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
 
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista de Validación #1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>Carmen Lucero</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos</strong></td>
+            <td>Rivas Sanguilera</td>
+        </tr>
+        <tr>
+            <td><strong>Edad</strong></td>
+            <td>36 años</td>
+        </tr>
+        <tr>
+            <td><strong>Distrito</strong></td>
+            <td>Jesus María</td>
+        </tr>
+        <tr>
+            <td><strong>Rol</strong></td>
+            <td>Nutricionista</td>
+        </tr>
+        <tr>
+            <td><strong>Aplicación Evaluada</strong></td>
+            <td>Ferova Clinic</td>
+        </tr>
+        <tr>
+            <td><strong>Objetivo de la Validación</strong></td>
+            <td>Evaluar la experiencia de uso de Ferova Clinic y validar si sus funcionalidades apoyan a los profesionales de la salud en el seguimiento del tratamiento de la anemia infantil.</td>
+        </tr>
+        <tr>
+            <td><strong>Evidencia</strong></td>
+            <td>
+                <img src="resources/images/sprint-3/screnshoots-validations/Entrevista Carmen Lucero Rivas.png">
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Link</strong></td>
+            <td><a href="">Microsoft Stream</a></td>
+        </tr>
+        <tr>
+            <td><strong>Duración</strong></td>
+            <td>00:00 min - 7:49 min</td>
+        </tr>
+        <tr>
+            <td><strong>Resultado General</strong></td>
+            <td>La participante pudo utilizar todas las funcionalidades de la aplicación facilmente. Consideró que Ferova Clinic es de uso muy practico y destacó que facilita el seguimiento del tratamiento de sus pacientes asignados mediante todas los accesos rápidos.</td>
+        </tr>
+        <tr>
+            <td><strong>Aspectos Positivos</strong></td>
+            <td>
+                <ul>
+                    <li>Interfaz didáctica y fácil de usar.</li>
+                    <li>Ahorra tiempo durante la jornada laboral.</li>
+                    <li>El seguimiento de hemoglobina es muy útil.</li>
+                    <li>El dashboard de riesgo facilita la priorización de pacientes.</li>
+                    <li>El registro desde el celular resulta práctico para trabajo de campo.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Oportunidades de Mejora</strong></td>
+            <td>
+                <ul>
+                    <li>Agregar más datos del paciente (edad, fecha de nacimiento, prematuridad).</li>
+					<li>Explicar con mayor claridad el indicador de riesgo clínico.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusión</strong></td>
+            <td>La profesional validó positivamente la aplicación, destacando su facilidad de uso, utilidad para el seguimiento clínico y potencial para optimizar el trabajo del personal de salud, proponiendo únicamente mejoras menores en el registro de información y algunos detalles de la interfaz.<strong>5/5</strong>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Entrevista de Validación #2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>Paolo</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos</strong></td>
+            <td>Salas</td>
+        </tr>
+        <tr>
+            <td><strong>Edad</strong></td>
+            <td>39 años</td>
+        </tr>
+        <tr>
+            <td><strong>Distrito</strong></td>
+            <td>Jesus María</td>
+        </tr>
+        <tr>
+            <td><strong>Rol</strong></td>
+            <td>Nutricionista</td>
+        </tr>
+        <tr>
+            <td><strong>Aplicación Evaluada</strong></td>
+            <td>Ferova Clinic</td>
+        </tr>
+        <tr>
+            <td><strong>Objetivo de la Validación</strong></td>
+            <td>Evaluar la experiencia de uso de Ferova Clinic y validar si sus funcionalidades apoyan a los profesionales de la salud en el seguimiento del tratamiento de la anemia infantil.</td>
+        </tr>
+        <tr>
+            <td><strong>Evidencia</strong></td>
+            <td>
+                <img src="resources/images/sprint-3/screnshoots-validations/Entrevista Paolo Salas.png">
+        </tr>
+        <tr>
+            <td><strong>Link</strong></td>
+            <td><a href="">Microsoft Stream</a></td>
+        </tr>
+        <tr>
+            <td><strong>Duración</strong></td>
+            <td>00:00 min - 8:39 min</td>
+        </tr>
+        <tr>
+            <td><strong>Resultado General</strong></td>
+            <td>El participante pudo utilizar todas las funcionalidades de la aplicación facilmente. Consideró que Ferova Clinic es de uso muy practico y destacó que facilita el seguimiento del tratamiento de sus pacientes asignados mediante todas los accesos rápidos.</td>
+        </tr>
+        <tr>
+            <td><strong>Aspectos Positivos</strong></td>
+            <td>
+                <ul>
+                    <li>Interfaz clara, sencilla e intuitiva.</li>
+                    <li>El registro y seguimiento de controles facilita el trabajo.</li>
+                    <li>Los accesos rápidos agilizan las tareas frecuentes.</li>
+                    <li>El historial de hemoglobina apoya la toma de decisiones.</li>
+                    <li>La aplicación es fácil de usar</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Oportunidades de Mejora</strong></td>
+            <td>
+                <ul>
+                    <li>Ajustar el cálculo automático del tratamiento a la norma técnica</li>
+					<li>Definir mejor el módulo de consultas entre padres y profesionales para evitar confusiones.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusión</strong></td>
+            <td>El nutricionista valoró la facilidad de uso, la rapidez para acceder a la información y el seguimiento clínico del paciente. Considera que la aplicación es útil para el trabajo diario, aunque recomienda alinearla con la normativa nacional sobre el tratamiento de la anemia y mejorar el funcionamiento del módulo de consultas.<strong>5/5</strong>.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table>
+	    <thead>
+        <tr>
+            <th colspan="2">Entrevista de Validación #3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Nombre</strong></td>
+            <td>Edith del Carmen</td>
+        </tr>
+        <tr>
+            <td><strong>Apellidos</strong></td>
+            <td>Garcia Castillo</td>
+        </tr>
+        <tr>
+            <td><strong>Edad</strong></td>
+            <td>45 años</td>
+        </tr>
+        <tr>
+            <td><strong>Distrito</strong></td>
+            <td>San Isidro</td>
+        </tr>
+        <tr>
+            <td><strong>Rol</strong></td>
+            <td>Nutricionista</td>
+        </tr>
+        <tr>
+            <td><strong>Aplicación Evaluada</strong></td>
+            <td>Ferova Clinic</td>
+        </tr>
+        <tr>
+            <td><strong>Objetivo de la Validación</strong></td>
+            <td>Evaluar la experiencia de uso de Ferova Clinic y validar si sus funcionalidades apoyan a los profesionales de la salud en el seguimiento del tratamiento de la anemia infantil.</td>
+        </tr>
+        <tr>
+            <td><strong>Evidencia</strong></td>
+            <td>
+                <img src="resources/images/sprint-3/screnshoots-validations/Entrevista Edith Garcia.png">
+</tr>
+        <tr>
+            <td><strong>Link</strong></td>
+            <td><a href="">Microsoft Stream</a></td>
+        </tr>
+        <tr>
+            <td><strong>Duración</strong></td>
+            <td>00:00 min - 8:39 min</td>
+        </tr>
+        <tr>
+            <td><strong>Resultado General</strong></td>
+            <td>El participante pudo utilizar todas las funcionalidades de la aplicación facilmente. Consideró que Ferova Clinic es de uso muy practico y destacó que facilita el seguimiento del tratamiento de sus pacientes asignados mediante todas los accesos rápidos.</td>
+        </tr>
+        <tr>
+            <td><strong>Aspectos Positivos</strong></td>
+            <td>
+                <ul>
+                    <li>Interfaz clara, sencilla e intuitiva.</li>
+                    <li>El registro y seguimiento de controles facilita el trabajo.</li>
+                    <li>Los accesos rápidos agilizan las tareas frecuentes.</li>
+                    <li>El historial de hemoglobina apoya la toma de decisiones.</li>
+                    <li>La aplicación es fácil de usar</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Oportunidades de Mejora</strong></td>
+            <td>
+                <ul>
+                    <li>Ajustar el cálculo automático del tratamiento a la norma técnica</li>
+					<li>Definir mejor el módulo de consultas entre padres y profesionales para evitar confusiones.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Conclusión</strong></td>
+            <td>El nutricionista valoró la facilidad de uso, la rapidez para acceder a la información y el seguimiento clínico del paciente. Considera que la aplicación es útil para el trabajo diario, aunque recomienda alinearla con la normativa nacional sobre el tratamiento de la anemia y mejorar el funcionamiento del módulo de consultas.<strong>5/5</strong>.</td>
+        </tr>
+    </tbody>
+</table>
+
+
 ### 4.3.3. Evaluaciones según heurísticas
 
 La evaluación heurística se centró en las aplicaciones móviles **FerovaFamily** y **FerovaClinic**, considerando los comentarios recopilados durante las entrevistas con usuarios. El objetivo fue identificar fortalezas y oportunidades de mejora en la experiencia de navegación inicial, aplicando las 10 heurísticas de usabilidad de Jakob Nielsen.
