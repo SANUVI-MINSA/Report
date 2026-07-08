@@ -5693,11 +5693,11 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQCVYhALptAbSY-qxkyofyP4AZhinI9HWR5DTDSHC3z6WRw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=tffdyw">Microsoft Stream</a></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN">Microsoft Stream</a></td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>08:15 min - 22:40 min</td>
+            <td>00: 00 min - 20:25 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
@@ -5774,11 +5774,11 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="...">Microsoft Stream</a></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN">Microsoft Stream</a></td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>00:00 min - 08:03 min</td>
+            <td>20:26 min - 28:30 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
@@ -5856,11 +5856,11 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQDypsSYXVr9SInu_NUeniLAAZZonD-iiWCE6IJS-3O6p3E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vfJkE8">Microsoft Stream</a></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN">Microsoft Stream</a></td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>00:00 min - 04:59 min</td>
+            <td>28:30 min - 33:29 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
