@@ -6046,7 +6046,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>00:00 min - 7:49 min</td>
+            <td>00:00 min - 07:43 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
@@ -6126,7 +6126,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>00:00 min - 8:39 min</td>
+            <td>07:44 min - 16:37 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
@@ -6207,7 +6207,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>00:00 min - 8:39 min</td>
+            <td>16:38 min - 20:00 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
