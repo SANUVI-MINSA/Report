@@ -5442,6 +5442,90 @@ El Sprint Backlog 3 reúne las historias de usuario seleccionadas para el tercer
 | US-50           | Visualizar cantidad de pacientes activos           | T3.20   | Mostrar el contador de pacientes activos asignados en el Home de la enfermera.                              | Sebastián   | Done   |
 
 ##### 4.2.3.3 Development Evidence for Sprint Review
+
+| Repository | Branch | Commit Id | Commit Message / Body | Committed on |
+|------------|--------|-----------|------------------------|--------------|
+| Ferova Clinic | feat/communication | 51e9a7e | feat: add DTOs for chat, consultation, and patient management features | 20 hours ago |
+| Ferova Clinic | feat/communication | 737685d | feat: add domain entities and value objects for communication and patient management features | 20 hours ago |
+| Ferova Clinic | feat/communication | 651278f | feat: add chat page, view model, and state for consultation communication and management | 20 hours ago |
+| Ferova Clinic | feat/communication | 16314a7 | feat: implement consultation inbox feature with search functionality, MVVM state management, and specialized empty state components | 20 hours ago |
+| Ferova Clinic | feat/communication | c485d4b | feat: add CommunicationRepository with methods for consultations and messaging | 20 hours ago |
+| Ferova Clinic | feat/communication | 4d81c59 | feat: add CommunicationService and CommunicationRepository implementation for chat and consultations management | 20 hours ago |
+| Ferova Clinic | feat/communication | 37b9bd5 | feat: add PatientManagementRepository and NurseNotAssignedException for patient management domain | 20 hours ago |
+| Ferova Clinic | feat/communication | dc7d145 | feat: add service and repository for patient management operations | 20 hours ago |
+| Ferova Clinic | feat/communication | 34ecd4c | feat: add mother search feature including state, view model and UI to search mothers by DNI | 20 hours ago |
+| Ferova Clinic | feat/communication | 4fcce8b | feat: add MotherPatientsPage and ViewModel to manage and assign patients to nurses | 20 hours ago |
+| Ferova Clinic | feat/communication | ed16ecf | feat: add dependencies and providers for patient management and communication features | 20 hours ago |
+| Ferova Clinic | feat/communication | 8832cfd | feat: implement tab navigation callbacks and integrate mother search and consultation inbox in nurse home | 20 hours ago |
+| Ferova Clinic | feat/communication | af42f30 | feat: add refresh method and enhance error handling for nurse discharge flow | 20 hours ago |
+| Ferova Clinic | feat/communication | fe069ea | feat: implement automatic data refresh for medical record and hemoglobin control pages using lifecycle observers and navigation callbacks | 20 hours ago |
+| Ferova Clinic | feat/communication | 5e90aa5 | feat: update mother search to return a list of results and enhance search UI | 20 hours ago |
+| Ferova Clinic | feat/medical-record | 389e5c5 | feat: implement updateMedicalRecord method in MedicalRecordRepositoryImpl | 4 days ago |
+| Ferova Clinic | feat/medical-record | 67865e5 | feat: implement getMedicalRecordPDF method in MedicalRecordRepositoryImpl | 4 days ago |
+| Ferova Clinic | feat/medical-record | 1ff541f | feat: implement checkMedicalRecord method in MedicalRecordRepositoryImpl | 4 days ago |
+| Ferova Clinic | feat/medical-record | 9985f63 | feat: implement createHemoglobinLevel method in MedicalRecordRepositoryImpl | 4 days ago |
+| Ferova Clinic | feat/medical-record | 2c02af0 | feat: implement getHemoglobinControls method in MedicalRecordRepositoryImpl | 4 days ago |
+| Ferova Clinic | feat/medical-record | 9bb5262 | feat: implement getHemoglobinReportPdf method in MedicalRecordRepositoryImpl | 4 days ago |
+| Ferova Clinic | feat/medical-record | 52a7bba | feat: add MedicalRecordState class for managing medical record state | 4 days ago |
+| Ferova Clinic | feat/medical-record | da5f586 | feat: implement MedicalRecordViewModel for managing medical records and nurse patients | 4 days ago |
+| Ferova Clinic | feat/medical-record | 172724e | feat: add dependency injection for MedicalRecordService and MedicalRecordViewModel | 4 days ago |
+| Ferova Clinic | feat/medical-record | 3d080fe | refactor: clean up dependency injection setup by removing unused imports and formatting | 4 days ago |
+| Ferova Clinic | feat/medical-record | 9a32154 | feat: add saving state and error message to MedicalRecordState | 4 days ago |
+| Ferova Clinic | feat/medical-record | af2b9c8 | feat: implement postMedicalRecord method for saving patient medical records | 4 days ago |
+| Ferova Clinic | feat/medical-record | e5b2827 | feat: create RegisterMedicalRecordPage | 4 days ago |
+| Ferova Clinic | feat/medical-record | 5e62212 | feat: implement navigation to RegisterMedicalRecordPage | 4 days ago |
+| Ferova Clinic | feat/medical-record | 2a2bf01 | feat: add markPatientHasRecord method | 4 days ago |
+| Ferova Clinic | feat/medical-record | 20605d0 | feat: mark patient as having a record upon successful submission | 4 days ago |
+| Ferova Clinic | feat/medical-record | c691dcd | feat: set background color for AddAntecedenteDialog and AddSymptomDialog | 4 days ago |
+| Ferova Clinic | feat/medical-record | 7e03a27 | feat: enhance AddAntecedenteDialog layout | 4 days ago |
+| Ferova Clinic | feat/medical-record | a8eed96 | feat: add loading state and error message fields to MedicalRecordState | 4 days ago |
+| Ferova Clinic | feat/medical-record | dca31ed | feat: implement getMedicalRecord method | 4 days ago |
+| Ferova Clinic | feat/medical-record | 56ba4f2 | feat: add MedicalRecordSummaryPage | 4 days ago |
+| Ferova Clinic | feat/medical-record | cfb060d | feat: implement navigation to MedicalRecordSummaryPage | 4 days ago |
+| Ferova Clinic | feat/medical-record | 9e087ba | feat: improve MedicalRecordPatientCard layout | 4 days ago |
+| Ferova Clinic | feat/discharge | e2ee75a | Discharge patient data model and DTO creation | Last week |
+| Ferova Clinic | feat/discharge | b99167b | Discharge patient repository declaration, connection and implementation | Last week |
+| Ferova Clinic | feat/discharge | 001de92 | Discharge patient state declaration and view model | Last week |
+| Ferova Clinic | feat/discharge | bdd54a2 | Discharge patient screen | Last week |
+| Ferova Clinic | feat/discharge | 34cdc4e | Discharge patient route configuration | Last week |
+| Ferova Clinic | develop | a853792 | feat: update application label to 'Ferova Clinic' in AndroidManifest.xml | Last week |
+| Ferova Clinic | develop | e512b72 | feat: implement polling for nurse appointments and enhance nurse home state management | Last week |
+| Ferova Clinic | develop | a848997 | feat: add NurseFacility and RiskOverview models with DTOs and repository integration | 2 weeks ago |
+| Ferova Clinic | feat/treatment | 94c25dd | feat: add PendingPatient model class to treatment domain | Last week |
+| Ferova Clinic | feat/treatment | df56685 | feat: add TreatmentRepository with method to get pending patients | Last week |
+| Ferova Clinic | feat/treatment | 5cab626 | feat: add treatment repository, service, and DTO to fetch pending patients | Last week |
+| Ferova Clinic | feat/treatment | 98672af | feat: add page, view model and state to manage pending patients | Last week |
+| Ferova Clinic | feat/treatment | e5112b8 | feat: register dependencies for treatment service, repository, and pending patients view model | Last week |
+| Ferova Clinic | feat/treatment | c76a0bb | feat: add navigation to PendingPatientsPage from NurseHomePage | Last week |
+| Ferova Clinic | feat/treatment | 4333239 | feat: add PendingPatientsViewModel provider to main.dart | Last week |
+| Ferova Clinic | feat/treatment | 0969527 | feat: register StartTreatmentViewModel in dependency injection container | Last week |
+| Ferova Clinic | feat/treatment | 1228652 | feat: add startTreatment method to repository and service | Last week |
+| Ferova Clinic | feat/treatment | 705cfd0 | feat: add DTOs for start treatment request and response | Last week |
+| Ferova Clinic | feat/treatment | f3e91b2 | feat: add StartTreatment presentation layer | Last week |
+| Ferova Clinic | feat/treatment | 00af7a7 | feat: add navigation to start treatment page | Last week |
+| Ferova Clinic | feat/treatment | 6eae9af | feat: add TreatmentErrorDialog and TreatmentSuccessPage | Last week |
+| Ferova Clinic | feat/treatment | 5baa38d | feat: add TreatmentsListViewModel to dependency injection | Last week |
+| Ferova Clinic | feat/treatment | bdb062c | feat: add TreatmentsListViewModel provider to main.dart | Last week |
+| Ferova Clinic | feat/treatment | e061d64 | feat: add method to get treatments by nurse | Last week |
+| Ferova Clinic | feat/treatment | 22a1608 | feat: add TreatmentSummary domain model | Last week |
+| Ferova Clinic | feat/treatment | 254e08d | feat: add treatments list feature with state management | Last week |
+| Ferova Clinic | feat/treatment | c331bda | feat: add methods to abandon, complete and get treatment details | Last week |
+| Ferova Clinic | feat/treatment | bb9f3ce | feat: add treatment detail page, view model, and state | Last week |
+| Ferova Clinic | feat/treatment | f21e10f | feat: redesign treatment detail page | Last week |
+| Ferova Clinic | feat/treatment | df880a9 | feat: add RiskPatient domain model | Last week |
+| Ferova Clinic | feat/treatment | 8c3d03c | feat: add risk patients presentation components | Last week |
+| Ferova Clinic | feat/treatment | 6f6d5e8 | feat: add method to get patients by risk level | Last week |
+| Ferova Clinic | feat/treatment | 1e4f92e | feat: add PatientMonitor model | Last week |
+| Ferova Clinic | feat/treatment | 9ef6706 | feat: add DTO for patient monitor response | Last week |
+| Ferova Clinic | feat/treatment | e206a6a | feat: add TreatmentInfo model class | Last week |
+| Ferova Clinic | feat/treatment | fbb8c8f | feat: add method to get patient monitor in TreatmentRepository | Last week |
+| Ferova Clinic | feat/treatment | 54e5b71 | feat: add method to get patient monitor in TreatmentRepositoryImpl | Last week |
+| Ferova Clinic | feat/treatment | 2cb258e | feat: add getPatientMonitor method to TreatmentService | Last week |
+| Ferova Clinic | feat/treatment | 8ec92cb | feat: implement navigation to patient monitor detail page | Last week |
+| Ferova Clinic | feat/treatment | e66b165 | feat: add PatientMonitorViewModel and PatientMonitorState | Last week |
+| Ferova Clinic | feat/treatment | 2e5c334 | feat: add patient monitor page | Last week |
+| Ferova Clinic | feat/treatment | 32644f5 | feat: add patient monitor page to display treatment and adherence information | Last week |
+
 ##### 4.2.3.4 Testing Suite Evidence for Sprint Review
 ##### 4.2.3.5 Execution Evidence for Sprint Review
 ##### 4.2.3.6 Services Documentation Evidence for Sprint Review
