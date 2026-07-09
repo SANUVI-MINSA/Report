@@ -634,8 +634,7 @@ Además, se grabó un video donde se explican los principales flujos de interacc
 Mobile Application Prototyping
 
 <p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQD4vCblLyzPQYl1lFrKwn0-AaGm4FEgRmXZmX34dPrRQms?e=PrA81X&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
-    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQD4vCblLyzPQYl1lFrKwn0-AaGm4FEgRmXZmX34dPrRQms?e=PrA81X&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDpH06QhVQzRrM26MwmIDINAVMO2nQs8GG8SDmSM8knnL8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LwkLQG" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDpH06QhVQzRrM26MwmIDINAVMO2nQs8GG8SDmSM8knnL8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LwkLQG
   </a>
 </p>
-
