@@ -5603,7 +5603,12 @@ A continuación, se presenta la documentación consolidada de todos los endpoint
 
 Durante este sprint se realizó el despliegue de la aplicación móvil Ferova Clinic, desarrollada en Flutter, integrándola con Firebase como plataforma de servicios para la aplicación. El proceso comprendió la autenticación en Firebase CLI, la configuración del proyecto mediante FlutterFire, la asociación del proyecto móvil con Firebase y la preparación de la aplicación para las plataformas Android e iOS.
 
+**Paso 1: Autenticación en Firebase CLI**
 
+Se inició sesión en Firebase CLI utilizando una cuenta de Google autorizada para administrar el proyecto Ferova Clinic. Esta autenticación permitió establecer la conexión entre el entorno de desarrollo local y los servicios de Firebase.
+
+- Resultado: El entorno de desarrollo quedó autenticado correctamente, permitiendo ejecutar los comandos de configuración y despliegue del proyecto.
+  
 
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
