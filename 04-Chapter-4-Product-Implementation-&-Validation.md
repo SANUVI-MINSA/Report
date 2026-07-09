@@ -5611,7 +5611,7 @@ Se inició sesión en Firebase CLI utilizando una cuenta de Google autorizada pa
 
 Figura 1.1 Logearse a firebase
 
-<div align="">
+<div align="center">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/1.png">
 </div>
 
@@ -5655,7 +5655,7 @@ Figura 3.2. Registro automático de las aplicaciones Android e iOS y generación
 
 <br>
 
-Figura 3.2. Archivo `firebase_options.dart`.
+Figura 3.3. Archivo `firebase_options.dart`.
 
 <div align="center">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/archivo.png">
@@ -5674,6 +5674,8 @@ flutter build apk --release
 
 Se ejecutó el proceso de compilación de la aplicación Flutter en modo Release, generando el archivo APK optimizado para su distribución y pruebas. Durante este proceso se verificó que todas las dependencias del proyecto y la configuración de Firebase fueran compiladas correctamente.
 
+- **Resultado:** Se generó satisfactoriamente el archivo `app-release.apk`, listo para su distribución e instalación en dispositivos Android.
+
 Figura 4.1 Creacion del APK
 
 <div align ="center">
@@ -5682,7 +5684,7 @@ Figura 4.1 Creacion del APK
 
 <br>
 
-Figura 4.1 Archivo APK
+Figura 4.2 Archivo APK
 
 <div align ="center">
 <img src="resources/images/sprint-3/screnshoots-validations/step_deployment/archivo apk.png" width="400" height="450">
@@ -5690,8 +5692,6 @@ Figura 4.1 Archivo APK
 
 <br>
 
-
-- **Resultado:** Se generó satisfactoriamente el archivo `app-release.apk`, listo para su distribución e instalación en dispositivos Android.
 
 **Paso 5: Configuración de Firebase App Distribution**
 
@@ -5701,13 +5701,33 @@ Se accedió al servicio Firebase App Distribution desde la consola de Firebase y
 
 Figura 5.1. Configuración inicial de Firebase App Distribution.
 
-<div align="">
+<div align="center">
 <img src="resources/images/sprint-3/screnshoots-validations/step_deployment/6.png">
 </div>
 
 <br>
 
+**Paso 6: Carga del archivo APK**
 
+Se cargó el archivo `app-release.apk` generado previamente en Firebase App Distribution mediante la opción de arrastrar y soltar archivos APK o AAB. Posteriormente, se configuró la versión para su distribución entre los verificadores autorizados.
+
+- **Resultado:** La versión de la aplicación fue registrada correctamente en Firebase App Distribution, quedando disponible para asignar verificadores y agregar notas de la versión.
+
+Figura 6.1 Carga del archivo APK
+
+<div align="center">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/7.png">
+</div>
+
+<br>
+
+Figura 6.2 Agregar verificadores
+
+<div align="center">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/8.png">
+</div>
+
+<br>
 
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
