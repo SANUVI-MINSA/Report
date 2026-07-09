@@ -1830,210 +1830,210 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
       <td colspan="5"><strong>Landing Page - Ferova</strong></td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>0c434b5</td>
       <td>feat: created a new CSS file for styles including variables, layout, and animations.</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Franco</td>
       <td>731d2dc</td>
       <td>Delete public/js/assets/images/abrir</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Franco</td>
       <td>c58997</td>
       <td>add Logo</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Franco</td>
       <td>24b6ec9</td>
       <td>Create abrir</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>6229d33</td>
       <td>Merge pull request #2 from SANUVI-MINSA/feat/javascript</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>f308838</td>
       <td>feat: implement active navigation link highlighting on scroll</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>e5ff1cd</td>
       <td>feat: add active navigation link functionality on scroll</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>35e7900</td>
       <td>feat: implement scroll reveal and counter animation functionality</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>00163a1</td>
       <td>feat: add scroll reveal initialization for staggered elements</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>41ee03c</td>
       <td>feat: add event listeners for mobile menu links to close menu on click</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>415aeae</td>
       <td>feat: add mobile menu toggle functionality</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>67761d3</td>
       <td>feat: add initialization for Lucide icons and mobile menu elements</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>2cf19f3</td>
       <td>feat: implement scroll event listener for navbar and scrollTop button visibility</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>6668d70</td>
       <td>feat: add navbar and scrollTop button functionality in main.js</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>1c259a0</td>
       <td>feat: initialize main.js with lucide icon creation</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/javascript</td>
       <td>7528dee</td>
       <td>feat: add main.js file for JavaScript functionality</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>f106b12</td>
       <td>Merge pull request #1 from SANUVI-MINSA/feat/Sebas</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>e0ae249</td>
       <td>Merge pull request #7 from SANUVI-MINSA/develop</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Sebas</td>
       <td>a9d26bf</td>
       <td>Add files via upload</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Sebas</td>
       <td>d5943d1</td>
       <td>Add Ferova.png image to assets</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Sebas</td>
       <td>31a65c2</td>
       <td>Add main.js for navbar and scroll animations</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Sebas</td>
       <td>498ee50</td>
       <td>Add global styles and responsive design to styles.css</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>14bb15d</td>
       <td>Delete public/css directory</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Franco</td>
       <td>03e5317</td>
       <td>Merge pull request #6 from SANUVI-MINSA/feat/Franco</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>74c5943</td>
       <td>Delete public/js/main.js</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>42b11a9</td>
       <td>Delete public/js/assets/images directory</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Ariana</td>
       <td>a805742</td>
       <td>Merge pull request #5 from SANUVI-MINSA/feat/Ariana</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>fa8f5cd</td>
       <td>Delete public/assets/images directory</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>develop</td>
       <td>e75724b</td>
       <td>Delete public/js directory</td>
       <td>09/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/landing-page</td>
+      <td>SANUVI-MINSA/ferova-landing-page</td>
       <td>feat/Franco</td>
       <td>ce94969</td>
       <td>Merge pull request #4 from SANUVI-MINSA/feat/Franco</td>
@@ -2057,154 +2057,154 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
       <td colspan="5"><strong>Backend - Ferova</strong></td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>3582cf0</td>
       <td>feat(model): add aggregate Consultation, entity Message, valueObjects ConsultationStatus and MessageSender</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>3e26985</td>
       <td>feat(commands): add commands</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>136958f</td>
       <td>feat(queries): add new query types for consultation and nurse information retrieval</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>d9407ed</td>
       <td>feat(query): add GetMessagesAfterQuery for incremental message synchronization</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>2bdf513</td>
       <td>feat(communication): implement command and query services for consultation management</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>12f77fb</td>
       <td>feat(communication): add ConsultationRepository</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>571d7ef</td>
       <td>refactor(): delete status</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>d129587</td>
       <td>feat(communication): add resource assemblers for message and consultation commands</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>3bbeae2</td>
       <td>feat(communication): add StartConsultationResource interface</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>503a997</td>
       <td>refactor(communication): remove ConsultationStatus from Consultation class</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>fbca2a5</td>
       <td>fix(communication): ensure randomUUID is called as a function in Message and Consultation instantiation</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>ccc11cc</td>
       <td>feat(communication): add Consultation and Message schemas for database modeling</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>5627556</td>
       <td>feat(communication): add ConsultationMapper for mapping between domain and persistence layers</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>0cf6b99</td>
       <td>feat(communication): add CommunicationController and CommunicationFacade for managing consultations and messages</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>7f65dc7</td>
       <td>feat(communication): add CommunicationRoutes and dependencies for managing consultations and messages</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>35f75d6</td>
       <td>feat(communication): add MongoConsultationRepository for managing consultations in MongoDB</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>f89888b</td>
       <td>feat(communication): add communication routes to main application</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>b8b9ebd</td>
       <td>feat(communication): enrich open consultations with patient and mother data</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>6660ca6</td>
       <td>Add documentation for Communication API endpoints</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>57ef976</td>
       <td>feat(communication): enrich open consultations with patient, mother, and nurse data</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>2a4d630</td>
       <td>Merge remote-tracking branch 'origin/feat/comunication-management' into feat/comunication-management</td>
       <td>08/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/comunication-management</td>
       <td>239e29a</td>
       <td>feat(communication): update API documentation for teleconsultation system</td>
@@ -2212,56 +2212,56 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 07/05/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>c77cef2</td>
       <td>feat(nutritional-diary): implement patient validation against mother ID in diary operations</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/authentication</td>
       <td>ac1a372</td>
       <td>feat(): add token</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/health-facilities</td>
       <td>246012e</td>
       <td>feat(health-facilities): enforce admin role for health facility registration and nurse assignment</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/health-facilities</td>
       <td>7153f81</td>
       <td>feat(health-facilities): add validation for patient and appointment ownership by mother</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/health-facilities</td>
       <td>667400e</td>
       <td>feat(health-facilities): update nurse appointment schedule endpoint to use nurse ID from token</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>9c60adc</td>
       <td>feat(patient-management): implement mother ID validation for patient registration and hemoglobin chart retrieval</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>85cfc8e</td>
       <td>feat(patient-management): enforce nurse authentication and validate patient ownership in patient management operations</td>
       <td>07/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>85b0f64</td>
       <td>feat(patient-management): enhance patient management endpoints with nurse authentication and access validation</td>
@@ -2269,231 +2269,231 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 06/05/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>63bf7e6</td>
       <td>feat(model): add aggregate, value objects, entities and enum</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>dfc9e49</td>
       <td>feat(model): add repository</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/commands-queries</td>
       <td>7ad5acb</td>
       <td>feat(): add commands and queries</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/user-repository</td>
       <td>9c566a8</td>
       <td>feat(user-repository): add method to find mother by ID</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>f922f33</td>
       <td>feat(nutritional-diary): implement iron absorption calculation and food entry registration</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/mapper</td>
       <td>e92f6fc</td>
       <td>feat(mapper): add mapper</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>b4b5199</td>
       <td>feat(model): add FoodEntryModel</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>cf0827f</td>
       <td>feat(nutritional-diary): add query assemblers and resource interfaces for food items and nutritional history</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>80c402c</td>
       <td>feat(nutritional-diary): add schema</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>41db66d</td>
       <td>feat(nutritional-diary): add repository mongo with implement with repositories interfaces</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>2078f4d</td>
       <td>feat(nutritional-diary): add resource and command assembler for food entry registration</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>d9aedf3</td>
       <td>feat(nutritional-diary): implement NutritionalDiaryController and facade for managing food entries and nutritional data</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>c20aa71</td>
       <td>feat(nutritional-diary): add new NutrionalDiarySchema</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>5787cce</td>
       <td>feat(nutritional-diary): add food item seeding script and update @types/node version</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/nutritional-diary</td>
       <td>37887d3</td>
       <td>feat(nutritional-diary): add nutritional diary routes to the main application</td>
       <td>06/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/domain</td>
       <td>bd34082</td>
       <td>feat(domain): add Patient aggregate</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/value-objects</td>
       <td>d09fd08</td>
       <td>feat(valeue-objects): add valueObjects</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/entities</td>
       <td>0848712</td>
       <td>feat(entities): add entities Control and MedicalRecord</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor</td>
       <td>c129c85</td>
       <td>refactor: moved anemiastatus to enum files</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>47ca65a</td>
       <td>feat(patient-management): add commands Assign patient to nurse, create patient</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>8848f45</td>
       <td>feat(model): add associated medical record with patient</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/queries</td>
       <td>905c30b</td>
       <td>feat(queries): add query types for hemoglobin and medical record retrieval</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/command</td>
       <td>1e52ef4</td>
       <td>feat(command): add UpdateMedicalRecordCommand</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>80d8534</td>
       <td>feat(patient-management): add PatientCommandService and PatientQueryService</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor/model</td>
       <td>ea97a99</td>
       <td>refactor(model): remove medicalRecord</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/entities</td>
       <td>f97baff</td>
       <td>feat(entities): add nurseId</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/repositories</td>
       <td>38c2561</td>
       <td>feat(repositories): add MedicalRecordRepository and PatientRepository interfaces</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor</td>
       <td>96c2415</td>
       <td>refactor: rename files and update import paths for consistency</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/models</td>
       <td>acfd08c</td>
       <td>feat(models): add model schema mongo patient and medical record</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>d82ca16</td>
       <td>feat(model): add sintomas</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/mappers</td>
       <td>623338f</td>
       <td>feat(mappers): add medical mappers and patient mappers</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/repositories</td>
       <td>552a531</td>
       <td>feat(repositories): add mongo repositories Patient and Medical Record</td>
       <td>05/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>e5a457a</td>
       <td>feat(patient-management): add patient and medical record resources, use cases</td>
@@ -2501,84 +2501,84 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 04/05/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/appointment-repository</td>
       <td>61be070</td>
       <td>feat(appointment-repository): fix appointment time typo and filter confirmation</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/health-facility</td>
       <td>b677b1a</td>
       <td>feat(health-facility): update appointment date parameter and add available slots query</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/health-facility</td>
       <td>190ee66</td>
       <td>feat(health-facility): implement nurse assignment logic with validation</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/health-facility</td>
       <td>3531da8</td>
       <td>feat(health-facility): add new method in the repository implements Mongo</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>b28ae9f</td>
       <td>feat(patient-management): implement patient appointment history retrieval</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>855b5d8</td>
       <td>feat(patient-management): add type definition for GetPatientsAssignedToNurseQuery</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>754856b</td>
       <td>feat(patient-management): enhance HemoglobinHistoryResource and HemoglobinEvolution</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>3ac7df7</td>
       <td>feat(patient-management): update medical record structure and validation</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>8d7aea9</td>
       <td>feat(patient-management): enhance medical record creation and add patient validation</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>cd8cec6</td>
       <td>feat(patient-management): add new method getPatientsAssignedToNurse</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>cb69bf7</td>
       <td>feat(patient-management): enforce required value for Observaciones field</td>
       <td>04/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>eb37c63</td>
       <td>feat(patient-management): add endpoint to retrieve patients assigned to nurse</td>
@@ -2586,231 +2586,231 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 03/05/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>d408fea</td>
       <td>feat(patient-management): update medical record command and enhance creation logic</td>
       <td>03/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/queryservice</td>
       <td>57cff0b</td>
       <td>feat(queryservice): add logic to see patient active in queryGetPatientsAssignedToNurse</td>
       <td>03/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/patient-management</td>
       <td>9c48106</td>
       <td>feat(patient-management): implement PDF generation for medical record</td>
       <td>03/05/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/config</td>
       <td>9f70a4e</td>
       <td>feat(config): add .env and server connect with mongodb and config swagger</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/value-objects</td>
       <td>fd81abf</td>
       <td>feat(value-objects): add Coordinates, FacilityStatus and OperationSchedule</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/shared</td>
       <td>452d1da</td>
       <td>feat(shared): add district catalogs</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/shared</td>
       <td>bc4587a</td>
       <td>feat(shared): add mongo connection</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/enum</td>
       <td>4d19314</td>
       <td>feat(enum): add AppointmentStatus</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>3ed518c</td>
       <td>feat(model): add HealthFacility</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/entities</td>
       <td>53b5702</td>
       <td>feat(entities): add NurseAssigment manages the Assignment Nurse and Facility</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/entities</td>
       <td>5ad0b3f</td>
       <td>feat(entities): add Appointment manages appointments of the facility</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/command</td>
       <td>92c8cf3</td>
       <td>feat(command): add commands assign nurse, book appointment, cancel appointment</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor/healthy-facility</td>
       <td>0187fe8</td>
       <td>refactor(healthy-facility): moved from domain files</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor/queries</td>
       <td>d1cc385</td>
       <td>refactor(queries): add queries to List Facility, Get History Appointment</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/services</td>
       <td>8411ea9</td>
       <td>feat(services): add Commands and queries</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/repositories</td>
       <td>72eff35</td>
       <td>feat(repositories): add Appointment, HealthFacility, and NurseAssignment repositories</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>22340ef</td>
       <td>feat(model): defined model mongo HealthFacility</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/infrastructure</td>
       <td>4f922b5</td>
       <td>feat(infrastructure): defined model mongo Appointment</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/infrastructure</td>
       <td>1ddbd90</td>
       <td>feat(infrastructure): defined model mongo NurseAssignment</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/model</td>
       <td>1bd968a</td>
       <td>feat(model): enhance HealthFacility with nurseAssignments mapping and methods</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>docs</td>
       <td>57d6f44</td>
       <td>docs: add comments</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/infrastructure</td>
       <td>186d9b5</td>
       <td>feat(infrastructure): add mappers Appointment and NurseAssigment</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor/infrastructure</td>
       <td>f7a30ea</td>
       <td>refactor(infrastructure): moved from files</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/repositories</td>
       <td>26eed16</td>
       <td>feat(repositories): refactor array to unique value to method findByNurseId</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat/repositories</td>
       <td>f42b4d7</td>
       <td>feat(repositories): implement Repositories for Healthy management operations</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor(command)</td>
       <td>495321c</td>
       <td>refactor(command): refactor named cancelAppointmentCommand to CancelAppointmentCommand</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor(entities)</td>
       <td>4affee1</td>
       <td>refactor(entities): refactor date to appointmentDate and appointmentTime</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor(entities)</td>
       <td>d6ded88</td>
       <td>refactor(entities): add date to appointmentDate and appointmentTime</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(repositories)</td>
       <td>e270271</td>
       <td>feat(repositories): add new methode findbyid</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(repositories)</td>
       <td>308d740</td>
       <td>feat(repositories): add update</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(repositories)</td>
       <td>13313d6</td>
       <td>feat(repositories): add findById</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(repositories)</td>
       <td>de289ac</td>
       <td>feat(repositories): add update</td>
       <td>28/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(services)</td>
       <td>3c2ab65</td>
       <td>feat(services): add command servicesImpl commands implements HealthyFacility</td>
@@ -2818,119 +2818,119 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 27/04/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(services)</td>
       <td>78439d3</td>
       <td>feat(services): add GoogleMapsService to calculate distances</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(services)</td>
       <td>19154da</td>
       <td>feat(services): add HealthFacilityQueryServiceImpl implements HealthyFacilityQueryService</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor</td>
       <td>0b5f2c8</td>
       <td>refactor: refactor moved files</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor(registerHealthFacility)</td>
       <td>50fdf3b</td>
       <td>refactor(registerHealthFacility): add registerFacility of the implements</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat</td>
       <td>0d4f3ee</td>
       <td>feat: remove all adapter of google Service</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(queries)</td>
       <td>95680da</td>
       <td>feat(queries): add new queries GetFacilityAvailableSlotsQuery, GetNearestFacilitiesQuery</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(resources)</td>
       <td>e889422</td>
       <td>feat(resources): add new resource types for appointment history, health facility</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(mappers)</td>
       <td>4aac930</td>
       <td>feat(mappers): add [] to security that nurseAssigment is undefine</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(mappers)</td>
       <td>942cddf</td>
       <td>feat(mappers): add assembler the history appointment, Detail Healthy, Nearest</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(mappers)</td>
       <td>54c7320</td>
       <td>feat(mappers): new methods findConfirmedByNurseId, findByFacilityAndDate</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(service)</td>
       <td>4bfa347</td>
       <td>feat(service): add DistanceCalculatorService for calculating distances between coordinates</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(services)</td>
       <td>5791ebe</td>
       <td>feat(services): add registerFacility and implements DistrictRepository</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(repositories)</td>
       <td>8b7ac5d</td>
       <td>feat(repositories): add mongo repositories appointments</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(repositories)</td>
       <td>8c35b6a</td>
       <td>feat(repositories): add HealthFacilityQueryService implements HealthFacilityQueryService</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(controller)</td>
       <td>52b01e8</td>
       <td>feat(controller): implement HealthFacilityController with CRUD operations</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(command)</td>
       <td>bc116e7</td>
       <td>feat(command): update RegisterHealthFacilityCommand by removing district dependency</td>
       <td>27/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(command)</td>
       <td>91f60ba</td>
       <td>feat(command): add route "/api/health-facilities"</td>
@@ -2938,210 +2938,210 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 25/04/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>chore</td>
       <td>e52e801</td>
       <td>chore: add bcrypt to hash password</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat</td>
       <td>4f0baf2</td>
       <td>feat: add User aggregate</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>64da0eb</td>
       <td>feat(iam): add role enum with the options 'Mother', 'Nurse' and 'Admin'</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat</td>
       <td>3e69705</td>
       <td>feat: add value objects for DNI, Email, Password, Phone, and UserId</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>51308ab</td>
       <td>feat(iam): add command RegisterMotherCommand.ts to register new mother</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>5c01881</td>
       <td>feat(iam): add command CreateStaffUserCommand.ts to register new admin or nurse</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>91b2216</td>
       <td>feat(iam): add RequestPasswordResetCommand.ts and ResetPasswordCommand.ts</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>0745949</td>
       <td>feat(iam): add GetUserByIdQuery.ts to get the information completed about user</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>e6e9548</td>
       <td>feat(iam): add GetUserProfileQuery.ts to get the profile completed and related data</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>faf25a0</td>
       <td>feat(iam): add GetMothersQuery.ts to get information mother</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>10aa736</td>
       <td>feat(iam): add GetAllStaffUsersQuery.ts</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>705c6d6</td>
       <td>feat(iam): add GetUserByEmailQuery</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>refactor(iam)</td>
       <td>74be01e</td>
       <td>refactor(iam): refactor domain/model file to better structure</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>44fad56</td>
       <td>feat(iam): add services to commands service and queryservices</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(password)</td>
       <td>8628739</td>
       <td>feat(password): remove hash in the value-object the password follows the rule</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(env)</td>
       <td>a0a107c</td>
       <td>feat(env): .env secrets</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>26513ce</td>
       <td>feat(iam): initialize value property in Dni class constructor</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>49dd051</td>
       <td>feat(iam): add fromPersistence to return string the phone</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(outbound-services)</td>
       <td>36fcb70</td>
       <td>feat(outbound-services): add EmailService to send email</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(security)</td>
       <td>773fae4</td>
       <td>feat(security): add BcryptHashingService.ts and JwTokenService to pass dependencies</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>6085d2c</td>
       <td>feat(iam): add resource types for staff user, login user, and mother profile</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>c2998bd</td>
       <td>feat(iam): update login and password reset commands to use dni and code</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>9344591</td>
       <td>feat(iam): delete RequestPasswordResetCommand</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(application)</td>
       <td>b2f6868</td>
       <td>feat(application): add service to all commands and queries</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>d5f9504</td>
       <td>feat(iam): implement UserRepository for user management operations to mongo</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(swagger)</td>
       <td>d238a38</td>
       <td>feat(swagger): config url and apis theme errors connection with routes</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>c19ff22</td>
       <td>feat(iam): add password field and getter method in User class</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>b0dad2d</td>
       <td>feat(iam): add UserMapper for converting between User domain model and persistence</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>3d913ad</td>
       <td>feat(iam): update requestCode with new command 'RequestResetCodeCommand'</td>
       <td>25/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(shared)</td>
       <td>02548f3</td>
       <td>feat(shared): add MongoConnection with connection with database of Mongo</td>
@@ -3149,98 +3149,98 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
     </tr>
     <!-- 24/04/2026 -->
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>ead754c</td>
       <td>feat(iam): add new dependencies for JWT, Mongoose, and Nodemailer</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>861912c</td>
       <td>feat(iam): add UserController for user registration, login, and password reset</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>09711bc</td>
       <td>feat(iam): add UserFacade for user registration, login, and password reset</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>c38b4bc</td>
       <td>feat(iam): defined model to collection in mongo 'user'</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>5f537cf</td>
       <td>feat(iam): add UserResource and UserResourceAssembler for user data handling</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>687f5f9</td>
       <td>feat(iam): add UserDependencyInjection and UserRoutes for user management</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(app)</td>
       <td>24b8b17</td>
       <td>feat(app): add userRoutes</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(iam)</td>
       <td>e687826</td>
       <td>feat(iam): refactor server initialization to use async MongoDB connection</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(command)</td>
       <td>94be968</td>
       <td>feat(command): add new command to verify code reset</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(services)</td>
       <td>061a713</td>
       <td>feat(services): add verifyResetCode to CommandServices</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(services)</td>
       <td>5ffa780</td>
       <td>feat(services): add implementation verifyCode and add logic to verify code reset</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(facade)</td>
       <td>baf063d</td>
       <td>feat(facade): add verifyResetCode method in the facade</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(controller)</td>
       <td>fa8af82</td>
       <td>feat(controller): add verifyCode method to handle code verification</td>
       <td>24/04/2026</td>
     </tr>
     <tr>
-      <td>SANUVI-MINSA/backend</td>
+      <td>SANUVI-MINSA/backend-ferova</td>
       <td>feat(route)</td>
       <td>N/A</td>
       <td>feat(route): add new route endpoint to verify-code</td>
@@ -3265,7 +3265,7 @@ Durante el Sprint 1, el equipo se enfocó en establecer las bases funcionales de
       <td colspan="5"><strong>Frontend - Ferova Family</strong></td>
     </tr>
     <tr>
-      <td>SSANUVI-MINSA/ferova-mobile-android</td>
+      <td>SANUVI-MINSA/ferova-mobile-android</td>
       <td>feat/nutritional-diary</td>
       <td>21a66c4</td>
       <td>feat: Add navigation callback for new meal entry on Home screen</td>
@@ -3574,6 +3574,14 @@ A continuación se presentan los materiales de evidencia correspondientes a los 
     https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDI12xWrXPYRJ2I9oOHEQqsAXj-03JLqkA_YAm7VY9bl8E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=odMZcv
   </a>
 </p>
+
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Link del Backend</strong>
+  <a href="https://backend-ferova-test.up.railway.app/api-docs/" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+https://backend-ferova-test.up.railway.app/api-docs/
+  </a>
+</p>
+
 <img src="resources/images/sprint-1/evidencias/video-backend.png">
 
 
@@ -4038,135 +4046,135 @@ El objetivo principal del Sprint Backlog 2 es desarrollar los servicios y la ló
 
 | Repository | Branch | Commit Id | Commit Message / Body | Committed on |
 |------------|---------|-----------|-------------------------|--------------|
-| Ferova Family | feat/communication-management | 87b7544 | feat(communication): add Nurse domain model | 4 days ago |
-| Ferova Family | feat/communication-management | 013a3d7 | feat(communication): add Message domain model | 4 days ago |
-| Ferova Family | feat/communication-management | 230fc65 | feat(communication): add Consultation domain model | 4 days ago |
-| Ferova Family | feat/communication-management | 410a301 | feat(communication): add PatientWithNurse domain model | 4 days ago |
-| Ferova Family | feat/communication-management | 75bab72 | feat(communication): add ConsultationRepositoryImpl | 4 days ago |
-| Ferova Family | feat/communication-management | 9d05a7e | feat(communication): render patients with assigned nurse in consultations | 4 days ago |
-| Ferova Family | feat/communication-management | e62ef7c | feat(communication): bind NewConsultationScreen to selected child nurse | 4 days ago |
-| Ferova Family | feat/communication-management | 02e5eaa | feat(communication): add open and closed badges in MyConsultationsScreen | 4 days ago |
-| Ferova Family | feat/communication-management | af2cb7c | feat(communication): add closed consultation modal in ChatScreen | 4 days ago |
-| Ferova Family | feat/diary-nutrition | 9c910ce | feat: services and repositories for NutritionalDiary | 1 day ago |
-| Ferova Family | feat/diary-nutrition | 4375260 | feat: services and repositories for NutritionalDiary with DTOs | 1 day ago |
-| Ferova Family | feat/diary-nutrition | b0d9c6b | feat: NutritionalDiary domain classes | 1 day ago |
-| Ferova Family | feat/diary-nutrition | 9e58138 | feat: compose NutritionalDiary connected to endpoints | 1 day ago |
-| Ferova Family | feat/diary-nutrition | a5f0e48 | feat: NutritionalDiary screens connected to backend endpoints | 1 day ago |
-| Ferova Family | feat/diary-nutrition | 5bf19e2 | feat: MainScreen updated with NutritionalDiary integration | 1 day ago |
-| Ferova Family | feat/confirm-doses | a791cc2 | feat: implement dose confirmation and treatment tracking on HomeScreen | 2 weeks ago |
-| Ferova Family | feat/confirm-doses | 7664d33 | feat: add dosingHours field to TodayDose model | 2 weeks ago |
-| Ferova Family | feat/confirm-doses | 66980d9 | feat: update dose tracking UI in HomeScreen | 2 weeks ago |
-| Ferova Family | feat/confirm-doses | 2a9eecf | feat: update MedalListItem to display completion status and progress | 2 weeks ago |
-| Ferova Family | feat/confirm-doses | 1a2fd62 | feat: implement achievement tracking on HomeScreen | 2 weeks ago |
-| Ferova Family | feat/history-dosis | 149bf88 | feat: add DoseHistory domain model | 2 weeks ago |
-| Ferova Family | feat/history-dosis | 5fc1d97 | refactor: update TreatmentApiService and dose history response model | 2 weeks ago |
-| Ferova Family | feat/history-dosis | 863af56 | refactor: update Treatment DTOs and add DoseHistoryResponseDto | 2 weeks ago |
-| Ferova Family | feat/history-dosis | 3683414 | fix: refactor TreatmentRepository to use real API data | 2 weeks ago |
-| Ferova Family | feat/history-dosis | 014c5ee | feat: integrate remote dose history and treatment metadata | 2 weeks ago |
-| Ferova Family | feat/achievements-&-rewards-api | 26f0538 | feat: add AchievementResponse DTO for achievement tracking | 2 weeks ago |
-| Ferova Family | feat/achievements-&-rewards-api | ecddb39 | feat: persist selected child ID in TokenManager | 2 weeks ago |
-| Ferova Family | feat/achievements-&-rewards-api | aaaed30 | feat: add DTOs for hemoglobin evolution tracking | 2 weeks ago |
-| Ferova Family | feat/achievements-&-rewards-api | 654da22 | feat: add empty state handling for hemoglobin chart | 2 weeks ago |
-| Ferova Family | feat/achievements-&-rewards-api | 019e849 | feat: refactor ProgressViewModel to support dynamic badges | 2 weeks ago |
-| Ferova Family | feat/map-facilities | bf6f627 | feat: add location permissions to AndroidManifest | 3 weeks ago |
-| Ferova Family | feat/map-facilities | b276177 | feat: integrate real-time location and proximity filtering for health facilities | 3 weeks ago |
-| Ferova Family | feat/map-facilities | 1375d27 | feat: refactor location flow and health center retrieval in AppointmentsViewModel | 3 weeks ago |
-| Ferova Family | feat/map-facilities | 39e14e1 | feat: integrate AppointmentsViewModel and dynamic scheduling in AppointmentBookingScreen | 3 weeks ago |
-| Ferova Family | feat/map-facilities | bdf9d1a | refactor: optimize map performance and location retrieval | 3 weeks ago |
-| Ferova Family | feat/map-facilities | 1a9ef78 | feat: share AppointmentsViewModel across appointment navigation flow | 3 weeks ago |
-| Ferova Family | feat/map-facilities | 818a244 | feat: expand appointment management functionality in AppointmentsViewModel | 2 weeks ago |
-| Ferova Family | feat/map-facilities | 5521079 | feat: implement comprehensive UI and logic for AppointmentsScreen | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 87b7544 | feat(communication): add Nurse domain model | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 013a3d7 | feat(communication): add Message domain model | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 230fc65 | feat(communication): add Consultation domain model | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 410a301 | feat(communication): add PatientWithNurse domain model | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 75bab72 | feat(communication): add ConsultationRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 9d05a7e | feat(communication): render patients with assigned nurse in consultations | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | e62ef7c | feat(communication): bind NewConsultationScreen to selected child nurse | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | 02e5eaa | feat(communication): add open and closed badges in MyConsultationsScreen | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/communication-management | af2cb7c | feat(communication): add closed consultation modal in ChatScreen | 4 days ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/diary-nutrition | 9c910ce | feat: services and repositories for NutritionalDiary | 1 day ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/diary-nutrition | 4375260 | feat: services and repositories for NutritionalDiary with DTOs | 1 day ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/diary-nutrition | b0d9c6b | feat: NutritionalDiary domain classes | 1 day ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/diary-nutrition | 9e58138 | feat: compose NutritionalDiary connected to endpoints | 1 day ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/diary-nutrition | a5f0e48 | feat: NutritionalDiary screens connected to backend endpoints | 1 day ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/diary-nutrition | 5bf19e2 | feat: MainScreen updated with NutritionalDiary integration | 1 day ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/confirm-doses | a791cc2 | feat: implement dose confirmation and treatment tracking on HomeScreen | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/confirm-doses | 7664d33 | feat: add dosingHours field to TodayDose model | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/confirm-doses | 66980d9 | feat: update dose tracking UI in HomeScreen | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/confirm-doses | 2a9eecf | feat: update MedalListItem to display completion status and progress | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/confirm-doses | 1a2fd62 | feat: implement achievement tracking on HomeScreen | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/history-dosis | 149bf88 | feat: add DoseHistory domain model | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/history-dosis | 5fc1d97 | refactor: update TreatmentApiService and dose history response model | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/history-dosis | 863af56 | refactor: update Treatment DTOs and add DoseHistoryResponseDto | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/history-dosis | 3683414 | fix: refactor TreatmentRepository to use real API data | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/history-dosis | 014c5ee | feat: integrate remote dose history and treatment metadata | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/achievements-&-rewards-api | 26f0538 | feat: add AchievementResponse DTO for achievement tracking | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/achievements-&-rewards-api | ecddb39 | feat: persist selected child ID in TokenManager | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/achievements-&-rewards-api | aaaed30 | feat: add DTOs for hemoglobin evolution tracking | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/achievements-&-rewards-api | 654da22 | feat: add empty state handling for hemoglobin chart | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/achievements-&-rewards-api | 019e849 | feat: refactor ProgressViewModel to support dynamic badges | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | bf6f627 | feat: add location permissions to AndroidManifest | 3 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | b276177 | feat: integrate real-time location and proximity filtering for health facilities | 3 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | 1375d27 | feat: refactor location flow and health center retrieval in AppointmentsViewModel | 3 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | 39e14e1 | feat: integrate AppointmentsViewModel and dynamic scheduling in AppointmentBookingScreen | 3 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | bdf9d1a | refactor: optimize map performance and location retrieval | 3 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | 1a9ef78 | feat: share AppointmentsViewModel across appointment navigation flow | 3 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | 818a244 | feat: expand appointment management functionality in AppointmentsViewModel | 2 weeks ago |
+| SANUVI-MINSA/ferova-mobile-android | feat/map-facilities | 5521079 | feat: implement comprehensive UI and logic for AppointmentsScreen | 2 weeks ago |
 
 ----
 
 
 | Repository | Branch | Commit Id | Commit Message / Body | Committed on |
 |------------|---------|-----------|------------------------|--------------|
-| Ferova Clinic | feat/health-facility | 9869fee | feat: add Appointment model and AppointmentRepository interface | Last week |
-| Ferova Clinic | feat/health-facility | ce15d3a | feat: implement AppointmentService for fetching nurse appointments | Last week |
-| Ferova Clinic | feat/health-facility | d46c921 | feat: add AppointmentService, AppointmentRepository and AppointmentViewModel | Last week |
-| Ferova Clinic | feat/health-facility | 6161fad | feat: add NurseAppointmentsPage, AppointmentCard, AppointmentState and AppointmentViewModel | Last week |
-| Ferova Clinic | feat/health-facility | 43cae8e | feat: enhance NurseHomePage with appointment management and display features | Last week |
-| Ferova Clinic | feat/health-facility | a5b8eae | feat: add AdminFacility model to represent health facility data | Last week |
-| Ferova Clinic | feat/health-facility | ade28dc | feat: add AdminFacilityResponseDto and AdminFacilityRepository for health facility management | Last week |
-| Ferova Clinic | feat/health-facility | b48fb6d | feat: implement AdminFacilityService and AdminFacilityRepositoryImpl | Last week |
-| Ferova Clinic | feat/health-facility | 91fdfae | feat: add AdminFacilityViewModel and AdminFacilityState | Last week |
-| Ferova Clinic | feat/health-facility | d9f0c0f | feat: add AdminFacilityPage and AdminFacilityCard for facility administration | Last week |
-| Ferova Clinic | feat/health-facility | 128f7d6 | feat: implement nurse availability validation for facility registration | Last week |
-| Ferova Clinic | feat/health-facility | c3d264c | feat: implement nurse availability check and update AdminFacilityCard interaction | Last week |
-| Ferova Clinic | feat/health-facility | c746297 | feat: add Nurse model with id and fullName attributes | Last week |
-| Ferova Clinic | feat/health-facility | 506d79c | feat: implement getAvailableNurses method in repository | Last week |
-| Ferova Clinic | feat/health-facility | 3434cd4 | feat: add getAvailableNurses method in AdminFacilityViewModel | Last week |
-| Ferova Clinic | feat/health-facility | 7aa2ad4 | feat: add NurseSelectionPage and integrate nurse assignment workflow | Last week |
-| Ferova Clinic | feat/health-facility | 73dfc7d | feat: add NurseAssignmentRequestDto and NurseAssignmentResponseDto | Last week |
-| Ferova Clinic | feat/health-facility | 5526626 | feat: implement assignNurse method in repository for nurse assignment | Last week |
-| Ferova Clinic | feat/health-facility | 639256b | feat: add nurse assignment functionality in AdminFacilityViewModel | Last week |
-| Ferova Clinic | feat/health-facility | 77cd581 | feat: add confirmation popup for nurse assignment | Last week |
-| Ferova Clinic | feat/health-facility | 2fd5e58 | feat: add DTOs for health facility registration request and response | Last week |
-| Ferova Clinic | feat/health-facility | b262fac | feat: implement postAdminFacility method for health facility registration | Last week |
-| Ferova Clinic | feat/health-facility | d3d0fbd | feat: add registerAdminFacility method to repository | Last week |
-| Ferova Clinic | feat/health-facility | b280257 | feat: add getDistricts method for district retrieval | 4 days ago |
-| Ferova Clinic | feat/health-facility | 744fa79 | feat: add AdminFacilityRegistrationPage and GeneralInfoStep | 4 days ago |
-| Ferova Clinic | feat/health-facility | 620e02b | feat: add MapLocationStep for location selection and address retrieval | 4 days ago |
-| Ferova Clinic | feat/health-facility | 960fc4a | feat: add ServicesSelectionStep for facility services configuration | 4 days ago |
-| Ferova Clinic | feat/health-facility | e4230cb | feat: add TimeSelectionStep for schedules and available slots | 4 days ago |
-| Ferova Clinic | feat/health-facility | 9cacd94 | feat: implement facility registration workflow in AdminFacilityViewModel | 4 days ago |
-| Ferova Clinic | feat/health-facility | 9f4643e | feat: add ConfirmedAdminFacilityRegistrationPage for registration summary | 4 days ago |
-| Ferova Clinic | feat/health-facility | 6c2f9c1 | feat: enhance facility registration and nurse assignment handling | 4 days ago |
-| Ferova Clinic | feat/health-facility | 201b0ab | feat: enhance nurse selection UI with loading and error handling | 4 days ago |
-| Ferova Clinic | feat/health-facility | bb97ef4 | feat: add confirmation dialog and loading overlay for facility registration | 4 days ago |
-| Ferova Clinic | feat/Home | 63c2e9d | feat: add AdminHome feature with state management and UI components | 2 weeks ago |
-| Ferova Clinic | feat/Home | d88392e | feat: add user retrieval methods to AuthService (getUserByEmail, getUserById) | 2 weeks ago |
-| Ferova Clinic | feat/Home | 641e7b4 | feat: add getUserByEmail and getUserById methods to AuthRepository | 2 weeks ago |
-| Ferova Clinic | feat/Home | e012835 | refactor: update AdminHomeViewModel factory to include AuthRepository dependency | 2 weeks ago |
-| Ferova Clinic | feat/Home | ab57290 | feat: implement logout functionality with confirmation dialog in AdminHomePage | 2 weeks ago |
-| Ferova Clinic | feat/Home | 73e5c39 | feat: add logout method and AuthRepository dependency to AdminHomeViewModel | 2 weeks ago |
-| Ferova Clinic | feat/Home | e4ea938 | feat: implement role-based access control and JWT decoding in LoginViewModel | 2 weeks ago |
-| Ferova Clinic | feat/Home | 34067cb | feat: reset LoginViewModel state on LoginPage initialization | 2 weeks ago |
-| Ferova Clinic | feat/Home | b94f152 | feat: add user existence and role-based validation to password recovery | 2 weeks ago |
-| Ferova Clinic | feat/Home | 58eeee3 | feat: implement role-based navigation for Admin and Nurse after login | 2 weeks ago |
-| Ferova Clinic | feat/Home | 3bec6a7 | feat: implement NurseHomePage with patient dashboard and clinical risk tracking | 2 weeks ago |
-| Ferova Clinic | feat/Home | 9cc79ce | feat: register NurseHomeViewModel in dependency injection | 2 weeks ago |
-| Ferova Clinic | feat/Home | 34ee3a0 | feat: add NurseHomeState for nurse dashboard management | 2 weeks ago |
-| Ferova Clinic | feat/Home | b76eca8 | feat: add NurseHomeViewModel with logout functionality | 2 weeks ago |
-| Ferova Clinic | feat/Home | 305f7e2 | feat: enhance AdminHome with analytics integration and dashboard UI updates | Last week |
-| Ferova Clinic | feat/auth | ede532b | feat: add User domain class for authentication and staff registration | 2 weeks ago |
-| Ferova Clinic | feat/auth | 9044cdd | feat: add methods to manage login and register | 2 weeks ago |
-| Ferova Clinic | feat/auth | f2916fa | feat: add methods to save token, retrieve token and logout | 2 weeks ago |
-| Ferova Clinic | feat/auth | 98efdac | feat: add DTOs for login and staff registration | 2 weeks ago |
-| Ferova Clinic | feat/auth | 8d6eed1 | feat: add AuthService with login and staff registration methods | 2 weeks ago |
-| Ferova Clinic | feat/auth | dcb93b8 | feat: add AuthRepositoryImpl with authentication and token management | 2 weeks ago |
-| Ferova Clinic | feat/auth | 1b59e00 | feat: add LoginState and RegisterState for authentication layer | 2 weeks ago |
-| Ferova Clinic | feat/auth | ff60d73 | feat: add RegisterViewModel and LoginViewModel | 2 weeks ago |
-| Ferova Clinic | feat/auth | ddafb1d | feat: add LoginPage and RegisterPage with role selection | 2 weeks ago |
-| Ferova Clinic | feat/auth | bd2317c | feat: improve registration and login error handling | 2 weeks ago |
-| Ferova Clinic | feat/auth | d6d496b | feat: update registerStaff response and error handling in AuthService | 2 weeks ago |
-| Ferova Clinic | feat/auth | d554897 | feat: add dependency injection configuration for authentication | 2 weeks ago |
-| Ferova Clinic | feat/auth | 0c0beab | refactor: unify LoginState and RegisterState using copyWith pattern | 2 weeks ago |
-| Ferova Clinic | feat/auth | f4c583a | feat: refactor LoginViewModel and RegisterViewModel to ChangeNotifier | 2 weeks ago |
-| Ferova Clinic | feat/auth | 4e15340 | refactor: improve RegisterStaffResponseDto validation | 2 weeks ago |
-| Ferova Clinic | feat/auth | 12b1760 | feat: integrate authentication view models with UI and form validation | 2 weeks ago |
-| Ferova Clinic | feat/auth | 91df747 | feat: configure providers and set LoginPage as application entry point | 2 weeks ago |
-| Ferova Clinic | feat/auth | b5d5703 | feat: add networking, storage and state management dependencies | 2 weeks ago |
-| Ferova Clinic | feat/auth | 294d915 | feat: improve login page feedback and message handling | 2 weeks ago |
-| Ferova Clinic | feat/auth | ea8bd1e | feat: implement message handling in login and register view models | 2 weeks ago |
-| Ferova Clinic | feat/auth | d02770e | feat: implement user feedback in registration flow | 2 weeks ago |
-| Ferova Clinic | feat/auth | 22b9a09 | feat: implement password recovery, verification and reset pages | 2 weeks ago |
-| Ferova Clinic | feat/auth | 77bc418 | feat: implement password recovery navigation and business logic | 2 weeks ago |
-| Ferova Clinic | feat/auth | 51df37f | refactor: use RegisterStaffResponseDto in repository and service | 2 weeks ago |
-| Ferova Clinic | feat/auth | 458b357 | refactor: reorganize authentication feature structure | 2 weeks ago |
-| Ferova Clinic | feat/auth | 0cffcbb | feat: add password reset methods to AuthRepository | 2 weeks ago |
-| Ferova Clinic | feat/auth | fc9d0e4 | feat: add password reset and verification code support in repository | 2 weeks ago |
-| Ferova Clinic | feat/auth | 2d27911 | feat: add DTOs for request code, verify code and reset password | 2 weeks ago |
-| Ferova Clinic | feat/auth | f0b97d5 | feat: add password reset and verification services | 2 weeks ago |
-| Ferova Clinic | feat/auth | 54967b2 | feat: add state classes for recovery, verification and reset password | 2 weeks ago |
-| Ferova Clinic | feat/auth | 6d06e9c | feat: add ViewModels for recovery password workflow | 2 weeks ago |
-| Ferova Clinic | feat/auth | 18b4fdf | feat: register recovery password ViewModels in dependency injection | 2 weeks ago |
-| Ferova Clinic | feat/auth | 866bc4e | feat: implement messaging and navigation in recovery password flow | 2 weeks ago |
-| Ferova Clinic | feat/auth | b767c5c | feat: implement verification code and resend functionality | 2 weeks ago |
-| Ferova Clinic | feat/auth | 7236e2f | feat: connect NewPasswordPage with ViewModel and UI feedback | 2 weeks ago |
-| Ferova Clinic | feat/auth | d441236 | refactor: provide RecoveryPasswordViewModel using ChangeNotifierProvider | 2 weeks ago |
-| Ferova Clinic | feat/auth | f5e1ae0 | chore: update .gitignore configuration | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 9869fee | feat: add Appointment model and AppointmentRepository interface | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | ce15d3a | feat: implement AppointmentService for fetching nurse appointments | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | d46c921 | feat: add AppointmentService, AppointmentRepository and AppointmentViewModel | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 6161fad | feat: add NurseAppointmentsPage, AppointmentCard, AppointmentState and AppointmentViewModel | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 43cae8e | feat: enhance NurseHomePage with appointment management and display features | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | a5b8eae | feat: add AdminFacility model to represent health facility data | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | ade28dc | feat: add AdminFacilityResponseDto and AdminFacilityRepository for health facility management | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | b48fb6d | feat: implement AdminFacilityService and AdminFacilityRepositoryImpl | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 91fdfae | feat: add AdminFacilityViewModel and AdminFacilityState | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | d9f0c0f | feat: add AdminFacilityPage and AdminFacilityCard for facility administration | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 128f7d6 | feat: implement nurse availability validation for facility registration | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | c3d264c | feat: implement nurse availability check and update AdminFacilityCard interaction | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | c746297 | feat: add Nurse model with id and fullName attributes | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 506d79c | feat: implement getAvailableNurses method in repository | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 3434cd4 | feat: add getAvailableNurses method in AdminFacilityViewModel | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 7aa2ad4 | feat: add NurseSelectionPage and integrate nurse assignment workflow | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 73dfc7d | feat: add NurseAssignmentRequestDto and NurseAssignmentResponseDto | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 5526626 | feat: implement assignNurse method in repository for nurse assignment | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 639256b | feat: add nurse assignment functionality in AdminFacilityViewModel | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 77cd581 | feat: add confirmation popup for nurse assignment | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 2fd5e58 | feat: add DTOs for health facility registration request and response | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | b262fac | feat: implement postAdminFacility method for health facility registration | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | d3d0fbd | feat: add registerAdminFacility method to repository | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | b280257 | feat: add getDistricts method for district retrieval | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 744fa79 | feat: add AdminFacilityRegistrationPage and GeneralInfoStep | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 620e02b | feat: add MapLocationStep for location selection and address retrieval | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 960fc4a | feat: add ServicesSelectionStep for facility services configuration | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | e4230cb | feat: add TimeSelectionStep for schedules and available slots | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 9cacd94 | feat: implement facility registration workflow in AdminFacilityViewModel | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 9f4643e | feat: add ConfirmedAdminFacilityRegistrationPage for registration summary | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 6c2f9c1 | feat: enhance facility registration and nurse assignment handling | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | 201b0ab | feat: enhance nurse selection UI with loading and error handling | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/health-facility | bb97ef4 | feat: add confirmation dialog and loading overlay for facility registration | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 63c2e9d | feat: add AdminHome feature with state management and UI components | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | d88392e | feat: add user retrieval methods to AuthService (getUserByEmail, getUserById) | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 641e7b4 | feat: add getUserByEmail and getUserById methods to AuthRepository | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | e012835 | refactor: update AdminHomeViewModel factory to include AuthRepository dependency | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | ab57290 | feat: implement logout functionality with confirmation dialog in AdminHomePage | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 73e5c39 | feat: add logout method and AuthRepository dependency to AdminHomeViewModel | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | e4ea938 | feat: implement role-based access control and JWT decoding in LoginViewModel | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 34067cb | feat: reset LoginViewModel state on LoginPage initialization | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | b94f152 | feat: add user existence and role-based validation to password recovery | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 58eeee3 | feat: implement role-based navigation for Admin and Nurse after login | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 3bec6a7 | feat: implement NurseHomePage with patient dashboard and clinical risk tracking | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 9cc79ce | feat: register NurseHomeViewModel in dependency injection | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 34ee3a0 | feat: add NurseHomeState for nurse dashboard management | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | b76eca8 | feat: add NurseHomeViewModel with logout functionality | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/Home | 305f7e2 | feat: enhance AdminHome with analytics integration and dashboard UI updates | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | ede532b | feat: add User domain class for authentication and staff registration | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 9044cdd | feat: add methods to manage login and register | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | f2916fa | feat: add methods to save token, retrieve token and logout | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 98efdac | feat: add DTOs for login and staff registration | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 8d6eed1 | feat: add AuthService with login and staff registration methods | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | dcb93b8 | feat: add AuthRepositoryImpl with authentication and token management | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 1b59e00 | feat: add LoginState and RegisterState for authentication layer | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | ff60d73 | feat: add RegisterViewModel and LoginViewModel | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | ddafb1d | feat: add LoginPage and RegisterPage with role selection | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | bd2317c | feat: improve registration and login error handling | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | d6d496b | feat: update registerStaff response and error handling in AuthService | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | d554897 | feat: add dependency injection configuration for authentication | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 0c0beab | refactor: unify LoginState and RegisterState using copyWith pattern | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | f4c583a | feat: refactor LoginViewModel and RegisterViewModel to ChangeNotifier | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 4e15340 | refactor: improve RegisterStaffResponseDto validation | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 12b1760 | feat: integrate authentication view models with UI and form validation | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 91df747 | feat: configure providers and set LoginPage as application entry point | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | b5d5703 | feat: add networking, storage and state management dependencies | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 294d915 | feat: improve login page feedback and message handling | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | ea8bd1e | feat: implement message handling in login and register view models | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | d02770e | feat: implement user feedback in registration flow | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 22b9a09 | feat: implement password recovery, verification and reset pages | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 77bc418 | feat: implement password recovery navigation and business logic | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 51df37f | refactor: use RegisterStaffResponseDto in repository and service | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 458b357 | refactor: reorganize authentication feature structure | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 0cffcbb | feat: add password reset methods to AuthRepository | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | fc9d0e4 | feat: add password reset and verification code support in repository | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 2d27911 | feat: add DTOs for request code, verify code and reset password | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | f0b97d5 | feat: add password reset and verification services | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 54967b2 | feat: add state classes for recovery, verification and reset password | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 6d06e9c | feat: add ViewModels for recovery password workflow | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 18b4fdf | feat: register recovery password ViewModels in dependency injection | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 866bc4e | feat: implement messaging and navigation in recovery password flow | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | b767c5c | feat: implement verification code and resend functionality | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | 7236e2f | feat: connect NewPasswordPage with ViewModel and UI feedback | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | d441236 | refactor: provide RecoveryPasswordViewModel using ChangeNotifierProvider | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/auth | f5e1ae0 | chore: update .gitignore configuration | 2 weeks ago |
 
 
 ----
@@ -5199,7 +5207,7 @@ El video muestra las funcionalidades implementadas para las madres, incluyendo e
 
 
 <p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
-  <strong>Video del Frontend - Ferova Clinic (demostración):</strong>
+  <strong>Video del Frontend - SANUVI-MINSA/ferova-clinic-mobile (demostración):</strong>
   <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
     https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG
   </a>
@@ -5214,6 +5222,13 @@ El video presenta las funcionalidades desarrolladas para los roles de Administra
   <strong>Video del Backend (demostración):</strong>
   <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
     https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB
+  </a>
+</p>
+
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Link del Backend:</strong>
+  <a href="https://backend-ferova-test.up.railway.app/api-docs/" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://backend-ferova-test.up.railway.app/api-docs/
   </a>
 </p>
 
@@ -5549,86 +5564,88 @@ El Sprint Backlog 3 reúne las historias de usuario seleccionadas para el tercer
 
 | Repository | Branch | Commit Id | Commit Message / Body | Committed on |
 |------------|--------|-----------|------------------------|--------------|
-| Ferova Clinic | feat/communication | 51e9a7e | feat: add DTOs for chat, consultation, and patient management features | 20 hours ago |
-| Ferova Clinic | feat/communication | 737685d | feat: add domain entities and value objects for communication and patient management features | 20 hours ago |
-| Ferova Clinic | feat/communication | 651278f | feat: add chat page, view model, and state for consultation communication and management | 20 hours ago |
-| Ferova Clinic | feat/communication | 16314a7 | feat: implement consultation inbox feature with search functionality, MVVM state management, and specialized empty state components | 20 hours ago |
-| Ferova Clinic | feat/communication | c485d4b | feat: add CommunicationRepository with methods for consultations and messaging | 20 hours ago |
-| Ferova Clinic | feat/communication | 4d81c59 | feat: add CommunicationService and CommunicationRepository implementation for chat and consultations management | 20 hours ago |
-| Ferova Clinic | feat/communication | 37b9bd5 | feat: add PatientManagementRepository and NurseNotAssignedException for patient management domain | 20 hours ago |
-| Ferova Clinic | feat/communication | dc7d145 | feat: add service and repository for patient management operations | 20 hours ago |
-| Ferova Clinic | feat/communication | 34ecd4c | feat: add mother search feature including state, view model and UI to search mothers by DNI | 20 hours ago |
-| Ferova Clinic | feat/communication | 4fcce8b | feat: add MotherPatientsPage and ViewModel to manage and assign patients to nurses | 20 hours ago |
-| Ferova Clinic | feat/communication | ed16ecf | feat: add dependencies and providers for patient management and communication features | 20 hours ago |
-| Ferova Clinic | feat/communication | 8832cfd | feat: implement tab navigation callbacks and integrate mother search and consultation inbox in nurse home | 20 hours ago |
-| Ferova Clinic | feat/communication | af42f30 | feat: add refresh method and enhance error handling for nurse discharge flow | 20 hours ago |
-| Ferova Clinic | feat/communication | fe069ea | feat: implement automatic data refresh for medical record and hemoglobin control pages using lifecycle observers and navigation callbacks | 20 hours ago |
-| Ferova Clinic | feat/communication | 5e90aa5 | feat: update mother search to return a list of results and enhance search UI | 20 hours ago |
-| Ferova Clinic | feat/medical-record | 389e5c5 | feat: implement updateMedicalRecord method in MedicalRecordRepositoryImpl | 4 days ago |
-| Ferova Clinic | feat/medical-record | 67865e5 | feat: implement getMedicalRecordPDF method in MedicalRecordRepositoryImpl | 4 days ago |
-| Ferova Clinic | feat/medical-record | 1ff541f | feat: implement checkMedicalRecord method in MedicalRecordRepositoryImpl | 4 days ago |
-| Ferova Clinic | feat/medical-record | 9985f63 | feat: implement createHemoglobinLevel method in MedicalRecordRepositoryImpl | 4 days ago |
-| Ferova Clinic | feat/medical-record | 2c02af0 | feat: implement getHemoglobinControls method in MedicalRecordRepositoryImpl | 4 days ago |
-| Ferova Clinic | feat/medical-record | 9bb5262 | feat: implement getHemoglobinReportPdf method in MedicalRecordRepositoryImpl | 4 days ago |
-| Ferova Clinic | feat/medical-record | 52a7bba | feat: add MedicalRecordState class for managing medical record state | 4 days ago |
-| Ferova Clinic | feat/medical-record | da5f586 | feat: implement MedicalRecordViewModel for managing medical records and nurse patients | 4 days ago |
-| Ferova Clinic | feat/medical-record | 172724e | feat: add dependency injection for MedicalRecordService and MedicalRecordViewModel | 4 days ago |
-| Ferova Clinic | feat/medical-record | 3d080fe | refactor: clean up dependency injection setup by removing unused imports and formatting | 4 days ago |
-| Ferova Clinic | feat/medical-record | 9a32154 | feat: add saving state and error message to MedicalRecordState | 4 days ago |
-| Ferova Clinic | feat/medical-record | af2b9c8 | feat: implement postMedicalRecord method for saving patient medical records | 4 days ago |
-| Ferova Clinic | feat/medical-record | e5b2827 | feat: create RegisterMedicalRecordPage | 4 days ago |
-| Ferova Clinic | feat/medical-record | 5e62212 | feat: implement navigation to RegisterMedicalRecordPage | 4 days ago |
-| Ferova Clinic | feat/medical-record | 2a2bf01 | feat: add markPatientHasRecord method | 4 days ago |
-| Ferova Clinic | feat/medical-record | 20605d0 | feat: mark patient as having a record upon successful submission | 4 days ago |
-| Ferova Clinic | feat/medical-record | c691dcd | feat: set background color for AddAntecedenteDialog and AddSymptomDialog | 4 days ago |
-| Ferova Clinic | feat/medical-record | 7e03a27 | feat: enhance AddAntecedenteDialog layout | 4 days ago |
-| Ferova Clinic | feat/medical-record | a8eed96 | feat: add loading state and error message fields to MedicalRecordState | 4 days ago |
-| Ferova Clinic | feat/medical-record | dca31ed | feat: implement getMedicalRecord method | 4 days ago |
-| Ferova Clinic | feat/medical-record | 56ba4f2 | feat: add MedicalRecordSummaryPage | 4 days ago |
-| Ferova Clinic | feat/medical-record | cfb060d | feat: implement navigation to MedicalRecordSummaryPage | 4 days ago |
-| Ferova Clinic | feat/medical-record | 9e087ba | feat: improve MedicalRecordPatientCard layout | 4 days ago |
-| Ferova Clinic | feat/discharge | e2ee75a | Discharge patient data model and DTO creation | Last week |
-| Ferova Clinic | feat/discharge | b99167b | Discharge patient repository declaration, connection and implementation | Last week |
-| Ferova Clinic | feat/discharge | 001de92 | Discharge patient state declaration and view model | Last week |
-| Ferova Clinic | feat/discharge | bdd54a2 | Discharge patient screen | Last week |
-| Ferova Clinic | feat/discharge | 34cdc4e | Discharge patient route configuration | Last week |
-| Ferova Clinic | develop | a853792 | feat: update application label to 'Ferova Clinic' in AndroidManifest.xml | Last week |
-| Ferova Clinic | develop | e512b72 | feat: implement polling for nurse appointments and enhance nurse home state management | Last week |
-| Ferova Clinic | develop | a848997 | feat: add NurseFacility and RiskOverview models with DTOs and repository integration | 2 weeks ago |
-| Ferova Clinic | feat/treatment | 94c25dd | feat: add PendingPatient model class to treatment domain | Last week |
-| Ferova Clinic | feat/treatment | df56685 | feat: add TreatmentRepository with method to get pending patients | Last week |
-| Ferova Clinic | feat/treatment | 5cab626 | feat: add treatment repository, service, and DTO to fetch pending patients | Last week |
-| Ferova Clinic | feat/treatment | 98672af | feat: add page, view model and state to manage pending patients | Last week |
-| Ferova Clinic | feat/treatment | e5112b8 | feat: register dependencies for treatment service, repository, and pending patients view model | Last week |
-| Ferova Clinic | feat/treatment | c76a0bb | feat: add navigation to PendingPatientsPage from NurseHomePage | Last week |
-| Ferova Clinic | feat/treatment | 4333239 | feat: add PendingPatientsViewModel provider to main.dart | Last week |
-| Ferova Clinic | feat/treatment | 0969527 | feat: register StartTreatmentViewModel in dependency injection container | Last week |
-| Ferova Clinic | feat/treatment | 1228652 | feat: add startTreatment method to repository and service | Last week |
-| Ferova Clinic | feat/treatment | 705cfd0 | feat: add DTOs for start treatment request and response | Last week |
-| Ferova Clinic | feat/treatment | f3e91b2 | feat: add StartTreatment presentation layer | Last week |
-| Ferova Clinic | feat/treatment | 00af7a7 | feat: add navigation to start treatment page | Last week |
-| Ferova Clinic | feat/treatment | 6eae9af | feat: add TreatmentErrorDialog and TreatmentSuccessPage | Last week |
-| Ferova Clinic | feat/treatment | 5baa38d | feat: add TreatmentsListViewModel to dependency injection | Last week |
-| Ferova Clinic | feat/treatment | bdb062c | feat: add TreatmentsListViewModel provider to main.dart | Last week |
-| Ferova Clinic | feat/treatment | e061d64 | feat: add method to get treatments by nurse | Last week |
-| Ferova Clinic | feat/treatment | 22a1608 | feat: add TreatmentSummary domain model | Last week |
-| Ferova Clinic | feat/treatment | 254e08d | feat: add treatments list feature with state management | Last week |
-| Ferova Clinic | feat/treatment | c331bda | feat: add methods to abandon, complete and get treatment details | Last week |
-| Ferova Clinic | feat/treatment | bb9f3ce | feat: add treatment detail page, view model, and state | Last week |
-| Ferova Clinic | feat/treatment | f21e10f | feat: redesign treatment detail page | Last week |
-| Ferova Clinic | feat/treatment | df880a9 | feat: add RiskPatient domain model | Last week |
-| Ferova Clinic | feat/treatment | 8c3d03c | feat: add risk patients presentation components | Last week |
-| Ferova Clinic | feat/treatment | 6f6d5e8 | feat: add method to get patients by risk level | Last week |
-| Ferova Clinic | feat/treatment | 1e4f92e | feat: add PatientMonitor model | Last week |
-| Ferova Clinic | feat/treatment | 9ef6706 | feat: add DTO for patient monitor response | Last week |
-| Ferova Clinic | feat/treatment | e206a6a | feat: add TreatmentInfo model class | Last week |
-| Ferova Clinic | feat/treatment | fbb8c8f | feat: add method to get patient monitor in TreatmentRepository | Last week |
-| Ferova Clinic | feat/treatment | 54e5b71 | feat: add method to get patient monitor in TreatmentRepositoryImpl | Last week |
-| Ferova Clinic | feat/treatment | 2cb258e | feat: add getPatientMonitor method to TreatmentService | Last week |
-| Ferova Clinic | feat/treatment | 8ec92cb | feat: implement navigation to patient monitor detail page | Last week |
-| Ferova Clinic | feat/treatment | e66b165 | feat: add PatientMonitorViewModel and PatientMonitorState | Last week |
-| Ferova Clinic | feat/treatment | 2e5c334 | feat: add patient monitor page | Last week |
-| Ferova Clinic | feat/treatment | 32644f5 | feat: add patient monitor page to display treatment and adherence information | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 51e9a7e | feat: add DTOs for chat, consultation, and patient management features | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 737685d | feat: add domain entities and value objects for communication and patient management features | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 651278f | feat: add chat page, view model, and state for consultation communication and management | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 16314a7 | feat: implement consultation inbox feature with search functionality, MVVM state management, and specialized empty state components | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | c485d4b | feat: add CommunicationRepository with methods for consultations and messaging | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 4d81c59 | feat: add CommunicationService and CommunicationRepository implementation for chat and consultations management | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 37b9bd5 | feat: add PatientManagementRepository and NurseNotAssignedException for patient management domain | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | dc7d145 | feat: add service and repository for patient management operations | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 34ecd4c | feat: add mother search feature including state, view model and UI to search mothers by DNI | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 4fcce8b | feat: add MotherPatientsPage and ViewModel to manage and assign patients to nurses | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | ed16ecf | feat: add dependencies and providers for patient management and communication features | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 8832cfd | feat: implement tab navigation callbacks and integrate mother search and consultation inbox in nurse home | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | af42f30 | feat: add refresh method and enhance error handling for nurse discharge flow | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | fe069ea | feat: implement automatic data refresh for medical record and hemoglobin control pages using lifecycle observers and navigation callbacks | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/communication | 5e90aa5 | feat: update mother search to return a list of results and enhance search UI | 20 hours ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 389e5c5 | feat: implement updateMedicalRecord method in MedicalRecordRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 67865e5 | feat: implement getMedicalRecordPDF method in MedicalRecordRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 1ff541f | feat: implement checkMedicalRecord method in MedicalRecordRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 9985f63 | feat: implement createHemoglobinLevel method in MedicalRecordRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 2c02af0 | feat: implement getHemoglobinControls method in MedicalRecordRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 9bb5262 | feat: implement getHemoglobinReportPdf method in MedicalRecordRepositoryImpl | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 52a7bba | feat: add MedicalRecordState class for managing medical record state | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | da5f586 | feat: implement MedicalRecordViewModel for managing medical records and nurse patients | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 172724e | feat: add dependency injection for MedicalRecordService and MedicalRecordViewModel | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 3d080fe | refactor: clean up dependency injection setup by removing unused imports and formatting | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 9a32154 | feat: add saving state and error message to MedicalRecordState | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | af2b9c8 | feat: implement postMedicalRecord method for saving patient medical records | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile
+ | feat/medical-record | e5b2827 | feat: create RegisterMedicalRecordPage | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 5e62212 | feat: implement navigation to RegisterMedicalRecordPage | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 2a2bf01 | feat: add markPatientHasRecord method | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 20605d0 | feat: mark patient as having a record upon successful submission | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | c691dcd | feat: set background color for AddAntecedenteDialog and AddSymptomDialog | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 7e03a27 | feat: enhance AddAntecedenteDialog layout | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | a8eed96 | feat: add loading state and error message fields to MedicalRecordState | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | dca31ed | feat: implement getMedicalRecord method | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 56ba4f2 | feat: add MedicalRecordSummaryPage | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | cfb060d | feat: implement navigation to MedicalRecordSummaryPage | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/medical-record | 9e087ba | feat: improve MedicalRecordPatientCard layout | 4 days ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/discharge | e2ee75a | Discharge patient data model and DTO creation | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/discharge | b99167b | Discharge patient repository declaration, connection and implementation | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/discharge | 001de92 | Discharge patient state declaration and view model | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/discharge | bdd54a2 | Discharge patient screen | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/discharge | 34cdc4e | Discharge patient route configuration | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | develop | a853792 | feat: update application label to 'Ferova Clinic' in AndroidManifest.xml | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | develop | e512b72 | feat: implement polling for nurse appointments and enhance nurse home state management | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | develop | a848997 | feat: add NurseFacility and RiskOverview models with DTOs and repository integration | 2 weeks ago |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 94c25dd | feat: add PendingPatient model class to treatment domain | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile| feat/treatment | df56685 | feat: add TreatmentRepository with method to get pending patients | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 5cab626 | feat: add treatment repository, service, and DTO to fetch pending patients | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 98672af | feat: add page, view model and state to manage pending patients | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile| feat/treatment | e5112b8 | feat: register dependencies for treatment service, repository, and pending patients view model | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | c76a0bb | feat: add navigation to PendingPatientsPage from NurseHomePage | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 4333239 | feat: add PendingPatientsViewModel provider to main.dart | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 0969527 | feat: register StartTreatmentViewModel in dependency injection container | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 1228652 | feat: add startTreatment method to repository and service | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 705cfd0 | feat: add DTOs for start treatment request and response | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | f3e91b2 | feat: add StartTreatment presentation layer | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 00af7a7 | feat: add navigation to start treatment page | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 6eae9af | feat: add TreatmentErrorDialog and TreatmentSuccessPage | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 5baa38d | feat: add TreatmentsListViewModel to dependency injection | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | bdb062c | feat: add TreatmentsListViewModel provider to main.dart | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | e061d64 | feat: add method to get treatments by nurse | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 22a1608 | feat: add TreatmentSummary domain model | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 254e08d | feat: add treatments list feature with state management | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | c331bda | feat: add methods to abandon, complete and get treatment details | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | bb9f3ce | feat: add treatment detail page, view model, and state | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | f21e10f | feat: redesign treatment detail page | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | df880a9 | feat: add RiskPatient domain model | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 8c3d03c | feat: add risk patients presentation components | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 6f6d5e8 | feat: add method to get patients by risk level | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 1e4f92e | feat: add PatientMonitor model | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 9ef6706 | feat: add DTO for patient monitor response | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | e206a6a | feat: add TreatmentInfo model class | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | fbb8c8f | feat: add method to get patient monitor in TreatmentRepository | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 54e5b71 | feat: add method to get patient monitor in TreatmentRepositoryImpl | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 2cb258e | feat: add getPatientMonitor method to TreatmentService | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 8ec92cb | feat: implement navigation to patient monitor detail page | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | e66b165 | feat: add PatientMonitorViewModel and PatientMonitorState | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile | feat/treatment | 2e5c334 | feat: add patient monitor page | Last week |
+| SANUVI-MINSA/ferova-clinic-mobile
+ | feat/treatment | 32644f5 | feat: add patient monitor page to display treatment and adherence information | Last week |
 
 ##### 4.2.3.4 Testing Suite Evidence for Sprint Review
 
