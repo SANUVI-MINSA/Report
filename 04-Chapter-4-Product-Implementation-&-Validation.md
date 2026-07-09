@@ -6123,7 +6123,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="">Microsoft Stream</a></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">Microsoft Stream</a></td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
@@ -6203,7 +6203,7 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="">Microsoft Stream</a></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">Microsoft Stream</a></td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
@@ -6284,11 +6284,11 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
 </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="">Microsoft Stream</a></td>
+            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">Microsoft Stream</a></td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>16:38 min - 20:00 min</td>
+            <td>16:38 min - 26:11 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
@@ -6298,10 +6298,10 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
             <td><strong>Aspectos Positivos</strong></td>
             <td>
                 <ul>
-                    <li>Interfaz clara, sencilla e intuitiva.</li>
-                    <li>El registro y seguimiento de controles facilita el trabajo.</li>
-                    <li>Los accesos rápidos agilizan las tareas frecuentes.</li>
-                    <li>El historial de hemoglobina apoya la toma de decisiones.</li>
+                    <li>La aplicación centraliza la información del paciente.</li>
+                    <li>El dashboard ahorra tiempo y facilita la toma de decisiones.</li>
+                    <li>El seguimiento de hemoglobina mejora el control del tratamiento.</li>
+                    <li>Favorece un seguimiento más continuo y en tiempo real.</li>
                     <li>La aplicación es fácil de usar</li>
                 </ul>
             </td>
@@ -6310,14 +6310,14 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
             <td><strong>Oportunidades de Mejora</strong></td>
             <td>
                 <ul>
-                    <li>Ajustar el cálculo automático del tratamiento a la norma técnica</li>
-					<li>Definir mejor el módulo de consultas entre padres y profesionales para evitar confusiones.</li>
+                    <li>Incorporar gráficas de tendencia de hemoglobina por paciente.</li>
+					<li>Añadir respuestas automáticas para consultas frecuentes de los pacientes.</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td><strong>Conclusión</strong></td>
-            <td>El nutricionista valoró la facilidad de uso, la rapidez para acceder a la información y el seguimiento clínico del paciente. Considera que la aplicación es útil para el trabajo diario, aunque recomienda alinearla con la normativa nacional sobre el tratamiento de la anemia y mejorar el funcionamiento del módulo de consultas.<strong>5/5</strong>.</td>
+            <td>La enfermera consideró que la aplicación tiene un gran potencial para optimizar el seguimiento de pacientes con anemia. Destacó la facilidad de uso, la automatización del análisis de datos y el monitoreo continuo, sugiriendo únicamente mejoras en la visualización de tendencias y en la gestión de consultas.<strong>5/5</strong>.</td>
         </tr>
     </tbody>
 </table>
