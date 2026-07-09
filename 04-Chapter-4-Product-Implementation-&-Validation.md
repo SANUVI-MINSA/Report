@@ -5729,6 +5729,29 @@ Figura 6.2 Agregar verificadores
 
 <br>
 
+**Paso 7: Publicación y distribución de la aplicación**
+
+Una vez configurada la versión, se publicó la aplicación en Firebase App Distribution y se enviaron las invitaciones a los verificadores mediante correo electrónico. La consola de Firebase confirmó el registro de la versión 0.1.0 (1), mientras que los verificadores recibieron un correo con el enlace para descargar e instalar la aplicación.
+
+- **Resultado:** La aplicación fue distribuida satisfactoriamente mediante Firebase App Distribution, permitiendo que los verificadores accedan a la versión de prueba para su instalación y evaluación.
+
+<br>
+
+Figura 7.1 Registro de la versión publicada en Firebase App Distribution.
+
+<div align="center">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/9.png">
+</div>
+
+
+<br>
+
+Figura 7.2 Correo electrónico de invitación enviado al verificador para instalar la aplicación.
+
+<div align="center">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/10.png">
+</div>
+
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
 **Frontend – FerovaClinic**
