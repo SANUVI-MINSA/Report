@@ -5651,6 +5651,29 @@ Figura 2. Registro automático de las aplicaciones Android e iOS y generación d
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/4.png">
 </div>
 
+<br>
+
+**Paso 4: Generación del APK de la aplicación**
+
+comando a ejecutar:
+
+```bash
+flutter build apk --release
+```
+
+Se ejecutó el proceso de compilación de la aplicación Flutter en modo Release, generando el archivo APK optimizado para su distribución y pruebas. Durante este proceso se verificó que todas las dependencias del proyecto y la configuración de Firebase fueran compiladas correctamente.
+
+<br>
+
+<div align ="center">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/5.png">
+</div>
+
+<br>
+
+- **Resultado:** Se generó satisfactoriamente el archivo `app-release.apk`, listo para su distribución e instalación en dispositivos Android.
+
+
 
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
