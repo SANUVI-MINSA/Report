@@ -5607,21 +5607,50 @@ Durante este sprint se realizó el despliegue de la aplicación móvil Ferova Cl
 
 Se inició sesión en Firebase CLI utilizando una cuenta de Google autorizada para administrar el proyecto Ferova Clinic. Esta autenticación permitió establecer la conexión entre el entorno de desarrollo local y los servicios de Firebase.
 
-- Resultado: El entorno de desarrollo quedó autenticado correctamente, permitiendo ejecutar los comandos de configuración y despliegue del proyecto.
+- **Resultado:** El entorno de desarrollo quedó autenticado correctamente, permitiendo ejecutar los comandos de configuración y despliegue del proyecto.
 
 <div align="">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/1.png">
 </div>
 
+<br>
+
 **Paso 2: Configuración del proyecto Flutter con Firebase**
 
 Se ejecutó el comando `flutterfire configure` para vincular la aplicación Flutter con el proyecto Ferova Clinic existente en Firebase. Durante este proceso se seleccionó el proyecto correspondiente y se configuró el soporte para las plataformas Android e iOS.
 
-- Resultado: La aplicación quedó asociada al proyecto Firebase y se generaron los archivos de configuración necesarios para la integración de los servicios de Firebase.
+- **Resultado:** La aplicación quedó asociada al proyecto Firebase y se generaron los archivos de configuración necesarios para la integración de los servicios de Firebase.
 
 <div align="">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/2.png">
 </div>
+
+<br>
+
+**Paso 3: Configuración de Firebase para la aplicación Flutter**
+
+Se ejecutó el comando `flutterfire configure` para vincular la aplicación móvil Ferova Clinic con el proyecto existente en Firebase. Durante este proceso se seleccionó el proyecto Ferova-Clinic y se definieron las plataformas compatibles para la integración, habilitando el soporte para Android e iOS.
+
+Posteriormente, FlutterFire registró automáticamente las aplicaciones móviles en Firebase y generó el archivo de configuración `firebase_options.dart`, el cual contiene los identificadores necesarios para establecer la comunicación entre la aplicación Flutter y los servicios de Firebase.
+
+- **Resultado:** La aplicación móvil quedó correctamente asociada al proyecto de Firebase, registrándose las aplicaciones para Android e iOS y generándose el archivo de configuración requerido para la integración con Firebase.
+
+<br>
+
+Figura 1. Selección del proyecto y plataformas durante la configuración de FlutterFire.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/3.png">
+</div>
+
+<br>
+
+Figura 2. Registro automático de las aplicaciones Android e iOS y generación del archivo `firebase_options.dart`.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/4.png">
+</div>
+
 
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
