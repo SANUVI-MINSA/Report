@@ -5735,8 +5735,6 @@ Una vez configurada la versión, se publicó la aplicación en Firebase App Dist
 
 - **Resultado:** La aplicación fue distribuida satisfactoriamente mediante Firebase App Distribution, permitiendo que los verificadores accedan a la versión de prueba para su instalación y evaluación.
 
-<br>
-
 Figura 7.1 Registro de la versión publicada en Firebase App Distribution.
 
 <div align="center">
@@ -5751,6 +5749,32 @@ Figura 7.2 Correo electrónico de invitación enviado al verificador para instal
 <div align="center">
 <img src="resources/images/sprint-3/screnshoots-validations/step_deployment/10.png">
 </div>
+
+<br>
+
+**Paso 8: Verificación del soporte para distribución en iOS**
+
+Se verificó la configuración de **Firebase App Distribution** para la plataforma iOS. Durante esta etapa se confirmó que Firebase permite la distribución de aplicaciones iOS mediante archivos **IPA** ; sin embargo, la generación de este tipo de archivos requiere el uso de **Xcode** y un equipo con **macOS**, debido a las restricciones establecidas por Apple para la compilación y firma de aplicaciones iOS.
+
+Como el entorno de desarrollo utilizado durante el Sprint fue **Windows**, únicamente fue posible completar el proceso de despliegue para la plataforma Android. La configuración para iOS quedó preparada en Firebase, quedando pendiente la generación y distribución del archivo IPA desde un equipo con macOS.
+
+- **Resultado:** Se validó la configuración de Firebase App Distribution para iOS; no obstante, la distribución de la aplicación quedó condicionada al uso de un equipo con macOS para generar el archivo IPA requerido.
+
+Figura 8.1 Configuración de Firebase App Distribution para la aplicación iOS.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/11.png">
+</div>
+
+<br>
+
+Figura 8.2 Sección de carga de archivos IPA para la distribución de aplicaciones iOS.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/12.png">
+</div>
+
+<br>
 
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
