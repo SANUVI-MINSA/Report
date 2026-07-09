@@ -10,10 +10,9 @@ A continuación, se listan las herramientas y estándares adoptados por el equip
 | Requirements Management | Gherkin Conventions                                    | Escritura legible de requisitos con formato Given/When/Then.  | [https://cucumber.io/docs/gherkin/](https://cucumber.io/docs/gherkin/) |
 | Product UX/UI Design    | Figma                                                  | Prototipos y diseño responsive.                               | SaaS –[https://figma.com](https://figma.com) |
 | Frontend Dev            | Kotlin                                                 | Construcción del frontend del sistema.                        | https://kotlinlang.org/ / https://flutter.dev/   /   https://dart.dev/ |
-| Backend Dev             | Node.js                                                | Lógica de negocio y servicios REST.                           | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)|
-| IDE                     | IntelliJ IDEA + Android Studio                         | Desarrollo, depuración y pruebas.                             | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) / [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm) |
+| Backend Dev             | Node.js                                                | Lógica de negocio y servicios REST.                           | [https://nodejs.org/es](https://nodejs.org/es)|
+| IDE                     | IntelliJ IDEA + Android Studio                         | Desarrollo, depuración y pruebas.                             | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea) / [https://developer.android.com/studio?hl=es-419](https://developer.android.com/studio?hl=es-419) |
 | Version Control         | Git + GitHub                                           | Gestión colaborativa del código fuente.                       | SaaS –[https://github.com](https://github.com) |
-| Software Deployment     | Github pages                                           | Despliegue continuo del sistema en ambientes de testing.      | SaaS –[https://railway.app](https://railway.app) / [https://render.com](https://render.com)                                                |
 | Software Documentation  | Swagger                                                | Documentación de APIs, funcionalidades y criterios técnicos.  | SaaS –[https://swagger.io/](https://swagger.io/)|
 
 #### 4.1.2 Source Code Management
@@ -24,10 +23,11 @@ A continuación, se listan las herramientas y estándares adoptados por el equip
 
 En esta seccion presentamos los 3 productos en los repositorios de GitHub.
 
-- [Landing Page](https://github.com/SANUVI-MINSA/ferova-landing-page)
-- [Web Services](https://github.com/SANUVI-MINSA/backend-ferova/tree/deployment-primero-presentacion)
-- [Mobile Application](https://github.com/SANUVI-MINSA/ferova-mobile-android/tree/develop)
-
+- Landing Page: [https://github.com/SANUVI-MINSA/ferova-landing-page](https://github.com/SANUVI-MINSA/ferova-landing-page)
+- Backend: [https://github.com/SANUVI-MINSA/backend-ferova/tree/deployment-primero-presentacion](https://github.com/SANUVI-MINSA/backend-ferova/tree/deployment-primero-presentacion)
+- Ferova Family: [https://github.com/SANUVI-MINSA/ferova-mobile-android/tree/develop](https://github.com/SANUVI-MINSA/ferova-mobile-android/tree/develop)
+- Ferova Clinic: [https://github.com/SANUVI-MINSA/ferova-clinic-mobile](https://github.com/SANUVI-MINSA/ferova-clinic-mobile)
+  
 ###### Implementación de GitFlow
 
 En este seccion se presenta la implentacion de Git flow para el registro de versiones se organizo bajo estas ramas.
@@ -74,12 +74,35 @@ Los mensajes de todos los commits seguirán el estándar Conventional Commits, c
 
 ###### Convenciones Generales
 
-| Ítem | Valor |
-|------|-------|
-| Idioma | Inglés (todo el código, nombres de clases, funciones, variables) |
-| Indentación | 4 espacios (convención oficial de Kotlin/Android) |
-| Formato de archivos | `.kt` |
-| Guías de estilo | [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html) · [Android Kotlin Style Guide](https://developer.android.com/kotlin/style-guide) |
+<table>
+<thead>
+  <tr>
+    <th>Ítem</th>
+    <th>Valor</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Idioma</td>
+    <td>Inglés (todo el código, nombres de clases, funciones, variables)</td>
+  </tr>
+  <tr>
+    <td>Indentación</td>
+    <td>4 espacios (convención oficial de Kotlin/Android)</td>
+  </tr>
+  <tr>
+    <td>Formato de archivos</td>
+    <td><code>.kt</code></td>
+  </tr>
+  <tr>
+    <td>Guías de estilo</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+      <p><strong>Kotlin:</strong> <a href="https://kotlinlang.org/docs/coding-conventions.html" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://kotlinlang.org/docs/coding-conventions.html</a></p>
+      <p><strong>Android:</strong> <a href="https://developer.android.com/kotlin/style-guide" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://developer.android.com/kotlin/style-guide</a></p>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 ###### Convenciones de Nomenclatura
 
@@ -106,12 +129,36 @@ Los mensajes de todos los commits seguirán el estándar Conventional Commits, c
 
 ###### Convenciones Generales
 
-| Ítem | Valor |
-|------|-------|
-| Idioma | Inglés (todo el código, nombres de clases, funciones, variables) |
-| Indentación | 2 espacios (convención oficial de Dart) |
-| Formato de archivos | `.dart` |
-| Guías de estilo | [Effective Dart](https://dart.dev/guides/language/effective-dart/style) · [Flutter Style Guide](https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo) · [flutter_lints](https://pub.dev/packages/flutter_lints) |
+<table>
+<thead>
+  <tr>
+    <th>Ítem</th>
+    <th>Valor</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Idioma</td>
+    <td>Inglés (todo el código, nombres de clases, funciones, variables)</td>
+  </tr>
+  <tr>
+    <td>Indentación</td>
+    <td>2 espacios (convención oficial de Dart)</td>
+  </tr>
+  <tr>
+    <td>Formato de archivos</td>
+    <td><code>.dart</code></td>
+  </tr>
+  <tr>
+    <td>Guías de estilo</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+      <p><strong>Dart:</strong> <a href="https://dart.dev/guides/language/effective-dart/style" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://dart.dev/guides/language/effective-dart/style</a></p>
+      <p><strong>Flutter:</strong> <a href="https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://github.com/flutter/flutter/wiki/Style-guide-for-Flutter-repo</a></p>
+      <p><strong>pub.dev:</strong> <a href="https://pub.dev/packages/flutter_lints" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://pub.dev/packages/flutter_lints</a></p>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 ###### Convenciones de Nomenclatura
 
@@ -143,13 +190,40 @@ enum RequestStatus { loading, success, error }
 
 ###### Convenciones Generales
 
-| Ítem | Valor |
-|------|-------|
-| Idioma | Inglés (código y documentación interna) |
-| Indentación | 2 espacios (convención estándar del ecosistema Node.js/TypeScript) |
-| Formato de archivos | `.ts` para código fuente · `.test.ts` / `.spec.ts` para pruebas |
-| Compilación | Target ES2022+, `strict: true` en `tsconfig.json` |
-| Guías de estilo | [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html) · [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/styleguide) · ESLint + `@typescript-eslint` |
+<table>
+<thead>
+  <tr>
+    <th>Ítem</th>
+    <th>Valor</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Idioma</td>
+    <td>Inglés (código y documentación interna)</td>
+  </tr>
+  <tr>
+    <td>Indentación</td>
+    <td>2 espacios (convención estándar del ecosistema Node.js/TypeScript)</td>
+  </tr>
+  <tr>
+    <td>Formato de archivos</td>
+    <td><code>.ts</code> para código fuente · <code>.test.ts</code> / <code>.spec.ts</code> para pruebas</td>
+  </tr>
+  <tr>
+    <td>Compilación</td>
+    <td>Target ES2022+, <code>strict: true</code> en <code>tsconfig.json</code></td>
+  </tr>
+  <tr>
+    <td>Guías de estilo</td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+      <p><a href="https://google.github.io/styleguide/tsguide.html" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://google.github.io/styleguide/tsguide.html</a></p>
+      <p><a href="https://basarat.gitbook.io/typescript/styleguide" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">https://basarat.gitbook.io/typescript/styleguide</a></p>
+      <p>ESLint + <code>@typescript-eslint</code></p>
+    </td>
+  </tr>
+</tbody>
+</table>
 
 ##### Convenciones de Nomenclatura
 
@@ -3471,18 +3545,35 @@ Se han automatizado 4 escenarios de prueba de aceptación (AT01-AT04) cubriendo 
 A continuación se presentan los materiales de evidencia correspondientes a los tres productos desarrollados durante el Sprint 1: Landing Page, Backend y Aplicación Móvil. Cada sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
 
 
-**Video de Landing Page:** [Landing Page](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD6fwgTYBFxSZx02tnhvRo6AfeRmV_6-YwKeCw-BZj6f2s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PskPks)
+**Video de la Landing Page:**
+
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+	<strong>Video de la Landing Page (demostracion):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD6fwgTYBFxSZx02tnhvRo6AfeRmV_6-YwKeCw-BZj6f2s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PskPks"
+     target="_blank"
+     style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD6fwgTYBFxSZx02tnhvRo6AfeRmV_6-YwKeCw-BZj6f2s?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=PskPks
+  </a>
+</p>
 
 <img src="resources/images/chapter-IV/Deploy evidence/Landing Page Deployment Evidence.png">
 
-**Video del Frontend (demostración):** [Frontend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBozac_pKT1R7oQJbRrbASCAStElc9cXPYHjDqFFk-s8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=oHSxiJ)
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Video del Frontend (demostración):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBozac_pKT1R7oQJbRrbASCAStElc9cXPYHjDqFFk-s8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=oHSxiJ" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBozac_pKT1R7oQJbRrbASCAStElc9cXPYHjDqFFk-s8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=oHSxiJ
+  </a>
+</p>
 
 <img src="resources/images/chapter-IV/Deploy evidence/Frontend Evidence.png">
 
 
-**Video del Backend (demostración):**  [Backend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDI12xWrXPYRJ2I9oOHEQqsAXj-03JLqkA_YAm7VY9bl8E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=odMZcv)
-
-
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Video del Backend (demostración):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDI12xWrXPYRJ2I9oOHEQqsAXj-03JLqkA_YAm7VY9bl8E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=odMZcv" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDI12xWrXPYRJ2I9oOHEQqsAXj-03JLqkA_YAm7VY9bl8E?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=odMZcv
+  </a>
+</p>
 <img src="resources/images/sprint-1/evidencias/video-backend.png">
 
 
@@ -5096,22 +5187,35 @@ pediatric-care-acceptance-tests.
 
 A continuación se presentan los materiales de evidencia correspondientes a los tres productos desarrollados durante el Sprint 2: Backend y Aplicación Móvil Flutter (primera presentacion) y Aplicacion Movil Android - kotlin (avance completo). Cada sección incluye una breve descripción del alcance entregado en este sprint, lo que se demuestra en el material audiovisual.
 
-**Video del Frontend - Ferova Family (demostración):** [Frontend - Ferova Family](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA9xaFOYjuWSYMlnmFsUsN0AWZqSDTvxrojbb8z7RVUkP4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cVka1H)
-
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Video del Frontend - Ferova Family (demostración):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA9xaFOYjuWSYMlnmFsUsN0AWZqSDTvxrojbb8z7RVUkP4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cVka1H" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQA9xaFOYjuWSYMlnmFsUsN0AWZqSDTvxrojbb8z7RVUkP4?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cVka1H
+  </a>
+</p>
 El video muestra las funcionalidades implementadas para las madres, incluyendo el registro de alimentos en el Diario Nutricional, la visualización del consumo de hierro del paciente, la consulta de logros e insignias obtenidas mediante el módulo Achievement & Rewards, la confirmación e historial de dosis del tratamiento, la visualización de postas médicas registradas en el sistema mediante mapas interactivos, la reserva de citas médicas y el envío de consultas a enfermeras a través del módulo de comunicación.
 
 <img src="resources/images/sprint-2/evidencias/ferova-family-sprint-2.png">
 
 
-**Video del Frontend - Ferova Clinic (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG)
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Video del Frontend - Ferova Clinic (demostración):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDQmVDECPlHSrVcBCjtGQFFAS8ELi94_eNsYcBBLF98JHM?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=E97lrG
+  </a>
+</p>
 
 El video presenta las funcionalidades desarrolladas para los roles de Administrador y Enfermera, incluyendo el inicio de sesión con validación de roles, recuperación de contraseña, visualización del dashboard analítico con indicadores de adherencia, gestión de postas médicas, visualización de mapas de calor, consulta de métricas de riesgo y descarga de reportes PDF relacionados con el desempeño y nivel de adherencia de los establecimientos de salud.
 
 <img src="resources/images/sprint-2/evidencias/ferova-clinic-sprint-2.png">
 
 
-**Video del Backend (demostración):**  [Backend](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB)
-
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Video del Backend (demostración):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQBAUsFJRqecSYj8ZmKkVjlSAcdLV3LZt1KIvKgYOCw_zCU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=C6jjQB
+  </a>
+</p>
 
 
 El video evidencia la implementación y validación de los servicios REST API desarrollados durante el Sprint 2, correspondientes a los Bounded Contexts de Treatment Tracking, Achievement & Rewards y Analytics Reporting. Se muestran pruebas de los endpoints documentados en Swagger/OpenAPI, incluyendo seguimiento de tratamientos, confirmación de dosis, consulta de logros e insignias, generación de reportes analíticos, mapas de calor, métricas de adherencia y generación de reportes PDF.
@@ -5560,7 +5664,12 @@ Esta sección incluye una breve descripción del alcance entregado en este sprin
 
 <br>
 
-**Video del Frontend - Ferova Clinic (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDJqGLhLRhIRo_JIflh39t-AaFN62yAL93YTjjpp_T2IVc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jdf7YG)
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <strong>Video del Frontend - Ferova Clinic (demostración):</strong>
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDJqGLhLRhIRo_JIflh39t-AaFN62yAL93YTjjpp_T2IVc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jdf7YG" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDJqGLhLRhIRo_JIflh39t-AaFN62yAL93YTjjpp_T2IVc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jdf7YG
+  </a>
+</p>
 
 El video presenta las funcionalidades desarrolladas para el rol de Enfermera durante el Sprint 3, incluyendo la gestión de pacientes mediante la asignación de pacientes a la cartera del enfermero, el registro y actualización de historiales médicos, el registro y consulta del historial de controles de hemoglobina, la descarga de reportes en formato PDF del historial médico y de los controles de hemoglobina, el inicio y seguimiento de tratamientos, el alta de pacientes al finalizar su tratamiento, la gestión de la bandeja de consultas enviadas por las madres y la comunicación mediante chat para responder consultas y cerrarlas una vez resueltas.
 
@@ -6054,11 +6163,15 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN">Microsoft Stream</a></td>
+            <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+                    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN
+                </a>
+            </td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
-            <td>00: 00 min - 20:25 min</td>
+            <td>00:00 min - 20:25 min</td>
         </tr>
         <tr>
             <td><strong>Resultado General</strong></td>
@@ -6091,6 +6204,8 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
     </tbody>
 </table>
+
+---
 
 <table>
     <thead>
@@ -6135,7 +6250,11 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN">Microsoft Stream</a></td>
+            <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+                    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN
+                </a>
+            </td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
@@ -6173,6 +6292,8 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
     </tbody>
 </table>
+
+---
 
 <table>
     <thead>
@@ -6217,7 +6338,11 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN">Microsoft Stream</a></td>
+            <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+                    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202322855_upc_edu_pe/IQCRzgg0xPl7SI5uIkaDdNU4AaMWWTSydrzj49QUojRzP18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=E2vbWN
+                </a>
+            </td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
@@ -6249,12 +6374,16 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Conclusión</strong></td>
-            <td>La participante menciono que la aplicación la ayuda a controlar y tratar la anemia de su hija. Menciona que todas las funcionalidades son de gran ayuda en el tratamiento.<strong>5/5</strong>.</td>
+            <td>La participante mencionó que la aplicación la ayuda a controlar y tratar la anemia de su hija. Menciona que todas las funcionalidades son de gran ayuda en el tratamiento. <strong>5/5</strong>.</td>
         </tr>
     </tbody>
 </table>
 
+---
+
 **Segmento objetivo 2: Personal de salud (enfermeros/as y nutricionistas)**
+
+---
 
 <table>
     <thead>
@@ -6299,43 +6428,13 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">Microsoft Stream</a></td>
-        </tr>
-        <tr>
-            <td><strong>Duración</strong></td>
-            <td>00:00 min - 07:43 min</td>
-        </tr>
-        <tr>
-            <td><strong>Resultado General</strong></td>
-            <td>La participante pudo utilizar todas las funcionalidades de la aplicación facilmente. Consideró que Ferova Clinic es de uso muy practico y destacó que facilita el seguimiento del tratamiento de sus pacientes asignados mediante todas los accesos rápidos.</td>
-        </tr>
-        <tr>
-            <td><strong>Aspectos Positivos</strong></td>
-            <td>
-                <ul>
-                    <li>Interfaz didáctica y fácil de usar.</li>
-                    <li>Ahorra tiempo durante la jornada laboral.</li>
-                    <li>El seguimiento de hemoglobina es muy útil.</li>
-                    <li>El dashboard de riesgo facilita la priorización de pacientes.</li>
-                    <li>El registro desde el celular resulta práctico para trabajo de campo.</li>
-                </ul>
+            <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+                    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+                </a>
             </td>
-        </tr>
-        <tr>
-            <td><strong>Oportunidades de Mejora</strong></td>
-            <td>
-                <ul>
-                    <li>Agregar más datos del paciente (edad, fecha de nacimiento, prematuridad).</li>
-					<li>Explicar con mayor claridad el indicador de riesgo clínico.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><strong>Conclusión</strong></td>
-            <td>La profesional validó positivamente la aplicación, destacando su facilidad de uso, utilidad para el seguimiento clínico y potencial para optimizar el trabajo del personal de salud, proponiendo únicamente mejoras menores en el registro de información y algunos detalles de la interfaz.<strong>5/5</strong>.</td>
-        </tr>
-    </tbody>
-</table>
+
+---
 
 <table>
     <thead>
@@ -6376,10 +6475,15 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
             <td><strong>Evidencia</strong></td>
             <td>
                 <img src="resources/images/sprint-3/screnshoots-validations/Entrevista Paolo Salas.png">
+            </td>
         </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">Microsoft Stream</a></td>
+            <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+                    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+                </a>
+            </td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
@@ -6412,14 +6516,15 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Conclusión</strong></td>
-            <td>El nutricionista valoró la facilidad de uso, la rapidez para acceder a la información y el seguimiento clínico del paciente. Considera que la aplicación es útil para el trabajo diario, aunque recomienda alinearla con la normativa nacional sobre el tratamiento de la anemia y mejorar el funcionamiento del módulo de consultas.<strong>5/5</strong>.</td>
+            <td>El nutricionista valoró la facilidad de uso, la rapidez para acceder a la información y el seguimiento clínico del paciente. Considera que la aplicación es útil para el trabajo diario, aunque recomienda alinearla con la normativa nacional sobre el tratamiento de la anemia y mejorar el funcionamiento del módulo de consultas. <strong>5/5</strong>.</td>
         </tr>
     </tbody>
 </table>
 
+---
 
 <table>
-	    <thead>
+    <thead>
         <tr>
             <th colspan="2">Entrevista de Validación #3</th>
         </tr>
@@ -6457,10 +6562,15 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
             <td><strong>Evidencia</strong></td>
             <td>
                 <img src="resources/images/sprint-3/screnshoots-validations/Entrevista Edith Garcia.png">
-</tr>
+            </td>
+        </tr>
         <tr>
             <td><strong>Link</strong></td>
-            <td><a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D">Microsoft Stream</a></td>
+            <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+                <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+                    https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBDXbFlVmd6SL9q74TNhbXtAT7LoIrmLl4ZdHHgF0o-30I?e=i4dzQj&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+                </a>
+            </td>
         </tr>
         <tr>
             <td><strong>Duración</strong></td>
@@ -6493,10 +6603,12 @@ En esta sección se establece, para cada segmento objetivo, los elementos consid
         </tr>
         <tr>
             <td><strong>Conclusión</strong></td>
-            <td>La enfermera consideró que la aplicación tiene un gran potencial para optimizar el seguimiento de pacientes con anemia. Destacó la facilidad de uso, la automatización del análisis de datos y el monitoreo continuo, sugiriendo únicamente mejoras en la visualización de tendencias y en la gestión de consultas.<strong>5/5</strong>.</td>
+            <td>La enfermera consideró que la aplicación tiene un gran potencial para optimizar el seguimiento de pacientes con anemia. Destacó la facilidad de uso, la automatización del análisis de datos y el monitoreo continuo, sugiriendo únicamente mejoras en la visualización de tendencias y en la gestión de consultas. <strong>5/5</strong>.</td>
         </tr>
     </tbody>
 </table>
+
+
 
 
 ### 4.3.3. Evaluaciones según heurísticas
