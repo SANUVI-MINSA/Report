@@ -5609,6 +5609,8 @@ Se inició sesión en Firebase CLI utilizando una cuenta de Google autorizada pa
 
 - **Resultado:** El entorno de desarrollo quedó autenticado correctamente, permitiendo ejecutar los comandos de configuración y despliegue del proyecto.
 
+Figura 1.1 Logearse a firebase
+
 <div align="">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/1.png">
 </div>
@@ -5621,7 +5623,9 @@ Se ejecutó el comando `flutterfire configure` para vincular la aplicación Flut
 
 - **Resultado:** La aplicación quedó asociada al proyecto Firebase y se generaron los archivos de configuración necesarios para la integración de los servicios de Firebase.
 
-<div align="">
+Figura 2.1 Selecionar Proyecto  
+
+<div align="center">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/2.png">
 </div>
 
@@ -5635,9 +5639,7 @@ Posteriormente, FlutterFire registró automáticamente las aplicaciones móviles
 
 - **Resultado:** La aplicación móvil quedó correctamente asociada al proyecto de Firebase, registrándose las aplicaciones para Android e iOS y generándose el archivo de configuración requerido para la integración con Firebase.
 
-<br>
-
-Figura 1. Selección del proyecto y plataformas durante la configuración de FlutterFire.
+Figura 3.1. Selección del plataformas durante la configuración de FlutterFire.
 
 <div align="center">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/3.png">
@@ -5645,11 +5647,20 @@ Figura 1. Selección del proyecto y plataformas durante la configuración de Flu
 
 <br>
 
-Figura 2. Registro automático de las aplicaciones Android e iOS y generación del archivo `firebase_options.dart`.
+Figura 3.2. Registro automático de las aplicaciones Android e iOS y generación del archivo `firebase_options.dart`.
 
 <div align="center">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/4.png">
 </div>
+
+<br>
+
+Figura 3.2. Archivo `firebase_options.dart`.
+
+<div align="center">
+	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/archivo.png">
+</div>
+
 
 <br>
 
@@ -5663,7 +5674,7 @@ flutter build apk --release
 
 Se ejecutó el proceso de compilación de la aplicación Flutter en modo Release, generando el archivo APK optimizado para su distribución y pruebas. Durante este proceso se verificó que todas las dependencias del proyecto y la configuración de Firebase fueran compiladas correctamente.
 
-<br>
+Figura 4.1 Creacion del APK
 
 <div align ="center">
 <img src="resources/images/sprint-3/screnshoots-validations/step_deployment/5.png">
@@ -5671,7 +5682,30 @@ Se ejecutó el proceso de compilación de la aplicación Flutter en modo Release
 
 <br>
 
+Figura 4.1 Archivo APK
+
+<div align ="center">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/archivo apk.png" width="400" height="450">
+</div>
+
+<br>
+
+
 - **Resultado:** Se generó satisfactoriamente el archivo `app-release.apk`, listo para su distribución e instalación en dispositivos Android.
+
+**Paso 5: Configuración de Firebase App Distribution**
+
+Se accedió al servicio Firebase App Distribution desde la consola de Firebase y se seleccionó la aplicación Android `ferova_clinic_flutter` para habilitar la distribución de versiones preliminares destinadas a pruebas.
+
+- **Resultado:** El servicio de distribución quedó preparado para recibir nuevas versiones de la aplicación móvil.
+
+Figura 5.1. Configuración inicial de Firebase App Distribution.
+
+<div align="">
+<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/6.png">
+</div>
+
+<br>
 
 
 
