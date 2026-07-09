@@ -5558,6 +5558,8 @@ Esta sección incluye una breve descripción del alcance entregado en este sprin
 <img src="resources/images/sprint-3/screnshoots-validations/execution_sprint_3.png">
 </div>
 
+<br>
+
 **Video del Frontend - Ferova Clinic (demostración):**  [Frontend - Ferova Clinic](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDJqGLhLRhIRo_JIflh39t-AaFN62yAL93YTjjpp_T2IVc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=jdf7YG)
 
 El video presenta las funcionalidades desarrolladas para el rol de Enfermera durante el Sprint 3, incluyendo la gestión de pacientes mediante la asignación de pacientes a la cartera del enfermero, el registro y actualización de historiales médicos, el registro y consulta del historial de controles de hemoglobina, la descarga de reportes en formato PDF del historial médico y de los controles de hemoglobina, el inicio y seguimiento de tratamientos, el alta de pacientes al finalizar su tratamiento, la gestión de la bandeja de consultas enviadas por las madres y la comunicación mediante chat para responder consultas y cerrarlas una vez resueltas.
