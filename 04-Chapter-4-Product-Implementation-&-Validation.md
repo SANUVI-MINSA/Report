@@ -5600,6 +5600,11 @@ A continuación, se presenta la documentación consolidada de todos los endpoint
 
 
 ##### 4.2.3.7 Software Deployment Evidence for Sprint Review
+
+Durante este sprint se realizó el despliegue de la aplicación móvil Ferova Clinic, desarrollada en Flutter, integrándola con Firebase como plataforma de servicios para la aplicación. El proceso comprendió la autenticación en Firebase CLI, la configuración del proyecto mediante FlutterFire, la asociación del proyecto móvil con Firebase y la preparación de la aplicación para las plataformas Android e iOS.
+
+
+
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
 **Frontend – FerovaClinic**
