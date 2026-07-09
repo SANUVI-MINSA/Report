@@ -5609,6 +5609,14 @@ Se inició sesión en Firebase CLI utilizando una cuenta de Google autorizada pa
 
 - Resultado: El entorno de desarrollo quedó autenticado correctamente, permitiendo ejecutar los comandos de configuración y despliegue del proyecto.
 
+**Paso 2: Configuración del proyecto Flutter con Firebase**
+
+Se ejecutó el comando flutterfire configure para vincular la aplicación Flutter con el proyecto Ferova Clinic existente en Firebase. Durante este proceso se seleccionó el proyecto correspondiente y se configuró el soporte para las plataformas Android e iOS.
+
+- Resultado: La aplicación quedó asociada al proyecto Firebase y se generaron los archivos de configuración necesarios para la integración de los servicios de Firebase.
+
+  
+
 <div align="">
 	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/1.png">
 </div>
