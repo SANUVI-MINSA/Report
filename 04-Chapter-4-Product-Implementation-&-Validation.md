@@ -5608,7 +5608,10 @@ Durante este sprint se realizó el despliegue de la aplicación móvil Ferova Cl
 Se inició sesión en Firebase CLI utilizando una cuenta de Google autorizada para administrar el proyecto Ferova Clinic. Esta autenticación permitió establecer la conexión entre el entorno de desarrollo local y los servicios de Firebase.
 
 - Resultado: El entorno de desarrollo quedó autenticado correctamente, permitiendo ejecutar los comandos de configuración y despliegue del proyecto.
-  
+
+<div align="">
+	<img src="resources/images/sprint-3/screnshoots-validations/step_deployment/1.png">
+</div>
 
 ##### 4.2.3.8 Team Collaboration Insights during Sprint
 
