@@ -266,11 +266,17 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Sonia Ludeña.jpg" alt="Entrevista"></td>
+    <td><img src="resources/images/chapter-II/Interviews/Evidencia Sonia Ludeña.jpg" alt="Entrevista" width="900" height="400"></td>
   </tr>
   <tr>
     <td>Link</td>
-    <td><p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog" title="Title">Microsoft Stream</p></td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog
+			</a>
+		</p>
+	</td>
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -284,6 +290,8 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+
+---
 
 <table>
 <colgroup>
@@ -324,11 +332,17 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Jonathan.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Jonathan.png" alt="Entrevista"></div></td>
   </tr>
   <tr>
     <td>Link</td>
-    <td><p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog" title="Title">Microsoft Stream</p></td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog" title="Title">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog
+			</a>
+		</p>
+	</td>
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -342,6 +356,8 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+
+---
 
 <table>
 <colgroup>
@@ -382,15 +398,21 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Milagros Vera.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Milagros Vera.png" alt="Entrevista"></div></td>
   </tr>
   <tr>
     <td>Link</td>
-    <td><p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog" title="Title">Microsoft Stream</p></td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog" title="Title">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQAAOed0dsA0T4t4vSGXtoWKAa1LkKlYsFnXlXdZmk7jdXo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=6fBFog
+			</a>
+		</p>
+	</td>
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td> 9:33  min - 14:47 min</td>
+    <td>9:33 min - 14:47 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
@@ -431,7 +453,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Aplicaciones Usadas</td>
-    <td> WhatsApp, Excel, Word</td>
+    <td>WhatsApp, Excel, Word</td>
   </tr>
   <tr>
     <td>Motivacion</td>
@@ -447,21 +469,28 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Link</td>
-    <td>
-		<p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBeJZvfyHIHSZ-TZwiVwGFqAWMchsgCAPyR_F-neP4fWqU?e=PO1fJ9&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" title="Title">Microsoft Stream</p>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD9anz4eKYQRYWXF7-mkxAOAeeCsL8_EBVgBKV4EfTKo9M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=okieQH" title="Title">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD9anz4eKYQRYWXF7-mkxAOAeeCsL8_EBVgBKV4EfTKo9M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=okieQH
+			</a>
+		</p>
 	</td>
   </tr>
   <tr>
     <td>Duracion<br></td>
-    <td>
-		22:44 min - 35:20 min
-	</td>
+    <td>22:44 min - 35:20 min</td>
   </tr>
   <tr>
     <td>Resumen</td>
     <td>
 		La entrevistada, enfermera con 20 años de experiencia en el Hospital Rebagliati, considera que la alimentación es clave en el tratamiento de la anemia y que el seguimiento debe empezar desde los primeros signos de riesgo, no cuando la enfermedad ya es severa. Señala que actualmente se apoya en Excel y en sistemas internos del hospital, pero cree que una app sería útil si fuera simple, visual, amigable y con alertas o recordatorios. Además, menciona que para hacer un buen seguimiento se debe considerar también el contexto social y los hábitos del paciente, y que la confianza en una herramienta digital dependerá de su utilidad real y de opiniones de otros usuarios.
+	</td>
+  </tr>
+</tbody>
 </table>
+
+---
 
 <table>
 <colgroup>
@@ -502,11 +531,17 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Carmen Rivas.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Carmen Rivas.png" alt="Entrevista"></div></td>
   </tr>
   <tr>
     <td>Link</td>
-    <td><p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBeJZvfyHIHSZ-TZwiVwGFqAWMchsgCAPyR_F-neP4fWqU?e=PO1fJ9&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" title="Title">Microsoft Stream</p></td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD9anz4eKYQRYWXF7-mkxAOAeeCsL8_EBVgBKV4EfTKo9M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=okieQH" title="Title">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD9anz4eKYQRYWXF7-mkxAOAeeCsL8_EBVgBKV4EfTKo9M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=okieQH
+			</a>
+		</p>
+	</td>
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -520,6 +555,8 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+
+---
 
 <table>
 <colgroup>
@@ -560,11 +597,17 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
   <tr>
     <td>Evidencia</td>
-    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Paolo Salas.png" alt="Entrevista"></td>
+    <td><div align="center"><img src="resources/images/chapter-II/Interviews/Evidencia Paolo Salas.png" alt="Entrevista"></div></td>
   </tr>
   <tr>
     <td>Link</td>
-    <td><p><a target="_blank"  href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQBeJZvfyHIHSZ-TZwiVwGFqAWMchsgCAPyR_F-neP4fWqU?e=PO1fJ9&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" title="Title">Microsoft Stream</p></td>
+    <td style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+		<p>
+			<a target="_blank" style="word-break: break-all; overflow-wrap: break-word;" href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD9anz4eKYQRYWXF7-mkxAOAeeCsL8_EBVgBKV4EfTKo9M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=okieQH" title="Title">
+				https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQD9anz4eKYQRYWXF7-mkxAOAeeCsL8_EBVgBKV4EfTKo9M?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=okieQH
+			</a>
+		</p>
+	</td>
   </tr>
   <tr>
     <td>Duracion<br></td>
@@ -578,6 +621,7 @@ En esta sección presentamos los registros de las entrevistas que hicimos para c
   </tr>
 </tbody>
 </table>
+
 
 #### 2.2.3 Análisis de entrevistas
 
@@ -1866,52 +1910,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>US-07</td>
-      <td>Enfermera</td>
-      <td>High</td>
-      <td>EP-02</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Registro del diagnóstico del paciente</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como enfermera, quiero poder registrar el diagnostico oficial de anemia del paciente en la plataforma, para tener un expediente digital completo y comenzar su tratamiento.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Escenario 1: Registro de diagnóstico exitoso<br>
-        Dado que la enfermera atiende a un paciente registrado en el sistema,<br>
-        cuando ingresa el tipo de anemia y nivel de severidad del paciente y presiona 'Guardar diagnostico',<br>
-        entonces el sistema debe registrar el diagnostico en el historial médico del paciente.<br>
-        <br>
-        Escenario 2: Registro de diagnóstico con datos incompletos<br>
-        Dado que la enfermera intenta registrar el diagnostico sin completar todos los campos requeridos,<br>
-        cuando presiona 'Guardar diagnostico',<br>
-        entonces el sistema debe mostrar un mensaje de error indicando los campos que faltan por completar.
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -1955,6 +1953,58 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
         Dado que la enfermera ingresa un valor de hemoglobina fuera del rango permitido,<br>
         cuando presiona 'Guardar',<br>
         entonces el sistema debe mostrar un mensaje de error indicando que el valor ingresado no es valido.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-07</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Registrar historial médico inicial del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero registrar el historial médico inicial de un paciente asignado a mi cartera, para almacenar su información clínica base y realizar un seguimiento adecuado de su tratamiento contra la anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Registro exitoso del historial médico<br>
+        Dado que el paciente ya se encuentra asignado a la cartera de la enfermera,<br>
+        cuando la enfermera registra la información clínica inicial del paciente, incluyendo nivel de hemoglobina, peso, talla y observaciones médicas,<br>
+        entonces el sistema registra correctamente el historial médico y muestra un mensaje indicando que el historial fue creado exitosamente.<br>
+        <br>
+        Escenario 2: Información obligatoria incompleta<br>
+        Dado que la enfermera intenta registrar el historial médico,<br>
+        cuando deja uno o más campos obligatorios vacíos,<br>
+        entonces el sistema muestra un mensaje indicando que todos los campos requeridos deben completarse y no permite guardar el historial.<br>
+        <br>
+        Escenario 3: Paciente no asignado<br>
+        Dado que la enfermera intenta registrar un historial médico,<br>
+        cuando el paciente no pertenece a su cartera de pacientes,<br>
+        entonces el sistema deniega la operación y muestra el mensaje "El paciente no está asignado a su cartera."
       </td>
     </tr>
   </tbody>
@@ -3467,6 +3517,322 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-45</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Dar de alta a un paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero dar de alta a un paciente que ha culminado satisfactoriamente su tratamiento contra la anemia, para finalizar su seguimiento clínico y registrar la conclusión de su proceso de recuperación dentro del sistema.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Alta exitosa del paciente<br>
+        Dado que el paciente ha completado su tratamiento y cumple con los criterios médicos establecidos,<br>
+        cuando la enfermera selecciona la opción "Dar de alta" y confirma la acción,<br>
+        entonces el sistema registra el alta del paciente, actualiza su estado a "Alta médica" y muestra un mensaje indicando que el paciente fue dado de alta correctamente.<br>
+        <br>
+        Escenario 2: Paciente que no cumple los criterios para el alta<br>
+        Dado que el paciente aún presenta controles pendientes o no ha completado su tratamiento,<br>
+        cuando la enfermera intenta darlo de alta,<br>
+        entonces el sistema muestra un mensaje indicando que el paciente aún no cumple los criterios para recibir el alta médica y no permite completar la operación.<br>
+        <br>
+        Escenario 3: Cancelación del alta<br>
+        Dado que la enfermera ha seleccionado la opción "Dar de alta",<br>
+        cuando decide cancelar la operación antes de confirmarla,<br>
+        entonces el sistema cierra la ventana de confirmación y mantiene al paciente con su estado actual, sin realizar ningún cambio.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-46</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualizar el tratamiento y la adherencia del paciente</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero visualizar el tratamiento activo y el nivel de adherencia de un paciente, para monitorear su progreso, identificar posibles incumplimientos y tomar decisiones oportunas durante el seguimiento clínico.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización exitosa del tratamiento<br>
+        Dado que el paciente tiene un tratamiento activo,<br>
+        cuando la enfermera selecciona al paciente desde su cartera,<br>
+        entonces el sistema muestra la información del tratamiento, incluyendo la fecha de inicio, duración, dosis confirmadas, dosis pendientes, porcentaje de adherencia y el nivel de riesgo correspondiente.<br>
+        <br>
+        Escenario 2: Paciente sin tratamiento activo<br>
+        Dado que la enfermera selecciona un paciente que aún no tiene un tratamiento iniciado,<br>
+        cuando accede a la sección de tratamiento,<br>
+        entonces el sistema muestra un mensaje indicando que el paciente no cuenta con un tratamiento activo.<br>
+        <br>
+        Escenario 3: Actualización de la adherencia<br>
+        Dado que la madre confirma las dosis desde Ferova Family,<br>
+        cuando la enfermera consulta nuevamente el tratamiento del paciente,<br>
+        entonces el sistema actualiza automáticamente el porcentaje de adherencia y el nivel de riesgo (Low, Medium o High) con la información más reciente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-47</td>
+      <td>Enfermera</td>
+      <td>Medium</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Descargar el reporte de controles de hemoglobina en formato PDF</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero descargar un reporte en formato PDF con el historial de controles de hemoglobina de un paciente, para consultar, compartir o archivar su evolución clínica durante el tratamiento contra la anemia.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Descarga exitosa del reporte<br>
+        Dado que el paciente cuenta con registros de controles de hemoglobina,<br>
+        cuando la enfermera selecciona la opción "Descargar PDF",<br>
+        entonces el sistema genera y descarga un archivo PDF con todos los controles registrados del paciente.<br>
+        <br>
+        Escenario 2: Paciente sin controles registrados<br>
+        Dado que el paciente no posee registros de controles de hemoglobina,<br>
+        cuando la enfermera intenta descargar el reporte,<br>
+        entonces el sistema muestra un mensaje indicando que no existen controles registrados para generar el documento.<br>
+        <br>
+        Escenario 3: Error al generar el PDF<br>
+        Dado que ocurre un problema durante la generación del documento,<br>
+        cuando la enfermera solicita la descarga,<br>
+        entonces el sistema informa que no fue posible generar el reporte e invita a intentar nuevamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-48</td>
+      <td>Enfermera</td>
+      <td>Medium</td>
+      <td>EP-03</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Descargar el historial médico del paciente en formato PDF</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero descargar el historial médico completo de un paciente en formato PDF, para conservar un respaldo de su información clínica y facilitar su consulta durante la atención médica.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Descarga exitosa del historial médico<br>
+        Dado que el paciente posee un historial médico registrado,<br>
+        cuando la enfermera selecciona la opción "Descargar historial médico",<br>
+        entonces el sistema genera y descarga un archivo PDF con toda la información clínica del paciente.<br>
+        <br>
+        Escenario 2: Historial médico inexistente<br>
+        Dado que el paciente no tiene un historial médico registrado,<br>
+        cuando la enfermera intenta descargar el documento,<br>
+        entonces el sistema muestra un mensaje indicando que no existe información clínica disponible para generar el PDF.<br>
+        <br>
+        Escenario 3: Error al generar el documento<br>
+        Dado que ocurre un error durante la generación del PDF,<br>
+        cuando la enfermera solicita la descarga,<br>
+        entonces el sistema muestra un mensaje indicando que la descarga no pudo completarse y recomienda intentarlo nuevamente.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-49</td>
+      <td>Enfermera</td>
+      <td>High</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualizar citas médicas confirmadas</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero visualizar las citas médicas confirmadas por las madres, para organizar mi agenda diaria y consultar el listado completo de pacientes que asistirán a la posta.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de próximas citas<br>
+        Dado que existen citas confirmadas por las madres,<br>
+        cuando la enfermera ingresa al módulo de citas,<br>
+        entonces el sistema muestra un resumen con las cuatro próximas citas programadas para el día, incluyendo el nombre del paciente, la hora de atención y el estado de la cita.<br>
+        <br>
+        Escenario 2: Visualización de todas las citas<br>
+        Dado que la enfermera desea consultar su agenda completa,<br>
+        cuando selecciona la opción "Ver todas las citas",<br>
+        entonces el sistema muestra el listado completo de citas confirmadas ordenadas por fecha y hora.<br>
+        <br>
+        Escenario 3: Sin citas programadas<br>
+        Dado que no existen citas confirmadas,<br>
+        cuando la enfermera accede al módulo de citas,<br>
+        entonces el sistema muestra un mensaje indicando que no tiene citas programadas.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<table border="1" cellpadding="10" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Story ID</th>
+      <th>User</th>
+      <th>Priority</th>
+      <th>Epic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>US-50</td>
+      <td>Enfermera</td>
+      <td>Medium</td>
+      <td>EP-02</td>
+    </tr>
+    <tr>
+      <td><b>Title</b></td>
+      <td colspan="3">Visualizar cantidad de pacientes activos</td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Description</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Como enfermera, quiero visualizar la cantidad de pacientes activos asignados a mi cartera, para conocer la carga de trabajo que tengo y monitorear el número de pacientes bajo mi seguimiento.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4"><b>Acceptance Criteria</b></td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        Escenario 1: Visualización de pacientes activos<br>
+        Dado que la enfermera tiene pacientes asignados,<br>
+        cuando accede a la pantalla principal de Ferova Clinic,<br>
+        entonces el sistema muestra el número total de pacientes activos que actualmente se encuentran bajo su seguimiento.<br>
+        <br>
+        Escenario 2: Actualización automática<br>
+        Dado que un paciente es asignado, dado de alta o abandona el tratamiento,<br>
+        cuando la enfermera vuelve a ingresar al panel principal,<br>
+        entonces el sistema actualiza automáticamente el contador de pacientes activos.<br>
+        <br>
+        Escenario 3: Sin pacientes asignados<br>
+        Dado que la enfermera aún no tiene pacientes en su cartera,<br>
+        cuando accede al panel principal,<br>
+        entonces el sistema muestra el valor 0 pacientes activos.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 **Technical Stories**
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
@@ -3781,57 +4147,6 @@ En esta sección, se incluyen todos los *Epic* y *User Stories* que fueron ident
   </tbody>
 </table>
 
-<table border="1" cellpadding="10" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th>Story ID</th>
-      <th>User</th>
-      <th>Priority</th>
-      <th>Epic</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>TS-07</td>
-      <td>Desarrollador</td>
-      <td>High</td>
-      <td>EP-02</td>
-    </tr>
-    <tr>
-      <td><b>Title</b></td>
-      <td colspan="3">Registrar diagnóstico del paciente mediante API RESTful</td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Description</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        Como desarrollador, quiero implementar el endpoint de registro del diagnóstico de anemia del paciente mediante una API REST, para que la enfermera pueda registrar el tipo y severidad de la anemia y almacenarlo en el historial médico del paciente en MongoDB.
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4"><b>Acceptance Criteria</b></td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <b>Escenario 1: Registro de diagnóstico exitoso</b><br>
-        Dado que el endpoint /api/v1/patients/{patientId}/diagnosis está disponible,<br>
-        cuando se envía una solicitud POST con el token JWT válido, el tipo de anemia y el nivel de severidad,<br>
-        entonces se recibe una respuesta con estado 201 y el cuerpo contiene el diagnóstico registrado con su fecha de registro y el ID del paciente asociado.<br>
-        <br>
-        <b>Escenario 2: Datos del diagnóstico incompletos</b><br>
-        Dado que el endpoint /api/v1/patients/{patientId}/diagnosis está disponible,<br>
-        cuando se envía una solicitud POST con campos obligatorios vacíos o con formato incorrecto,<br>
-        entonces se recibe una respuesta con estado 422 y el cuerpo contiene un mensaje indicando los campos inválidos.<br>
-        <br>
-        <b>Escenario 3: Paciente no encontrado</b><br>
-        Dado que el endpoint /api/v1/patients/{patientId}/diagnosis está disponible,<br>
-        cuando se envía una solicitud POST con un ID de paciente que no existe en el sistema,<br>
-        entonces se recibe una respuesta con estado 404 y el cuerpo contiene el mensaje: 'Paciente no encontrado.'
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 <table border="1" cellpadding="10" cellspacing="0" width="100%">
   <thead>
@@ -5109,15 +5424,15 @@ En esta sección, se presentara el mapa de impacto, el cual nos ayuda a alinear 
 
 En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos ayuda a ordenar todas nuestras historias de usuario e historias técnicas en un rango de puntos que nos muestra la complejidad de la realización de la historia.
 
-| **# Orden** | **User Story Id** | **Título** | **Descripción** | **Story Points (1/2/3/5/8)** |
-| :--- | :--- | :--- | :--- | :--- |
+| # Orden | User Story Id | Título | Descripción | Story Points |
+|:--------|:---------------|:-------|:-------------|:--------------|
 | 1 | US-01 | Registro de nuevo usuario | Como usuario, quiero poder registrarme en la plataforma ingresando mis datos personales, para poder acceder a los servicios de Ferova. | 3 |
 | 2 | US-02 | Inicio de sesión | Como usuario, quiero poder iniciar sesión con mi número de DNI y contraseña, para poder acceder a mi cuenta y los servicios de Ferova. | 2 |
 | 3 | US-03 | Bloqueo de cuenta por intentos fallidos | Como usuario, quiero que mi cuenta sea protegida ante multiples intentos fallidos de inicio de sesion, para garantizar la seguridad de mi informacion personal. | 3 |
 | 4 | US-04 | Cambio de contraseña | Como usuario, quiero poder cambiar mi contraseña desde la app, para mantener la seguridad de mi cuenta en todo momento. | 2 |
 | 5 | US-05 | Cierre de sesión | Como usuario, quiero poder cerrar sesión desde la app, para proteger mi cuenta cuando deje de usar la plataforma. | 1 |
 | 6 | US-06 | Registro de paciente | Como madre, quiero poder registrar a mi hijo en la plataforma ingresando sus datos personales, para comenzar el seguimiento de su tratamiento de anemia. | 3 |
-| 7 | US-07 | Registro del diagnóstico del paciente | Como enfermera, quiero poder registrar el diagnostico oficial de anemia del paciente en la plataforma, para tener un expediente digital completo y comenzar su tratamiento. | 2 |
+| 7 | US-07 | Registrar historial médico inicial del paciente | Como enfermera, quiero registrar el historial médico inicial de un paciente asignado a mi cartera, para almacenar su información clínica base y realizar un seguimiento adecuado de su tratamiento contra la anemia. | 3 |
 | 8 | US-08 | Registro del nivel de hemoglobina del paciente | Como enfermera, quiero poder registrar el nivel de hemoglobina del paciente despues de cada control presencial, para hacer seguimiento de la evolucion del tratamiento de anemia. | 2 |
 | 9 | US-09 | Asignacion de paciente a enfermera | Como enfermera, quiero poder buscar a una madre por su numero de DNI para ver los datos de su hijo registrado en el sistema y asignarmelo como paciente, para hacerle seguimiento personalizado de su tratamiento de anemia. | 3 |
 | 10 | US-10 | Actualización del historial medico del paciente | Como enfermera, quiero poder actualizar los datos del control del paciente en cada visita presencial, para registrar su evolución durante el tratamiento de anemia. | 2 |
@@ -5153,44 +5468,49 @@ En esta sección presentamos el Product Backlog de nuestro proyecto móvil, nos 
 | 42 | US-42 | Visualización del dashboard analítico | Como admin, quiero poder ver el dashboard analítico completo de las postas en FerovaClinic, para monitorear el estado del tratamiento de anemia en todas las postas y tomar decisiones informadas. | 8 |
 | 43 | US-43 | Visualización del mapa de calor | Como admin, quiero poder ver el mapa de calor de mi distrito en FerovaClinic, para identificar visualmente que zonas tienen mayor tasa de adherencia del tratamiento y priorizar las intervenciones necesarias. | 8 |
 | 44 | US-44 | Exportación de reporte en PDF | Como admin, quiero poder exportar el reporte completo de las postas en formato PDF desde FerovaClinic, para enviarlo al MINSA central con las estadísticas actualizadas del tratamiento de anemia. | 5 |
-| 45 | TS-01 | Registrar usuario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de usuarios mediante una API REST, para que la aplicación pueda crear nuevas cuentas con rol asignado automáticamente y almacenarlas en MongoDB. | 3 |
-| 46 | TS-02 | Autenticar usuario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de inicio de sesión mediante una API REST, para que la aplicación pueda autenticar usuarios con su DNI y contraseña y retornar un token JWT para el acceso seguro a la plataforma. | 5 |
-| 47 | TS-03 | Cambiar contraseña de usuario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cambio de contraseña mediante una API REST, para que la aplicación pueda actualizar la contraseña del usuario autenticado de forma segura en MongoDB. | 2 |
-| 48 | TS-04 | Registrar paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de pacientes mediante una API REST, para que la aplicación pueda crear el perfil del paciente con anemia y almacenarlo en MongoDB. | 3 |
-| 49 | TS-05 | Obtener paciente por DNI de la madre mediante API RESTful | Como desarrollador, quiero implementar el endpoint de búsqueda de paciente por DNI de la madre mediante una API REST, para que la enfermera pueda encontrar al paciente registrado y asignárselo desde FerovaClinic. | 2 |
-| 50 | TS-06 | Asignar paciente a enfermera mediante API RESTful | Como desarrollador, quiero implementar el endpoint de asignación de paciente a enfermera mediante una API REST, para que el sistema pueda vincular a un paciente con una enfermera específica y almacenar la relación en MongoDB. | 3 |
-| 51 | TS-07 | Registrar diagnóstico del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro del diagnóstico de anemia del paciente mediante una API REST, para que la enfermera pueda registrar el tipo y severidad de la anemia y almacenarlo en el historial médico del paciente en MongoDB. | 2 |
-| 52 | TS-08 | Registrar nivel de hemoglobina del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro del nivel de hemoglobina del paciente mediante una API REST, para que la enfermera pueda registrar los resultados de cada control presencial y actualizar automáticamente el historial médico del paciente en MongoDB. | 2 |
-| 53 | TS-09 | Actualizar historial médico del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de actualización del historial médico del paciente mediante una API REST, para que la enfermera pueda registrar los datos de cada control presencial como peso, hemoglobina y observaciones en MongoDB. | 3 |
-| 54 | TS-10 | Iniciar tratamiento del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de inicio de tratamiento mediante una API REST, para que la enfermera pueda activar el tratamiento de anemia de un paciente y programar automáticamente los recordatorios diarios de dosis en el sistema. | 5 |
-| 55 | TS-11 | Confirmar dosis diaria mediante API RESTful | Como desarrollador, quiero implementar el endpoint de confirmación de dosis diaria mediante una API REST, para que la madre pueda registrar el cumplimiento de la dosis del día y el sistema actualice automáticamente la racha y el score de adherencia del paciente en MongoDB. | 3 |
-| 56 | TS-12 | Obtener score de riesgo de abandono del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del score de riesgo de abandono del paciente mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera el semáforo de riesgo de cada paciente calculado automáticamente por el sistema. | 5 |
-| 58 | TS-14 | Completar tratamiento del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cierre exitoso del tratamiento del paciente mediante una API REST, para que la enfermera pueda marcar el tratamiento como completado y el sistema notifique automáticamente a la madre en FerovaFamilia. | 2 |
-| 59 | TS-15 | Registrar abandono del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de abandono del tratamiento mediante una API REST, para que la enfermera pueda marcar el tratamiento como abandonado y el sistema actualice las estadísticas del distrito en MongoDB. | 2 |
-| 60 | TS-16 | Registrar entrada del diario nutricional mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de alimentos en el diario nutricional mediante una API REST, para que la madre pueda registrar los alimentos consumidos por su hijo y el sistema calcule automáticamente el hierro absorbido y detecte alimentos inhibidores en MongoDB. | 8 |
-| 61 | TS-17 | Obtener resumen nutricional diario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del resumen nutricional diario mediante una API REST, para que FerovaFamilia pueda mostrar a la madre el total de hierro absorbido por su hijo durante el día y si alcanzó la meta diaria establecida. | 3 |
-| 62 | TS-18 | Obtener racha y puntos del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la racha de días consecutivos cumplidos y el saldo de puntos acumulados mediante una API REST, para que FerovaFamilia pueda mostrar a la madre su progreso de gamificación actualizado. | 3 |
-| 63 | TS-19 | Obtener insignias del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de insignias desbloqueadas y bloqueadas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre todas las insignias disponibles del tratamiento y su estado actual. | 3 |
-| 64 | TS-20 | Crear consulta de teleconsulta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de creación de consulta de teleconsulta mediante una API REST, para que la madre pueda enviar su mensaje a la enfermera asignada y el sistema lo almacene en Firebase Firestore en tiempo real. | 5 |
-| 65 | TS-21 | Obtener lista de consultas de teleconsulta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la lista de consultas de teleconsulta mediante una API REST, para que la enfermera pueda visualizar y responder a las consultas enviadas por las madres en tiempo real desde FerovaClinic. | 3 |
-| 66 | TS-22 | Obtener historial de consultas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de consultas mediante una API REST, para que FerovaFamilia y FerovaClinic puedan mostrar el historial completo de consultas entre la madre y la enfermera ordenadas por fecha. | 3 |
-| 67 | TS-23 | Cerrar consulta de teleconsulta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cierre de consulta de teleconsulta mediante una API REST, para que la enfermera pueda marcar una consulta como cerrada y el sistema actualice su estado en Firebase Firestore y registre la fecha y hora del cierre. | 2 |
-| 68 | TS-24 | Registrar posta médica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de postas médicas mediante una API REST, para que el admin pueda registrar las postas de su distrito con su ubicación en Google Maps y almacenarlas en MongoDB. | 3 |
-| 69 | TS-25 | Registrar horario de atención de la posta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro y actualización del horario de atención de la posta mediante una API REST, para que el admin pueda definir los días y horas de atención de cada posta y el sistema los refleje automáticamente en FerovaFamilia. | 2 |
-| 70 | TS-26 | Obtener postas médicas cercanas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de postas médicas cercanas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre las postas de su distrito con su horario de atención y ubicación en Google Maps. | 3 |
-| 71 | TS-27 | Transferir enfermera entre postas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de transferencia de enfermera entre postas mediante una API REST, para que el admin pueda reasignar a una enfermera de una posta a otra y el sistema actualice automáticamente la lista de personal en ambas postas en MongoDB. | 3 |
-| 72 | TS-28 | Obtener postas medicas cercanas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de postas medicas cercanas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre las postas disponibles en el mapa usando las coordenadas GPS de su dispositivo y Google Maps API. | 5 |
-| 73 | TS-29 | Reservar cita en posta medica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de reserva de cita en posta medica mediante una API REST, para que la madre pueda programar su cita de control presencial y el sistema notifique automáticamente a la enfermera asignada en MongoDB. | 5 |
-| 74 | TS-30 | Cancelar cita en posta medica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cancelación de cita en posta medica mediante una API REST, para que la madre pueda cancelar su cita reservada y el sistema libere automáticamente el horario y notifique a la enfermera en MongoDB. | 2 |
-| 75 | TS-31 | Obtener lista de citas programadas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la lista de citas programadas mediante una API REST, para que la enfermera pueda visualizar las citas de control presencial de sus pacientes asignados desde FerovaClinic. | 3 |
-| 76 | TS-33 | Obtener historial de notificaciones mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de notificaciones enviadas mediante una API REST, para que la madre pueda consultar en FerovaFamilia los recordatorios previos y estados de confirmación. | 2 |
-| 77 | TS-34 | Enviar notificación de recordatorio de cita mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de recordatorio de cita mediante una API REST, para que el sistema notifique a la madre vía Firebase FCM un día antes de su cita programada. | 3 |
-| 78 | TS-35 | Enviar notificación de logro desbloqueado mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de logro desbloqueado mediante una API REST, para incentivar a la madre cuando alcance hitos importantes del tratamiento. | 3 |
-| 79 | TS-37 | Obtener dashboard analítico del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico para mostrar al admin el rendimiento, pacientes activos y comparativas entre postas. | 8 |
-| 80 | TS-38 | Obtener mapa de calor del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor para visualizar zonas críticas coloreadas según el porcentaje de adherencia. | 8 |
-| 81 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
-| 82 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
-| 83 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
+| 45 | US-45 | Dar de alta a un paciente | Como enfermera, quiero dar de alta a un paciente que ha culminado satisfactoriamente su tratamiento contra la anemia, para finalizar su seguimiento clínico y registrar la conclusión de su proceso de recuperación dentro del sistema. | 5 |
+| 46 | US-46 | Visualizar el tratamiento y la adherencia del paciente | Como enfermera, quiero visualizar el tratamiento activo y el nivel de adherencia de un paciente, para monitorear su progreso, identificar posibles incumplimientos y tomar decisiones oportunas durante el seguimiento clínico. | 3 |
+| 47 | US-47 | Descargar el reporte de controles de hemoglobina en formato PDF | Como enfermera, quiero descargar un reporte en formato PDF con el historial de controles de hemoglobina de un paciente, para consultar, compartir o archivar su evolución clínica durante el tratamiento contra la anemia. | 3 |
+| 48 | US-48 | Descargar el historial médico del paciente en formato PDF | Como enfermera, quiero descargar el historial médico completo de un paciente en formato PDF, para conservar un respaldo de su información clínica y facilitar su consulta durante la atención médica. | 3 |
+| 49 | US-49 | Visualizar citas médicas confirmadas | Como enfermera, quiero visualizar las citas médicas confirmadas por las madres, para organizar mi agenda diaria y consultar el listado completo de pacientes que asistirán a la posta. | 3 |
+| 50 | US-50 | Visualizar cantidad de pacientes activos | Como enfermera, quiero visualizar la cantidad de pacientes activos asignados a mi cartera, para conocer la carga de trabajo que tengo y monitorear el número de pacientes bajo mi seguimiento. | 2 |
+| 51 | TS-01 | Registrar usuario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de usuarios mediante una API REST, para que la aplicación pueda crear nuevas cuentas con rol asignado automáticamente y almacenarlas en MongoDB. | 3 |
+| 52 | TS-02 | Autenticar usuario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de inicio de sesión mediante una API REST, para que la aplicación pueda autenticar usuarios con su DNI y contraseña y retornar un token JWT para el acceso seguro a la plataforma. | 5 |
+| 53 | TS-03 | Cambiar contraseña de usuario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cambio de contraseña mediante una API REST, para que la aplicación pueda actualizar la contraseña del usuario autenticado de forma segura en MongoDB. | 2 |
+| 54 | TS-04 | Registrar paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de pacientes mediante una API REST, para que la aplicación pueda crear el perfil del paciente con anemia y almacenarlo en MongoDB. | 3 |
+| 55 | TS-05 | Obtener paciente por DNI de la madre mediante API RESTful | Como desarrollador, quiero implementar el endpoint de búsqueda de paciente por DNI de la madre mediante una API REST, para que la enfermera pueda encontrar al paciente registrado y asignárselo desde FerovaClinic. | 2 |
+| 56 | TS-06 | Asignar paciente a enfermera mediante API RESTful | Como desarrollador, quiero implementar el endpoint de asignación de paciente a enfermera mediante una API REST, para que el sistema pueda vincular a un paciente con una enfermera específica y almacenar la relación en MongoDB. | 3 |
+| 57 | TS-08 | Registrar nivel de hemoglobina del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro del nivel de hemoglobina del paciente mediante una API REST, para que la enfermera pueda registrar los resultados de cada control presencial y actualizar automáticamente el historial médico del paciente en MongoDB. | 2 |
+| 58 | TS-09 | Actualizar historial médico del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de actualización del historial médico del paciente mediante una API REST, para que la enfermera pueda registrar los datos de cada control presencial como peso, hemoglobina y observaciones en MongoDB. | 3 |
+| 59 | TS-10 | Iniciar tratamiento del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de inicio de tratamiento mediante una API REST, para que la enfermera pueda activar el tratamiento de anemia de un paciente y programar automáticamente los recordatorios diarios de dosis en el sistema. | 5 |
+| 60 | TS-11 | Confirmar dosis diaria mediante API RESTful | Como desarrollador, quiero implementar el endpoint de confirmación de dosis diaria mediante una API REST, para que la madre pueda registrar el cumplimiento de la dosis del día y el sistema actualice automáticamente la racha y el score de adherencia del paciente en MongoDB. | 3 |
+| 61 | TS-12 | Obtener score de riesgo de abandono del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del score de riesgo de abandono del paciente mediante una API REST, para que FerovaClinic pueda mostrar a la enfermera el semáforo de riesgo de cada paciente calculado automáticamente por el sistema. | 5 |
+| 62 | TS-14 | Completar tratamiento del paciente mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cierre exitoso del tratamiento del paciente mediante una API REST, para que la enfermera pueda marcar el tratamiento como completado y el sistema notifique automáticamente a la madre en FerovaFamilia. | 2 |
+| 63 | TS-15 | Registrar abandono del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de abandono del tratamiento mediante una API REST, para que la enfermera pueda marcar el tratamiento como abandonado y el sistema actualice las estadísticas del distrito en MongoDB. | 2 |
+| 64 | TS-16 | Registrar entrada del diario nutricional mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de alimentos en el diario nutricional mediante una API REST, para que la madre pueda registrar los alimentos consumidos por su hijo y el sistema calcule automáticamente el hierro absorbido y detecte alimentos inhibidores en MongoDB. | 8 |
+| 65 | TS-17 | Obtener resumen nutricional diario mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del resumen nutricional diario mediante una API REST, para que FerovaFamilia pueda mostrar a la madre el total de hierro absorbido por su hijo durante el día y si alcanzó la meta diaria establecida. | 3 |
+| 66 | TS-18 | Obtener racha y puntos del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la racha de días consecutivos cumplidos y el saldo de puntos acumulados mediante una API REST, para que FerovaFamilia pueda mostrar a la madre su progreso de gamificación actualizado. | 3 |
+| 67 | TS-19 | Obtener insignias del tratamiento mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de insignias desbloqueadas y bloqueadas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre todas las insignias disponibles del tratamiento y su estado actual. | 3 |
+| 68 | TS-20 | Crear consulta de teleconsulta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de creación de consulta de teleconsulta mediante una API REST, para que la madre pueda enviar su mensaje a la enfermera asignada y el sistema lo almacene en Firebase Firestore en tiempo real. | 5 |
+| 69 | TS-21 | Obtener lista de consultas de teleconsulta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la lista de consultas de teleconsulta mediante una API REST, para que la enfermera pueda visualizar y responder a las consultas enviadas por las madres en tiempo real desde FerovaClinic. | 3 |
+| 70 | TS-22 | Obtener historial de consultas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de consultas mediante una API REST, para que FerovaFamilia y FerovaClinic puedan mostrar el historial completo de consultas entre la madre y la enfermera ordenadas por fecha. | 3 |
+| 71 | TS-23 | Cerrar consulta de teleconsulta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cierre de consulta de teleconsulta mediante una API REST, para que la enfermera pueda marcar una consulta como cerrada y el sistema actualice su estado en Firebase Firestore y registre la fecha y hora del cierre. | 2 |
+| 72 | TS-24 | Registrar posta médica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro de postas médicas mediante una API REST, para que el admin pueda registrar las postas de su distrito con su ubicación en Google Maps y almacenarlas en MongoDB. | 3 |
+| 73 | TS-25 | Registrar horario de atención de la posta mediante API RESTful | Como desarrollador, quiero implementar el endpoint de registro y actualización del horario de atención de la posta mediante una API REST, para que el admin pueda definir los días y horas de atención de cada posta y el sistema los refleje automáticamente en FerovaFamilia. | 2 |
+| 74 | TS-26 | Obtener postas médicas cercanas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de postas médicas cercanas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre las postas de su distrito con su horario de atención y ubicación en Google Maps. | 3 |
+| 75 | TS-27 | Transferir enfermera entre postas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de transferencia de enfermera entre postas mediante una API REST, para que el admin pueda reasignar a una enfermera de una posta a otra y el sistema actualice automáticamente la lista de personal en ambas postas en MongoDB. | 3 |
+| 76 | TS-28 | Obtener postas medicas cercanas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de postas medicas cercanas mediante una API REST, para que FerovaFamilia pueda mostrar a la madre las postas disponibles en el mapa usando las coordenadas GPS de su dispositivo y Google Maps API. | 5 |
+| 77 | TS-29 | Reservar cita en posta medica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de reserva de cita en posta medica mediante una API REST, para que la madre pueda programar su cita de control presencial y el sistema notifique automáticamente a la enfermera asignada en MongoDB. | 5 |
+| 78 | TS-30 | Cancelar cita en posta medica mediante API RESTful | Como desarrollador, quiero implementar el endpoint de cancelación de cita en posta medica mediante una API REST, para que la madre pueda cancelar su cita reservada y el sistema libere automáticamente el horario y notifique a la enfermera en MongoDB. | 2 |
+| 79 | TS-31 | Obtener lista de citas programadas mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención de la lista de citas programadas mediante una API REST, para que la enfermera pueda visualizar las citas de control presencial de sus pacientes asignados desde FerovaClinic. | 3 |
+| 80 | TS-33 | Obtener historial de notificaciones mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del historial de notificaciones enviadas mediante una API REST, para que la madre pueda consultar en FerovaFamilia los recordatorios previos y estados de confirmación. | 2 |
+| 81 | TS-34 | Enviar notificación de recordatorio de cita mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de recordatorio de cita mediante una API REST, para que el sistema notifique a la madre vía Firebase FCM un día antes de su cita programada. | 3 |
+| 82 | TS-35 | Enviar notificación de logro desbloqueado mediante API RESTful | Como desarrollador, quiero implementar el endpoint de envío de notificación de logro desbloqueado mediante una API REST, para incentivar a la madre cuando alcance hitos importantes del tratamiento. | 3 |
+| 83 | TS-37 | Obtener dashboard analítico del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del dashboard analítico para mostrar al admin el rendimiento, pacientes activos y comparativas entre postas. | 8 |
+| 84 | TS-38 | Obtener mapa de calor del distrito mediante API RESTful | Como desarrollador, quiero implementar el endpoint de obtención del mapa de calor para visualizar zonas críticas coloreadas según el porcentaje de adherencia. | 8 |
+| 85 | TS-39 | Exportar reporte del distrito en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de exportación a PDF para que el admin pueda descargar estadísticas oficiales y enviarlas al MINSA. | 5 |
+| 86 | TS-40 | Descargar historial médico completo en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga del historial médico en PDF con todos los antecedentes, dosis y observaciones del paciente. | 5 |
+| 87 | TS-41 | Descarga de control médico del paciente en PDF mediante API RESTful | Como desarrollador, quiero implementar el endpoint de descarga de controles médicos en PDF para consolidar exclusivamente las citas presenciales y observaciones clínicas. | 3 |
 
 ### 2.5 Strategic-Level Domain-Driven Design
 #### 2.5.1 EventStorming
@@ -5307,7 +5627,7 @@ acceder a las funcionalidades de la plataforma.
 
 Este Bounded Context centraliza la gestión de la información clínica y personal de los pacientes 
 con anemia registrados en Ferova. Es responsable del registro de nuevos pacientes, el ingreso de 
-datos personales, el registro del diagnóstico de anemia, el seguimiento de los niveles de 
+datos personales, el registro del controles de hemoglobina, el seguimiento de los niveles de 
 hemoglobina y la asignación de cada paciente a una enfermera específica. Actúa como la base sobre 
 la cual operan los demás Bounded Contexts del sistema.
 

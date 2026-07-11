@@ -162,7 +162,13 @@ La navegación es muy importante ya que permite utilizar todas las funcionalidad
 
 Para elaborar nuestro prototipo de baja fidelidad, hemos utilizado la plataforma Figma, que nos permite crear, representar y exportar nuestros prototipos. Gracias a esta herramienta, podemos presentar un Wireframe de una buena calidad de una manera sencilla.
 
-Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1" target="_blank">Wireframe del Landing Page en Figma</a>
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1
+  </a>
+</p>
+
+
 
 <img src="resources/images/chapter-III/Landing Page/LP Mock Up.png" alt="Landing Page Wireframe">
 
@@ -170,7 +176,11 @@ Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?n
 
 Hemos finalizado con éxito el mock-up de la página de inicio, aplicando los principios y elementos de diseño clave. Gracias a estas directrices, la experiencia para los usuarios de nuestra plataforma será mucho más sencilla e intuitiva.
 
-Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1" target="_blank">Mock Up del Landing Page en Figma</a>
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  Enlace: <a href="https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://www.figma.com/design/8SDOF7pysWSWxqzSrdOfnh/PruebaIHC?node-id=0-1&t=p67FuxKKSjztKY2p-1
+  </a>
+</p>
 
 <img src="resources/images/chapter-III/Landing Page/LP Wireframe.png" alt="Landing Page Mock Up">
 
@@ -622,4 +632,9 @@ Además, se grabó un video donde se explican los principales flujos de interacc
 <img src="resources/images/chapter-III/Prototype/Prototype.png">
 
 Mobile Application Prototyping
-[Prototipe](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315890_upc_edu_pe/IQD4vCblLyzPQYl1lFrKwn0-AaGm4FEgRmXZmX34dPrRQms?e=PrA81X&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+<p style="word-break: break-all; overflow-wrap: break-word; white-space: normal;">
+  <a href="https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDpH06QhVQzRrM26MwmIDINAVMO2nQs8GG8SDmSM8knnL8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LwkLQG" target="_blank" style="word-break: break-all; overflow-wrap: break-word;">
+    https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c426_upc_edu_pe/IQDpH06QhVQzRrM26MwmIDINAVMO2nQs8GG8SDmSM8knnL8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LwkLQG
+  </a>
+</p>

@@ -1,6 +1,6 @@
 # Conclusiones y Recomendaciones
 
-A continuación se presentan las conclusiones obtenidas a lo largo del proyecto Ferova —compuesto por FerovaFamilia (aplicación móvil para padres de familia) y FerovaClinic (aplicación móvil para personal de salud del MINSA)—, organizadas en tres bloques: las elaboradas en el AV1 a partir del trabajo de investigación, validación de hipótesis y definición arquitectónica del producto; las elaboradas en el TB1 a partir del primer incremento construido del Minimum Viable Product; y las elaboradas en el AV2 a partir del avance del frontend de ambas aplicaciones móviles sobre las User Stories priorizadas en el Product Backlog.
+A continuación se presentan las conclusiones obtenidas a lo largo del proyecto Ferova —compuesto por FerovaFamilia (aplicación móvil para padres de familia) y FerovaClinic (aplicación móvil para personal de salud del MINSA)—, organizadas en cuatro bloques: las elaboradas en el AV1 a partir del trabajo de investigación, validación de hipótesis y definición arquitectónica del producto; las elaboradas en el TB1 a partir del primer incremento construido del Minimum Viable Product; las elaboradas en el AV2 a partir del avance del frontend de ambas aplicaciones móviles sobre las User Stories priorizadas en el Product Backlog; y las elaboradas en el TB2 a partir de la culminación del frontend de FerovaClinic en sus perfiles administrativo y médico, junto con la integración de los módulos de Analytics-Reporting con datos reales del backend.
 
 ## Conclusiones del AV1
 
@@ -74,9 +74,31 @@ El frontend entregado en el AV2 da soporte visual a la atención de ambos Proble
 
 El AV2 exigió al equipo profundizar en el desarrollo de interfaces móviles trabajando en paralelo sobre múltiples bounded contexts, manteniendo la consistencia del sistema de diseño y la trazabilidad con el Product Backlog. La coordinación necesaria para integrar el trabajo individual en un incremento coherente, junto con la conducción de entrevistas de validación y la evaluación heurística, fortaleció las competencias del equipo en desarrollo móvil, gestión ágil y validación con usuarios, en línea con el ABET Student Outcome 7 sobre aprendizaje continuo.
 
+## Conclusiones del TB2
+
+### En relación al avance técnico del frontend
+
+Durante el TB2 el equipo completó el desarrollo del frontend de FerovaClinic, cerrando las funcionalidades pendientes del perfil administrativo y consolidando toda la experiencia orientada al personal médico —enfermeros y doctores—. Es importante precisar el stack tecnológico de cada producto: mientras FerovaFamilia se desarrolló en Kotlin + Jetpack Compose para el ecosistema Android, FerovaClinic fue construido en Flutter, aprovechando su naturaleza multiplataforma y su rápido ciclo de desarrollo para las interfaces del personal de salud. En el perfil de administración y coordinación se finalizaron los módulos que habían quedado en avance durante el AV2: el panel de indicadores del coordinador MINSA con el resumen de postas activas y críticas, la adherencia global y el estado detallado de cada establecimiento, junto con el mapa de calor sobre coordenadas reales mediante la librería flutter_map y la exportación de reportes en PDF. En el perfil del personal médico se construyó el frontend completo de las funcionalidades asignadas al enfermero y al doctor: la bandeja de pacientes asignados, el seguimiento de la adherencia individual, el historial de dosis confirmadas y omitidas, el dashboard de semáforo de riesgo y la atención de teleconsultas asíncronas con las madres. Este avance demuestra que el equipo logró entregar FerovaClinic como un producto coherente y funcional en sus dos perfiles de uso, manteniendo la trazabilidad con las User Stories del Product Backlog y respetando el patrón MVVM con inyección de dependencias definido desde el inicio del proyecto.
+
+### En relación a la integración con datos reales
+
+Un aporte central del TB2 fue el reemplazo progresivo de los datos mock por información real proveniente del backend. Los módulos de Analytics-Reporting de FerovaClinic —resumen del dashboard, top de postas, listado completo de establecimientos, mapa de calor y generación de reportes en PDF— fueron conectados a los endpoints REST del servicio desplegado en la nube mediante autenticación por token, siguiendo una arquitectura por capas que separa el servicio HTTP, el repositorio y los objetos de transferencia de datos. Esta integración verifica que la información presentada en la aplicación corresponde a datos reales obtenidos en tiempo real, valida la solidez de la arquitectura Clean definida desde el TB1 y confirma la viabilidad técnica de la sincronización entre el frontend móvil y el backend en Spring Boot para los siguientes incrementos.
+
+### En relación a la validación con usuarios
+
+Las Validation Interviews del TB2 permitieron contrastar las funcionalidades completadas con usuarios reales de ambos segmentos. Con el personal de salud se validó el flujo de monitoreo de adherencia y el semáforo de riesgo, mientras que con las madres de familia se evaluaron los flujos de registro de pacientes, confirmación de dosis, reserva de citas, mapa de postas cercanas, diario nutricional y chat con el enfermero. La evaluación según heurísticas de usabilidad de Nielsen confirmó que las pantallas completadas mantienen los principios de UX definidos desde el AV1 —jerarquía visual clara, acciones primarias evidentes y reducción de carga cognitiva—, reforzando la viabilidad de la Hipótesis 2 sobre la facilidad de uso de la interfaz y aportando retroalimentación concreta sobre los flujos del personal médico.
+
+### En relación al cumplimiento de los Problem Statements
+
+El incremento entregado en el TB2 fortalece la atención de ambos Problem Statements del AV1. El Problem Statement 2 (falta de seguimiento del personal de salud) se atiende de forma directa: al completar FerovaClinic para enfermeros y doctores, el personal de salud dispone ahora de las herramientas para monitorear la adherencia de sus pacientes en tiempo real, identificar casos de riesgo mediante el semáforo y actuar antes de que el abandono ocurra, cerrando el ciclo de seguimiento que quedaba pendiente desde los incrementos anteriores. El Problem Statement 1 (abandono por efectos adversos y falta de información) se refuerza mediante la teleconsulta asíncrona, que conecta a la madre con el enfermero para resolver dudas sobre los efectos del tratamiento sin necesidad de acudir presencialmente a la posta, y mediante el panel de adherencia que permite al personal detectar tempranamente a las familias que requieren consejería adicional.
+
+### En relación al aprendizaje del equipo
+
+El TB2 exigió al equipo integrar el trabajo de múltiples bounded contexts en un producto terminado, gestionar la conexión del frontend con servicios reales y resolver los retos de integración de código en un entorno colaborativo mediante control de versiones con Git, incluyendo la resolución de conflictos de merge entre ramas. La coordinación necesaria para consolidar FerovaClinic en sus dos perfiles, junto con la conducción de nuevas entrevistas de validación y la evaluación heurística, fortaleció las competencias del equipo en desarrollo móvil con Flutter, integración de servicios REST, gestión ágil y validación con usuarios, en línea con el ABET Student Outcome 7 sobre la capacidad de adquirir y aplicar nuevos conocimientos según sea necesario.
+
 ## Recomendaciones y Roadmap
 
-A partir de los resultados obtenidos en el AV1, el TB1 y el AV2, el equipo de Sanuvi propone los siguientes pasos para el roadmap de los productos digitales que conforman el modelo de negocio de Ferova:
+A partir de los resultados obtenidos en el AV1, el TB1, el AV2 y el TB2, el equipo de Sanuvi propone los siguientes pasos para el roadmap de los productos digitales que conforman el modelo de negocio de Ferova:
 
 ### Corto plazo — Lanzamiento piloto (0 a 3 meses)
 
@@ -88,7 +110,7 @@ Implementar un flujo de onboarding guiado para nuevas madres que reduzca la fric
 
 Establecer alianzas con al menos dos postas de salud para captar los primeros 50 pacientes piloto.
 
-Completar la integración del backend Spring Boot con el frontend construido en el AV2 para reemplazar los datos mock por información real en los módulos de Consultas, Citas, Progreso, Nutrición y Analytics-Reporting.
+Completar la integración del backend Spring Boot con el frontend construido en el AV2 y el TB2 para reemplazar los datos mock por información real en los módulos de Consultas, Citas, Progreso, Nutrición y Analytics-Reporting.
 
 Implementar notificaciones push (Firebase Cloud Messaging) para recordatorios de dosis, confirmación de citas y mensajes nuevos de la enfermera.
 
@@ -104,7 +126,7 @@ Implementar el motor de predicción de abandono basado en historial de adherenci
 
 Construir FerovaClinic completo con bandeja de pacientes asignados, chat con cuidadores, historial de dosis y dashboard de semáforo de riesgo.
 
-Implementar testing automatizado (pruebas unitarias para ViewModels y pruebas de UI con Compose Testing) y configurar CI/CD con GitHub Actions.
+Implementar testing automatizado (pruebas unitarias para ViewModels y pruebas de UI con Compose Testing y Flutter Widget Testing) y configurar CI/CD con GitHub Actions.
 
 ### Largo plazo — Escalamiento (9 meses en adelante)
 
